@@ -20,7 +20,9 @@
   <!-- Data Plane -->
   <rect x="30" y="230" width="280" height="120" class="plane"/>
   <text x="60" y="262" class="plane-title">Data Plane</text>
-  <text x="135" y="302" class="comp">zen-ingester</text>
+  <text x="70" y="296" class="comp">zen-ingester</text>
+  <text x="70" y="318" class="comp">zen-agent</text>
+  <text x="200" y="318" class="comp">zen-lock</text>
 
   <!-- Edge Plane -->
   <rect x="450" y="230" width="280" height="120" class="plane"/>
@@ -36,7 +38,7 @@
 
   <!-- Control → Data -->
   <line x1="260" y1="110" x2="190" y2="225" stroke="#25c2a0" stroke-width="2" marker-end="url(#arrow)"/>
-  <text x="205" y="168" class="label" text-anchor="middle" transform="rotate(-15, 205, 168)">configuration</text>
+  <text x="205" y="168" class="label" text-anchor="middle" transform="rotate(-15, 205, 168)">config &amp; enrollment</text>
 
   <!-- Data → Edge -->
   <line x1="310" y1="300" x2="445" y2="300" stroke="#25c2a0" stroke-width="2" marker-end="url(#arrow)"/>
