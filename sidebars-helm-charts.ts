@@ -1,8 +1,11 @@
 import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
 
 const sidebars: SidebarsConfig = {
-  zenGcSidebar: [
+  helmChartsSidebar: [
     'index',
+    'zen-agent',
+    'zen-suite',
+    'values-reference',
   ],
 };
 

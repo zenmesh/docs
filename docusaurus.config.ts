@@ -10,16 +10,10 @@ const config: Config = {
   url: 'https://docs.zen-mesh.io',
   baseUrl: '/',
 
-  organizationName: 'zenmesh',
+  organizationName: 'kube-zen',
   projectName: 'docs',
 
   onBrokenLinks: 'throw',
-
-  markdown: {
-    hooks: {
-      onBrokenMarkdownLinks: 'warn',
-    },
-  },
 
   i18n: {
     defaultLocale: 'en',
@@ -35,7 +29,7 @@ const config: Config = {
           path: 'docs',
           routeBasePath: 'docs',
           sidebarPath: './sidebars.ts',
-          editUrl: 'https://github.com/zenmesh/docs/tree/main/',
+          editUrl: 'https://github.com/kube-zen/docs/tree/main/',
           breadcrumbs: true,
           showLastUpdateAuthor: false,
           showLastUpdateTime: true,
@@ -56,27 +50,17 @@ const config: Config = {
         path: 'docs-zen-lock',
         routeBasePath: 'zen-lock',
         sidebarPath: './sidebars-zen-lock.ts',
-        editUrl: 'https://github.com/zenmesh/docs/tree/main/',
+        editUrl: 'https://github.com/kube-ken/docs/tree/main/',
       },
     ],
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'zen-gc',
-        path: 'docs-zen-gc',
-        routeBasePath: 'zen-gc',
-        sidebarPath: './sidebars-zen-gc.ts',
-        editUrl: 'https://github.com/zenmesh/docs/tree/main/',
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'zen-brain',
-        path: 'docs-zen-brain',
-        routeBasePath: 'zen-brain',
-        sidebarPath: './sidebars-zen-brain.ts',
-        editUrl: 'https://github.com/zenmesh/docs/tree/main/',
+        id: 'helm-charts',
+        path: 'docs-helm-charts',
+        routeBasePath: 'helm-charts',
+        sidebarPath: './sidebars-helm-charts.ts',
+        editUrl: 'https://github.com/kube-zen/docs/tree/main/',
       },
     ],
   ],
@@ -109,17 +93,10 @@ const config: Config = {
         },
         {
           type: 'docSidebar',
-          sidebarId: 'zenGcSidebar',
+          sidebarId: 'helmChartsSidebar',
           position: 'left',
-          label: 'zen-gc',
-          docsPluginId: 'zen-gc',
-        },
-        {
-          type: 'docSidebar',
-          sidebarId: 'zenBrainSidebar',
-          position: 'left',
-          label: 'zen-brain',
-          docsPluginId: 'zen-brain',
+          label: 'Helm Charts',
+          docsPluginId: 'helm-charts',
         },
         {
           href: 'https://zen-mesh.io',
@@ -127,7 +104,7 @@ const config: Config = {
           position: 'right',
         },
         {
-          href: 'https://github.com/zenmesh',
+          href: 'https://github.com/kube-zen',
           label: 'GitHub',
           position: 'right',
         },
@@ -154,24 +131,15 @@ const config: Config = {
           ],
         },
         {
-          title: 'Open Source',
+          title: 'Resources',
           items: [
             {
               label: 'Helm Charts',
-              href: 'https://github.com/zenmesh/helm-charts',
+              href: 'https://github.com/kube-zen/helm-charts',
             },
-            {
-              label: 'zen-gc',
-              href: 'https://github.com/zenmesh/zen-gc',
-            },
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
             {
               label: 'GitHub',
-              href: 'https://github.com/zenmesh',
+              href: 'https://github.com/kube-zen',
             },
             {
               label: 'Discord',
@@ -180,18 +148,12 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Zen Mesh Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Zen Mesh Inc.`,
     },
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
       additionalLanguages: ['bash', 'go', 'yaml', 'json', 'hcl'],
-    },
-    algolia: {
-      appId: 'YOUR_APP_ID',
-      apiKey: 'YOUR_SEARCH_API_KEY',
-      indexName: 'zen-mesh-docs',
-      contextualSearch: true,
     },
   } satisfies Preset.ThemeConfig,
 };
