@@ -12,17 +12,16 @@ Zen Mesh provides built-in Prometheus metrics and Grafana dashboards for observa
 
 | Metric | Type | Description |
 |--------|------|-------------|
-| `zen_bridge_events_total` | Counter | Total events routed through the bridge |
-| `zen_bridge_delivery_duration_seconds` | Histogram | End-to-end delivery latency |
-| `zen_bridge_deliveries_failed_total` | Counter | Failed delivery attempts |
-| `zen_bridge_dlq_size` | Gauge | Current dead letter queue depth |
+| `zen_ingester_events_total` | Counter | Total events received |
+| `zen_ingester_delivery_duration_seconds` | Histogram | End-to-end delivery latency |
+| `zen_ingester_deliveries_failed_total` | Counter | Failed delivery attempts |
+| `zen_ingester_dlq_size` | Gauge | Current dead letter queue depth |
 
 ### Edge Plane Metrics
 
 | Metric | Type | Description |
 |--------|------|-------------|
-| `zen_agent_enrollment_status` | Gauge | Agent enrollment state (0=unenrolled, 1=enrolled) |
-| `zen_egress_connections_active` | Gauge | Active mTLS connections to bridge |
+| `zen_egress_connections_active` | Gauge | Active mTLS connections |
 | `zen_egress_events_delivered_total` | Counter | Events delivered to local targets |
 
 ### Infrastructure Metrics

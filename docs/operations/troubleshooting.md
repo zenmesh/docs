@@ -38,7 +38,7 @@ kubectl logs -n zen-mesh -l app=zen-agent --tail=50
 ### Intermittent Failures
 
 - **Target service overloaded**: Check target service metrics
-- **Backpressure active**: Zen Mesh is throttling to protect the target. Check `zen_bridge_backpressure_active` metric
+- **Backpressure active**: Zen Mesh is throttling to protect the target. Check `zen_ingester_backpressure_active` metric
 - **mTLS certificate issue**: Check zen-lock is running and certificates are valid
 
 ## Enrollment Issues
@@ -62,7 +62,7 @@ kubectl get certificates -n zen-mesh
 
 ### High delivery latency
 
-1. Check bridge metrics: `zen_bridge_delivery_duration_seconds`
+1. Check ingester metrics: `zen_ingester_delivery_duration_seconds`
 2. Check egress connection pool: `zen_egress_connections_active`
 3. Check target service response times
 

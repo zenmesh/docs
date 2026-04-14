@@ -27,7 +27,7 @@ This is the simplest mode. The ingester receives the event and forwards it to yo
 
 ```mermaid
 graph LR
-    SRC[Source] --> ING[zen-ingester] --> BRI[zen-bridge] --> EGR[zen-egress] -- "mTLS" --> TGT[Your Service]
+    SRC[Source] --> ING[zen-ingester] --> EGR[zen-egress] -- "mTLS" --> TGT[Your Service]
 ```
 
 Use when: Your service is private but reachable from the Zen Mesh data plane via mTLS.
@@ -35,16 +35,16 @@ Use when: Your service is private but reachable from the Zen Mesh data plane via
 | Property | Value |
 |----------|-------|
 | **Complexity** | Medium |
-| **Security** | mTLS between bridge and egress, mTLS between egress and target |
+| **Security** | mTLS between ingester and egress, mTLS between egress and target |
 | **Network** | Egress must be able to reach your cluster (or be in the same VPC) |
 
-The egress proxy runs in your cluster and establishes an mTLS connection to the bridge. Events are routed through this encrypted tunnel to your private services.
+The egress proxy runs in your cluster and establishes an mTLS connection. Events are routed through this encrypted tunnel to your private services.
 
 ## Mode C — Egress Relay
 
 ```mermaid
 graph LR
-    SRC[Source] --> ING[zen-ingester] --> BRI[zen-bridge] --> EGR[zen-egress] -- "relay" --> TGT[Your Service]
+    SRC[Source] --> ING[zen-ingester] --> EGR[zen-egress] -- "relay" --> TGT[Your Service]
 ```
 
 Use when: Your service is behind NAT or a firewall with no inbound access.

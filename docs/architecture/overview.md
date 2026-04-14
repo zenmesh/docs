@@ -19,16 +19,13 @@ graph TD
     subgraph DP["Data Plane"]
         direction LR
         ING["zen-ingester"]
-        BRI["zen-bridge"]
-        EGR["zen-egress"]
-        ING --> BRI --> EGR
+        AGT["zen-agent"]
+        LCK["zen-lock"]
     end
 
     subgraph EP["Edge Plane"]
         direction LR
-        AGT["zen-agent"]
-        LCK["zen-lock"]
-        ADP["Adapters"]
+        EGR["zen-egress"]
     end
 
     CP -- "enrollment & config only" --> DP
@@ -64,11 +61,10 @@ Sensitive material (enrollment credentials, HMAC keys, mTLS certificates) is man
 | **zen-back** | Control | API server, tenant management, RBAC |
 | **zen-bff** | Control | Backend-for-frontend, session management |
 | **zen-front** | Control | React UI, dashboard |
-| **zen-bridge** | Data | Event routing, retry logic, backpressure |
-| **zen-ingester** | Data/Edge | Public HTTP intake, CloudEvents format |
-| **zen-egress** | Data/Edge | Event dispatch to private targets via mTLS |
-| **zen-agent** | Edge | Cluster enrollment, heartbeat, config sync |
-| **zen-lock** | Edge | Zero-knowledge secret management |
+| **zen-ingester** | Data | Public HTTP intake, CloudEvents format |
+| **zen-agent** | Data | Cluster enrollment, heartbeat, config sync |
+| **zen-lock** | Data | Zero-knowledge secret management |
+| **zen-egress** | Edge | Event dispatch to private targets via mTLS |
 
 ## See Also
 

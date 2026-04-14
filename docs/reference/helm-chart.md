@@ -50,7 +50,7 @@ helm upgrade --install zen-agent zenmesh/zen-agent \
 | `egress.image.repository` | `zenmesh/zen-egress` | Container image |
 | `egress.image.tag` | Chart appVersion | Container image tag |
 | `egress.replicas` | `1` | Number of egress replicas |
-| `egress.tls.enabled` | `true` | Enable mTLS to bridge |
+| `egress.tls.enabled` | `true` | Enable mTLS for delivery |
 
 ### zen-lock
 

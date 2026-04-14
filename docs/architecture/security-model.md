@@ -23,7 +23,7 @@ No manual API keys, no shared secrets, no IP allowlists. Identity is cryptograph
 | Layer | Protocol | Purpose |
 |-------|----------|---------|
 | Source → Ingester | TLS 1.3 | Encrypt events in transit from webhook sources |
-| Bridge → Egress | mTLS | Mutual authentication between data plane and edge |
+| Ingester → Egress | mTLS | Mutual authentication between data plane and edge |
 | Egress → Target | mTLS | Secure delivery to your private services |
 | Control Plane ↔ Agent | mTLS | Enrollment and config sync |
 | Secrets at Rest | age encryption | Zero-knowledge storage via zen-lock |

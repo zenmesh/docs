@@ -70,7 +70,7 @@ helm upgrade --install zen-agent zenmesh/zen-agent \
 | `egress.image.repository` | string | `zenmesh/zen-egress` | Container image |
 | `egress.image.tag` | string | Chart appVersion | Image tag |
 | `egress.replicas` | int | `1` | Number of replicas |
-| `egress.tls.enabled` | bool | `true` | Enable mTLS to data plane bridge |
+| `egress.tls.enabled` | bool | `true` | Enable mTLS for delivery |
 | `egress.hmac.enforce` | bool | `true` | Enforce HMAC validation on delivered events |
 | `egress.resources.requests.cpu` | string | `100m` | CPU request |
 | `egress.resources.requests.memory` | string | `128Mi` | Memory request |

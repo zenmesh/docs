@@ -21,8 +21,7 @@ Zen Mesh components are configured via Helm values, environment variables, and C
 
 | Variable | Default | Description |
 |----------|---------|-------------|
-| `ZEN_BRIDGE_ENDPOINT` | — | Bridge address for mTLS connection |
-| `ZEN_TLS_ENABLED` | `true` | Enable mTLS to bridge |
+| `ZEN_TLS_ENABLED` | `true` | Enable mTLS for delivery |
 | `ZEN_HMAC_ENFORCE` | `true` | Enforce HMAC validation on delivered events |
 
 ### Back (Control Plane)

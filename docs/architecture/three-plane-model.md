@@ -31,8 +31,8 @@ Components: `zen-back`, `zen-bff`, `zen-front`
 The data plane is the runtime delivery engine:
 
 1. **zen-ingester** receives events from external sources (Stripe, GitHub, etc.)
-2. **zen-bridge** routes events to the correct cluster and destination
-3. **zen-egress** delivers events to services in your private cluster via mTLS
+2. **zen-agent** manages enrollment, heartbeats, and configuration sync
+3. **zen-lock** manages secrets with zero-knowledge encryption
 
 The data plane operates independently of the control plane. If the SaaS dashboard goes down, already-configured delivery continues uninterrupted.
 
@@ -40,9 +40,7 @@ The data plane operates independently of the control plane. If the SaaS dashboar
 
 The edge plane runs **in your cluster**:
 
-- **zen-agent** handles enrollment, heartbeats, and configuration sync
-- **zen-lock** manages secrets with zero-knowledge encryption
-- **Adapters** (Splunk, PagerDuty, etc.) receive delivered events
+- **zen-egress** delivers events to services in your private cluster via mTLS
 
 The edge plane is the only component that has direct access to your private services. Everything else stays outside your cluster boundary.
 
