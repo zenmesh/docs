@@ -42,6 +42,8 @@ const config: Config = {
     ],
   ],
 
+  themes: ['@docusaurus/theme-mermaid'],
+
   plugins: [
     [
       '@docusaurus/plugin-content-docs',

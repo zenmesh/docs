@@ -8,12 +8,19 @@ Cluster enrollment is the process of registering your Kubernetes cluster with th
 
 ## How Enrollment Works
 
-```
-1. Dashboard → Generate enrollment bundle (age-encrypted credentials)
-2. kubectl apply → Bundle applied to your cluster as a Secret
-3. zen-agent → Reads bundle, proves identity to control plane
-4. Control plane → Issues SPIFFE identity, config sync channel
-5. zen-agent → Connects to data plane, starts receiving delivery targets
+```mermaid
+sequenceDiagram
+    participant D as Dashboard
+    participant K as kubectl apply
+    participant A as zen-agent
+    participant CP as Control Plane
+    participant DP as Data Plane
+
+    D->>K: 1. Generate enrollment bundle (age-encrypted)
+    K->>A: 2. Bundle applied as Secret
+    A->>CP: 3. Read bundle, prove identity
+    CP->>A: 4. Issue SPIFFE identity, config sync
+    A->>DP: 5. Connect, start receiving delivery targets
 ```
 
 The enrollment bundle is single-use and time-limited (typically 30 minutes). If it expires, generate a new one from the dashboard.

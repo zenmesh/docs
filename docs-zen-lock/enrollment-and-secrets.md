@@ -22,35 +22,38 @@ The bundle is encrypted with an age public key. Only the corresponding private k
 
 ## Step-by-Step Flow
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│ 1. Dashboard: Generate Bundle                              │
-│    Control plane creates bundle, encrypts with age           │
-└──────────────────────────┬──────────────────────────────────┘
-                           │
-                           ▼
-┌─────────────────────────────────────────────────────────────┐
-│ 2. kubectl apply: Store in Cluster                         │
-│    Bundle stored as a Kubernetes Secret (ciphertext only)    │
-│    zen-lock CRD references the Secret                        │
-│    ⚠️ etcd and API server only see encrypted data           │
-└──────────────────────────┬──────────────────────────────────┘
-                           │
-                           ▼
-┌─────────────────────────────────────────────────────────────┐
-│ 3. zen-agent: Read and Decrypt                             │
-│    Agent reads the enrollment Secret                         │
-│    Presents credentials to control plane                     │
-│    Control plane verifies and issues SPIFFE identity         │
-└──────────────────────────┬──────────────────────────────────┘
-                           │
-                           ▼
-┌─────────────────────────────────────────────────────────────┐
-│ 4. zen-lock: Ongoing Secret Management                     │
-│    mTLS certificates injected ephemerally into egress pods   │
-│    HMAC keys rotated automatically                           │
-│    All secrets stored as ciphertext CRDs                      │
-└─────────────────────────────────────────────────────────────┘
+```mermaid
+sequenceDiagram
+    participant D as Dashboard
+    participant K as kubectl apply
+    participant A as zen-agent
+    participant L as zen-lock
+
+    rect rgb(30, 30, 50)
+        Note over D: 1. Dashboard: Generate Bundle
+        D->>D: Control plane creates bundle, encrypts with age
+    end
+
+    rect rgb(30, 30, 50)
+        Note over K: 2. kubectl apply: Store in Cluster
+        K->>K: Bundle stored as K8s Secret (ciphertext only)
+        Note over K: zen-lock CRD references the Secret
+        Note over K: etcd and API server only see encrypted data
+    end
+
+    rect rgb(30, 30, 50)
+        Note over A: 3. zen-agent: Read and Decrypt
+        A->>A: Read enrollment Secret
+        A->>D: Present credentials to control plane
+        D->>A: Verify and issue SPIFFE identity
+    end
+
+    rect rgb(30, 30, 50)
+        Note over L: 4. zen-lock: Ongoing Secret Management
+        L->>L: mTLS certificates injected ephemerally into egress pods
+        L->>L: HMAC keys rotated automatically
+        Note over L: All secrets stored as ciphertext CRDs
+    end
 ```
 
 ## What Gets Stored Where

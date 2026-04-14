@@ -48,10 +48,11 @@ The edge plane is the only component that has direct access to your private serv
 
 ## Independence Guarantees
 
-```
-Control Plane down?  → Delivery continues (data + edge planes unaffected)
-Data Plane down?     → Events queue (control plane still accepts config)
-Edge Plane down?     → Only one cluster affected (others continue)
+```mermaid
+flowchart TD
+    CP["Control Plane down?"] -->|"Yes — delivery continues"| DP["Data + Edge planes unaffected"]
+    DP2["Data Plane down?"] -->|"Yes — events queue"| CP2["Control plane still accepts config"]
+    EP["Edge Plane down?"] -->|"Yes — one cluster affected"| OTH["Other clusters continue"]
 ```
 
 This is fundamentally different from platforms where the SaaS service is the delivery engine. In Zen Mesh, the SaaS is the **control panel**, not the **delivery engine**.

@@ -12,8 +12,9 @@ Zen Mesh connects external services (Stripe, GitHub, Slack, Shopify) to your pri
 
 ## What is Zen Mesh?
 
-```
-Stripe → zen-ingester (public edge) → zen-egress (in your cluster) → Your Service
+```mermaid
+graph LR
+    SRC[Stripe] --> ING[zen-ingester<br/>public edge] --> EGR[zen-egress<br/>in your cluster] --> SVC[Your Service]
 ```
 
 Your cluster never receives inbound connections. All traffic flows outward from your infrastructure to the ingester, which then delivers events to your services.

@@ -8,8 +8,9 @@ Zen Mesh supports three delivery modes for different network topologies. Choose 
 
 ## Mode A — Direct Public Target
 
-```
-Source → zen-ingester → Your Service (public URL)
+```mermaid
+graph LR
+    SRC[Source] --> ING[zen-ingester] --> TGT[Your Service]
 ```
 
 Use when: Your service has a public endpoint (even behind a load balancer).
@@ -24,8 +25,9 @@ This is the simplest mode. The ingester receives the event and forwards it to yo
 
 ## Mode B — Egress Direct
 
-```
-Source → zen-ingester → zen-bridge → zen-egress (mTLS) → Your Service
+```mermaid
+graph LR
+    SRC[Source] --> ING[zen-ingester] --> BRI[zen-bridge] --> EGR[zen-egress] -- "mTLS" --> TGT[Your Service]
 ```
 
 Use when: Your service is private but reachable from the Zen Mesh data plane via mTLS.
@@ -40,8 +42,9 @@ The egress proxy runs in your cluster and establishes an mTLS connection to the 
 
 ## Mode C — Egress Relay
 
-```
-Source → zen-ingester → zen-bridge → zen-egress (relay) → Your Service
+```mermaid
+graph LR
+    SRC[Source] --> ING[zen-ingester] --> BRI[zen-bridge] --> EGR[zen-egress] -- "relay" --> TGT[Your Service]
 ```
 
 Use when: Your service is behind NAT or a firewall with no inbound access.
@@ -56,13 +59,14 @@ The egress uses relay mode to connect through NAT/firewalls. Your cluster initia
 
 ## Choosing a Mode
 
-```
-Is your target publicly reachable?
-├── Yes → Mode A (simplest)
-└── No
-    ├── Is your cluster reachable from Zen Mesh? (e.g., same VPC, VPN, WireGuard)
-    │   ├── Yes → Mode B (mTLS direct)
-    │   └── No → Mode C (relay, outbound-only)
+```mermaid
+flowchart TD
+    Q1{"Publicly reachable?"}
+    Q2{"Reachable from Zen Mesh?\n(same VPC, VPN, WireGuard)"}
+    Q1 -- Yes --> A["Mode A — Direct\n(simplest)"]
+    Q1 -- No --> Q2
+    Q2 -- Yes --> B["Mode B — mTLS Direct"]
+    Q2 -- No --> C["Mode C — Relay\n(outbound-only)"]
 ```
 
 ## See Also

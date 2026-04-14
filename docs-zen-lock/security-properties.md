@@ -51,14 +51,17 @@ A cluster administrator with `kubectl` access can:
 
 zen-lock is one layer of a defense-in-depth model:
 
-```
-Layer 1: Network isolation — outbound-only, no inbound ports
-Layer 2: mTLS — all internal paths (bridge↔egress, egress↔target)
-Layer 3: HMAC — replay protection, tamper detection on events
-Layer 4: SPIFFE/SPIRE — workload identity, automatic cert rotation
-Layer 5: zen-lock — zero-knowledge secret storage
-Layer 6: RBAC — 4-level role-based access control
-Layer 7: Audit — tamper-detection via hash chains
+```mermaid
+graph BT
+    L1["Layer 1: Network isolation — outbound-only"]
+    L2["Layer 2: mTLS — all internal paths"]
+    L3["Layer 3: HMAC — replay & tamper protection"]
+    L4["Layer 4: SPIFFE/SPIRE — workload identity"]
+    L5["Layer 5: zen-lock — zero-knowledge secret storage"]
+    L6["Layer 6: RBAC — role-based access control"]
+    L7["Layer 7: Audit — tamper-detection via hash chains"]
+
+    L1 --> L2 --> L3 --> L4 --> L5 --> L6 --> L7
 ```
 
 No single layer is sufficient on its own. zen-lock specifically addresses the **storage** threat: ensuring that persistent data (etcd, backups, Git) never contains plaintext secrets.

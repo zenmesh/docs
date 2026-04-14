@@ -8,26 +8,35 @@ Zen Mesh uses a **three-plane architecture** that separates control from runtime
 
 ## The Three Planes
 
-```
-┌──────────────────────────────────────────────────────┐
-│              CONTROL PLANE (SaaS)                     │
-│  UI · API · Policy · Certificate Lifecycle · Audit    │
-│          ⚠️ Never in runtime event path               │
-└──────────────────────┬───────────────────────────────┘
-                       │ enrollment & config only
-                       ▼
-┌──────────────────────────────────────────────────────┐
-│                  DATA PLANE                           │
-│         zen-ingester → zen-bridge → zen-egress       │
-│            Public intake, routing, delivery           │
-└──────────────────────┬───────────────────────────────┘
-                       │
-                       ▼
-┌──────────────────────────────────────────────────────┐
-│                  EDGE PLANE                           │
-│          zen-agent · zen-lock · adapters              │
-│       Customer-boundary delivery, outbound-only       │
-└──────────────────────────────────────────────────────┘
+```mermaid
+graph TD
+    subgraph CP["Control Plane (SaaS)"]
+        direction LR
+        UI["UI · API · Policy"]
+        CERT["Certificate Lifecycle · Audit"]
+    end
+
+    subgraph DP["Data Plane"]
+        direction LR
+        ING["zen-ingester"]
+        BRI["zen-bridge"]
+        EGR["zen-egress"]
+        ING --> BRI --> EGR
+    end
+
+    subgraph EP["Edge Plane"]
+        direction LR
+        AGT["zen-agent"]
+        LCK["zen-lock"]
+        ADP["Adapters"]
+    end
+
+    CP -- "enrollment & config only" --> DP
+    DP --> EP
+
+    style CP fill:#1a1a2e,stroke:#25c2a0,stroke-width:2px,color:#fff
+    style DP fill:#1a1a2e,stroke:#25c2a0,stroke-width:2px,color:#fff
+    style EP fill:#1a1a2e,stroke:#25c2a0,stroke-width:2px,color:#fff
 ```
 
 ## Design Principles
