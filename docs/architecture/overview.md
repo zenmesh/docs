@@ -32,13 +32,10 @@ Sensitive material (enrollment credentials, HMAC keys, mTLS certificates) is man
 
 | Component | Plane | Purpose |
 |-----------|-------|---------|
-| **zen-back** | Control | API server, tenant management, RBAC |
-| **zen-bff** | Control | Backend-for-frontend, session management |
-| **zen-front** | Control | React UI, dashboard |
 | **zen-ingester** | Data | Public HTTP intake, CloudEvents format |
+| **zen-agent** | Data / Edge | Cluster enrollment, heartbeat, config sync |
+| **zen-lock** | Data / Edge | Zero-knowledge secret management |
 | **zen-egress** | Edge | Event dispatch to private targets via mTLS |
-| **zen-agent** | Edge | Cluster enrollment, heartbeat, config sync |
-| **zen-lock** | Edge | Zero-knowledge secret management |
 
 ## See Also
 
