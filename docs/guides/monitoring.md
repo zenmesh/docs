@@ -21,6 +21,7 @@ Zen Mesh provides built-in Prometheus metrics and Grafana dashboards for observa
 
 | Metric | Type | Description |
 |--------|------|-------------|
+| `zen_agent_enrollment_status` | Gauge | Agent enrollment state (0=unenrolled, 1=enrolled) |
 | `zen_egress_connections_active` | Gauge | Active mTLS connections |
 | `zen_egress_events_delivered_total` | Counter | Events delivered to local targets |
 
