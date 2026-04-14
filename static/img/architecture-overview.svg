@@ -40,6 +40,10 @@
   <line x1="260" y1="110" x2="190" y2="225" stroke="#25c2a0" stroke-width="2" marker-end="url(#arrow)"/>
   <text x="205" y="168" class="label" text-anchor="middle" transform="rotate(-15, 205, 168)">config &amp; enrollment</text>
 
+  <!-- Firewall boundary -->
+  <line x1="378" y1="240" x2="378" y2="340" stroke="#f0883e" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="378" y="255" fill="#f0883e" font-size="11" font-weight="600" text-anchor="middle">firewall</text>
+
   <!-- Data → Edge -->
   <line x1="310" y1="300" x2="445" y2="300" stroke="#25c2a0" stroke-width="2" marker-end="url(#arrow)"/>
   <text x="378" y="290" class="label" text-anchor="middle">event delivery</text>
