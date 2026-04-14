@@ -27,8 +27,9 @@ graph TD
         LCK["zen-lock"]
     end
 
-    CP -- "enrollment & config" --> EP
-    DP -- "event delivery" --> EP
+    CP -->|"config & enrollment"| EP
+    CP -->|"configuration"| DP
+    DP -->|"event delivery"| EP
 
     style CP fill:#1a1a2e,stroke:#25c2a0,stroke-width:2px,color:#fff
     style DP fill:#1a1a2e,stroke:#25c2a0,stroke-width:2px,color:#fff
