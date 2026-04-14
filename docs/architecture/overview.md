@@ -8,34 +8,7 @@ Zen Mesh uses a **three-plane architecture** that separates control from runtime
 
 ## The Three Planes
 
-```mermaid
-flowchart TD
-    subgraph CP["Control Plane (SaaS)"]
-        UI["UI · API · Policy"]
-        CERT["Certificate Lifecycle · Audit"]
-    end
-
-    subgraph runtime[" "]
-        direction LR
-        subgraph DP["Data Plane"]
-            ING["zen-ingester"]
-        end
-        subgraph EP["Edge Plane"]
-            EGR["zen-egress"]
-            AGT["zen-agent"]
-            LCK["zen-lock"]
-        end
-    end
-
-    CP -->|"config & enrollment"| EP
-    CP -->|"configuration"| DP
-    DP -->|"event delivery"| EP
-
-    style CP fill:#1a1a2e,stroke:#25c2a0,stroke-width:2px,color:#fff
-    style DP fill:#1a1a2e,stroke:#25c2a0,stroke-width:2px,color:#fff
-    style EP fill:#1a1a2e,stroke:#25c2a0,stroke-width:2px,color:#fff
-    style runtime fill:none,stroke:none
-```
+![Three-Plane Architecture](/img/architecture-overview.svg)
 
 ## Design Principles
 

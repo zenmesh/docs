@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 380" font-family="system-ui, -apple-system, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 7" refX="10" refY="3.5" markerWidth="10" markerHeight="7" orient="auto-start-reverse">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#25c2a0"/>
+    </marker>
+    <style>
+      .plane { fill: #1a1a2e; stroke: #25c2a0; stroke-width: 2; rx: 10; }
+      .plane-title { fill: #25c2a0; font-size: 13px; font-weight: 600; letter-spacing: 0.5px; }
+      .comp { fill: #ffffff; font-size: 13px; font-weight: 500; }
+      .label { fill: #8b949e; font-size: 11px; font-style: italic; }
+    </style>
+  </defs>
+
+  <!-- Control Plane -->
+  <rect x="140" y="20" width="480" height="90" class="plane"/>
+  <text x="180" y="55" class="plane-title">Control Plane (SaaS)</text>
+  <text x="210" y="82" class="comp">UI · API · Policy</text>
+  <text x="410" y="82" class="comp">Certificate Lifecycle · Audit</text>
+
+  <!-- Data Plane -->
+  <rect x="30" y="230" width="280" height="120" class="plane"/>
+  <text x="60" y="262" class="plane-title">Data Plane</text>
+  <text x="135" y="302" class="comp">zen-ingester</text>
+
+  <!-- Edge Plane -->
+  <rect x="450" y="230" width="280" height="120" class="plane"/>
+  <text x="480" y="262" class="plane-title">Edge Plane</text>
+  <text x="490" y="296" class="comp">zen-egress</text>
+  <text x="490" y="318" class="comp">zen-agent</text>
+  <text x="620" y="296" class="comp">zen-lock</text>
+
+  <!-- Arrows -->
+  <!-- Control → Edge (direct) -->
+  <line x1="500" y1="110" x2="560" y2="225" stroke="#25c2a0" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="545" y="168" class="label" text-anchor="middle" transform="rotate(15, 545, 168)">config &amp; enrollment</text>
+
+  <!-- Control → Data -->
+  <line x1="260" y1="110" x2="190" y2="225" stroke="#25c2a0" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="205" y="168" class="label" text-anchor="middle" transform="rotate(-15, 205, 168)">configuration</text>
+
+  <!-- Data → Edge -->
+  <line x1="310" y1="300" x2="445" y2="300" stroke="#25c2a0" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="378" y="290" class="label" text-anchor="middle">event delivery</text>
+</svg>
