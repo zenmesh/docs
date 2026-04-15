@@ -22,8 +22,8 @@ Your cluster never receives inbound connections. All traffic flows outward from 
 ## Key Concepts
 
 - **Control Plane** — The SaaS UI where you configure destinations, manage clusters, and monitor delivery
-- **Data Plane** — The runtime delivery path: ingester → agent → lock
-- **Edge Plane** — The agent running in your cluster, handling enrollment and local delivery
+- **Data Plane** — The runtime event intake: ingester receives events from external sources
+- **Edge Plane** — Runs in your cluster: egress delivers to your services, agent handles enrollment, lock protects secrets
 - **Adapters** — Connectors for external services (Splunk, PagerDuty, Grafana, Teams, etc.)
 
 ## Quick Links

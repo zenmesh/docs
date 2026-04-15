@@ -40,7 +40,7 @@ Every event delivered through the data plane includes an HMAC-SHA256 signature. 
 
 Zen Mesh uses SPIFFE/SPIRE for workload identity:
 
-- Every component gets a SPIFFE ID (e.g., `spiffe://zen-mesh.io/ingester/us-east-1`)
+- Every component gets a SPIFFE ID
 - mTLS certificates are automatically rotated
 - Access policies are expressed in terms of SPIFFE identities
 
@@ -55,7 +55,7 @@ Four levels of role-based access control:
 | **Editor** | Create and modify destinations, view deliveries |
 | **Viewer** | Read-only access to dashboards and delivery logs |
 
-SSO integration with Google OAuth, Okta, and Azure AD.
+SSO integration available for enterprise plans.
 
 ## Zero-Knowledge Secrets
 

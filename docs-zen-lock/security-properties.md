@@ -74,4 +74,3 @@ No single layer is sufficient on its own. zen-lock specifically addresses the **
 | **SOC2 CC6.3** (data encryption) | age encryption at rest |
 | **PCI DSS 3.4** (render PAN unreadable) | Sensitive fields encrypted before storage |
 | **HIPAA** (ePHI protection) | Encryption at rest with access controls |
-| **SR&ED evidence** | Cryptographic implementation is R&D-eligible work |

@@ -4,7 +4,7 @@ sidebar_label: API
 
 # API Reference
 
-The Zen Mesh BFF (Backend-for-Frontend) provides a REST API for the dashboard and programmatic access.
+The Zen Mesh API provides a REST API for the dashboard and programmatic access.
 
 ## Base URL
 
