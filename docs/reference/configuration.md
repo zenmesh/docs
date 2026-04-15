@@ -24,15 +24,6 @@ Zen Mesh components are configured via Helm values, environment variables, and C
 | `ZEN_TLS_ENABLED` | `true` | Enable mTLS for delivery |
 | `ZEN_HMAC_ENFORCE` | `true` | Enforce HMAC validation on delivered events |
 
-### Back (Control Plane)
-
-| Variable | Default | Description |
-|----------|---------|-------------|
-| `DATABASE_URL` | — | CockroachDB connection string |
-| `REDIS_URL` | — | Redis connection string |
-| `ENVIRONMENT` | `sandbox` | `sandbox`, `staging`, `production` |
-| `TLS_ENABLED` | `false` | Require TLS for all connections (must be `true` in production) |
-
 ## CRDs
 
 ### DeliveryFlow
@@ -50,14 +41,3 @@ Configuration for delivery endpoints (timeouts, retries, headers).
 ### Ingester
 
 An event intake point with its routing rules.
-
-## Feature Flags
-
-Feature flags are controlled via the control plane configuration:
-
-| Flag | Description |
-|------|-------------|
-| `delivery.mode_c` | Enable Mode C (relay) delivery |
-| `enrollment.bundle_ttl` | Enrollment bundle time-to-live (minutes) |
-| `delivery.retry_max` | Maximum delivery retry attempts |
-| `delivery.backpressure_threshold` | Events queued before backpressure activates |

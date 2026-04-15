@@ -41,8 +41,8 @@ helm history zen-agent --namespace zen-mesh
 
 ## Version Compatibility
 
-| zen-agent | zen-back (Control Plane) | Notes |
-|-----------|--------------------------|-------|
+| zen-agent | Control Plane | Notes |
+|-----------|---------------|-------|
 | 0.3.x | 0.3.x | Current |
 | 0.2.x | 0.2.x | Supported |
 | < 0.2.x | — | Upgrade to 0.2.x first |

@@ -24,8 +24,6 @@ The control plane is what you see in the dashboard: create clusters, configure d
 
 **It never sees your event payloads.** The control plane handles enrollment and configuration only. Once a cluster is enrolled and destinations are configured, events flow directly through the data plane.
 
-Components: `zen-back`, `zen-bff`, `zen-front`
-
 ## Data Plane
 
 The data plane is the runtime delivery engine:

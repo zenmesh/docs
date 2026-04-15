@@ -10,7 +10,7 @@ Zen Mesh state is split between the control plane (SaaS-managed) and your cluste
 
 ### Control Plane (Managed by Zen Mesh)
 
-Tenant configuration, API keys, destination settings, and delivery history are stored in CockroachDB and automatically backed up. No action needed on your side.
+Tenant configuration, API keys, destination settings, and delivery history are managed by Zen Mesh and automatically backed up. No action needed on your side.
 
 ### Edge Plane (Your Responsibility)
 
