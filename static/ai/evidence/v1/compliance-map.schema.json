@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "compliance-map.schema.json",
+  "title": "ComplianceEvidenceMap",
+  "type": "object",
+  "required": ["@context", "generated_at", "entries"],
+  "properties": {
+    "@context": {"type": "string"},
+    "generated_at": {"type": "string", "format": "date-time"},
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["compliance_id", "framework", "control_id", "technical_feature", "relationship", "claim_status", "evidence_refs", "notes"],
+        "properties": {
+          "compliance_id": {"type": "string"},
+          "framework": {"type": "string"},
+          "control_id": {"type": "string"},
+          "control_title": {"type": "string"},
+          "technical_feature": {"type": "string"},
+          "security_property": {"type": "string"},
+          "relationship": {"type": "string", "enum": ["supports", "maps_to", "inherits", "not_applicable"]},
+          "claim_status": {"type": "string", "enum": ["maps_to", "supports", "inherits", "not_applicable"]},
+          "evidence_refs": {"type": "array", "items": {"type": "string"}},
+          "notes": {"type": "string"}
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

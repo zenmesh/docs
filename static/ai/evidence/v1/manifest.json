@@ -1,0 +1,481 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@type": [
+    "http://schema.org/DataSet",
+    "http://schema.org/SoftwareSourceCode"
+  ],
+  "schema_version": "1.0.0",
+  "generated_at": "2026-05-24T12:00:00Z",
+  "product": "Zen Mesh",
+  "repository": "https://github.com/zenmesh/zen-platform",
+  "evidence_scope": "local_mock_harness_only",
+  "proof_levels": {
+    "victory_locked": {
+      "label": "Victory Locked",
+      "description": "Proof has been verified, witnessed, and locked via a victory-lock artifact with commit-pinned, scenario-specific evidence.",
+      "confidence": "high"
+    },
+    "proven_local_mock": {
+      "label": "Proven (Local Mock)",
+      "description": "Proof passes in a local sandbox or mock harness. Not production-validated.",
+      "confidence": "medium"
+    },
+    "implementation_present": {
+      "label": "Implementation Present",
+      "description": "Code or contract implementation exists but has not been formally proven.",
+      "confidence": "low"
+    },
+    "planned": {
+      "label": "Planned",
+      "description": "Design or specification exists; implementation and proof are future work.",
+      "confidence": "none"
+    },
+    "blocked": {
+      "label": "Blocked",
+      "description": "Proof is blocked by a known dependency or gap.",
+      "confidence": "none"
+    },
+    "not_claimed": {
+      "label": "Not Claimed",
+      "description": "Explicitly not claimed \u2014 see non-claims for details.",
+      "confidence": "none"
+    }
+  },
+  "capabilities": [
+    {
+      "id": "runtime-at-least-once-delivery",
+      "proof_id": "RUNTIME-CONVERGENCE-PROOF-001",
+      "name": "At-Least-Once Delivery (Failure Injection)",
+      "description": "Scenario-specific proof: target_500 \u2192 retry (3 attempts) \u2192 succeed. At-least-once delivery with idempotency via failure injection. Local mock harness only.",
+      "proof_status": "victory_locked",
+      "victory_locked": true,
+      "evidence_refs": [
+        "zen-platform:docs/80-EVIDENCE/runtime/at_least_once_failure_injection_execution.json",
+        "zen-platform:docs/80-EVIDENCE/runtime/victory-locks/runtime_convergence_proof_001_victory_lock.json"
+      ],
+      "validator_refs": [
+        "zen-platform:docs/80-EVIDENCE/runtime/runtime_truth_read_model_minimum.json",
+        "zen-platform:scripts/validate-evidence-docs.mjs"
+      ],
+      "merkle_ref": "mock:runtime-proof-001-merkle-root",
+      "non_claims": [
+        "Not exactly-once delivery",
+        "Not zero-loss delivery",
+        "Not general at-least-once guarantee",
+        "Not production-ready"
+      ]
+    },
+    {
+      "id": "runtime-cp-outage-reconciliation",
+      "proof_id": "RUNTIME-CONVERGENCE-PROOF-002",
+      "name": "Control Plane Outage Reconciliation",
+      "description": "Scenario-specific proof: CP outage with cached policy \u2192 reconnect \u2192 converge. Conflict-free CP outage reconciliation in local mock.",
+      "proof_status": "victory_locked",
+      "victory_locked": true,
+      "evidence_refs": [
+        "zen-platform:docs/80-EVIDENCE/runtime/control_plane_outage_reconciliation_execution.json",
+        "zen-platform:docs/80-EVIDENCE/runtime/victory-locks/runtime_convergence_proof_002_victory_lock.json"
+      ],
+      "validator_refs": [
+        "zen-platform:docs/80-EVIDENCE/runtime/runtime_truth_read_model_minimum.json"
+      ],
+      "merkle_ref": "mock:runtime-proof-002-merkle-root",
+      "non_claims": [
+        "Not CP autonomy for all scenarios",
+        "Not zero-loss",
+        "Not exactly-once",
+        "Not production-ready"
+      ]
+    },
+    {
+      "id": "runtime-retry-exhaustion-dlq",
+      "proof_id": "RUNTIME-CONVERGENCE-PROOF-003",
+      "name": "Retry Exhaustion and DLQ Routing",
+      "description": "Scenario-specific proof: target always fails \u2192 retry exhaustion \u2192 DLQ terminal state. Local mock harness only.",
+      "proof_status": "victory_locked",
+      "victory_locked": true,
+      "evidence_refs": [
+        "zen-platform:docs/80-EVIDENCE/runtime/retry_exhaustion_dlq_execution.json",
+        "zen-platform:docs/80-EVIDENCE/runtime/victory-locks/runtime_convergence_proof_003_victory_lock.json"
+      ],
+      "validator_refs": [],
+      "merkle_ref": "mock:runtime-proof-003-merkle-root",
+      "non_claims": [
+        "Not exactly-once",
+        "Not zero-loss",
+        "Not general at-least-once guarantee",
+        "Not production-ready"
+      ]
+    },
+    {
+      "id": "runtime-duplicate-idempotency",
+      "proof_id": "RUNTIME-CONVERGENCE-PROOF-004",
+      "name": "Duplicate Detection and Idempotent Acceptance",
+      "description": "Scenario-specific proof: duplicate event \u2192 idempotency recognition \u2192 no extra delivery. Local mock harness only.",
+      "proof_status": "victory_locked",
+      "victory_locked": true,
+      "evidence_refs": [
+        "zen-platform:docs/80-EVIDENCE/runtime/duplicate_idempotency_execution.json",
+        "zen-platform:docs/80-EVIDENCE/runtime/victory-locks/runtime_convergence_proof_004_victory_lock.json"
+      ],
+      "validator_refs": [],
+      "merkle_ref": "mock:runtime-proof-004-merkle-root",
+      "non_claims": [
+        "Not exactly-once",
+        "Not replay prevention",
+        "Not auth/identity from idempotency",
+        "Not production-ready"
+      ]
+    },
+    {
+      "id": "runtime-conflict-reconciliation",
+      "proof_id": "RUNTIME-CONVERGENCE-PROOF-005",
+      "name": "Conflict Reconciliation",
+      "description": "Scenario-specific proof: CP state diverges during outage \u2192 conflict \u2192 resolution via remote_wins. Local mock harness only.",
+      "proof_status": "victory_locked",
+      "victory_locked": true,
+      "evidence_refs": [
+        "zen-platform:docs/80-EVIDENCE/runtime/conflict_reconciliation_execution.json",
+        "zen-platform:docs/80-EVIDENCE/runtime/victory-locks/runtime_convergence_proof_005_victory_lock.json"
+      ],
+      "validator_refs": [],
+      "merkle_ref": "mock:runtime-proof-005-merkle-root",
+      "non_claims": [
+        "Not all conflicts resolvable",
+        "Not zero-loss",
+        "Not exactly-once",
+        "Not production-ready",
+        "Not general CP autonomy"
+      ]
+    },
+    {
+      "id": "runtime-topology-drift-detection",
+      "proof_id": "RUNTIME-CONVERGENCE-PROOF-006",
+      "name": "Topology Drift Detection and Alignment",
+      "description": "Scenario-specific proof: topology version drift \u2192 detection \u2192 auto-correction. Local mock harness only.",
+      "proof_status": "victory_locked",
+      "victory_locked": true,
+      "evidence_refs": [
+        "zen-platform:docs/80-EVIDENCE/runtime/topology_drift_detection_execution.json",
+        "zen-platform:docs/80-EVIDENCE/runtime/victory-locks/runtime_convergence_proof_006_victory_lock.json"
+      ],
+      "validator_refs": [],
+      "merkle_ref": "mock:runtime-proof-006-merkle-root",
+      "non_claims": [
+        "Not all drift auto-corrected",
+        "Not zero-loss",
+        "Not exactly-once",
+        "Not production-ready"
+      ]
+    },
+    {
+      "id": "runtime-evidence-buffer-flush",
+      "proof_id": "RUNTIME-CONVERGENCE-PROOF-007",
+      "name": "Evidence Buffer Flush",
+      "description": "Scenario-specific proof: evidence buffered during outage \u2192 flush in order \u2192 complete. 5-item buffer, order preserved, no duplicates. Local mock harness only.",
+      "proof_status": "victory_locked",
+      "victory_locked": true,
+      "evidence_refs": [
+        "zen-platform:docs/80-EVIDENCE/runtime/evidence_buffer_flush_execution.json",
+        "zen-platform:docs/80-EVIDENCE/runtime/victory-locks/runtime_convergence_proof_007_victory_lock.json"
+      ],
+      "validator_refs": [],
+      "merkle_ref": "mock:runtime-proof-007-merkle-root",
+      "non_claims": [
+        "Not zero-loss for all buffer scenarios",
+        "Not exactly-once",
+        "Not production-ready",
+        "Not general flush guarantee"
+      ]
+    },
+    {
+      "id": "runtime-relay-path-convergence",
+      "proof_id": "RUNTIME-CONVERGENCE-PROOF-008",
+      "name": "Relay Path Convergence",
+      "description": "Scenario-specific proof: direct path unavailable \u2192 relay \u2192 target succeeded. Single relay path convergence in local mock.",
+      "proof_status": "victory_locked",
+      "victory_locked": true,
+      "evidence_refs": [
+        "zen-platform:docs/80-EVIDENCE/runtime/relay_path_convergence_execution.json",
+        "zen-platform:docs/80-EVIDENCE/runtime/victory-locks/runtime_convergence_proof_008_victory_lock.json"
+      ],
+      "validator_refs": [],
+      "merkle_ref": "mock:runtime-proof-008-merkle-root",
+      "non_claims": [
+        "Not general relay availability",
+        "Not zero-loss",
+        "Not exactly-once",
+        "Not production-ready"
+      ]
+    },
+    {
+      "id": "runtime-relay-failover-recovery",
+      "proof_id": "RUNTIME-CONVERGENCE-PROOF-009",
+      "name": "Relay Failover Recovery",
+      "description": "Scenario-specific proof: primary relay fails \u2192 secondary \u2192 target succeeded. Single relay failover in local mock.",
+      "proof_status": "victory_locked",
+      "victory_locked": true,
+      "evidence_refs": [
+        "zen-platform:docs/80-EVIDENCE/runtime/relay_failover_recovery_execution.json",
+        "zen-platform:docs/80-EVIDENCE/runtime/victory-locks/runtime_convergence_proof_009_victory_lock.json"
+      ],
+      "validator_refs": [],
+      "merkle_ref": "mock:runtime-proof-009-merkle-root",
+      "non_claims": [
+        "Not HA guarantee",
+        "Not global failover",
+        "Not zero-loss",
+        "Not exactly-once",
+        "Not production-ready"
+      ]
+    },
+    {
+      "id": "runtime-private-edge-path-convergence",
+      "proof_id": "RUNTIME-CONVERGENCE-PROOF-010",
+      "name": "Private-Edge Path Convergence",
+      "description": "Scenario-specific proof: edge \u2192 private_edge \u2192 mock data target succeeded. Single private-edge path in local mock.",
+      "proof_status": "victory_locked",
+      "victory_locked": true,
+      "evidence_refs": [
+        "zen-platform:docs/80-EVIDENCE/runtime/private_edge_path_convergence_execution.json",
+        "zen-platform:docs/80-EVIDENCE/runtime/victory-locks/runtime_convergence_proof_010_victory_lock.json"
+      ],
+      "validator_refs": [],
+      "merkle_ref": "mock:runtime-proof-010-merkle-root",
+      "non_claims": [
+        "Not private data plane general availability",
+        "Not customer-owned guarantee",
+        "Not zero-loss",
+        "Not exactly-once",
+        "Not production-ready"
+      ]
+    },
+    {
+      "id": "trust-spiffe-identity-control-plane",
+      "proof_id": "TRUST-PROOF-001",
+      "name": "SPIFFE Identity on Control-Plane",
+      "description": "SPIFFE SVID-based identity for control-plane paths. mTLS enforced where SPIFFE is deployed. Scoped to control-plane only \u2014 not applied to data-plane or every endpoint.",
+      "proof_status": "proven_local_mock",
+      "victory_locked": false,
+      "evidence_refs": [
+        "zen-platform:docs/80-EVIDENCE/runtime/runtime_truth_read_model_minimum.json"
+      ],
+      "validator_refs": [
+        "zen-platform:docs/10-ARCHITECTURE/SECURITY.md",
+        "zen-platform:docs/10-ARCHITECTURE/COMMITMENTS.md"
+      ],
+      "merkle_ref": "mock:trust-proof-001-merkle-root",
+      "non_claims": [
+        "Not SPIFFE everywhere",
+        "Not data-plane SPIFFE identity",
+        "Not multi-cluster SPIFFE federation",
+        "Not production-ready"
+      ]
+    },
+    {
+      "id": "trust-mtls-enforcement",
+      "proof_id": "TRUST-PROOF-002",
+      "name": "mTLS Enforcement",
+      "description": "Mutual TLS enforced on control-plane paths where SPIFFE identity is deployed. Local mock validation only.",
+      "proof_status": "proven_local_mock",
+      "victory_locked": false,
+      "evidence_refs": [
+        "zen-platform:docs/80-EVIDENCE/runtime/runtime_truth_read_model_minimum.json"
+      ],
+      "validator_refs": [
+        "zen-platform:docs/10-ARCHITECTURE/SECURITY.md"
+      ],
+      "merkle_ref": "mock:trust-proof-002-merkle-root",
+      "non_claims": [
+        "Not mTLS everywhere",
+        "Not data-plane mTLS",
+        "Not production-ready"
+      ]
+    },
+    {
+      "id": "trust-zero-trust-boundaries",
+      "proof_id": "TRUST-PROOF-003",
+      "name": "Zero-Trust Boundaries (Control-Plane Scoped)",
+      "description": "Zero-trust-oriented controls implemented on control-plane paths. Boundaries enforced via SPIFFE identity, mTLS, and policy-based authz. Data-plane expansion is planned.",
+      "proof_status": "proven_local_mock",
+      "victory_locked": false,
+      "evidence_refs": [
+        "zen-platform:docs/80-EVIDENCE/runtime/runtime_truth_read_model_minimum.json"
+      ],
+      "validator_refs": [
+        "zen-platform:docs/10-ARCHITECTURE/SECURITY.md",
+        "zen-platform:docs/10-ARCHITECTURE/COMMITMENTS.md"
+      ],
+      "merkle_ref": "mock:trust-proof-003-merkle-root",
+      "non_claims": [
+        "Not blanket zero-trust",
+        "Not data-plane zero-trust",
+        "Not production-ready"
+      ]
+    },
+    {
+      "id": "trust-evidence-integrity",
+      "proof_id": "TRUST-PROOF-004",
+      "name": "Evidence Integrity via Merkle Hash Chain",
+"description": "Merkle hash chain used for evidence integrity verification. Fixture-validated (4 files PASS). Merkle is evidence integrity only \u2014 it is not an access control function, access decision rule, or send confirmation.",
+      "proof_status": "proven_local_mock",
+      "victory_locked": false,
+      "evidence_refs": [
+        "zen-platform:docs/80-EVIDENCE/runtime/runtime_truth_read_model_minimum.json"
+      ],
+      "validator_refs": [
+        "zen-platform:scripts/merkle_evidence_verify.py"
+      ],
+      "merkle_ref": "mock:trust-proof-004-merkle-root",
+      "non_claims": [
+        "Not Merkle used for access control decisions",
+        "Not Merkle used for principal verification",
+        "Not Merkle used for send confirmation",
+        "Not Merkle used as encryption",
+        "Not Merkle used for workload naming"
+      ]
+    },
+    {
+      "id": "trust-secretless-operations",
+      "proof_id": "TRUST-PROOF-005",
+      "name": "Secretless Operations",
+      "description": "Architecture designed for secretless operation \u2014 no static secrets in config, SPIFFE for workload identity, short-lived credentials. Scope: control-plane paths.",
+      "proof_status": "implementation_present",
+      "victory_locked": false,
+      "evidence_refs": [],
+      "validator_refs": [
+        "zen-platform:docs/10-ARCHITECTURE/SECURITY.md"
+      ],
+      "merkle_ref": "mock:trust-proof-005-merkle-root",
+      "non_claims": [
+        "Not all paths secretless",
+        "Not audited for secret hygiene",
+        "Not production-ready"
+      ]
+    },
+    {
+      "id": "trust-policy-based-authorization",
+      "proof_id": "TRUST-PROOF-006",
+      "name": "Policy-Based Authorization",
+      "description": "Authorization decisions based on policy rules evaluated against SPIFFE identity. Contract-defined with conformance fixtures.",
+      "proof_status": "implementation_present",
+      "victory_locked": false,
+      "evidence_refs": [],
+      "validator_refs": [
+        "zen-platform:docs/10-ARCHITECTURE/COMMITMENTS.md"
+      ],
+      "merkle_ref": "mock:trust-proof-006-merkle-root",
+      "non_claims": [
+        "Not RBAC proven in failure scenarios",
+        "Not ABAC implemented",
+        "Not production-ready"
+      ]
+    },
+    {
+      "id": "trust-rotation-revocation",
+      "proof_id": "TRUST-PROOF-007",
+      "name": "Rotation and Revocation Support",
+      "description": "Architecture supports certificate rotation and SPIFFE identity revocation. Mechanisms defined in contract; runtime execution not yet proven.",
+      "proof_status": "planned",
+      "victory_locked": false,
+      "evidence_refs": [],
+      "validator_refs": [
+        "zen-platform:docs/10-ARCHITECTURE/COMMITMENTS.md"
+      ],
+      "merkle_ref": "mock:trust-proof-007-merkle-root",
+      "non_claims": [
+        "Not rotation implemented in runtime",
+        "Not revocation proven in failure scenarios",
+        "Not production-ready"
+      ]
+    },
+    {
+      "id": "trust-audit-trail",
+      "proof_id": "TRUST-PROOF-008",
+      "name": "Audit Trail",
+      "description": "Evidence buffer flush preserves ordered delivery evidence for audit. Audit trail exists for mock scenarios only.",
+      "proof_status": "implementation_present",
+      "victory_locked": false,
+      "evidence_refs": [
+        "zen-platform:docs/80-EVIDENCE/runtime/evidence_buffer_flush_execution.json"
+      ],
+      "validator_refs": [],
+      "merkle_ref": "mock:trust-proof-008-merkle-root",
+      "non_claims": [
+        "Not compliance-audited",
+        "Not external auditor reviewed",
+        "Not production-ready"
+      ]
+    },
+    {
+      "id": "trust-tamper-evidence",
+      "proof_id": "TRUST-PROOF-009",
+      "name": "Tamper Evidence via Merkle Chain",
+      "description": "Merkle hash chain provides tamper detection for evidence artifacts. Any modification changes the hash. Local mock only.",
+      "proof_status": "proven_local_mock",
+      "victory_locked": false,
+      "evidence_refs": [
+        "zen-platform:docs/80-EVIDENCE/runtime/runtime_truth_read_model_minimum.json"
+      ],
+      "validator_refs": [
+        "zen-platform:scripts/merkle_evidence_verify.py"
+      ],
+      "merkle_ref": "mock:trust-proof-009-merkle-root",
+      "non_claims": [
+        "Not Merkle as comprehensive integrity solution",
+        "Not production-ready",
+        "Not penetration-tested"
+      ]
+    },
+    {
+      "id": "trust-compliance-control-mapping",
+      "proof_id": "TRUST-PROOF-010",
+      "name": "Compliance Control Mapping (Internal Readiness)",
+      "description": "Internal mapping of technical controls to compliance frameworks (PCI-DSS, NIST SP 800-53, SOC2, ISO 27001, HIPAA). Maps-to and supports relationships only \u2014 not certification.",
+      "proof_status": "implementation_present",
+      "victory_locked": false,
+      "evidence_refs": [
+        "zen-platform:docs/20-OPERATIONS/COMPLIANCE.md",
+        "zen-platform:docs/10-ARCHITECTURE/FRONTEND_BACKEND_GAPS.md"
+      ],
+      "validator_refs": [],
+      "merkle_ref": "mock:trust-proof-010-merkle-root",
+      "non_claims": [
+        "Not PCI-DSS attestation",
+        "Not SOC2 audit attestation",
+        "Not ISO 27001 audit attestation",
+        "Not HIPAA business associate agreement",
+        "Not FedRAMP assessment",
+        "Not external penetration test passed"
+      ]
+    }
+  ],
+  "compliance_mappings": {
+    "ref": "https://docs.zen-mesh.io/ai/evidence/v1/compliance-map.json",
+    "entries_count": 10
+  },
+  "validation": {
+    "make_targets": [
+      "validate-evidence-docs",
+      "validate-ai-evidence"
+    ],
+    "validator_script": "zen-platform:scripts/validate-ai-evidence.js"
+  },
+  "non_claims": [
+    "This manifest does NOT claim any external audit or attestation result",
+    "This does NOT claim production readiness for any capability",
+    "Victory-locked proofs are scenario-specific, not general guarantees",
+    "All proofs are local mock harness only unless stated otherwise",
+    "Merkle evidence chain provides integrity only \u2014 it does not provide ordering guarantees, principal verification, or send confirmations",
+    "No exactly-once delivery claim is made",
+    "No zero-loss delivery claim is made",
+    "No FedRAMP assessment claim",
+    "No HIPAA business associate agreement claim",
+    "No SOC2 audit attestation or PCI attestation claim"
+  ]
+}
+
+

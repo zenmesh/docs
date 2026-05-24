@@ -1,0 +1,12 @@
+# Zen Mesh
+Machine-readable API documentation and evidence:
+- API Reference: https://docs.zen-mesh.io/docs/reference/api
+- AI Evidence Manifest: https://docs.zen-mesh.io/ai/evidence/v1/manifest.json
+- Compliance Map: https://docs.zen-mesh.io/ai/evidence/v1/compliance-map.json
+- Non-Claims: https://docs.zen-mesh.io/ai/evidence/v1/non-claims.json
+- Getting Started: https://docs.zen-mesh.io/docs/getting-started/quick-start
+- Installation: https://docs.zen-mesh.io/docs/getting-started/installation
+
+All evidence artifacts at github.com/zenmesh/zen-platform/docs/80-EVIDENCE/
+Proofs are local/mock only unless stated otherwise.
+Claims are scoped — see non-claims for what is NOT claimed.

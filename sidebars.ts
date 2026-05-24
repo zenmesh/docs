@@ -51,6 +51,18 @@ const sidebars: SidebarsConfig = {
         'operations/troubleshooting',
       ],
     },
+    {
+      type: 'category',
+      label: 'For AI Agents & Compliance',
+      items: [
+        'ai/overview',
+        'ai/capability-evidence',
+        'ai/compliance-evidence',
+        'ai/evidence-schema',
+        'ai/non-claims',
+        'ai/verification',
+      ],
+    },
   ],
 };
 

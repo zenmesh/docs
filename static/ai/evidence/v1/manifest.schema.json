@@ -1,0 +1,108 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://docs.zen-mesh.io/ai/evidence/v1/manifest.schema.json",
+  "title": "Zen Mesh AI Evidence Manifest Schema",
+  "description": "Schema for the Zen Mesh AI evidence manifest — defines proof capabilities, statuses, compliance mappings, and validation targets for AI-assisted analysis.",
+  "type": "object",
+  "required": [
+    "@context",
+    "@type",
+    "schema_version",
+    "generated_at",
+    "product",
+    "repository",
+    "evidence_scope",
+    "proof_levels",
+    "capabilities",
+    "compliance_mappings",
+    "validation"
+  ],
+  "properties": {
+    "@context": {
+      "type": "object",
+      "properties": {
+        "schema": { "type": "string", "format": "uri" },
+        "xsd": { "type": "string", "format": "uri" }
+      },
+      "required": ["schema", "xsd"]
+    },
+    "@type": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "schema_version": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$" },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "product": { "type": "string" },
+    "repository": { "type": "string", "format": "uri" },
+    "evidence_scope": { "type": "string", "enum": ["local_mock_harness_only", "sandbox_ci", "staging", "production"] },
+    "proof_levels": {
+      "type": "object",
+      "patternProperties": {
+        "^[a-z_]+$": {
+          "type": "object",
+          "required": ["label", "description", "confidence"],
+          "properties": {
+            "label": { "type": "string" },
+            "description": { "type": "string" },
+            "confidence": { "type": "string", "enum": ["none", "low", "medium", "high", "maximum"] }
+          }
+        }
+      }
+    },
+    "capabilities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "proof_id", "name", "description", "proof_status", "victory_locked", "evidence_refs", "validator_refs", "merkle_ref", "non_claims"],
+        "properties": {
+          "id": { "type": "string" },
+          "proof_id": { "type": "string" },
+          "name": { "type": "string" },
+          "description": { "type": "string" },
+          "proof_status": {
+            "type": "string",
+            "enum": ["victory_locked", "proven_local_mock", "implementation_present", "planned", "blocked", "not_claimed"]
+          },
+          "victory_locked": { "type": "boolean" },
+          "evidence_refs": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "validator_refs": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "merkle_ref": { "type": "string" },
+          "non_claims": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        }
+      }
+    },
+    "compliance_mappings": {
+      "type": "object",
+      "properties": {
+        "ref": { "type": "string", "format": "uri" },
+        "entries_count": { "type": "integer", "minimum": 0 }
+      },
+      "required": ["ref", "entries_count"]
+    },
+    "validation": {
+      "type": "object",
+      "required": ["make_targets", "validator_script"],
+      "properties": {
+        "make_targets": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "validator_script": { "type": "string" }
+      }
+    },
+    "non_claims": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}

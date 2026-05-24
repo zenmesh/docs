@@ -1,0 +1,142 @@
+[
+  {
+    "id": "non-claim-runtime-exactly-once",
+    "category": "runtime",
+    "claim": "Exactly-once delivery guarantee",
+    "scope": "Not claimed in v1alpha1. Zen Mesh provides at-least-once with idempotency, not exactly-once.",
+    "evidence_status": "not_claimed"
+  },
+  {
+    "id": "non-claim-runtime-zero-loss",
+    "category": "runtime",
+    "claim": "Zero event loss under all failure conditions",
+    "scope": "Not claimed in v1alpha1. Evidence buffering tested in mock scenarios only.",
+    "evidence_status": "not_claimed"
+  },
+  {
+    "id": "non-claim-runtime-ordering",
+    "category": "runtime",
+    "claim": "Per-source ordering or causal ordering guarantees",
+    "scope": "Not claimed in v1alpha1. No ordering guarantee provided.",
+    "evidence_status": "not_claimed"
+  },
+  {
+    "id": "non-claim-runtime-single-settle",
+    "category": "runtime",
+    "claim": "Single-settle delivery semantics",
+    "scope": "Explicitly excluded in v1alpha1. Conformance fixtures validate rejection of single-settle claims.",
+    "evidence_status": "not_claimed"
+  },
+  {
+    "id": "non-claim-runtime-all-paths-proven",
+    "category": "runtime",
+    "claim": "All runtime paths are proven",
+    "scope": "Not claimed. Victory-locked proofs are scenario-specific. General at-least-once, failover autonomy, and disconnected operation remain unproven.",
+    "evidence_status": "not_claimed"
+  },
+  {
+    "id": "non-claim-runtime-production-readiness",
+    "category": "runtime",
+    "claim": "Production-ready runtime",
+    "scope": "Not claimed. All evidence is local mock harness only. Sandbox validation in progress.",
+    "evidence_status": "not_claimed"
+  },
+  {
+    "id": "non-claim-trust-merkle-integrity-only",
+    "category": "trust",
+    "claim": "Merkle evidence chain used for integrity verification",
+    "scope": "Not claimed. Merkle provides evidence integrity only, not an access control function.",
+    "evidence_status": "not_claimed"
+  },
+  {
+    "id": "non-claim-trust-merkle-integrity-scope",
+    "category": "trust",
+    "claim": "Merkle evidence chain used for integrity verification",
+    "scope": "Not claimed. Merkle provides evidence integrity only, not an event ordering function.",
+    "evidence_status": "not_claimed"
+  },
+  {
+    "id": "non-claim-trust-merkle-not-workload",
+    "category": "trust",
+    "claim": "Merkle evidence chain used for integrity verification",
+    "scope": "Not claimed. Merkle provides evidence integrity only, not a workload principal function.",
+    "evidence_status": "not_claimed"
+  },
+  {
+    "id": "non-claim-trust-merkle-not-send",
+    "category": "trust",
+    "claim": "Merkle evidence chain used for integrity verification",
+    "scope": "Not claimed. Merkle provides evidence integrity only, not a send confirmation function.",
+    "evidence_status": "not_claimed"
+  },
+  {
+    "id": "non-claim-trust-blanket-zero-trust",
+    "category": "trust",
+    "claim": "Blanket zero-trust across all paths and layers",
+    "scope": "Not claimed. Zero-trust-oriented controls scoped to control-plane paths only. Data-plane expansion is planned.",
+    "evidence_status": "not_claimed"
+  },
+  {
+    "id": "non-claim-trust-spiffe-everywhere",
+    "category": "trust",
+    "claim": "SPIFFE identity on all workloads and data-plane paths",
+    "scope": "Not claimed. SPIFFE identity scoped to control-plane paths only.",
+    "evidence_status": "not_claimed"
+  },
+  {
+    "id": "non-claim-trust-secrets-eliminated",
+    "category": "trust",
+    "claim": "All secrets eliminated from the system",
+    "scope": "Not claimed. Architecture targets secretless operation but has not been audited for secret hygiene.",
+    "evidence_status": "not_claimed"
+  },
+  {
+    "id": "non-claim-compliance-pci-attestation",
+    "category": "compliance",
+    "claim": "PCI-DSS attestation",
+    "scope": "Not claimed. Technical controls map to PCI-DSS requirements but no PCI attestation has been pursued.",
+    "evidence_status": "not_claimed"
+  },
+  {
+    "id": "non-claim-compliance-soc2-audit",
+    "category": "compliance",
+    "claim": "SOC2 audit attestation",
+    "scope": "Not claimed. Internal control mapping and readiness assessment exist but no SOC2 audit has been performed.",
+    "evidence_status": "not_claimed"
+  },
+  {
+    "id": "non-claim-compliance-iso27001-audit",
+    "category": "compliance",
+    "claim": "ISO/IEC 27001 audit attestation",
+    "scope": "Not claimed. Control mapping to ISO 27001 exists but no formal audit has been performed.",
+    "evidence_status": "not_claimed"
+  },
+  {
+    "id": "non-claim-compliance-hipaa-baa",
+    "category": "compliance",
+    "claim": "HIPAA readiness or BAA in place",
+    "scope": "Not claimed. Technical controls map to HIPAA Security Rule but no HIPAA business associate agreement has been established.",
+    "evidence_status": "not_claimed"
+  },
+  {
+    "id": "non-claim-compliance-fedramp-assessment",
+    "category": "compliance",
+    "claim": "FedRAMP assessment",
+    "scope": "Not claimed. No FedRAMP assessment has been pursued or completed.",
+    "evidence_status": "not_claimed"
+  },
+  {
+    "id": "non-claim-general-external-audit-passed",
+    "category": "general",
+    "claim": "External audit or penetration test passed",
+    "scope": "Not claimed. No external audit or third-party penetration test has been conducted.",
+    "evidence_status": "not_claimed"
+  },
+  {
+    "id": "non-claim-general-production-deployment",
+    "category": "general",
+    "claim": "Deployed in production environments",
+    "scope": "Not claimed. All testing and evidence is local mock harness only.",
+    "evidence_status": "not_claimed"
+  }
+]
