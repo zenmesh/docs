@@ -138,5 +138,47 @@
     "claim": "Deployed in production environments",
     "scope": "Not claimed. All testing and evidence is local mock harness only.",
     "evidence_status": "not_claimed"
+  },
+  {
+    "id": "non-claim-security-compliance-certification",
+    "category": "security",
+    "claim": "Compliance certification (PCI, HIPAA, SOC 2, ISO, FedRAMP)",
+    "scope": "Not claimed. Zen Mesh has compliance-oriented controls but no certification.",
+    "evidence_status": "not_claimed"
+  },
+  {
+    "id": "non-claim-security-production-zero-trust",
+    "category": "security",
+    "claim": "Production zero-trust fully proven",
+    "scope": "Not claimed. Zero-trust-oriented controls exist on control-plane paths. Data-plane workload identity is planned, not deployed everywhere.",
+    "evidence_status": "not_claimed"
+  },
+  {
+    "id": "non-claim-security-zenlock-universal-rotation",
+    "category": "security",
+    "claim": "ZenLock rotates all credentials",
+    "scope": "Not claimed. ZenLock provides custody/distribution/audit. Rotation is owned by HMACKeyRotationController, cert-manager, JWT service.",
+    "evidence_status": "not_claimed"
+  },
+  {
+    "id": "non-claim-security-zenlock-svid-owner",
+    "category": "security",
+    "claim": "ZenLock owns SVID lifecycle",
+    "scope": "Not claimed. SVID lifecycle is managed by cert-manager and future SPIRE. ZenLock does not own any credential lifecycle.",
+    "evidence_status": "not_claimed"
+  },
+  {
+    "id": "non-claim-security-agent-mtls-planned",
+    "category": "security",
+    "claim": "Agent-SaaS mTLS is planned or optional",
+    "scope": "NOT TRUE. Agent-SaaS mTLS is REQUIRED, not planned. CAP-004 planned refers to NIRVANA workload identity model, not mTLS.",
+    "evidence_status": "explicitly_false"
+  },
+  {
+    "id": "non-claim-security-spiffe-absent",
+    "category": "security",
+    "claim": "SPIFFE/SPIRE is not used in Zen Mesh",
+    "scope": "NOT TRUE. SPIFFE/SPIRE is part of the Zen Mesh security architecture. X.509 SVIDs and SPIFFE ID verification are implemented.",
+    "evidence_status": "explicitly_false"
   }
 ]

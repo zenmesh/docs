@@ -1,0 +1,309 @@
+{
+  "schema_version": "1.0.0",
+  "description": "Security capability validation matrix \u2014 source-of-truth for Agent\u2192SaaS mTLS, SPIFFE/SPIRE scope, credential rotation ownership, and ZenLock role. Prevents AI/docs downscope errors.",
+  "generated_at": "2026-05-24T23:35:00Z",
+  "entries": [
+    {
+      "capability_id": "AGENT_SAAS_MTLS_REQUIRED",
+      "capability_name": "Agent \u2192 SaaS mTLS",
+      "claim_text": "Agent \u2192 SaaS uses mTLS for all sync, heartbeat, adapter, and allowlist operations. mTLS is required, not optional or planned.",
+      "status": "required",
+      "architecture_required": true,
+      "implementation_present": true,
+      "plane_refs": [
+        "CONTROL_PLANE",
+        "DATA_PLANE"
+      ],
+      "layer_refs": [
+        "L1_BASE",
+        "L3_TRAFFIC"
+      ],
+      "owning_subsystem": "SaaS/back mTLS listener (port 9443)",
+      "rotation_owner": "cert-manager (CA + workload certs)",
+      "custody_owner": "ZenLock (where applicable for cert material distribution)",
+      "public_copy_guidance": "Agent \u2192 SaaS mTLS is Required. Do not change to Planned. CAP-004 'planned' refers to fuller NIRVANA workload identity model, not mTLS itself.",
+      "ai_rag_summary": "Agent\u2192SaaS mTLS is REQUIRED. All agent routes (desired-state, heartbeat, adapter sync, allowlist) run on the mTLS listener (port 9443). CAP-004 'planned' refers to the fuller NIRVANA workload identity model, not to mTLS being optional. mTLS enforcement is fail-closed in production.",
+      "non_claims": [
+        "No claim that all data-plane paths have mTLS",
+        "No claim that SPIRE Workload API is fully deployed",
+        "No production-live proof for all paths"
+      ],
+      "docs_urls": [
+        "https://docs.zen-mesh.io/security/security-capability-validation",
+        "https://docs.zen-mesh.io/security/agent-saas-mtls",
+        "https://docs.zen-mesh.io/security/zenlock-credential-lifecycle"
+      ]
+    },
+    {
+      "capability_id": "AGENT_SAAS_HMAC_REQUIRED",
+      "capability_name": "Agent \u2192 SaaS HMAC",
+      "claim_text": "Agent \u2192 SaaS uses HMAC-SHA256 for tenant/cluster context verification on all agent routes.",
+      "status": "required",
+      "architecture_required": true,
+      "implementation_present": true,
+      "plane_refs": [
+        "CONTROL_PLANE"
+      ],
+      "layer_refs": [
+        "L3_TRAFFIC"
+      ],
+      "owning_subsystem": "SaaS/back HMAC middleware",
+      "rotation_owner": "HMACKeyRotationController (zen-back service)",
+      "custody_owner": "ZenLock (stores/distributes HMAC key material via KeyRotationStore)",
+      "public_copy_guidance": "Agent \u2192 SaaS HMAC is Required. HMAC keys are rotated by HMACKeyRotationController, with ZenLock protecting/distributing material.",
+      "ai_rag_summary": "Agent\u2192SaaS HMAC is REQUIRED. HMAC middleware is fail-closed (SECURITY RATCHET). Key rotation is owned by HMACKeyRotationController, not by ZenLock directly. ZenLock provides custody/distribution of key material.",
+      "non_claims": [
+        "No claim of exactly-once delivery via HMAC",
+        "No claim HMAC prevents all replay (nonce-based dedup is separate)"
+      ],
+      "docs_urls": [
+        "https://docs.zen-mesh.io/security/security-capability-validation",
+        "https://docs.zen-mesh.io/security/agent-saas-mtls",
+        "https://docs.zen-mesh.io/security/zenlock-credential-lifecycle"
+      ]
+    },
+    {
+      "capability_id": "SPIFFE_SPIRE_PRESENT",
+      "capability_name": "SPIFFE/SPIRE Usage in Zen Mesh",
+      "claim_text": "SPIFFE/SPIRE is part of the Zen Mesh security architecture. X.509 SVIDs are used for workload identity where implemented. SPIFFE ID verification occurs on mTLS connections.",
+      "status": "implemented",
+      "architecture_required": true,
+      "implementation_present": true,
+      "plane_refs": [
+        "CONTROL_PLANE",
+        "DATA_PLANE",
+        "EDGE_PLANE"
+      ],
+      "layer_refs": [
+        "L1_BASE",
+        "L3_TRAFFIC"
+      ],
+      "owning_subsystem": "cert-manager (issuer), workloads (key/cert), SaaS/back (verification)",
+      "rotation_owner": "cert-manager auto-renewal",
+      "custody_owner": "ZenLock (where applicable for cert material)",
+      "public_copy_guidance": "SPIFFE/SPIRE is part of Zen Mesh security architecture. Do not remove from public copy. Keep as strong architecture claim. Clarify that fuller NIRVANA workload identity is planned hardening.",
+      "ai_rag_summary": "SPIFFE/SPIRE is used in Zen Mesh where implemented today. X.509 SVIDs provide workload identity on mTLS connections. SPIFFE ID extraction and verification is implemented in agent_bootstrap_handler and security package. Do NOT remove SPIFFE/SPIRE from architecture docs or website.",
+      "non_claims": [
+        "No claim SPIRE Workload API is fully deployed everywhere",
+        "No claim all workloads have SPIFFE identity today"
+      ],
+      "docs_urls": [
+        "https://docs.zen-mesh.io/security/security-capability-validation",
+        "https://docs.zen-mesh.io/security/agent-saas-mtls",
+        "https://docs.zen-mesh.io/security/zenlock-credential-lifecycle"
+      ]
+    },
+    {
+      "capability_id": "NIRVANA_AGENT_WORKLOAD_IDENTITY_PLANNED",
+      "capability_name": "NIRVANA Agent Workload Identity (Full Model)",
+      "claim_text": "The fuller NIRVANA-style agent workload identity model is part of the planned hardening path. This refers to comprehensive SPIRE-based workload identity with Workload API, not to mTLS itself.",
+      "status": "planned",
+      "architecture_required": false,
+      "implementation_present": false,
+      "plane_refs": [
+        "CONTROL_PLANE",
+        "DATA_PLANE"
+      ],
+      "layer_refs": [
+        "L1_BASE"
+      ],
+      "owning_subsystem": "Future: SPIRE Server + Workload API",
+      "rotation_owner": "Future: SPIRE Workload API rotation",
+      "custody_owner": "Future: SPIRE Agent SVID store",
+      "public_copy_guidance": "CAP-004 'planned' refers to the fuller NIRVANA workload identity model. It does NOT mean mTLS is planned. mTLS is required today. The planned item is the deeper SPIRE Workload API integration for comprehensive workload identity.",
+      "ai_rag_summary": "CAP-004 'SPIFFE/SPIRE workload identity' status=planned refers to the FULLER NIRVANA-STYLE agent workload identity model with SPIRE Workload API. It does NOT mean Agent\u2192SaaS mTLS is planned. mTLS is REQUIRED today. CAP-004 planned = NIRVANA hardening, not mTLS optional. This was the root cause of the previous incorrect website downscope.",
+      "non_claims": [
+        "No claim NIRVANA workload identity is implemented",
+        "No claim SPIRE Workload API is deployed",
+        "No claim all workloads have comprehensive SPIFFE identity"
+      ],
+      "docs_urls": [
+        "https://docs.zen-mesh.io/security/security-capability-validation",
+        "https://docs.zen-mesh.io/security/agent-saas-mtls",
+        "https://docs.zen-mesh.io/security/zenlock-credential-lifecycle"
+      ]
+    },
+    {
+      "capability_id": "HMAC_ROTATION_LIFECYCLE",
+      "capability_name": "HMAC Key Rotation Lifecycle",
+      "claim_text": "HMAC key rotation is owned by HMACKeyRotationController in zen-back. Keys rotate on 90-day schedule with 7-day grace period. ZenLock stores/distributes key material.",
+      "status": "implemented",
+      "architecture_required": true,
+      "implementation_present": true,
+      "plane_refs": [
+        "CONTROL_PLANE"
+      ],
+      "layer_refs": [
+        "L3_TRAFFIC"
+      ],
+      "owning_subsystem": "HMACKeyRotationController (zen-back service workers)",
+      "rotation_owner": "HMACKeyRotationController",
+      "custody_owner": "ZenLock (via KeyRotationStore \u2192 ZenLockTenantSecretBackend)",
+      "public_copy_guidance": "HMAC rotation is owned by the HMAC lifecycle controller. ZenLock protects and distributes key material but does not own the rotation logic.",
+      "ai_rag_summary": "HMAC key rotation is owned by HMACKeyRotationController in zen-back workers. 90-day auto-rotation with 7-day grace. ZenLock provides custody/distribution of key material via KeyRotationStore. ZenLock does NOT own the rotation logic.",
+      "non_claims": [
+        "No claim HMAC rotation is zero-downtime for all scenarios",
+        "No claim ZenLock performs HMAC rotation"
+      ],
+      "docs_urls": [
+        "https://docs.zen-mesh.io/security/security-capability-validation",
+        "https://docs.zen-mesh.io/security/agent-saas-mtls",
+        "https://docs.zen-mesh.io/security/zenlock-credential-lifecycle"
+      ]
+    },
+    {
+      "capability_id": "TLS_CERT_ROTATION_LIFECYCLE",
+      "capability_name": "TLS/Certificate Rotation Lifecycle",
+      "claim_text": "TLS certificate rotation is owned by cert-manager with auto-renewal. Canary rotation is implemented for ingester and planned for egress/bridge.",
+      "status": "implemented",
+      "architecture_required": true,
+      "implementation_present": true,
+      "plane_refs": [
+        "CONTROL_PLANE",
+        "DATA_PLANE"
+      ],
+      "layer_refs": [
+        "L1_BASE"
+      ],
+      "owning_subsystem": "cert-manager (issuer + renewal)",
+      "rotation_owner": "cert-manager auto-renewal",
+      "custody_owner": "ZenLock (where applicable for cert material distribution)",
+      "public_copy_guidance": "TLS/cert rotation is owned by cert-manager. Canary deployment for cert rotation is implemented for some workloads. ZenLock distributes material where applicable.",
+      "ai_rag_summary": "TLS/certificate rotation is owned by cert-manager with auto-renewal (24h default). Canary rotation is implemented for ingester and planned for egress/bridge. ZenLock provides custody/distribution but does NOT own cert rotation.",
+      "non_claims": [
+        "No claim canary rotation is implemented for all workloads",
+        "No claim zero-downtime cert rotation for all paths"
+      ],
+      "docs_urls": [
+        "https://docs.zen-mesh.io/security/security-capability-validation",
+        "https://docs.zen-mesh.io/security/agent-saas-mtls",
+        "https://docs.zen-mesh.io/security/zenlock-credential-lifecycle"
+      ]
+    },
+    {
+      "capability_id": "JWK_ROTATION_LIFECYCLE",
+      "capability_name": "JWK Rotation Lifecycle",
+      "claim_text": "JWK rotation is owned by the JWT/JWKS lifecycle in SaaS/back. JWKS rotation uses key ID (kid) for versioning.",
+      "status": "implemented",
+      "architecture_required": true,
+      "implementation_present": true,
+      "plane_refs": [
+        "CONTROL_PLANE"
+      ],
+      "layer_refs": [
+        "L3_TRAFFIC"
+      ],
+      "owning_subsystem": "SaaS/back JWT signing service",
+      "rotation_owner": "JWT/JWKS lifecycle in SaaS/back",
+      "custody_owner": "ZenLock (where applicable for signing key material)",
+      "public_copy_guidance": "JWK rotation is owned by the JWT lifecycle. ZenLock protects signing key material where applicable.",
+      "ai_rag_summary": "JWK rotation is owned by the JWT/JWKS lifecycle in SaaS/back. Uses kid for versioning. ZenLock may store/distribute signing key material but does NOT own JWK rotation.",
+      "non_claims": [
+        "No claim JWK rotation is automatic for all key types",
+        "No claim zero-downtime JWK rotation"
+      ],
+      "docs_urls": [
+        "https://docs.zen-mesh.io/security/security-capability-validation",
+        "https://docs.zen-mesh.io/security/agent-saas-mtls",
+        "https://docs.zen-mesh.io/security/zenlock-credential-lifecycle"
+      ]
+    },
+    {
+      "capability_id": "SVID_LIFECYCLE_SCOPE",
+      "capability_name": "SVID Lifecycle Scope",
+      "claim_text": "X.509 SVIDs provide workload identity where implemented. File-based SVID is implemented. SPIRE Workload API integration is future/planned.",
+      "status": "implemented",
+      "architecture_required": true,
+      "implementation_present": true,
+      "plane_refs": [
+        "CONTROL_PLANE",
+        "DATA_PLANE",
+        "EDGE_PLANE"
+      ],
+      "layer_refs": [
+        "L1_BASE",
+        "L3_TRAFFIC"
+      ],
+      "owning_subsystem": "cert-manager (issuer), workload (key), SaaS/back (verification)",
+      "rotation_owner": "cert-manager renewal; future: SPIRE Workload API",
+      "custody_owner": "Workload local storage",
+      "public_copy_guidance": "SVID lifecycle is managed by cert-manager and workload attestation. ZenLock does not own SVID lifecycle. SPIRE Workload API is planned future hardening.",
+      "ai_rag_summary": "X.509 SVIDs are implemented (file-based) for workload identity. SVID rotation is via cert-manager. SPIRE Workload API is FUTURE/planned. ZenLock does NOT own SVID lifecycle. SVID lifecycle is separate from ZenLock custody.",
+      "non_claims": [
+        "No claim SPIRE Workload API is deployed",
+        "No claim SVID rotation is automatic everywhere"
+      ],
+      "docs_urls": [
+        "https://docs.zen-mesh.io/security/security-capability-validation",
+        "https://docs.zen-mesh.io/security/agent-saas-mtls",
+        "https://docs.zen-mesh.io/security/zenlock-credential-lifecycle"
+      ]
+    },
+    {
+      "capability_id": "ZENLOCK_SECRET_CUSTODY_DISTRIBUTION_AUDIT",
+      "capability_name": "ZenLock Secret Custody, Distribution, and Audit",
+      "claim_text": "ZenLock is Zen Mesh's encrypted secret custody, distribution, and audit support system. It protects and distributes secret material used by Zen Mesh components. Rotation is owned by the relevant credential lifecycle.",
+      "status": "implemented",
+      "architecture_required": true,
+      "implementation_present": true,
+      "plane_refs": [
+        "CONTROL_PLANE",
+        "DATA_PLANE"
+      ],
+      "layer_refs": [
+        "L1_BASE"
+      ],
+      "owning_subsystem": "ZenLock CRD/controller in zen-sdk",
+      "rotation_owner": "N/A \u2014 ZenLock is custody/distribution, not rotation owner",
+      "custody_owner": "ZenLock",
+      "public_copy_guidance": "ZenLock is encrypted custody, distribution, and audit support. Do not describe ZenLock as the rotation engine. Rotation is owned by HMAC/TLS/JWK/cert/SVID lifecycles. ZenLock protects and distributes material where applicable.",
+      "ai_rag_summary": "ZenLock is Zen Mesh's encrypted secret CUSTODY, DISTRIBUTION, and AUDIT system. It is NOT the universal rotation engine. Credential rotation is owned by the relevant lifecycle (HMACKeyRotationController for HMAC, cert-manager for TLS/certs, JWT service for JWKs). ZenLock stores, encrypts, distributes, and audits secret material used by these lifecycles.",
+      "non_claims": [
+        "No claim ZenLock rotates all credentials",
+        "No claim ZenLock owns SVID lifecycle",
+        "No claim ZenLock performs automatic rollback",
+        "No claim ZenLock is a universal secret manager for third-party tools"
+      ],
+      "docs_urls": [
+        "https://docs.zen-mesh.io/security/security-capability-validation",
+        "https://docs.zen-mesh.io/security/agent-saas-mtls",
+        "https://docs.zen-mesh.io/security/zenlock-credential-lifecycle"
+      ]
+    },
+    {
+      "capability_id": "ZENLOCK_NOT_UNIVERSAL_ROTATION_ENGINE",
+      "capability_name": "ZenLock Is NOT the Universal Rotation Engine",
+      "claim_text": "ZenLock does not independently rotate all credentials. Each credential type has its own lifecycle owner. ZenLock provides custody/distribution/audit for the underlying secret material.",
+      "status": "non_claim",
+      "architecture_required": true,
+      "implementation_present": true,
+      "plane_refs": [],
+      "layer_refs": [],
+      "owning_subsystem": "N/A \u2014 this is a boundary clarification",
+      "rotation_owner": "Each credential type's owning lifecycle",
+      "custody_owner": "ZenLock (custody of material, not rotation logic)",
+      "public_copy_guidance": "Do not say ZenLock rotates all credentials, owns SVID lifecycle, or performs automatic rollback for all secret types. Say: ZenLock provides encrypted custody, controlled distribution, and audit support. Rotation workflows can use ZenLock to protect/distribute new material.",
+      "ai_rag_summary": "CRITICAL: ZenLock does NOT rotate all credentials. HMAC rotation = HMACKeyRotationController. TLS/cert rotation = cert-manager. JWK rotation = JWT service. SVID rotation = cert-manager + future SPIRE. ZenLock provides custody/distribution/audit of secret material. Do NOT describe ZenLock as the rotation engine or as owning any credential lifecycle.",
+      "non_claims": [
+        "ZenLock does not rotate HMAC keys",
+        "ZenLock does not rotate TLS certificates",
+        "ZenLock does not rotate JWKs",
+        "ZenLock does not own SVID lifecycle",
+        "ZenLock does not perform canary deployment or automatic rollback"
+      ],
+      "docs_urls": [
+        "https://docs.zen-mesh.io/security/security-capability-validation",
+        "https://docs.zen-mesh.io/security/agent-saas-mtls",
+        "https://docs.zen-mesh.io/security/zenlock-credential-lifecycle"
+      ]
+    }
+  ],
+  "non_claims": [
+    "No production-live validation unless explicitly stated",
+    "No compliance certification (PCI, HIPAA, SOC 2, ISO, FedRAMP)",
+    "No claim of zero-downtime rotation for all secret types",
+    "No claim SPIRE Workload API is fully deployed",
+    "No claim ZenLock is a universal secret manager",
+    "No claim exactly-once or zero-loss delivery guarantee"
+  ]
+}

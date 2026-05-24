@@ -34,6 +34,15 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: 'Security',
+      items: [
+        'security/security-capability-validation',
+        'security/agent-saas-mtls',
+        'security/zenlock-credential-lifecycle',
+      ],
+    },
+    {
+      type: 'category',
       label: 'Guides',
       items: [
         'guides/cluster-enrollment',

@@ -880,6 +880,33 @@
       "non_claims": [
         "Validator only \u2014 does not run deploys"
       ]
+    },
+    {
+      "id": "security-agent-saas-mtls-required",
+      "name": "Agent-SaaS mTLS Required",
+      "status": "required",
+      "evidence_scope": "architecture_required_plus_local_mock",
+      "json_url": "/ai/security/v1/security-capability-validation.json",
+      "docs_url": "https://docs.zen-mesh.io/security/agent-saas-mtls",
+      "non_claim": "CAP-004 planned refers to NIRVANA workload identity, not mTLS being optional"
+    },
+    {
+      "id": "security-spiffe-spire-present",
+      "name": "SPIFFE/SPIRE in Zen Mesh Architecture",
+      "status": "implemented",
+      "evidence_scope": "architecture_required_plus_local_mock",
+      "json_url": "/ai/security/v1/security-capability-validation.json",
+      "docs_url": "https://docs.zen-mesh.io/security/security-capability-validation",
+      "non_claim": "SPIRE Workload API is planned; file-based SVID is implemented"
+    },
+    {
+      "id": "security-zenlock-custody-distribution",
+      "name": "ZenLock Custody/Distribution/Audit",
+      "status": "implemented",
+      "evidence_scope": "architecture_required_plus_local_mock",
+      "json_url": "/ai/security/v1/credential-lifecycle-ownership.json",
+      "docs_url": "https://docs.zen-mesh.io/security/zenlock-credential-lifecycle",
+      "non_claim": "ZenLock does not rotate credentials; rotation owned by lifecycle controllers"
     }
   ],
   "compliance_mappings": {
