@@ -2,7 +2,14 @@ import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
 
 const sidebars: SidebarsConfig = {
   defaultSidebar: [
-    'index',
+    {
+      type: 'category',
+      label: 'Start Here',
+      items: [
+        'start-here/what-is-zen-mesh',
+        'start-here/launch-status',
+      ],
+    },
     {
       type: 'category',
       label: 'Getting Started',
@@ -20,6 +27,7 @@ const sidebars: SidebarsConfig = {
         'architecture/three-plane-model',
         'architecture/delivery-modes',
         'architecture/security-model',
+        'concepts/glossary',
       ],
     },
     {
@@ -53,7 +61,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'For AI Agents & Compliance',
+      label: 'Evidence & AI',
       items: [
         'ai/overview',
         'ai/capability-evidence',
