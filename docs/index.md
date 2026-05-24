@@ -38,7 +38,7 @@ Your cluster never receives inbound connections. All traffic flows outward from 
 
 ## Delivery Modes
 
-Zen Mesh supports three delivery modes, all proven and validated:
+Zen Mesh supports three delivery modes, all implemented and documented:
 
 | Mode | Path | Best For |
 |------|------|----------|
