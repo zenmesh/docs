@@ -7,7 +7,9 @@ const sidebars: SidebarsConfig = {
       label: 'Start Here',
       items: [
         'start-here/what-is-zen-mesh',
-        'start-here/launch-status',
+        'start-here/who-should-use-zen-mesh',
+        'start-here/current-status',
+        'start-here/concepts',
       ],
     },
     {
@@ -42,16 +44,6 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Reference',
-      items: [
-        'reference/helm-chart',
-        'reference/cli',
-        'reference/api',
-        'reference/configuration',
-      ],
-    },
-    {
-      type: 'category',
       label: 'Operations',
       items: [
         'operations/upgrades',
@@ -61,7 +53,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Evidence & AI',
+      label: 'Evidence',
       items: [
         'ai/overview',
         'ai/capability-evidence',
@@ -69,6 +61,16 @@ const sidebars: SidebarsConfig = {
         'ai/evidence-schema',
         'ai/non-claims',
         'ai/verification',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Reference',
+      items: [
+        'reference/helm-chart',
+        'reference/cli',
+        'reference/api',
+        'reference/configuration',
       ],
     },
   ],

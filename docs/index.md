@@ -1,53 +1,61 @@
 ---
-slug: /
-title: Zen Mesh Documentation
 sidebar_label: Home
 ---
 
 # Zen Mesh Documentation
 
-**Secure webhook delivery to private networks — without opening firewalls.**
+Welcome to the Zen Mesh technical documentation. This site covers architecture, operations, security evidence, and AI-accessible machine-readable manifests.
 
-Zen Mesh connects external services (Stripe, GitHub, Slack, Shopify) to your private infrastructure using an **outbound-only** architecture. No VPN, no ngrok, no inbound ports.
+## Start Here
 
-## What is Zen Mesh?
+| Section | What you'll find |
+|---|---|
+| [What is Zen Mesh?](start-here/what-is-zen-mesh) | Product overview and problem statement |
+| [Who Should Use It](start-here/who-should-use-zen-mesh) | Target users and use cases |
+| [Current Status](start-here/current-status) | Early access, evidence status, launch timeline |
+| [Key Concepts](start-here/concepts) | Architecture, delivery paths, trust mechanisms, evidence model |
 
-```mermaid
-graph LR
-    SRC[Stripe] --> ING[zen-ingester<br/>public edge] --> EGR[zen-egress<br/>in your cluster] --> SVC[Your Service]
-```
+## Architecture & Operations
 
-Your cluster never receives inbound connections. All traffic flows outward from your infrastructure to the ingester, which then delivers events to your services.
+| Section | What you'll find |
+|---|---|
+| [Architecture Overview](architecture/overview) | Three-plane model, delivery modes, security |
+| [Getting Started](getting-started/quick-start) | Deploy in Kubernetes, create first webhook |
+| [Cluster Enrollment](guides/cluster-enrollment) | Register a cluster with Zen Mesh |
+| [Operations](operations/upgrades) | Upgrades, backups, troubleshooting |
 
-## Key Concepts
+## Evidence & Trust
 
-- **Control Plane** — The SaaS UI where you configure destinations, manage clusters, and monitor delivery
-- **Data Plane** — The runtime event intake: ingester receives events from external sources
-- **Edge Plane** — Runs in your cluster: egress delivers to your services, agent handles enrollment, lock protects secrets
-- **Adapters** — Connectors for external services (Splunk, PagerDuty, Grafana, Teams, etc.)
+| Section | What you'll find |
+|---|---|
+| [Runtime Convergence Evidence](ai/capability-evidence) | 10 victory-locked proofs — delivery, relay, failover, topology |
+| [Trust Lifecycle Evidence](ai/compliance-evidence) | 10 trust proofs — enrollment, mTLS, HMAC, ZenLock, revocation |
+| [Compliance-to-Feature Graph](ai/compliance-evidence) | Framework mappings (NIST, SOC2, ISO, PCI, HIPAA) |
+| [Non-Claims](ai/non-claims) | What Zen Mesh explicitly does not claim |
+| [Validation Map](ai/verification) | How to validate locally — Make targets and commands |
 
-## Quick Links
+## For AI Agents
 
-| Resource | Link |
-|----------|------|
-| **Quick Start** | [Get started in 5 minutes](./getting-started/quick-start) |
-| **Architecture** | [Three-plane model](./architecture/overview) |
-| **Cluster Enrollment** | [Install the agent](./guides/cluster-enrollment) |
-| **Adapters** | [Connect external services](./guides/adapters) |
-| **Helm Charts** | [Chart reference](./reference/helm-chart) |
+| Resource | URL |
+|---|---|
+| AI Evidence Manifest | [`/ai/evidence/v1/manifest.json`](/ai/evidence/v1/manifest.json) |
+| Compliance Map | [`/ai/evidence/v1/compliance-map.json`](/ai/evidence/v1/compliance-map.json) |
+| Non-Claims JSON | [`/ai/evidence/v1/non-claims.json`](/ai/evidence/v1/non-claims.json) |
+| AI Context (llms.txt) | [`/llms.txt`](/llms.txt) |
+| Full AI Context | [`https://zen-mesh.io/llms-full.txt`](https://zen-mesh.io/llms-full.txt) |
 
-## Delivery Modes
+## Reference
 
-Zen Mesh supports three delivery modes, all implemented and documented:
+| Section | What you'll find |
+|---|---|
+| [CLI Reference](reference/cli) | Command-line tool documentation |
+| [API Reference](reference/api) | REST API documentation |
+| [Configuration](reference/configuration) | Environment variables and config reference |
+| [Helm Chart](reference/helm-chart) | Deployment chart reference |
 
-| Mode | Path | Best For |
-|------|------|----------|
-| **A** — Direct Public Target | Source → Ingester → Target | Targets with public endpoints |
-| **B** — Egress Direct | Source → Ingester → Egress → Target | Targets reachable from ingester via mTLS |
-| **C** — Egress Relay | Source → Ingester → Egress (relay) → Target | Targets behind NAT/firewall |
+## Source Repository
 
-## Need Help?
+All evidence artifacts, validators, and proof ledgers live at:
+[github.com/zenmesh/zen-platform](https://github.com/zenmesh/zen-platform)
 
-- **Discord**: [Join the community](https://discord.com/invite/clawd)
-- **GitHub**: [Report issues](https://github.com/zenmesh/zen-platform/issues)
-- **Website**: [zen-mesh.io](https://zen-mesh.io)
+All proofs are local/mock unless stated otherwise. See [non-claims](ai/non-claims) for what is not claimed.
