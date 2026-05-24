@@ -4,46 +4,59 @@ sidebar_label: Non-Claims
 
 # Non-Claims
 
-The following capabilities are **explicitly not claimed**. See `/ai/evidence/v1/non-claims.json` for the full machine-readable list.
+The following capabilities are **explicitly not claimed**.
+
+## Q&A
+
+**Does Zen Mesh claim exactly-once delivery?**
+No. Delivery guarantees are scenario-specific — no global exactly-once claim is made.
+
+**Does Zen Mesh guarantee zero-loss delivery?**
+No. All proofs are local/mock only.
+
+**Does Zen Mesh claim generic zero-trust?**
+No. Trust is scoped to specific mechanisms (enrollment, mTLS, HMAC, ZenLock). See the [zero-trust proof matrix](https://github.com/zenmesh/zen-platform/blob/main/docs/80-EVIDENCE/security/zero_trust_proof_matrix.json).
+
+**Does Zen Mesh claim Merkle as auth, identity, replay prevention, or delivery?**
+No. Merkle provides evidence integrity and state comparison only. See [Merkle integrity](../evidence/merkle-integrity).
+
+**Are local/mock proofs the same as production validation?**
+No. All proofs are local/mock unless stated. Production validation gates are planned.
 
 ## Runtime
 
-| Claim | Status | Scope |
+| Claim | Status | Why |
 |---|---|---|
-| Exactly-once delivery | not_claimed | Delivery guarantees are scenario-specific; no global guarantee |
-| Zero-loss delivery | not_claimed | All proofs are local/mock |
-| General at-least-once delivery | not_claimed | ALO proven only for listed local/mock scenarios |
-| CP outage autonomy | not_claimed | Outage proof is local/mock only |
-| Global relay HA or failover | not_claimed | Failover is one primary → one secondary only |
-| Private-edge autonomy | not_claimed | Uses mock_data, not real customer data |
-| Global topology convergence | not_claimed | All convergence proofs are local/mock |
+| Exactly-once delivery | Not claimed | Delivery guarantees are scenario-specific |
+| Zero-loss delivery | Not claimed | All proofs are local/mock |
+| General at-least-once | Not claimed | ALO proven only for listed scenarios |
+| CP outage autonomy | Not claimed | Outage proof is local/mock only |
+| Global relay HA or failover | Not claimed | Failover is one-to-one only |
+| Private-edge autonomy | Not claimed | Uses mock_data |
+| Global topology convergence | Not claimed | All convergence proofs are local/mock |
 
 ## Trust
 
-| Claim | Status | Scope |
+| Claim | Status | Why |
 |---|---|---|
-| Generic zero-trust | not_claimed | Trust is scoped to specific mechanisms (enrollment, mTLS, HMAC, ZenLock) |
-| Production zero-trust | not_claimed | All proofs are local/mock |
-| Production mTLS/cert rotation | not_claimed | No live execution evidence exists |
-| SVID/SPIFFE rotation | not_claimed | SPIRE not deployed |
-| Emergency revocation | not_claimed | No automated revocation playbook |
-| Trust bundle rotation | not_claimed | No implementation exists |
-| Merkle auth/replay/identity/delivery | not_claimed | Merkle is used for evidence integrity/state comparison only |
+| Generic zero-trust | Not claimed | Scoped to specific mechanisms |
+| Production zero-trust | Not claimed | All proofs are local/mock |
+| Production mTLS/cert rotation | Not claimed | No live execution evidence |
+| SVID/SPIFFE rotation | Not claimed | SPIRE not deployed |
+| Emergency revocation | Not claimed | No automated playbook |
+| Trust bundle rotation | Not claimed | No implementation |
+| Merkle auth/replay/identity/delivery | Not claimed | Evidence integrity only |
 
 ## Compliance
 
-| Claim | Status | Scope |
-|---|---|---|
-| PCI DSS compliant | not_claimed | No PCI validation performed |
-| HIPAA compliant | not_claimed | No BAA or covered-entity determination |
-| FedRAMP authorized | not_claimed | No FedRAMP authorization |
-| SOC 2 certified | not_claimed | No SOC 2 audit performed |
-| ISO certified | not_claimed | No ISO certification |
-
-## Cross-Cutting
-
 | Claim | Status |
 |---|---|
-| No secrets exposed in evidence artifacts | Verified by automated git grep scan across all evidence JSON and validators |
-| No secret printing in validators/tests | FORBIDDEN_SECRET_PATTERNS guard in all validation scripts |
-| No production readiness claimed | All statuses explicitly scoped |
+| PCI DSS compliant | Not claimed |
+| HIPAA compliant | Not claimed |
+| FedRAMP authorized | Not claimed |
+| SOC 2 certified | Not claimed |
+| ISO certified | Not claimed |
+
+## Machine-Readable
+
+See [`/ai/evidence/v1/non-claims.json`](/ai/evidence/v1/non-claims.json) for the full machine-readable list.
