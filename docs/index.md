@@ -59,3 +59,19 @@ All evidence artifacts, validators, and proof ledgers live at:
 [github.com/zenmesh/zen-platform](https://github.com/zenmesh/zen-platform)
 
 All proofs are local/mock unless stated otherwise. See [non-claims](ai/non-claims) for what is not claimed.
+
+## Evidence & Compliance
+
+| Card | Description |
+|---|---|
+| [AI Evidence Manifest](/ai/evidence/v1/manifest.json) | Machine-readable capability manifest with proof statuses |
+| [Runtime Convergence](ai/capability-evidence) | 10 victory-locked proofs — delivery, relay, failover, topology |
+| [Trust Lifecycle](ai/compliance-evidence) | 10 trust proofs — enrollment, mTLS, HMAC, ZenLock, revocation |
+| [Compliance-to-Feature Graph](ai/compliance-evidence) | Framework mappings — NIST, SOC2, ISO, PCI, HIPAA |
+| [Non-Claims](ai/non-claims) | What Zen Mesh explicitly does not claim |
+| [Validation Map](ai/verification) | Make targets and validation commands |
+| [Merkle Evidence Integrity](evidence/merkle-integrity) | Evidence integrity and state comparison |
+
+## Early Access
+
+Zen Mesh is in **early access**. [Contact us](https://zen-mesh.io) to join. See [current status](start-here/current-status) for launch details.
