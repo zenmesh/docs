@@ -12,6 +12,7 @@ This section maps Zen Mesh capabilities to their current evidence status. Each p
 |------|--------|
 | [Runtime Convergence](./runtime-convergence) | Delivery modes, relay, CP convergence, topology, evidence buffer — PROOF-001 through PROOF-010 |
 | [Trust Lifecycle](./trust-lifecycle) | Enrollment, mTLS, HMAC, ZenLock, rotation, revocation — TRUST-PROOF-001 through TRUST-PROOF-010 |
+| [Completion Evidence](./completion-evidence) | Validated work gate — evidence, Merkle, non-claims, proof status |
 | [Non-Claims](./non-claims) | Capabilities explicitly not claimed |
 | [Validation Map](./validation-map) | How to validate locally — Make targets and validators |
 

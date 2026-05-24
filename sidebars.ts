@@ -62,6 +62,7 @@ const sidebars: SidebarsConfig = {
         'ai/compliance-evidence',
         'evidence/validation-map',
         'evidence/merkle-integrity',
+        'evidence/completion-evidence',
         'evidence/non-claims',
         'ai/verification',
       ],

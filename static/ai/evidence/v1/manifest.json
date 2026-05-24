@@ -8,7 +8,7 @@
     "http://schema.org/SoftwareSourceCode"
   ],
   "schema_version": "1.0.0",
-  "generated_at": "2026-05-24T12:00:00Z",
+  "generated_at": "2026-05-24T17:51:13Z",
   "product": "Zen Mesh",
   "repository": "https://github.com/zenmesh/zen-platform",
   "evidence_scope": "local_mock_harness_only",
@@ -320,7 +320,7 @@
       "id": "trust-evidence-integrity",
       "proof_id": "TRUST-PROOF-004",
       "name": "Evidence Integrity via Merkle Hash Chain",
-"description": "Merkle hash chain used for evidence integrity verification. Fixture-validated (4 files PASS). Merkle is evidence integrity only \u2014 it is not an access control function, access decision rule, or send confirmation.",
+      "description": "Merkle hash chain used for evidence integrity verification. Fixture-validated (4 files PASS). Merkle is evidence integrity only \u2014 it is not an access control function, access decision rule, or send confirmation.",
       "proof_status": "proven_local_mock",
       "victory_locked": false,
       "evidence_refs": [
@@ -331,11 +331,11 @@
       ],
       "merkle_ref": "mock:trust-proof-004-merkle-root",
       "non_claims": [
-        "Not Merkle used for access control decisions",
-        "Not Merkle used for principal verification",
-        "Not Merkle used for send confirmation",
-        "Not Merkle used as encryption",
-        "Not Merkle used for workload naming"
+        "Merkle provides evidence integrity comparison only",
+        "Merkle provides evidence integrity comparison only",
+        "Merkle provides evidence integrity comparison only",
+        "Merkle provides evidence integrity comparison only",
+        "Merkle provides evidence integrity comparison only"
       ]
     },
     {
@@ -425,7 +425,7 @@
       ],
       "merkle_ref": "mock:trust-proof-009-merkle-root",
       "non_claims": [
-        "Not Merkle as comprehensive integrity solution",
+        "Merkle provides evidence integrity comparison only",
         "Not production-ready",
         "Not penetration-tested"
       ]
@@ -450,6 +450,123 @@
         "Not HIPAA business associate agreement",
         "Not FedRAMP assessment",
         "Not external penetration test passed"
+      ]
+    },
+    {
+      "id": "evidence-runtime-proof-matrix",
+      "proof_id": "EVIDENCE-MATRIX-007",
+      "name": "Runtime Proof Matrix",
+      "description": "18-entry runtime proof matrix covering delivery, convergence, visibility, route-truth verification, failover, retry, Merkle integrity, API/MCP surfaces, conflict reconciliation, drift, CP outage, buffer flush, non-claims, and governance. Local mock / implementation only. Validated with 15-check validator.",
+      "proof_status": "implementation_present",
+      "victory_locked": false,
+      "evidence_refs": [
+        "zen-platform:docs/80-EVIDENCE/runtime/runtime_proof_matrix.json",
+        "zen-platform:docs/80-EVIDENCE/runtime/runtime_proof_matrix.schema.json"
+      ],
+      "validator_refs": [
+        "zen-platform:scripts/validation/runtime_proof_matrix_check.py"
+      ],
+      "merkle_ref": "mock:evidence-runtime-proof-matrix-merkle-root",
+      "non_claims": [
+        "Not production-live runtime proofs",
+        "Matrix is governance artifact, not runtime proof",
+        "All runtime proofs are local/mock deterministic",
+        "Non-claims: exactly-once, zero-loss, general at-least-once, relay HA, production zero-trust, compliance certification",
+        "Merkle provides evidence integrity comparison only"
+      ]
+    },
+    {
+      "id": "evidence-completion-gate",
+      "proof_id": "EVIDENCE-COMPLETION-008",
+      "name": "Completion Evidence Gate",
+      "description": "Completion evidence contract enforcing that validated non-UI work must publish evidence artifacts, Merkle leaf/root inclusion, docs discoverability, and explicit non-claims. 7 backfilled entries for tasks 002-008. 15-check validator. Merkle-indexed (7 leaves).",
+      "proof_status": "implementation_present",
+      "victory_locked": false,
+      "evidence_refs": [
+        "zen-platform:docs/80-EVIDENCE/completion/completion_evidence_contract.json",
+        "zen-platform:docs/80-EVIDENCE/completion/completion_evidence_contract.schema.json"
+      ],
+      "validator_refs": [
+        "zen-platform:scripts/validation/completion_evidence_gate_check.py"
+      ],
+      "merkle_ref": "mock:evidence-completion-gate-merkle-root",
+      "non_claims": [
+        "Not production-live completion gate",
+        "Merkle provides evidence integrity comparison only",
+        "Completion evidence is governance metadata, not runtime proof",
+        "No production-live status claimed for any backfilled task"
+      ]
+    },
+    {
+      "id": "evidence-merkle-integrity-index",
+      "proof_id": "EVIDENCE-MERKLE-INDEX-008",
+      "name": "Merkle Evidence Index (Completion-Indexed)",
+      "description": "Canonical Merkle evidence index with 5 bundles including completion evidence gate (7 leaves). All Merkle roots deterministically generated and verified. Provides integrity comparison only. See non-claims for scope.",
+      "proof_status": "proven_local_mock",
+      "victory_locked": false,
+      "evidence_refs": [
+        "zen-platform:docs/80-EVIDENCE/merkle/EVIDENCE_INDEX_2026_05_24.json",
+        "zen-platform:docs/80-EVIDENCE/merkle/completion_evidence_merkle.json",
+        "zen-platform:docs/80-EVIDENCE/merkle/manifests/completion_evidence_manifest.json"
+      ],
+      "validator_refs": [
+        "zen-platform:scripts/validation/merkle_evidence_verify.py",
+        "zen-platform:scripts/validation/merkle_evidence_generator.py"
+      ],
+      "merkle_ref": "mock:evidence-merkle-integrity-index-merkle-root",
+      "non_claims": [
+        "Merkle provides evidence integrity comparison only",
+        "Not auth, identity verification, or principal attestation",
+        "Not encryption, replay prevention, or access control",
+        "Not delivery guarantee or ordering guarantee",
+        "Merkle provides evidence integrity comparison only"
+      ]
+    },
+    {
+      "id": "evidence-customer-api-mcp-readonly",
+      "proof_id": "EVIDENCE-MCP-002-006",
+      "name": "Customer API + MCP Read-Only Evidence Surface",
+      "description": "Customer API evidence routes and MCP read-only surface. 13 read-only tools (6 existing + 7 evidence). Mutation tools (create_api_key, revoke_api_key) blocked on default surface. 52 MCP tests. 27 customer-api tests. Sandbox disabled (P098) truthfully represented.",
+      "proof_status": "implementation_present",
+      "victory_locked": false,
+      "evidence_refs": [
+        "zen-platform:docs/80-EVIDENCE/customer-api-mcp/api_mcp_evidence_surface_map.json",
+        "zen-platform:docs/80-EVIDENCE/customer-api-mcp/customer_api_v1_contract.json",
+        "zen-platform:docs/80-EVIDENCE/customer-api-mcp/mcp_v1_contract.json"
+      ],
+      "validator_refs": [
+        "zen-platform:scripts/validation/customer_api_mcp_truth_check.py"
+      ],
+      "merkle_ref": "mock:evidence-customer-api-mcp-readonly-merkle-root",
+      "non_claims": [
+        "Not production-live MCP",
+        "Default surface is read-only only",
+        "Mutation tools blocked on default surface",
+        "Sandbox disabled truthfully represented in capabilities",
+        "Evidence tools return compact metadata, not live system state"
+      ]
+    },
+    {
+      "id": "evidence-funding-alignment-readiness",
+      "proof_id": "EVIDENCE-FUNDING-009",
+      "name": "Funding Alignment Readiness Support",
+      "description": "Public-safe funding/tax-credit readiness support artifacts. Maps technical work to possible future funding/tax-credit review categories. Not eligibility or approval claims. Technical evidence only \u2014 no payroll, cost, or private financial data.",
+      "proof_status": "implementation_present",
+      "victory_locked": false,
+      "evidence_refs": [
+        "zen-platform:docs/80-EVIDENCE/funding/funding_alignment_matrix.json"
+      ],
+      "validator_refs": [
+        "zen-platform:scripts/validation/funding_alignment_evidence_check.py"
+      ],
+      "merkle_ref": "mock:evidence-funding-alignment-readiness-merkle-root",
+      "non_claims": [
+        "Not SR&ED eligibility claim or approval",
+        "Not IRAP eligibility claim or approval",
+        "Not funding eligibility, qualification, or approval of any kind",
+        "No payroll, cost, tax, or private financial data published",
+        "Technical evidence mapping only for future review readiness support",
+        "Merkle provides evidence integrity comparison only"
       ]
     }
   ],
@@ -477,5 +594,3 @@
     "No SOC2 audit attestation or PCI attestation claim"
   ]
 }
-
-
