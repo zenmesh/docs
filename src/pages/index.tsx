@@ -5,7 +5,7 @@ import styles from './index.module.css';
 
 export default function Home() {
   return (
-    <Layout title="Zen Mesh Docs" description="Documentation for Zen Mesh, zen-lock, and Helm Charts">
+    <Layout title="Zen Mesh Docs" description="Documentation for Zen Mesh — secure webhook delivery to private networks and Kubernetes without inbound firewall exposure. Covers zen-lock secrets management, zen-agent enrollment, and Helm chart deployment.">
       <main className={styles.hero}>
         <div className={styles.container}>
           <h1>Zen Mesh <span className={styles.accent}>Documentation</span></h1>
@@ -20,7 +20,7 @@ export default function Home() {
             </Link>
             <Link to="/zen-lock" className={styles.card}>
               <h2>🔐 zen-lock</h2>
-              <p>Zero-knowledge secret management built into Zen Mesh. How enrollment and secrets are protected.</p>
+              <p>Secret management built into Zen Mesh. Enrollment credentials and HMAC signing keys encrypted at rest with age. Not zero-knowledge in the cryptographic sense.</p>
               <span className={styles.cta}>Read docs →</span>
             </Link>
             <Link to="/helm-charts" className={styles.card}>
