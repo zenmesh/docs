@@ -55,13 +55,19 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: 'Evidence',
       items: [
-        'ai/overview',
         'ai/capability-evidence',
         'ai/compliance-evidence',
         'evidence/merkle-integrity',
+        'ai/verification',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'AI Agents',
+      items: [
+        'ai/overview',
         'ai/evidence-schema',
         'ai/non-claims',
-        'ai/verification',
       ],
     },
     {
