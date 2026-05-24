@@ -13,7 +13,7 @@ Trust originates from **enrollment**, never from configuration:
 1. You generate an enrollment bundle in the dashboard
 2. The bundle is applied to your cluster
 3. zen-agent uses the bundle to prove identity to the control plane
-4. mTLS certificates are issued via SPIFFE/SPIRE
+4. mTLS certificates are issued via cert-manager with SPIFFE URI SAN identity (SPIRE/SPIFFE auto-rotation is planned)
 5. All subsequent communication uses certificate-based identity
 
 No manual API keys, no shared secrets, no IP allowlists. Identity is cryptographic and short-lived.
@@ -28,20 +28,22 @@ No manual API keys, no shared secrets, no IP allowlists. Identity is cryptograph
 | Control Plane ↔ Agent | mTLS | Enrollment and config sync |
 | Secrets at Rest | age encryption | Zero-knowledge storage via zen-lock |
 
-## HMAC Replay Protection
+## HMAC Integrity Protection
 
-Every event delivered through the data plane includes an HMAC-SHA256 signature. This prevents:
+Every event delivered through the data plane includes an HMAC-SHA256 signature. This provides:
 
-- **Replay attacks**: Duplicate events are detected and rejected
-- **Tampering**: Any modification invalidates the signature
-- **Spoofing**: Only authenticated sources can produce valid signatures
+- **Tamper protection**: Any modification invalidates the signature
+- **Source authentication**: Only sources with the shared HMAC key can produce valid signatures
+- **Freshness verification**: Timestamp and nonce in signed metadata prevent replay of captured messages
 
-## SPIFFE/SPIRE Workload Identity
+Duplicate event detection and rejection is handled by the idempotency layer (independent of HMAC).
 
-Zen Mesh uses SPIFFE/SPIRE for workload identity:
+## SPIFFE Workload Identity
 
-- Every component gets a SPIFFE ID
-- mTLS certificates are automatically rotated
+Every component gets a SPIFFE ID embedded in its mTLS certificate (via URI SAN):
+
+- **General mTLS certificate rotation** uses cert-manager auto-renewal (active)
+- **SPIRE-based SVID issuance and rotation** is planned (tracked as TD-011)
 - Access policies are expressed in terms of SPIFFE identities
 
 ## RBAC

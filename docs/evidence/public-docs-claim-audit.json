@@ -1,0 +1,89 @@
+{
+  "audit_id": "PUBLIC-DOCS-CLAIM-AUDIT-001",
+  "created_at": "2026-05-24T05:00:00Z",
+  "source_repo": "~/zenmesh/zen-platform @ 7d41a92b1",
+  "docs_repo": "~/zenmesh/docs @ 3bd3ef3",
+  "entries": [
+    {
+      "doc": "docs/architecture/security-model.md",
+      "claim": "mTLS certificates are issued via SPIFFE/SPIRE",
+      "classification": "needs_scope",
+      "recommended_action": "add_scope_qualifier",
+      "evidence": "SPIRE NOT_YET_BUILT (CERTIFICATE_LIFECYCLE_AUTOMATION_CONTRACT.md). cert-manager issues workload certs with SPIFFE URI SAN. SPIRE is planned (TD-011).",
+      "code_refs": ["docs/10-ARCHITECTURE/CERTIFICATE_LIFECYCLE_AUTOMATION_CONTRACT.md §3 row 1"],
+      "changed": false
+    },
+    {
+      "doc": "docs/architecture/security-model.md",
+      "claim": "SPIFFE/SPIRE Workload Identity section: 'mTLS certificates are automatically rotated'",
+      "classification": "supported_but_missing_evidence_refs",
+      "recommended_action": "add_evidence_refs_and_scope",
+      "evidence": "cert-manager auto-renewal is COMPLETE (row 3-4). SPIRE SVID rotation is NOT_YET_BUILT (row 1-2). General workload mTLS rotation via cert-manager is ✅ COMPLETE.",
+      "code_refs": ["docs/10-ARCHITECTURE/CERTIFICATE_LIFECYCLE_AUTOMATION_CONTRACT.md §3 row 3-4"],
+      "changed": false
+    },
+    {
+      "doc": "docs/architecture/security-model.md",
+      "claim": "HMAC: 'Duplicate events are detected and rejected'",
+      "classification": "needs_scope",
+      "recommended_action": "add_scope_qualifier",
+      "evidence": "HMAC prevents tampering/spoofing but duplicate detection is idempotency, not HMAC. The 'at-most-once delivery mode' doc handles this. Scope to HMAC provides integrity, not dedup.",
+      "code_refs": ["docs/10-ARCHITECTURE/ADAPTER_AWARE_IDENTITY_ALIGNMENT.md §HMAC", "TRUST-PROOF-003"],
+      "changed": false
+    },
+    {
+      "doc": "docs/architecture/security-model.md",
+      "claim": "Enrollment flow description",
+      "classification": "supported_as_written",
+      "recommended_action": "no_change",
+      "evidence": "TRUST-PROOF-001 (enrollment happy path) and TRUST-PROOF-002 (enrollment rejection) both proven local_mock. zen-agent + ZenLock enrollment documented in charts/zen-agent.",
+      "code_refs": ["docs/80-EVIDENCE/security/trust_enrollment_execution.json", "charts/zen-agent/README.md"],
+      "changed": false
+    },
+    {
+      "doc": "docs/architecture/security-model.md",
+      "claim": "Zero-knowledge secrets / ZenLock description",
+      "classification": "supported_as_written",
+      "recommended_action": "no_change",
+      "evidence": "TRUST-PROOF-005 (ZenLock authority), TRUST-PROOF-009 (ZenLock rotation). Ciphertext-only, no plaintext runtime authority. Accurate as written.",
+      "code_refs": ["docs/80-EVIDENCE/security/zenlock_secret_authority_execution.json", "docs-zen-lock/"],
+      "changed": false
+    },
+    {
+      "doc": "docs/architecture/security-model.md",
+      "claim": "Encryption layers table",
+      "classification": "supported_as_written",
+      "recommended_action": "no_change",
+      "evidence": "mTLS enforced at TLS layer per ADAPTER_AWARE_IDENTITY_ALIGNMENT.md. Age encryption for secrets confirmed.",
+      "code_refs": ["docs/10-ARCHITECTURE/ADAPTER_AWARE_IDENTITY_ALIGNMENT.md"],
+      "changed": false
+    },
+    {
+      "doc": "docs/architecture/delivery-modes.md",
+      "claim": "All three delivery modes",
+      "classification": "supported_as_written",
+      "recommended_action": "no_change",
+      "evidence": "PROOF-001/003/004 (direct), PROOF-008 (relay path), PROOF-010 (private-edge). No overclaim.",
+      "code_refs": ["docs/80-EVIDENCE/runtime/runtime_convergence_evidence_pack_v1.json"],
+      "changed": false
+    },
+    {
+      "doc": "docs/guides/cluster-enrollment.md",
+      "claim": "Enrollment flow and commands",
+      "classification": "supported_as_written",
+      "recommended_action": "no_change",
+      "evidence": "Matches zen-agent README and TRUST-PROOF-001/002 evidence.",
+      "code_refs": ["charts/zen-agent/README.md", "docs/80-EVIDENCE/security/trust_enrollment_execution.json"],
+      "changed": false
+    },
+    {
+      "doc": "docs-zen-lock/security-properties.md",
+      "claim": "ZenLock security threat model",
+      "classification": "supported_as_written",
+      "recommended_action": "no_change",
+      "evidence": "TRUST-PROOF-005 (ciphertext-only, no plaintext), TRUST-PROOF-009 (rotation modeled). Threat model is accurate.",
+      "code_refs": ["docs/80-EVIDENCE/security/zenlock_secret_authority_execution.json"],
+      "changed": false
+    }
+  ]
+}
