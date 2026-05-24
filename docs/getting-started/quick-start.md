@@ -15,7 +15,7 @@ Get webhooks flowing to your private network in under 5 minutes.
 
 ## Step 1: Create a Cluster
 
-1. Sign in to the [Zen Mesh dashboard](https://app.zen-mesh.io)
+1. Contact us at zen@zen-mesh.io to get started
 2. Navigate to **Clusters** in the sidebar
 3. Click **Add Cluster** and give it a name (e.g., `production`)
 4. Click **Create**
