@@ -55,22 +55,27 @@ function run() {
   // Check docs directory
   errors.push(...checkDir(path.join(ROOT, 'docs'), 'docs'));
 
-  // Check homepage has required links
+  // Check homepage has required evidence links
   const home = fs.readFileSync(path.join(ROOT, 'docs', 'index.md'), 'utf-8');
-  const checks = [
-    ['Start Here', 'start-here/what-is-zen-mesh'],
-    ['Runtime Convergence', 'Runtime'],
-    ['Trust Lifecycle', 'Trust'],
-    ['AI Evidence', 'manifest.json'],
-    ['Non-Claims', 'non-claims'],
+  const homepageChecks = [
+    ['AI Evidence or Manifest', ['manifest.json', 'AI Evidence', 'AI Manifest']],
+    ['Runtime Evidence', ['Runtime Evidence', 'Runtime', 'runtime']],
+    ['Trust Evidence', ['Trust Evidence', 'Trust Lifecycle', 'trust']],
+    ['Non-Claims', ['non-claims', 'Non-Claims']],
+    ['Validation Map', ['validation', 'verification']],
+    ['Start Here', ['start-here/what-is-zen-mesh']],
   ];
-  for (const [label, link] of checks) {
-    if (!home.includes(link)) errors.push(`docs/index.md: missing ${label} link (${link})`);
+  for (const [label, terms] of homepageChecks) {
+    if (!terms.some(t => home.includes(t))) {
+      errors.push(`docs/index.md: missing ${label} link`);
+    }
   }
 
-  // Check sidebar has Evidence section
+  // Check sidebar has required sections
   const sidebar = fs.readFileSync(path.join(ROOT, 'sidebars.ts'), 'utf-8');
   if (!sidebar.includes("Evidence")) errors.push('sidebars.ts: missing Evidence section');
+  if (!sidebar.includes("AI Agents")) errors.push('sidebars.ts: missing AI Agents section');
+  if (!sidebar.includes("Start Here")) errors.push('sidebars.ts: missing Start Here section');
   if (!sidebar.includes("Reference")) errors.push('sidebars.ts: missing Reference section');
 
   // Check AI manifest endpoint
