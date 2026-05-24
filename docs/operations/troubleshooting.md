@@ -83,6 +83,7 @@ egress:
 
 ## Getting More Help
 
-- **Discord**: [Join the community](https://discord.com/invite/clawd)
+- **Slack**: [Join the Zen Mesh workspace](https://zenmeshinc.slack.com/)
+- **Email**: [zen@zen-mesh.io](mailto:zen@zen-mesh.io)
 - **GitHub Issues**: [zen-platform](https://github.com/zenmesh/zen-platform/issues)
 - **Dashboard**: Check the delivery logs for detailed error messages
