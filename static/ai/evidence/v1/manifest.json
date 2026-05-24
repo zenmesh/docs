@@ -810,6 +810,76 @@
         "scripts/validation/traffic_plane_p0_sequence_check.py"
       ],
       "merkle_ref": "mock:traffic_plane_delivery_attempt_merkle_placeholder"
+    },
+    {
+      "id": "evidence-deploy-artifact-contract",
+      "name": "Deploy Artifact Contract",
+      "description": "Structured deploy-as-artifact contract for local-k3d/sandbox. Deploy produces Merkle-indexed artifacts with source, images, charts, cluster target, plane/layer refs, validation, freshness, rollback.",
+      "category": "evidence",
+      "status": "contract_only",
+      "plane_refs": [
+        "CONTROL_PLANE",
+        "DATA_PLANE",
+        "EDGE_PLANE"
+      ],
+      "layer_refs": [
+        "L1_BASE",
+        "L2A_FLOW_MUTATION",
+        "L2B_FLOW_MAINTENANCE_SURVIVAL",
+        "L3_TRAFFIC"
+      ],
+      "evidence_source": "docs/80-EVIDENCE/deploy/deploy_artifact_contract.json",
+      "merkle_ref": "mock:evidence-deploy-artifact-contract",
+      "validator": "scripts/validation/deploy_artifact_contract_check.py",
+      "non_claims": [
+        "Not production-live deploy",
+        "Not deploy execution \u2014 contract only",
+        "No kubectl/helm/docker commands run",
+        "Local-k3d/sandbox scope only"
+      ]
+    },
+    {
+      "id": "evidence-deploy-artifact-schema",
+      "name": "Deploy Artifact Schema",
+      "description": "JSON Schema for deploy artifact records. Full lifecycle: planned/rendered/applied/validated/failed/superseded.",
+      "category": "evidence",
+      "status": "contract_only",
+      "plane_refs": [
+        "CONTROL_PLANE",
+        "DATA_PLANE",
+        "EDGE_PLANE"
+      ],
+      "layer_refs": [
+        "L1_BASE",
+        "L2A_FLOW_MUTATION",
+        "L2B_FLOW_MAINTENANCE_SURVIVAL",
+        "L3_TRAFFIC"
+      ],
+      "evidence_source": "docs/80-EVIDENCE/deploy/deploy_artifact_contract.schema.json",
+      "merkle_ref": "mock:evidence-deploy-artifact-schema",
+      "validator": "scripts/validation/deploy_artifact_contract_check.py",
+      "non_claims": [
+        "Schema definition only \u2014 no deploy execution"
+      ]
+    },
+    {
+      "id": "evidence-deploy-artifact-validator",
+      "name": "Deploy Artifact Validator",
+      "description": "Validator enforcing deploy artifact contract. Checks required fields, cluster_ref against clusters.yaml, image digest on applied/validated, Merkle on validated, plane/layer refs, forbidden claims, no secrets.",
+      "category": "evidence",
+      "status": "implementation_present",
+      "plane_refs": [
+        "CONTROL_PLANE"
+      ],
+      "layer_refs": [
+        "L1_BASE"
+      ],
+      "evidence_source": "scripts/validation/deploy_artifact_contract_check.py",
+      "merkle_ref": "mock:evidence-deploy-artifact-validator",
+      "validator": "scripts/validation/deploy_artifact_contract_check.py",
+      "non_claims": [
+        "Validator only \u2014 does not run deploys"
+      ]
     }
   ],
   "compliance_mappings": {
