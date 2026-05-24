@@ -568,6 +568,62 @@
         "Technical evidence mapping only for future review readiness support",
         "Merkle provides evidence integrity comparison only"
       ]
+    },
+    {
+      "id": "evidence-platform-layer-matrix",
+      "name": "Platform Layer Matrix",
+      "description": "L1/L2a/L2b/L3 architecture layer model describing dependency stages and failure domains orthogonal to planes.",
+      "category": "evidence",
+      "layer_refs": [
+        "L1_BASE",
+        "L2A_FLOW_MUTATION",
+        "L2B_FLOW_MAINTENANCE_SURVIVAL",
+        "L3_TRAFFIC"
+      ],
+      "plane_refs": [
+        "control-plane",
+        "data-plane",
+        "edge-plane"
+      ],
+      "proof_status": "contract_only",
+      "non_claims": [
+        "Not production-live layer validation",
+        "Layer model is dependency framework, not guarantee",
+        "L2b 24h survivability is target/planned, not proven"
+      ],
+      "evidence_refs": [
+        "docs/80-EVIDENCE/architecture/platform_layer_matrix.json"
+      ],
+      "validator_refs": [
+        "scripts/validation/platform_layer_matrix_check.py"
+      ],
+      "merkle_ref": "mock:platform_layer_matrix_merkle_placeholder"
+    },
+    {
+      "id": "evidence-traffic-plane-delivery-attempt",
+      "name": "Traffic Plane Delivery Attempt Evidence",
+      "description": "DeliveryAttempt struct records per-dispatch outcome (path, target, result, latency, error class) for direct/relay/private-edge traffic.",
+      "category": "evidence",
+      "layer_refs": [
+        "L3_TRAFFIC"
+      ],
+      "plane_refs": [
+        "data-plane",
+        "edge-plane"
+      ],
+      "proof_status": "testable",
+      "non_claims": [
+        "Not production-live delivery tracking",
+        "Not exactly-once delivery",
+        "In-memory struct only, not persisted"
+      ],
+      "evidence_refs": [
+        "docs/80-EVIDENCE/traffic-plane/traffic_plane_p0_sequence.json"
+      ],
+      "validator_refs": [
+        "scripts/validation/traffic_plane_p0_sequence_check.py"
+      ],
+      "merkle_ref": "mock:traffic_plane_delivery_attempt_merkle_placeholder"
     }
   ],
   "compliance_mappings": {
