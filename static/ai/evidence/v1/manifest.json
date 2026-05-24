@@ -66,6 +66,13 @@
         "Not zero-loss delivery",
         "Not general at-least-once guarantee",
         "Not production-ready"
+      ],
+      "plane_refs": [
+        "CONTROL_PLANE",
+        "DATA_PLANE"
+      ],
+      "layer_refs": [
+        "L3_TRAFFIC"
       ]
     },
     {
@@ -88,6 +95,13 @@
         "Not zero-loss",
         "Not exactly-once",
         "Not production-ready"
+      ],
+      "plane_refs": [
+        "CONTROL_PLANE",
+        "DATA_PLANE"
+      ],
+      "layer_refs": [
+        "L3_TRAFFIC"
       ]
     },
     {
@@ -108,6 +122,13 @@
         "Not zero-loss",
         "Not general at-least-once guarantee",
         "Not production-ready"
+      ],
+      "plane_refs": [
+        "CONTROL_PLANE",
+        "DATA_PLANE"
+      ],
+      "layer_refs": [
+        "L3_TRAFFIC"
       ]
     },
     {
@@ -128,6 +149,13 @@
         "Not replay prevention",
         "Not auth/identity from idempotency",
         "Not production-ready"
+      ],
+      "plane_refs": [
+        "CONTROL_PLANE",
+        "DATA_PLANE"
+      ],
+      "layer_refs": [
+        "L3_TRAFFIC"
       ]
     },
     {
@@ -149,6 +177,13 @@
         "Not exactly-once",
         "Not production-ready",
         "Not general CP autonomy"
+      ],
+      "plane_refs": [
+        "CONTROL_PLANE",
+        "DATA_PLANE"
+      ],
+      "layer_refs": [
+        "L3_TRAFFIC"
       ]
     },
     {
@@ -169,6 +204,13 @@
         "Not zero-loss",
         "Not exactly-once",
         "Not production-ready"
+      ],
+      "plane_refs": [
+        "CONTROL_PLANE",
+        "DATA_PLANE"
+      ],
+      "layer_refs": [
+        "L3_TRAFFIC"
       ]
     },
     {
@@ -189,6 +231,13 @@
         "Not exactly-once",
         "Not production-ready",
         "Not general flush guarantee"
+      ],
+      "plane_refs": [
+        "CONTROL_PLANE",
+        "DATA_PLANE"
+      ],
+      "layer_refs": [
+        "L3_TRAFFIC"
       ]
     },
     {
@@ -209,6 +258,13 @@
         "Not zero-loss",
         "Not exactly-once",
         "Not production-ready"
+      ],
+      "plane_refs": [
+        "CONTROL_PLANE",
+        "DATA_PLANE"
+      ],
+      "layer_refs": [
+        "L3_TRAFFIC"
       ]
     },
     {
@@ -230,6 +286,13 @@
         "Not zero-loss",
         "Not exactly-once",
         "Not production-ready"
+      ],
+      "plane_refs": [
+        "CONTROL_PLANE",
+        "DATA_PLANE"
+      ],
+      "layer_refs": [
+        "L3_TRAFFIC"
       ]
     },
     {
@@ -251,6 +314,13 @@
         "Not zero-loss",
         "Not exactly-once",
         "Not production-ready"
+      ],
+      "plane_refs": [
+        "CONTROL_PLANE",
+        "DATA_PLANE"
+      ],
+      "layer_refs": [
+        "L3_TRAFFIC"
       ]
     },
     {
@@ -273,6 +343,13 @@
         "Not data-plane SPIFFE identity",
         "Not multi-cluster SPIFFE federation",
         "Not production-ready"
+      ],
+      "plane_refs": [
+        "CONTROL_PLANE",
+        "DATA_PLANE"
+      ],
+      "layer_refs": [
+        "L3_TRAFFIC"
       ]
     },
     {
@@ -293,6 +370,13 @@
         "Not mTLS everywhere",
         "Not data-plane mTLS",
         "Not production-ready"
+      ],
+      "plane_refs": [
+        "CONTROL_PLANE",
+        "DATA_PLANE"
+      ],
+      "layer_refs": [
+        "L3_TRAFFIC"
       ]
     },
     {
@@ -314,6 +398,13 @@
         "Not blanket zero-trust",
         "Not data-plane zero-trust",
         "Not production-ready"
+      ],
+      "plane_refs": [
+        "CONTROL_PLANE",
+        "DATA_PLANE"
+      ],
+      "layer_refs": [
+        "L3_TRAFFIC"
       ]
     },
     {
@@ -336,6 +427,13 @@
         "Merkle provides evidence integrity comparison only",
         "Merkle provides evidence integrity comparison only",
         "Merkle provides evidence integrity comparison only"
+      ],
+      "plane_refs": [
+        "CONTROL_PLANE",
+        "DATA_PLANE"
+      ],
+      "layer_refs": [
+        "L3_TRAFFIC"
       ]
     },
     {
@@ -354,6 +452,13 @@
         "Not all paths secretless",
         "Not audited for secret hygiene",
         "Not production-ready"
+      ],
+      "plane_refs": [
+        "CONTROL_PLANE",
+        "DATA_PLANE"
+      ],
+      "layer_refs": [
+        "L3_TRAFFIC"
       ]
     },
     {
@@ -372,6 +477,13 @@
         "Not RBAC proven in failure scenarios",
         "Not ABAC implemented",
         "Not production-ready"
+      ],
+      "plane_refs": [
+        "CONTROL_PLANE",
+        "DATA_PLANE"
+      ],
+      "layer_refs": [
+        "L3_TRAFFIC"
       ]
     },
     {
@@ -390,6 +502,13 @@
         "Not rotation implemented in runtime",
         "Not revocation proven in failure scenarios",
         "Not production-ready"
+      ],
+      "plane_refs": [
+        "CONTROL_PLANE",
+        "DATA_PLANE"
+      ],
+      "layer_refs": [
+        "L3_TRAFFIC"
       ]
     },
     {
@@ -408,6 +527,13 @@
         "Not compliance-audited",
         "Not external auditor reviewed",
         "Not production-ready"
+      ],
+      "plane_refs": [
+        "CONTROL_PLANE",
+        "DATA_PLANE"
+      ],
+      "layer_refs": [
+        "L3_TRAFFIC"
       ]
     },
     {
@@ -428,6 +554,13 @@
         "Merkle provides evidence integrity comparison only",
         "Not production-ready",
         "Not penetration-tested"
+      ],
+      "plane_refs": [
+        "CONTROL_PLANE",
+        "DATA_PLANE"
+      ],
+      "layer_refs": [
+        "L3_TRAFFIC"
       ]
     },
     {
@@ -450,6 +583,13 @@
         "Not HIPAA business associate agreement",
         "Not FedRAMP assessment",
         "Not external penetration test passed"
+      ],
+      "plane_refs": [
+        "CONTROL_PLANE",
+        "DATA_PLANE"
+      ],
+      "layer_refs": [
+        "L3_TRAFFIC"
       ]
     },
     {
@@ -473,6 +613,15 @@
         "All runtime proofs are local/mock deterministic",
         "Non-claims: exactly-once, zero-loss, general at-least-once, relay HA, production zero-trust, compliance certification",
         "Merkle provides evidence integrity comparison only"
+      ],
+      "plane_refs": [
+        "CONTROL_PLANE",
+        "DATA_PLANE",
+        "EDGE_PLANE"
+      ],
+      "layer_refs": [
+        "L3_TRAFFIC",
+        "L2B_FLOW_MAINTENANCE_SURVIVAL"
       ]
     },
     {
@@ -495,6 +644,16 @@
         "Merkle provides evidence integrity comparison only",
         "Completion evidence is governance metadata, not runtime proof",
         "No production-live status claimed for any backfilled task"
+      ],
+      "plane_refs": [
+        "CONTROL_PLANE",
+        "DATA_PLANE"
+      ],
+      "layer_refs": [
+        "L1_BASE",
+        "L2A_FLOW_MUTATION",
+        "L2B_FLOW_MAINTENANCE_SURVIVAL",
+        "L3_TRAFFIC"
       ]
     },
     {
@@ -520,6 +679,13 @@
         "Not encryption, replay prevention, or access control",
         "Not delivery guarantee or ordering guarantee",
         "Merkle provides evidence integrity comparison only"
+      ],
+      "plane_refs": [
+        "DATA_PLANE"
+      ],
+      "layer_refs": [
+        "L3_TRAFFIC",
+        "L2B_FLOW_MAINTENANCE_SURVIVAL"
       ]
     },
     {
@@ -544,6 +710,15 @@
         "Mutation tools blocked on default surface",
         "Sandbox disabled truthfully represented in capabilities",
         "Evidence tools return compact metadata, not live system state"
+      ],
+      "plane_refs": [
+        "CONTROL_PLANE",
+        "DATA_PLANE"
+      ],
+      "layer_refs": [
+        "L1_BASE",
+        "L2A_FLOW_MUTATION",
+        "L3_TRAFFIC"
       ]
     },
     {
@@ -567,6 +742,17 @@
         "No payroll, cost, tax, or private financial data published",
         "Technical evidence mapping only for future review readiness support",
         "Merkle provides evidence integrity comparison only"
+      ],
+      "plane_refs": [
+        "CONTROL_PLANE",
+        "DATA_PLANE",
+        "EDGE_PLANE"
+      ],
+      "layer_refs": [
+        "L1_BASE",
+        "L2A_FLOW_MUTATION",
+        "L2B_FLOW_MAINTENANCE_SURVIVAL",
+        "L3_TRAFFIC"
       ]
     },
     {
@@ -581,9 +767,9 @@
         "L3_TRAFFIC"
       ],
       "plane_refs": [
-        "control-plane",
-        "data-plane",
-        "edge-plane"
+        "CONTROL_PLANE",
+        "DATA_PLANE",
+        "EDGE_PLANE"
       ],
       "proof_status": "contract_only",
       "non_claims": [
@@ -608,8 +794,8 @@
         "L3_TRAFFIC"
       ],
       "plane_refs": [
-        "data-plane",
-        "edge-plane"
+        "DATA_PLANE",
+        "EDGE_PLANE"
       ],
       "proof_status": "testable",
       "non_claims": [
