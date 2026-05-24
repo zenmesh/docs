@@ -18,7 +18,7 @@ No. See [non-claims](./non-claims).
 Fetch the manifest, check `proof_status`, verify `evidence_refs` point to existing artifacts, and run validators listed in [verification](./verification).
 
 **What does Merkle evidence mean in Zen Mesh?**
-Merkle provides evidence integrity and state comparison only — not auth, identity, encryption, replay prevention, or delivery guarantees. See [Merkle evidence](../evidence/merkle-integrity).
+Merkle provides evidence integrity and state comparison only. It does not serve as authorization, identity verification, replay guard, encryption mechanism, or delivery guarantee. See [Merkle evidence](../evidence/merkle-integrity).
 
 **Is local/mock evidence the same as production proof?**
 No. All proofs are local/mock unless stated otherwise. Production validation gates are tracked but not yet passed.

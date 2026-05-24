@@ -11,13 +11,13 @@ The following capabilities are **explicitly not claimed**.
 **Does Zen Mesh claim exactly-once delivery?**
 No. Delivery guarantees are scenario-specific — no global exactly-once claim is made.
 
-**Does Zen Mesh guarantee zero-loss delivery?**
-No. All proofs are local/mock only.
+**Does Zen Mesh guarantee loss-free delivery?**
+No. Delivery guarantees are scenario-specific and local/mock only.
 
 **Does Zen Mesh claim generic zero-trust?**
 No. Trust is scoped to specific mechanisms (enrollment, mTLS, HMAC, ZenLock). See the [zero-trust proof matrix](https://github.com/zenmesh/zen-platform/blob/main/docs/80-EVIDENCE/security/zero_trust_proof_matrix.json).
 
-**Does Zen Mesh claim Merkle as auth, identity, replay prevention, or delivery?**
+**Does Merkle serve purposes beyond evidence integrity?**
 No. Merkle provides evidence integrity and state comparison only. See [Merkle integrity](../evidence/merkle-integrity).
 
 **Are local/mock proofs the same as production validation?**

@@ -11,7 +11,7 @@ Zen Mesh is in **early access**. We are completing final validations before open
 - Available now by contacting us at zen@zen-mesh.io
 - No credit card required
 - Best-effort support during early access
-- All proofs are local/mock proven — sandbox validation in progress
+- Proofs are local/mock only — sandbox validation in progress
 
 ## Production Access
 
@@ -33,7 +33,7 @@ Zen Mesh is in **early access**. We are completing final validations before open
 
 See [Non-Claims](../ai/non-claims) for a complete list. Key items:
 - No PCI, HIPAA, FedRAMP, SOC 2, or ISO certification
-- No exactly-once or zero-loss delivery guarantee
-- No production zero-trust claim
-- No Merkle auth/replay/identity/delivery
-- All proofs local/mock unless stated
+- No delivery guarantee beyond scenario-specific local/mock proofs
+- No production-level zero-trust status
+- Merkle is evidence integrity only — see non-claims for scope
+- Proofs are local/mock unless stated

@@ -60,4 +60,4 @@ Each entry includes framework, control_id, control_title, relationship, claim_st
 - Not SOC 2 certified or audited
 - Not ISO certified
 - Mappings are technical capability indications only
-- All evidence is local/mock unless proven otherwise
+- Evidence is local/mock only unless stated otherwise

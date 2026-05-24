@@ -8,7 +8,7 @@ sidebar_label: Glossary
 The Zen Mesh architecture separates control (SaaS), data (edge), and customer planes. See [Three Plane Model](../architecture/three-plane-model).
 
 ## mTLS (Mutual TLS)
-Both client and server verify each other's certificates. Required on all internal Zen Mesh paths. Proven in TRUST-PROOF-004/006.
+Both client and server verify each other's certificates. Required on internal Zen Mesh paths. See TRUST-PROOF-004/006.
 
 ## HMAC-SHA256
 Message authentication code for payload integrity. Prevents tampering and verifies source. Proven in TRUST-PROOF-003.

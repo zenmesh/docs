@@ -23,7 +23,7 @@ The AI evidence endpoints use a consistent JSON schema structure. All fields are
 
 ## Forbidden Statuses
 
-The following statuses must NOT appear in any AI evidence artifact unless legally/evidentially approved:
+The following statuses must NOT appear in any AI evidence artifact unless legally and evidentially validated:
 
 - `certified`
 - `authorized`
