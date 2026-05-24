@@ -59,11 +59,13 @@ function run() {
   const home = fs.readFileSync(path.join(ROOT, 'docs', 'index.md'), 'utf-8');
   const homepageChecks = [
     ['AI Evidence or Manifest', ['manifest.json', 'AI Evidence', 'AI Manifest']],
-    ['Runtime Evidence', ['Runtime Evidence', 'Runtime', 'runtime']],
-    ['Trust Evidence', ['Trust Evidence', 'Trust Lifecycle', 'trust']],
-    ['Non-Claims', ['non-claims', 'Non-Claims']],
-    ['Validation Map', ['validation', 'verification']],
+    ['Runtime Evidence', ['Runtime Evidence', 'Runtime Convergence', 'runtime-convergence']],
+    ['Trust Evidence', ['Trust Evidence', 'Trust Lifecycle', 'trust-lifecycle']],
+    ['Non-Claims', ['Non-Claims', 'non-claims']],
+    ['Validation Map', ['Validation Map', 'validation-map']],
     ['Start Here', ['start-here/what-is-zen-mesh']],
+    ['Merkle Integrity', ['Merkle Integrity', 'merkle-integrity']],
+    ['Machine-Readable Evidence', ['manifest.json', 'compliance-map.json']],
   ];
   for (const [label, terms] of homepageChecks) {
     if (!terms.some(t => home.includes(t))) {
@@ -77,6 +79,11 @@ function run() {
   if (!sidebar.includes("AI Agents")) errors.push('sidebars.ts: missing AI Agents section');
   if (!sidebar.includes("Start Here")) errors.push('sidebars.ts: missing Start Here section');
   if (!sidebar.includes("Reference")) errors.push('sidebars.ts: missing Reference section');
+  if (!sidebar.includes("runtime-convergence")) errors.push('sidebars.ts: Evidence missing runtime-convergence');
+  if (!sidebar.includes("trust-lifecycle")) errors.push('sidebars.ts: Evidence missing trust-lifecycle');
+  if (!sidebar.includes("validation-map")) errors.push('sidebars.ts: Evidence missing validation-map');
+  if (!sidebar.includes("merkle-integrity")) errors.push('sidebars.ts: Evidence missing merkle-integrity');
+  if (!sidebar.includes("non-claims")) errors.push('sidebars.ts: Evidence missing non-claims');
 
   // Check AI manifest endpoint
   const aiOverview = path.join(ROOT, 'docs', 'ai', 'overview.md');

@@ -12,9 +12,11 @@ Welcome to the Zen Mesh technical documentation — architecture, operations, se
 |---|---|
 | **New engineer** evaluating Zen Mesh | [Start Here](start-here/what-is-zen-mesh) — what it is, who it's for, key concepts |
 | **Operator** deploying in Kubernetes | [Quick Start](getting-started/quick-start) — install and create your first webhook |
-| **Security / compliance reviewer** | [Trust Lifecycle Evidence](ai/capability-evidence) — enrollment, mTLS, HMAC, ZenLock, rotation |
+| **Security / compliance reviewer** | [Trust Lifecycle Evidence](evidence/trust-lifecycle) — enrollment, mTLS, HMAC, ZenLock, rotation |
+| **Runtime / reliability reviewer** | [Runtime Convergence Evidence](evidence/runtime-convergence) — 10 convergence proofs, at-least-once, DLQ |
 | **AI agent / RAG system** scanning Zen Mesh | [AI Evidence Manifest](/ai/evidence/v1/manifest.json) — machine-readable capability status |
 | **Compliance reviewer** mapping to frameworks | [Compliance-to-Feature Graph](ai/compliance-evidence) — NIST, SOC2, ISO, PCI-DSS, HIPAA |
+| **Anyone checking what we do NOT claim** | [Non-Claims](ai/non-claims) — explicit scope boundaries |
 
 ## Sections
 
@@ -25,11 +27,16 @@ Welcome to the Zen Mesh technical documentation — architecture, operations, se
 | [Getting Started](getting-started/quick-start) | Install, quick start, first webhook |
 | [Guides](guides/cluster-enrollment) | Cluster enrollment, adapters, destinations, monitoring |
 | [Operations](operations/upgrades) | Upgrades, backups, troubleshooting |
-| [Evidence](ai/capability-evidence) | Runtime convergence (10 proofs), trust lifecycle (10 proofs), compliance mappings, Merkle integrity, validation map |
-| [AI Agents](ai/overview) | AI overview, evidence schema, non-claims |
+| [Evidence Overview](evidence/overview) | Index of all evidence areas — runtime, trust, compliance, Merkle, validation map |
+| [Runtime Evidence](evidence/runtime-convergence) | 10 convergence proofs — delivery, DLQ, backpressure, circuit breaker |
+| [Trust Evidence](evidence/trust-lifecycle) | 10 trust proofs — enrollment, mTLS, HMAC, ZenLock, rotation |
+| [Validation Map](evidence/validation-map) | How to validate evidence locally |
+| [Merkle Integrity](evidence/merkle-integrity) | Content-addressed evidence verification |
+| [Non-Claims](ai/non-claims) | What Zen Mesh does not certify or guarantee |
+| [AI Agents](ai/overview) | AI overview, evidence schema, non-claims, machine-readable manifests |
 | [Reference](reference/helm-chart) | CLI, API, Customer API, MCP, configuration, Helm chart |
 
-## For AI Agents
+## Machine-Readable Evidence
 
 | Resource | Location |
 |---|---|
@@ -43,7 +50,6 @@ Welcome to the Zen Mesh technical documentation — architecture, operations, se
 
 - [Customer API](reference/customer-api) — planned read-only operational truth interface
 - [MCP](reference/mcp) — planned Model Context Protocol server for programmatic access
-- [Non-Claims](ai/non-claims) — what Zen Mesh does not claim
 
 ---
 
