@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0.0",
+  "description": "Gateway API migration readiness for Zen Mesh. All routes inventoried. No runtime migration performed.",
+  "generated_at": "2026-05-24T23:56:00Z",
+  "evidence_scope": "inventory_only",
+  "current_state": {
+    "ingress_class": "nginx",
+    "total_routes": 19,
+    "control_plane_routes": 14,
+    "data_plane_routes": 5,
+    "tls_owner": "cert-manager",
+    "gateway_api_resources_created": false,
+    "traffic_cutover_performed": false
+  },
+  "target_state": {
+    "gateway_api_version": "v1.0+",
+    "planned_gateways": 5,
+    "planned_routes": 19,
+    "controller_candidates": ["NGINX Gateway Fabric", "GKE Gateway Controller", "Envoy Gateway"]
+  },
+  "hosts": [
+    {"host": "app.zen-mesh.io", "plane": "CONTROL_PLANE", "owner": "Hermes", "routes": 5},
+    {"host": "api.zen-mesh.io", "plane": "CONTROL_PLANE", "owner": "nanobot", "routes": 12},
+    {"host": "ingest.zen-mesh.io", "plane": "DATA_PLANE", "owner": "nanobot", "routes": 1},
+    {"host": "platform.zen-mesh.io", "plane": "CONTROL_PLANE", "owner": "nanobot", "routes": 2},
+    {"host": "m2m.zenmesh.io", "plane": "CONTROL_PLANE", "owner": "nanobot", "routes": 1}
+  ],
+  "blockers": [
+    "GRPCRoute requires Gateway API v1.2+",
+    "BackendTLSPolicy needed for HTTPS backend-protocol routes",
+    "Controller not yet selected"
+  ],
+  "non_claims": [
+    "No runtime migration performed",
+    "No production-live Gateway API claim",
+    "No DNS cutover",
+    "No cert rotation performed",
+    "No traffic proof",
+    "No app UI freshness claim"
+  ],
+  "docs_urls": [
+    "https://docs.zen-mesh.io/networking/gateway-api-migration"
+  ]
+}

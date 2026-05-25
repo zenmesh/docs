@@ -43,6 +43,13 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: 'Networking',
+      items: [
+        'networking/gateway-api-migration',
+      ],
+    },
+    {
+      type: 'category',
       label: 'Guides',
       items: [
         'guides/cluster-enrollment',

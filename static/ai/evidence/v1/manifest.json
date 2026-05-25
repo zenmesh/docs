@@ -907,6 +907,15 @@
       "json_url": "/ai/security/v1/credential-lifecycle-ownership.json",
       "docs_url": "https://docs.zen-mesh.io/security/zenlock-credential-lifecycle",
       "non_claim": "ZenLock does not rotate credentials; rotation owned by lifecycle controllers"
+    },
+    {
+      "id": "networking-gateway-api-migration-readiness",
+      "name": "Gateway API Migration Readiness",
+      "status": "planned",
+      "evidence_scope": "inventory_only",
+      "json_url": "/ai/networking/v1/gateway-api-migration-readiness.json",
+      "docs_url": "https://docs.zen-mesh.io/networking/gateway-api-migration",
+      "non_claim": "No runtime migration performed. No Gateway API resources created in clusters."
     }
   ],
   "compliance_mappings": {
