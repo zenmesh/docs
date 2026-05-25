@@ -39,7 +39,7 @@ All routes require both **mTLS** and **HMAC** authentication.
 
 ## CAP-004 Clarification
 
-The capability evidence entry **CAP-004 "SPIFFE/SPIRE workload identity"** has status `planned`. This refers to the **fuller NIRVANA-style workload identity model** with SPIRE Workload API integration — the comprehensive, dynamic workload identity with automatic SVID rotation via SPIRE agents.
+The capability evidence entry **CAP-004 "SPIFFE/SPIRE workload identity"** has status `planned`. This refers to the **fuller workload identity model** with SPIRE Workload API integration — the comprehensive, dynamic workload identity with automatic SVID rotation via SPIRE agents.
 
 **It does NOT mean mTLS is planned.** mTLS is required today. The "planned" item is the deeper SPIRE Workload API integration for a more comprehensive identity model.
 

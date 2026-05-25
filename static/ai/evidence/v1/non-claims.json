@@ -171,7 +171,7 @@
     "id": "non-claim-security-agent-mtls-planned",
     "category": "security",
     "claim": "Agent-SaaS mTLS is planned or optional",
-    "scope": "NOT TRUE. Agent-SaaS mTLS is REQUIRED, not planned. CAP-004 planned refers to NIRVANA workload identity model, not mTLS.",
+    "scope": "NOT TRUE. Agent-SaaS mTLS is REQUIRED, not planned. CAP-004 planned refers to workload identity model, not mTLS.",
     "evidence_status": "explicitly_false"
   },
   {

@@ -26,7 +26,7 @@ All Zen Mesh routing currently uses **Kubernetes Ingress** with the **nginx** in
 
 | Host | Plane | Owner | Ingress Template |
 |---|---|---|---|
-| app.zen-mesh.io | Control Plane | Hermes (UI) | ingress-frontend.yaml |
+| internal control-plane host (not publicly reachable) | Control Plane | Hermes (UI) | ingress-frontend.yaml |
 | api.zen-mesh.io | Control Plane | nanobot | ingress-api.yaml |
 | ingest.zen-mesh.io | Data Plane | nanobot | ingress-webhook.yaml |
 | platform.zen-mesh.io | Control Plane | nanobot | customer-api-ingress.yaml, mcp-ingress.yaml |
@@ -59,7 +59,7 @@ Migration target is **Gateway API v1.0+** with:
 | Gateway | Hosts | Routes | Status |
 |---|---|---|---|
 | gateway-api | api.zen-mesh.io | 12 control-plane API routes | planned |
-| gateway-app | app.zen-mesh.io | 5 frontend/BFF routes | planned |
+| gateway-app | internal control-plane host (not publicly reachable) | 5 frontend/BFF routes | planned |
 | gateway-dp | ingest.zen-mesh.io, api.zen-mesh.io | 2 data-plane routes | planned |
 | gateway-platform | platform.zen-mesh.io | 2 platform API routes | planned |
 | gateway-m2m | m2m.zenmesh.io | 1 M2M route | planned |

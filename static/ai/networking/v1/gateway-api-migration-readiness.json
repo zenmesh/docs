@@ -24,7 +24,7 @@
   },
   "hosts": [
     {
-      "host": "app.zen-mesh.io",
+      "host": "internal control-plane host (not publicly reachable)",
       "plane": "CONTROL_PLANE",
       "owner": "Hermes",
       "routes": 5

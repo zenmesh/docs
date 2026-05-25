@@ -21,8 +21,8 @@
       "owning_subsystem": "SaaS/back mTLS listener (port 9443)",
       "rotation_owner": "cert-manager (CA + workload certs)",
       "custody_owner": "ZenLock (where applicable for cert material distribution)",
-      "public_copy_guidance": "Agent \u2192 SaaS mTLS is Required. Do not change to Planned. CAP-004 'planned' refers to fuller NIRVANA workload identity model, not mTLS itself.",
-      "ai_rag_summary": "Agent\u2192SaaS mTLS is REQUIRED. All agent routes (desired-state, heartbeat, adapter sync, allowlist) run on the mTLS listener (port 9443). CAP-004 'planned' refers to the fuller NIRVANA workload identity model, not to mTLS being optional. mTLS enforcement is fail-closed in production.",
+      "public_copy_guidance": "Agent \u2192 SaaS mTLS is Required. Do not change to Planned. CAP-004 'planned' refers to fuller workload identity model, not mTLS itself.",
+      "ai_rag_summary": "Agent\u2192SaaS mTLS is REQUIRED. All agent routes (desired-state, heartbeat, adapter sync, allowlist) run on the mTLS listener (port 9443). CAP-004 'planned' refers to the fuller workload identity model, not to mTLS being optional. mTLS enforcement is fail-closed in production.",
       "non_claims": [
         "No claim that all data-plane paths have mTLS",
         "No claim that SPIRE Workload API is fully deployed",
@@ -81,7 +81,7 @@
       "owning_subsystem": "cert-manager (issuer), workloads (key/cert), SaaS/back (verification)",
       "rotation_owner": "cert-manager auto-renewal",
       "custody_owner": "ZenLock (where applicable for cert material)",
-      "public_copy_guidance": "SPIFFE/SPIRE is part of Zen Mesh security architecture. Do not remove from public copy. Keep as strong architecture claim. Clarify that fuller NIRVANA workload identity is planned hardening.",
+      "public_copy_guidance": "SPIFFE/SPIRE is part of Zen Mesh security architecture. Do not remove from public copy. Keep as strong architecture claim. Clarify that fuller workload identity is planned hardening.",
       "ai_rag_summary": "SPIFFE/SPIRE is used in Zen Mesh where implemented today. X.509 SVIDs provide workload identity on mTLS connections. SPIFFE ID extraction and verification is implemented in agent_bootstrap_handler and security package. Do NOT remove SPIFFE/SPIRE from architecture docs or website.",
       "non_claims": [
         "No claim SPIRE Workload API is fully deployed everywhere",
@@ -94,9 +94,9 @@
       ]
     },
     {
-      "capability_id": "NIRVANA_AGENT_WORKLOAD_IDENTITY_PLANNED",
-      "capability_name": "NIRVANA Agent Workload Identity (Full Model)",
-      "claim_text": "The fuller NIRVANA-style agent workload identity model is part of the planned hardening path. This refers to comprehensive SPIRE-based workload identity with Workload API, not to mTLS itself.",
+      "capability_id": "AGENT_WORKLOAD_IDENTITY_PLANNED",
+      "capability_name": "Agent Workload Identity (Full Model)",
+      "claim_text": "The fuller agent workload identity model is part of the planned hardening path. This refers to comprehensive SPIRE-based workload identity with Workload API, not to mTLS itself.",
       "status": "planned",
       "architecture_required": false,
       "implementation_present": false,
@@ -110,10 +110,10 @@
       "owning_subsystem": "Future: SPIRE Server + Workload API",
       "rotation_owner": "Future: SPIRE Workload API rotation",
       "custody_owner": "Future: SPIRE Agent SVID store",
-      "public_copy_guidance": "CAP-004 'planned' refers to the fuller NIRVANA workload identity model. It does NOT mean mTLS is planned. mTLS is required today. The planned item is the deeper SPIRE Workload API integration for comprehensive workload identity.",
-      "ai_rag_summary": "CAP-004 'SPIFFE/SPIRE workload identity' status=planned refers to the FULLER NIRVANA-STYLE agent workload identity model with SPIRE Workload API. It does NOT mean Agent\u2192SaaS mTLS is planned. mTLS is REQUIRED today. CAP-004 planned = NIRVANA hardening, not mTLS optional. This was the root cause of the previous incorrect website downscope.",
+      "public_copy_guidance": "CAP-004 'planned' refers to the fuller workload identity model. It does NOT mean mTLS is planned. mTLS is required today. The planned item is the deeper SPIRE Workload API integration for comprehensive workload identity.",
+      "ai_rag_summary": "CAP-004 'SPIFFE/SPIRE workload identity' status=planned refers to the FULLER agent workload identity model with SPIRE Workload API. It does NOT mean Agent\u2192SaaS mTLS is planned. mTLS is REQUIRED today. CAP-004 planned = workload identity model hardening, not mTLS optional. This was the root cause of the previous incorrect website downscope.",
       "non_claims": [
-        "No claim NIRVANA workload identity is implemented",
+        "No claim workload identity is implemented",
         "No claim SPIRE Workload API is deployed",
         "No claim all workloads have comprehensive SPIFFE identity"
       ],
@@ -154,7 +154,7 @@
     {
       "capability_id": "TLS_CERT_ROTATION_LIFECYCLE",
       "capability_name": "TLS/Certificate Rotation Lifecycle",
-      "claim_text": "TLS certificate rotation is owned by cert-manager with auto-renewal. Canary rotation is implemented for ingester and planned for egress/bridge.",
+      "claim_text": "TLS certificate rotation is owned by cert-manager with auto-renewal. Canary rotation is implemented for ingester and planned for egress.",
       "status": "implemented",
       "architecture_required": true,
       "implementation_present": true,
@@ -169,7 +169,7 @@
       "rotation_owner": "cert-manager auto-renewal",
       "custody_owner": "ZenLock (where applicable for cert material distribution)",
       "public_copy_guidance": "TLS/cert rotation is owned by cert-manager. Canary deployment for cert rotation is implemented for some workloads. ZenLock distributes material where applicable.",
-      "ai_rag_summary": "TLS/certificate rotation is owned by cert-manager with auto-renewal (24h default). Canary rotation is implemented for ingester and planned for egress/bridge. ZenLock provides custody/distribution but does NOT own cert rotation.",
+      "ai_rag_summary": "TLS/certificate rotation is owned by cert-manager with auto-renewal (24h default). Canary rotation is implemented for ingester and planned for egress. ZenLock provides custody/distribution but does NOT own cert rotation.",
       "non_claims": [
         "No claim canary rotation is implemented for all workloads",
         "No claim zero-downtime cert rotation for all paths"

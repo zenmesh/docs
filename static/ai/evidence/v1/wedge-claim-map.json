@@ -1,0 +1,200 @@
+{
+  "@context": "http://schema.org/",
+  "@type": "Dataset",
+  "name": "Zen Mesh — Stripe Webhook Wedge Claim Map",
+  "product": "Zen Mesh (Stripe Webhook Operations)",
+  "version": "1.0.0",
+  "last_updated": "2026-05-25",
+  "proof_scope": "local_mock_harness_only",
+  "overall_readiness": "DEMO — local/demo/sandbox only, not customer-ready or production-live",
+  "claims": [
+    {
+      "id": "wedge-stripe-ingestion",
+      "category": "stripe_webhook_ingestion",
+      "claim": "Zen Mesh ingests Stripe webhook events via a dedicated endpoint with signature verification",
+      "status": "PROVEN",
+      "proof_scope": "local_mock",
+      "evidence_refs": [
+        "docs/80-EVIDENCE/runtime/runtime_truth_read_model_minimum.json",
+        "docs/80-EVIDENCE/runtime/at_least_once_failure_injection_execution.json"
+      ],
+      "validator_refs": [
+        "scripts/validation/runtime_proof_matrix_check.py"
+      ],
+      "limitation": "Signature verification tested in mock scenarios only. Production Stripe key validation pending.",
+      "last_updated": "2026-05-25",
+      "plane_refs": ["CONTROL_PLANE", "DATA_PLANE"],
+      "layer_refs": ["L3_TRAFFIC"]
+    },
+    {
+      "id": "wedge-stripe-delivery-visibility",
+      "category": "delivery_visibility",
+      "claim": "Zen Mesh records delivery attempts and outcomes for Stripe webhook events",
+      "status": "PROVEN",
+      "proof_scope": "local_mock",
+      "evidence_refs": [
+        "docs/80-EVIDENCE/runtime/runtime_truth_read_model_minimum.json"
+      ],
+      "validator_refs": [
+        "scripts/validation/runtime_proof_matrix_check.py"
+      ],
+      "limitation": "Delivery attempt struct is in-memory only. Persistence and customer-facing visibility are separate.",
+      "last_updated": "2026-05-25",
+      "plane_refs": ["DATA_PLANE"],
+      "layer_refs": ["L3_TRAFFIC"]
+    },
+    {
+      "id": "wedge-retry-dlq",
+      "category": "retry_dlq",
+      "claim": "Zen Mesh retries failed Stripe webhook deliveries with configurable exhaustion routing to DLQ",
+      "status": "PROVEN",
+      "proof_scope": "local_mock",
+      "evidence_refs": [
+        "docs/80-EVIDENCE/runtime/retry_exhaustion_dlq_execution.json"
+      ],
+      "validator_refs": [],
+      "limitation": "DLQ behavior tested in local mock only. Customer-facing DLQ retry UI is separate.",
+      "last_updated": "2026-05-25",
+      "plane_refs": ["DATA_PLANE"],
+      "layer_refs": ["L3_TRAFFIC"]
+    },
+    {
+      "id": "wedge-idempotency",
+      "category": "stripe_webhook_ingestion",
+      "claim": "Zen Mesh detects and handles duplicate Stripe webhook events via idempotency keys",
+      "status": "PROVEN",
+      "proof_scope": "local_mock",
+      "evidence_refs": [
+        "docs/80-EVIDENCE/runtime/duplicate_idempotency_execution.json"
+      ],
+      "validator_refs": [],
+      "limitation": "Idempotency tested in mock only. Stripe-native idempotency key interop not yet validated.",
+      "last_updated": "2026-05-25",
+      "plane_refs": ["DATA_PLANE"],
+      "layer_refs": ["L3_TRAFFIC"]
+    },
+    {
+      "id": "wedge-mtls",
+      "category": "security",
+      "claim": "Zen Mesh enforces mTLS on internal control-plane paths for Stripe webhook delivery",
+      "status": "PROVEN",
+      "proof_scope": "local_mock",
+      "evidence_refs": [
+        "docs/80-EVIDENCE/runtime/runtime_truth_read_model_minimum.json"
+      ],
+      "validator_refs": [
+        "docs/10-ARCHITECTURE/SECURITY.md"
+      ],
+      "limitation": "mTLS enforced on control-plane paths only. Not all data-plane paths have mTLS yet.",
+      "last_updated": "2026-05-25",
+      "plane_refs": ["CONTROL_PLANE"],
+      "layer_refs": ["L1_BASE"]
+    },
+    {
+      "id": "wedge-hmac-signing",
+      "category": "security",
+      "claim": "Zen Mesh verifies HMAC-signed webhook payloads with nonce-based replay protection",
+      "status": "PROVEN",
+      "proof_scope": "local_mock",
+      "evidence_refs": [
+        "docs/80-EVIDENCE/runtime/runtime_truth_read_model_minimum.json"
+      ],
+      "validator_refs": [
+        "scripts/validation/runtime_proof_matrix_check.py"
+      ],
+      "limitation": "HMAC verification tested in mock scenarios. Stripe native webhook signing secret integration pending.",
+      "last_updated": "2026-05-25",
+      "plane_refs": ["CONTROL_PLANE", "DATA_PLANE"],
+      "layer_refs": ["L1_BASE"]
+    },
+    {
+      "id": "wedge-evidence-integrity",
+      "category": "evidence",
+      "claim": "Zen Mesh provides machine-readable evidence of webhook delivery with Merkle integrity verification",
+      "status": "PROVEN",
+      "proof_scope": "local_mock",
+      "evidence_refs": [
+        "docs/80-EVIDENCE/runtime/runtime_truth_read_model_minimum.json",
+        "docs/80-EVIDENCE/runtime/runtime_proof_matrix.json"
+      ],
+      "validator_refs": [
+        "scripts/validation/merkle_evidence_verify.py"
+      ],
+      "limitation": "Merkle provides evidence integrity only — not delivery confirmation, ordering, or identity verification.",
+      "last_updated": "2026-05-25",
+      "plane_refs": ["CONTROL_PLANE", "DATA_PLANE"],
+      "layer_refs": ["L1_BASE"]
+    },
+    {
+      "id": "wedge-spiffe-identity",
+      "category": "security",
+      "claim": "Zen Mesh uses SPIFFE/SPIRE identity for workload authentication on control-plane paths",
+      "status": "PROVEN",
+      "proof_scope": "local_mock",
+      "evidence_refs": [
+        "docs/80-EVIDENCE/runtime/runtime_truth_read_model_minimum.json"
+      ],
+      "validator_refs": [
+        "docs/10-ARCHITECTURE/SECURITY.md"
+      ],
+      "limitation": "SPIFFE identity scoped to control-plane paths. SVID rotation is not yet automated.",
+      "last_updated": "2026-05-25",
+      "plane_refs": ["CONTROL_PLANE"],
+      "layer_refs": ["L1_BASE"]
+    },
+    {
+      "id": "wedge-compliance-mapping",
+      "category": "compliance",
+      "claim": "Zen Mesh has internal control mappings to PCI-DSS, SOC2, ISO 27001, NIST SP 800-53, and HIPAA Security Rule",
+      "status": "PARTIAL",
+      "proof_scope": "local_mock",
+      "evidence_refs": [
+        "docs/80-EVIDENCE/runtime/runtime_truth_read_model_minimum.json"
+      ],
+      "validator_refs": [],
+      "limitation": "Control mappings are internal readiness only. No certification, audit, or attestation has been performed.",
+      "last_updated": "2026-05-25",
+      "plane_refs": ["CONTROL_PLANE"],
+      "layer_refs": ["L1_BASE"]
+    },
+    {
+      "id": "wedge-ui-route-quality",
+      "category": "ui",
+      "claim": "Zen Mesh provides UI visibility into webhook route configuration and delivery status",
+      "status": "PARTIAL",
+      "proof_scope": "local_mock",
+      "evidence_refs": [],
+      "validator_refs": [],
+      "limitation": "Route configuration UI exists. Comprehensive delivery status dashboard is planned. Rendered browser validation not yet performed.",
+      "last_updated": "2026-05-25",
+      "plane_refs": ["CONTROL_PLANE"],
+      "layer_refs": ["L1_BASE"]
+    },
+    {
+      "id": "wedge-stripe-production-validation",
+      "category": "stripe_webhook_ingestion",
+      "claim": "Stripe webhook end-to-end path validated with real Stripe events on a cloud deployment",
+      "status": "NOT_CLAIMED",
+      "proof_scope": "none",
+      "evidence_refs": [],
+      "validator_refs": [],
+      "limitation": "All Stripe webhook testing is local/mock only. Real Stripe event validation on a cloud deployment is pending.",
+      "last_updated": "2026-05-25",
+      "plane_refs": [],
+      "layer_refs": []
+    },
+    {
+      "id": "wedge-customer-ready",
+      "category": "readiness",
+      "claim": "Stripe webhook wedge is customer-ready for production use",
+      "status": "NOT_CLAIMED",
+      "proof_scope": "none",
+      "evidence_refs": [],
+      "validator_refs": [],
+      "limitation": "Current readiness is DEMO level. Not customer-ready or production-live.",
+      "last_updated": "2026-05-25",
+      "plane_refs": [],
+      "layer_refs": []
+    }
+  ]
+}

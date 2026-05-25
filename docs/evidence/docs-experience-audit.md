@@ -9,7 +9,7 @@
 |---|---|---|
 | Getting Started | 3 | Missing "What is Zen Mesh?" intro page; quick-start assumes K8s |
 | Architecture | 4 | Missing concepts glossary; overlaps with How-It-Works on website |
-| Guides | 4 | Enrollment requires app.zen-mesh.io (currently dead); no "Create your first route" |
+| Guides | 4 | Enrollment requires internal control-plane host (not publicly reachable) (currently dead); no "Create your first route" |
 | Reference | 4 | API doc is placeholder; needs OpenAPI if available |
 | Operations | 3 | Missing monitoring/alerts setup |
 | AI Agents | 6 | Duplicate with evidence/ section |
@@ -20,7 +20,7 @@
 - P0: docs/evidence/ and docs/ai/ have overlapping content — need dedup
 - P0: No "What is Zen Mesh?" introduction page in docs
 - P0: "Getting Started" has no path for non-K8s users
-- P1: "Enrollment" guide references app.zen-mesh.io (dead link)
+- P1: "Enrollment" guide references internal control-plane host (not publicly reachable) (dead link)
 - P1: API reference is minimal/placeholder
 - P1: No concepts glossary (three-plane model, mTLS, enrollment, etc.)
 - P1: No link to zen-platform evidence from docs pages

@@ -26,12 +26,21 @@ No. All proofs are local/mock unless stated otherwise. Production validation gat
 **Where can I find non-claims?**
 In the [non-claims page](./non-claims) and the machine-readable [`/ai/evidence/v1/non-claims.json`](/ai/evidence/v1/non-claims.json) endpoint.
 
+## Stripe Webhook Wedge
+
+The primary public product scope is the **Stripe webhook wedge**. See:
+- [Wedge Overview](./wedge-overview)
+- [Wedge Claim Map](/ai/evidence/v1/wedge-claim-map.json)
+- [Wedge Non-Claims](/ai/evidence/v1/wedge-non-claims.json)
+
 ## Machine-Readable Endpoints
 
 | Endpoint | Description |
 |---|---|
-| `/ai/evidence/v1/manifest.json` | Full capability manifest with proof statuses |
+| `/ai/evidence/v1/wedge-claim-map.json` | Stripe webhook wedge claim matrix |
+| `/ai/evidence/v1/wedge-non-claims.json` | Wedge-scoped non-claims |
+| `/ai/evidence/v1/manifest.json` | Full platform capability manifest |
 | `/ai/evidence/v1/compliance-map.json` | Compliance framework to feature graph |
-| `/ai/evidence/v1/non-claims.json` | Explicit non-claims by category |
+| `/ai/evidence/v1/non-claims.json` | Full platform non-claims by category |
 | `/llms.txt` | AI context — concise |
 | `/llms-full.txt` | AI context — full (on zen-mesh.io) |

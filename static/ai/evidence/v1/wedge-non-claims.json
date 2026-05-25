@@ -1,0 +1,72 @@
+[
+  {
+    "id": "wedge-nc-production-live",
+    "category": "readiness",
+    "claim": "Stripe webhook wedge is deployed in production environments",
+    "scope": "Not claimed. All evidence is local mock harness only. No production deployment has been validated.",
+    "evidence_status": "not_claimed"
+  },
+  {
+    "id": "wedge-nc-customer-ready",
+    "category": "readiness",
+    "claim": "Stripe webhook wedge is customer-ready",
+    "scope": "Not claimed. Current readiness is DEMO / local sandbox only. Customer-ready validation gates are not passed.",
+    "evidence_status": "not_claimed"
+  },
+  {
+    "id": "wedge-nc-public-edge-mesh-relay",
+    "category": "scope",
+    "claim": "Public edge/mesh/relay capabilities are part of the Stripe webhook wedge",
+    "scope": "Not claimed. The wedge is scoped to Stripe webhook ingestion, delivery visibility, and security posture. Edge, mesh, and relay capabilities are internal platform architecture, not public product features.",
+    "evidence_status": "not_claimed"
+  },
+  {
+    "id": "wedge-nc-local-equals-production",
+    "category": "readiness",
+    "claim": "Local/demo evidence equals production readiness",
+    "scope": "Not claimed. All proofs are local/mock unless stated otherwise. Production validation requires separate gates.",
+    "evidence_status": "not_claimed"
+  },
+  {
+    "id": "wedge-nc-spiffe-complete",
+    "category": "security",
+    "claim": "SPIFFE/SPIRE posture is complete and fully automated",
+    "scope": "Not claimed. SVID rotation is not yet automated. SPIFFE identity is scoped to control-plane paths only.",
+    "evidence_status": "not_claimed"
+  },
+  {
+    "id": "wedge-nc-unsupported-providers",
+    "category": "scope",
+    "claim": "All webhook providers are fully validated",
+    "scope": "Not claimed. Only Stripe webhook wedge is scoped. Other webhook providers have not been validated.",
+    "evidence_status": "not_claimed"
+  },
+  {
+    "id": "wedge-nc-internal-architecture-public",
+    "category": "scope",
+    "claim": "Internal architecture components are part of the public product surface",
+    "scope": "Not claimed. Internal component names (data-plane, control-plane, relay, etc.) are architecture implementation details, not public product features or guarantees.",
+    "evidence_status": "not_claimed"
+  },
+  {
+    "id": "wedge-nc-exactly-once",
+    "category": "delivery",
+    "claim": "Exactly-once delivery guarantee for Stripe webhook events",
+    "scope": "Not claimed. Zen Mesh provides at-least-once delivery with idempotency, not exactly-once.",
+    "evidence_status": "not_claimed"
+  },
+  {
+    "id": "wedge-nc-zero-loss",
+    "category": "delivery",
+    "claim": "Zero event loss under all failure conditions",
+    "scope": "Not claimed. Delivery guarantees are scenario-specific and local/mock only.",
+    "evidence_status": "not_claimed"
+  },
+  {
+    "id": "wedge-nc-compliance-certification",
+    "category": "compliance",
+    "claim": "PCI, HIPAA, SOC2, ISO, or FedRAMP certification or attestation",
+    "scope": "Not claimed. Compliance control mappings are internal readiness only. No certification or audit has been performed.",
+    "evidence_status": "not_claimed"
+  }
+]

@@ -18,7 +18,7 @@ All capabilities are classified with a proof status. See `/ai/evidence/v1/manife
 | Topology drift | PROOF-006 | victory-locked, local/mock | `runtime/topology_drift_convergence_execution.json` |
 | Evidence buffer flush | PROOF-007 | victory-locked, local/mock | `runtime/evidence_buffer_flush_execution.json` |
 | Relay path convergence | PROOF-008 | victory-locked, local/mock | `runtime/relay_path_convergence_execution.json` |
-| Relay failover recovery | PROOF-009 | victory-locked, local/mock | `runtime/relay_failover_recovery_execution.json` |
+| Failover recovery | PROOF-009 | victory-locked, local/mock | `runtime/relay_failover_recovery_execution.json` |
 | Private-edge path | PROOF-010 | victory-locked, local/mock | `runtime/private_edge_path_convergence_execution.json` |
 
 **Verification:** `make runtime-proof-replay-verify` / `make runtime-convergence-state-machine-check`

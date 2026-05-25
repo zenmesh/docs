@@ -63,7 +63,7 @@ When the SaaS control plane is unavailable:
 
 ## Mapping to Evidence and API
 
-Each layer maps to specific evidence artifacts, API surfaces, and MCP tools. See the [platform layer matrix](/80-EVIDENCE/architecture/platform_layer_matrix.json) for the full cross-reference.
+Each layer maps to specific evidence artifacts, API surfaces, and MCP tools. See the [platform layer matrix](https://github.com/zenmesh/zen-platform/blob/main/docs/80-EVIDENCE/architecture/platform_layer_matrix.json) for the full cross-reference.
 
 ## Non-Claims
 

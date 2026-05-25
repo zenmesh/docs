@@ -18,7 +18,7 @@ See the [Runtime Convergence Evidence Pack v1](https://github.com/zenmesh/zen-pl
 | PROOF-006 | Topology drift | topology | victory-locked, local/mock |
 | PROOF-007 | Evidence buffer flush | evidence_buffer | victory-locked, local/mock |
 | PROOF-008 | Relay path convergence | relay | victory-locked, local/mock |
-| PROOF-009 | Relay failover recovery | relay | victory-locked, local/mock |
+| PROOF-009 | Failover recovery | relay | victory-locked, local/mock |
 | PROOF-010 | Private-edge path convergence | private_edge | victory-locked, local/mock |
 
 ## Verification

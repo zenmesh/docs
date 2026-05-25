@@ -27,7 +27,7 @@ The following mappings connect Zen Mesh technical features to compliance framewo
 | ZenLock ciphertext | Secret management | ISO 27001:2022 | A.10.1 | maps_to | TRUST-PROOF-005 |
 | Evidence ledger/Merkle | Audit trail | SOC2 TSC | CC3.x | maps_to | Runtime evidence pack |
 | Evidence ledger/Merkle | Audit trail | NIST SP 800-53 | AU-2 | supports | Runtime evidence pack |
-| Relay failover | Resilience | NIST SP 800-53 | CP-2 | maps_to | PROOF-009 |
+| Failover | Resilience | NIST SP 800-53 | CP-2 | maps_to | PROOF-009 |
 | DLQ/retry | Error handling | NIST SP 800-53 | SI-4 | maps_to | PROOF-003 |
 | TLS 1.3 transport | Encryption in transit | PCI-DSS v4.0 | 4.2.1 | supports | Implementation |
 | mTLS workload identity | Authentication | NIST SP 800-53 | IA-5 | supports | TRUST-PROOF-004 |

@@ -90,7 +90,7 @@ const config: Config = {
         '@context': 'https://schema.org',
         '@type': 'Dataset',
         name: 'Zen Mesh Documentation',
-        description: 'Evidence-backed traffic-plane runtime for Kubernetes webhook and event delivery across direct, relay, and private-edge paths.',
+        description: 'Stripe webhook ingestion, validation, delivery visibility, and security operations. Current readiness: DEMO (local/mock/sandbox only).',
         url: 'https://docs.zen-mesh.io',
         dateModified: '2026-05-25',
         hasPart: [
