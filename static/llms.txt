@@ -1,12 +1,12 @@
-# Zen Mesh — Stripe Webhook Operations
+# Zen Mesh — Webhook Operations
 
 Version: 1.0.0
 Last-Updated: 2026-05-25
-Product: Zen Mesh — Stripe webhook ingestion, validation, delivery visibility, and security operations
+Product: Zen Mesh — webhook ingestion, validation, delivery visibility, and security operations across Stripe, GitHub, and custom webhooks
 
-Zen helps teams receive, validate, observe, and operate Stripe webhooks with stronger reliability, visibility, and security posture. Current readiness: DEMO (local/mock/sandbox only, not customer-ready or production-live).
+Zen helps teams receive, validate, observe, and operate webhooks across Stripe, GitHub, and custom sources, with a planned expansion path to Shopify, Twilio, GitLab, Alipay, and similar providers. Current readiness: DEMO (local/mock/sandbox only, not customer-ready or production-live).
 
-## Wedge Evidence (Stripe Webhook Scope)
+## Wedge Evidence
 - Wedge Claim Map: https://docs.zen-mesh.io/ai/evidence/v1/wedge-claim-map.json
 - Wedge Non-Claims: https://docs.zen-mesh.io/ai/evidence/v1/wedge-non-claims.json
 - Wedge Overview: https://docs.zen-mesh.io/docs/ai/wedge-overview

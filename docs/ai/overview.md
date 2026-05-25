@@ -26,9 +26,9 @@ No. All proofs are local/mock unless stated otherwise. Production validation gat
 **Where can I find non-claims?**
 In the [non-claims page](./non-claims) and the machine-readable [`/ai/evidence/v1/non-claims.json`](/ai/evidence/v1/non-claims.json) endpoint.
 
-## Stripe Webhook Wedge
+## Webhook Operations Wedge
 
-The primary public product scope is the **Stripe webhook wedge**. See:
+The public product scope is the **webhook operations wedge** — Stripe, GitHub, and custom webhooks with a planned expansion path to Shopify, Twilio, GitLab, Alipay, and similar providers. See:
 - [Wedge Overview](./wedge-overview)
 - [Wedge Claim Map](/ai/evidence/v1/wedge-claim-map.json)
 - [Wedge Non-Claims](/ai/evidence/v1/wedge-non-claims.json)

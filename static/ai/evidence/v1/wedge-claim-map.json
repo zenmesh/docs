@@ -1,8 +1,8 @@
 {
   "@context": "http://schema.org/",
   "@type": "Dataset",
-  "name": "Zen Mesh — Stripe Webhook Wedge Claim Map",
-  "product": "Zen Mesh (Stripe Webhook Operations)",
+  "name": "Zen Mesh — Webhook Operations Wedge Claim Map",
+  "product": "Zen Mesh (Webhook Operations — Stripe, GitHub, Custom)",
   "version": "1.0.0",
   "last_updated": "2026-05-25",
   "proof_scope": "local_mock_harness_only",
@@ -27,9 +27,35 @@
       "layer_refs": ["L3_TRAFFIC"]
     },
     {
-      "id": "wedge-stripe-delivery-visibility",
+      "id": "wedge-github-ingestion",
+      "category": "github_webhook_ingestion",
+      "claim": "Zen Mesh provides a GitHub webhook adapter for ingestion",
+      "status": "PARTIAL",
+      "proof_scope": "local_mock",
+      "evidence_refs": [],
+      "validator_refs": [],
+      "limitation": "GitHub provider adapter exists in architecture. Webhook-specific signature validation and end-to-end testing not yet performed.",
+      "last_updated": "2026-05-25",
+      "plane_refs": ["DATA_PLANE"],
+      "layer_refs": ["L3_TRAFFIC"]
+    },
+    {
+      "id": "wedge-custom-ingestion",
+      "category": "custom_webhook_ingestion",
+      "claim": "Zen Mesh supports custom webhook ingestion via a generic pipeline",
+      "status": "PLANNED",
+      "proof_scope": "none",
+      "evidence_refs": [],
+      "validator_refs": [],
+      "limitation": "Generic ingestion pipeline is designed. Provider-specific handling requires per-adapter configuration. Not yet validated.",
+      "last_updated": "2026-05-25",
+      "plane_refs": [],
+      "layer_refs": []
+    },
+    {
+      "id": "wedge-delivery-visibility",
       "category": "delivery_visibility",
-      "claim": "Zen Mesh records delivery attempts and outcomes for Stripe webhook events",
+      "claim": "Zen Mesh records delivery attempts and outcomes for webhook events",
       "status": "PROVEN",
       "proof_scope": "local_mock",
       "evidence_refs": [
@@ -46,7 +72,7 @@
     {
       "id": "wedge-retry-dlq",
       "category": "retry_dlq",
-      "claim": "Zen Mesh retries failed Stripe webhook deliveries with configurable exhaustion routing to DLQ",
+      "claim": "Zen Mesh retries failed webhook deliveries with configurable exhaustion routing to DLQ",
       "status": "PROVEN",
       "proof_scope": "local_mock",
       "evidence_refs": [
@@ -61,14 +87,14 @@
     {
       "id": "wedge-idempotency",
       "category": "stripe_webhook_ingestion",
-      "claim": "Zen Mesh detects and handles duplicate Stripe webhook events via idempotency keys",
+      "claim": "Zen Mesh detects and handles duplicate webhook events via idempotency keys",
       "status": "PROVEN",
       "proof_scope": "local_mock",
       "evidence_refs": [
         "docs/80-EVIDENCE/runtime/duplicate_idempotency_execution.json"
       ],
       "validator_refs": [],
-      "limitation": "Idempotency tested in mock only. Stripe-native idempotency key interop not yet validated.",
+      "limitation": "Idempotency tested in mock only. Provider-native idempotency interop not yet validated per source.",
       "last_updated": "2026-05-25",
       "plane_refs": ["DATA_PLANE"],
       "layer_refs": ["L3_TRAFFIC"]
@@ -76,7 +102,7 @@
     {
       "id": "wedge-mtls",
       "category": "security",
-      "claim": "Zen Mesh enforces mTLS on internal control-plane paths for Stripe webhook delivery",
+      "claim": "Zen Mesh enforces mTLS on internal paths for webhook delivery",
       "status": "PROVEN",
       "proof_scope": "local_mock",
       "evidence_refs": [
@@ -85,7 +111,7 @@
       "validator_refs": [
         "docs/10-ARCHITECTURE/SECURITY.md"
       ],
-      "limitation": "mTLS enforced on control-plane paths only. Not all data-plane paths have mTLS yet.",
+      "limitation": "mTLS enforced on internal control-plane paths. Not all data-plane paths have mTLS yet.",
       "last_updated": "2026-05-25",
       "plane_refs": ["CONTROL_PLANE"],
       "layer_refs": ["L1_BASE"]
@@ -102,7 +128,7 @@
       "validator_refs": [
         "scripts/validation/runtime_proof_matrix_check.py"
       ],
-      "limitation": "HMAC verification tested in mock scenarios. Stripe native webhook signing secret integration pending.",
+      "limitation": "HMAC verification tested in mock scenarios. Provider-specific webhook signing integration per source.",
       "last_updated": "2026-05-25",
       "plane_refs": ["CONTROL_PLANE", "DATA_PLANE"],
       "layer_refs": ["L1_BASE"]
@@ -128,7 +154,7 @@
     {
       "id": "wedge-spiffe-identity",
       "category": "security",
-      "claim": "Zen Mesh uses SPIFFE/SPIRE identity for workload authentication on control-plane paths",
+      "claim": "Zen Mesh uses SPIFFE/SPIRE identity for workload authentication on internal paths",
       "status": "PROVEN",
       "proof_scope": "local_mock",
       "evidence_refs": [
@@ -137,7 +163,7 @@
       "validator_refs": [
         "docs/10-ARCHITECTURE/SECURITY.md"
       ],
-      "limitation": "SPIFFE identity scoped to control-plane paths. SVID rotation is not yet automated.",
+      "limitation": "SPIFFE identity scoped to internal paths. SVID rotation is not yet automated.",
       "last_updated": "2026-05-25",
       "plane_refs": ["CONTROL_PLANE"],
       "layer_refs": ["L1_BASE"]
@@ -171,14 +197,27 @@
       "layer_refs": ["L1_BASE"]
     },
     {
-      "id": "wedge-stripe-production-validation",
-      "category": "stripe_webhook_ingestion",
-      "claim": "Stripe webhook end-to-end path validated with real Stripe events on a cloud deployment",
+      "id": "wedge-provider-expansion",
+      "category": "provider_expansion",
+      "claim": "Modular provider adapter model enables expansion to Shopify, Twilio, GitLab, Alipay, and similar providers",
+      "status": "PLANNED",
+      "proof_scope": "none",
+      "evidence_refs": [],
+      "validator_refs": [],
+      "limitation": "Provider expansion is roadmap/planned. Not validated. Not production support. Adapter model is architectural design, not marketplace coverage.",
+      "last_updated": "2026-05-25",
+      "plane_refs": [],
+      "layer_refs": []
+    },
+    {
+      "id": "wedge-production-validation",
+      "category": "readiness",
+      "claim": "Webhook end-to-end path validated with real provider events on a cloud deployment",
       "status": "NOT_CLAIMED",
       "proof_scope": "none",
       "evidence_refs": [],
       "validator_refs": [],
-      "limitation": "All Stripe webhook testing is local/mock only. Real Stripe event validation on a cloud deployment is pending.",
+      "limitation": "All webhook testing is local/mock only. Real provider event validation on a cloud deployment is pending.",
       "last_updated": "2026-05-25",
       "plane_refs": [],
       "layer_refs": []
@@ -186,7 +225,7 @@
     {
       "id": "wedge-customer-ready",
       "category": "readiness",
-      "claim": "Stripe webhook wedge is customer-ready for production use",
+      "claim": "Webhook operations wedge is customer-ready for production use",
       "status": "NOT_CLAIMED",
       "proof_scope": "none",
       "evidence_refs": [],

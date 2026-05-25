@@ -2,22 +2,22 @@
   {
     "id": "wedge-nc-production-live",
     "category": "readiness",
-    "claim": "Stripe webhook wedge is deployed in production environments",
+    "claim": "Webhook operations wedge is deployed in production environments",
     "scope": "Not claimed. All evidence is local mock harness only. No production deployment has been validated.",
     "evidence_status": "not_claimed"
   },
   {
     "id": "wedge-nc-customer-ready",
     "category": "readiness",
-    "claim": "Stripe webhook wedge is customer-ready",
+    "claim": "Webhook operations wedge is customer-ready",
     "scope": "Not claimed. Current readiness is DEMO / local sandbox only. Customer-ready validation gates are not passed.",
     "evidence_status": "not_claimed"
   },
   {
     "id": "wedge-nc-public-edge-mesh-relay",
     "category": "scope",
-    "claim": "Public edge/mesh/relay capabilities are part of the Stripe webhook wedge",
-    "scope": "Not claimed. The wedge is scoped to Stripe webhook ingestion, delivery visibility, and security posture. Edge, mesh, and relay capabilities are internal platform architecture, not public product features.",
+    "claim": "Public edge/mesh/relay capabilities are part of the webhook operations wedge",
+    "scope": "Not claimed. The wedge is scoped to webhook ingestion, delivery visibility, and security posture. Edge, mesh, and relay capabilities are internal platform architecture, not public product features.",
     "evidence_status": "not_claimed"
   },
   {
@@ -31,28 +31,56 @@
     "id": "wedge-nc-spiffe-complete",
     "category": "security",
     "claim": "SPIFFE/SPIRE posture is complete and fully automated",
-    "scope": "Not claimed. SVID rotation is not yet automated. SPIFFE identity is scoped to control-plane paths only.",
+    "scope": "Not claimed. SVID rotation is not yet automated. SPIFFE identity is scoped to internal paths only.",
     "evidence_status": "not_claimed"
   },
   {
-    "id": "wedge-nc-unsupported-providers",
+    "id": "wedge-nc-provider-scope",
     "category": "scope",
-    "claim": "All webhook providers are fully validated",
-    "scope": "Not claimed. Only Stripe webhook wedge is scoped. Other webhook providers have not been validated.",
+    "claim": "All webhook providers are fully validated at the same level",
+    "scope": "Not claimed. Provider validation varies: Stripe tested (local/mock), GitHub adapter present (custom validation needed), Custom webhook planned. Provider-specific signature schemes evaluated per adapter.",
+    "evidence_status": "not_claimed"
+  },
+  {
+    "id": "wedge-nc-roadmap-providers-supported",
+    "category": "scope",
+    "claim": "Shopify, Twilio, GitLab, and Alipay webhook support is currently available",
+    "scope": "Not claimed. These are on the provider expansion roadmap only. The modular provider adapter model is designed to extend to these and similar providers, but no implementation or validation has been completed.",
+    "evidence_status": "not_claimed"
+  },
+  {
+    "id": "wedge-nc-roadmap-equals-production",
+    "category": "scope",
+    "claim": "Provider expansion roadmap implies production support",
+    "scope": "Not claimed. Roadmap providers are planned — not validated, not production-ready, not customer-ready.",
+    "evidence_status": "not_claimed"
+  },
+  {
+    "id": "wedge-nc-custom-equals-all-signatures",
+    "category": "scope",
+    "claim": "Custom webhook support covers every provider-specific signature scheme",
+    "scope": "Not claimed. Custom webhooks use a generic ingestion pipeline. Provider-specific signature verification, headers, and event schemas require per-adapter implementation.",
+    "evidence_status": "not_claimed"
+  },
+  {
+    "id": "wedge-nc-modular-model-marketplace",
+    "category": "scope",
+    "claim": "Modular provider adapter design implies full marketplace coverage",
+    "scope": "Not claimed. The modular adapter architecture is a design choice, not a claim of broad provider support. Each adapter requires independent implementation and validation.",
     "evidence_status": "not_claimed"
   },
   {
     "id": "wedge-nc-internal-architecture-public",
     "category": "scope",
     "claim": "Internal architecture components are part of the public product surface",
-    "scope": "Not claimed. Internal component names (data-plane, control-plane, relay, etc.) are architecture implementation details, not public product features or guarantees.",
+    "scope": "Not claimed. Internal implementation details (data-plane, control-plane, internal component names) are architecture internals, not public product features or guarantees.",
     "evidence_status": "not_claimed"
   },
   {
     "id": "wedge-nc-exactly-once",
     "category": "delivery",
-    "claim": "Exactly-once delivery guarantee for Stripe webhook events",
-    "scope": "Not claimed. Zen Mesh provides at-least-once delivery with idempotency, not exactly-once.",
+    "claim": "Exactly-once delivery guarantee for webhook events",
+    "scope": "Not claimed. Provides at-least-once delivery with idempotency, not exactly-once.",
     "evidence_status": "not_claimed"
   },
   {
