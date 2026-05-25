@@ -35,3 +35,22 @@ All proofs are local/mock only unless stated otherwise. No production or live ex
 ## Source Repository
 
 All evidence artifacts live in `zen-platform/docs/80-EVIDENCE/`. See [Current Evidence Map](https://github.com/zenmesh/zen-platform/blob/main/docs/20-OPERATIONS/CURRENT_EVIDENCE_MAP.md) for the complete newcomer entrypoint.
+
+## Operational Truth Demo Evidence Pack
+
+Canonical demo evidence pack for buyers/investors/internal demo readiness.
+
+**Pack:** `zen-platform/docs/80-EVIDENCE/demo/operational_truth_demo_evidence_pack.json`
+
+| Flow | Mode | Status |
+|------|------|--------|
+| FLOW-01 | Mode A — Direct Public Target | VALIDATED PASS |
+| FLOW-02 | Mode B — Egress Direct | VALIDATED PASS |
+| FLOW-03 (generic VM relay) | Mode C — Egress Relay | PARTIAL — VM/nftables setup PASS; VM http-echo receipt NOT confirmed end-to-end |
+| FLOW-03 (Stripe E2E GKE→k3d) | Mode C — Relay, Stripe-specific | VALIDATED PASS — Stripe Sandbox only |
+
+**Critical distinction:** Stripe FLOW-03 PASS does NOT imply generic FLOW-03 PASS. Generic FLOW-03 PARTIAL does NOT block Stripe FLOW-03.
+
+**Non-claims:** Demo/validated proof only — not production-ready. No production-live claim. No production Stripe claim. No generic FLOW-03 full-pass claim. No exactly-once/zero-loss delivery guarantee. No compliance certification (PCI/SOC2/HIPAA/FedRAMP/ISO). No Merkle auth/replay/identity/encryption/access-control claim.
+
+**Source:** `zen-platform` (github.com/zenmesh/zen-platform, commit `7c7c2f33534a`)
