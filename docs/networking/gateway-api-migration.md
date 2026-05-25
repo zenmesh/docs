@@ -77,6 +77,42 @@ Migration target is **Gateway API v1.0+** with:
 - ✅ CRD readiness: Gateway API v1 CRDs not yet installed in clusters
 - ✅ All 9 gateway validators PASS
 
+## Controller Selection
+
+**Status:** Recommended (not installed, not deployed)
+
+After evaluating 9 controller candidates across all planes, the following per-plane recommendations are active:
+
+| Plane | Recommended | Fallback | Rejected |
+|---|---|---|---|
+| SaaS / Control Plane (GKE) | **GKE Gateway Controller** | Envoy Gateway | Istio, Contour, Cilium, NGINX Gateway Fabric |
+| Data Plane | **Envoy Gateway** | GKE Gateway Controller | NGINX Gateway Fabric (no GRPCRoute), Istio, Contour, Cilium |
+| Edge Plane | **Envoy Gateway** | NGINX Gateway Fabric | GKE (cloud-only), Istio, Cilium, Traefik, Kong |
+| Private Data Plane | **Deferred** | Envoy Gateway (tentative) | All deferred |
+
+### Why Envoy Gateway for Data Plane and Edge
+
+- **GRPCRoute** — native support for gRPC routes (required for data-plane ingester health)
+- **Cloud-agnostic** — no GKE/AWS dependency for edge-plane
+- **CNCF graduated GA** — production-grade maturity
+- **Full Gateway API v1.0+** — Gateway, HTTPRoute, GRPCRoute, TLSRoute, TCPRoute, BackendTLSPolicy
+
+### Why GKE Gateway Controller for SaaS
+
+- **Managed** — lowest operational overhead on GKE
+- **GA** — production-ready, no controller deployment needed
+- **Lock-in acceptable** — SaaS already GKE-dependent
+
+### What's Next for Controllers
+
+1. Install Envoy Gateway in k3d sandbox for local validation
+2. Enable GKE Gateway API on sandbox GKE cluster
+3. Validate GRPCRoute with zen-cluster ingester
+4. Test TLS/cert-manager integration
+5. Verify rate limiting parity with nginx annotations
+
+See [Controller Selection Decision](https://github.com/zenmesh/zen-platform/blob/main/docs/20-OPERATIONS/GATEWAY_API_CONTROLLER_SELECTION_DECISION.md) for full rationale.
+
 ## What Is NOT Yet Migrated
 
 - ❌ No Gateway API resources created in any cluster
@@ -91,9 +127,9 @@ Migration target is **Gateway API v1.0+** with:
 
 | Blocker | Routes Affected | Resolution |
 |---|---|---|
-| GRPCRoute requires Gateway API v1.2+ | grpc-ingester-healthz | Install v1.2 CRDs; verify NGINX Gateway Fabric support |
-| BackendTLSPolicy needed for HTTPS backend | m2m-api | Model BackendTLSPolicy; verify controller support |
-| Controller not yet selected | All | Complete controller evaluation (NGINX Gateway Fabric leading) |
+| GRPCRoute requires Gateway API v1.2+ | grpc-ingester-healthz | Install v1.2 CRDs; verify Envoy Gateway support |
+| BackendTLSPolicy needed for HTTPS backend | m2m-api | Model BackendTLSPolicy; verify Envoy Gateway support |
+| No controller installed in sandbox | All | Install Envoy Gateway in k3d sandbox for local validation |
 
 ## Non-Claims
 
@@ -112,4 +148,5 @@ Migration target is **Gateway API v1.0+** with:
 - [Migration Readiness](https://github.com/zenmesh/zen-platform/blob/main/docs/80-EVIDENCE/gateway-api/gateway_api_migration_readiness.json)
 - [Candidate Plan](https://github.com/zenmesh/zen-platform/blob/main/docs/80-EVIDENCE/gateway-api/gateway_api_candidate_plan.json)
 - [Controller Selection](https://github.com/zenmesh/zen-platform/blob/main/docs/80-EVIDENCE/gateway-api/gateway_controller_selection.json)
+- [Controller Selection Decision](https://github.com/zenmesh/zen-platform/blob/main/docs/20-OPERATIONS/GATEWAY_API_CONTROLLER_SELECTION_DECISION.md)
 - [CRD Readiness](https://github.com/zenmesh/zen-platform/blob/main/docs/80-EVIDENCE/gateway-api/gateway_crd_readiness.json)

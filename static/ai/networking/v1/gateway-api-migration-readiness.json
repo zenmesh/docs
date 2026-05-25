@@ -16,19 +16,48 @@
     "gateway_api_version": "v1.0+",
     "planned_gateways": 5,
     "planned_routes": 19,
-    "controller_candidates": ["NGINX Gateway Fabric", "GKE Gateway Controller", "Envoy Gateway"]
+    "controller_candidates": [
+      "NGINX Gateway Fabric",
+      "GKE Gateway Controller",
+      "Envoy Gateway"
+    ]
   },
   "hosts": [
-    {"host": "app.zen-mesh.io", "plane": "CONTROL_PLANE", "owner": "Hermes", "routes": 5},
-    {"host": "api.zen-mesh.io", "plane": "CONTROL_PLANE", "owner": "nanobot", "routes": 12},
-    {"host": "ingest.zen-mesh.io", "plane": "DATA_PLANE", "owner": "nanobot", "routes": 1},
-    {"host": "platform.zen-mesh.io", "plane": "CONTROL_PLANE", "owner": "nanobot", "routes": 2},
-    {"host": "m2m.zenmesh.io", "plane": "CONTROL_PLANE", "owner": "nanobot", "routes": 1}
+    {
+      "host": "app.zen-mesh.io",
+      "plane": "CONTROL_PLANE",
+      "owner": "Hermes",
+      "routes": 5
+    },
+    {
+      "host": "api.zen-mesh.io",
+      "plane": "CONTROL_PLANE",
+      "owner": "nanobot",
+      "routes": 12
+    },
+    {
+      "host": "ingest.zen-mesh.io",
+      "plane": "DATA_PLANE",
+      "owner": "nanobot",
+      "routes": 1
+    },
+    {
+      "host": "platform.zen-mesh.io",
+      "plane": "CONTROL_PLANE",
+      "owner": "nanobot",
+      "routes": 2
+    },
+    {
+      "host": "m2m.zenmesh.io",
+      "plane": "CONTROL_PLANE",
+      "owner": "nanobot",
+      "routes": 1
+    }
   ],
   "blockers": [
     "GRPCRoute requires Gateway API v1.2+",
     "BackendTLSPolicy needed for HTTPS backend-protocol routes",
-    "Controller not yet selected"
+    "No controller installed in sandbox"
   ],
   "non_claims": [
     "No runtime migration performed",
@@ -40,5 +69,16 @@
   ],
   "docs_urls": [
     "https://docs.zen-mesh.io/networking/gateway-api-migration"
-  ]
+  ],
+  "controller_selection": {
+    "status": "recommended_not_installed",
+    "recommended": {
+      "saas_control": "GKE Gateway Controller",
+      "data_plane": "Envoy Gateway",
+      "edge_plane": "Envoy Gateway",
+      "private_data_plane": "deferred"
+    },
+    "candidates_evaluated": 9,
+    "selection_decision_ref": "docs/20-OPERATIONS/GATEWAY_API_CONTROLLER_SELECTION_DECISION.md"
+  }
 }
