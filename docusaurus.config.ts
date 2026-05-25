@@ -71,6 +71,37 @@ const config: Config = {
     ],
   ],
 
+  headTags: [
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'alternate',
+        type: 'text/plain',
+        href: '/llms.txt',
+        title: 'AI-readable documentation',
+      },
+    },
+    {
+      tagName: 'script',
+      attributes: {
+        type: 'application/ld+json',
+      },
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Dataset',
+        name: 'Zen Mesh Documentation',
+        description: 'Evidence-backed traffic-plane runtime for Kubernetes webhook and event delivery across direct, relay, and private-edge paths.',
+        url: 'https://docs.zen-mesh.io',
+        dateModified: '2026-05-25',
+        hasPart: [
+          { '@type': 'CreativeWork', name: 'Capability Manifest', url: 'https://docs.zen-mesh.io/ai/evidence/v1/manifest.json' },
+          { '@type': 'CreativeWork', name: 'Non-Claims', url: 'https://docs.zen-mesh.io/ai/evidence/v1/non-claims.json' },
+          { '@type': 'CreativeWork', name: 'Compliance Map', url: 'https://docs.zen-mesh.io/ai/evidence/v1/compliance-map.json' },
+        ],
+      }),
+    },
+  ],
+
   themeConfig: {
     colorMode: {
       defaultMode: 'dark',

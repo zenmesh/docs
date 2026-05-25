@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Allow: /llms.txt
+Allow: /ai/
+Allow: /docs/ai/
+
+Sitemap: https://docs.zen-mesh.io/sitemap.xml
+
+# AI-readable documentation is at /llms.txt

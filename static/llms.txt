@@ -1,4 +1,9 @@
 # Zen Mesh
+
+Version: 1.0.0
+Last-Updated: 2026-05-25
+Product: Zen Mesh — evidence-backed traffic-plane runtime for Kubernetes webhook and event delivery
+
 Machine-readable API documentation and evidence:
 - API Reference: https://docs.zen-mesh.io/docs/reference/api
 - AI Evidence Manifest: https://docs.zen-mesh.io/ai/evidence/v1/manifest.json
@@ -6,6 +11,8 @@ Machine-readable API documentation and evidence:
 - Non-Claims: https://docs.zen-mesh.io/ai/evidence/v1/non-claims.json
 - Getting Started: https://docs.zen-mesh.io/docs/getting-started/quick-start
 - Installation: https://docs.zen-mesh.io/docs/getting-started/installation
+- Evidence Status: https://docs.zen-mesh.io/docs/ai/overview
+- AI Docs Index: https://docs.zen-mesh.io/docs/ai/overview
 
 All evidence artifacts at github.com/zenmesh/zen-platform/docs/80-EVIDENCE/
 Proofs are local/mock only unless stated otherwise.
