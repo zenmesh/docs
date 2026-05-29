@@ -11,7 +11,7 @@ Zen Mesh is in **early access**. We are completing final validations before open
 - Available now by contacting us at zen@zen-mesh.io
 - No credit card required
 - Best-effort support during early access
-- Proofs are local/mock only — sandbox validation in progress
+- Proofs are local/mock unless stated — Stripe FLOW-03 validated on GKE cloud (demo); generic FLOW-03 sandbox PASS
 
 ## Production Access
 
@@ -24,7 +24,7 @@ Zen Mesh is in **early access**. We are completing final validations before open
 
 | Domain | Proofs | Status |
 |---|---|---|
-| Runtime convergence | 10/10 | Victory-locked, local/mock |
+| Runtime convergence | 10/10 | Victory-locked, local/mock or cloud-demo |
 | Trust lifecycle | 10/10 | Execution artifacts, local/mock |
 | Claims guard | 0 critical | Burned down from 16 |
 | Compliance mappings | 5 frameworks | Support mappings only |
@@ -33,7 +33,7 @@ Zen Mesh is in **early access**. We are completing final validations before open
 
 See [Non-Claims](../ai/non-claims) for a complete list. Key items:
 - No PCI, HIPAA, FedRAMP, SOC 2, or ISO certification
-- No delivery guarantee beyond scenario-specific local/mock proofs
+- No delivery guarantee beyond scenario-specific local/mock/cloud-demo proofs
 - No production-level zero-trust status
 - Merkle is evidence integrity only — see non-claims for scope
-- Proofs are local/mock unless stated
+- Proofs are local/mock or cloud-demo (Stripe FLOW-03 on GKE) unless stated; no production-live claim

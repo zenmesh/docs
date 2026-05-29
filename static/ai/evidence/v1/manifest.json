@@ -11,7 +11,7 @@
   "generated_at": "2026-05-24T17:51:13Z",
   "product": "Zen Mesh",
   "repository": "https://github.com/zenmesh/zen-platform",
-  "evidence_scope": "local_mock_harness_only",
+  "evidence_scope": "local_mock_harness_plus_gke_cloud_demo",
   "proof_levels": {
     "victory_locked": {
       "label": "Victory Locked",
@@ -22,6 +22,11 @@
       "label": "Proven (Local Mock)",
       "description": "Proof passes in a local sandbox or mock harness. Not production-validated.",
       "confidence": "medium"
+    },
+    "proven_cloud_demo": {
+      "label": "Proven (Cloud Demo)",
+      "description": "Proof validated on cloud infrastructure (GKE). Demo scope, not production.",
+      "confidence": "medium-high"
     },
     "implementation_present": {
       "label": "Implementation Present",
@@ -916,6 +921,42 @@
       "json_url": "/ai/networking/v1/gateway-api-migration-readiness.json",
       "docs_url": "https://docs.zen-mesh.io/networking/gateway-api-migration",
       "non_claim": "No runtime migration performed. No Gateway API resources created in clusters."
+    },
+    {
+      "id": "flow01-direct-public-target",
+      "name": "FLOW-01: Direct Public Target Delivery",
+      "status": "victory_locked",
+      "evidence_scope": "proven_local_mock",
+      "merkle_ref": "docs/80-EVIDENCE/merkle/flow01_validated_merkle.json",
+      "validate_target": "make validate-runtime-flow01",
+      "non_claim": "Demo/sandbox proof only. Not production-live, not customer-ready."
+    },
+    {
+      "id": "flow02-egress-direct-mtls",
+      "name": "FLOW-02: Egress Direct mTLS Delivery",
+      "status": "victory_locked",
+      "evidence_scope": "proven_local_mock",
+      "merkle_ref": "docs/80-EVIDENCE/merkle/flow02_validated_merkle.json",
+      "validate_target": "make validate-runtime-flow02",
+      "non_claim": "Demo/sandbox proof only. Not production-live, not customer-ready."
+    },
+    {
+      "id": "flow03-generic-sandbox-relay",
+      "name": "FLOW-03: Generic Sandbox VM Relay",
+      "status": "victory_locked",
+      "evidence_scope": "proven_local_mock",
+      "merkle_ref": "docs/80-EVIDENCE/merkle/flow03_sandbox_vm_nftables_2026_05_25_manifest.json",
+      "validate_target": "make flow03-permanence-check",
+      "non_claim": "Sandbox PASS only. Not production-live, not customer-ready."
+    },
+    {
+      "id": "flow03-stripe-e2e-gke-k3d",
+      "name": "FLOW-03: Stripe E2E GKE→k3d Relay",
+      "status": "victory_locked",
+      "evidence_scope": "proven_cloud_demo",
+      "merkle_ref": "docs/80-EVIDENCE/merkle/stripe_flow03_e2e_gke_k3d_merkle.json",
+      "validate_target": "make validate-flow03-stripe-gke",
+      "non_claim": "Stripe Sandbox only. GKE cloud-validated but not production. Not customer-ready."
     }
   ],
   "compliance_mappings": {
@@ -933,7 +974,7 @@
     "This manifest does NOT claim any external audit or attestation result",
     "This does NOT claim production readiness for any capability",
     "Victory-locked proofs are scenario-specific, not general guarantees",
-    "All proofs are local mock harness only unless stated otherwise",
+    "All proofs are local mock harness or cloud-demo (Stripe FLOW-03 on GKE) unless stated otherwise",
     "Merkle evidence chain provides integrity only \u2014 it does not provide ordering guarantees, principal verification, or send confirmations",
     "No exactly-once delivery claim is made",
     "No zero-loss delivery claim is made",

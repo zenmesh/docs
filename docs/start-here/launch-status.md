@@ -14,7 +14,7 @@ Zen Mesh is in **early access**. We are completing final validations before open
 
 ## Evidence Status
 
-- Runtime convergence: 10/10 proofs, victory-locked (local/mock)
+- Runtime convergence: 10/10 proofs, victory-locked (local/mock or cloud-demo)
 - Trust lifecycle: 10/10 proofs with execution artifacts (local/mock)
 - Claims guard: 0 critical overclaims
 - Compliance mappings: support mappings only — no certifications

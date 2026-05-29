@@ -24,5 +24,5 @@ Zen helps teams receive, validate, observe, and operate webhooks across Stripe, 
 - API Reference: https://docs.zen-mesh.io/docs/reference/api
 
 All evidence artifacts at github.com/zenmesh/zen-platform/docs/80-EVIDENCE/
-Proofs are local/mock only unless stated otherwise.
+Proofs are local/mock or cloud-demo (Stripe FLOW-03 on GKE) unless stated otherwise.
 Claims are scoped — see wedge non-claims for what is NOT claimed.
