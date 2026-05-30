@@ -31,6 +31,15 @@ Non-claims and proof scope are authoritative — see the Non-Claims and Wedge Ev
 - [Quick start](https://docs.zen-mesh.io/docs/getting-started/quick-start): Sandbox-oriented setup
 - [Installation](https://docs.zen-mesh.io/docs/getting-started/installation): Install paths for evaluation
 
+## V1 governance (2026-05-30)
+
+- Not production-live, not customer-ready, not demo-ready as global platform readiness
+- Canonical failure-stop: canonical script failure requires STOP — ad hoc runtime is not accepted evidence
+- Merkle authority: post-HELPER030 accepted deploy/FLOW/UI/completion evidence requires Merkle inclusion; Merkle is integrity comparison only; Merkle is not authentication, identity proof, encryption, or replay prevention
+- L1 /planes T1: not product-pass; FLOW-03 mandatory; FLOW-01/02/03 accepted proof pending Hermes H220 clean canonical validation
+- ST-003 operational SVID rotation MISSING; N086 DeliveryPolicy L2 deferred — not PASS
+- [Non-claims registry](https://docs.zen-mesh.io/ai/evidence/v1/non-claims.json)
+
 ## Optional
 
 - [Full AI context](https://www.zen-mesh.io/llms-full.txt): Expanded curated context (community convention)

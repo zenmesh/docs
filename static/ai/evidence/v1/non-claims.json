@@ -180,5 +180,54 @@
     "claim": "SPIFFE/SPIRE is not used in Zen Mesh",
     "scope": "NOT TRUE. SPIFFE/SPIRE is part of the Zen Mesh security architecture. X.509 SVIDs and SPIFFE ID verification are implemented.",
     "evidence_status": "explicitly_false"
+  },
+  {
+    "id": "non-claim-v1-not-prod-customer",
+    "category": "v1_readiness",
+    "claim": "Production-live or customer-ready platform",
+    "scope": "Not claimed. V1 readiness rollup: l1_boring NOT_READY; product_ui_pass false.",
+    "evidence_status": "not_claimed"
+  },
+  {
+    "id": "non-claim-st003-missing",
+    "category": "v1_readiness",
+    "claim": "ST-003 operational SVID rotation PASS",
+    "scope": "Not claimed. ST-003 MISSING on mainline; TD-012 wiring not complete.",
+    "evidence_status": "not_claimed"
+  },
+  {
+    "id": "non-claim-n086-deferred",
+    "category": "v1_readiness",
+    "claim": "N086 DeliveryPolicy TLS PASS",
+    "scope": "Not claimed. N086 L2 deferred until L1 boring; TLS trust-chain blocker open.",
+    "evidence_status": "not_claimed"
+  },
+  {
+    "id": "non-claim-flow123-accepted",
+    "category": "v1_readiness",
+    "claim": "FLOW-01/02/03 accepted as clean canonical proof",
+    "scope": "Not claimed until Hermes H220 publishes post-HELPER030 accepted evidence with merkle_authority_satisfied.",
+    "evidence_status": "not_claimed"
+  },
+  {
+    "id": "non-claim-l1-planes-product-pass",
+    "category": "v1_readiness",
+    "claim": "L1 /planes UI product-pass",
+    "scope": "Not claimed. T1 regression gates fail on current UI; product_ui_pass false.",
+    "evidence_status": "not_claimed"
+  },
+  {
+    "id": "non-claim-merkle-not-auth",
+    "category": "trust",
+    "claim": "Merkle provides authentication, identity, encryption, or replay prevention",
+    "scope": "Not claimed. Merkle provides evidence bundle inclusion/integrity comparison only.",
+    "evidence_status": "not_claimed"
+  },
+  {
+    "id": "non-claim-canonical-stop",
+    "category": "governance",
+    "claim": "Ad hoc runtime recovery counts as accepted proof after canonical failure",
+    "scope": "Not claimed. CANONICAL-FAIL-STOP-001 requires STOP and canonical reproduction.",
+    "evidence_status": "not_claimed"
   }
 ]
