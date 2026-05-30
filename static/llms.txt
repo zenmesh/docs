@@ -1,28 +1,37 @@
 # Zen Mesh — Webhook Operations
 
-Version: 1.0.0
-Last-Updated: 2026-05-25
-Product: Zen Mesh — webhook ingestion, validation, delivery visibility, and security operations across Stripe, GitHub, and custom webhooks
+> Zen Mesh helps teams receive, validate, observe, and operate webhooks across Stripe, GitHub, and custom sources. Current readiness is DEMO only (local/mock/sandbox and limited cloud-demo scope — not customer-ready or production-live).
 
-Zen helps teams receive, validate, observe, and operate webhooks across Stripe, GitHub, and custom sources, with a planned expansion path to Shopify, Twilio, GitLab, Alipay, and similar providers. Current readiness: DEMO (local/mock/sandbox only, not customer-ready or production-live).
+Version: 1.0.0 · Last-Updated: 2026-05-30 · Product scope: webhook ingestion, validation, delivery visibility, and security operations.
 
-## Wedge Evidence
-- Wedge Claim Map: https://docs.zen-mesh.io/ai/evidence/v1/wedge-claim-map.json
-- Wedge Non-Claims: https://docs.zen-mesh.io/ai/evidence/v1/wedge-non-claims.json
-- Wedge Overview: https://docs.zen-mesh.io/docs/ai/wedge-overview
+Non-claims and proof scope are authoritative — see the Non-Claims and Wedge Evidence links below before inferring production readiness.
 
-## Full Platform Evidence
-- Capability Manifest: https://docs.zen-mesh.io/ai/evidence/v1/manifest.json
-- Compliance Map: https://docs.zen-mesh.io/ai/evidence/v1/compliance-map.json
-- Non-Claims: https://docs.zen-mesh.io/ai/evidence/v1/non-claims.json
-- AI Docs: https://docs.zen-mesh.io/docs/ai/overview
-- Verification: https://docs.zen-mesh.io/docs/ai/verification
+## Core
 
-## Getting Started
-- Quick Start: https://docs.zen-mesh.io/docs/getting-started/quick-start
-- Installation: https://docs.zen-mesh.io/docs/getting-started/installation
-- API Reference: https://docs.zen-mesh.io/docs/reference/api
+- [Website](https://www.zen-mesh.io): Public product site
+- [Documentation](https://docs.zen-mesh.io): Docs hub (this site)
+- [Source repository](https://github.com/zenmesh/zen-platform): Contracts and internal evidence source of truth
 
-All evidence artifacts at github.com/zenmesh/zen-platform/docs/80-EVIDENCE/
-Proofs are local/mock or cloud-demo (Stripe FLOW-03 on GKE) unless stated otherwise.
-Claims are scoped — see wedge non-claims for what is NOT claimed.
+## Wedge evidence (high signal)
+
+- [Wedge claim map](https://docs.zen-mesh.io/ai/evidence/v1/wedge-claim-map.json): Scoped capability claims for the webhook wedge
+- [Wedge non-claims](https://docs.zen-mesh.io/ai/evidence/v1/wedge-non-claims.json): What the wedge does not claim
+- [Wedge overview](https://docs.zen-mesh.io/docs/ai/wedge-overview): Narrative wedge summary for reviewers
+
+## Platform evidence
+
+- [Capability manifest](https://docs.zen-mesh.io/ai/evidence/v1/manifest.json): Machine-readable capability and proof_status registry
+- [Compliance map](https://docs.zen-mesh.io/ai/evidence/v1/compliance-map.json): Internal readiness mapping (not certification)
+- [Non-claims registry](https://docs.zen-mesh.io/ai/evidence/v1/non-claims.json): Global non-claims for AI and reviewer use
+- [AI overview](https://docs.zen-mesh.io/docs/ai/overview): How to read Zen evidence artifacts
+- [Verification guide](https://docs.zen-mesh.io/docs/ai/verification): How claims are verified in-repo
+
+## Getting started
+
+- [Quick start](https://docs.zen-mesh.io/docs/getting-started/quick-start): Sandbox-oriented setup
+- [Installation](https://docs.zen-mesh.io/docs/getting-started/installation): Install paths for evaluation
+
+## Optional
+
+- [Full AI context](https://www.zen-mesh.io/llms-full.txt): Expanded curated context (community convention)
+- [Marketing llms.txt](https://www.zen-mesh.io/llms.txt): www entry point for LLM crawlers
