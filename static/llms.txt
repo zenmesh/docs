@@ -2,7 +2,7 @@
 
 > Zen Mesh helps teams receive, validate, observe, and operate webhooks across Stripe, GitHub, and custom sources. Current readiness is DEMO only (local/mock/sandbox and limited cloud-demo scope — not customer-ready or production-live).
 
-Version: 1.0.0 · Last-Updated: 2026-05-30 · Product scope: webhook ingestion, validation, delivery visibility, and security operations.
+Version: 1.0.0 · Last-Updated: 2026-05-29T12:00:00Z · Product scope: webhook ingestion, validation, delivery visibility, and security operations.
 
 Non-claims and proof scope are authoritative — see the Non-Claims and Wedge Evidence links below before inferring production readiness.
 
@@ -35,10 +35,15 @@ Non-claims and proof scope are authoritative — see the Non-Claims and Wedge Ev
 
 - Not production-live, not customer-ready, not demo-ready as global platform readiness
 - Canonical failure-stop: canonical script failure requires STOP — ad hoc runtime is not accepted evidence
-- Merkle authority: post-HELPER030 accepted deploy/FLOW/UI/completion evidence requires Merkle inclusion; Merkle is integrity comparison only; Merkle is not authentication, identity proof, encryption, or replay prevention
+- Integrity-chain authority: post-HELPER030 accepted deploy/FLOW/UI/completion evidence requires hash-chain inclusion; comparison is integrity-only — not authentication, not identity proof, not encryption, not replay prevention
 - L1 /planes T1: not product-pass; FLOW-03 mandatory; FLOW-01/02/03 accepted proof pending Hermes H220 clean canonical validation
 - ST-003 operational SVID rotation MISSING; N086 DeliveryPolicy L2 deferred — not PASS
 - [Non-claims registry](https://docs.zen-mesh.io/ai/evidence/v1/non-claims.json)
+
+## Narrative context (not proof)
+
+- [Narrative context registry](https://www.zen-mesh.io/ai/narrative-context.json): Blog/editorial URLs — narrative_context only; not manifest proof
+- [Webhook delivery evidence (blog)](https://www.zen-mesh.io/blogs/webhook-delivery-evidence/): Editorial — proof remains in manifest/Merkle receipts
 
 ## Optional
 
