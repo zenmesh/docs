@@ -52,3 +52,17 @@ flowchart TD
 ```
 
 This is fundamentally different from platforms where the SaaS service is the delivery engine. In Zen Mesh, the SaaS is the **control panel**, not the **delivery engine**.
+
+## Evidence
+
+Don’t just take our word for the architecture. Zen’s public claims are mapped to machine-readable discovery, security posture, evidence, and non-claim surfaces. **Narrative docs are not proof** — use the links below to verify scope, maturity, and explicit non-claims.
+
+- [llms.txt](/llms.txt) — discovery index for agents and reviewers
+- [AI discovery registry](/ai/ai-discovery-registry.json) — per-surface freshness (security vs capability inventory)
+- [Claim maturity](/ai/security/v1/claim-maturity.json) — what is wired, tested, backlog, or not claimed
+- [Security primitives](/ai/security/v1/primitives.json) — primitive-level posture and boundaries
+- [Security gaps](/ai/security/v1/gaps.json) — visible backlog; gaps are not hidden as product claims
+- [Capability manifest](/ai/evidence/v1/manifest.json) — proof_status and evidence scope per capability
+- [Non-claims](/ai/evidence/v1/non-claims.json) — what Zen Mesh does **not** claim
+
+**Claim boundaries:** Hash-chain and Merkle receipts are **integrity / tamper evidence only** — not authentication, encryption, or replay prevention. Idempotency helps detect and limit duplicates; it is **not** replay-proof delivery.
