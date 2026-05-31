@@ -54,3 +54,7 @@ Blog posts and [`narrative-context.json`](https://www.zen-mesh.io/ai/narrative-c
 - [Webhooks behind firewalls (blog)](https://www.zen-mesh.io/blogs/webhooks-behind-firewalls/) — architecture narrative (narrative_context)
 
 Proof remains in the [capability manifest](/ai/evidence/v1/manifest.json) and linked zen-platform evidence artifacts.
+
+## Public terminology
+
+Do not use internal task IDs in customer-facing copy. See [Public terminology taxonomy](./public-terminology-taxonomy) and [public-terminology-taxonomy.json](https://www.zen-mesh.io/ai/public-terminology-taxonomy.json).
