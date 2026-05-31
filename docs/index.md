@@ -17,6 +17,7 @@ Welcome to the Zen Mesh technical documentation — architecture, operations, se
 | **AI agent / RAG system** scanning Zen Mesh | [AI Evidence Manifest](/ai/evidence/v1/manifest.json) — machine-readable capability status |
 | **Compliance reviewer** mapping to frameworks | [Compliance-to-Feature Graph](ai/compliance-evidence) — NIST, SOC2, ISO, PCI-DSS, HIPAA |
 | **Anyone checking what we do NOT claim** | [Non-Claims](ai/non-claims) — explicit scope boundaries |
+| **Architecture / editorial articles** | [Blog index](https://www.zen-mesh.io/blog) on www; [Three-plane model](./architecture/three-plane-model) (docs + evidence CTA) |
 
 ## Sections
 
