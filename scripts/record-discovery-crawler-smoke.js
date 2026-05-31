@@ -12,6 +12,8 @@ const ROOT = path.resolve(__dirname, '..');
 
 const HOSTS = ['docs.zen-mesh.io', 'www.zen-mesh.io', 'zen-mesh.io'];
 const PATHS = [
+  '/manifest.json',
+  '/non-claims.json',
   '/llms.txt',
   '/llms-full.txt',
   '/ai/ai-discovery-registry.json',

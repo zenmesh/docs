@@ -73,6 +73,18 @@ function main() {
   const regMs = parseMs(registry.registry_updated_at);
   ok('security bundle <= registry_updated_at', secMs <= regMs);
 
+  const aliases = registry.www_root_aliases || [];
+  ok('registry lists www_root_aliases', aliases.length >= 2);
+  const aliasPaths = new Set(aliases.map((a) => a.alias_path));
+  ok('alias /manifest.json', aliasPaths.has('/manifest.json'));
+  ok('alias /non-claims.json', aliasPaths.has('/non-claims.json'));
+  for (const a of aliases) {
+    ok(
+      `alias ${a.alias_path} points to docs`,
+      typeof a.canonical_url === 'string' && a.canonical_url.startsWith('https://docs.zen-mesh.io/ai/'),
+    );
+  }
+
   for (const surface of registry.surfaces || []) {
     const sMs = parseMs(surface.last_updated);
     ok(

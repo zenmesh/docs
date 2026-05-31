@@ -12,7 +12,7 @@
       "id": "evidence-manifest",
       "url_path": "/ai/evidence/v1/manifest.json",
       "kind": "capabilities",
-      "last_updated": "2026-05-31T14:22:23.204Z",
+      "last_updated": "2026-05-31T22:05:38.571Z",
       "freshness_source": "mtime"
     },
     {
@@ -91,6 +91,20 @@
       "kind": "discovery",
       "last_updated": "2026-05-31T22:05:23.121Z",
       "freshness_source": "mtime"
+    }
+  ],
+  "www_root_aliases": [
+    {
+      "alias_path": "/manifest.json",
+      "canonical_url": "https://docs.zen-mesh.io/ai/evidence/v1/manifest.json",
+      "redirect": "308",
+      "host": "https://www.zen-mesh.io"
+    },
+    {
+      "alias_path": "/non-claims.json",
+      "canonical_url": "https://docs.zen-mesh.io/ai/evidence/v1/non-claims.json",
+      "redirect": "308",
+      "host": "https://www.zen-mesh.io"
     }
   ],
   "claim_boundaries": [
