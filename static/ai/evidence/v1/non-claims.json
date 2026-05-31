@@ -189,31 +189,39 @@
     "evidence_status": "not_claimed"
   },
   {
-    "id": "non-claim-st003-missing",
+    "id": "non-claim-runtime-svid-rotation-missing",
     "category": "v1_readiness",
-    "claim": "ST-003 operational SVID rotation PASS",
-    "scope": "Not claimed. ST-003 MISSING on mainline; TD-012 wiring not complete.",
+    "capability_id": "runtime-workload-svid-rotation",
+    "claim": "Operational workload identity (SVID) rotation proven on mainline",
+    "scope": "Not claimed. Automated runtime SVID rotation wiring is not complete on mainline.",
+    "internal_ref": "ST-003",
     "evidence_status": "not_claimed"
   },
   {
-    "id": "non-claim-n086-deferred",
+    "id": "non-claim-deliverypolicy-tls-deferred",
     "category": "v1_readiness",
-    "claim": "N086 DeliveryPolicy TLS PASS",
-    "scope": "Not claimed. N086 L2 deferred until L1 boring; TLS trust-chain blocker open.",
+    "capability_id": "deliverypolicy-tls-trust-chain",
+    "claim": "DeliveryPolicy TLS/trust-chain controls PASS",
+    "scope": "Not claimed. Policy-driven delivery TLS/trust-chain controls at L2 are deferred; trust-chain root cause open.",
+    "internal_ref": "N086",
     "evidence_status": "not_claimed"
   },
   {
-    "id": "non-claim-flow123-accepted",
+    "id": "non-claim-sandbox-delivery-proof-bundle",
     "category": "v1_readiness",
-    "claim": "FLOW-01/02/03 accepted as clean canonical proof",
-    "scope": "Not claimed until Hermes H220 publishes post-HELPER030 accepted evidence with merkle_authority_satisfied.",
+    "capability_id": "runtime-sandbox-delivery-validation",
+    "claim": "Full canonical runtime delivery proof bundle accepted on mainline",
+    "scope": "Not claimed as a customer-facing go-live. Direct/egress/relay sandbox receipts and proof_status are listed in the capability manifest only.",
+    "internal_ref": "runtime-delivery-validation-bundle",
     "evidence_status": "not_claimed"
   },
   {
-    "id": "non-claim-l1-planes-product-pass",
+    "id": "non-claim-planes-ui-product-pass",
     "category": "v1_readiness",
-    "claim": "L1 /planes UI product-pass",
+    "capability_id": "planes-management-ui-t1",
+    "claim": "Planes management UI (T1) product-pass",
     "scope": "Not claimed. T1 regression gates fail on current UI; product_ui_pass false.",
+    "internal_ref": "L1-planes-t1",
     "evidence_status": "not_claimed"
   },
   {
