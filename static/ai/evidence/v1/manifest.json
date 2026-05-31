@@ -985,7 +985,7 @@
   ],
   "ai_discovery": {
     "registry_ref": "https://docs.zen-mesh.io/ai/ai-discovery-registry.json",
-    "registry_updated_at": "2026-05-31T14:21:38.476Z",
+    "registry_updated_at": "2026-05-31T23:59:59.000Z",
     "capabilities_manifest_generated_at": "2026-05-24T17:51:13Z",
     "security_posture_surfaces": [
       "/ai/security/v1/claim-maturity.json",

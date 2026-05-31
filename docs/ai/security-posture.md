@@ -35,6 +35,7 @@ Do not use “eliminates,” “replay-proof,” “SSRF-safe,” or bare “sec
 | Attack model | [`/ai/security/v1/attack-model.json`](/ai/security/v1/attack-model.json) |
 | Security primitives | [`/ai/security/v1/primitives.json`](/ai/security/v1/primitives.json) |
 | Security gaps | [`/ai/security/v1/gaps.json`](/ai/security/v1/gaps.json) |
+| Local trust posture | [`/ai/security/v1/local-trust-posture.json`](/ai/security/v1/local-trust-posture.json) |
 | Capability validation | [`/ai/security/v1/security-capability-validation.json`](/ai/security/v1/security-capability-validation.json) |
 
 ## Threat-model split
@@ -42,7 +43,17 @@ Do not use “eliminates,” “replay-proof,” “SSRF-safe,” or bare “sec
 - **SaaS-origin dispatch** — outbound URL fetch; SSRF, redirects, response handling.
 - **Private edge delivery** — outbound agent path to private targets; not equivalent to SaaS SSRF controls.
 
-## Highlights (2026-05-30)
+## Local trust architecture (V1)
+
+- **zen-agent** — visible customer-plane local authority/supervisor for enrollment, flows, and projected trust material.
+- **zen-lock** — encrypted local survival store; adapters/ingester/egress consume **projected** material on hot paths, not per-delivery SaaS fetches.
+- **SPIFFE/SPIRE-native identity** — internal and **Zen-managed** in V1; customers **do not** operate SPIRE.
+- **Fail-closed** — expired/invalid local material is rejected on enforced paths.
+- **Not claimed:** validated 24h survival, compliance certification, customer-managed SPIRE, ST-003/N086/DeliveryPolicy PASS without evidence.
+
+See [`local-trust-posture.json`](/ai/security/v1/local-trust-posture.json) and primitive IDs `PRIM-ZEN-LOCAL-TRUST-AUTHORITY`, `PRIM-ZEN-LOCK-SURVIVAL-STORE`, `PRIM-KEY-MATERIAL-ROTATION`, `PRIM-AIR-GAPPED-ADAPTER-HANDOFF`, `PRIM-SPIFFE-SPIRE-NATIVE-INTERNAL`, `PRIM-LOCAL-MATERIAL-EXPIRY-FAIL-CLOSED`.
+
+## Highlights (2026-05-31)
 
 | Topic | Maturity | Plain language |
 |-------|----------|----------------|
@@ -50,7 +61,9 @@ Do not use “eliminates,” “replay-proof,” “SSRF-safe,” or bare “sec
 | Provider signatures (Stripe wedge) | `AUTOMATED_TESTED` | Wired and mock-tested on configured wedge path |
 | Agent HMAC | `AUTOMATED_TESTED` | Wired with automated crypto tests — not delivery replay proof |
 | Agent mTLS | `NOT_E2E_VALIDATED` | Wired + mock proof — not all paths e2e-validated |
-| SPIFFE / SVID | `NOT_E2E_VALIDATED` | Partial deployment — rotation not production-live proof |
+| SPIFFE / SVID (Zen-managed internal) | `WIRED` / `NOT_E2E_VALIDATED` | Customers do not operate SPIRE in V1 — rotation not production-live proof |
+| Local trust / 24h survival | `NOT_CLAIMED` | Material projection helps short gaps — **not** validated 24h survival |
+| Air-gapped adapter handoff | `WIRED` | Contract-defined — not compliance-certified air-gap program |
 | Hash-chain evidence | `AUTOMATED_TESTED` | Tamper-**detection** for evidence artifacts only |
 | SSRF on SaaS dispatch | `BACKLOG` | Not SSRF-protected — see gaps |
 | Payload / parser / header / redirect hardening | `BACKLOG` | WH-AS backlog — remain visible in gaps.json |

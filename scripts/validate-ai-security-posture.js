@@ -88,7 +88,7 @@ function main() {
   const primitives = load('primitives.json');
   const maturityById = new Map(maturity.items.map((i) => [i.id, i]));
 
-  ok('claim-maturity has 18+ items', maturity.items.length >= 18);
+  ok('claim-maturity has 24+ items', maturity.items.length >= 24);
 
   for (const f of FILES) {
     const raw = fs.readFileSync(path.join(SECURITY_DIR, f), 'utf-8');

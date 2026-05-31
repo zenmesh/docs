@@ -1,7 +1,7 @@
 {
   "schema_version": "1.1.0",
   "document": "security-gaps",
-  "last_updated": "2026-05-30",
+  "last_updated": "2026-05-31",
   "claim_maturity_index": "https://docs.zen-mesh.io/ai/security/v1/claim-maturity.json",
   "purpose": "Explicit gaps — must remain visible; never convert to product claims.",
   "readiness_scope": "DEMO-scoped platform. Gaps stay in public AI docs intentionally.",
@@ -126,6 +126,28 @@
       "public_evidence_ref": null,
       "public_safe_summary": "DeliveryPolicy TLS is not PASS.",
       "must_not_claim": ["DeliveryPolicy live", "L2 delivery policy PASS"]
+    },
+    {
+      "id": "GAP-LOCAL-TRUST-24H-SURVIVAL",
+      "gap": "No validated 24h (or longer) local-trust survival under control-plane outage",
+      "claim_maturity": "NOT_CLAIMED",
+      "roadmap_ref": null,
+      "attack_ref": null,
+      "primitive_ref": "PRIM-ZEN-LOCAL-TRUST-AUTHORITY",
+      "public_evidence_ref": "https://docs.zen-mesh.io/ai/security/v1/local-trust-posture.json",
+      "public_safe_summary": "Local material may help short SaaS gaps — 24h survival is not validated.",
+      "must_not_claim": ["24h survival validated", "24-hour autonomy proven", "multi-day outage proof"]
+    },
+    {
+      "id": "GAP-CUSTOMER-SPIRE-V1",
+      "gap": "Customer-operated SPIFFE/SPIRE is not offered in V1",
+      "claim_maturity": "NOT_CLAIMED",
+      "roadmap_ref": null,
+      "attack_ref": "ATK-WORKLOAD-IMPERSONATION",
+      "primitive_ref": "PRIM-SPIFFE-SPIRE-NATIVE-INTERNAL",
+      "public_evidence_ref": "https://docs.zen-mesh.io/ai/security/v1/local-trust-posture.json",
+      "public_safe_summary": "SPIRE is Zen-managed internally in V1 — customers do not run SPIRE.",
+      "must_not_claim": ["customers manage SPIRE", "customer-operated SPIRE", "bring your own SPIRE in V1", "No SPIRE for V1"]
     }
   ]
 }

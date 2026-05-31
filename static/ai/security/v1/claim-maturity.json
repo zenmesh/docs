@@ -1,7 +1,7 @@
 {
   "schema_version": "1.1.0",
   "document": "claim-maturity",
-  "last_updated": "2026-05-30",
+  "last_updated": "2026-05-31",
   "readiness_scope": "DEMO / local-mock / sandbox unless an item states otherwise. Not production-live, not customer-ready, not global demo-ready.",
   "narrative_vs_proof": "Blogs and narrative-context are narrative_context only. This file states assurance level — not penetration-test results.",
   "maturity_legend": {
@@ -18,8 +18,10 @@
     "does_not_prevent": "Boundaries reviewers must not infer.",
     "validation_level": "How far assurance goes today (no internal paths).",
     "current_limitation": "Honest ceiling on the claim.",
-    "next_validation": "Next step when NOT_E2E_VALIDATED or BACKLOG."
+    "next_validation": "Next step when NOT_E2E_VALIDATED or BACKLOG.",
+    "current_validation_level": "Per-primitive stages: contract_defined, source_validated, accelerated_simulation, runtime_partial, not_24h_validated — see each item."
   },
+  "local_trust_posture_ref": "https://docs.zen-mesh.io/ai/security/v1/local-trust-posture.json",
   "items": [
     {
       "id": "PRIM-IDEMPOTENCY-DEDUP",
@@ -88,16 +90,150 @@
     },
     {
       "id": "PRIM-SPIFFE-SPIRE",
-      "topic": "SPIFFE/SPIRE workload identity",
+      "topic": "SPIFFE/SPIRE workload identity (legacy index — see PRIM-SPIFFE-SPIRE-NATIVE-INTERNAL)",
       "claim_maturity": "NOT_E2E_VALIDATED",
       "helps_prevent": ["Workload impersonation on connections where SPIFFE verification is active"],
       "helps_detect": [],
-      "does_not_prevent": ["Identity on workloads without SPIRE", "Authorization decisions", "SVID rotation as operational proof"],
-      "validation_level": "Wired on control-plane paths where deployed; fuller Workload API model planned",
-      "current_limitation": "Partial deployment story — not SPIFFE everywhere",
+      "does_not_prevent": ["Customer-operated SPIRE in V1", "Authorization decisions", "SVID rotation as operational proof", "24h survival validation"],
+      "validation_level": "Zen-managed SPIFFE/SPIRE-native identity on internal paths — customers do not operate SPIRE in V1",
+      "current_limitation": "Partial path coverage — not SPIFFE on every hop; see PRIM-SPIFFE-SPIRE-NATIVE-INTERNAL",
       "next_validation": "Published SVID rotation drill receipt in demo scope",
+      "public_evidence_ref": "https://docs.zen-mesh.io/ai/security/v1/local-trust-posture.json",
+      "roadmap_ref": null,
+      "current_validation_level": {
+        "contract_defined": true,
+        "source_validated": true,
+        "accelerated_simulation": false,
+        "runtime_partial": true,
+        "not_24h_validated": true,
+        "next_validation": "SVID rotation operational receipt without internal task IDs in public copy"
+      }
+    },
+    {
+      "id": "PRIM-ZEN-LOCAL-TRUST-AUTHORITY",
+      "topic": "zen-agent as customer-plane local trust authority facade",
+      "claim_maturity": "WIRED",
+      "helps_prevent": [],
+      "helps_detect": ["Mis-enrollment or stale flow config surfaced via agent health and sync status"],
+      "does_not_prevent": ["Compromised cluster admin", "24h validated autonomy from SaaS", "Customer SPIRE operations"],
+      "validation_level": "Architecture and enrollment contracts — agent supervises local trust projection",
+      "current_limitation": "Visible local authority — not a validated long-outage survival proof",
+      "next_validation": "Sandbox documented agent-led material refresh without SaaS on hot path",
+      "public_evidence_ref": "https://docs.zen-mesh.io/ai/security/v1/local-trust-posture.json",
+      "roadmap_ref": null,
+      "current_validation_level": {
+        "contract_defined": true,
+        "source_validated": true,
+        "accelerated_simulation": false,
+        "runtime_partial": false,
+        "not_24h_validated": true,
+        "next_validation": "Accelerated control-plane outage simulation with public-safe receipt"
+      }
+    },
+    {
+      "id": "PRIM-ZEN-LOCK-SURVIVAL-STORE",
+      "topic": "ZenLock encrypted local survival material store",
+      "claim_maturity": "WIRED",
+      "helps_prevent": ["Plaintext-at-rest for material stored in zen-lock on configured survival paths"],
+      "helps_detect": [],
+      "does_not_prevent": ["Memory exposure", "Universal secret coverage", "Validated 24h survival", "ZenLock as rotation engine"],
+      "validation_level": "Custody model documented — zen-lock encrypts and projects local material",
+      "current_limitation": "Scope-limited flows — not all credentials or air-gap bundles",
+      "next_validation": "Rotation drill artifact redacted for public publication",
+      "public_evidence_ref": "https://docs.zen-mesh.io/ai/security/v1/credential-lifecycle-ownership.json",
+      "roadmap_ref": null,
+      "current_validation_level": {
+        "contract_defined": true,
+        "source_validated": true,
+        "accelerated_simulation": false,
+        "runtime_partial": false,
+        "not_24h_validated": true,
+        "next_validation": "Demonstrate survival-store refresh with zen-lock audit trail in demo scope"
+      }
+    },
+    {
+      "id": "PRIM-KEY-MATERIAL-ROTATION",
+      "topic": "Key and certificate material rotation lifecycles",
+      "claim_maturity": "WIRED",
+      "helps_prevent": ["Some cert/key expiry outages via cert-manager and HMAC rotation controllers"],
+      "helps_detect": ["Rotation failures surfaced in lifecycle metrics where wired"],
+      "does_not_prevent": ["Zero-downtime rotation everywhere", "24h survival without refresh", "Customer target cert rotation"],
+      "validation_level": "Per-type rotation owners in credential-lifecycle-ownership — HMAC/TLS/JWK/SVID lifecycles separate from zen-lock custody",
+      "current_limitation": "Rotation wired per subsystem — not one universal engine; not 24h-validated",
+      "next_validation": "Public-safe rotation gate linking manifest trust proofs",
+      "public_evidence_ref": "https://docs.zen-mesh.io/ai/security/v1/credential-lifecycle-ownership.json",
+      "roadmap_ref": null,
+      "current_validation_level": {
+        "contract_defined": true,
+        "source_validated": true,
+        "accelerated_simulation": false,
+        "runtime_partial": true,
+        "not_24h_validated": true,
+        "next_validation": "E2e rotation negative test in sandbox with maturity bump only if evidenced"
+      }
+    },
+    {
+      "id": "PRIM-AIR-GAPPED-ADAPTER-HANDOFF",
+      "topic": "Air-gapped adapter material handoff",
+      "claim_maturity": "WIRED",
+      "helps_prevent": [],
+      "helps_detect": [],
+      "does_not_prevent": ["Live SaaS dependency on every adapter bootstrap", "Validated air-gap compliance certification"],
+      "validation_level": "Contract-defined offline bundle import path for adapter/egress material — operator-mediated",
+      "current_limitation": "Handoff mechanics defined — not production customer-exposed SPIRE controls",
+      "next_validation": "Documented offline bundle verify + project flow without secret leakage in public artifacts",
+      "public_evidence_ref": "https://docs.zen-mesh.io/ai/security/v1/local-trust-posture.json",
+      "roadmap_ref": null,
+      "current_validation_level": {
+        "contract_defined": true,
+        "source_validated": false,
+        "accelerated_simulation": false,
+        "runtime_partial": false,
+        "not_24h_validated": true,
+        "next_validation": "Source-validated handoff verifier in repo with public capability ID only"
+      }
+    },
+    {
+      "id": "PRIM-SPIFFE-SPIRE-NATIVE-INTERNAL",
+      "topic": "Zen-managed SPIFFE/SPIRE-native internal identity (V1)",
+      "claim_maturity": "WIRED",
+      "helps_prevent": ["Workload impersonation on hops where SPIFFE-verified mTLS is enforced"],
+      "helps_detect": [],
+      "does_not_prevent": ["Customer-operated SPIRE in V1", "SPIRE on every workload", "Public customer-exposed SPIRE admin in V1", "SVID rotation production proof"],
+      "validation_level": "Internal Zen-managed SPIFFE/SPIRE-native identity — SPIRE is not customer-operated in V1",
+      "current_limitation": "V1 does not offer customer-managed SPIRE; fuller Workload API hardening is roadmap",
+      "next_validation": "Demo-scope rotation receipt without claiming customer SPIRE ops",
       "public_evidence_ref": "https://docs.zen-mesh.io/ai/security/v1/security-capability-validation.json",
-      "roadmap_ref": null
+      "roadmap_ref": null,
+      "current_validation_level": {
+        "contract_defined": true,
+        "source_validated": true,
+        "accelerated_simulation": false,
+        "runtime_partial": true,
+        "not_24h_validated": true,
+        "next_validation": "Clarify public vs internal SPIRE boundaries in capability manifest cross-links"
+      }
+    },
+    {
+      "id": "PRIM-LOCAL-MATERIAL-EXPIRY-FAIL-CLOSED",
+      "topic": "Expired or invalid local material fails closed",
+      "claim_maturity": "WIRED",
+      "helps_prevent": ["Silent use of expired certs/keys on enforced mTLS/HMAC paths"],
+      "helps_detect": ["Auth failures when material is expired or mismatched"],
+      "does_not_prevent": ["Misconfigured paths without enforcement", "Compromised valid material", "24h survival without SaaS"],
+      "validation_level": "Fail-closed intent on enforced agent and data-plane paths — per-path maturity varies",
+      "current_limitation": "Not uniformly e2e-validated on every adapter and environment",
+      "next_validation": "Negative test: expired projected material rejects connection on documented path",
+      "public_evidence_ref": "https://docs.zen-mesh.io/ai/security/v1/local-trust-posture.json",
+      "roadmap_ref": null,
+      "current_validation_level": {
+        "contract_defined": true,
+        "source_validated": true,
+        "accelerated_simulation": false,
+        "runtime_partial": false,
+        "not_24h_validated": true,
+        "next_validation": "Automated negative test published as manifest-linked proof_status"
+      }
     },
     {
       "id": "PRIM-ZENLOCK-SECRETS",

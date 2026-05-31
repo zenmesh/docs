@@ -14,6 +14,7 @@ const REQUIRED_SECURITY_PATHS = [
   '/ai/security/v1/attack-model.json',
   '/ai/security/v1/primitives.json',
   '/ai/security/v1/gaps.json',
+  '/ai/security/v1/local-trust-posture.json',
 ];
 
 const REQUIRED_EVIDENCE_PATHS = [

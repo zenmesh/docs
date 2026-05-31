@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0.0",
+  "document": "local-trust-posture",
+  "last_updated": "2026-05-31",
+  "readiness_scope": "DEMO / contract / partial automation — not production-live, not 24h-validated survival, not compliance certification.",
+  "narrative_vs_proof": "Architecture and maturity statements for AI reviewers — not runtime proof of extended outage tolerance.",
+  "architecture_summary": {
+    "zen_agent_role": "zen-agent is the visible customer-plane local authority and supervisor: enrollment, flow configuration, health, and coordination with Zen-managed trust material.",
+    "spiffe_spire_v1": "SPIFFE/SPIRE-native workload identity is internal and Zen-managed in V1. Customers do not install or operate SPIRE servers in V1.",
+    "zen_lock_role": "zen-lock stores encrypted local survival material (keys, certs, signing material envelopes) for projection to adapters — not a universal rotation engine.",
+    "hot_path_material": "zen-ingester, zen-egress, and adapters consume projected local material for active-flow hot paths — not live SaaS fetches per delivery.",
+    "fail_closed": "Expired or invalid local material fails closed on enforced paths — delivery does not silently degrade to unsigned or anonymous transport."
+  },
+  "helps_with": [
+    "Cert and key expiry risk reduction via rotation lifecycles and projected material refresh",
+    "SaaS outage tolerance for already-provisioned local material on active flows",
+    "Low-fingerprint customer-plane operation (outbound-only edge; material projected locally)"
+  ],
+  "does_not_claim": [
+    "Validated 24-hour (or longer) survival under control-plane outage",
+    "Production compliance certification (SOC, ISO, etc.)",
+    "Customer-managed SPIFFE/SPIRE availability or operations in V1",
+    "ST-003, N086, or DeliveryPolicy TLS controls as PASS without public runtime evidence",
+    "Customer-operated SPIRE or 'bring your own SPIRE' in V1",
+    "Universal zero-downtime rotation on every credential type"
+  ],
+  "primitive_refs": [
+    "PRIM-ZEN-LOCAL-TRUST-AUTHORITY",
+    "PRIM-ZEN-LOCK-SURVIVAL-STORE",
+    "PRIM-KEY-MATERIAL-ROTATION",
+    "PRIM-AIR-GAPPED-ADAPTER-HANDOFF",
+    "PRIM-SPIFFE-SPIRE-NATIVE-INTERNAL",
+    "PRIM-LOCAL-MATERIAL-EXPIRY-FAIL-CLOSED"
+  ],
+  "public_evidence_refs": [
+    "https://docs.zen-mesh.io/ai/security/v1/claim-maturity.json",
+    "https://docs.zen-mesh.io/ai/security/v1/credential-lifecycle-ownership.json",
+    "https://docs.zen-mesh.io/ai/security/v1/security-capability-validation.json",
+    "https://docs.zen-mesh.io/ai/evidence/v1/manifest.json"
+  ],
+  "related_capability_ids": [
+    "trust-spiffe-identity-control-plane",
+    "trust-zenlock-secrets"
+  ]
+}

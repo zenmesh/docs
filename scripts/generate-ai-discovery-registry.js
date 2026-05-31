@@ -68,6 +68,13 @@ const SURFACES = [
     kind: 'security_posture',
   },
   {
+    id: 'security-local-trust-posture',
+    url_path: '/ai/security/v1/local-trust-posture.json',
+    file: 'static/ai/security/v1/local-trust-posture.json',
+    date_fields: ['last_updated'],
+    kind: 'security_posture',
+  },
+  {
     id: 'security-capability-validation',
     url_path: '/ai/security/v1/security-capability-validation.json',
     file: 'static/ai/security/v1/security-capability-validation.json',

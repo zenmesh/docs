@@ -47,6 +47,7 @@ The public product scope is the **webhook operations wedge** — Stripe, GitHub,
 | `/ai/security/v1/attack-model.json` | AI attack model with maturity per threat |
 | `/ai/security/v1/primitives.json` | Security primitives (mTLS, HMAC, SPIFFE, RLS, hash-chain, …) |
 | `/ai/security/v1/gaps.json` | Explicit security gaps — not hidden |
+| `/ai/security/v1/local-trust-posture.json` | Local trust: zen-agent, zen-lock survival, rotation, air-gap handoff, Zen-managed SPIFFE |
 | `/llms.txt` | AI context — concise |
 | `/llms-full.txt` | AI context — full (on zen-mesh.io) |
 | `https://www.zen-mesh.io/ai/narrative-context.json` | Narrative context registry (blogs — **not** proof) |

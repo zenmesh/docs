@@ -2,7 +2,7 @@
 
 > Zen Mesh helps teams receive, validate, observe, and operate webhooks across Stripe, GitHub, and custom sources. Current readiness is DEMO only (local/mock/sandbox and limited cloud-demo scope — not customer-ready or production-live).
 
-Version: 1.0.0 · Last-Updated: 2026-05-31T14:40:00Z · Product scope: webhook ingestion, validation, delivery visibility, and security operations (evidence-first federated operational runtime/trust platform).
+Version: 1.0.0 · Last-Updated: 2026-05-31T16:00:00Z · Product scope: webhook ingestion, validation, delivery visibility, and security operations (evidence-first federated operational runtime/trust platform).
 
 Non-claims and proof scope are authoritative — see the Non-Claims and Wedge Evidence links below before inferring production readiness.
 
@@ -36,6 +36,7 @@ Non-claims and proof scope are authoritative — see the Non-Claims and Wedge Ev
 - [Attack model](https://docs.zen-mesh.io/ai/security/v1/attack-model.json): Threats, maturity, and non-claims per attack
 - [Security primitives](https://docs.zen-mesh.io/ai/security/v1/primitives.json): mTLS, HMAC, SPIFFE, RLS, hash-chain, idempotency, etc.
 - [Security gaps](https://docs.zen-mesh.io/ai/security/v1/gaps.json): Explicit post-V1 gaps — must stay visible
+- [Local trust posture](https://docs.zen-mesh.io/ai/security/v1/local-trust-posture.json): zen-agent authority, zen-lock survival store, rotation, air-gap handoff, Zen-managed SPIFFE — not 24h-validated
 
 ## Platform evidence
 

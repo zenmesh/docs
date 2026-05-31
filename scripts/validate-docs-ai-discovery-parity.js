@@ -103,6 +103,7 @@ function main() {
   ok('claim-maturity.json on disk', fs.existsSync(path.join(ROOT, 'static/ai/security/v1/claim-maturity.json')));
   ok('llms links ai-discovery-registry', llms.includes('/ai/ai-discovery-registry.json'));
   ok('llms links claim-maturity.json', llms.includes('/ai/security/v1/claim-maturity.json'));
+  ok('llms links local-trust-posture', llms.includes('/ai/security/v1/local-trust-posture.json'));
 
   console.log(`\nRESULTS: ${passed} PASS, ${failed} FAIL`);
   process.exit(failed ? 1 : 0);

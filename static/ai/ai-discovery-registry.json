@@ -2,17 +2,17 @@
   "schema_version": "1.0.0",
   "document": "ai-discovery-registry",
   "generated_by": "scripts/generate-ai-discovery-registry.js",
-  "registry_updated_at": "2026-05-31T14:21:38.476Z",
+  "registry_updated_at": "2026-05-31T23:59:59.000Z",
   "site_origin": "https://docs.zen-mesh.io",
   "readiness_scope": "Per-surface last_updated reflects file content dates and mtimes. Capability manifest generated_at may be older than security posture surfaces.",
   "capabilities_manifest_generated_at": "2026-05-24T17:51:13Z",
-  "security_posture_bundle_last_updated": "2026-05-31T13:52:43.532Z",
+  "security_posture_bundle_last_updated": "2026-05-31T23:59:59.000Z",
   "surfaces": [
     {
       "id": "evidence-manifest",
       "url_path": "/ai/evidence/v1/manifest.json",
       "kind": "capabilities",
-      "last_updated": "2026-05-31T14:21:31.482Z",
+      "last_updated": "2026-05-31T14:22:23.204Z",
       "freshness_source": "mtime"
     },
     {
@@ -40,8 +40,8 @@
       "id": "security-claim-maturity",
       "url_path": "/ai/security/v1/claim-maturity.json",
       "kind": "security_posture",
-      "last_updated": "2026-05-31T13:51:54.193Z",
-      "freshness_source": "mtime"
+      "last_updated": "2026-05-31T23:59:59.000Z",
+      "freshness_source": "content"
     },
     {
       "id": "security-attack-model",
@@ -54,15 +54,22 @@
       "id": "security-primitives",
       "url_path": "/ai/security/v1/primitives.json",
       "kind": "security_posture",
-      "last_updated": "2026-05-31T13:52:11.657Z",
-      "freshness_source": "mtime"
+      "last_updated": "2026-05-31T23:59:59.000Z",
+      "freshness_source": "content"
     },
     {
       "id": "security-gaps",
       "url_path": "/ai/security/v1/gaps.json",
       "kind": "security_posture",
-      "last_updated": "2026-05-31T13:52:43.532Z",
-      "freshness_source": "mtime"
+      "last_updated": "2026-05-31T23:59:59.000Z",
+      "freshness_source": "content"
+    },
+    {
+      "id": "security-local-trust-posture",
+      "url_path": "/ai/security/v1/local-trust-posture.json",
+      "kind": "security_posture",
+      "last_updated": "2026-05-31T23:59:59.000Z",
+      "freshness_source": "content"
     },
     {
       "id": "security-capability-validation",
@@ -82,7 +89,7 @@
       "id": "llms-txt",
       "url_path": "/llms.txt",
       "kind": "discovery",
-      "last_updated": "2026-05-31T14:21:38.476Z",
+      "last_updated": "2026-05-31T22:05:23.121Z",
       "freshness_source": "mtime"
     }
   ],
