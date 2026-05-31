@@ -2,13 +2,33 @@
   "schema_version": "1.0.0",
   "document": "discovery-crawler-smoke",
   "task_ref": "HELPER054",
-  "checked_at": "2026-05-31T22:24:05.297Z",
+  "checked_at": "2026-05-31T22:33:31.434Z",
   "canonical_origin": "https://docs.zen-mesh.io",
   "probe_method": "curl -sSIL (no JS); records first/final status, content-type, redirect chain",
   "hosts": {
     "docs.zen-mesh.io": {
       "notes": "Canonical host for machine-readable /ai/* JSON and llms.txt.",
       "endpoints": {
+        "/manifest.json": {
+          "url": "https://docs.zen-mesh.io/manifest.json",
+          "first_status": 404,
+          "final_status": 404,
+          "content_type": "text/html; charset=utf-8",
+          "redirect_count": 0,
+          "location": null,
+          "url_effective": "https://docs.zen-mesh.io/manifest.json",
+          "body_starts_with_html": false
+        },
+        "/non-claims.json": {
+          "url": "https://docs.zen-mesh.io/non-claims.json",
+          "first_status": 404,
+          "final_status": 404,
+          "content_type": "text/html; charset=utf-8",
+          "redirect_count": 0,
+          "location": null,
+          "url_effective": "https://docs.zen-mesh.io/non-claims.json",
+          "body_starts_with_html": false
+        },
         "/llms.txt": {
           "url": "https://docs.zen-mesh.io/llms.txt",
           "first_status": 200,
@@ -105,6 +125,26 @@
     "www.zen-mesh.io": {
       "notes": "Marketing host: /llms.txt and /llms-full.txt served; /ai/* 308 → docs.zen-mesh.io.",
       "endpoints": {
+        "/manifest.json": {
+          "url": "https://www.zen-mesh.io/manifest.json",
+          "first_status": 308,
+          "final_status": 200,
+          "content_type": "application/json; charset=utf-8",
+          "redirect_count": 1,
+          "location": "https://docs.zen-mesh.io/ai/evidence/v1/manifest.json",
+          "url_effective": "https://docs.zen-mesh.io/ai/evidence/v1/manifest.json",
+          "body_starts_with_html": false
+        },
+        "/non-claims.json": {
+          "url": "https://www.zen-mesh.io/non-claims.json",
+          "first_status": 308,
+          "final_status": 200,
+          "content_type": "application/json; charset=utf-8",
+          "redirect_count": 1,
+          "location": "https://docs.zen-mesh.io/ai/evidence/v1/non-claims.json",
+          "url_effective": "https://docs.zen-mesh.io/ai/evidence/v1/non-claims.json",
+          "body_starts_with_html": false
+        },
         "/llms.txt": {
           "url": "https://www.zen-mesh.io/llms.txt",
           "first_status": 200,
@@ -202,6 +242,26 @@
     "zen-mesh.io": {
       "notes": "Apex: permanent redirect to www for site paths; use docs for JSON registries.",
       "endpoints": {
+        "/manifest.json": {
+          "url": "https://zen-mesh.io/manifest.json",
+          "first_status": 307,
+          "final_status": 200,
+          "content_type": "application/json; charset=utf-8",
+          "redirect_count": 2,
+          "location": "https://www.zen-mesh.io/manifest.json",
+          "url_effective": "https://docs.zen-mesh.io/ai/evidence/v1/manifest.json",
+          "body_starts_with_html": false
+        },
+        "/non-claims.json": {
+          "url": "https://zen-mesh.io/non-claims.json",
+          "first_status": 307,
+          "final_status": 200,
+          "content_type": "application/json; charset=utf-8",
+          "redirect_count": 2,
+          "location": "https://www.zen-mesh.io/non-claims.json",
+          "url_effective": "https://docs.zen-mesh.io/ai/evidence/v1/non-claims.json",
+          "body_starts_with_html": false
+        },
         "/llms.txt": {
           "url": "https://zen-mesh.io/llms.txt",
           "first_status": 307,
