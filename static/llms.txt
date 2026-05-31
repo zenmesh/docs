@@ -49,6 +49,7 @@ Non-claims and proof scope are authoritative — see the Non-Claims and Wedge Ev
 
 ## Optional
 
+- [Public surface traceability](https://www.zen-mesh.io/ai/public-surface-traceability.json): Changelog for public terminology and AI discovery (capability language only)
 - [Public terminology taxonomy](https://www.zen-mesh.io/ai/public-terminology-taxonomy.json): Internal-ref → public capability map (regression gate)
 - [Terminology guide](https://docs.zen-mesh.io/docs/ai/public-terminology-taxonomy): Docs mirror of public copy policy
 - [Full AI context](https://www.zen-mesh.io/llms-full.txt): Expanded curated context (community convention)

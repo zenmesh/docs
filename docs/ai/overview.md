@@ -57,4 +57,4 @@ Proof remains in the [capability manifest](/ai/evidence/v1/manifest.json) and li
 
 ## Public terminology
 
-Do not use internal task IDs in customer-facing copy. See [Public terminology taxonomy](./public-terminology-taxonomy) and [public-terminology-taxonomy.json](https://www.zen-mesh.io/ai/public-terminology-taxonomy.json).
+Do not use internal task IDs in customer-facing copy. See [Public terminology taxonomy](./public-terminology-taxonomy), [Public surface traceability](./public-surface-traceability), and [public-terminology-taxonomy.json](https://www.zen-mesh.io/ai/public-terminology-taxonomy.json).
