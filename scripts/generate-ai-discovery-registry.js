@@ -176,13 +176,13 @@ function main() {
       {
         alias_path: '/manifest.json',
         canonical_url: 'https://docs.zen-mesh.io/ai/evidence/v1/manifest.json',
-        redirect: '308',
+        delivery: 'static_pointer_json_200',
         host: 'https://www.zen-mesh.io',
       },
       {
         alias_path: '/non-claims.json',
         canonical_url: 'https://docs.zen-mesh.io/ai/evidence/v1/non-claims.json',
-        redirect: '308',
+        delivery: 'static_pointer_json_200',
         host: 'https://www.zen-mesh.io',
       },
     ],
