@@ -15,7 +15,8 @@
     "typecheck": "tsc",
     "validate:ai-evidence": "node scripts/validate-ai-evidence.js",
     "validate:docs-experience": "node scripts/validate-docs-experience.js",
-    "validate:docs-ai-discovery": "node scripts/validate-docs-ai-discovery-parity.js"
+    "validate:docs-ai-discovery": "node scripts/validate-docs-ai-discovery-parity.js",
+    "validate:ai-security-posture": "node scripts/validate-ai-security-posture.js"
   },
   "dependencies": {
     "@docusaurus/core": "3.10.0",

@@ -1,0 +1,131 @@
+{
+  "schema_version": "1.1.0",
+  "document": "security-gaps",
+  "last_updated": "2026-05-30",
+  "claim_maturity_index": "https://docs.zen-mesh.io/ai/security/v1/claim-maturity.json",
+  "purpose": "Explicit gaps — must remain visible; never convert to product claims.",
+  "readiness_scope": "DEMO-scoped platform. Gaps stay in public AI docs intentionally.",
+  "entries": [
+    {
+      "id": "GAP-SSRF-SAAS-DISPATCH",
+      "gap": "No proven SSRF protection for SaaS-origin dispatch",
+      "claim_maturity": "BACKLOG",
+      "roadmap_ref": "WH-AS-001",
+      "attack_ref": "ATK-SSRF-SAAS-DISPATCH",
+      "primitive_ref": "PRIM-SSRF-SAAS-DISPATCH",
+      "public_evidence_ref": null,
+      "public_safe_summary": "SSRF hardening is backlog — webhook-security gates are not full SSRF proof.",
+      "must_not_claim": ["SSRF-safe", "blocks SSRF", "prevents SSRF", "eliminates SSRF"]
+    },
+    {
+      "id": "GAP-THREAT-MODEL-SPLIT-DOCS",
+      "gap": "Threat-model split documentation still maturing",
+      "claim_maturity": "WIRED",
+      "roadmap_ref": "WH-AS-002",
+      "attack_ref": "ATK-EDGE-THREAT-MODEL-CONFUSION",
+      "primitive_ref": null,
+      "public_evidence_ref": "https://docs.zen-mesh.io/ai/security/v1/attack-model.json",
+      "public_safe_summary": "Attack-model split exists — deeper architecture links backlog.",
+      "must_not_claim": ["edge delivery implies SSRF protection on SaaS"]
+    },
+    {
+      "id": "GAP-LARGE-PAYLOAD-POINTER",
+      "gap": "No object-storage pointer model for oversized payloads",
+      "claim_maturity": "BACKLOG",
+      "roadmap_ref": "WH-AS-003",
+      "attack_ref": "ATK-LARGE-PAYLOAD-DOS",
+      "primitive_ref": "PRIM-PAYLOAD-POINTER",
+      "public_evidence_ref": null,
+      "public_safe_summary": "Signed pointer spillover not shipped.",
+      "must_not_claim": ["unlimited payload support", "any size webhook"]
+    },
+    {
+      "id": "GAP-JSON-PARSER-LIMITS",
+      "gap": "No evidenced global JSON depth/size validation",
+      "claim_maturity": "BACKLOG",
+      "roadmap_ref": "WH-AS-004",
+      "attack_ref": "ATK-JSON-PARSER-BOMB",
+      "primitive_ref": "PRIM-INGEST-VALIDATION",
+      "public_evidence_ref": null,
+      "public_safe_summary": "Parser-bomb hardening is post-V1.",
+      "must_not_claim": ["JSON bomb immune", "validates all payloads safely"]
+    },
+    {
+      "id": "GAP-SOURCE-RATE-LIMITS",
+      "gap": "No proven per-source ingestion rate limits",
+      "claim_maturity": "BACKLOG",
+      "roadmap_ref": "WH-AS-005",
+      "attack_ref": "ATK-RATE-ABUSE-INGEST",
+      "primitive_ref": "PRIM-SOURCE-RATE-LIMIT",
+      "public_evidence_ref": null,
+      "public_safe_summary": "Per-source limits are backlog.",
+      "must_not_claim": ["rate limited at source", "DDoS proof for webhooks"]
+    },
+    {
+      "id": "GAP-RESPONSE-TRUNCATION",
+      "gap": "No proven target response body limits",
+      "claim_maturity": "BACKLOG",
+      "roadmap_ref": "WH-AS-006",
+      "attack_ref": "ATK-RESPONSE-BODY-FLOOD",
+      "primitive_ref": "PRIM-RESPONSE-TRUNCATION",
+      "public_evidence_ref": null,
+      "public_safe_summary": "Response truncation is roadmap.",
+      "must_not_claim": ["full response bodies stored safely"]
+    },
+    {
+      "id": "GAP-HEADER-SANITIZATION",
+      "gap": "No global header sanitization before persist/log",
+      "claim_maturity": "BACKLOG",
+      "roadmap_ref": "WH-AS-007",
+      "attack_ref": "ATK-SENSITIVE-HEADER-LEAK",
+      "primitive_ref": "PRIM-HEADER-SANITIZATION",
+      "public_evidence_ref": null,
+      "public_safe_summary": "Header scrub is post-V1.",
+      "must_not_claim": ["headers never leak", "secrets never logged"]
+    },
+    {
+      "id": "GAP-REDIRECT-REVALIDATION",
+      "gap": "No proven redirect hop limits on dispatch",
+      "claim_maturity": "BACKLOG",
+      "roadmap_ref": "WH-AS-008",
+      "attack_ref": "ATK-REDIRECT-CHAIN-SSRF",
+      "primitive_ref": "PRIM-REDIRECT-REVALIDATION",
+      "public_evidence_ref": null,
+      "public_safe_summary": "Redirect controls are roadmap.",
+      "must_not_claim": ["redirect safe", "follows redirects securely"]
+    },
+    {
+      "id": "GAP-PUBLIC-MITIGATION-REPORT",
+      "gap": "No final public mitigation report until prerequisites pass",
+      "claim_maturity": "BACKLOG",
+      "roadmap_ref": "WH-AS-009",
+      "attack_ref": null,
+      "primitive_ref": null,
+      "public_evidence_ref": null,
+      "public_safe_summary": "Posture JSON is not the WH-AS-009 mitigation report.",
+      "must_not_claim": ["how we mitigate webhook attacks", "security guarantees for webhooks"]
+    },
+    {
+      "id": "GAP-SVID-ROTATION-PROOF",
+      "gap": "SVID rotation operational proof incomplete",
+      "claim_maturity": "NOT_CLAIMED",
+      "roadmap_ref": null,
+      "attack_ref": "ATK-WORKLOAD-IMPERSONATION",
+      "primitive_ref": "PRIM-SPIFFE-SPIRE",
+      "public_evidence_ref": null,
+      "public_safe_summary": "SVID rotation is not production-live proof.",
+      "must_not_claim": ["SVID rotation proven", "workload identity production-live"]
+    },
+    {
+      "id": "GAP-DELIVERY-POLICY-TLS",
+      "gap": "DeliveryPolicy TLS controls deferred",
+      "claim_maturity": "BACKLOG",
+      "roadmap_ref": null,
+      "attack_ref": "ATK-MITM-TRANSIT",
+      "primitive_ref": "PRIM-DELIVERY-POLICY-TLS",
+      "public_evidence_ref": null,
+      "public_safe_summary": "DeliveryPolicy TLS is not PASS.",
+      "must_not_claim": ["DeliveryPolicy live", "L2 delivery policy PASS"]
+    }
+  ]
+}

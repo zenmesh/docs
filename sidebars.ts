@@ -88,6 +88,7 @@ const sidebars: SidebarsConfig = {
       label: 'AI Agents',
       items: [
         'ai/overview',
+        'ai/security-posture',
         'ai/wedge-overview',
         'ai/evidence-schema',
         'ai/non-claims',

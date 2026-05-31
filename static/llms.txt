@@ -19,6 +19,14 @@ Non-claims and proof scope are authoritative — see the Non-Claims and Wedge Ev
 - [Wedge non-claims](https://docs.zen-mesh.io/ai/evidence/v1/wedge-non-claims.json): What the wedge does not claim
 - [Wedge overview](https://docs.zen-mesh.io/docs/ai/wedge-overview): Narrative wedge summary for reviewers
 
+## AI security posture (trust docs — not pen test)
+
+- [Security posture index](https://docs.zen-mesh.io/docs/ai/security-posture): Claim maturity legend and reviewer highlights
+- [Claim maturity](https://docs.zen-mesh.io/ai/security/v1/claim-maturity.json): WIRED / AUTOMATED_TESTED / E2E / BACKLOG per control
+- [Attack model](https://docs.zen-mesh.io/ai/security/v1/attack-model.json): Threats, maturity, and non-claims per attack
+- [Security primitives](https://docs.zen-mesh.io/ai/security/v1/primitives.json): mTLS, HMAC, SPIFFE, RLS, hash-chain, idempotency, etc.
+- [Security gaps](https://docs.zen-mesh.io/ai/security/v1/gaps.json): Explicit post-V1 gaps — must stay visible
+
 ## Platform evidence
 
 - [Capability manifest](https://docs.zen-mesh.io/ai/evidence/v1/manifest.json): Machine-readable capability and proof_status registry

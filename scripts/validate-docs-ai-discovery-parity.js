@@ -96,6 +96,12 @@ function main() {
   const overview = read('docs/ai/overview.md');
   ok('overview links manifest', overview.includes('manifest.json'));
   ok('overview links www narrative registry', overview.includes('narrative-context.json'));
+  ok('llms links attack-model.json', llms.includes('/ai/security/v1/attack-model.json'));
+  ok('attack-model.json on disk', fs.existsSync(path.join(ROOT, 'static/ai/security/v1/attack-model.json')));
+  ok('primitives.json on disk', fs.existsSync(path.join(ROOT, 'static/ai/security/v1/primitives.json')));
+  ok('gaps.json on disk', fs.existsSync(path.join(ROOT, 'static/ai/security/v1/gaps.json')));
+  ok('claim-maturity.json on disk', fs.existsSync(path.join(ROOT, 'static/ai/security/v1/claim-maturity.json')));
+  ok('llms links claim-maturity.json', llms.includes('/ai/security/v1/claim-maturity.json'));
 
   console.log(`\nRESULTS: ${passed} PASS, ${failed} FAIL`);
   process.exit(failed ? 1 : 0);

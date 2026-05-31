@@ -42,6 +42,10 @@ The public product scope is the **webhook operations wedge** — Stripe, GitHub,
 | `/ai/evidence/v1/manifest.json` | Full platform capability manifest |
 | `/ai/evidence/v1/compliance-map.json` | Compliance framework to feature graph |
 | `/ai/evidence/v1/non-claims.json` | Full platform non-claims by category |
+| `/ai/security/v1/claim-maturity.json` | Claim maturity per control (WIRED, AUTOMATED_TESTED, E2E, BACKLOG) |
+| `/ai/security/v1/attack-model.json` | AI attack model with maturity per threat |
+| `/ai/security/v1/primitives.json` | Security primitives (mTLS, HMAC, SPIFFE, RLS, hash-chain, …) |
+| `/ai/security/v1/gaps.json` | Explicit security gaps — not hidden |
 | `/llms.txt` | AI context — concise |
 | `/llms-full.txt` | AI context — full (on zen-mesh.io) |
 | `https://www.zen-mesh.io/ai/narrative-context.json` | Narrative context registry (blogs — **not** proof) |
@@ -54,6 +58,10 @@ Blog posts and [`narrative-context.json`](https://www.zen-mesh.io/ai/narrative-c
 - [Webhooks behind firewalls (blog)](https://www.zen-mesh.io/blogs/webhooks-behind-firewalls/) — architecture narrative (narrative_context)
 
 Proof remains in the [capability manifest](/ai/evidence/v1/manifest.json) and linked zen-platform evidence artifacts (hash-chain receipts are integrity-only — not authentication or replay prevention).
+
+## AI security posture
+
+For what Zen Mesh **does and does not** mitigate (SSRF, payloads, mTLS, hash-chain boundaries), see [AI Security Posture](./security-posture) and the JSON endpoints above. Gaps remain visible — narrative blogs are not proof.
 
 ## Public terminology
 
