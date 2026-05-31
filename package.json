@@ -16,7 +16,9 @@
     "validate:ai-evidence": "node scripts/validate-ai-evidence.js",
     "validate:docs-experience": "node scripts/validate-docs-experience.js",
     "validate:docs-ai-discovery": "node scripts/validate-docs-ai-discovery-parity.js",
-    "validate:ai-security-posture": "node scripts/validate-ai-security-posture.js"
+    "validate:ai-security-posture": "node scripts/validate-ai-security-posture.js",
+    "generate:ai-discovery-registry": "node scripts/generate-ai-discovery-registry.js",
+    "validate:ai-discovery-registry": "node scripts/validate-ai-discovery-registry-freshness.js"
   },
   "dependencies": {
     "@docusaurus/core": "3.10.0",

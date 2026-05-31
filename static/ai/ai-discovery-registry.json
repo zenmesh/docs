@@ -1,0 +1,95 @@
+{
+  "schema_version": "1.0.0",
+  "document": "ai-discovery-registry",
+  "generated_by": "scripts/generate-ai-discovery-registry.js",
+  "registry_updated_at": "2026-05-31T14:21:38.476Z",
+  "site_origin": "https://docs.zen-mesh.io",
+  "readiness_scope": "Per-surface last_updated reflects file content dates and mtimes. Capability manifest generated_at may be older than security posture surfaces.",
+  "capabilities_manifest_generated_at": "2026-05-24T17:51:13Z",
+  "security_posture_bundle_last_updated": "2026-05-31T13:52:43.532Z",
+  "surfaces": [
+    {
+      "id": "evidence-manifest",
+      "url_path": "/ai/evidence/v1/manifest.json",
+      "kind": "capabilities",
+      "last_updated": "2026-05-31T14:21:31.482Z",
+      "freshness_source": "mtime"
+    },
+    {
+      "id": "evidence-non-claims",
+      "url_path": "/ai/evidence/v1/non-claims.json",
+      "kind": "non_claims",
+      "last_updated": "2026-05-31T00:26:35.548Z",
+      "freshness_source": "mtime"
+    },
+    {
+      "id": "evidence-compliance-map",
+      "url_path": "/ai/evidence/v1/compliance-map.json",
+      "kind": "compliance",
+      "last_updated": "2026-05-24T12:14:37.639Z",
+      "freshness_source": "mtime"
+    },
+    {
+      "id": "evidence-wedge-claim-map",
+      "url_path": "/ai/evidence/v1/wedge-claim-map.json",
+      "kind": "wedge",
+      "last_updated": "2026-05-25T23:59:59.000Z",
+      "freshness_source": "content"
+    },
+    {
+      "id": "security-claim-maturity",
+      "url_path": "/ai/security/v1/claim-maturity.json",
+      "kind": "security_posture",
+      "last_updated": "2026-05-31T13:51:54.193Z",
+      "freshness_source": "mtime"
+    },
+    {
+      "id": "security-attack-model",
+      "url_path": "/ai/security/v1/attack-model.json",
+      "kind": "security_posture",
+      "last_updated": "2026-05-31T13:52:36.283Z",
+      "freshness_source": "mtime"
+    },
+    {
+      "id": "security-primitives",
+      "url_path": "/ai/security/v1/primitives.json",
+      "kind": "security_posture",
+      "last_updated": "2026-05-31T13:52:11.657Z",
+      "freshness_source": "mtime"
+    },
+    {
+      "id": "security-gaps",
+      "url_path": "/ai/security/v1/gaps.json",
+      "kind": "security_posture",
+      "last_updated": "2026-05-31T13:52:43.532Z",
+      "freshness_source": "mtime"
+    },
+    {
+      "id": "security-capability-validation",
+      "url_path": "/ai/security/v1/security-capability-validation.json",
+      "kind": "security_reference",
+      "last_updated": "2026-05-25T23:35:27.807Z",
+      "freshness_source": "mtime"
+    },
+    {
+      "id": "security-credential-lifecycle",
+      "url_path": "/ai/security/v1/credential-lifecycle-ownership.json",
+      "kind": "security_reference",
+      "last_updated": "2026-05-24T23:40:09.983Z",
+      "freshness_source": "mtime"
+    },
+    {
+      "id": "llms-txt",
+      "url_path": "/llms.txt",
+      "kind": "discovery",
+      "last_updated": "2026-05-31T14:21:38.476Z",
+      "freshness_source": "mtime"
+    }
+  ],
+  "claim_boundaries": [
+    "Hash-chain/Merkle = integrity/tamper evidence only — not auth, identity, encryption, or replay prevention",
+    "Idempotency helps detect/limit duplicates — not replay-proof delivery",
+    "Narrative and blogs are not runtime proof",
+    "Security gaps remain visible — do not convert backlog to product claims"
+  ]
+}

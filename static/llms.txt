@@ -19,6 +19,10 @@ Non-claims and proof scope are authoritative — see the Non-Claims and Wedge Ev
 - [Wedge non-claims](https://docs.zen-mesh.io/ai/evidence/v1/wedge-non-claims.json): What the wedge does not claim
 - [Wedge overview](https://docs.zen-mesh.io/docs/ai/wedge-overview): Narrative wedge summary for reviewers
 
+## AI discovery registry
+
+- [AI discovery registry](https://docs.zen-mesh.io/ai/ai-discovery-registry.json): Per-surface freshness for evidence, security posture, and llms.txt
+
 ## AI security posture (trust docs — not pen test)
 
 - [Security posture index](https://docs.zen-mesh.io/docs/ai/security-posture): Claim maturity legend and reviewer highlights

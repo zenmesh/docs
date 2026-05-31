@@ -982,5 +982,17 @@
     "Relay-path sandbox delivery proof is mandatory for demo scope; direct/egress/relay receipts per capability proof_status — not platform go-live",
     "Runtime workload identity (SVID) rotation is not proven on mainline; DeliveryPolicy TLS/trust-chain L2 controls deferred — not PASS",
     "Not production-live, not customer-ready, not demo-ready as platform readiness"
-  ]
+  ],
+  "ai_discovery": {
+    "registry_ref": "https://docs.zen-mesh.io/ai/ai-discovery-registry.json",
+    "registry_updated_at": "2026-05-31T14:21:38.476Z",
+    "capabilities_manifest_generated_at": "2026-05-24T17:51:13Z",
+    "security_posture_surfaces": [
+      "/ai/security/v1/claim-maturity.json",
+      "/ai/security/v1/attack-model.json",
+      "/ai/security/v1/primitives.json",
+      "/ai/security/v1/gaps.json"
+    ],
+    "freshness_note": "Use ai-discovery-registry.json per-surface last_updated for security posture; manifest.generated_at is capability inventory sync time."
+  }
 }

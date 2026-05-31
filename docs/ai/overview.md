@@ -42,6 +42,7 @@ The public product scope is the **webhook operations wedge** — Stripe, GitHub,
 | `/ai/evidence/v1/manifest.json` | Full platform capability manifest |
 | `/ai/evidence/v1/compliance-map.json` | Compliance framework to feature graph |
 | `/ai/evidence/v1/non-claims.json` | Full platform non-claims by category |
+| `/ai/ai-discovery-registry.json` | Per-surface freshness for evidence + security posture endpoints |
 | `/ai/security/v1/claim-maturity.json` | Claim maturity per control (WIRED, AUTOMATED_TESTED, E2E, BACKLOG) |
 | `/ai/security/v1/attack-model.json` | AI attack model with maturity per threat |
 | `/ai/security/v1/primitives.json` | Security primitives (mTLS, HMAC, SPIFFE, RLS, hash-chain, …) |

@@ -101,6 +101,7 @@ function main() {
   ok('primitives.json on disk', fs.existsSync(path.join(ROOT, 'static/ai/security/v1/primitives.json')));
   ok('gaps.json on disk', fs.existsSync(path.join(ROOT, 'static/ai/security/v1/gaps.json')));
   ok('claim-maturity.json on disk', fs.existsSync(path.join(ROOT, 'static/ai/security/v1/claim-maturity.json')));
+  ok('llms links ai-discovery-registry', llms.includes('/ai/ai-discovery-registry.json'));
   ok('llms links claim-maturity.json', llms.includes('/ai/security/v1/claim-maturity.json'));
 
   console.log(`\nRESULTS: ${passed} PASS, ${failed} FAIL`);

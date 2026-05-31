@@ -30,6 +30,7 @@ Do not use “eliminates,” “replay-proof,” “SSRF-safe,” or bare “sec
 
 | Document | URL |
 |----------|-----|
+| **AI discovery registry (freshness)** | [`/ai/ai-discovery-registry.json`](/ai/ai-discovery-registry.json) |
 | **Claim maturity (canonical)** | [`/ai/security/v1/claim-maturity.json`](/ai/security/v1/claim-maturity.json) |
 | Attack model | [`/ai/security/v1/attack-model.json`](/ai/security/v1/attack-model.json) |
 | Security primitives | [`/ai/security/v1/primitives.json`](/ai/security/v1/primitives.json) |
