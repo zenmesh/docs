@@ -13,10 +13,12 @@ const ROOT = path.resolve(__dirname, '..');
 const HOSTS = ['docs.zen-mesh.io', 'www.zen-mesh.io', 'zen-mesh.io'];
 const PATHS = [
   '/llms.txt',
+  '/llms-full.txt',
   '/ai/ai-discovery-registry.json',
   '/ai/security/v1/claim-maturity.json',
   '/ai/security/v1/primitives.json',
   '/ai/security/v1/gaps.json',
+  '/ai/security/v1/local-trust-posture.json',
   '/ai/evidence/v1/non-claims.json',
   '/ai/evidence/v1/manifest.json',
 ];
@@ -69,7 +71,7 @@ function main() {
         host === 'docs.zen-mesh.io'
           ? 'Canonical host for machine-readable /ai/* JSON and llms.txt.'
           : host === 'www.zen-mesh.io'
-            ? 'Marketing host: /llms.txt served; /ai/* JSON not hosted — use docs.zen-mesh.io (redirect after HELPER054 deploy).'
+            ? 'Marketing host: /llms.txt and /llms-full.txt served; /ai/* 308 → docs.zen-mesh.io.'
             : 'Apex: permanent redirect to www for site paths; use docs for JSON registries.',
       endpoints,
     };
