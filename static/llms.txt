@@ -2,9 +2,15 @@
 
 > Zen Mesh helps teams receive, validate, observe, and operate webhooks across Stripe, GitHub, and custom sources. Current readiness is DEMO only (local/mock/sandbox and limited cloud-demo scope — not customer-ready or production-live).
 
-Version: 1.0.0 · Last-Updated: 2026-05-29T23:30:00Z · Product scope: webhook ingestion, validation, delivery visibility, and security operations (evidence-first federated operational runtime/trust platform).
+Version: 1.0.0 · Last-Updated: 2026-05-31T14:40:00Z · Product scope: webhook ingestion, validation, delivery visibility, and security operations (evidence-first federated operational runtime/trust platform).
 
 Non-claims and proof scope are authoritative — see the Non-Claims and Wedge Evidence links below before inferring production readiness.
+
+## Canonical discovery (crawlers)
+
+- **Machine-readable host:** `https://docs.zen-mesh.io` — fetch `/llms.txt`, `/ai/ai-discovery-registry.json`, `/ai/security/v1/*`, and `/ai/evidence/v1/*` on this host only (direct `200`, `text/plain` or `application/json`; no client-side routing).
+- **Marketing mirror:** `https://www.zen-mesh.io/llms.txt` — editorial index; `/ai/*` JSON is not hosted on www (use docs URLs below).
+- **Apex:** `https://zen-mesh.io` — permanent redirect to www for site pages; use docs host for JSON registries.
 
 ## Core
 
@@ -67,4 +73,5 @@ Non-claims and proof scope are authoritative — see the Non-Claims and Wedge Ev
 - [Public terminology taxonomy](https://www.zen-mesh.io/ai/public-terminology-taxonomy.json): Internal-ref → public capability map (regression gate)
 - [Terminology guide](https://docs.zen-mesh.io/docs/ai/public-terminology-taxonomy): Docs mirror of public copy policy
 - [Full AI context](https://www.zen-mesh.io/llms-full.txt): Expanded curated context (community convention)
-- [Marketing llms.txt](https://www.zen-mesh.io/llms.txt): www entry point for LLM crawlers
+- [Marketing llms.txt](https://www.zen-mesh.io/llms.txt): www editorial index (JSON registries on docs host only)
+- [Discovery crawler smoke record](https://docs.zen-mesh.io/ai/discovery-crawler-smoke-v1.json): Apex/www/docs fetch status for validators and reviewers
