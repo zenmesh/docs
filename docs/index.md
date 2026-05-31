@@ -44,7 +44,9 @@ Welcome to the Zen Mesh technical documentation — architecture, operations, se
 | Compliance Map | [`/ai/evidence/v1/compliance-map.json`](/ai/evidence/v1/compliance-map.json) |
 | Non-Claims | [`/ai/evidence/v1/non-claims.json`](/ai/evidence/v1/non-claims.json) |
 | AI Context (llms.txt) | [`/llms.txt`](/llms.txt) |
-| Full Context | [`https://zen-mesh.io/llms-full.txt`](https://zen-mesh.io/llms-full.txt) |
+| Evidence index (www) | [`https://www.zen-mesh.io/evidence`](https://www.zen-mesh.io/evidence) |
+| Full Context | [`https://www.zen-mesh.io/llms-full.txt`](https://www.zen-mesh.io/llms-full.txt) |
+| Public terminology | [`https://www.zen-mesh.io/ai/public-terminology-taxonomy.json`](https://www.zen-mesh.io/ai/public-terminology-taxonomy.json) |
 
 ## Also available
 

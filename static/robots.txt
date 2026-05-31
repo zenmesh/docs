@@ -2,8 +2,9 @@ User-agent: *
 Allow: /
 Allow: /llms.txt
 Allow: /ai/
+Allow: /ai/evidence/
 Allow: /docs/ai/
 
 Sitemap: https://docs.zen-mesh.io/sitemap.xml
 
-# AI-readable documentation is at /llms.txt
+# AI-readable: /llms.txt (docs), manifests under /ai/evidence/v1/, www parity at https://www.zen-mesh.io/llms.txt

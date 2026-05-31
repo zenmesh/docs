@@ -1,6 +1,7 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import {docsStructuredDataBlocks} from './src/lib/docsPublicStructuredData';
 
 const config: Config = {
   title: 'Zen Mesh Docs',
@@ -75,6 +76,29 @@ const config: Config = {
     {
       tagName: 'link',
       attributes: {
+        rel: 'llms',
+        href: '/llms.txt',
+        title: 'Docs AI context index',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'llms-full',
+        href: 'https://www.zen-mesh.io/llms-full.txt',
+        title: 'Full AI context (www)',
+      },
+    },
+    {
+      tagName: 'meta',
+      attributes: {
+        name: 'llms-enabled',
+        content: 'true',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
         rel: 'alternate',
         type: 'text/plain',
         href: '/llms.txt',
@@ -82,24 +106,21 @@ const config: Config = {
       },
     },
     {
+      tagName: 'link',
+      attributes: {
+        rel: 'alternate',
+        type: 'text/plain',
+        href: 'https://www.zen-mesh.io/llms.txt',
+        title: 'Marketing site AI context',
+      },
+    },
+    ...docsStructuredDataBlocks.map((block) => ({
       tagName: 'script',
       attributes: {
         type: 'application/ld+json',
       },
-      innerHTML: JSON.stringify({
-        '@context': 'https://schema.org',
-        '@type': 'Dataset',
-        name: 'Zen Mesh Documentation',
-        description: 'Stripe webhook ingestion, validation, delivery visibility, and security operations. Current readiness: DEMO (local/mock/sandbox only).',
-        url: 'https://docs.zen-mesh.io',
-        dateModified: '2026-05-25',
-        hasPart: [
-          { '@type': 'CreativeWork', name: 'Capability Manifest', url: 'https://docs.zen-mesh.io/ai/evidence/v1/manifest.json' },
-          { '@type': 'CreativeWork', name: 'Non-Claims', url: 'https://docs.zen-mesh.io/ai/evidence/v1/non-claims.json' },
-          { '@type': 'CreativeWork', name: 'Compliance Map', url: 'https://docs.zen-mesh.io/ai/evidence/v1/compliance-map.json' },
-        ],
-      }),
-    },
+      innerHTML: JSON.stringify(block),
+    })),
   ],
 
   themeConfig: {
@@ -136,7 +157,17 @@ const config: Config = {
           docsPluginId: 'helm-charts',
         },
         {
-          href: 'https://zen-mesh.io',
+          href: 'pathname:///llms.txt',
+          label: 'AI Context',
+          position: 'right',
+        },
+        {
+          href: 'https://www.zen-mesh.io/evidence',
+          label: 'Evidence',
+          position: 'right',
+        },
+        {
+          href: 'https://www.zen-mesh.io',
           label: 'zen-mesh.io',
           position: 'right',
         },
@@ -170,6 +201,14 @@ const config: Config = {
         {
           title: 'Resources',
           items: [
+            {
+              label: 'AI Context (llms.txt)',
+              href: 'pathname:///llms.txt',
+            },
+            {
+              label: 'Evidence manifests',
+              to: '/docs/ai/overview',
+            },
             {
               label: 'Helm Charts',
               href: 'https://github.com/zenmesh/helm-charts',

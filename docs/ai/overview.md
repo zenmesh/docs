@@ -48,12 +48,12 @@ The public product scope is the **webhook operations wedge** — Stripe, GitHub,
 
 ## Narrative context (not proof)
 
-Blog posts and [`narrative-context.json`](https://www.zen-mesh.io/ai/narrative-context.json) on the marketing site are **editorial narrative** for reviewers and LLMs. They explain why delivery evidence and path transparency matter. They are **not** `accepted_evidence`, do not set `proof_status`, and do not replace manifest entries or Merkle-verified receipts.
+Blog posts and [`narrative-context.json`](https://www.zen-mesh.io/ai/narrative-context.json) on the marketing site are **editorial narrative** for reviewers and LLMs. They explain why delivery evidence and path transparency matter. They are **not** `accepted_evidence`, do not set `proof_status`, and do not replace manifest entries or hash-chain integrity receipts.
 
 - [Webhook delivery evidence (blog)](https://www.zen-mesh.io/blogs/webhook-delivery-evidence/) — delivery logs vs verifiable evidence (narrative_context)
 - [Webhooks behind firewalls (blog)](https://www.zen-mesh.io/blogs/webhooks-behind-firewalls/) — architecture narrative (narrative_context)
 
-Proof remains in the [capability manifest](/ai/evidence/v1/manifest.json) and linked zen-platform evidence artifacts.
+Proof remains in the [capability manifest](/ai/evidence/v1/manifest.json) and linked zen-platform evidence artifacts (hash-chain receipts are integrity-only — not authentication or replay prevention).
 
 ## Public terminology
 
