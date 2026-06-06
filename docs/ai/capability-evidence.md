@@ -70,6 +70,14 @@ All capabilities are classified with a proof status. See `/ai/evidence/v1/manife
 
 **Non-claims:** gateway_cloud_proof=false, production_gateway_proof=false, multicluster_gateway=false, customer_ready=false, prod_live=false, zero_trust_complete=false.
 
+## Public Trust & Evidence Pack
+
+A buyer-readable summary of all Edge Lite and Gateway API evidence, non-claims, and launch blockers is available:
+
+- [Edge Lite + Gateway API: Public Trust & Evidence Pack](../10-ARCHITECTURE/EDGE_LITE_GATEWAY_PUBLIC_TRUST_EVIDENCE_PACK.md) (zen-platform)
+- [Proven / Not Proven Matrix](../80-EVIDENCE/edge/edge_lite_h501_proven_not_proven_matrix.json)
+- [Design Partner Evaluation Runbook](../20-OPERATIONS/EDGE_LITE_DESIGN_PARTNER_EVALUATION_RUNBOOK.md)
+
 ## Evidence Support
 
 | Artifact | Description | Path |
