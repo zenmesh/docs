@@ -10,7 +10,7 @@ Edge Lite is a single-container evaluation mode of ZenMesh Edge that requires **
 
 **Install options:**
 - **Helm path**: `helm install zen-edge ./deploy/edge-lite/helm` - for serious Kubernetes customers
-- **Docker Edge Lite path**: `curl -fsSL https://get.zenmesh.io/edge-lite | bash` - for design partners and eval customers
+- **Docker Edge Lite path**: `curl -fsSL https://get.zen-mesh.io | bash` - for design partners and eval customers
 
 Both install options produce the same enrollment intent document structure and use the same trust anchors.
 
