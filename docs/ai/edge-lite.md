@@ -16,6 +16,34 @@ Both install options produce the same enrollment intent document structure and u
 
 ---
 
+## Quick Install (No Bundle Required)
+
+**New:** Get started without an enrollment bundle. No Kubernetes required.
+
+```bash
+curl -fsSL https://get.zen-mesh.io | bash
+```
+
+The script will:
+1. Create a short-lived install session
+2. Open your browser for signup/login (Google SSO, or email)
+3. Automatically select a Webhook Entry Point (AWS us-east-1, shared, free)
+4. Create a personal EDGE plane for you
+5. Prompt for endpoint name (default: my-first-endpoint) and target URL (default: http://localhost:8080)
+6. Run a local reachability check (warning only, not blocking)
+7. Print your final webhook URL, management URL, and test curl command
+
+> **Note:** Other providers and regions coming soon.
+
+**Non-claims:**
+- launch_ready = false
+- customer_ready = false
+- prod_live = false
+- free_tier_ready = false
+- zero_trust_complete = false
+
+---
+
 ## Current Status: Design-Partner Evaluation Only
 
 ### What Can Be Evaluated Today
