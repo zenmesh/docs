@@ -978,9 +978,10 @@
     "No SOC2 audit attestation or PCI attestation claim",
     "V1 evidence-first governance: canonical failure-stop on script failure",
     "Accepted deploy/UI/completion evidence artifacts require hash-chain inclusion; integrity comparison only — not auth, identity, encryption, or replay prevention",
-    "Planes management UI (T1) is NOT product-pass; management-console boring-readiness NOT_READY on mainline",
+    "NOT product-pass: Planes management UI (T1); management-console boring-readiness NOT_READY on mainline",
     "Relay-path sandbox delivery proof is mandatory for demo scope; direct/egress/relay receipts per capability proof_status — not platform go-live",
     "Runtime workload identity (SVID) rotation is not proven on mainline; DeliveryPolicy TLS/trust-chain L2 controls deferred — not PASS",
+    "NOT product-pass, NOT DONE: H220 pending — no canonical checkpoint or evidence pack exists; status unproven",
     "Not production-live, not customer-ready, not demo-ready as platform readiness"
   ],
   "ai_discovery": {
