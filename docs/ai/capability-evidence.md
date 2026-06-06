@@ -40,6 +40,36 @@ All capabilities are classified with a proof status. See `/ai/evidence/v1/manife
 
 **Verification:** `make trust-proof-replay-verify` / `make trust-lifecycle-state-machine-check`
 
+## Edge Lite
+
+| Capability | Proof ID | Status | Evidence Path | Merkle Root |
+|---|---|---|---|---|
+| Docker runtime wedge | H484 | PASS | `checkpoints/CHECKPOINT_H484_...` | `edge_lite_h484_merkle.json` |
+| Real enrollment/TLS wedge | H487 | PASS | `checkpoints/CHECKPOINT_H487_...` | `edge_lite_h487_merkle.json` |
+| Single multi-role image | H489 | PASS | `checkpoints/CHECKPOINT_H489_...` | `edge_lite_h489_merkle.json` |
+| Ingester local intake/spool | H490 | PASS | `checkpoints/CHECKPOINT_H490_...` | `edge_lite_h490_merkle.json` |
+| Local flow delivery loop | H491 | PASS | `checkpoints/CHECKPOINT_H491_...` | `edge_lite_h491_merkle.json` |
+| Size budget | H492 | PASS | `checkpoints/CHECKPOINT_H492_...` | `edge_lite_h492_merkle.json` |
+| Local release bundle/UX | H493 | PASS | `checkpoints/CHECKPOINT_H493_...` | `edge_lite_h493_merkle.json` |
+| Release security policy/gates | H494 | PASS | `checkpoints/CHECKPOINT_H494_...` | `edge_lite_h494_merkle.json` |
+| SBOM/scan gate policy | H495 | PASS | `checkpoints/CHECKPOINT_H495_...` | `edge_lite_h495_merkle.json` |
+| Signing/provenance policy | H496 | PASS | `checkpoints/CHECKPOINT_H496_...` | `edge_lite_h496_merkle.json` |
+| Real SBOM/scan/toolchain | H497 | PASS | `checkpoints/CHECKPOINT_H497_...` | `edge_lite_h497_merkle.json` |
+| Dual Helm+Docker UX contract | H498 | PASS | `checkpoints/CHECKPOINT_H498_...` | `edge_lite_h498_merkle.json` |
+| curl|sh installer dry-run | H499 | PASS | `checkpoints/CHECKPOINT_H499_...` | `edge_lite_h499_merkle.json` |
+
+**Non-claims:** launch_ready=false, customer_ready=false, prod_live=false, real_enrollment_implementation=false, real_saas_delivery=false, signing_executed=false, provenance_generated=false, release_gates_complete=false.
+
+## Gateway API (Local Proof)
+
+| Capability | Proof ID | Status | Evidence Path | Merkle Root |
+|---|---|---|---|---|
+| MetalLB Programmed=True | H481 | PASS | `checkpoints/CHECKPOINT_H481_...` | `gateway_api_h500_merkle.json` |
+| Traffic proof (5/5) | H482 | PASS | `checkpoints/CHECKPOINT_H482_...` | `gateway_api_h500_merkle.json` |
+| Local evidence closeout | H483 | PASS | `checkpoints/CHECKPOINT_H483_...` | `gateway_api_h500_merkle.json` |
+
+**Non-claims:** gateway_cloud_proof=false, production_gateway_proof=false, multicluster_gateway=false, customer_ready=false, prod_live=false, zero_trust_complete=false.
+
 ## Evidence Support
 
 | Artifact | Description | Path |
