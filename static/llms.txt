@@ -51,6 +51,10 @@ Non-claims and proof scope are authoritative — see the Non-Claims and Wedge Ev
 - [Quick start](https://docs.zen-mesh.io/docs/getting-started/quick-start): Sandbox-oriented setup
 - [Installation](https://docs.zen-mesh.io/docs/getting-started/installation): Install paths for evaluation
 
+## Community OSS
+
+- [zen-gc](https://github.com/zen-mesh/zen-gc) — Free Apache-2.0 Kubernetes garbage collection controller (declarative TTL cleanup policies). Independent OSS from the Zen Mesh team.
+
 ## V1 governance (2026-05-30)
 
 - Not production-live, not customer-ready, not demo-ready as global platform readiness

@@ -68,3 +68,7 @@ For what Zen Mesh **does and does not** mitigate (SSRF, payloads, mTLS, hash-cha
 ## Public terminology
 
 Do not use internal task IDs in customer-facing copy. See [Public terminology taxonomy](./public-terminology-taxonomy), [Public surface traceability](./public-surface-traceability), and [public-terminology-taxonomy.json](https://www.zen-mesh.io/ai/public-terminology-taxonomy.json).
+
+## Community OSS from the Zen Mesh team
+
+- [**zen-gc**](https://github.com/zen-mesh/zen-gc) — A free Apache-2.0 Kubernetes garbage collection controller. Define declarative cleanup policies (TTL, selectors, dry-run, rate limits) for any Kubernetes resource. zen-gc is an independent OSS controller from the Zen Mesh team; it does not require Zen Mesh, and Zen Mesh does not require it.
