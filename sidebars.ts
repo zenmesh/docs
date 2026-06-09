@@ -23,6 +23,18 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: 'Delivery',
+      items: [
+        'delivery/dead-letter-queue',
+        'delivery/replay',
+        'delivery/deduplication',
+        'delivery/filtering',
+        'delivery/fan-out',
+        'delivery/idempotency',
+      ],
+    },
+    {
+      type: 'category',
       label: 'Architecture',
       items: [
         'architecture/overview',
@@ -39,6 +51,9 @@ const sidebars: SidebarsConfig = {
         'security/security-capability-validation',
         'security/agent-saas-mtls',
         'security/zenlock-credential-lifecycle',
+        'security/ip-allowlisting',
+        'security/header-validation',
+        'security/cryptographic-enrollment',
       ],
     },
     {

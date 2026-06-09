@@ -46,6 +46,21 @@ Non-claims and proof scope are authoritative — see the Non-Claims and Wedge Ev
 - [AI overview](https://docs.zen-mesh.io/docs/ai/overview): How to read Zen evidence artifacts
 - [Verification guide](https://docs.zen-mesh.io/docs/ai/verification): How claims are verified in-repo
 
+## Delivery capabilities
+
+- [Dead Letter Queue](https://docs.zen-mesh.io/docs/delivery/dead-letter-queue): Failed delivery preservation and recovery with configurable retention and retry policies
+- [Webhook Replay](https://docs.zen-mesh.io/docs/delivery/replay): Replay events from DLQ or delivery history for recovery and reprocessing
+- [Webhook Deduplication](https://docs.zen-mesh.io/docs/delivery/deduplication): Duplicate event detection and handling with configurable dedup keys
+- [Webhook Filtering](https://docs.zen-mesh.io/docs/delivery/filtering): Route or suppress events according to configured conditions
+- [Webhook Fan-Out](https://docs.zen-mesh.io/docs/delivery/fan-out): Deliver events to multiple destinations with per-destination policies
+- [Webhook Idempotency](https://docs.zen-mesh.io/docs/delivery/idempotency): Idempotency controls for safe retry and duplicate processing
+
+## Security capabilities
+
+- [IP Allowlisting](https://docs.zen-mesh.io/docs/security/ip-allowlisting): Restrict delivery sources with identity-based allowlisting
+- [Header Validation](https://docs.zen-mesh.io/docs/security/header-validation): Verify event source authenticity with signature verification
+- [Cryptographic Enrollment](https://docs.zen-mesh.io/docs/security/cryptographic-enrollment): HMAC-based enrollment with X.509 SVID for component identity
+
 ## Getting started
 
 - [Quick start](https://docs.zen-mesh.io/docs/getting-started/quick-start): Sandbox-oriented setup
