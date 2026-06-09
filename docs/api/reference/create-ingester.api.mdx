@@ -1,0 +1,71 @@
+---
+id: create-ingester
+title: "Create an ingester"
+description: "Create an ingester"
+sidebar_label: "Create an ingester"
+hide_title: true
+hide_table_of_contents: true
+api: eJzNVktv2zgQ/ivCnFpAlpycCp02dbJAsMFu4KSXdY1gLI4l1hTJkpRd19B/Xwzlt43FLgoUzcUhZ+bjPL6Z0QYCVh6KCYzG9x6mKRhLDoM0+lFAAaUjDPSoK/KBHKRg0WFDgRwbbUBjQ1BAII06vEkBKUgNBVgMNaTg6GsrHQkogmspBV/W1CAUGwhry4Y+OKkr6Lp0j1Wqlt/6EbBpCp7K1smwjl727t21oYZiMmUxY5EPH41YM8A5dGl0IB1YhNYqWcaM5F+80Xx38bKZfaEynPg46eNJe5UIOZcVZ9g6znGQ5Bmhj/oihq3dhSAF0m3D8It2Rk5TIA8Rs6FQU8sHY0l7Qldy1p7MQsK02ztwxWkUQnJ8qJ6PXONMdOyHDIrVdyQYRUqM+wRC17GOI2+N9n1Et8Mb/hHkSyctAx9ZJz2jBPxAkk8TKMX19O0peU16RLJr4l+7KJxvLciReFtjo64H2Kf5DcM1d+fGNSwBgYEGQTbENq0V/9PmCj0iI7r0rPw9aRLUiTzMEk6O4SljjY915T4vIO9L5/PNvoZdvi2YzzeH0nX5DowT7Mktd2OpdQoKqEOwvshztDL7TnrQkK8zafLlDZz79+yMaMt44FF0au8DVlJX2X/AeelVz0CKPFemRFUbH4oPww9Dduma+RNrJYKWpIxtuDl4WHFHjA8D6+EbNlbRYXgcarSt2QkL9xTjqkg9N7G426r90c7ob9LJRywXyd3z44VHLCAtWJbMjUt2BlZhYEYkg8Q6s5SCfDIaf7pP9vvDR31eK8m7HTnS5J58kDoq8EHJJbn178qs3qefdVmj1qTyuTKrpEGNFXES0qQnwskVapGsaFYbs0hIC2ukDj77rCEFpkHv/U02zIbbUYNlOErZLo5Xwob7t0HJ1UIrf+PsfSedScNNoWTJjXtkemexrCm5jcinTFmtVhlGcWZclW9tff70OHr48+VhcJsNszo0KnYOs75BfYR8tUtO6rFvy0DfQm4VSh0718Up0DfQZDv7uPjF8Wbe9RDfn23ZXRtNU2CSMshmM0NPn5zqOr7+2pLjbTpNYYlO4oz5M9mAkJ7/F1DMUXm68Hc/5eHdeLsc3ycHqp7Gsb1EveYyomr5BCksaH3ylcHt9RMfPkpWx1O7JhTkYvi9wqh/a/Da7/odwMVaY797i7uyJBv+VXd6NCGf/3p5hRRm2++Vxgi2cbjibw5c9c6aGHtcivFuAwp11WLFuj0m//0DlkhuPA==
+sidebar_class_name: "post api-method"
+info_path: docs/api/reference/kubezen-back-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Create an ingester"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/tenants/{tenant_id}/clusters/{cluster_id}/ingesters"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Create an ingester
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"tenant_id","in":"path","required":true,"schema":{"type":"string"}},{"name":"cluster_id","in":"path","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","required":["name","type","config"],"properties":{"name":{"type":"string"},"type":{"type":"string","enum":["kubernetes","prometheus","opensearch","Loki"]},"config":{"type":"object","additionalProperties":true}},"title":"IngesterCreateRequest"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"201":{"description":"Ingester created","content":{"application/json":{"schema":{"type":"object","properties":{"id":{"type":"string"},"tenant_id":{"type":"string"},"cluster_id":{"type":"string"},"name":{"type":"string"},"type":{"type":"string","enum":["kubernetes","prometheus","opensearch","Loki"]},"config":{"type":"object","additionalProperties":true},"rendered_yaml":{"type":"string"},"created_at":{"type":"string","format":"date-time"},"updated_at":{"type":"string","format":"date-time"}},"title":"Ingester"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

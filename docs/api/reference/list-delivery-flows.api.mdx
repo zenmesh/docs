@@ -1,0 +1,71 @@
+---
+id: list-delivery-flows
+title: "List delivery flows for cluster"
+description: "List delivery flows for cluster"
+sidebar_label: "List delivery flows for cluster"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9VVFv2zYQ/ivEPbUALbl5KvS0LMmGYMFQpO3LUiM4i2eLDUWyJGXPFfTfi5NkR47drcWA+UUWj9/p7r777lpIuI5QPMDV/XWEhQTnKWDSzt4qKMDomK7J6A2F3W/GbSNI8BiwpkSBcS1YrAkKSGTRpketQIK2UIDHVIGEQF8aHUhBkUJDEmJZUY1QtJB2noExBW3X0HXy4Ks0TUwU/ouzhYRIZRN02vVRDuFdNqmC4mHB5kDROxspMvxiPueHolgG7Tl9KOBOxyTcSqixAGI1VqB0NpFNjEDvjS77guWfI8Pa06jc8jOViUsXuLxJDx/Vieo4uYYh4I4zfnH+Pbg6k7icEHHOOintOfNAwBmDtmv6J6CimLTt6/C9Kytthqb50YQ7ziagjSsX6t71T4IDWUWB1OMOa3O+HIEwkXrEdGqWMHwXClCYaJZ0TYxpvPpJDOehk+F7UzFBN/7kucY77jqxckGM5IGEmlLlWKBr6huD5VFAPnAf8/bQBF0+gmLePnPf5Xvvs31PRwqbvaSbYKCAKiUfizxHr7OvZGc1xSrTLt+8gZcBvwtONWX/wjI+xseEa23X2Q/4eT9cfeGkyHPjSjSVi6l4O38755DOwe/4llC0IeN8zQploWu7cj1TIwV/NEv6i6z4Fcsncfnu9sQNG8gqtvVl3wO8wcT0ipnwwW20oiiu7j9ei8PMHGjiUSpe3Y6KkeL6WRv88twAr+UnW1ZoLZmceRA1WlwTRy7FQOHREVoltrSsnHsSZJV32qaYfbIggbkbon+TzbP5OKSw7Ht0HKv7PD4Q1iCBatRcYvT6l6dmSV/JZtpxhxtdko00gV56LCsSF73nY3q3222GvTlzYZ2P2Jjf3V7d/Pn+ZnaRzbMq1aaXgXcx1Wgnnv+914/IOQgu0d8p9wa17TUZen0POngYZyC3dTHdS3sp8PnRjnmhhoUE7jX21LZLjPQxmK7j4y8NBV4oCwkbDBqX3FEPLSgd+b+CYoUm0knQh40Br+7HHfZagDyfzH7AWR5vGzQNv4GEJ9odLVpWyf/44UnFukUnoSJUFPr0hwuXZUk+TaAny5HleBhdv998gK77BtUs70c=
+sidebar_class_name: "get api-method"
+info_path: docs/api/reference/kubezen-back-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List delivery flows for cluster"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/tenants/{tenant_id}/clusters/{cluster_id}/delivery-flows"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+List delivery flows for cluster
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"tenant_id","in":"path","required":true,"schema":{"type":"string"}},{"name":"cluster_id","in":"path","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"List of delivery flows","content":{"application/json":{"schema":{"type":"object","properties":{"items":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string"},"tenant_id":{"type":"string"},"cluster_id":{"type":"string"},"name":{"type":"string"},"ingester_id":{"type":"string"},"destination_id":{"type":"string"},"filters":{"type":"array","items":{"type":"object"}},"transformations":{"type":"array","items":{"type":"object"}},"rendered_yaml":{"type":"string"},"created_at":{"type":"string","format":"date-time"},"updated_at":{"type":"string","format":"date-time"}},"title":"DeliveryFlow"}}}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

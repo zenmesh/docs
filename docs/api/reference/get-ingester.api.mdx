@@ -1,0 +1,71 @@
+---
+id: get-ingester
+title: "Get ingester details"
+description: "Get ingester details"
+sidebar_label: "Get ingester details"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9VVFv2zYQ/ivEPbWAIrlBHwo9LUuyIlgwBGn7stQIzuJZYk2RLEnZcwX99+Ik2ZNjDdiwok+2eLzj3XfffddCxDJA/gTXjzcBlglYRx6jsuZOQg4lxTtTUojkIQGHHmuK5NmjBYM1QQ6RDJr4rCQkoAzk4DBWkICnr43yJCGPvqEEQlFRjZC3EPeOHUP0ypTQdckxVqEbfuvHBFNj5v8n2jKBQEXjVdz3NQ/FXjWxgvxpyWZPwVkTKLD75WLBP5JC4ZVjGCGHA4JCUkSlAyRQWBPJRL6LzmlV9JBnXwI7tOf52NUXKiK3wHODohqeU3Im52TSkTnrBOM58wDeXNT+4KUhATJNzQzaNCvyhiKFIc+aYkUNf1hHJhD6grG/txsFy67HYK3KuSJRSsV4oH6YlMut6hhvI8mTfN5jrecL9ISR5DPGuXTX1tdsAYmRLqKqiX0aJ/+jDyOioqZJg6Hr+Pjt4u05CR4p2MYXJIyNYm0bI38cDch76+fY2w0JnWbynqJQ55Tkdtlx5vtZZ4pDNnApZO2RVF02Mihk7d9c6rJDzJC1k8nrgCfIbw+i0XgNOVQxupBnGTqVfiNzUVOoUmWz7Rt4me6Dt7Ip+g+e7VP/ELFUpkz/RZwPw9UXQfIs07ZAXdkQ83eLdwtOac79nm8JSVvS1tXcNB5+Zda2B35kwu/Niv4kI37FYiOuHu7OwrCBjGSbWFsvDg5OY2SWiQvhvN0qSUFcP366EUc9Dv19lmnx6kC4RNxQiMr0F/hDqy35/W/a7l4nn01RoTGks7W2O1GjwZI480QMvTw5QiPFjlaVtRtBRjqrTAzpZwMJcO+G7N+ki3Qx8haLnrej1h7q+EhYsybUqBhidOoX1oVvZFJledC0KlgMJq5XDouKxGUf+bS9u90uxd6cWl9mo2/I7u+ub//4cHtxmS7SKta6n0ZnQ6zRTCL/A9NPOnIcmkh/xcxpVKbXA99ryzAFT6OisnM+XXeHQeDzF6trnAW2TPfQMgGmGsds2xUG+uR11/Hx14Y875hlAlv0CldMqKcWpAr8X0K+Rh3oLP2jhsCrx3GtvRaQzJc1HqLZc19RN/wFCWxof7LJeUh+4sMT7H7yy9PedLyVKkJJvkd+uHFVFOTixPdMqVkIjur5/vYjdN13kH824Q==
+sidebar_class_name: "get api-method"
+info_path: docs/api/reference/kubezen-back-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get ingester details"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/tenants/{tenant_id}/clusters/{cluster_id}/ingesters/{ingester_id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get ingester details
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"tenant_id","in":"path","required":true,"schema":{"type":"string"}},{"name":"cluster_id","in":"path","required":true,"schema":{"type":"string"}},{"name":"ingester_id","in":"path","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Ingester details","content":{"application/json":{"schema":{"type":"object","properties":{"id":{"type":"string"},"tenant_id":{"type":"string"},"cluster_id":{"type":"string"},"name":{"type":"string"},"type":{"type":"string","enum":["kubernetes","prometheus","opensearch","Loki"]},"config":{"type":"object","additionalProperties":true},"rendered_yaml":{"type":"string"},"created_at":{"type":"string","format":"date-time"},"updated_at":{"type":"string","format":"date-time"}},"title":"Ingester"}}}},"404":{"description":"Resource not found","content":{"application/json":{"schema":{"type":"object","properties":{"error":{"type":"string"}}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

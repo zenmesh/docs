@@ -1,0 +1,71 @@
+---
+id: create-cluster
+title: "Register a new cluster"
+description: "Register a new cluster"
+sidebar_label: "Register a new cluster"
+hide_title: true
+hide_table_of_contents: true
+api: eJztV8Fu2zgQ/RWCpxig7bSnQiiKTZ0uEGywDZz0sq5hjKmxxIYiWZKy6xj694KUZMuWm80W2z1tLknImccR572Z4Y56yBxNZnQiS+fROjpnVBu04IVWNylNKLcIHpt9yqgBCwVG22S2owoKpAn1qED5hUgpo0LRhBrwOWXU4tdSWExp4m2JjDqeYwE02VG/NcHReStURqtqzqhDXlrhtxG4RrwqfU6T2TxsByx0/r1OtwHgFJpr5VH5sAXGSMHjN4y/OK3CWu9kvfyC3B/FOKs/Z86oseEWvEAXPOqP7MUczdYiRdvfZDRFx60wIQia0InUZUpae3IBG8dIxg0j8FRaZESrobFYDAKsxUzUUb8EtLGuGEW1FlarormG552v0Ui9Dbak61eFBGYWnVvk2r0AZwJKK8FBkmvwQO4kKCQNBAkQZKUt8blwhDcs6pxhyqUUfCHM3x9078ELTm7uImCKaUgxpsRIUC5g8pCxVVxdFDo9k7JwRWUREm0k+JW2xbAABRkG3vLSeV2g3S/NQwQrKKUPhO47nNzD4XRS28S7jYGcBKc36jxn2uieUHUCqgPpnvUxABC9Ij5H0kGO5NE+Mn9htBR8+9wxHBTYLWUUlrY0vn9O95taXNLgVhWjXniJkYgxsZNYK6a1TmlVVZHLzmjlaiG9vnwVfp2yODpHHoc/6mT8rJqPlSvSs7o9lKtzuz+U+7+gL3JhrE5LHowYcR4yoTJGUlz/tPLJJkeLNRWaqxSOpPF4TH9hmVqjdS+K9o9yiVahR0dan4pR58GX7jl+HjECuBdrjNiZhTSu6dVKCoV0XjEqwfmFQzwbT1AuBBmn4HHoRYG9IG/BeRJ2jm5yA45E0IoFVS6WVqQZLlClRouX0OB9dCCtQ6xddx+nD1e35NP0lnCtnLc1H8hFisZirGqMlG5fRmMlHkTodr/uer+gWF+8bbP/bvi2Jti7kVAZxvlgNnqLav1uPnpCNSzQ5SOhB7+inpMLHe1ADv4v7fHg/YWweF+nnxSjGfyHDeA0Q7H2pws4y8Iz+qsYLU36D336PSe2meo07mlTOQgQhZv94MFogT7XYa41QS+snlMTOq47ghvv9q2hGvN2KA6jqV23I29pJU1o7r1xyXgMRnTFMF6/6tHnbl/xacVO/ZsWMHoBzn1tegKSjMdSc5BBvcmbyzeXIaRz7rfBKnQalNrUs96c0dBRp4fJ+sM3KIzEw9R7yMehixzW2n7VpVanRx6Wj8tUf71TNw6bfdWfFXdffo3KekpoCR8L1kpH1jV0Cj3qL1TkPfBHcnV30y/kwB9RpWEvCrB1aCMiw7ZvOjKZfrom+3eUi/aT6bUjFzdNJWXkGp0XCupB4BqlWKPd/i71ZsA+K56DUijHK6k3nZLDSE3PoyVQKdngMtf6cd9m3OhzuIB9h6avRpejy2auAu47+W2/4wGhCPkrQARqgRG/PZZLfEI1EjrcmBQcletS48oAz5G8jsjHtN5sNiOI2yNts3Hj68a3N5MPf95/GL4eXY5yX8go6aDFAlQH+Yf6PcrJvmZ4/ObHRoKIfTpGsmukPWuGvaDipPtM5Z0nb83KGd3tluDwk5VVFZa/lmjDa3TO6BqsgGVgymxHU+HC3ylNViAd9qLaD6/0Yto8LgeEsvPRNougQh1egyzDf5TRR9wePayrMOTkCFGBs12zP6mPGj4ElIN/b2YONaP2uOIcjX/Wdt6pk3cf7x8oo8vm1d3I0MIm6As2dax1J4izXFzbUQkqKyELtjVm+PkOE1rBqQ==
+sidebar_class_name: "post api-method"
+info_path: docs/api/reference/kubezen-back-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Register a new cluster"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/tenants/{tenant_id}/clusters"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Register a new cluster
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"tenant_id","in":"path","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","required":["name"],"properties":{"name":{"type":"string"},"provider":{"type":"string","description":"Cloud provider (aws, gcp, azure, on-prem)"},"region":{"type":"string","description":"Cloud region"},"environment":{"type":"string","description":"Deployment environment"},"ingress_host":{"type":"string","description":"Canonical Data Plane ingress host for this cluster"},"ingress_public_ip":{"type":"string","description":"Static IP for dedicated plans"},"certificate_mode":{"type":"string","enum":["platform-managed","customer-managed"],"default":"platform-managed","description":"Certificate management mode"},"certificate_owner":{"type":"string","enum":["zen","customer"],"description":"Owner of the certificate"},"rotation_policy":{"type":"string","enum":["canary","abrupt"],"description":"Certificate rotation policy"}},"title":"ClusterCreateRequest"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"201":{"description":"Cluster registered","content":{"application/json":{"schema":{"type":"object","properties":{"id":{"type":"string"},"tenant_id":{"type":"string"},"name":{"type":"string"},"environment":{"type":"string","description":"Deployment environment (production, staging, dev)"},"region":{"type":"string","description":"Cloud region where the cluster is deployed"},"provider":{"type":"string","description":"Cloud provider (aws, gcp, azure, on-prem)"},"version":{"type":"string","description":"Kubernetes version"},"status":{"type":"string","enum":["registered","active","degraded","offline"]},"last_seen":{"type":"string","format":"date-time","description":"Last time the cluster was seen"},"zen_bridge_endpoint":{"type":"string","description":"Bridge endpoint for PORTAL URL construction (deprecated, use ingress_host)","deprecated":true},"ingress_host":{"type":"string","description":"Canonical Data Plane ingress host (<provider>-<region>.ingesters[.<env>].zen-mesh.io)"},"ingress_public_ip":{"type":"string","description":"Static IP for dedicated plans (optional)"},"certificate_mode":{"type":"string","enum":["platform-managed","customer-managed"],"default":"platform-managed","description":"Certificate management mode"},"certificate_owner":{"type":"string","enum":["zen","customer"],"description":"Owner of the certificate (optional, for customer-managed mode)"},"rotation_policy":{"type":"string","enum":["canary","abrupt"],"description":"Certificate rotation policy (optional)"},"created_at":{"type":"string","format":"date-time"},"updated_at":{"type":"string","format":"date-time"}},"title":"Cluster"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

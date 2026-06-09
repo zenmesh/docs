@@ -1,4 +1,5 @@
 import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
+import apiSidebar from './docs/api/reference/sidebar';
 
 const sidebars: SidebarsConfig = {
   defaultSidebar: [
@@ -131,8 +132,8 @@ const sidebars: SidebarsConfig = {
         'api/events',
         'api/versioning',
         'api/rate-limits',
-        'api/reference',
         'api/changelog',
+        ...apiSidebar,
       ],
     },
     {

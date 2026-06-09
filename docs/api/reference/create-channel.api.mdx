@@ -1,0 +1,71 @@
+---
+id: create-channel
+title: "Create a channel (bridge-only)"
+description: "Create a channel (bridge-only)"
+sidebar_label: "Create a channel (bridge-only)"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9VU1v20YQ/SuLOdkARco+BTzVkV3AaNAasnOpIhQj7ojceLm72V1KUQT+92JI6stSmwApqovInQ/OvDdvZwsRywD5DCYVGkM6wDwB68hjVNY8Ssih8ISRBjsk4NBjTZE8x23BYE2QQySDJv6lJCSgDOTgMFaQgKcvjfIkIY++oQRCUVGNkG8hbhwHhuiVKaFtk32uQjchkv+ZZPMEAhWNV3HTVbnwSpZ018QK8tmczZyLQnxv5YYTvE1dWBPJRDahc1oVHSDZ52ANn5192S4+UxFPapz1/XS5lqpkZJ1nbKOiwKF9u2fF7wMuZEcpFReC+ukoFZfctglEFTW7D2RNOuamfaPQtuziKThrQl/A7fiG/ySFwivHeQ/Bouddwk9gcdqukhebPUzORSgOs3DJ/I8QhoixCeemBMg0NZODRVQr6iZs/+jISPaa/3ckdLi3yVuQO3AFimJA+6qf0JE1enMNCdQUK8vyczZ0ULICcsh6t6wHLWTbPXptNkAVsu0BtDYrdsJmRfjVTraN15BDFaMLeZahU+k3MqOaQpUqm61u4G3FT97KpuheWKqn8SFiqUyZ/kCe5971TZI8y7QtUFc2xPzd+N2YS7oU/oG9hKQVaetqnkoWM4/i9CDoh69YO00HjR3Y37PKnCiztB3BA2W/NQv6k4x4j8WruHt6PPs6G8hItoml9WIX4DTGpfW1GAnn7UpJCmIy/Xgv9ldp6Pwn0/sgrh5NScxPIu4pRGU6B37RakV+86u26+vkkxmYy5barkWNBkvihhPRc35yhEaKNS0qa18FGemsMjGknwwkwJT31d+k43Q86BmLeATPro8XwpolUqNiZtCpX16bBX0jkyrLstKqIBOOkb1zWFQkbrvMp1OxXq9T7Myp9WU2xIbsw+Pk4ffnh9FtOk6rWLNEkm7OazRHmb+rkRNu9jKN9DVmTqPiQe0r2g7ymQ17AHa3DqsiP15dOw3x+ckaKo72Iw8pJ9tuFxjoo9dty8dfGvK8beYJrNArXPBMzbYgVeBnCfkSdaCzuvfXK1xNh+VxLbjES/0Mh2g2TC3qht8ggVfanGxhltf/+OEjrFq+PCtCSb5rv3eY9N8avXCaQ4KzfcJ19xF3RUEu/qvv/OiefPrj+QUSWAz7vLaSYzyueSfjui/Wdr13a6E724JGUzZYsm+fk39/A27zIMc=
+sidebar_class_name: "post api-method"
+info_path: docs/api/reference/kubezen-back-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Create a channel (bridge-only)"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/bridge/tenants/{tenant_id}/clusters/{cluster_id}/channels"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Create a channel (bridge-only)
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"tenant_id","in":"path","required":true,"schema":{"type":"string"}},{"name":"cluster_id","in":"path","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","required":["name","config"],"properties":{"name":{"type":"string"},"config":{"type":"object","additionalProperties":true}},"title":"ChannelCreateRequest"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"201":{"description":"Channel created","content":{"application/json":{"schema":{"type":"object","properties":{"id":{"type":"string"},"tenant_id":{"type":"string"},"cluster_id":{"type":"string"},"name":{"type":"string"},"status":{"type":"string","enum":["active","inactive","pending"]},"config":{"type":"object","additionalProperties":true}},"title":"Channel"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

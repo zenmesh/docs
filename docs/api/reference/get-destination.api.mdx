@@ -1,0 +1,71 @@
+---
+id: get-destination
+title: "Get destination details"
+description: "Get destination details"
+sidebar_label: "Get destination details"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9VlFv2zYQ/ivEPbUAI7lBHwo9LUuyIlgxBGn7stQIzuJZYkKRLEnZcw399+EkxZUdDdiwok+2eLzT3X3ffac9JKwiFPdweXcVYSnBeQqYtLM3CgqoKF1RTNr2RyDBY8CGEgV22oPFhqCARBZtetAKJGgLBXhMNUgI9LXVgRQUKbQkIZY1NQjFHtLOs2NMQdsKuk4eYpWmjYnCjwmmvif/fwIuJUQq26DTri97qPeiTTUU90s2B4re2UiR3c8XC/5RFMugfd+5AiZ9FIoSahNBQulsIpv4OnpvdNlfyB8j++xfpuRWj1QmBiIwUkkPb9RqJm05wWXOOun0nHlo4VzU/uDUIIFs2zCVoqYGJGxpVTv3xIYGtQEJ0WDJz5HCRpdk3RYkPOqAIEFhQuWqnmIVBdWmHSy7vkFrXc11AJXS3Cw0t5NeMJQd42EVBVIPO2zMfPWBMJF6wDRXy9qFhi2cF50l3RD7tF79Rx9ul06GjgkAXceWt4u3L3lyR9G1oSRhXRJr11r142hCIbgwR/BuSOg4k/eUhJplbUOpdqM+9IjxIEA+0C3m+wPvunwkWcz33+nW5ZOwMd8fT2k3MuRZY9pgoIA6JR+LPEevs29kzxqKdaZdvnkDp3nfBqfacuizPPWPCSttq+xfxPk4XD0JUuS5cSWa2sVUvFu8W3BKc+4f+JZQtCHjfMPosVBou3Y9AiMrfm9X9CdZ8SuWT+Li9uZFGDaQVWwTaxfEs4M3mJhx4kz44DZaURSXd5+vxEHBY3+fhV28urEVcfelmNCQH4zeUNj9Ztz2tfxiyxqtJZOvjduKBi1WxJlLMSB6dIRWiXHGBVnlnbYpZl94SzB2Q/ZvskW2GAmMZU/gUZqf6/hE2Bw0ogD0+pendkXfyGba8dAZlopIE9cLj2VN4ryPfAzvdrvNsDdnLlT56BvzDzeX1398vD47zxZZnRrTT6Z3MTVoJ5H/mfJHoBwGKNFfKfcGte3lIfRSM4zD/ai+7FxMF+TzRPD50bKbDgUbT5bXUgJzjiPv9yuM9DmYruPjry0FXkxLCRsMGlfMrPs9KB35v4JijSbSiyIOqgKv7sZd+FqAnC9uPES7Y4DRtPwEEp5od/QFwNPyE1886eBPfvMJPB1vq5pQUeibP1y6KEvyaeL+Qr5ZFA56+v76E3Td32CxTXg=
+sidebar_class_name: "get api-method"
+info_path: docs/api/reference/kubezen-back-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get destination details"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/tenants/{tenant_id}/clusters/{cluster_id}/destinations/{destination_id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get destination details
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"tenant_id","in":"path","required":true,"schema":{"type":"string"}},{"name":"cluster_id","in":"path","required":true,"schema":{"type":"string"}},{"name":"destination_id","in":"path","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Destination details","content":{"application/json":{"schema":{"type":"object","properties":{"id":{"type":"string"},"tenant_id":{"type":"string"},"cluster_id":{"type":"string"},"name":{"type":"string"},"type":{"type":"string","enum":["siem","webhook","email","slack","servicenow","jira","datadog","pagerduty"]},"config":{"type":"object","additionalProperties":true},"rendered_yaml":{"type":"string"},"created_at":{"type":"string","format":"date-time"},"updated_at":{"type":"string","format":"date-time"}},"title":"Destination"}}}},"404":{"description":"Resource not found","content":{"application/json":{"schema":{"type":"object","properties":{"error":{"type":"string"}}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

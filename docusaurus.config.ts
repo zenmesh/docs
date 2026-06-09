@@ -47,7 +47,10 @@ const config: Config = {
     ],
   ],
 
-  themes: ['@docusaurus/theme-mermaid'],
+  themes: [
+    '@docusaurus/theme-mermaid',
+    'docusaurus-theme-openapi-docs',
+  ],
 
   plugins: [
     [
@@ -68,6 +71,22 @@ const config: Config = {
         routeBasePath: 'helm-charts',
         sidebarPath: './sidebars-helm-charts.ts',
         editUrl: 'https://github.com/zenmesh/docs/tree/main/',
+      },
+    ],
+    [
+      'docusaurus-plugin-openapi-docs',
+      {
+        id: 'apiReference',
+        docsPluginId: 'default',
+        config: {
+          zenBackApi: {
+            specPath: 'api-specifications/zen-back.v1.yaml',
+            outputDir: 'docs/api/reference',
+            sidebarOptions: {
+              groupPathsBy: 'tag',
+            },
+          },
+        },
       },
     ],
   ],

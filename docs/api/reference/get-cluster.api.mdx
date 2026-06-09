@@ -1,0 +1,71 @@
+---
+id: get-cluster
+title: "Get cluster details"
+description: "Get cluster details"
+sidebar_label: "Get cluster details"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9Vltv2zYU/isEnxxAttyiD4VQFEuTrggWrEHSvsw1jGPq2GJDkSxJ2XMM/ffhUJIj20KXYcP8Yps8l4/n9p09D7D2PJvxK1X5gM7zecKNRQdBGn2T84yvMbSXPOEWHJQYBbPZnmsokWc8oAYdFjLnCZeaZ9xCKHjCHf6opMOcZ8FVmHAvCiyBZ3sedpYUfXBSr3ldJwdbovH1b4zNE+5RVE6GXUTZwLusQsGz2Zx8FSWIw/852fbWaI+ezL2eTukrRy+ctBQHnnXxYTkGkMrzhAujA+pAomCtkiKGLP3uSX5/Ds8sv6MIFENHAQ6y8SbzgSckvZAO3TaxGrhAvZHO6LIFdnyfnLzpGq0yO5JlPT02ss7klSChhPkAa6nXCctxc0EeHK5l88KfG79SpspZI822BTpkoUDWppdJz/LoHnOyap3ZyBzdS+128mwEW5+wtbAJg6fKYcKMHluHZQS7QedfhPa3aolOY0DPOp064T5AqPyQNuqqpLah99F7kKoVRJAbjLbXDvJ4ZlYrJTXyeZ1wBT4sPOIgnpVxJQSe8RwCjoMs8QzkLfjA6OYoklvwLBqtE/6EerF0Ml/jAnVujXxJGXyICqxTYCvj2N3n+y+Xt+zr/S0TRvvgmnpgoxytQwEB84RVHpnUa4feLwrjw0U03d03fVpTEz+LvCC/oI2WAhS7hgDsToE+eGFkgo3eddl/P37XFNj7idRrjANsNnmHevN+PnlCPS7RFxNpYi10MGy1VFIspP17LA8BghTs5i7GJMdcxpcxq0B7NjJRDlQ0L6ilV1FgUZp8oD2fq8YqCJTvcQka1rFOROWDKdEdjuYEZgWVopoYUDiJ2rN31sjEVo5ATsCZrR7usw7dE+oeoAZI39dnMsDMqqnCnuNDQJIYr9MnRTTNDDEhDsuFNUqK3c/ACNDgdtRcS1fZcI6m//LOLmvsnmbIIWVvAYNVONB/dcIrm/9DHZrdMih85gxe13T6ZvrmnFbu0ZvKCWTaUONVOv/vmAWdMwOJrpvPaRw/YTiMlGeSKzEUpt0CIv0TZ/K0YSef7g80Vaetsk/3zxRec6Jit+n2hcopnvEiBOuzNAUr+12abl6d1fXdgYo48faxfstNkxfYeWhET4xkaaqMAEVjJXs7fTslSEPqtyRFFIjK2EiutDVIvTIxvm2+iUT+QM0+gHhkl3c355MWxCPqnO5ih3QKXXuzcUdsnl3df71mh03MR/mr+2vPRjftqEvYNfogNTRMfY1KbtDtflVme5F806IArVGlK2W2vZmQsCZnR0egc7bFZWHM44EH/OQbzYEDhfJXk+lk2pYniFie7c7WveMLQkm9W4KkEIOVvzxWS3xCPZGG2klJgdpjT/XSgiiQvY6Wj9O73W4nEK8nxq3TVtentzdXH39/+Dh+PZlOilCq2HPW+FCC7lkeLuijhBxaI+CfIbUKZGTRCGPfFvusXcVIOesvul2903lvaZ0nvCG6Gd/vl+Dxq1N1Tcc/KnS0kM4TvgEnYUlFM9vzXHr6nfNsBcrjGcbDOOCj+3YHvmA8GcbeHoKmmbkBVdE/nvBH3B0t6tQI/6PjXoBqWoUKhLjtzfatwKUQaENP9WzyUccdxtGnj194Xf8FTD9vIg==
+sidebar_class_name: "get api-method"
+info_path: docs/api/reference/kubezen-back-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get cluster details"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/tenants/{tenant_id}/clusters/{cluster_id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get cluster details
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"tenant_id","in":"path","required":true,"schema":{"type":"string"}},{"name":"cluster_id","in":"path","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Cluster details","content":{"application/json":{"schema":{"type":"object","properties":{"id":{"type":"string"},"tenant_id":{"type":"string"},"name":{"type":"string"},"environment":{"type":"string","description":"Deployment environment (production, staging, dev)"},"region":{"type":"string","description":"Cloud region where the cluster is deployed"},"provider":{"type":"string","description":"Cloud provider (aws, gcp, azure, on-prem)"},"version":{"type":"string","description":"Kubernetes version"},"status":{"type":"string","enum":["registered","active","degraded","offline"]},"last_seen":{"type":"string","format":"date-time","description":"Last time the cluster was seen"},"zen_bridge_endpoint":{"type":"string","description":"Bridge endpoint for PORTAL URL construction (deprecated, use ingress_host)","deprecated":true},"ingress_host":{"type":"string","description":"Canonical Data Plane ingress host (<provider>-<region>.ingesters[.<env>].zen-mesh.io)"},"ingress_public_ip":{"type":"string","description":"Static IP for dedicated plans (optional)"},"certificate_mode":{"type":"string","enum":["platform-managed","customer-managed"],"default":"platform-managed","description":"Certificate management mode"},"certificate_owner":{"type":"string","enum":["zen","customer"],"description":"Owner of the certificate (optional, for customer-managed mode)"},"rotation_policy":{"type":"string","enum":["canary","abrupt"],"description":"Certificate rotation policy (optional)"},"created_at":{"type":"string","format":"date-time"},"updated_at":{"type":"string","format":"date-time"}},"title":"Cluster"}}}},"404":{"description":"Resource not found","content":{"application/json":{"schema":{"type":"object","properties":{"error":{"type":"string"}}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

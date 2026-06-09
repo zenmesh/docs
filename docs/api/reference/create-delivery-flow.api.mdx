@@ -1,0 +1,71 @@
+---
+id: create-delivery-flow
+title: "Create a delivery flow"
+description: "Create a delivery flow"
+sidebar_label: "Create a delivery flow"
+hide_title: true
+hide_table_of_contents: true
+api: eJzdVktv2zgQ/ivCnFqAlpycCp02TbJAsMVukKSXdY1gLI4tNhTJkpRd1/B/L4byQ35ksW2BPWwOSTSPj/P4ZsgVRJwFKEdw/XATYCzAOvIYlTV3EkqoPGGkG9JqTn75u7YLEODQY0ORPDuuwGBDUEIkgyY+KwkClIESHMYaBHj60ipPEsroWxIQqpoahHIFcenYMUSvzAzWa7HDqnQbIvlfARsLCFS1XsVlirIL76qNNZSjMasZi0J8b+WSAY6hK2simcgqdE6rKlWl+BysYdnJyXbymap4EOOoy4dTmNE+IUkhKpPgWDAW4DyXPSoKDNgV4SSlQ5hz+iPgcyZTpbvG7XToPS45xkhNOM1nvRYQPZowtb5J0D/kzN4qapb1WXSdePXQdYDN1ly34KwJXQ0uhxf8R1KovHJ8bA8hm2q7yDpuckF/ulWHdX+lZHtin9P2qHpO/X/qJbfISPIkn5fY6PPl6JryjPFULaA7F0qQGGkQVUPs0zr5gz6vsCoRqatdjzUd1zLMZJ8+IKChWFvecs6GxAbeMSUUXcNDsdp1fl1s2hyK1b7h62KLOGDEALxy/Hy7F1uvoYQ6RhfKokCn8m9kBg2FOle2mF/AcaD33sq2Sh+8Cw/9Q8SZMrP8X+A8dqZHIGVRaFuhrm2I5bvhuyGHdM79A1tlkuakrWt4rnhb8jA97Dfm7VdsnKb9uto37IDZe/ExoXsd3vJ4tOKTThjK4jQxU5sIsun8H+2E/iaTvcfqJbu6vztJhBVkJOuyqfXZ1sFpjIyfDTLn7VxJCtn1w8ebbHf3hWTPV2L25m6Tjshu9hnwx553b8UnU9VoDOkiraYGDc6IayeyjkQHIjQyW9CktvYlIyOdVSaG/JMBAcyeLvqLfJgPN8sNq9ir9DaPJ8IGBFCDipuMTv320k7oG5lcWR4srSoyod+kK4dVTdllQj4k2GKxyDGpc+tnxcY3FB/urm//fLwdXObDvI6NTtPHE9Og6SG/OmUHPdmNd6SvsXAalUkbwKdt0g3gaLNxeZ7K/qtiO4MsP3ghHI3hWACTnJFWqwkG+uj1es3iLy15fg6MBczRK5wwkUYrkCrw/xLKKepAJ0HvLhh487C53d9mIM4ns12nhpfpHHXLXyDghZYHzyQez//w4F7F0jjVhJJ8Sr8zuO7OGjwxzB7g5EbluDuPq6oiF//Rdtxbs/d/PT6BgMnmwdVYyT4emSX8OwVr3e5eSrIVaDSzFmds22Hyz3dz2bZh
+sidebar_class_name: "post api-method"
+info_path: docs/api/reference/kubezen-back-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Create a delivery flow"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/tenants/{tenant_id}/clusters/{cluster_id}/delivery-flows"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Create a delivery flow
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"tenant_id","in":"path","required":true,"schema":{"type":"string"}},{"name":"cluster_id","in":"path","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","required":["name","ingester_id","destination_id"],"properties":{"name":{"type":"string"},"ingester_id":{"type":"string"},"destination_id":{"type":"string"},"filters":{"type":"array","items":{"type":"object"}},"transformations":{"type":"array","items":{"type":"object"}}},"title":"DeliveryFlowCreateRequest"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"201":{"description":"Delivery flow created","content":{"application/json":{"schema":{"type":"object","properties":{"id":{"type":"string"},"tenant_id":{"type":"string"},"cluster_id":{"type":"string"},"name":{"type":"string"},"ingester_id":{"type":"string"},"destination_id":{"type":"string"},"filters":{"type":"array","items":{"type":"object"}},"transformations":{"type":"array","items":{"type":"object"}},"rendered_yaml":{"type":"string"},"created_at":{"type":"string","format":"date-time"},"updated_at":{"type":"string","format":"date-time"}},"title":"DeliveryFlow"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

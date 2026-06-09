@@ -1,0 +1,71 @@
+---
+id: delete-delivery-flow
+title: "Delete a delivery flow"
+description: "Delete a delivery flow"
+sidebar_label: "Delete a delivery flow"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9VFFv0zAQ/ivWPTHJS8rEA8oTYy3SxITQgBdGha7OtTFzbGM7LSXKf0eXpF1Lh4QEWl/S+HyX777vu2sh4SpCcQdXt9MIcwnOU8Cknb0uoYCSDCWaktFrCts3xm1AgseANSUKnNiCxZqggEQWbfqqS5CgLRTgMVUgIdD3RgcqoUihIQlRVVQjFC2krefEmIK2K+g6ua+lTBMThf9TbGnc5l8qzSVEUk3Qadv3OzR62aQKirs5hwNF72ykyOkXkxf8KCmqoD0zCQXsGBQMRgysltBJePHY7VuKrgmKhHVJLF1jGbxyNpFNfBu9N1r1KuXfIqe0p/jd4hupxHIF1jTpAR6F4MJjbfY/eYqbEglkyA8NgISaUuUeHNK7ggmBfKAn5u3eEF0+6hnz9kHZLt/VPOeaMW9HoTpgwsN6568mGCigSsnHIs/R6+wn2fOaYpVpl6+fw++g3wdXNqp/YRsc58eEK21X2V/U+TBc/a1IkefGKTSVi6l4OXk5YUiPpd/wLVHSmozzNUvHXtF26Xr6dTLM/9tmQZ/Jiteo7sXl++uTMhwgW3JMLF0QuwRvMC1dqMW58MGtdUlRXN1+mor9BMf+Pg+2eHZtV8TESzGlmLTtL/DLw2SfyS9WVWgtmby3aY0WV8TIpRjEPDpCW4oNLSrn7gXZ0jttU8y+WJDA2g3on2eTbDK6F1Xv3nEsd318JKxBAtWomWL0+tV9s6CfZDPteESMVmQjHaReelQViYu+8rG8m80mwz6cubDKx9yY31xfzd59mJ1fZJOsSrXhDQHexVSjPaj8R78fabIfnkQ/Uu4NanbagKQdB+Fu3BMRJBSHu3E3C3x+tOeOx4HDu801l8Bu46Jtu8BIn4LpOj7+3lDgrTSXsMagccGeumuh1JH/l1As0UQ6wb9fJvDsdlyEZwLk432Nh2i3LC2aht9Awj1tj/Y+z8kTfviAvCf+8k6Xbt5JqAhLCj3rQ/RSKfLpIO9kXfMe2C/Q6exm9nEGXfcLEZWWJQ==
+sidebar_class_name: "delete api-method"
+info_path: docs/api/reference/kubezen-back-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete a delivery flow"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/tenants/{tenant_id}/clusters/{cluster_id}/delivery-flows/{flow_id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Delete a delivery flow
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"tenant_id","in":"path","required":true,"schema":{"type":"string"}},{"name":"cluster_id","in":"path","required":true,"schema":{"type":"string"}},{"name":"flow_id","in":"path","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"204":{"description":"Delivery flow deleted"},"404":{"description":"Resource not found","content":{"application/json":{"schema":{"type":"object","properties":{"error":{"type":"string"}}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

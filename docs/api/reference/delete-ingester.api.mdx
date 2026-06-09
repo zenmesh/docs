@@ -1,0 +1,71 @@
+---
+id: delete-ingester
+title: "Delete an ingester"
+description: "Delete an ingester"
+sidebar_label: "Delete an ingester"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9VFFv0zAQ/ivWPYHkJd3EA8oTYy3SxITQgBdGha7OtTFzbGM7LSXKf0eXpF279QEJtL6ktu/On+/77msh4SpCcQdXt9MIcwnOU8Cknb0uoYCSDCW6tiuKiQJI8BiwpkSBk1qwWBMUkMiiTd91CRK0hQI8pgokBPrZ6EAlFCk0JCGqimqEooW09ZwYU9B2BV0n97WUafiu/1NMj8j/pdpcQiTVBJ22/ZuHx142qYLibs7HgaJ3NlLk9IvJK/6UFFXQnjsJBew6KIaGltBJeHUq8Jaia4IiYV0SS9dYxq2cTWQTR6P3RqueoPxH5JT2KXS3+EEqMVuB6Ux6QEYhuHDqhf1PPkIy7ZEKtEI/0F9TqtyDMHpBcB8gH7oS83avhS4fqYx5+0Bql+/Kxbw9oKcDbnNY75TVBAMFVCn5WOQ5ep39JntWU6wy7fL1OTzG+zG4slH9ggVwnB8TrrRdZX9R59MQ+qhIkefGKTSVi6l4PXk9YUin0m84SpS0JuN8zayxQrRdur7zOhlu/ftmQV/Jireo7sXlx+snZfiAbMlnYumC2CV4g2npQi3OhA9urUuK4ur2y1Ts5zb28TzO4sVOdlJMKSZt+wBeGL2msH1n3Oal/GZVhdaSyZfGbUSNFlfEyKUYuDzaQluKDS0q5+4F2dI7bVPMvlmQwNwN6M+zSTYZhYuqF+44kLt3fCasQQLVqLnF6PWb+2ZBv8lm2vF0GK3IRjpIvfSoKhIXfeVjejebTYb9cebCKh9zY35zfTX78Gl2dpFNsirVhr0BvIupRntQ+aTUj/jYz0yiXyn3BjWrbEDRjjNwNzpDBAnFoSPuxoD3H7nbOAl8cmhVcwksNK7ZtguM9CWYruPtnw0FtqG5hDUGjQuW010LpY78v4RiiSbSE/h7C4EXt6PzvRQgTz9r3ES7ZVbRNLwCCfe0PTJ7HpFnvPigd8988yE33byTUBGWFPrODxGXSpFPB7lPjJptYG+f09nN7PMMuu4PPKOSqQ==
+sidebar_class_name: "delete api-method"
+info_path: docs/api/reference/kubezen-back-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete an ingester"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/tenants/{tenant_id}/clusters/{cluster_id}/ingesters/{ingester_id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Delete an ingester
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"tenant_id","in":"path","required":true,"schema":{"type":"string"}},{"name":"cluster_id","in":"path","required":true,"schema":{"type":"string"}},{"name":"ingester_id","in":"path","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"204":{"description":"Ingester deleted"},"404":{"description":"Resource not found","content":{"application/json":{"schema":{"type":"object","properties":{"error":{"type":"string"}}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

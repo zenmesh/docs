@@ -1,0 +1,71 @@
+---
+id: list-clusters
+title: "List clusters for tenant"
+description: "List clusters for tenant"
+sidebar_label: "List clusters for tenant"
+hide_title: true
+hide_table_of_contents: true
+api: eJyVVttu2zgQ/RWCTw5AX9qnQiiKTZPuIthgG6Tpy7qGMabGEhuKZEnKXsfQvxdDSY5iG202L0k0F56ZOXPZ8whF4NmcX+k6RPSBLwS3Dj1EZc1NzjOuVYgHqeAOPFSY/snme26gQp7xiAZMXKqcC64Mz7iDWHLBPf6olcecZ9HXKHiQJVbAsz2PO0eGIXplCt40C8EDytqruEuOW4+XdSx5Nl+Q2GNw1gQMZP52NqNfOQbplSOwPOO3KkRm10w+w5XWRDSRdME5rWQKbPo9kMH+FI9dfUcZKU5PaYiqfe7g8VkTvIcdhRuxCr/3oPIzUYtB4s5J2+yeEaDZKG9N1YX2Ui6O0nKNTtsd6bKBHRs5b/NakpJgIUKhTCFYjpsLesFjodoc/dr5lbZ1zlptti3RI4sl9iVgKrA8PY85eXXeblSO/rV+e302gm0QrJBOMHiqPQpmzdh5rBLYDfrwKrR/1yv0BiMG1ts0gocIsQ7nrNHUFbUHxUfxIBEcZFQbTL4LD3n6ZtdrrQzyRSO4hhCXAfEsnrX1FUSe8RwijqOq8ATkLYTISPIik1sILDltBH9Cs1x5lRe4RJM7q15Dg4/JgPUGbG09u/t8/3B5y77e3zJpTYi+5QMb5eg8SoiYC1YHZMoUHkNYljbEi+S6l7et3VDfP6u8or5grFESNLuGCOxOgzm8wsgFG73vq/9h/L4l2IeJMgWmTpxP3qPZfFhMntCMKwzlRNnEhR6Gq1dayaVyv8fyJUJUkt3cpZzkmKsUGXMaTGAjm/RAJ/eSWnqdFJaVzc+05zNrnIZI9R5XYKBIPJF1iLZCf/i0IDBrqDVx4ozBUdaeX2etTmrlBOQInN2a833Wo3tCMwDUAhm+9Zkc0DhNLBw8fEiISPk6DimhaWeIjWncLp3VSu5+BUaCAU/jFFa+dvEUzTDy3i9r/R5XyCNVbwlnWXim/xrBa5f/Txua3SpqTKMqdShvup+Tfqa11G+QlLJ26nPBK4ylpS1bYFoZtDUzPm3lYbo/rIdmOlhqAf2mX8C11zzjZYwuZNMpODVsiOnmzQmF7g5Tnzfi2L5bA5NX+PnSqh45yaZTbSVo6uDs3ezdjCCdM78lLdo2qK1Le4x2vDJrmyrQpZbm9b9o2EeQj+zy7uZ0qIF8RJOTLGW2N+g7iY37HRLY1f3Xa3Y4btpKXN1fBza66aaKYNcYojLQLsVr1GqDfventtsL8c3IEoxBPV1rux20n+jq+eITmJxtcVVa+3gYuWHyjVrusK34m8lsMuuuFJCJe91B1cfxgFBRm1SgKMXg1B+P9Qqf0EyUJeZqJdEEHJheOpAlsrfJ88vybrfbCSTxxPpi2tmG6e3N1ad/vnwav53MJmWsdKK3syFWYAaef0HkF1U5dFDE/+LUaVBpayUs+47k8+70IT5nw/NRDi7RdpXM+X6/goBfvW4a+vyjRk9X4kLwDXgFK+LKfM9zFejvnGdr0AFPUB2OQT667w7TC8bFebT9mWdoKm1A1/QfF/wRdy8O3oZWfomQrpr5vpNfSokuDixPrk+i+6H9//r0wJvmJztTB0I=
+sidebar_class_name: "get api-method"
+info_path: docs/api/reference/kubezen-back-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List clusters for tenant"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/tenants/{tenant_id}/clusters"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+List clusters for tenant
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"tenant_id","in":"path","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"List of clusters","content":{"application/json":{"schema":{"type":"object","properties":{"clusters":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string"},"tenant_id":{"type":"string"},"name":{"type":"string"},"environment":{"type":"string","description":"Deployment environment (production, staging, dev)"},"region":{"type":"string","description":"Cloud region where the cluster is deployed"},"provider":{"type":"string","description":"Cloud provider (aws, gcp, azure, on-prem)"},"version":{"type":"string","description":"Kubernetes version"},"status":{"type":"string","enum":["registered","active","degraded","offline"]},"last_seen":{"type":"string","format":"date-time","description":"Last time the cluster was seen"},"zen_bridge_endpoint":{"type":"string","description":"Bridge endpoint for PORTAL URL construction (deprecated, use ingress_host)","deprecated":true},"ingress_host":{"type":"string","description":"Canonical Data Plane ingress host (<provider>-<region>.ingesters[.<env>].zen-mesh.io)"},"ingress_public_ip":{"type":"string","description":"Static IP for dedicated plans (optional)"},"certificate_mode":{"type":"string","enum":["platform-managed","customer-managed"],"default":"platform-managed","description":"Certificate management mode"},"certificate_owner":{"type":"string","enum":["zen","customer"],"description":"Owner of the certificate (optional, for customer-managed mode)"},"rotation_policy":{"type":"string","enum":["canary","abrupt"],"description":"Certificate rotation policy (optional)"},"created_at":{"type":"string","format":"date-time"},"updated_at":{"type":"string","format":"date-time"}},"title":"Cluster"}}}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

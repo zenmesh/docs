@@ -1,0 +1,71 @@
+---
+id: delete-channel
+title: "Delete a channel (bridge-only)"
+description: "Delete a channel (bridge-only)"
+sidebar_label: "Delete a channel (bridge-only)"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9Vd9P2zAQ/lesewLJJAXxgPI0RjsJDU0ItpdBNV2Ta2NwbGM77boo//t0SVpaQNqkTfSlte+H7+777msDERcBsju4KNEY0gGmEqwjj1FZc1lABgVpijTYQYJDjxVF8hzXgMGKIINIBk38oQqQoAxk4DCWIMHTU608FZBFX5OEkJdUIWQNxLXjwBC9MgtoW7nNles6RPL/KVlf+L8km0oIlNdexXXX8syrYkHndSwhu5uy2VNw1gQKHH4yOuWvgkLuleM5QraZr+inWUAr4fQtvxsKtvY5CWOjmNvacNm5NZFMZG90Tqu8Qyd9CBzSvK7czh4oj4yVZyyj6gsj761/q8HuI19UMu4qFSiGCYqDvu8ja/T6ECRUFEv7zJCOGjwSSHvHtOdESJstOdp0wDakzTPKbTo8wbdbuFrgsfvlhmi115BBGaMLWZqiU8kvMkcVhTJRNl0ew8sGrr0t6rw7MB/240PEhTKL5C/y3PauL5Jkaaptjrq0IWZno7MRl/RW+BV7iYKWpK2rGEZmjDJz20GhomYsPtcz+k5GfMT8UZxfX75KwwYyBdvE3HqxCXAa49z6ShwJ5+1SFRTExc23sdhucej8L27GQRxcmgXx1KUYU4jKdA580GpJfv1J29WhvDcDCulc25Wo0OCCuHIpeiT3rtAUYkWz0tpHQaZwVpkYknsDEhi7vvrjZJSMBiZj3jF52M9NH18JK5BAFSoeMTr14bGe0S8yibK8LlrlZALthJ47zEsSJ13mfXhXq1WCnTmxfpEOsSG9uryYfLmdHJ0ko6SMlWapAGdDrNDsZP4j9/ew2S5UpJ8xdRoVM66vqBmW4m5QDZCDVAaQkO2q5mYz+H5PATfL0Rme1WwqgbnHqZtmhoG+ed22fP1Uk2elmkpYolc4Y4bdNVCowL8LyOaoA73qYiszcHAziOOh4ILf6m64RLNmoFHXfAIJj7Te+zvgrXnHh3cm994vP0PTTlsJJWFBvht873Ce5+TiTugrLWdh2KrqeHI1+TqBtv0NEI6dUw==
+sidebar_class_name: "delete api-method"
+info_path: docs/api/reference/kubezen-back-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete a channel (bridge-only)"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/bridge/tenants/{tenant_id}/clusters/{cluster_id}/channels/{channel_id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Delete a channel (bridge-only)
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"tenant_id","in":"path","required":true,"schema":{"type":"string"}},{"name":"cluster_id","in":"path","required":true,"schema":{"type":"string"}},{"name":"channel_id","in":"path","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"204":{"description":"Channel deleted"},"404":{"description":"Resource not found","content":{"application/json":{"schema":{"type":"object","properties":{"error":{"type":"string"}}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

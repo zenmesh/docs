@@ -1,0 +1,63 @@
+---
+id: list-integrations
+title: "List available integrations"
+description: "List available integrations"
+sidebar_label: "List available integrations"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNVE1v2zAM/SsCTxug2mlPhU/r2m4IVgzF1l3WBgMjM7YaWdIk2Vka+L8PtLMuydKhvtgWHz9EvscNJKwiFPcwtYmqgEk7G2EmwXka/6YlFGB0THsICZFUG3RaQ3G/gUQWbbpoUw3F/ayfSQgUvbORIhQbOJtM+FVSVEF7jgAF3OiYhFsI7FAbnBsSej+DcjaRTeyJ3hutBkv+GNl9A1HV1CB/pbUnKMDNH0klkOADV5/0mHwv6l80hoBrkKATNfEVUcodTExB2wp6CRYbOmoYDw4NEsi2Dfc7GlTLoY2h04qsW4GERx0QJJSYsHSM9lhRKNu0hlkv9/t3JKdydqGrHy83BstSszea253LpdBSzyXrZBi+M2jot488NrwXJ9dQqh3zpqKhk8i8gFwfMih0FOJAoDYYKKBOycciz9Hr7InsSUOxzrTLu1M4LOA2uLJVY43y0D8mrLStslfE+TpCD4IUeW6cQlO7mIrzyfmESzrmfsMoUVJHxvmG2crk13bhhv5vO/qpndN3suI9qqW4uJ3+E4YNZEu2iYUL4o+DN5gWLjTiRPjgOl1SFJdfvl2JZ3nGAX/55SqKN1NbUUwUpLiimLQdAPxjdEdh/cG41Vv5YFWN1pLJF8atRIMWK+LKpRhVvHeEthQrmtfOLQXZ0jttU8weLEjg2Y3Vn2aTbLIVLKpBsKMuni9+R9gw+RvU3GL0+t2yndMT2Uw7pq5hDUTacb3wqGoSZ0Pk/fGuVqsMB3PmQpVvfWN+M728/vz1+uQsm2R1agwwb72LqUG7E/n/3D0uskS/Uu4NaqbbWM5my+v7/Q0zk8Cs4fPNZo6RvgXT93z8s6XA63ImocOgOfmwLSXUhCWFQQhLWvPllSLP0unQtMO2OlyATLNnmX28voO+/w1uggK/
+sidebar_class_name: "get api-method"
+info_path: docs/api/reference/kubezen-back-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List available integrations"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/integrations"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+List available integrations
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"List of available integrations","content":{"application/json":{"schema":{"type":"object","properties":{"integrations":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string"},"name":{"type":"string"},"type":{"type":"string","enum":["slack","servicenow","jira","datadog","pagerduty"]},"description":{"type":"string"},"config_schema":{"type":"object","additionalProperties":true}},"title":"Integration"}}}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

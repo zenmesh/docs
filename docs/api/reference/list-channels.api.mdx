@@ -1,0 +1,71 @@
+---
+id: list-channels
+title: "List channels (bridge-only)"
+description: "List channels (bridge-only)"
+sidebar_label: "List channels (bridge-only)"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9VU1v4zYQ/SvEnBKAkbw5LXRqmqRF0KAIsruXZo1iLI4lbiiSS1J2vYL++2Ik2ZHXRlugQH2xqPnQzJs3jx0krCIUL3Bbo7VkIiwlOE8Bk3b2QUEBRsd0sErwGLChRIHDOrDYEBSQyKJNf2oFErSFAjymGiQE+trqQAqKFFqSEMuaGoSig7TzHBhT0LaCvpeHXKVpY6LwX5ItJUQq26DTbqhyFbSq6KZNNRQvSzYHit7ZSJHDrxcL/lMUy6A9dw4FPOqYhFuL8q330tlENrEvem90OaCUf4kc0J3W41ZfqEwMWmBMkx4/d8j45okh4I7bTdTEf86g1Zmu5WwK56wzXM+ZR/TPGGLC1MZTkwSybcPkwTLpDQ3TOjx6soq9lv2A21pX59pCpTRjiOZp1iCPt+d+dDLsPtEP+uknz41qj6q4GKd95azZXYKEhlLtmMkVDUgymQrIR698xCzm3QG8Pp+Qinn3hlmfz4gQKWz2G9AGAwXUKflY5Dl6nX0je9VQrDPt8s07+LHap+BUWw4HZv1xfExYaVtl/yLPh9H1hyRFnhtXoqldTMX7xfsFl3Qu/JG9hKINGecbpjXvhbZrNwxqgv63dkV/kBU/Y/kqbp4eTtKwgaxim1i7IPYB3mBau9CIK+GD22hFUdw+f7oTB3WJg//t810UFw+2IgZaijuKSdvBgQ9GbyjsfjFueyk/22kE+dq4rWjQYkVcuRTj8I5eoVViS6vauVdBVnmnbYrZZwsSeHZj9e+yRbaYNhvLYbMnFdr38ZGwYao3qBli9Pqn13ZF38hm2vF6GF2SjTQLvfFY1iSuh8zH491utxkO5syFKp9iY/74cHv/+4f7q+tskdWpYapL8C6mBu0s898T/Wgwh11L9FfKvUHNdBvL6aYleJmEEfbSwdwu5lq+3wR+f6TL5ey+YKpxsq5bYaRPwfQ9v/7aUmD5XUrYYNC4YkK9dKB05GcFxRpNpJO6DyoLF8+T4l8KLvFcP3v9tKyeGzQtn0DCK+2OriVekv/xwzOselbAmlBRGNofHW7KknyahZ5cKLyNB+n69f4j9P13mFijHg==
+sidebar_class_name: "get api-method"
+info_path: docs/api/reference/kubezen-back-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List channels (bridge-only)"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/bridge/tenants/{tenant_id}/clusters/{cluster_id}/channels"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+List channels (bridge-only)
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"tenant_id","in":"path","required":true,"schema":{"type":"string"}},{"name":"cluster_id","in":"path","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"List of channels","content":{"application/json":{"schema":{"type":"object","properties":{"channels":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string"},"tenant_id":{"type":"string"},"cluster_id":{"type":"string"},"name":{"type":"string"},"status":{"type":"string","enum":["active","inactive","pending"]},"config":{"type":"object","additionalProperties":true}},"title":"Channel"}}}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      
