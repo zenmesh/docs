@@ -22,8 +22,10 @@ Welcome to the Zen Mesh technical documentation — architecture, operations, se
 ## Sections
 
 | Section | What you'll find |
-|---|---|
+|---|---|---|
 | [Start Here](start-here/what-is-zen-mesh) | Product overview, who should use it, current status, key concepts |
+| [Delivery](delivery/) | Webhook reliability — dead-letter queue, replay, deduplication, filtering, fan-out, idempotency |
+| [Security](security/) | Security controls — IP allowlisting, header validation, cryptographic enrollment, mTLS |
 | [Architecture](architecture/overview) | Three-plane model, delivery modes, security model, glossary |
 | [Getting Started](getting-started/quick-start) | Install, quick start, first webhook |
 | [Guides](guides/cluster-enrollment) | Cluster enrollment, adapters, destinations, monitoring |
@@ -31,10 +33,12 @@ Welcome to the Zen Mesh technical documentation — architecture, operations, se
 | [Evidence Overview](evidence/overview) | Index of all evidence areas — runtime, trust, compliance, Merkle, validation map |
 | [Runtime Evidence](evidence/runtime-convergence) | 10 convergence proofs — delivery, DLQ, backpressure, circuit breaker |
 | [Trust Evidence](evidence/trust-lifecycle) | 10 trust proofs — enrollment, mTLS, HMAC, ZenLock, rotation |
+| [Delivery Evidence](reference/webhook-delivery-evidence) | Webhook delivery receipts, audit trail, Merkle integrity |
 | [Validation Map](evidence/validation-map) | How to validate evidence locally |
 | [Merkle Integrity](evidence/merkle-integrity) | Content-addressed evidence verification |
 | [Non-Claims](ai/non-claims) | What Zen Mesh does not certify or guarantee |
 | [AI Agents](ai/overview) | AI overview, evidence schema, non-claims, machine-readable manifests |
+| [Webhook FAQ](reference/webhook-faq) | Frequently asked questions about webhook delivery |
 | [Reference](reference/helm-chart) | CLI, API, Customer API, MCP, configuration, Helm chart |
 
 ## Machine-Readable Evidence

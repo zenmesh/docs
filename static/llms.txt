@@ -46,6 +46,17 @@ Non-claims and proof scope are authoritative — see the Non-Claims and Wedge Ev
 - [AI overview](https://docs.zen-mesh.io/docs/ai/overview): How to read Zen evidence artifacts
 - [Verification guide](https://docs.zen-mesh.io/docs/ai/verification): How claims are verified in-repo
 
+## Delivery hub and guides
+
+- [Webhook Reliability](https://docs.zen-mesh.io/docs/delivery/): Overview of all webhook reliability capabilities
+- [Webhook Replay and Recovery](https://docs.zen-mesh.io/docs/delivery/replay-and-recovery): Replay, retry, and DLQ recovery workflows
+- [Webhook Routing and Fan-Out](https://docs.zen-mesh.io/docs/delivery/routing-and-fan-out): Event routing, filtering, and multi-destination delivery
+- [Webhook Reliability Guide](https://docs.zen-mesh.io/docs/delivery/webhook-reliability): Operational reliability overview
+- [Delivery Failures](https://docs.zen-mesh.io/docs/delivery/delivery-failures): Failure classification, retry, and recovery
+- [Replay vs Retry](https://docs.zen-mesh.io/docs/delivery/replay-vs-retry): When to use each recovery mechanism
+- [Deduplication vs Idempotency](https://docs.zen-mesh.io/docs/delivery/deduplication-vs-idempotency): System-level vs consumer-side duplicate handling
+- [Event Routing](https://docs.zen-mesh.io/docs/delivery/event-routing): Filtering, fan-out, and per-destination delivery policies
+
 ## Delivery capabilities
 
 - [Dead Letter Queue](https://docs.zen-mesh.io/docs/delivery/dead-letter-queue): Failed delivery preservation and recovery with configurable retention and retry policies
@@ -55,11 +66,23 @@ Non-claims and proof scope are authoritative — see the Non-Claims and Wedge Ev
 - [Webhook Fan-Out](https://docs.zen-mesh.io/docs/delivery/fan-out): Deliver events to multiple destinations with per-destination policies
 - [Webhook Idempotency](https://docs.zen-mesh.io/docs/delivery/idempotency): Idempotency controls for safe retry and duplicate processing
 
+## Security hub and guides
+
+- [Security Controls Overview](https://docs.zen-mesh.io/docs/security/): Overview of webhook security controls
+- [Secure Webhook Delivery](https://docs.zen-mesh.io/docs/security/secure-webhook-delivery): Transport security, source verification, access control
+- [Webhook Access Control](https://docs.zen-mesh.io/docs/security/webhook-access-control): IP allowlisting, header validation, cryptographic enrollment
+
 ## Security capabilities
 
 - [IP Allowlisting](https://docs.zen-mesh.io/docs/security/ip-allowlisting): Restrict delivery sources with identity-based allowlisting
 - [Header Validation](https://docs.zen-mesh.io/docs/security/header-validation): Verify event source authenticity with signature verification
 - [Cryptographic Enrollment](https://docs.zen-mesh.io/docs/security/cryptographic-enrollment): HMAC-based enrollment with X.509 SVID for component identity
+
+## Reference and FAQ
+
+- [Webhook Delivery Evidence](https://docs.zen-mesh.io/docs/reference/webhook-delivery-evidence): Delivery receipts, audit trail, Merkle integrity
+- [Observability and Evidence](https://docs.zen-mesh.io/docs/reference/webhook-observability-and-evidence): Delivery tracking, audit, machine-readable manifests
+- [Webhook FAQ](https://docs.zen-mesh.io/docs/reference/webhook-faq): 12 frequently asked questions about webhook delivery
 
 ## Getting started
 
