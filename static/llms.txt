@@ -78,6 +78,24 @@ Non-claims and proof scope are authoritative — see the Non-Claims and Wedge Ev
 - [Header Validation](https://docs.zen-mesh.io/docs/security/header-validation): Verify event source authenticity with signature verification
 - [Cryptographic Enrollment](https://docs.zen-mesh.io/docs/security/cryptographic-enrollment): HMAC-based enrollment with X.509 SVID for component identity
 
+## API Reference
+
+- [API Overview](https://docs.zen-mesh.io/docs/api/overview): REST API surface, versioning, base URLs
+- [Authentication and API Keys](https://docs.zen-mesh.io/docs/api/authentication): OIDC, HMAC, API key, MCP auth, scope model
+- [Errors and Problem Details](https://docs.zen-mesh.io/docs/api/errors): HTTP status codes, RFC 9457 format, retry-after
+- [Webhook Delivery API Guide](https://docs.zen-mesh.io/docs/api/webhooks): Webhook ingest, validation, delivery, idempotency
+- [Events and Evidence API Guide](https://docs.zen-mesh.io/docs/api/events): Event tracking, evidence endpoints, capability proofs
+- [API Versioning and Compatibility](https://docs.zen-mesh.io/docs/api/versioning): URL-based versioning, compatibility policy, spec maintenance
+- [Rate Limits and Operational Limits](https://docs.zen-mesh.io/docs/api/rate-limits): Per-endpoint rate limits, payload limits, delivery config
+- [API Changelog](https://docs.zen-mesh.io/docs/api/changelog): Version history and migration notes
+- [OpenAPI spec (YAML)](https://github.com/zenmesh/zen-platform-hermes/blob/main/api-specifications/zen-back.v1.yaml): Canonical OpenAPI 3.0.3 specification
+
+## MCP Reference
+
+- [MCP Overview](https://docs.zen-mesh.io/docs/mcp/overview): Model Context Protocol server, tool surface, non-claims
+- [MCP Tools Reference](https://docs.zen-mesh.io/docs/mcp/tools): 18 read-only operational truth tools with schemas
+- [MCP Authentication](https://docs.zen-mesh.io/docs/mcp/authentication): MCP API key format, scopes, TLS requirements
+
 ## Reference and FAQ
 
 - [Webhook Delivery Evidence](https://docs.zen-mesh.io/docs/reference/webhook-delivery-evidence): Delivery receipts, audit trail, Merkle integrity

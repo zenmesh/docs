@@ -122,6 +122,30 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: 'API Reference',
+      items: [
+        'api/overview',
+        'api/authentication',
+        'api/errors',
+        'api/webhooks',
+        'api/events',
+        'api/versioning',
+        'api/rate-limits',
+        'api/reference',
+        'api/changelog',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'MCP',
+      items: [
+        'mcp/overview',
+        'mcp/tools',
+        'mcp/authentication',
+      ],
+    },
+    {
+      type: 'category',
       label: 'Reference',
       items: [
         'reference/helm-chart',

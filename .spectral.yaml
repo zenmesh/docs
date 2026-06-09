@@ -1,0 +1,31 @@
+# Spectral OpenAPI linting configuration
+# Used by: docs-api-reference-guardrails CI workflow
+# Scope: docs-site API specifications
+
+extends: ["spectral:oas"]
+
+rules:
+  # Enable recommended rules
+  oas3-valid-schema-example: error
+  oas3-valid-content-schema-example: error
+  oas3-api-servers:
+    severity: error
+    recommended: true
+  oas3-server-trailing-slash: error
+  oas3-unused-component: warn
+
+  # Disable rules that are too strict for our use case
+  oas3-parameter-description: off
+  operation-tag-defined: off
+  operation-operationId-unique: off
+
+  # Custom rules
+  no-unsupported-public-claims:
+    description: Reject spec descriptions containing unsupported public claims
+    severity: error
+    given: $.info.description
+    then:
+      function: pattern
+      functionOptions:
+        notMatch: >-
+          (exactly-once|guaranteed.delivery|production.live|zero.trust.complete|prod.live)

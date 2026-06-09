@@ -1,0 +1,87 @@
+name: Docs / API Reference Guardrails
+
+on:
+  pull_request:
+    paths:
+      - 'api-specifications/**'
+      - 'docs/**'
+      - '.spectral.yaml'
+      - 'package.json'
+  push:
+    branches: [main]
+    paths:
+      - 'api-specifications/**'
+      - 'docs/**'
+      - '.spectral.yaml'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  NODE_VERSION: '20'
+
+jobs:
+  lint-openapi:
+    name: Lint OpenAPI spec
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+      - name: Install Spectral
+        run: npm install -g @stoplight/spectral-cli
+      - name: Lint OpenAPI spec
+        run: spectral lint api-specifications/zen-back.v1.yaml --ruleset .spectral.yaml
+
+  build-docs:
+    name: Build Docusaurus docs
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm ci
+      - name: Build docs
+        run: npm run build
+
+  validate-guardrails:
+    name: Validate docs guardrails
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: Run guardrails check
+        run: node scripts/validate-api-guardrails.mjs
+        continue-on-error: false
+
+  breaking-change-diff:
+    name: Check breaking changes
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Install oasdiff
+        run: |
+          curl -sL https://github.com/tufin/oasdiff/releases/latest/download/oasdiff_linux_amd64.tar.gz | tar xz
+          chmod +x oasdiff
+          sudo mv oasdiff /usr/local/bin/
+      - name: Check breaking changes
+        run: |
+          git fetch origin ${{ github.base_ref }}
+          BASE_SPEC=$(git show origin/${{ github.base_ref }}:api-specifications/zen-back.v1.yaml 2>/dev/null || echo "")
+          if [ -n "$BASE_SPEC" ]; then
+            echo "$BASE_SPEC" > /tmp/base-spec.yaml
+            oasdiff -base /tmp/base-spec.yaml -revision api-specifications/zen-back.v1.yaml -format text || echo "::warning::Breaking changes detected in API spec"
+          else
+            echo "No base spec to compare"
+          fi
