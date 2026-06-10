@@ -36,6 +36,8 @@ const sidebars: SidebarsConfig = {
         'delivery/fan-out',
         'delivery/idempotency',
         'delivery/routing-and-fan-out',
+        'delivery/jsonpath-routing',
+        'delivery/jsonpath-transforms',
         'delivery/delivery-failures',
         'delivery/replay-vs-retry',
         'delivery/event-routing',
@@ -153,6 +155,7 @@ const sidebars: SidebarsConfig = {
         'mcp/authentication-and-mtls',
         'mcp/authentication',
         'mcp/safety-and-boundaries',
+        'mcp/draft-system',
       ],
     },
     {

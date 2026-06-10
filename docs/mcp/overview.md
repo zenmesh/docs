@@ -26,6 +26,10 @@ The MCP server exposes two tool categories:
 
 See [MCP Tools Reference](./tools.md) for full tool descriptions and schemas.
 
+### Draft System
+
+The [MCP Draft System](./draft-system) enables agents to propose infrastructure changes as drafts that require human review and approval before taking effect. Agents can create endpoint drafts; apply is exclusively human. This extends MCP beyond pure read-only while preserving a human-in-the-loop governance model.
+
 ## Use Cases
 
 - **AI agents**: Query delivery status, list webhooks, check evidence

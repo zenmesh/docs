@@ -17,6 +17,8 @@ Reliable webhook delivery requires more than forwarding events. Zen Mesh provide
 | [Webhook Idempotency](./idempotency) | Safe retry and duplicate processing with idempotency controls |
 | [Webhook Filtering](./filtering) | Route or suppress events according to configured conditions |
 | [Webhook Fan-Out](./fan-out) | Deliver events to multiple destinations with per-destination policies |
+| [JSONPath Routing](./jsonpath-routing) | Route webhooks with safe JSONPath filter and match rules |
+| [JSONPath Transforms](./jsonpath-transforms) | Map and reshape webhook payloads with JSONPath expressions |
 
 ## Architecture
 

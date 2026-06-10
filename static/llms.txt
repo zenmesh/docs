@@ -78,6 +78,11 @@ Non-claims and proof scope are authoritative — see the Non-Claims and Wedge Ev
 - [Header Validation](https://docs.zen-mesh.io/docs/security/header-validation): Verify event source authenticity with signature verification
 - [Cryptographic Enrollment](https://docs.zen-mesh.io/docs/security/cryptographic-enrollment): HMAC-based enrollment with X.509 SVID for component identity
 
+## Delivery
+
+- [JSONPath Routing](https://docs.zen-mesh.io/docs/delivery/jsonpath-routing): Route webhooks with safe JSONPath filter and match rules — no code execution
+- [JSONPath Transforms](https://docs.zen-mesh.io/docs/delivery/jsonpath-transforms): Map and reshape webhook payloads with JSONPath expressions and safe transform functions
+
 ## API Reference
 
 - [API Overview](https://docs.zen-mesh.io/docs/api/overview): REST API surface, versioning, base URLs
@@ -104,6 +109,7 @@ Non-claims and proof scope are authoritative — see the Non-Claims and Wedge Ev
 - [MCP Examples](https://docs.zen-mesh.io/docs/mcp/examples): Example prompts, read operations, and denied write scenarios
 - [MCP Authentication and mTLS](https://docs.zen-mesh.io/docs/mcp/authentication-and-mtls): MCP API key format, scopes, TLS requirements
 - [MCP Safety and Boundaries](https://docs.zen-mesh.io/docs/mcp/safety-and-boundaries): Auth model, tool execution, write denial, data isolation
+- [MCP Draft System](https://docs.zen-mesh.io/docs/mcp/draft-system): AI drafts your infrastructure — you approve it. Governance model with human-only apply
 
 ## Reference and FAQ
 

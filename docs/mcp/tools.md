@@ -140,6 +140,17 @@ List Merkle evidence reference metadata.
 - **Input**: None
 - **Note**: Integrity receipts only. NOT authentication, identity, encryption, replay prevention, or delivery guarantee.
 
+## Draft System Tools
+
+The [Draft System](./draft-system) provides tools for agents to propose infrastructure changes. These are available when draft surface is enabled:
+
+- `zen_draft_endpoint` — Create a draft endpoint proposal (mutating but gated — does not modify production)
+- `zen_list_drafts` — List pending drafts awaiting human review
+- `zen_show_draft` — Show draft details including proposed spec
+- `zen_discard_draft` — Discard a pending draft
+
+All draft creation tools are non-mutating with respect to production — drafts are stored as proposals. Apply is exclusively human.
+
 ## Admin/Mutation Tools (Not on Default Surface)
 
 These tools require explicit admin/auth surface elevation:

@@ -37,3 +37,15 @@ Any attempt to call a write operation (event submission, configuration change) i
 ## No Autonomous Action
 
 MCP agents cannot independently submit events, modify sources, or change platform configuration. All tools are read-only. The MCP server acts as a query interface, not a control plane.
+
+## Draft System Apply Boundary
+
+The [Draft System](./draft-system) extends MCP with the ability to propose infrastructure changes, but **apply remains exclusively human**:
+
+- MCP agents can create drafts, list drafts, show draft details, and discard drafts
+- MCP agents **cannot** apply drafts — the apply API rejects MCP authentication with `403 MCP_CANNOT_APPLY`
+- Apply requires explicit human identity (`X-User-Id` header) and is only available through the CLI or web UI
+- Drafts never mutate production resources until a human applies them
+- The MCP surface has no apply tool, no apply route, and no write-to-production scope
+
+This boundary is enforced at the API layer and verified by governance validation. It is a deliberate design choice — AI proposes, humans decide.

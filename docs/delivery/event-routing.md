@@ -5,7 +5,7 @@ description: Webhook event routing — filtering conditions, multi-destination d
 
 # Webhook Event Routing
 
-Event routing controls how incoming webhooks are directed to their destinations. Routing decisions are based on event attributes, configured conditions, and destination policies.
+Event routing controls how incoming webhooks are directed to their destinations. Routing decisions are based on event attributes, configured conditions, and destination policies. For JSONPath-based filtering and route selection, see [JSONPath Routing](./jsonpath-routing).
 
 ## Routing Decisions
 
