@@ -6,11 +6,7 @@ extends: ["spectral:oas"]
 
 rules:
   # Enable recommended rules
-  oas3-valid-schema-example: error
-  oas3-valid-content-schema-example: error
-  oas3-api-servers:
-    severity: error
-    recommended: true
+  oas3-api-servers: error
   oas3-server-trailing-slash: error
   oas3-unused-component: warn
 

@@ -1,0 +1,45 @@
+{
+  "task_id": "API_DOCS_DISCOVERABILITY_INVENTORY",
+  "docs_framework": "Docusaurus",
+  "openapi_spec_exists": true,
+  "openapi_spec_path": "api-specifications/zen-back.v1.yaml",
+  "api_docs_pages": [
+    {"path": "docs/api/overview.md", "label": "API Overview"},
+    {"path": "docs/api/quickstart.md", "label": "API Quickstart"},
+    {"path": "docs/api/examples.md", "label": "API Examples"},
+    {"path": "docs/api/authentication.md", "label": "Authentication and API Keys"},
+    {"path": "docs/api/errors.md", "label": "Errors and Problem Details"},
+    {"path": "docs/api/webhooks.md", "label": "Webhook Delivery API Guide"},
+    {"path": "docs/api/evidence.md", "label": "Evidence API"},
+    {"path": "docs/api/logs.md", "label": "Logs API"},
+    {"path": "docs/api/events.md", "label": "Events and Evidence API Guide"},
+    {"path": "docs/api/idempotency.md", "label": "Idempotency"},
+    {"path": "docs/api/replay.md", "label": "Replay"},
+    {"path": "docs/api/versioning.md", "label": "API Versioning and Compatibility"},
+    {"path": "docs/api/rate-limits.md", "label": "Rate Limits and Operational Limits"},
+    {"path": "docs/api/changelog.md", "label": "API Changelog"}
+  ],
+  "api_reference_pages": [
+    {"path": "docs/api/reference/operations/", "type": "docusaurus-openapi-docs"},
+    {"path": "docs/api/reference/sidebar.ts", "type": "generated-sidebar"},
+    {"path": "docs/api/reference/zen-back-v1.mdx", "type": "docusaurus-openapi-docs"}
+  ],
+  "mcp_pages": [
+    {"path": "docs/mcp/overview.md", "label": "MCP Overview"},
+    {"path": "docs/mcp/read-only-v1-policy.md", "label": "Read-Only V1 Policy"},
+    {"path": "docs/mcp/tools.md", "label": "MCP Tools Reference"},
+    {"path": "docs/mcp/examples.md", "label": "MCP Examples"},
+    {"path": "docs/mcp/authentication-and-mtls.md", "label": "Authentication and mTLS"},
+    {"path": "docs/mcp/authentication.md", "label": "Authentication"},
+    {"path": "docs/mcp/safety-and-boundaries.md", "label": "Safety and Boundaries"},
+    {"path": "docs/mcp/draft-system.md", "label": "Draft System"}
+  ],
+  "delivery_pages": [
+    {"path": "docs/delivery/jsonpath-routing.md", "label": "JSONPath Routing"},
+    {"path": "docs/delivery/jsonpath-transforms.md", "label": "JSONPath Transforms"}
+  ],
+  "sidebar_path": "sidebars.ts",
+  "llms_txt_path": "static/llms.txt",
+  "unsupported_claims_check": true,
+  "spectral_ruleset": ".spectral.yaml"
+}

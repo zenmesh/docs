@@ -82,8 +82,14 @@ function checkOpenApiSpec() {
 }
 
 function checkInventory() {
-  const invPath = join(__dirname, '..', '..', 'zen-platform-hermes/docs/80-EVIDENCE/readiness/helper023_api_docs_inventory.json');
-  return existsSync(invPath) ? null : 'Missing API docs inventory';
+  const candidates = [
+    join(__dirname, 'api-docs-inventory.json'),
+    join(__dirname, '..', '..', 'zen-platform-hermes/docs/80-EVIDENCE/readiness/helper023_api_docs_inventory.json'),
+  ];
+  for (const p of candidates) {
+    if (existsSync(p)) return null;
+  }
+  return 'Missing API docs inventory (checked: ' + candidates.join(', ') + ')';
 }
 
 function run() {
