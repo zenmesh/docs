@@ -40,3 +40,46 @@ Webhook events carry a `type` field. Supported sources include:
 - **Retry count**: 5 attempts with exponential backoff
 - **DLQ retention**: 7 days (configurable)
 - **Rate limit**: 100 req/min per tenant (burst 200)
+
+## Delivery Status
+
+Each delivery progresses through a state machine:
+
+| Status | Description |
+|--------|-------------|
+| `pending` | Queued for delivery |
+| `delivering` | Currently in flight |
+| `delivered` | Successfully delivered |
+| `failed` | Delivery failed, queued for retry |
+| `exhausted` | All retries exhausted, moved to DLQ |
+| `replaying` | Re-queued from DLQ for retry |
+
+Inspect delivery status:
+
+```bash
+curl -H "Authorization: Bearer $ZEN_API_KEY" \
+  -H "X-Tenant-ID: $ZEN_TENANT_ID" \
+  https://api.zen-mesh.io/v1/deliveries/dlv_abc123
+```
+
+### Delivery Attempts History
+
+```bash
+curl -H "Authorization: Bearer $ZEN_API_KEY" \
+  -H "X-Tenant-ID: $ZEN_TENANT_ID" \
+  https://api.zen-mesh.io/v1/deliveries/dlv_abc123/attempts
+```
+
+Each attempt includes HTTP status, response body (truncated), timestamp, and duration.
+
+### Dead-Letter Queue
+
+When all retry attempts are exhausted, the event moves to the dead-letter queue:
+
+```bash
+curl -H "Authorization: Bearer $ZEN_API_KEY" \
+  -H "X-Tenant-ID: $ZEN_TENANT_ID" \
+  https://api.zen-mesh.io/v1/deliveries?status=exhausted&limit=20
+```
+
+DLQ items can be replayed manually via the [Replay API](./replay.md).

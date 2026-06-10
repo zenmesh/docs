@@ -81,10 +81,16 @@ Non-claims and proof scope are authoritative — see the Non-Claims and Wedge Ev
 ## API Reference
 
 - [API Overview](https://docs.zen-mesh.io/docs/api/overview): REST API surface, versioning, base URLs
+- [API Quickstart](https://docs.zen-mesh.io/docs/api/quickstart): Five-step quickstart with curl examples
+- [API Examples](https://docs.zen-mesh.io/docs/api/examples): Complete API workflow examples (auth, evidence, logs, idempotency)
 - [Authentication and API Keys](https://docs.zen-mesh.io/docs/api/authentication): OIDC, HMAC, API key, MCP auth, scope model
 - [Errors and Problem Details](https://docs.zen-mesh.io/docs/api/errors): HTTP status codes, RFC 9457 format, retry-after
-- [Webhook Delivery API Guide](https://docs.zen-mesh.io/docs/api/webhooks): Webhook ingest, validation, delivery, idempotency
+- [Webhook Delivery API Guide](https://docs.zen-mesh.io/docs/api/webhooks): Webhook ingest, validation, delivery, idempotency, delivery status, DLQ
+- [Evidence API](https://docs.zen-mesh.io/docs/api/evidence): Cryptographic delivery proofs, Merkle inclusion verification
+- [Logs API](https://docs.zen-mesh.io/docs/api/logs): Structured platform logs with pagination and filtering
 - [Events and Evidence API Guide](https://docs.zen-mesh.io/docs/api/events): Event tracking, evidence endpoints, capability proofs
+- [Idempotency](https://docs.zen-mesh.io/docs/api/idempotency): Safe retry with Idempotency-Key header and dedup window
+- [Replay](https://docs.zen-mesh.io/docs/api/replay): Re-process delivered events from DLQ or history
 - [API Versioning and Compatibility](https://docs.zen-mesh.io/docs/api/versioning): URL-based versioning, compatibility policy, spec maintenance
 - [Rate Limits and Operational Limits](https://docs.zen-mesh.io/docs/api/rate-limits): Per-endpoint rate limits, payload limits, delivery config
 - [API Changelog](https://docs.zen-mesh.io/docs/api/changelog): Version history and migration notes
@@ -93,8 +99,11 @@ Non-claims and proof scope are authoritative — see the Non-Claims and Wedge Ev
 ## MCP Reference
 
 - [MCP Overview](https://docs.zen-mesh.io/docs/mcp/overview): Model Context Protocol server, tool surface, non-claims
+- [MCP Read-Only V1 Policy](https://docs.zen-mesh.io/docs/mcp/read-only-v1-policy): Explicit scope — read-only V1, no write operations
 - [MCP Tools Reference](https://docs.zen-mesh.io/docs/mcp/tools): 18 read-only operational truth tools with schemas
-- [MCP Authentication](https://docs.zen-mesh.io/docs/mcp/authentication): MCP API key format, scopes, TLS requirements
+- [MCP Examples](https://docs.zen-mesh.io/docs/mcp/examples): Example prompts, read operations, and denied write scenarios
+- [MCP Authentication and mTLS](https://docs.zen-mesh.io/docs/mcp/authentication-and-mtls): MCP API key format, scopes, TLS requirements
+- [MCP Safety and Boundaries](https://docs.zen-mesh.io/docs/mcp/safety-and-boundaries): Auth model, tool execution, write denial, data isolation
 
 ## Reference and FAQ
 
