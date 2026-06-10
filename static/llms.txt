@@ -88,6 +88,8 @@ Non-claims and proof scope are authoritative — see the Non-Claims and Wedge Ev
 - [Endpoints](https://docs.zen-mesh.io/docs/guides/endpoints): Create and manage webhook endpoints — ingesters, destinations, delivery flows
 - [Sources](https://docs.zen-mesh.io/docs/guides/sources): Supported webhook source types — Stripe, GitHub, generic HTTP
 - [Stripe Integration](https://docs.zen-mesh.io/docs/guides/stripe): Stripe webhook events, setup, signature verification, event types
+- [GitHub Integration](https://docs.zen-mesh.io/docs/guides/github): GitHub webhook events, setup, signature verification, event types
+- [Custom Webhooks](https://docs.zen-mesh.io/docs/guides/custom-webhooks): Receive webhooks from any HTTP source — verification, IP allowlisting, routing
 - [Destinations](https://docs.zen-mesh.io/docs/guides/destinations): Target service configuration for webhook delivery
 
 ## Security
@@ -125,6 +127,7 @@ Non-claims and proof scope are authoritative — see the Non-Claims and Wedge Ev
 ## Reference and FAQ
 
 - [Webhook Delivery Evidence](https://docs.zen-mesh.io/docs/reference/webhook-delivery-evidence): Delivery receipts, audit trail, Merkle integrity
+- [Delivery Status Reference](https://docs.zen-mesh.io/docs/reference/delivery-status): Webhook delivery state machine — status values, transitions, retry policy, DLQ
 - [Observability and Evidence](https://docs.zen-mesh.io/docs/reference/webhook-observability-and-evidence): Delivery tracking, audit, machine-readable manifests
 - [Webhook FAQ](https://docs.zen-mesh.io/docs/reference/webhook-faq): 12 frequently asked questions about webhook delivery
 

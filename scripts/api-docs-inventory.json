@@ -41,7 +41,13 @@
   "guide_pages": [
     {"path": "docs/guides/endpoints.md", "label": "Endpoints"},
     {"path": "docs/guides/sources.md", "label": "Sources"},
-    {"path": "docs/guides/stripe.md", "label": "Stripe Integration"}
+    {"path": "docs/guides/stripe.md", "label": "Stripe Integration"},
+    {"path": "docs/guides/github.md", "label": "GitHub Integration"},
+    {"path": "docs/guides/custom-webhooks.md", "label": "Custom Webhooks"}
+  ],
+  "reference_pages": [
+    {"path": "docs/reference/cli.md", "label": "CLI Reference"},
+    {"path": "docs/reference/delivery-status.md", "label": "Delivery Status"}
   ],
   "security_pages": [
     {"path": "docs/security/tenant-isolation.md", "label": "Tenant Isolation"}
