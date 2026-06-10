@@ -55,3 +55,34 @@ Unhealthy destinations trigger automatic backoff and retry with exponential back
 ## Dead Letter Queue
 
 Events that fail delivery after all retries are moved to a Dead Letter Queue (DLQ). You can inspect and replay DLQ events from the dashboard.
+
+## Configuration Reference
+
+| Setting | Description | Default |
+|---------|-------------|---------|
+| **Name** | Human-readable identifier for the destination | Required |
+| **URL** | Target service URL where events are delivered | Required |
+| **Cluster** | Cluster where the destination service runs | Required |
+| **Adapter** | Transform events for provider-specific payloads | Optional |
+| **Environment** | Environment scoping (production, staging, etc.) | Optional |
+| **Retry Policy** | Max retries, backoff interval, timeout | Inherited from delivery flow |
+
+## Example: Multiple Destinations
+
+Route Stripe charge events to a payment service and an analytics pipeline:
+
+```yaml
+destinations:
+  - name: payment-processor
+    url: http://payment-svc:8080/webhooks
+    cluster: prod-us-east
+  - name: analytics-pipeline
+    url: http://analytics:9090/events
+    cluster: prod-us-east
+```
+
+## Related
+
+- [Endpoints](./endpoints) — webhook entry point configuration
+- [Delivery Flows and Routing](../delivery/routing-and-fan-out) — connect sources to destinations
+- [JSONPath Routing](../delivery/jsonpath-routing) — event filtering and routing

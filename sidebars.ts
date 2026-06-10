@@ -11,6 +11,7 @@ const sidebars: SidebarsConfig = {
         'start-here/who-should-use-zen-mesh',
         'start-here/current-status',
         'start-here/concepts',
+        'start-here/support',
       ],
     },
     {
@@ -68,6 +69,7 @@ const sidebars: SidebarsConfig = {
         'security/cryptographic-enrollment',
         'security/secure-webhook-delivery',
         'security/webhook-access-control',
+        'security/tenant-isolation',
       ],
     },
     {
@@ -84,6 +86,9 @@ const sidebars: SidebarsConfig = {
         'guides/cluster-enrollment',
         'guides/adapters',
         'guides/destinations',
+        'guides/endpoints',
+        'guides/sources',
+        'guides/stripe',
         'guides/monitoring',
       ],
     },

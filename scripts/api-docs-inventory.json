@@ -38,6 +38,17 @@
     {"path": "docs/delivery/jsonpath-routing.md", "label": "JSONPath Routing"},
     {"path": "docs/delivery/jsonpath-transforms.md", "label": "JSONPath Transforms"}
   ],
+  "guide_pages": [
+    {"path": "docs/guides/endpoints.md", "label": "Endpoints"},
+    {"path": "docs/guides/sources.md", "label": "Sources"},
+    {"path": "docs/guides/stripe.md", "label": "Stripe Integration"}
+  ],
+  "security_pages": [
+    {"path": "docs/security/tenant-isolation.md", "label": "Tenant Isolation"}
+  ],
+  "start_here_pages": [
+    {"path": "docs/start-here/support.md", "label": "Support"}
+  ],
   "sidebar_path": "sidebars.ts",
   "llms_txt_path": "static/llms.txt",
   "unsupported_claims_check": true,
