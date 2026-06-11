@@ -48,6 +48,7 @@ const sidebars: SidebarsConfig = {
         'contracts/onboarding-paths',
         'contracts/launch-rehearsal-scorecard',
         'contracts/public-trust-faq',
+        'contracts/permission-channels',
       ],
     },
     {

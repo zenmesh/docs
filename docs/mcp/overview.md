@@ -44,6 +44,7 @@ The [MCP Draft System](./draft-system) enables agents to propose infrastructure 
 
 ## Non-Claims
 
+- **MCP apply is not live** — MCP cannot apply drafts or mutate production. See [Draft System](./draft-system) and [Permission Channels Contract](/docs/contracts/permission-channels).
 - Not production-live — sandbox disabled per P098
 - Evidence tools are read-only — no mutating operations on default surface
 - Merkle receipts are integrity-only — not auth, identity, encryption, or delivery guarantee

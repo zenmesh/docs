@@ -37,6 +37,7 @@ This is the central index of Zen Mesh's **contract-first launch architecture dec
 | [Onboarding Happy and Failure Paths](./onboarding-paths) | Preparation | Onboarding guides with happy path and failure path scenarios — signup through support |
 | [Launch Rehearsal Scorecard](./launch-rehearsal-scorecard) | Preparation | Rehearsal scorecard — pass/fail/blocked, owner, evidence link, customer impact, launch blocker flag |
 | [Public Trust FAQ](./public-trust-faq) | Preparation | FAQ about trust claims — no certification, what evidence means, what payload access means, what is not yet live |
+| [Permission Channels Contract](./permission-channels) | Design | UI/API/MCP as first-class permission axes — label-scoped, user/group-gated, channel-aware permissions. Contract/design only. |
 
 ## Provider Status Matrix
 

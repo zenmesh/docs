@@ -236,10 +236,68 @@ permissions:
 
 An empty policy selector means all resources. Saving a policy with an empty selector requires a warning confirmation and the option to save the decision for future use.
 
+### Channel-Aware Permissions (Design)
+
+These examples illustrate the design for UI/API/MCP as permission axes. Channel-aware permissions are not yet implemented.
+
+**Example: MCP dev-only** — MCP agents can manage delivery for development resources only:
+
+```yaml
+group: dev-agents
+channel: mcp
+scope:
+  zen-mesh.io/env: dev
+permissions:
+  - routes:read
+  - delivery:read
+```
+
+**Example: MCP denied for prod** — explicit deny for production scope:
+
+```yaml
+group: dev-agents
+channel: mcp
+deny:
+  scopes:
+    - zen-mesh.io/env: prod
+```
+
+**Example: API read-only** — API keys scoped to read-only across all resources:
+
+```yaml
+group: api-readers
+channel: api
+permissions:
+  - "*":read
+```
+
+**Example: Multi-channel with label scoping** — different permission levels per channel:
+
+```yaml
+group: payments-team
+channels:
+  ui:
+    permissions: ["*:admin"]
+    scope:
+      team: payments
+  api:
+    permissions: ["*:write"]
+    scope:
+      team: payments
+  mcp:
+    permissions: ["routes:read", "delivery:read"]
+    scope:
+      team: payments
+      zen-mesh.io/env: dev
+```
+
+See [Permission Channels Contract](/docs/contracts/permission-channels) for the full design.
+
 ## See also
 
 - [Plans & Limits](/docs/start-here/limits) — label count limits by plan
 - [API Authentication](/docs/api/authentication) — API key management
 - [Tenant Isolation](/docs/security/tenant-isolation) — how labels support isolation
 - [MCP Overview](/docs/mcp/overview) — MCP read-only label policy
+- [Permission Channels Contract](/docs/contracts/permission-channels) — UI/API/MCP as permission axes
 - [Launch Contracts Index](/docs/contracts/) — contract-first architecture decisions

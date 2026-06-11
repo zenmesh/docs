@@ -206,6 +206,7 @@ Non-claims and proof scope are authoritative — see the Non-Claims and Wedge Ev
 - [Onboarding Happy and Failure Paths](https://docs.zen-mesh.io/docs/contracts/onboarding-paths): Onboarding guides with happy path and failure path scenarios — signup through support
 - [Launch Rehearsal Scorecard](https://docs.zen-mesh.io/docs/contracts/launch-rehearsal-scorecard): Rehearsal scorecard — pass/fail/blocked, owner, evidence link, customer impact, launch blocker flag
 - [Public Trust FAQ](https://docs.zen-mesh.io/docs/contracts/public-trust-faq): FAQ about trust claims — no certification, what evidence means, what payload access means, what is not yet live
+- [Permission Channels Contract](https://docs.zen-mesh.io/docs/contracts/permission-channels): UI/API/MCP as first-class permission axes — label-scoped, user/group-gated, channel-aware permissions. Contract/design only.
 
 ## Operations
 
