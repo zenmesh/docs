@@ -49,6 +49,20 @@ description: Internal runtime proof checklist — gates requiring validation bef
 | 18 | **Twilio connector validation** | Twilio webhook ingestion and delivery | Not started (launch target) |
 | 19 | **Object-store fan-out validation** | S3-compatible delivery | Not started (launch target) |
 
+## Permission-Axis Gates
+
+| # | Gate | Scope | Status |
+|---|------|-------|--------|
+| 20 | **UI channel enforcement** | UI permissions scoped correctly | Needs validation |
+| 21 | **API channel enforcement** | API permissions scoped correctly | Needs validation |
+| 22 | **MCP channel enforcement** | MCP permissions scoped correctly | Needs validation |
+| 23 | **Group defaults** | Group-level permission inheritance works | Needs validation |
+| 24 | **User overrides** | User-level overrides add to group permissions correctly | Needs validation |
+| 25 | **Label constraints** | Label scoping narrows permission blast radius | Needs validation |
+| 26 | **Proposed/applied separation** | Drafts do not mutate until applied | Needs validation |
+| 27 | **Audit trail** | All permission changes are logged with before/after | Needs validation |
+| 28 | **Negative controls** | No implicit channel inheritance, no cross-tenant escape | Needs validation |
+
 ## See Also
 
 - [Launch Readiness Gap-to-Action](/docs/contracts/launch-readiness-gap-to-action) — overall launch blocker index

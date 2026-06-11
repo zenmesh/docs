@@ -34,6 +34,7 @@ The high-level walkthrough steps are:
 - [ ] **16. Failed delivery** — configure an unreachable target and verify DLQ behavior
 - [ ] **17. Downgrade** — downgrade from Pro to Free and verify limit reversion
 - [ ] **18. Delete source** — delete a source and verify it is removed from routes
+- [ ] **19. Permission-axis walkthrough** — verify UI/API/MCP channel permissions work as documented (future / when implemented)
 
 ## Customer-Facing Checklists
 

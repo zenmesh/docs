@@ -207,7 +207,15 @@ Non-claims and proof scope are authoritative — see the Non-Claims and Wedge Ev
 - [Launch Rehearsal Scorecard](https://docs.zen-mesh.io/docs/contracts/launch-rehearsal-scorecard): Rehearsal scorecard — pass/fail/blocked, owner, evidence link, customer impact, launch blocker flag
 - [Public Trust FAQ](https://docs.zen-mesh.io/docs/contracts/public-trust-faq): FAQ about trust claims — no certification, what evidence means, what payload access means, what is not yet live
 - [Permission Channels Contract](https://docs.zen-mesh.io/docs/contracts/permission-channels): UI/API/MCP as first-class permission axes — label-scoped, user/group-gated, channel-aware permissions. Contract/design only.
-
+- [Customer Permission-Axis Guide](https://docs.zen-mesh.io/docs/contracts/customer-permission-guide): Plain-language guide to UI/API/MCP permission channels — risk reduction, examples, and safe access design
+- [Admin Permission-Axis Guide](https://docs.zen-mesh.io/docs/contracts/admin-permission-guide): Admin guide for designing channel-aware permissions — defaults, overrides, label constraints, audit
+- [Group RBAC/ABAC Guide](https://docs.zen-mesh.io/docs/contracts/group-rbac-abac): Groups, users, and label-scoped roles — inheritance, overrides, label constraints
+- [Draft Governance Deep Dive](https://docs.zen-mesh.io/docs/contracts/draft-governance-deep-dive): Deep dive on propose vs apply separation — draft sources, review, audit, evidence
+- [MCP Safety](https://docs.zen-mesh.io/docs/contracts/mcp-safety): MCP safety model — current read-only state, future RW model, boundaries, non-claims
+- [API Safety](https://docs.zen-mesh.io/docs/contracts/api-safety): API safety and scoping — channel separation, mutation risk, rate limits, audit
+- [Policy Templates](https://docs.zen-mesh.io/docs/contracts/policy-templates): Ready-to-use permission templates — Free owner, Pro owner, developer, CI, MCP dev-only, API reader, payments manager, break-glass, fan-out manager
+- [Implementation Handoff](https://docs.zen-mesh.io/docs/contracts/implementation-handoff): Implementation handoff/spec for channel-aware permissions — data model, API expectations, UI behavior, MCP boundary, validators, negative controls
+ 
 ## Operations
 
 - [Backups and Disaster Recovery](https://docs.zen-mesh.io/docs/operations/backups): Backup procedures, restore, DR runbook, RPO/RTO targets

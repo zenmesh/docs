@@ -38,6 +38,14 @@ This is the central index of Zen Mesh's **contract-first launch architecture dec
 | [Launch Rehearsal Scorecard](./launch-rehearsal-scorecard) | Preparation | Rehearsal scorecard — pass/fail/blocked, owner, evidence link, customer impact, launch blocker flag |
 | [Public Trust FAQ](./public-trust-faq) | Preparation | FAQ about trust claims — no certification, what evidence means, what payload access means, what is not yet live |
 | [Permission Channels Contract](./permission-channels) | Design | UI/API/MCP as first-class permission axes — label-scoped, user/group-gated, channel-aware permissions. Contract/design only. |
+| [Customer Permission-Axis Guide](./customer-permission-guide) | Guide | Plain-language guide to UI/API/MCP permission channels — risk reduction, examples, and safe access design |
+| [Admin Permission-Axis Guide](./admin-permission-guide) | Guide | Admin guide for designing channel-aware permissions — defaults, overrides, label constraints, audit |
+| [Group RBAC/ABAC Guide](./group-rbac-abac) | Guide | Groups, users, and label-scoped roles — inheritance, overrides, label constraints |
+| [Draft Governance Deep Dive](./draft-governance-deep-dive) | Guide | Deep dive on propose vs apply separation — draft sources, review, audit, evidence |
+| [MCP Safety](./mcp-safety) | Guide | MCP safety model — current read-only state, future RW model, boundaries, non-claims |
+| [API Safety](./api-safety) | Guide | API safety and scoping — channel separation, mutation risk, rate limits, audit |
+| [Policy Templates](./policy-templates) | Guide | Ready-to-use permission templates — Free owner, Pro owner, developer, CI, MCP dev-only, API reader, payments manager, break-glass, fan-out manager |
+| [Implementation Handoff](./implementation-handoff) | Handoff | Implementation handoff/spec for channel-aware permissions — data model, API expectations, UI behavior, MCP boundary, validators, negative controls |
 
 ## Provider Status Matrix
 

@@ -23,6 +23,7 @@ This page indexes remaining prerequisites for public launch. Each item is classi
 | 10 | **Business pricing announcement** | Decision | Leonardo | After Pro launch |
 | 11 | **Multi-region data-plane commitment** | Decision | Leonardo | After initial launch |
 | 12 | **Customer onboarding documentation** | Docs | Docs team | Ongoing (this pack) |
+| 13 | **Permission-axis implementation/proof** — UI/API/MCP channel enforcement | Implementation / Runtime proof | Engineering | Contract defined; runtime enforcement pending |
 
 ## Classification Key
 
@@ -41,6 +42,7 @@ This page indexes remaining prerequisites for public launch. Each item is classi
 - Items 4–6, 8–9: [Runtime Proof Checklist](/docs/contracts/runtime-proof-checklist) (create)
 - Item 11: [Data-Plane Selection Contract](/docs/contracts/data-plane-selection)
 - Item 12: [Customer Onboarding Pack](/docs/contracts/customer-onboarding-pack) (create)
+- Items 13: [Implementation Handoff](/docs/contracts/implementation-handoff)
 
 ## See Also
 

@@ -212,6 +212,39 @@ Send to [support@zen-mesh.io](mailto:support@zen-mesh.io).
 
 **Processing time:** Reasonable efforts to process within 30 days of verified request.
 
+## Permission Issue Support Playbook
+
+Use this for suspected over-permissioning or access issues.
+
+### Safe Initial Questions
+
+When a user reports a permission issue, ask:
+
+- **User or group experiencing the issue?** — helps identify the affected scope
+- **Which channel?** — UI, API, or MCP?
+- **What action was attempted?** — read, write, admin?
+- **Label filter (if any)?** — what labels were scoping the access
+- **Route or provider involved?** — helps narrow the resource scope
+- **Event or evidence ID?** — if the issue involves data access
+
+### Never Ask By Default
+
+- Raw API keys, tokens, or passwords
+- Raw webhook payloads (ask for redacted samples)
+- SSH keys, certificates, or private keys
+- Full target URLs with embedded credentials
+
+### Escalation
+
+If a user reports suspected over-permissioning (e.g., a user can see resources they should not):
+
+1. Verify the user's group membership and channel configuration
+2. Check the audit log for recent permission changes
+3. Review label scopes on the affected resources
+4. If confirmed, revoke or narrow the permission
+5. Log the finding and resolution
+6. Escalate to security@ if the over-permissioning exposed sensitive data
+
 ## See Also
 
 - [Support Center D1 Spec](/docs/contracts/support-center-d1-spec) — support center specification

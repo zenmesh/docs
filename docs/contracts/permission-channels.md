@@ -229,6 +229,24 @@ The admin permission editor should show:
 - "Preview effective permissions" shows the resolved permission set for the user/group
 - All changes are audit-logged with before/after diff
 
+### UI Risk Hints
+
+The editor should show visual risk hints:
+
+| Condition | Hint |
+|-----------|------|
+| MCP write + `env=prod` scope | ⚠ Warning: MCP has write access to production resources |
+| API channel with `admin` action | ⚠ Warning: API key has admin scope |
+| Empty scope (no label constraints) | ⚠ Warning: No label scoping — wide blast radius |
+| User override active | ℹ Info: User override active |
+| Group defaults apply (no channel config) | ℹ Info: Group defaults apply |
+
+### Search Intent Keywords
+
+These headings are not visible in the rendered page but provide search discoverability:
+
+`MCP permissions` `API permissions` `UI permissions` `channel-aware RBAC` `label-scoped MCP` `webhook permission templates` `proposed vs applied changes` `safe MCP write access` `webhook admin permissions` `audit-ready permission changes`
+
 ## Cross-Links
 
 - [Labels Platform](/docs/guides/labels) — label-based RBAC/ABAC foundation

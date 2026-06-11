@@ -105,6 +105,26 @@ No. Target response times for Pro support (48 hours) are targets, not SLAs or co
 
 No. Webhook delivery is best-effort with built-in retry, DLQ, and replay mechanisms. Exactly-once delivery and zero-loss delivery are not claimed. See [Delivery Status Reference](/docs/reference/delivery-status) and the [non-claims registry](https://docs.zen-mesh.io/ai/evidence/v1/non-claims.json).
 
+**Why do channel permissions matter?**
+
+Channel permissions separate access by channel (UI, API, MCP). This means a compromised MCP key cannot modify resources via the UI or API, and a leaked API key does not grant MCP access. Each channel has its own scope, reducing blast radius. See [Permission Channels Contract](/docs/contracts/permission-channels).
+
+**How do labels reduce blast radius?**
+
+Labels narrow the scope of any permission to specific resources. A permission scoped to `team=payments` can only access resources with that label. A permission scoped to `env=dev` cannot touch production resources. Labels are the primary mechanism for reducing blast radius. See [Labels Platform](/docs/guides/labels).
+
+**How is MCP risk bounded?**
+
+MCP is read-only and draft-safe in V1. It cannot mutate production, apply drafts, or access the database directly. Future MCP write access would require explicit channel permission, label scoping, audit, and human approval for high-risk operations. See [MCP Safety](/docs/contracts/mcp-safety).
+
+**What does audit mean?**
+
+Every permission change is logged: who made it, what channel was affected, the before and after state, when it happened, and why (if provided). Audit logs are immutable and tenant-scoped. See [MCP Draft System](/docs/mcp/draft-system).
+
+**Is Zen Mesh certified under any framework?**
+
+No. SOC 2, ISO 27001, PCI DSS, HIPAA, and FedRAMP are either planned or not applicable. See [Trust Controls & Compliance](/docs/security/trust-controls). Zen Mesh is not certified under any framework.
+
 ## See Also
 
 - [Launch Contracts Index](/docs/contracts/) — full contract catalog
