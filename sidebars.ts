@@ -11,7 +11,10 @@ const sidebars: SidebarsConfig = {
         'start-here/who-should-use-zen-mesh',
         'start-here/current-status',
         'start-here/concepts',
+        'start-here/limits',
         'start-here/support',
+        'start-here/geography',
+        'start-here/data-handling',
       ],
     },
     {
@@ -83,6 +86,7 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: 'Guides',
       items: [
+        'guides/labels',
         'guides/cluster-enrollment',
         'guides/adapters',
         'guides/destinations',
