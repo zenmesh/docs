@@ -162,7 +162,7 @@ Non-claims and proof scope are authoritative — see the Non-Claims and Wedge Ev
 ## Launch pages (public self-serve)
 
 - [Plans & Limits](https://docs.zen-mesh.io/docs/start-here/limits): Resource limits, over-limit behavior, error codes by plan. Free: 3 endpoints/sources/targets/routes, 1K events/mo. Pro: 50 each, 100K events/mo.
-- [Geography](https://docs.zen-mesh.io/docs/start-here/geography): SaaS control plane on GCP Toronto, entry point confirmed at launch, EU/APAC planned
+- [Geography](https://docs.zen-mesh.io/docs/start-here/geography): SaaS control plane on GCP Toronto Canada, entry point provider/region to be confirmed before launch, EU/APAC planned
 - [Data Handling](https://docs.zen-mesh.io/docs/start-here/data-handling): Retention, encryption, deletion/export, support access policy
 - [Labels Platform](https://docs.zen-mesh.io/docs/guides/labels): Reserved namespaces (zen-mesh.io/*), plan limits, RBAC/ABAC via labels, API/CLI examples, MCP read-only
 - [Trust Controls & Compliance](https://docs.zen-mesh.io/docs/security/trust-controls): Current compliance posture, control-to-requirement mapping, evidence refs, no certification claims
@@ -206,6 +206,7 @@ Non-claims and proof scope are authoritative — see the Non-Claims and Wedge Ev
 - [Onboarding Happy and Failure Paths](https://docs.zen-mesh.io/docs/contracts/onboarding-paths): Onboarding guides with happy path and failure path scenarios — signup through support
 - [Launch Rehearsal Scorecard](https://docs.zen-mesh.io/docs/contracts/launch-rehearsal-scorecard): Rehearsal scorecard — pass/fail/blocked, owner, evidence link, customer impact, launch blocker flag
 - [Public Trust FAQ](https://docs.zen-mesh.io/docs/contracts/public-trust-faq): FAQ about trust claims — no certification, what evidence means, what payload access means, what is not yet live
+- [Permission Channels Contract](https://docs.zen-mesh.io/docs/contracts/permission-channels): UI/API/MCP as first-class permission axes — label-scoped, user/group-gated, channel-aware permissions. Contract/design only.
 
 ## Operations
 

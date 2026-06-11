@@ -12,8 +12,8 @@ description: Decision preparation for the first data-plane entry point provider 
 
 ## Current State
 
-- **SaaS control plane:** GCP Toronto (`northamerica-northeast2`) — confirmed at launch
-- **Data-plane entry point:** TBD — provider and region to be confirmed
+- **SaaS control plane:** GCP Toronto (`northamerica-northeast2`) — live
+- **Data-plane entry point:** Provider and region to be confirmed before launch
 - **Single entry point at launch** is confirmed. Multi-region (EU, APAC) is planned.
 
 ## Decision Required

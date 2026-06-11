@@ -15,7 +15,7 @@ Billing, configuration, user management, and the API gateway. The control plane 
 
 ### Data Plane — Entry Point
 
-Webhook ingestion, routing, and delivery. This is where your events flow. The initial entry point availability will be confirmed at launch. Additional data plane locations are planned.
+Webhook ingestion, routing, and delivery. This is where your events flow. The entry point provider and region will be confirmed before launch. Additional data plane locations are planned.
 
 ### Edge / Agent — Your Infrastructure
 

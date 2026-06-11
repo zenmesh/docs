@@ -7,7 +7,7 @@ description: Where Zen Mesh processes your data — SaaS hosting, entry points, 
 
 This page documents where your data is processed and where webhook traffic enters the Zen Mesh network.
 
-> **Note:** Entry point provider and region are to be confirmed before the initial launch. The information on this page reflects target architecture and planned expansion. Do not use this page for binding compliance or data-sovereignty decisions.
+> **Note:** Entry point provider and region are to be confirmed before launch. EU, APAC, and China entry points are planned but not yet available. Do not use this page for binding compliance or data-sovereignty decisions beyond what is documented here.
 
 ## Our SaaS runs in Canada
 
@@ -15,11 +15,11 @@ The Zen Mesh SaaS control plane — including billing, configuration, user manag
 
 ## Entry Points
 
-Your webhook traffic enters through your chosen entry point. Initial entry point availability will be confirmed at launch. Additional data plane locations are planned.
+Your webhook traffic enters through your chosen entry point. The entry point provider and region will be confirmed before launch.
 
 All webhook sources can be located anywhere. Traffic routes from the source through the configured entry point to your infrastructure.
 
-Entry point selection is a roadmap item. Users will eventually be able to choose where flows run, including Free users. Do not rely on future entry points for current compliance or architecture decisions.
+> "Our SaaS runs in Canada. Your webhook traffic enters through your chosen entry point. Entry point provider and region to be confirmed before launch. EU and APAC entry points are planned for teams with data sovereignty requirements."
 
 ## Planned data planes
 
@@ -36,38 +36,14 @@ Data residency can be revisited when a second data plane launches. Do not claim 
 Data-plane selection is a planned capability. Users will eventually be able to select which entry point processes their events:
 
 - **Free:** Data-plane selection is planned for all plans. Do not rely on future entry points for current architecture decisions.
-- **Pro:** Data-plane selection is planned.
-- **Business/Enterprise:** Dedicated adapters for specific data-plane regions are a future/contact-us capability, not live.
+- **Pro:** Same planned capability.
+- **Business / Enterprise:** Same planned capability, with dedicated entry points planned for Enterprise.
 
-## Multi-Data-Plane Resilience
-
-Multi-data-plane resilience — running webhook delivery across multiple entry points for redundancy — is a roadmap concept. It is not currently available.
-
-- Active-active delivery across regions is not available at launch.
-- Failover between data planes is not automated at launch.
-- This capability is under evaluation for future plans, starting with Business and Enterprise tiers.
-
-## Data flow
-
-```
-Webhook Source → Entry Point (confirmed at launch) → Zen Mesh Data Plane → Your Infrastructure
-                                                            ↕
-                                                   Control Plane (Toronto, Canada / GCP)
-```
-
-The control plane handles configuration and billing but does not sit in the runtime event delivery path. Events flow through the data plane directly to your infrastructure.
-
-## What we do not claim
-
-- We do not claim data residency beyond Toronto/GCP for the control plane and the documented entry point for the data plane.
-- We do not claim EU, APAC, or China availability until those entry points are documented as available on this page.
-- We do not claim data sovereignty compliance for any specific jurisdiction.
-- We do not claim data-plane choice is available at launch.
-- We do not claim multi-data-plane resilience.
-- We do not claim dedicated adapters per region outside Business/Enterprise as a contact-us capability.
+Data-plane choice is not available at launch. When it becomes available, users will be able to choose where flows run from the dashboard and API.
 
 ## See also
 
+- [Plans & Limits](/docs/start-here/limits) — plan comparison and limits
 - [Data Handling](/docs/start-here/data-handling) — retention, encryption, and access policy
-- [Security Model](/docs/security/) — three-plane architecture and security controls
-- [Plans & Limits](/docs/start-here/limits) — plan tiers and limits
+- [Security Model](/docs/architecture/security-model) — three-plane architecture
+- [Support](/docs/start-here/support) — support channels by plan

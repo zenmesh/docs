@@ -10,7 +10,7 @@ description: Data-plane selection contract — SaaS entry point choice, geograph
 ## V1 Scope
 
 - **SaaS control plane:** Toronto, GCP (`northamerica-northeast2`)
-- **Entry point:** Single entry point at launch. The entry point location will be confirmed at launch.
+- **Entry point:** Provider and region to be confirmed before launch. Additional entry point locations are planned.
 - **UI behavior:** If only one data plane exists, the UI shows one selectable option plus a faded "coming soon" indicator for future locations/providers
 - Use **provider-native region names** where possible (e.g., GCP region names, not custom names)
 - Label: `zen-mesh.io/plane` (confirmed reserved label space). This label is set by the system and not mutable by customers. It is used internally for routing and selection.

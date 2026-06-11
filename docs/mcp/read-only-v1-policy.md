@@ -31,6 +31,12 @@ The MCP server provides **read-only** access to Zen Mesh platform data for AI ag
 
 The V1 MCP interface prioritizes safe, auditable read access for AI agents. Write and configuration operations carry additional authorization, idempotency, and audit requirements that are deferred to a future V2 iteration.
 
+## Relationship to Channel-Aware Permissions
+
+The V1 read-only policy is the current MCP boundary. A future iteration may introduce channel-aware permissions where MCP access can be scoped by label selectors, users, and groups — similar to UI and API permissions. Until that is designed and implemented, the read-only policy remains authoritative.
+
+See [Permission Channels Contract](/docs/contracts/permission-channels) for the design.
+
 ## Enforcement
 
 Write-denial is enforced at the MCP proxy layer in zen-back. Attempted write operations return a clear denial response indicating the operation is not supported in V1 (see [MCP Examples](./examples.md) for denied write scenarios).

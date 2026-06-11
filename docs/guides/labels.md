@@ -21,9 +21,13 @@ All system labels use the `zen-mesh.io/` prefix. Customers cannot create, update
 - `zen-mesh.io/internal-*` — internal system labels (opaque to users)
 - `zen-mesh.io/plane` — data-plane affinity label (system-set, not customer-mutable)
 
-### Do NOT use `zen/*` or `zen.io/*`
+### Legacy reserved namespace: `zen.io/*`
 
-The bare `zen/` and `zen.io/` prefixes are **not** valid namespaces. They are neither canonical nor legacy. Do not use them.
+The `zen.io/` prefix is a legacy reserved namespace from earlier Zen Mesh versions. It is reserved for backward compatibility and should not be used for new labels. Existing resources with `zen.io/` labels continue to function.
+
+### Do NOT use `zen/*`
+
+The bare `zen/` prefix is **not** a valid namespace. It is neither canonical nor legacy. Do not use it.
 
 ## User Labels
 
@@ -137,6 +141,18 @@ service=api-gateway
 tier=critical
 ```
 
+### Environment labels
+
+The `zen-mesh.io/env` label is a system-reserved key with customer-chosen values:
+
+```
+zen-mesh.io/env=dev
+zen-mesh.io/env=staging
+zen-mesh.io/env=prod
+```
+
+These are optional. You decide whether to use environment labels and what values to assign. The system does not enforce or validate environment values — they are for your organizational use.
+
 ### API Examples
 
 **List endpoints by label:**
@@ -220,6 +236,36 @@ permissions:
   - evidence:read
 ```
 
+**Example: Developer scoped to dev** — access limited to development resources only:
+
+```yaml
+group: developers
+scope:
+  zen-mesh.io/env: dev
+permissions:
+  - endpoints:read,write
+  - sources:read,write
+  - targets:read,write
+  - routes:read,write
+  - evidence:read
+```
+
+**Example: Operator scoped to prod** — access limited to production checkout resources:
+
+```yaml
+group: checkout-ops
+scope:
+  project: checkout
+  zen-mesh.io/env: prod
+permissions:
+  - endpoints:read,write
+  - sources:read,write
+  - targets:read,write
+  - routes:read,write
+  - evidence:read
+  - logs:read
+```
+
 **Example: Read-only access** — view all resources:
 
 ```yaml
@@ -236,6 +282,63 @@ permissions:
 
 An empty policy selector means all resources. Saving a policy with an empty selector requires a warning confirmation and the option to save the decision for future use.
 
+### Channel-Aware Permissions (Design)
+
+These examples illustrate the design for UI/API/MCP as permission axes. Channel-aware permissions are not yet implemented.
+
+**Example: MCP dev-only** — MCP agents can manage delivery for development resources only:
+
+```yaml
+group: dev-agents
+channel: mcp
+scope:
+  zen-mesh.io/env: dev
+permissions:
+  - routes:read
+  - delivery:read
+```
+
+**Example: MCP denied for prod** — explicit deny for production scope:
+
+```yaml
+group: dev-agents
+channel: mcp
+deny:
+  scopes:
+    - zen-mesh.io/env: prod
+```
+
+**Example: API read-only** — API keys scoped to read-only across all resources:
+
+```yaml
+group: api-readers
+channel: api
+permissions:
+  - "*":read
+```
+
+**Example: Multi-channel with label scoping** — different permission levels per channel:
+
+```yaml
+group: payments-team
+channels:
+  ui:
+    permissions: ["*:admin"]
+    scope:
+      team: payments
+  api:
+    permissions: ["*:write"]
+    scope:
+      team: payments
+  mcp:
+    permissions: ["routes:read", "delivery:read"]
+    scope:
+      team: payments
+      zen-mesh.io/env: dev
+```
+
+See [Permission Channels Contract](/docs/contracts/permission-channels) for the full design.
+
 ## See also
 
 - [Plans & Limits](/docs/start-here/limits) — label count limits by plan
@@ -243,3 +346,4 @@ An empty policy selector means all resources. Saving a policy with an empty sele
 - [Tenant Isolation](/docs/security/tenant-isolation) — how labels support isolation
 - [MCP Overview](/docs/mcp/overview) — MCP read-only label policy
 - [Launch Contracts Index](/docs/contracts/) — contract-first architecture decisions
+- [Permission Channels Contract](/docs/contracts/permission-channels) — UI/API/MCP as permission axes

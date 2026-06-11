@@ -13,9 +13,9 @@ Zen Mesh SaaS runs on **Google Cloud Platform in Toronto, Canada**. The control 
 
 ## Entry Points
 
-Your webhook traffic enters through your chosen entry point. Initial entry point availability will be confirmed at launch. Additional data plane locations are planned.
+Your webhook traffic enters through your chosen entry point. The entry point provider and region will be confirmed before launch. Additional data plane locations are planned.
 
-- **Launch scope:** Entry point to be confirmed at launch
+- **Current:** To be confirmed before launch
 - **Planned:** EU and APAC entry points for teams with data sovereignty requirements
 
 Webhook sources can be located anywhere. Traffic routes through the configured entry point to your infrastructure.
@@ -40,51 +40,32 @@ DLQ retention follows the same period as log retention unless the DLQ item count
 ## Payload Handling
 
 - **Customer payload retention** for replay/DLQ, where enabled, is encrypted and governed by plan retention.
-- **Zen operational logs do not store raw payloads.**
-- **Encryption at rest:** Payloads and logs are stored encrypted at rest.
-- **Not used for training:** Your webhook payloads and event data are never used for model training or analytics beyond operating the service.
-- **Evidence contents:** Delivery evidence includes timestamps, status codes, label metadata, and — depending on configuration — payload content. Payload inclusion in evidence is configurable per endpoint.
+- **Zen operations staff** do not have standing access to customer payloads. Payload access requires explicit customer authorization.
+- Payload encryption is described in the [Payload Encryption, Replay, and DLQ Contract](/docs/contracts/payload-encryption-replay-dlq).
 
-## Log and Evidence Contents
+## Deletion and Export
 
-Delivery logs and evidence records may contain:
+Customers can request data deletion or export:
 
-- Delivery receipts with timestamps
-- HTTP status codes and response headers
-- Label metadata associated with the resource (snapshotted at event time)
-- Target URL (redacted to domain only in some contexts)
-- Payload content (if configured for inclusion)
+- **Deletion requests:** Submit via [support@zen-mesh.io](mailto:support@zen-mesh.io). Deletion is currently a manual, request-based process. Automated self-service deletion is planned.
+- **Export requests:** Submit via [support@zen-mesh.io](mailto:support@zen-mesh.io). Export is currently a manual, request-based process. Automated self-service export is planned.
+- Do not claim automated deletion or export until the feature is confirmed in documentation.
 
-## Support Access Policy
+## Support Payload Access Policy
 
-Zen Mesh support staff follow these principles:
+Support staff may need to access payload data to troubleshoot delivery issues. Access is governed by the [Support Payload Access Contract](/docs/contracts/support-payload-access):
 
-- **Metadata by default:** Support staff access metadata, not raw payloads. Debug and support views show metadata and redacted content by default.
-- **Payload access disabled by default:** Support payload-level access is disabled by default. Staff cannot browse customer webhook payloads.
-- **Explicit customer authorization required:** Payload-level access requires explicit customer authorization for each request. Access is time-bounded if implemented. If this feature is not fully implemented, it is marked as planned/hardening.
-- **Customer-authorized path:** If payload samples are needed, customers should provide them through a safe, customer-authorized path.
-- **Audited access:** All support access events are logged and auditable. Customers can request a report of access events.
-- **Manual process:** The current access process is manual and request-based. Automated self-serve access management is planned for a future release.
+- Support access requires **explicit customer authorization** before any payload is viewed.
+- Access is **time-bounded** — authorization expires after a defined window.
+- All access is **audited** and logged.
+- Staff follow the [Support Safe Payload Handling](/docs/contracts/support-safe-payload-handling) checklist.
 
-## Data Deletion and Export
-
-To request data deletion or export:
-
-1. Contact [support@zen-mesh.io](mailto:support@zen-mesh.io)
-2. Include your tenant ID and the specific data scope (all data, specific date range, specific resource types)
-3. The support team processes requests manually at launch
-
-Export and deletion are manual processes at launch. Automated self-serve data management is planned for a future release.
-
-## Tenant Deletion
-
-- **Soft delete:** 7 days after deletion request
-- **Purge:** Within 30 days after soft delete
-- Data cannot be recovered after purge
+Do not claim automated access controls or zero-knowledge payload handling unless documented as implemented.
 
 ## See also
 
 - [Geographic Transparency](/docs/start-here/geography) — where data is processed
-- [Security Model](/docs/security/) — three-plane architecture and security controls
-- [Plans & Limits](/docs/start-here/limits) — plan tiers and limits
-- [Trust Controls & Compliance Mapping](/docs/security/trust-controls) — compliance status
+- [Plans & Limits](/docs/start-here/limits) — retention periods by plan
+- [Support](/docs/start-here/support) — support channels and contact
+- [Security Model](/docs/architecture/security-model) — architecture and security overview
+- [Trust Controls](/docs/security/trust-controls) — compliance posture
