@@ -64,6 +64,7 @@ const sidebars: SidebarsConfig = {
       label: 'Security',
       items: [
         'security/index',
+        'security/trust-controls',
         'security/security-capability-validation',
         'security/agent-saas-mtls',
         'security/zenlock-credential-lifecycle',
@@ -183,6 +184,17 @@ const sidebars: SidebarsConfig = {
         'reference/webhook-observability-and-evidence',
         'reference/delivery-status',
         'reference/webhook-faq',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Legal',
+      items: [
+        'legal/terms-of-service',
+        'legal/privacy-policy',
+        'legal/acceptable-use',
+        'legal/cookie-policy',
+        'legal/dpa',
       ],
     },
   ],

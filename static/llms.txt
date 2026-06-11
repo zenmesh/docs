@@ -137,6 +137,14 @@ Non-claims and proof scope are authoritative — see the Non-Claims and Wedge Ev
 - [Installation](https://docs.zen-mesh.io/docs/getting-started/installation): Install paths for evaluation
 - [Support](https://docs.zen-mesh.io/docs/start-here/support): Contact and support resources
 
+## Launch pages (public self-serve)
+
+- [Plans & Limits](https://docs.zen-mesh.io/docs/start-here/limits): Resource limits, over-limit behavior, error codes by plan. Free: 3 endpoints/sources/targets/routes, 1K events/mo. Pro: 50 each, 100K events/mo.
+- [Geography](https://docs.zen-mesh.io/docs/start-here/geography): SaaS control plane on GCP Toronto, entry point confirmed at launch, EU/APAC planned
+- [Data Handling](https://docs.zen-mesh.io/docs/start-here/data-handling): Retention, encryption, deletion/export, support access policy
+- [Labels Platform](https://docs.zen-mesh.io/docs/guides/labels): Reserved namespaces (zen-mesh.io/*), plan limits, RBAC/ABAC via labels, API/CLI examples, MCP read-only
+- [Trust Controls & Compliance](https://docs.zen-mesh.io/docs/security/trust-controls): Current compliance posture, control-to-requirement mapping, no certification claims
+
 ## Operations
 
 - [Backups and Disaster Recovery](https://docs.zen-mesh.io/docs/operations/backups): Backup procedures, restore, DR runbook, RPO/RTO targets

@@ -9,13 +9,13 @@ Zen Mesh is built on a three-plane architecture designed to keep the control pla
 
 ## Three-Plane Architecture
 
-### Control Plane — Canada
+### Control Plane — Toronto / GCP
 
-Billing, configuration, user management, and the API gateway. The control plane does **not** sit in the runtime event delivery path.
+Billing, configuration, user management, and the API gateway. The control plane does **not** sit in the runtime event delivery path. The SaaS control plane runs on Google Cloud Platform in Toronto.
 
-### Data Plane — Entry Point (AWS us-east-1)
+### Data Plane — Entry Point
 
-Webhook ingestion, routing, and delivery. This is where your events flow. Currently available in AWS us-east-1.
+Webhook ingestion, routing, and delivery. This is where your events flow. The initial entry point availability will be confirmed at launch. Additional data plane locations are planned.
 
 ### Edge / Agent — Your Infrastructure
 
@@ -48,12 +48,13 @@ Every delivery attempt generates an evidence record:
 - Labeled with associated resource labels for attribution
 - Tamper-evident — evidence integrity can be verified
 - Searchable and filterable by labels
+- Labels are snapshotted at event time for evidence accuracy
 
 ### Labels in Evidence
 
 Labels attached to resources are propagated to evidence records. This enables:
 
-- Filtering evidence by team, project, or environment
+- Filtering evidence by team, project, or other customer-defined dimensions
 - RBAC scoping — users see only evidence for resources they can access
 - Billing attribution — delivery costs attributed by label dimensions
 
@@ -68,7 +69,7 @@ Secrets and credentials are managed through ZenLock, an encrypted secret store:
 
 ### Target URL Protection
 
-Target URLs are validated and stored securely. SSRF protection is implemented as a security control. Additional launch hardening is in progress.
+Target URLs are validated and stored securely. SSRF protection is tracked as a launch gate. Additional launch hardening is in progress.
 
 ## Claim Transparency
 
@@ -76,27 +77,23 @@ We are transparent about what we do and do not claim. The following are **goals*
 
 - Guaranteed delivery
 - Exactly-once semantics
-- SOC 2 certification
-- HIPAA compliance
-- PCI compliance
-- Zero-trust completion
-- Launch-ready status
-- Production-live status
-- SLA readiness
+- SOC 2, GDPR, ISO, PCI, HIPAA, or FedRAMP certification
+- Data residency for any specific jurisdiction beyond documented hosting
 
-We track these internally and will update this documentation as they are achieved.
+For a detailed mapping of trust controls and compliance status, see [Trust Controls & Compliance Mapping](/docs/security/trust-controls).
 
-## Reporting Security Issues
+## What we do not claim
 
-If you discover a security vulnerability, please report it responsibly:
-
-- Email [support@zen-mesh.io](mailto:support@zen-mesh.io) with "Security" in the subject line
-- Do not post vulnerabilities publicly before we have responded
-- See our [Responsible Disclosure page](https://zen-mesh.io/security-disclosure) for full guidelines
+- We do not claim "production-ready" as a blanket assertion.
+- "Enterprise-grade" refers to specific architectural features (RBAC/ABAC controls, three-plane isolation), not a broad enterprise-readiness claim.
+- "Zero-trust" is used as scoped architecture language with transparency about current implementation status.
+- We do not claim "no payload touches SaaS" unless backed by evidence of the exact architecture path.
+- "Control plane never in runtime event path" is tied to the three-plane model and evidence-backed.
 
 ## See also
 
-- [Data Handling](/docs/start-here/data-handling) — retention, encryption, and access policy
-- [Geography](/docs/start-here/geography) — where your data is processed
-- [Labels](/docs/guides/labels) — label-powered RBAC and evidence
-- [Tenant Isolation](/docs/security/tenant-isolation) — isolation model details
+- [Trust Controls & Compliance Mapping](/docs/security/trust-controls) — control status for SOC 2, GDPR, ISO, PCI, HIPAA, FedRAMP
+- [Data Handling](/docs/start-here/data-handling) — retention, encryption, payload access
+- [Labels](/docs/guides/labels) — label namespaces and RBAC/ABAC
+- [Tenant Isolation](/docs/security/tenant-isolation) — row-level security and isolation model
+- [Responsible Disclosure](https://zen-mesh.io/security-disclosure) — security reporting

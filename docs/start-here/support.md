@@ -18,19 +18,23 @@ Get help with Zen Mesh setup, configuration, and troubleshooting. Support channe
 
 ## Support by Plan
 
-### Free — Community
+### Free — Community / Best Effort
 
 - Community support via GitHub Issues
 - Full documentation access
+- Best-effort assistance during the first year
 - No email support
 - No target response time
 
-### Pro — Email
+### Pro — Preferential
 
+- Preferential support over Free
 - Email support at [support@zen-mesh.io](mailto:support@zen-mesh.io)
 - Best-effort support
 - **Target response time: 48 hours**
 - "Target response time" means we aim to respond within the stated window. It is not an SLA or contractual guarantee.
+
+No backup or escalation responder is published at launch.
 
 ### Business — Coming Soon
 
@@ -41,7 +45,6 @@ Get help with Zen Mesh setup, configuration, and troubleshooting. Support channe
 ### Enterprise — Contact Us
 
 - Custom support arrangements
-- Dedicated contact (planned)
 - [Contact us](mailto:zen@zen-mesh.io?subject=Enterprise%20support%20inquiry) to discuss
 
 ## Before Contacting Support
@@ -73,21 +76,16 @@ For suspected service incidents:
 
 For security issues, see [Responsible Disclosure](https://zen-mesh.io/security-disclosure) instead of standard support channels.
 
-## Launch Validation Checklist
+## Support Area Roadmap
 
-The following flows are validated as part of launch readiness:
+The following support capabilities are planned but not yet available:
 
-- Free plan limit enforcement (endpoints, events, rate) and upgrade path to Pro
-- Support-ticket rehearsal: submitting, receiving acknowledgment, tracking resolution
-- Provider connector flows for launch targets:
-  - Stripe webhook ingestion and delivery
-  - GitHub webhook ingestion and delivery
-  - Custom webhook source
-  - Shopify webhook ingestion and delivery
-  - Twilio webhook ingestion and delivery
-- Available provider pages will be updated as each connector is validated
+- Status page with real-time incident tracking
+- Customer-facing ticket management portal
+- Slack or Discord community channel (not yet created)
+- On-call rotation with published escalation path
 
-These validation steps do not gate public launch but are tracked internally to ensure coverage.
+Do not rely on planned support capabilities until they are documented as available on this page.
 
 ## Related
 

@@ -1,11 +1,11 @@
 ---
 sidebar_label: Plans & Limits
-description: Plan comparison, resource limits, and over-limit behavior for Zen Mesh.
+description: Plan comparison, resource limits, over-limit behavior, billing, and package visibility for Zen Mesh.
 ---
 
 # Plans, Limits, and Over-Limit Behavior
 
-Zen Mesh offers transparent, plan-based limits. This page documents current plan tiers, their limits, and how the system behaves when you approach or exceed them.
+Zen Mesh offers transparent, plan-based limits. This page documents current plan tiers, their limits, pricing, over-limit behavior, and package visibility.
 
 ## Plan Comparison
 
@@ -24,20 +24,26 @@ Zen Mesh offers transparent, plan-based limits. This page documents current plan
 | **Team members** | 1 | 5 | Coming soon | Custom |
 | **API keys** | 2 | 10 | Coming soon | Custom |
 | **Custom labels / resource** | 5 | 20 | 50 | Custom |
-| **Support** | Community | Email (target 48h) | Priority (planned) | Custom |
+| **Support** | Community / Best effort | Preferential (target 48h) | Priority (planned) | Custom |
 
 **Free** and **Pro** are live at launch. **Business** is coming soon. **Enterprise** is available by contacting us.
 
-### Pricing
+## Pricing
 
 - **Free**: no credit card required.
-- **Pro**: $29/month (early bird pricing). Annual billing available at $23/month (20% discount).
+- **Pro**: $29/month (early bird pricing). Annual billing available at $23/month (20% discount). Annual billing is shown at signup.
 - **Business**: coming soon — no price published yet.
 - **Enterprise**: contact us for custom arrangements.
 
-### Launch validation
+## Design Partner Program
 
-Hitting Free plan limits and verifying the upgrade path to Pro is part of launch validation. This ensures that limit enforcement and the upgrade flow work correctly for real customers.
+During the first 6 months after launch, Zen Mesh offers a Design Partner Program:
+
+- **6 months of Pro free**
+- Available during the first 6 months post-launch
+- Requires annual payment commitment after the free period
+- Monthly feedback via online survey
+- Contact [support@zen-mesh.io](mailto:support@zen-mesh.io?subject=Design%20Partner%20Program) to apply
 
 ## Over-Limit Behavior
 
@@ -74,14 +80,29 @@ Example response:
 
 ### Event and rate limits — HTTP 429
 
-When you exceed event volume, request rate, or replay limits:
+#### Free plan
+
+When you exceed the Free plan monthly event limit:
 
 - **HTTP 429 Too Many Requests**
-- Includes `Retry-After` header indicating when you can retry
-- Response body includes:
-  - The limit that was exceeded
-  - When the limit window resets
-  - Your current usage in the window
+- Hard stop — no overage, no continued delivery
+- Response includes upgrade path to Pro
+- No silent drops
+
+#### Pro plan
+
+When you approach or exceed the Pro plan monthly event limit:
+
+- **Warnings before limit** — notifications as you approach the limit
+- **Overage or upgrade path** — no hard stop without alternative. Pro customers receive an overage option or upgrade guidance
+- No silent drops
+
+All 429 responses include:
+
+- `Retry-After` header indicating when you can retry
+- The limit that was exceeded
+- When the limit window resets
+- Your current usage in the window
 
 Example response:
 
@@ -107,9 +128,7 @@ Example response:
 When a request payload exceeds your plan's maximum:
 
 - **HTTP 413 Payload Too Large**
-- Response body includes:
-  - The payload size received
-  - The maximum allowed for your plan
+- Response body includes the payload size received and the maximum allowed for your plan
 
 ```json
 {
@@ -143,8 +162,61 @@ All over-limit error responses include an `upgrade_url` pointing to the pricing 
 
 Warning emails for approaching limits are planned but launch-dependent. Do not rely on email notifications until this feature is confirmed in the documentation.
 
+## Billing
+
+### Failed payment
+
+If a Pro subscription payment fails:
+
+- Customer is notified and given **10 days** to update payment information
+- After day 10, the account is downgraded to Free
+- No data is deleted immediately on downgrade
+
+### Pro data after downgrade
+
+When a Pro account is downgraded to Free:
+
+- Data is preserved for **30 days** after downgrade
+- After 30 days, retention reverts to Free plan limits (7-day logs, 30-day evidence)
+- Data exceeding Free limits is purged per the retention schedule
+
+### Overrides
+
+Plan limit overrides are approved by Leonardo at launch:
+
+- **Default duration:** 30 days
+- **Maximum duration:** 1 year
+- **Audit evidence required** for every override
+- No silent permanent overrides
+- All overrides are tracked and auditable
+
+## Package Visibility
+
+Feature availability by plan:
+
+| Feature | Free | Pro | Business | Enterprise |
+|---------|------|-----|----------|------------|
+| **MCP Draft System** | Visible (read-only) | Visible | Visible | Visible |
+| **JSONPath transforms** | — | Yes | Yes | Yes |
+| **JSONPath filters** | — | Yes | Yes | Yes |
+| **Evidence export** | Yes | Yes | Yes | Yes |
+| **Full evidence views** | Yes | Yes | Yes | Yes |
+| **Fan-out** | Not available unless proven | Yes | Yes | Yes |
+| **S3 fan-out target** | — | Desired for Pro | Yes | Yes |
+
+### Launch providers
+
+Initial launch targets for webhook sources:
+
+- **Stripe** — webhook ingestion and delivery
+- **GitHub** — webhook ingestion and delivery
+- **Custom webhook** — generic webhook source
+
+Shopify and Twilio are not confirmed as live at launch. Provider pages will be updated as each connector is validated.
+
 ## See also
 
 - [Pricing](https://zen-mesh.io/pricing) — plan details and signup
 - [Labels](/docs/guides/labels) — label limits per plan
 - [API Errors](/docs/api/errors) — full error code reference
+- [Support](/docs/start-here/support) — support channels by plan

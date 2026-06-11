@@ -13,16 +13,16 @@ Zen Mesh uses reserved label prefixes to prevent collisions between system and u
 
 ### Canonical reserved namespace: `zen-mesh.io/*`
 
-All system labels use the `zen-mesh.io/` prefix. Do not create labels with this prefix unless documented.
+All system labels use the `zen-mesh.io/` prefix. Customers cannot create, update, or delete labels with this prefix.
 
-- `zen-mesh.io/env` — environment indicator (`dev`, `staging`, `prod`)
+- `zen-mesh.io/env` — optional environment indicator (customer-chosen values)
 - `zen-mesh.io/source-type` — source type classification
 - `zen-mesh.io/region` — region classification
 - `zen-mesh.io/internal-*` — internal system labels (opaque to users)
 
-### Legacy reserved namespace: `zen.io/*`
+### Legacy reserved namespace: `zen.io/*` (deprecated)
 
-The `zen.io/` prefix is a legacy reserved namespace. It is still accepted for backward compatibility but new integrations should use `zen-mesh.io/`.
+The `zen.io/` prefix is a legacy/internal reserved namespace. It is accepted for backward compatibility but is slated for removal. New integrations must use `zen-mesh.io/*`. Do not build new workflows against `zen.io/*` labels.
 
 ### Do NOT use `zen/*`
 
@@ -30,17 +30,23 @@ The bare `zen/` prefix is **not** a valid namespace. It is neither canonical nor
 
 ## User Labels
 
-User labels are key-value pairs you define to organize your resources. Common patterns:
+User labels are key-value pairs you define to organize your resources. You are free to choose label keys and values that match your team's naming conventions. Common patterns:
 
 | Label Key | Example Value | Purpose |
 |-----------|---------------|---------|
 | `team` | `payments` | Team ownership |
 | `project` | `checkout` | Project association |
 | `owner` | `alice` | Individual owner |
-| `environment` | `production` | Environment tagging |
 | `service` | `api-gateway` | Service identification |
+| `tier` | `critical` | Priority classification |
+
+There is no required set of label keys or values. `zen-mesh.io/env` is available but not required — you decide if and how to use environment labels.
 
 Keys must start with a letter or number, and may contain letters, numbers, hyphens, underscores, and forward slashes (for namespaces).
+
+### Label key casing
+
+Label keys and values preserve customer intent. Zen may normalize for search and collision detection internally. Avoid creating case-only duplicate keys (e.g., `Team` and `team` on the same resource) to prevent confusion.
 
 ## System Labels
 
@@ -48,7 +54,7 @@ Keys must start with a letter or number, and may contain letters, numbers, hyphe
 
 These labels are visible in the dashboard, API responses, and search:
 
-- `zen-mesh.io/env` — `dev`, `staging`, `prod`
+- `zen-mesh.io/env` — customer-chosen environment values (optional)
 - `zen-mesh.io/source-type` — source classification
 - `zen-mesh.io/region` — region classification
 
@@ -60,13 +66,17 @@ Labels prefixed with `zen-mesh.io/internal-` are system-internal. They may be:
 - Opaque (present but not human-readable)
 - Used for internal routing, billing, or security
 
+## Managing Labels
+
+Users who can create or manage an object may add, update, or delete customer labels on that object. All label changes are audited.
+
 ## What Labels Power
 
 Labels are not just metadata — they are integral to how Zen Mesh operates:
 
 | Capability | How Labels Are Used |
 |------------|-------------------|
-| **RBAC/ABAC** | Access policies scoped by label selectors (e.g., a developer can access only `zen-mesh.io/env=dev` resources) |
+| **RBAC/ABAC** | Access policies scoped by label selectors (e.g., a policy grants access only to resources with `team=payments`) |
 | **Billing attribution** | Resources attributed to teams/projects via labels for billing breakdowns |
 | **Limits** | Label count per resource is limited by plan tier |
 | **Search/UX** | Filter and search resources by label in the dashboard |
@@ -87,7 +97,7 @@ Custom labels per resource are limited by plan:
 | Business | 50 (coming soon) |
 | Enterprise | Custom |
 
-Reserved system labels (`zen-mesh.io/*`) do not count against the custom label limit.
+Labels are available to all users generally. Reserved system labels (`zen-mesh.io/*`) do not count against the custom label limit.
 
 ## MCP Restriction
 
@@ -97,6 +107,8 @@ MCP (Model Context Protocol) tools can **read** and **filter** by labels, but **
 - Apply label changes from draft state
 - Create or delete labels directly
 
+MCP can draft changes, but humans must apply drafts through RBAC-controlled apply paths. Do not say MCP can apply drafts.
+
 Label mutations must go through the API or CLI.
 
 ## Label Examples
@@ -104,13 +116,11 @@ Label mutations must go through the API or CLI.
 ### Common label assignments
 
 ```
-zen-mesh.io/env=dev
-zen-mesh.io/env=staging
-zen-mesh.io/env=prod
 team=payments
 project=checkout
 owner=alice
 service=api-gateway
+tier=critical
 ```
 
 ### API Examples
@@ -166,14 +176,14 @@ zen endpoint label set stripe-dev team=payments project=checkout
 
 ### Policy Examples
 
-Labels enable role-based and attribute-based access control:
+Customers define their own groups and policies. The examples below are templates, not mandatory roles.
 
-**Developer role** — scoped to development resources only:
+**Example: Team-scoped policy** — access limited to a specific team's resources:
 
 ```yaml
-role: developer
+group: payments-team
 scope:
-  zen-mesh.io/env: dev
+  team: payments
 permissions:
   - endpoints:read,write
   - sources:read,write
@@ -181,13 +191,13 @@ permissions:
   - routes:read
 ```
 
-**Operator role** — scoped to a specific project in production:
+**Example: Project-scoped policy** — access limited to a specific project:
 
 ```yaml
-role: operator
+group: checkout-team
 scope:
   project: checkout
-  zen-mesh.io/env: prod
+  tier: critical
 permissions:
   - endpoints:read,write
   - sources:read,write
@@ -196,10 +206,10 @@ permissions:
   - evidence:read
 ```
 
-**Viewer role** — read access to all resources:
+**Example: Read-only access** — view all resources:
 
 ```yaml
-role: viewer
+group: observers
 scope: {}
 permissions:
   - endpoints:read
@@ -209,6 +219,8 @@ permissions:
   - evidence:read
   - logs:read
 ```
+
+An empty policy selector means all resources. Saving a policy with an empty selector requires a warning confirmation and the option to save the decision for future use.
 
 ## See also
 
