@@ -21,6 +21,7 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: 'Contracts',
       items: [
+        'contracts/index',
         'contracts/multi-target-delivery',
         'contracts/object-store-fan-out',
         'contracts/payload-encryption-replay-dlq',
@@ -28,6 +29,7 @@ const sidebars: SidebarsConfig = {
         'contracts/support-payload-access',
         'contracts/data-plane-selection',
         'contracts/evidence-export',
+        'contracts/open-launch-decisions',
       ],
     },
     {

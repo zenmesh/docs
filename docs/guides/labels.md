@@ -21,9 +21,9 @@ All system labels use the `zen-mesh.io/` prefix. Customers cannot create, update
 - `zen-mesh.io/internal-*` — internal system labels (opaque to users)
 - `zen-mesh.io/plane` — data-plane affinity label (system-set, not customer-mutable)
 
-### Legacy reserved namespace: `zen.io/*` (deprecated)
+### Legacy/internal debt: `zen.io/*`
 
-The `zen.io/` prefix is a legacy/internal reserved namespace. It is accepted for backward compatibility but is slated for removal. New integrations must use `zen-mesh.io/*`. Do not build new workflows against `zen.io/*` labels.
+The `zen.io/` prefix is internal cleanup debt — not a public contract, not a supported namespace for customer use. Do not use it in new integrations.
 
 ### Do NOT use `zen/*`
 
@@ -246,3 +246,4 @@ An empty policy selector means all resources. Saving a policy with an empty sele
 - [API Authentication](/docs/api/authentication) — API key management
 - [Tenant Isolation](/docs/security/tenant-isolation) — how labels support isolation
 - [MCP Overview](/docs/mcp/overview) — MCP read-only label policy
+- [Launch Contracts Index](/docs/contracts/) — contract-first architecture decisions
