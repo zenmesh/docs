@@ -215,7 +215,16 @@ Non-claims and proof scope are authoritative — see the Non-Claims and Wedge Ev
 - [API Safety](https://docs.zen-mesh.io/docs/contracts/api-safety): API safety and scoping — channel separation, mutation risk, rate limits, audit
 - [Policy Templates](https://docs.zen-mesh.io/docs/contracts/policy-templates): Ready-to-use permission templates — Free owner, Pro owner, developer, CI, MCP dev-only, API reader, payments manager, break-glass, fan-out manager
 - [Implementation Handoff](https://docs.zen-mesh.io/docs/contracts/implementation-handoff): Implementation handoff/spec for channel-aware permissions — data model, API expectations, UI behavior, MCP boundary, validators, negative controls
+- [Launch Branch Synthesis](https://docs.zen-mesh.io/docs/contracts/launch-branch-synthesis): Central index of every readiness pack — pricing, providers, labels, permissions, support, legal, trust, runtime, onboarding, billing
+- [Public Status Matrix](https://docs.zen-mesh.io/docs/contracts/public-status-matrix): Area-by-area public status — current status, launch dependency, proof needed, owner lane
+- [Customer FAQ](https://docs.zen-mesh.io/docs/contracts/customer-faq): Launch customer FAQ — Free vs Pro, overage cap, providers, evidence, support, permissions, MCP/API/UI
+- [Founder/Operator Review Checklist](https://docs.zen-mesh.io/docs/contracts/founder-review-checklist): Decisions Leonardo must approve — legal, entry point, support channels, Stripe billing, runtime proof
+- [Runtime Handoff Checklist](https://docs.zen-mesh.io/docs/contracts/runtime-handoff-checklist): Claims requiring runtime proof — expected negative controls, docs to update, claims that must remain false
+- [UI/API Handoff Checklist](https://docs.zen-mesh.io/docs/contracts/ui-api-handoff-checklist): UI/API surfaces to implement — permission editor, groups/users, overage cap UI, support forms, evidence export
+- [Launch Rehearsal Completion Template](https://docs.zen-mesh.io/docs/contracts/launch-rehearsal-completion-template): Rehearsal completion record with 20 steps — signup through delete
+- [Proven vs Contracted vs Planned](https://docs.zen-mesh.io/docs/contracts/proven-contracted-planned): Public-safe definitions of proven, contracted, planned, design, draft — classification reference
  
+## Operations
 ## Operations
 
 - [Backups and Disaster Recovery](https://docs.zen-mesh.io/docs/operations/backups): Backup procedures, restore, DR runbook, RPO/RTO targets

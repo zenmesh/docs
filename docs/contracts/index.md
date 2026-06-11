@@ -46,6 +46,14 @@ This is the central index of Zen Mesh's **contract-first launch architecture dec
 | [API Safety](./api-safety) | Guide | API safety and scoping — channel separation, mutation risk, rate limits, audit |
 | [Policy Templates](./policy-templates) | Guide | Ready-to-use permission templates — Free owner, Pro owner, developer, CI, MCP dev-only, API reader, payments manager, break-glass, fan-out manager |
 | [Implementation Handoff](./implementation-handoff) | Handoff | Implementation handoff/spec for channel-aware permissions — data model, API expectations, UI behavior, MCP boundary, validators, negative controls |
+| [Launch Branch Synthesis](./launch-branch-synthesis) | Synthesis | Central index of every readiness pack — pricing, providers, labels, permissions, support, legal, trust, runtime, onboarding, billing |
+| [Public Status Matrix](./public-status-matrix) | Matrix | Area-by-area public status — current status, launch dependency, proof needed, owner lane |
+| [Customer FAQ](./customer-faq) | FAQ | Launch customer FAQ — Free vs Pro, overage cap, providers, evidence, support, permissions, MCP/API/UI |
+| [Founder/Operator Review Checklist](./founder-review-checklist) | Checklist | Decisions Leonardo must approve — legal, entry point, support channels, Stripe billing, runtime proof |
+| [Runtime Handoff Checklist](./runtime-handoff-checklist) | Handoff | Claims requiring runtime proof — expected negative controls, docs to update, claims that must remain false |
+| [UI/API Handoff Checklist](./ui-api-handoff-checklist) | Handoff | UI/API surfaces to implement — permission editor, groups/users, overage cap UI, support forms, evidence export |
+| [Launch Rehearsal Completion Template](./launch-rehearsal-completion-template) | Template | Rehearsal completion record with 20 steps — signup through delete |
+| [Proven vs Contracted vs Planned](./proven-contracted-planned) | Reference | Public-safe definitions of proven, contracted, planned, design, draft — classification reference |
 
 ## Provider Status Matrix
 
