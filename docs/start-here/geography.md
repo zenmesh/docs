@@ -7,7 +7,7 @@ description: Where Zen Mesh processes your data — SaaS hosting, entry points, 
 
 This page documents where your data is processed and where webhook traffic enters the Zen Mesh network.
 
-> **Note:** The information on this page reflects the current launch configuration and planned expansion. Do not use this page for binding compliance or data-sovereignty decisions.
+> **Note:** Entry point provider and region are to be confirmed before the initial launch. The information on this page reflects target architecture and planned expansion. Do not use this page for binding compliance or data-sovereignty decisions.
 
 ## Our SaaS runs in Canada
 
@@ -15,9 +15,7 @@ The Zen Mesh SaaS control plane — including billing, configuration, user manag
 
 ## Entry Points
 
-Your webhook traffic enters through your chosen entry point. Currently available:
-
-- **AWS us-east-1** — the initial data plane entry point for webhook ingestion and delivery
+Your webhook traffic enters through your chosen entry point. Initial entry point availability will be confirmed at launch. Additional data plane locations are planned.
 
 All webhook sources can be located anywhere. Traffic routes from the source through the configured entry point to your infrastructure.
 
@@ -52,16 +50,16 @@ Multi-data-plane resilience — running webhook delivery across multiple entry p
 ## Data flow
 
 ```
-Webhook Source → Entry Point (AWS us-east-1) → Zen Mesh Data Plane → Your Infrastructure
-                                                  ↕
-                                         Control Plane (Toronto, Canada / GCP)
+Webhook Source → Entry Point (confirmed at launch) → Zen Mesh Data Plane → Your Infrastructure
+                                                            ↕
+                                                   Control Plane (Toronto, Canada / GCP)
 ```
 
 The control plane handles configuration and billing but does not sit in the runtime event delivery path. Events flow through the data plane directly to your infrastructure.
 
 ## What we do not claim
 
-- We do not claim data residency beyond Toronto/GCP for the control plane and AWS us-east-1 for the data plane.
+- We do not claim data residency beyond Toronto/GCP for the control plane and the documented entry point for the data plane.
 - We do not claim EU, APAC, or China availability until those entry points are documented as available on this page.
 - We do not claim data sovereignty compliance for any specific jurisdiction.
 - We do not claim data-plane choice is available at launch.

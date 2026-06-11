@@ -13,9 +13,9 @@ Zen Mesh SaaS runs on **Google Cloud Platform in Toronto, Canada**. The control 
 
 ## Entry Points
 
-Your webhook traffic enters through your chosen entry point. Currently available:
+Your webhook traffic enters through your chosen entry point. Initial entry point availability will be confirmed at launch. Additional data plane locations are planned.
 
-- **AWS us-east-1** — the initial data plane entry point for webhook ingestion and delivery
+- **Launch scope:** Entry point to be confirmed at launch
 - **Planned:** EU and APAC entry points for teams with data sovereignty requirements
 
 Webhook sources can be located anywhere. Traffic routes through the configured entry point to your infrastructure.

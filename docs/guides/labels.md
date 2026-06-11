@@ -21,13 +21,9 @@ All system labels use the `zen-mesh.io/` prefix. Customers cannot create, update
 - `zen-mesh.io/internal-*` — internal system labels (opaque to users)
 - `zen-mesh.io/plane` — data-plane affinity label (system-set, not customer-mutable)
 
-### Legacy/internal debt: `zen.io/*`
+### Do NOT use `zen/*` or `zen.io/*`
 
-The `zen.io/` prefix is internal cleanup debt — not a public contract, not a supported namespace for customer use. Do not use it in new integrations.
-
-### Do NOT use `zen/*`
-
-The bare `zen/` prefix is **not** a valid namespace. It is neither canonical nor legacy. Do not use it.
+The bare `zen/` and `zen.io/` prefixes are **not** valid namespaces. They are neither canonical nor legacy. Do not use them.
 
 ## User Labels
 

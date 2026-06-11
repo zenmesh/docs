@@ -126,10 +126,10 @@ Handles billing, configuration, user management, API gateway.
 - **Non-claim:** The control plane does not process, route, or store webhook payloads as part of delivery.
 - **Non-claim:** The control plane is not certified under SOC 2, ISO 27001, HIPAA, PCI DSS, or FedRAMP.
 
-### Data Plane (Entry Point — AWS us-east-1)
+### Data Plane (Entry Point — to be confirmed at launch)
 Handles webhook ingestion, routing, and delivery.
 - **Non-claim:** The data plane is not a content delivery network or global load balancer.
-- **Non-claim:** Currently available: AWS us-east-1. Additional entry point locations are planned, not live.
+- **Non-claim:** Entry point provider and region will be confirmed at launch. Additional entry point locations are planned, not live.
 - **Non-claim:** Multi-region data plane resilience is planned, not live.
 
 ### Edge Plane (Customer Infrastructure)
