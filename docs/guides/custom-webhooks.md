@@ -104,10 +104,110 @@ Use [JSONPath Transforms](../delivery/jsonpath-transforms) to normalize payloads
 
 Zen Mesh accepts `application/json` payloads. The request body is parsed as JSON for filtering and transform operations. Other content types are delivered as-is but cannot be processed by JSONPath rules.
 
-## Related
+## Test Event Flow
 
-- [Sources Overview](./sources) — all supported source types
-- [JSONPath Routing](../delivery/jsonpath-routing) — event filtering by content
-- [JSONPath Transforms](../delivery/jsonpath-transforms) — payload normalization
-- [IP Allowlisting](../security/ip-allowlisting) — restrict source networks
-- [Header Validation](../security/header-validation) — validate incoming headers
+To verify your custom webhook integration, send a test event using curl:
+
+```bash
+curl -X POST https://ingest.zen-mesh.io/hooks/<your-hook-id> \
+  -H "Content-Type: application/json" \
+  -H "X-Source-Token: s3cr3t-t0k3n" \
+  -H "X-Signature-256: test_signature_value" \
+  -d '{
+    "event": "order.created",
+    "data": {
+      "order_id": "ORD-12345",
+      "amount": 2999,
+      "currency": "USD"
+    }
+  }'
+```
+
+Check delivery in the Zen Mesh dashboard under **Delivery Logs** — look for a `200` status and a successful delivery record. See [Send a Test Webhook](../getting-started/send-test-webhook) for more options.
+
+## Payload, Log, and Evidence Visibility
+
+| What | Visible To |
+|------|------------|
+| Delivery logs | Timestamps, HTTP status, destination URL (domain only), event type, label metadata |
+| Evidence records | Delivery receipt, status code, label snapshots, optional payload if configured |
+| Metadata (timestamps, status, labels) | Zen support by default |
+| Raw payload content | Never stored in operational logs |
+| Payload-level access | Requires explicit customer authorization per request |
+
+Raw payload content is never written to operational logs. Payload inspection at the event level requires explicit authorization per request. See [Data Handling](../start-here/data-handling) and [Evidence Overview](../evidence/overview) for details.
+
+## Labels and RBAC Recommendations
+
+Apply labels to your custom webhook source and delivery flow resources:
+
+```yaml
+labels:
+  team: analytics
+  service: custom-scheduler
+  environment: production
+```
+
+Label filters use AND semantics — specifying `team=analytics,environment=production` matches resources with both labels.
+
+| Plan | Label Limit |
+|------|-------------|
+| Free | 5 labels per resource |
+| Pro | 20 labels per resource |
+| Business | 50 labels per resource (planned) |
+| Enterprise | Custom |
+
+RBAC and ABAC via label selectors are planned capabilities. The MCP can read and filter labels but cannot mutate them. See [Labels Platform](../guides/labels).
+
+## Limits and Plan Notes
+
+| Feature | Free | Pro |
+|---------|------|-----|
+| Endpoints | 3 | 50 |
+| Events per month | 1,000 | 100,000 |
+| Max payload size | 256 KB | 2 MB |
+| JSONPath filters/transforms | — | Pro+ only |
+| Evidence views/export | All plans | All plans |
+| Fan-out | No | S3 fan-out planned/target |
+
+**Over-limit behavior:** Free plans receive an HTTP 429 hard stop with an upgrade path. Pro plans receive warnings with overage and upgrade options.
+
+See [Plans & Limits](../start-here/limits).
+
+## Troubleshooting
+
+**HMAC and header validation failures**
+- Ensure the signing secret matches between your source and Zen Mesh
+- Header validation is case-sensitive — verify header names and values match exactly
+- Clock skew can cause HMAC mismatches if timestamps are part of the signing scheme
+
+**Delivery failures**
+- Verify the destination URL is reachable from Zen Mesh
+- Check TLS configuration on your destination endpoint
+- Review the delivery logs for HTTP status codes
+
+**Missing events**
+- Confirm your application is sending POST requests to the correct ingestion URL
+- Check JSONPath routing filters — an overly restrictive filter may drop events
+- Verify header validation rules are not rejecting valid requests
+
+**Rate limiting**
+- If your source sends events in bursts, consider adding client-side buffering
+- If you see 429 responses, contact Zen Mesh support
+
+See [Delivery Failures](../delivery/delivery-failures) and [Operations Troubleshooting](../operations/troubleshooting).
+
+## Launch Status
+
+Custom webhook integration is supported at launch. Configurable header validation, IP allowlisting, HMAC verification, and private network delivery are available.
+
+## See Also
+
+- [Onboarding: Create Your First Source](../getting-started/create-first-source)
+- [Onboarding: Send a Test Webhook](../getting-started/send-test-webhook)
+- [Onboarding: Read Delivery Evidence](../getting-started/read-delivery-evidence)
+- [Security Overview](../security/)
+- [Data Handling](../start-here/data-handling)
+- [Support](../start-here/support)
+- [Pricing](https://zen-mesh.io/pricing)
+- [Plans & Limits](../start-here/limits)

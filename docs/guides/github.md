@@ -102,9 +102,122 @@ Use [JSONPath Transforms](../delivery/jsonpath-transforms) to normalize GitHub p
 ]
 ```
 
-## Related
+## Test Event Flow
 
-- [Sources Overview](./sources) — supported webhook providers
-- [JSONPath Routing](../delivery/jsonpath-routing) — event filtering and routing
-- [JSONPath Transforms](../delivery/jsonpath-transforms) — payload normalization
-- [Stripe Integration](./stripe) — similar setup for payment webhooks
+To verify your GitHub integration, send a test push event using curl:
+
+```bash
+curl -X POST https://ingest.zen-mesh.io/hooks/<your-hook-id> \
+  -H "Content-Type: application/json" \
+  -H "X-Hub-Signature-256: sha256=test_signature_value" \
+  -H "X-GitHub-Event: push" \
+  -d '{
+    "ref": "refs/heads/main",
+    "repository": {
+      "full_name": "myorg/myrepo",
+      "html_url": "https://github.com/myorg/myrepo"
+    },
+    "pusher": {
+      "name": "alice",
+      "email": "alice@example.com"
+    },
+    "head_commit": {
+      "id": "abc123def456",
+      "message": "Update config",
+      "committer": {
+        "name": "Alice",
+        "email": "alice@example.com"
+      }
+    }
+  }'
+```
+
+Check delivery in the Zen Mesh dashboard under **Delivery Logs** — look for a `200` status and a successful delivery record. See [Send a Test Webhook](../getting-started/send-test-webhook) for more options.
+
+## Payload, Log, and Evidence Visibility
+
+| What | Visible To |
+|------|------------|
+| Delivery logs | Timestamps, HTTP status, destination URL (domain only), event type, label metadata |
+| Evidence records | Delivery receipt, status code, label snapshots, optional payload if configured |
+| Metadata (timestamps, status, labels) | Zen support by default |
+| Raw payload content | Never stored in operational logs |
+| Payload-level access | Requires explicit customer authorization per request |
+
+Raw payload content is never written to operational logs. Payload inspection at the event level requires explicit authorization per request. See [Data Handling](../start-here/data-handling) and [Evidence Overview](../evidence/overview) for details.
+
+## Labels and RBAC Recommendations
+
+Apply labels to your GitHub source and delivery flow resources:
+
+```yaml
+labels:
+  team: devops
+  project: ci-pipeline
+  environment: production
+  service: github-webhook
+```
+
+Label filters use AND semantics — specifying `team=devops,environment=production` matches resources with both labels.
+
+| Plan | Label Limit |
+|------|-------------|
+| Free | 5 labels per resource |
+| Pro | 20 labels per resource |
+| Business | 50 labels per resource (planned) |
+| Enterprise | Custom |
+
+RBAC and ABAC via label selectors are planned capabilities. The MCP can read and filter labels but cannot mutate them. See [Labels Platform](../guides/labels).
+
+## Limits and Plan Notes
+
+| Feature | Free | Pro |
+|---------|------|-----|
+| Endpoints | 3 | 50 |
+| Events per month | 1,000 | 100,000 |
+| Max payload size | 256 KB | 2 MB |
+| JSONPath filters/transforms | — | Pro+ only |
+| Evidence views/export | All plans | All plans |
+| Fan-out | No | S3 fan-out planned/target |
+
+**Over-limit behavior:** Free plans receive an HTTP 429 hard stop with an upgrade path. Pro plans receive warnings with overage and upgrade options.
+
+See [Plans & Limits](../start-here/limits).
+
+## Troubleshooting
+
+**Signature verification failures**
+- Ensure the HMAC secret matches the one configured in your GitHub webhook settings
+- Check for clock skew between your systems — HMAC verification is time-sensitive
+- Replayed events carry the same signature; Zen Mesh detects duplicates by delivery ID
+
+**Delivery failures**
+- Verify the destination URL is reachable from Zen Mesh
+- Check TLS configuration on your destination endpoint
+- Review the delivery logs for HTTP status codes
+
+**Missing events**
+- Confirm the event type is selected in the GitHub webhook configuration
+- Check JSONPath routing filters — an overly restrictive filter may drop events
+- Verify the webhook is marked as active in the GitHub repository settings
+
+**Rate limiting**
+- GitHub sends events individually; bursts are possible during large pushes or merges
+- If you see 429 responses, contact Zen Mesh support
+
+See [Delivery Failures](../delivery/delivery-failures) and [Operations Troubleshooting](../operations/troubleshooting).
+
+## Launch Status
+
+GitHub integration is supported at launch. HMAC verification, event routing, and private network delivery are available.
+
+## See Also
+
+- [Onboarding: Create Your First Source](../getting-started/create-first-source)
+- [Onboarding: Send a Test Webhook](../getting-started/send-test-webhook)
+- [Onboarding: Read Delivery Evidence](../getting-started/read-delivery-evidence)
+- [Security Overview](../security/)
+- [Data Handling](../start-here/data-handling)
+- [Support](../start-here/support)
+- [Pricing](https://zen-mesh.io/pricing)
+- [Plans & Limits](../start-here/limits)

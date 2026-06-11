@@ -1,8 +1,8 @@
 # Zen Mesh — Webhook Operations
 
-> Zen Mesh helps teams receive, validate, observe, and operate webhooks across Stripe, GitHub, and custom sources. Current readiness is DEMO only (local/mock/sandbox and limited cloud-demo scope — not customer-ready or production-live).
+> Zen Mesh helps teams receive, validate, observe, and operate webhooks across Stripe, GitHub, custom sources, and planned launch targets Shopify and Twilio.
 
-Version: 1.1.0 · Last-Updated: 2026-06-11T12:00:00Z · Product scope: webhook ingestion, validation, delivery visibility, and security operations (evidence-first federated operational runtime/trust platform).
+Version: 1.2.0 · Last-Updated: 2026-06-11T16:00:00Z · Product scope: webhook ingestion, validation, delivery visibility, and security operations (evidence-first federated operational runtime/trust platform).
 
 Non-claims and proof scope are authoritative — see the Non-Claims and Wedge Evidence links below before inferring production readiness.
 
@@ -66,6 +66,14 @@ Non-claims and proof scope are authoritative — see the Non-Claims and Wedge Ev
 - [Webhook Fan-Out](https://docs.zen-mesh.io/docs/delivery/fan-out): Deliver events to multiple destinations with per-destination policies
 - [Webhook Idempotency](https://docs.zen-mesh.io/docs/delivery/idempotency): Idempotency controls for safe retry and duplicate processing
 
+## Provider onboarding
+
+- [Your First Stripe Webhook](https://docs.zen-mesh.io/docs/getting-started/first-stripe-webhook): Set up Stripe webhook ingestion end-to-end
+- [Your First GitHub Webhook](https://docs.zen-mesh.io/docs/getting-started/first-github-webhook): Set up GitHub webhook delivery to private networks
+- [Your First Custom Webhook](https://docs.zen-mesh.io/docs/getting-started/first-custom-webhook): Send webhooks from any HTTP source to your infrastructure
+- [Your First Shopify Webhook (launch target)](https://docs.zen-mesh.io/docs/getting-started/first-shopify-webhook): Shopify webhook setup guide — launch target, not yet available
+- [Your First Twilio Webhook (launch target)](https://docs.zen-mesh.io/docs/getting-started/first-twilio-webhook): Twilio webhook setup guide — launch target, not yet available
+
 ## Security hub and guides
 
 - [Security Controls Overview](https://docs.zen-mesh.io/docs/security/): Overview of webhook security controls
@@ -83,7 +91,7 @@ Non-claims and proof scope are authoritative — see the Non-Claims and Wedge Ev
 - [JSONPath Routing](https://docs.zen-mesh.io/docs/delivery/jsonpath-routing): Route webhooks with safe JSONPath filter and match rules — no code execution
 - [JSONPath Transforms](https://docs.zen-mesh.io/docs/delivery/jsonpath-transforms): Map and reshape webhook payloads with JSONPath expressions and safe transform functions
 
-## Onboarding guides
+## Getting-started onboarding
 
 - [Create Your First Source](https://docs.zen-mesh.io/docs/getting-started/create-first-source): Set up a webhook source — Stripe, GitHub, or generic HTTP
 - [Create Your First Target](https://docs.zen-mesh.io/docs/getting-started/create-first-target): Configure a destination for webhook delivery
@@ -160,6 +168,15 @@ Non-claims and proof scope are authoritative — see the Non-Claims and Wedge Ev
 - [Trust Controls & Compliance](https://docs.zen-mesh.io/docs/security/trust-controls): Current compliance posture, control-to-requirement mapping, evidence refs, no certification claims
 - [Shopify Integration](https://docs.zen-mesh.io/docs/guides/shopify): Shopify webhook events (launch target)
 - [Twilio Integration](https://docs.zen-mesh.io/docs/guides/twilio): Twilio webhook events (launch target)
+- [Stripe webhook private network delivery](https://docs.zen-mesh.io/docs/guides/stripe): Receive Stripe webhooks in private Kubernetes clusters without inbound ports
+- [GitHub webhook private network delivery](https://docs.zen-mesh.io/docs/guides/github): Deliver GitHub webhooks to internal services behind NAT or firewall
+- [Custom webhook private network delivery](https://docs.zen-mesh.io/docs/guides/custom-webhooks): Route any HTTP webhook to private infrastructure
+- [Shopify webhook private network delivery](https://docs.zen-mesh.io/docs/guides/shopify): Shopify webhook delivery to private networks (launch target)
+- [Twilio webhook private network delivery](https://docs.zen-mesh.io/docs/guides/twilio): Twilio webhook delivery to private networks (launch target)
+- [Webhook data sovereignty](https://docs.zen-mesh.io/docs/start-here/geography): SaaS control plane on GCP Toronto, entry point and planned EU/APAC data planes
+- [Webhook labels and RBAC](https://docs.zen-mesh.io/docs/guides/labels): Organize resources with labels, control access with label-based RBAC/ABAC
+- [Webhook evidence and audit trail](https://docs.zen-mesh.io/docs/reference/webhook-delivery-evidence): Delivery receipts, hash-chain audit trail, and verification
+- [Webhook support without exposing payloads](https://docs.zen-mesh.io/docs/start-here/support): Get help safely — customer-controlled payload sharing, metadata-only default access
 
 ## Operations
 
