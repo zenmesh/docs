@@ -11,14 +11,29 @@ This page provides a transparent mapping of Zen Mesh security controls against c
 
 ## Compliance Status
 
-| Framework | Status | Notes |
-|-----------|--------|-------|
-| **SOC 2** | Planned | Control mapping available for transparency. Not certified. Not "SOC 2 ready." |
-| **GDPR** | Partial | Data handling practices align with GDPR principles. Not certified. Not "GDPR ready." |
-| **ISO 27001** | Planned | Control mapping available for transparency. Not certified. |
-| **PCI DSS** | Not applicable | Zen Mesh does not process, store, or transmit payment card data. Not "PCI compliant." |
-| **HIPAA** | Not applicable | Zen Mesh is not a covered entity or business associate for PHI. Not "HIPAA compliant." |
-| **FedRAMP** | Not applicable | No current plans for FedRAMP authorization. Not "FedRAMP planned." |
+| Framework | Status | Taxonomy | Notes |
+|-----------|--------|----------|-------|
+| **SOC 2** | Planned | planned | Control mapping available for transparency. Not certified. Not "SOC 2 ready." |
+| **GDPR** | Partial | partial | Data handling practices align with GDPR principles. Not certified. Not "GDPR ready." |
+| **ISO 27001** | Planned | planned | Control mapping available for transparency. Not certified. |
+| **PCI DSS** | Not applicable | not_applicable | Zen Mesh does not process, store, or transmit payment card data. Not "PCI compliant." |
+| **HIPAA** | Not applicable | not_applicable | Zen Mesh is not a covered entity or business associate for PHI. Not "HIPAA compliant." |
+| **FedRAMP** | Not applicable | not_applicable | No current plans for FedRAMP authorization. Not "FedRAMP planned." |
+
+### Compliance Status Taxonomy
+
+Each framework's compliance status uses the following taxonomy:
+
+| Status | Meaning |
+|--------|---------|
+| **proven** | Independently verified or certified. Status updated only when independently verified. |
+| **partial** | Practices align with framework principles. Full certification not yet achieved. |
+| **failed** | Evaluated and did not meet requirements. |
+| **planned** | On the roadmap. Not yet started or in early assessment. |
+| **not_applicable** | Service scope does not include activities covered by this framework. |
+| **superseded** | Previously tracked status replaced by a newer framework or standard. |
+
+This taxonomy applies to the compliance mapping above and to any control-level status within Zen Mesh's evidence framework. It is a transparency tool, not a certification status.
 
 ## Control Mapping
 
@@ -99,20 +114,22 @@ See [Data Handling](../start-here/data-handling) for retention periods and encry
 | Raw payload content | No | Yes (per-request, audited) |
 | Account configuration | Yes | N/A (tenant-scoped) |
 | Billing information | Yes (own tenant) | No |
+| Evidence export (recent/low-volume) | Yes | No |
+| Evidence export (full/bulk) | No | Yes (Pro+ only, API key required) |
 
 ## Three-Plane Model and Non-Claims
 
 Zen Mesh separates concerns into three planes. Each plane has its own security boundary and non-claims:
 
-### Control Plane (SaaS — Toronto/GCP)
+### Control Plane (SaaS — Toronto, Canada / GCP)
 Handles billing, configuration, user management, API gateway.
 - **Non-claim:** The control plane does not process, route, or store webhook payloads as part of delivery.
 - **Non-claim:** The control plane is not certified under SOC 2, ISO 27001, HIPAA, PCI DSS, or FedRAMP.
 
-### Data Plane (Entry Point)
+### Data Plane (Entry Point — AWS us-east-1)
 Handles webhook ingestion, routing, and delivery.
 - **Non-claim:** The data plane is not a content delivery network or global load balancer.
-- **Non-claim:** Entry point provider and region are to be confirmed before launch. Do not rely on specific entry point locations.
+- **Non-claim:** Currently available: AWS us-east-1. Additional entry point locations are planned, not live.
 - **Non-claim:** Multi-region data plane resilience is planned, not live.
 
 ### Edge Plane (Customer Infrastructure)

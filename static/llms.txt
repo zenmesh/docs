@@ -2,7 +2,7 @@
 
 > Zen Mesh helps teams receive, validate, observe, and operate webhooks across Stripe, GitHub, custom sources, and planned launch targets Shopify and Twilio.
 
-Version: 1.2.0 · Last-Updated: 2026-06-11T16:00:00Z · Product scope: webhook ingestion, validation, delivery visibility, and security operations (evidence-first federated operational runtime/trust platform).
+Version: 1.3.0 · Last-Updated: 2026-06-11T20:00:00Z · Product scope: webhook ingestion, validation, delivery visibility, and security operations (evidence-first federated operational runtime/trust platform).
 
 Non-claims and proof scope are authoritative — see the Non-Claims and Wedge Evidence links below before inferring production readiness.
 
@@ -177,6 +177,16 @@ Non-claims and proof scope are authoritative — see the Non-Claims and Wedge Ev
 - [Webhook labels and RBAC](https://docs.zen-mesh.io/docs/guides/labels): Organize resources with labels, control access with label-based RBAC/ABAC
 - [Webhook evidence and audit trail](https://docs.zen-mesh.io/docs/reference/webhook-delivery-evidence): Delivery receipts, hash-chain audit trail, and verification
 - [Webhook support without exposing payloads](https://docs.zen-mesh.io/docs/start-here/support): Get help safely — customer-controlled payload sharing, metadata-only default access
+
+## Contracts
+- [Contracts Overview](https://docs.zen-mesh.io/docs/contracts/): Contract-first documentation — V1 launch architecture decisions, planned capabilities, and open design tensions
+- [Multi-Target Delivery Contract](https://docs.zen-mesh.io/docs/contracts/multi-target-delivery): Multi-destination webhook delivery with per-destination policies and failure isolation — V1 contract
+- [Object-Store Fan-Out Contract](https://docs.zen-mesh.io/docs/contracts/object-store-fan-out): Object-store fan-out as contract-defined launch target — S3-compatible roadmap, NOT V1
+- [Payload Encryption, Replay, and DLQ Contract](https://docs.zen-mesh.io/docs/contracts/payload-encryption-replay-dlq): Encrypted tenant-scoped payloads, staff-no-access by default, service-scoped audited runtime access — V1 contract
+- [Tenant Key Management Contract](https://docs.zen-mesh.io/docs/contracts/tenant-key-management): Zen-managed per-tenant envelope keys, audit-per-purpose, BYOK planned — V1 contract
+- [Support Payload Access Contract](https://docs.zen-mesh.io/docs/contracts/support-payload-access): Customer-authorized time-bounded payload access, metadata-first support operations — V1 contract
+- [Data-Plane Selection Contract](https://docs.zen-mesh.io/docs/contracts/data-plane-selection): Single entry point at launch (GCP Toronto), multi-region planned — V1 contract
+- [Evidence Export Contract](https://docs.zen-mesh.io/docs/contracts/evidence-export): Evidence export by plan — UI-only on Free, API+bulk on Pro, retention and content — V1 contract
 
 ## Operations
 

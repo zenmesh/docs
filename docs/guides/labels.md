@@ -19,6 +19,7 @@ All system labels use the `zen-mesh.io/` prefix. Customers cannot create, update
 - `zen-mesh.io/source-type` — source type classification
 - `zen-mesh.io/region` — region classification
 - `zen-mesh.io/internal-*` — internal system labels (opaque to users)
+- `zen-mesh.io/plane` — data-plane affinity label (system-set, not customer-mutable)
 
 ### Legacy reserved namespace: `zen.io/*` (deprecated)
 
@@ -44,9 +45,14 @@ There is no required set of label keys or values. `zen-mesh.io/env` is available
 
 Keys must start with a letter or number, and may contain letters, numbers, hyphens, underscores, and forward slashes (for namespaces).
 
-### Label key casing
+### Kubernetes Compatibility
 
-Label keys and values preserve customer intent. Zen may normalize for search and collision detection internally. Avoid creating case-only duplicate keys (e.g., `Team` and `team` on the same resource) to prevent confusion.
+Labels are designed to be Kubernetes-compatible where practical. This means:
+
+- Keys are case-sensitive and constrained — must start with a letter or number, and may contain letters, numbers, hyphens, underscores, and forward slashes (for namespaces)
+- Values preserve customer intent
+- Zen Mesh may normalize labels for search and collision detection internally without changing the canonical stored value
+- Avoid creating case-only duplicate keys (e.g., `Team` and `team` on the same resource) to prevent confusion
 
 ## System Labels
 
@@ -85,6 +91,18 @@ Labels are not just metadata — they are integral to how Zen Mesh operates:
 | **Evidence** | Delivery evidence records include labels for attribution and filtering |
 | **MCP reads** | MCP tools can read and filter by labels (read-only, cannot mutate) |
 | **Reporting** | Aggregate delivery statistics by label dimensions |
+| **Support** | Labels help identify resource ownership for support triage and metadata-only debugging |
+
+## Customer-Defined Labels
+
+There is no required set of label keys or values. Customers define labels that match their own conventions:
+
+- No required environment label — `zen-mesh.io/env` is available but optional
+- No required team or project label
+- Labels are first-class for billing attribution, RBAC/ABAC, search, support triage, evidence tracking, and reporting
+- Reserved system labels (`zen-mesh.io/*`) do not count against custom label limits
+
+Labels are the primary mechanism for organizing resources across the platform. Every resource type supports labels, and label filters are available in all views and API calls.
 
 ## Plan Limits
 

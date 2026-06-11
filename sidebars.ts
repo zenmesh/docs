@@ -19,6 +19,19 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: 'Contracts',
+      items: [
+        'contracts/multi-target-delivery',
+        'contracts/object-store-fan-out',
+        'contracts/payload-encryption-replay-dlq',
+        'contracts/tenant-key-management',
+        'contracts/support-payload-access',
+        'contracts/data-plane-selection',
+        'contracts/evidence-export',
+      ],
+    },
+    {
+      type: 'category',
       label: 'Getting Started',
       items: [
         'getting-started/quick-start',

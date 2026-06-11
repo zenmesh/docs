@@ -95,6 +95,7 @@ When you approach or exceed the Pro plan monthly event limit:
 
 - **Warnings before limit** — notifications as you approach the limit
 - **Overage or upgrade path** — no hard stop without alternative. Pro customers receive an overage option or upgrade guidance
+- **Opt-in overage cap** — set a ceiling on automatic overage charges to avoid surprise billing. Overage is opt-in; without it, the system applies a soft limit with upgrade guidance
 - No silent drops
 
 All 429 responses include:
@@ -157,6 +158,17 @@ After the retention period for your plan expires:
 ### Upgrade path
 
 All over-limit error responses include an `upgrade_url` pointing to the pricing page. Upgrading your plan immediately raises the relevant limits.
+
+### Overage caps (Pro only)
+
+Pro customers can set an optional monthly overage cap:
+
+- When enabled, the cap limits how much overage spend can accrue in a billing cycle
+- After the cap is reached, the system applies a soft limit with upgrade guidance
+- Overage caps can be adjusted via billing settings
+- Caps are opt-in — without a cap, the system applies a soft limit with upgrade guidance
+- Caps are audited and logged
+- Over-limit behavior without a cap is not a hard stop; Pro customers always receive an alternative (upgrade or overage)
 
 ### Warning emails
 
