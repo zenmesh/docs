@@ -26,54 +26,99 @@ The following controls are mapped for transparency. This mapping does not consti
 
 ### Access Control
 
-| Control | Implemented | Notes |
-|---------|-------------|-------|
-| Row-level tenant isolation | Yes | Data layer prevents cross-tenant access |
-| API key scoping | Yes | Keys scoped to single tenant |
-| RBAC/ABAC via labels | Yes | Policy-based access control with label selectors |
-| mTLS internal identity | Yes | SPIFFE/SPIRE workload identity |
-| Secret encryption at rest | Yes | AGE encryption via ZenLock |
-| Secret redaction from logs | Yes | Plain-text never persisted outside encrypted store |
+| Control | Implemented | Notes | Evidence Reference |
+|---------|-------------|-------|-------------------|
+| Row-level tenant isolation | Yes | Data layer prevents cross-tenant access | Evidence ref: EV-AC-1 — placeholder, not generated |
+| API key scoping | Yes | Keys scoped to single tenant | Evidence ref: EV-AC-2 — placeholder, not generated |
+| RBAC/ABAC via labels | Yes | Policy-based access control with label selectors | Evidence ref: EV-AC-3 — placeholder, not generated |
+| mTLS internal identity | Yes | SPIFFE/SPIRE workload identity | Evidence ref: EV-AC-4 — placeholder, not generated |
+| Secret encryption at rest | Yes | AGE encryption via ZenLock | Evidence ref: EV-AC-5 — placeholder, not generated |
+| Secret redaction from logs | Yes | Plain-text never persisted outside encrypted store | Evidence ref: EV-AC-6 — placeholder, not generated |
 
 ### Data Protection
 
-| Control | Implemented | Notes |
-|---------|-------------|-------|
-| Encryption at rest | Yes | Payloads, logs, and evidence stored encrypted |
-| Encryption in transit | Yes | TLS for all external, mTLS for internal |
-| HMAC payload signing | Yes | HMAC-SHA256 per-tenant signing keys |
-| Support payload access | Planned | Disabled by default; explicit customer authorization required |
-| Data deletion requests | Manual | Request-based via support@zen-mesh.io |
-| Data export requests | Manual | Request-based via support@zen-mesh.io |
+| Control | Implemented | Notes | Evidence Reference |
+|---------|-------------|-------|-------------------|
+| Encryption at rest | Yes | Payloads, logs, and evidence stored encrypted | Evidence ref: EV-DP-1 — placeholder, not generated |
+| Encryption in transit | Yes | TLS for all external, mTLS for internal | Evidence ref: EV-DP-2 — placeholder, not generated |
+| HMAC payload signing | Yes | HMAC-SHA256 per-tenant signing keys | Evidence ref: EV-DP-3 — placeholder, not generated |
+| Support payload access | Planned | Disabled by default; explicit customer authorization required | Evidence ref: EV-DP-4 — placeholder, not generated |
+| Data deletion requests | Manual | Request-based via support@zen-mesh.io | Evidence ref: EV-DP-5 — placeholder, not generated |
+| Data export requests | Manual | Request-based via support@zen-mesh.io | Evidence ref: EV-DP-6 — placeholder, not generated |
 
 ### Audit and Evidence
 
-| Control | Implemented | Notes |
-|---------|-------------|-------|
-| Delivery evidence records | Yes | Timestamped, labeled, tamper-evident |
-| Label snapshots in evidence | Yes | Labels captured at event time |
-| Support access audit trail | Planned | Customer-accessible audit log planned |
-| Label change audit | Yes | All label mutations are audited |
+| Control | Implemented | Notes | Evidence Reference |
+|---------|-------------|-------|-------------------|
+| Delivery evidence records | Yes | Timestamped, labeled, tamper-evident | Evidence ref: EV-AE-1 — placeholder, not generated |
+| Label snapshots in evidence | Yes | Labels captured at event time | Evidence ref: EV-AE-2 — placeholder, not generated |
+| Support access audit trail | Planned | Customer-accessible audit log planned | Evidence ref: EV-AE-3 — placeholder, not generated |
+| Label change audit | Yes | All label mutations are audited | Evidence ref: EV-AE-4 — placeholder, not generated |
 
 ### Operational Security
 
-| Control | Implemented | Notes |
-|---------|-------------|-------|
-| Tenant kill switch | Required before launch | Dangerous-zone control |
-| Endpoint disable | Required before launch | Per-endpoint emergency control |
-| Loop detection | Required before launch | Automatic detection and alert |
-| Large payload rejection | Yes | Hard reject by plan limit |
-| Signature failure handling | Planned | Alert and throttle, not permanent block |
-| SSRF protection | Launch gate | Under review for launch readiness |
+| Control | Implemented | Notes | Evidence Reference |
+|---------|-------------|-------|-------------------|
+| Tenant kill switch | Required before launch | Dangerous-zone control | Evidence ref: EV-OS-1 — placeholder, not generated |
+| Endpoint disable | Required before launch | Per-endpoint emergency control | Evidence ref: EV-OS-2 — placeholder, not generated |
+| Loop detection | Required before launch | Automatic detection and alert | Evidence ref: EV-OS-3 — placeholder, not generated |
+| Large payload rejection | Yes | Hard reject by plan limit | Evidence ref: EV-OS-4 — placeholder, not generated |
+| Signature failure handling | Planned | Alert and throttle, not permanent block | Evidence ref: EV-OS-5 — placeholder, not generated |
+| SSRF protection | Launch gate | Under review for launch readiness | Evidence ref: EV-OS-6 — placeholder, not generated |
 
 ### Infrastructure
 
-| Control | Implemented | Notes |
-|---------|-------------|-------|
-| Control plane / data plane separation | Yes | Three-plane architecture |
-| Control plane not in runtime path | Yes | Events flow through data plane only |
-| Multi-region data plane | Planned | Single entry point at launch; additional regions planned |
-| Tenant soft delete | Yes | 7-day soft delete, purge within 30 days |
+| Control | Implemented | Notes | Evidence Reference |
+|---------|-------------|-------|-------------------|
+| Control plane / data plane separation | Yes | Three-plane architecture | Evidence ref: EV-INF-1 — placeholder, not generated |
+| Control plane not in runtime path | Yes | Events flow through data plane only | Evidence ref: EV-INF-2 — placeholder, not generated |
+| Multi-region data plane | Planned | Single entry point at launch; additional regions planned | Evidence ref: EV-INF-3 — placeholder, not generated |
+| Tenant soft delete | Yes | 7-day soft delete, purge within 30 days | Evidence ref: EV-INF-4 — placeholder, not generated |
+
+## Metadata vs Payload Handling
+
+Zen Mesh distinguishes between metadata and payload data:
+
+- **Metadata:** Delivery status, timestamps, resource identifiers, labels, event types, HTTP status codes. Accessible to support staff by default for operational debugging.
+- **Payload data:** The actual webhook body (e.g., Stripe event JSON, GitHub push payload). Not stored in operational logs. Not accessible to support staff by default.
+
+### Payload access flow
+- Payload data is stored encrypted at rest for replay and DLQ purposes, where enabled.
+- Support staff cannot browse raw payloads without explicit customer authorization.
+- Payload access requests are audited when implemented.
+- Customers control what payload samples they share with support.
+
+See [Data Handling](../start-here/data-handling) for retention periods and encryption details.
+
+## Support Access Boundaries
+
+| Access Type | Default | Customer Authorization Required |
+|-------------|---------|--------------------------------|
+| Metadata (delivery logs, status) | Yes | No |
+| Label snapshots in evidence | Yes | No |
+| Raw payload content | No | Yes (per-request, audited) |
+| Account configuration | Yes | N/A (tenant-scoped) |
+| Billing information | Yes (own tenant) | No |
+
+## Three-Plane Model and Non-Claims
+
+Zen Mesh separates concerns into three planes. Each plane has its own security boundary and non-claims:
+
+### Control Plane (SaaS — Toronto/GCP)
+Handles billing, configuration, user management, API gateway.
+- **Non-claim:** The control plane does not process, route, or store webhook payloads as part of delivery.
+- **Non-claim:** The control plane is not certified under SOC 2, ISO 27001, HIPAA, PCI DSS, or FedRAMP.
+
+### Data Plane (Entry Point)
+Handles webhook ingestion, routing, and delivery.
+- **Non-claim:** The data plane is not a content delivery network or global load balancer.
+- **Non-claim:** Entry point provider and region are to be confirmed before launch. Do not rely on specific entry point locations.
+- **Non-claim:** Multi-region data plane resilience is planned, not live.
+
+### Edge Plane (Customer Infrastructure)
+The zen-egress component runs in your environment.
+- **Non-claim:** Zen Mesh does not guarantee delivery, uptime, or availability of customer infrastructure.
+- **Non-claim:** The edge plane does not provide DDoS protection, WAF, or API inspection beyond configured webhook validation.
 
 ## Required wording
 

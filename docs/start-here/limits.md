@@ -210,9 +210,11 @@ Initial launch targets for webhook sources:
 
 - **Stripe** — webhook ingestion and delivery
 - **GitHub** — webhook ingestion and delivery
+- **Shopify** ⚡ — launch target, connector validation in progress
+- **Twilio** ⚡ — launch target, connector validation in progress
 - **Custom webhook** — generic webhook source
 
-Shopify and Twilio are not confirmed as live at launch. Provider pages will be updated as each connector is validated.
+Shopify and Twilio are launch targets for the initial launch window. This documentation describes the target configuration — connector validation is in progress and availability may shift.
 
 ## See also
 

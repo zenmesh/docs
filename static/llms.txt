@@ -2,7 +2,7 @@
 
 > Zen Mesh helps teams receive, validate, observe, and operate webhooks across Stripe, GitHub, and custom sources. Current readiness is DEMO only (local/mock/sandbox and limited cloud-demo scope — not customer-ready or production-live).
 
-Version: 1.0.0 · Last-Updated: 2026-05-31T16:00:00Z · Product scope: webhook ingestion, validation, delivery visibility, and security operations (evidence-first federated operational runtime/trust platform).
+Version: 1.1.0 · Last-Updated: 2026-06-11T12:00:00Z · Product scope: webhook ingestion, validation, delivery visibility, and security operations (evidence-first federated operational runtime/trust platform).
 
 Non-claims and proof scope are authoritative — see the Non-Claims and Wedge Evidence links below before inferring production readiness.
 
@@ -83,13 +83,26 @@ Non-claims and proof scope are authoritative — see the Non-Claims and Wedge Ev
 - [JSONPath Routing](https://docs.zen-mesh.io/docs/delivery/jsonpath-routing): Route webhooks with safe JSONPath filter and match rules — no code execution
 - [JSONPath Transforms](https://docs.zen-mesh.io/docs/delivery/jsonpath-transforms): Map and reshape webhook payloads with JSONPath expressions and safe transform functions
 
+## Onboarding guides
+
+- [Create Your First Source](https://docs.zen-mesh.io/docs/getting-started/create-first-source): Set up a webhook source — Stripe, GitHub, or generic HTTP
+- [Create Your First Target](https://docs.zen-mesh.io/docs/getting-started/create-first-target): Configure a destination for webhook delivery
+- [Create Your First Route](https://docs.zen-mesh.io/docs/getting-started/create-first-route): Connect a source to a target with optional filtering
+- [Send a Test Webhook](https://docs.zen-mesh.io/docs/getting-started/send-test-webhook): Send a test event and verify delivery
+- [Read Delivery Evidence](https://docs.zen-mesh.io/docs/getting-started/read-delivery-evidence): View delivery receipts, status transitions, and audit trail
+- [Upgrade from Free to Pro](https://docs.zen-mesh.io/docs/getting-started/upgrade-free-to-pro): Plan comparison, pricing, and upgrade path
+- [Use Labels to Organize Resources](https://docs.zen-mesh.io/docs/getting-started/use-labels): Organize and filter resources with custom labels
+- [Invite Users and Groups](https://docs.zen-mesh.io/docs/getting-started/invite-users-groups): Add team members and configure access policies
+
 ## Guides
 
 - [Endpoints](https://docs.zen-mesh.io/docs/guides/endpoints): Create and manage webhook endpoints — ingesters, destinations, delivery flows
-- [Sources](https://docs.zen-mesh.io/docs/guides/sources): Supported webhook source types — Stripe, GitHub, generic HTTP
+- [Sources](https://docs.zen-mesh.io/docs/guides/sources): Supported webhook source types — Stripe, GitHub, generic HTTP, Shopify, Twilio
 - [Stripe Integration](https://docs.zen-mesh.io/docs/guides/stripe): Stripe webhook events, setup, signature verification, event types
 - [GitHub Integration](https://docs.zen-mesh.io/docs/guides/github): GitHub webhook events, setup, signature verification, event types
 - [Custom Webhooks](https://docs.zen-mesh.io/docs/guides/custom-webhooks): Receive webhooks from any HTTP source — verification, IP allowlisting, routing
+- [Shopify Integration](https://docs.zen-mesh.io/docs/guides/shopify): Shopify webhook events (launch target — connector validation in progress)
+- [Twilio Integration](https://docs.zen-mesh.io/docs/guides/twilio): Twilio webhook events (launch target — connector validation in progress)
 - [Destinations](https://docs.zen-mesh.io/docs/guides/destinations): Target service configuration for webhook delivery
 
 ## Security
@@ -135,6 +148,7 @@ Non-claims and proof scope are authoritative — see the Non-Claims and Wedge Ev
 
 - [Quick start](https://docs.zen-mesh.io/docs/getting-started/quick-start): Sandbox-oriented setup
 - [Installation](https://docs.zen-mesh.io/docs/getting-started/installation): Install paths for evaluation
+- [Full onboarding guides](https://docs.zen-mesh.io/docs/category/getting-started): Step-by-step guides — sources, targets, routes, test webhooks, evidence, upgrade, labels, users
 - [Support](https://docs.zen-mesh.io/docs/start-here/support): Contact and support resources
 
 ## Launch pages (public self-serve)
@@ -143,7 +157,9 @@ Non-claims and proof scope are authoritative — see the Non-Claims and Wedge Ev
 - [Geography](https://docs.zen-mesh.io/docs/start-here/geography): SaaS control plane on GCP Toronto, entry point confirmed at launch, EU/APAC planned
 - [Data Handling](https://docs.zen-mesh.io/docs/start-here/data-handling): Retention, encryption, deletion/export, support access policy
 - [Labels Platform](https://docs.zen-mesh.io/docs/guides/labels): Reserved namespaces (zen-mesh.io/*), plan limits, RBAC/ABAC via labels, API/CLI examples, MCP read-only
-- [Trust Controls & Compliance](https://docs.zen-mesh.io/docs/security/trust-controls): Current compliance posture, control-to-requirement mapping, no certification claims
+- [Trust Controls & Compliance](https://docs.zen-mesh.io/docs/security/trust-controls): Current compliance posture, control-to-requirement mapping, evidence refs, no certification claims
+- [Shopify Integration](https://docs.zen-mesh.io/docs/guides/shopify): Shopify webhook events (launch target)
+- [Twilio Integration](https://docs.zen-mesh.io/docs/guides/twilio): Twilio webhook events (launch target)
 
 ## Operations
 

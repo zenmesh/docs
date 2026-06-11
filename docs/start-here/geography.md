@@ -7,6 +7,8 @@ description: Where Zen Mesh processes your data — SaaS hosting, entry points, 
 
 This page documents where your data is processed and where webhook traffic enters the Zen Mesh network.
 
+> **Note:** Entry point provider and region are to be confirmed before the initial launch. The information on this page reflects target architecture and planned expansion. Do not use this page for binding compliance or data-sovereignty decisions.
+
 ## Our SaaS runs in Toronto / GCP
 
 The Zen Mesh SaaS control plane — including billing, configuration, user management, and the API gateway — runs on Google Cloud Platform in Toronto.
@@ -29,6 +31,22 @@ EU and APAC entry points are planned for teams with data sovereignty requirement
 
 Data residency can be revisited when a second data plane launches. Do not claim data residency beyond what is documented on this page.
 
+## Data-Plane Choice
+
+Data-plane selection is a planned capability. Users will eventually be able to select which entry point processes their events:
+
+- **Free:** Data-plane selection is planned for all plans. Do not rely on future entry points for current architecture decisions.
+- **Pro:** Data-plane selection is planned.
+- **Business/Enterprise:** Dedicated adapters for specific data-plane regions are a future/contact-us capability, not live.
+
+## Multi-Data-Plane Resilience
+
+Multi-data-plane resilience — running webhook delivery across multiple entry points for redundancy — is a roadmap concept. It is not currently available.
+
+- Active-active delivery across regions is not available at launch.
+- Failover between data planes is not automated at launch.
+- This capability is under evaluation for future plans, starting with Business and Enterprise tiers.
+
 ## Data flow
 
 ```
@@ -44,6 +62,9 @@ The control plane handles configuration and billing but does not sit in the runt
 - We do not claim data residency beyond Toronto/GCP for the control plane and the documented entry point for the data plane.
 - We do not claim EU, APAC, or China availability until those entry points are documented as available on this page.
 - We do not claim data sovereignty compliance for any specific jurisdiction.
+- We do not claim data-plane choice is available at launch.
+- We do not claim multi-data-plane resilience.
+- We do not claim dedicated adapters per region outside Business/Enterprise as a contact-us capability.
 
 ## See also
 

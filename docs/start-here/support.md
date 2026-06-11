@@ -76,13 +76,48 @@ For suspected service incidents:
 
 For security issues, see [Responsible Disclosure](https://zen-mesh.io/security-disclosure) instead of standard support channels.
 
+## Incident Report Template
+
+```
+**Incident Report**
+- Date/Time (UTC):
+- Tenant ID:
+- Affected Resources (source/target/route IDs):
+- Description of Issue:
+- Steps Taken:
+- Error Messages/Status Codes:
+- Expected vs Actual Behavior:
+```
+
+## Refund Request
+
+Refund requests are handled in accordance with the Terms of Service. To request a refund:
+
+1. Email [support@zen-mesh.io](mailto:support@zen-mesh.io) with the subject "Refund Request"
+2. Include your tenant ID and invoice number
+3. Describe the reason for the request
+
+Refund eligibility is described in the [Terms of Service](../legal/terms-of-service) (draft — not yet effective).
+
+## Payload Sharing Guidance
+
+When sharing webhook payload samples with Zen Mesh support:
+
+- **Customer-controlled:** You decide what to share. Support cannot browse your raw payloads.
+- **Never paste secrets:** Remove or redact API keys, tokens, passwords, and other secrets before sharing.
+- **Use sanitized samples:** Replace sensitive values with placeholder data (e.g., `sk_test_...` → `sk_test_REDACTED`).
+- **Safe path:** Share through [support@zen-mesh.io](mailto:support@zen-mesh.io) using encrypted email if preferred.
+
+For details on how Zen Mesh handles payload data, see [Data Handling](../start-here/data-handling).
+
 ## Support Area Roadmap
 
 The following support capabilities are planned but not yet available:
 
 - Status page with real-time incident tracking
 - Customer-facing ticket management portal
-- Slack or Discord community channel (not yet created)
+- Slack public status channel — not yet set up; do not rely on it
+- Discord community — not yet created; not available at launch
 - On-call rotation with published escalation path
 
 Do not rely on planned support capabilities until they are documented as available on this page.

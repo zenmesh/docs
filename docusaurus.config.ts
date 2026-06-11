@@ -212,6 +212,10 @@ const config: Config = {
               href: 'https://zen-mesh.io/pricing',
             },
             {
+              label: 'Trust & Compliance',
+              href: 'https://docs.zen-mesh.io/docs/security/trust-controls',
+            },
+            {
               label: 'Security',
               href: 'https://zen-mesh.io/security',
             },
@@ -235,6 +239,14 @@ const config: Config = {
             {
               label: 'GitHub',
               href: 'https://github.com/zenmesh',
+            },
+            {
+              label: 'Onboarding Guides',
+              to: '/docs/getting-started/quick-start',
+            },
+            {
+              label: 'Provider Docs',
+              to: '/docs/guides/sources',
             },
             {
               label: 'Discord',
