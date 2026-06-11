@@ -9,13 +9,13 @@ This page describes where your data is processed, how long it is retained, and h
 
 ## SaaS Hosting
 
-Zen Mesh SaaS runs on **Google Cloud Platform in Toronto**. The control plane — billing, configuration, and user management — operates from Toronto/GCP infrastructure.
+Zen Mesh SaaS runs on **Google Cloud Platform in Toronto, Canada**. The control plane — billing, configuration, and user management — operates from Toronto/GCP infrastructure.
 
 ## Entry Points
 
-Your webhook traffic enters through your chosen entry point. Initial entry point availability will be confirmed at launch. Additional data plane locations are planned.
+Your webhook traffic enters through your chosen entry point. Currently available:
 
-- **Launch scope:** Entry point to be confirmed at launch
+- **AWS us-east-1** — the initial data plane entry point for webhook ingestion and delivery
 - **Planned:** EU and APAC entry points for teams with data sovereignty requirements
 
 Webhook sources can be located anywhere. Traffic routes through the configured entry point to your infrastructure.
