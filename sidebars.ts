@@ -30,6 +30,10 @@ const sidebars: SidebarsConfig = {
         'contracts/data-plane-selection',
         'contracts/evidence-export',
         'contracts/open-launch-decisions',
+        'contracts/legal-launch-checklist',
+        'contracts/entry-point-decision',
+        'contracts/support-channels-decision',
+        'contracts/object-store-runtime-status',
       ],
     },
     {

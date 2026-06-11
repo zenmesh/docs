@@ -19,6 +19,10 @@ This is the central index of Zen Mesh's **contract-first launch architecture dec
 | [Data-Plane Selection](./data-plane-selection) | V1 | Single entry point at launch (GCP Toronto), multi-region planned, plane label reserved |
 | [Evidence Export](./evidence-export) | V1 | Evidence export by plan — Free UI-only, Pro API+bulk, retention per plan |
 | [Open Launch Decisions](./open-launch-decisions) | Living | Open decisions requiring resolution — legal, entry point, BYOK, support channels, pricing |
+| [Legal Launch Checklist](./legal-launch-checklist) | Preparation | Legal readiness items: Terms, Privacy, AUP, DPA, Cookie, refund, deletion/export, billing |
+| [Entry Point Decision Prep](./entry-point-decision) | Preparation | Decision preparation for first data-plane entry point provider and region |
+| [Support Channels Decision Prep](./support-channels-decision) | Preparation | Decision preparation for support channels, security mailbox, and staffing |
+| [Object-Store Runtime Status](./object-store-runtime-status) | Preparation | Contract vs runtime gap for object-store fan-out — S3-compatible, GCS, Wasabi |
 
 ## Provider Status Matrix
 
@@ -99,3 +103,4 @@ See [Trust Controls & Compliance Mapping](/docs/security/trust-controls) for det
 - [Support](/docs/start-here/support) — support channels by plan
 - [Labels Platform](/docs/guides/labels) — label namespaces and RBAC/ABAC
 - [Getting Started](/docs/getting-started/quick-start) — onboarding guides
+- [Legal](/docs/legal/terms-of-service) — terms, privacy, AUP, DPA, cookie policy (drafts — not effective)

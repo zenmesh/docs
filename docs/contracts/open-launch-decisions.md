@@ -51,4 +51,8 @@ This page documents design tensions and open decisions that require resolution. 
 ## See Also
 
 - [Launch Contracts Index](./) — full contract catalog and status matrices
+- [Legal Launch Checklist](./legal-launch-checklist) — legal readiness items
+- [Entry Point Decision Prep](./entry-point-decision) — entry point provider/region decision
+- [Support Channels Decision Prep](./support-channels-decision) — support channels decision
+- [Object-Store Runtime Status](./object-store-runtime-status) — object-store contract vs runtime gap
 - [Current Status](/docs/start-here/current-status) — platform availability and known limitations
