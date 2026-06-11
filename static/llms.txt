@@ -192,6 +192,20 @@ Non-claims and proof scope are authoritative — see the Non-Claims and Wedge Ev
 - [Entry Point Decision Prep](https://docs.zen-mesh.io/docs/contracts/entry-point-decision): Decision preparation for first data-plane entry point provider and region — options, reliability, UI behavior
 - [Support Channels Decision Prep](https://docs.zen-mesh.io/docs/contracts/support-channels-decision): Decision preparation for support channels, security mailbox, and staffing
 - [Object-Store Runtime Status](https://docs.zen-mesh.io/docs/contracts/object-store-runtime-status): Contract vs runtime gap for object-store fan-out — S3-compatible, GCS, Wasabi
+- [Launch Readiness Gap-to-Action](https://docs.zen-mesh.io/docs/contracts/launch-readiness-gap-to-action): Index of remaining launch blockers — decisions, implementation, runtime proof, legal review, support ops
+- [Customer Onboarding Pack](https://docs.zen-mesh.io/docs/contracts/customer-onboarding-pack): Signup flow, first project checklist, provider selection, data-plane selector, upgrade, overage cap
+- [Support Center D1 Spec](https://docs.zen-mesh.io/docs/contracts/support-center-d1-spec): Support form fields, channels, FAQ, payload grant flow
+- [Billing and Overage Launch Contract](https://docs.zen-mesh.io/docs/contracts/billing-overage-launch): Pro pricing, Free hard stop, Pro overage opt-in cap, Stripe integration
+- [Runtime Proof Checklist](https://docs.zen-mesh.io/docs/contracts/runtime-proof-checklist): Delivery, security, entitlement, and provider validation gates
+- [First-Customer Rehearsal Checklist](https://docs.zen-mesh.io/docs/contracts/first-customer-rehearsal): Pre-launch walkthrough — signup to deletion
+- [Draft Branch Merge Checklist](https://docs.zen-mesh.io/docs/contracts/draft-branch-merge-checklist): Pre-merge review — legal, claims, builds, links, approvals
+- [PR & Merge Readiness](https://docs.zen-mesh.io/docs/contracts/pr-merge-readiness): Expanded merge blocker checklist — legal review, entry-point decision, support channels, object-store runtime, rollback plan
+- [Internal vs Public Distinction](https://docs.zen-mesh.io/docs/contracts/internal-public-distinction): Conventions for separating internal launch gates from public-facing contracts
+- [Support Templates](https://docs.zen-mesh.io/docs/contracts/support-templates): Customer-facing support templates — incident, billing, provider webhook, delivery failure, payload sharing, refund, deletion/export
+- [Support Safe Payload Handling](https://docs.zen-mesh.io/docs/contracts/support-safe-payload-handling): Safe payload handling checklist — never paste secrets, redaction, customer authorization, time-bounded grant, audit
+- [Onboarding Happy and Failure Paths](https://docs.zen-mesh.io/docs/contracts/onboarding-paths): Onboarding guides with happy path and failure path scenarios — signup through support
+- [Launch Rehearsal Scorecard](https://docs.zen-mesh.io/docs/contracts/launch-rehearsal-scorecard): Rehearsal scorecard — pass/fail/blocked, owner, evidence link, customer impact, launch blocker flag
+- [Public Trust FAQ](https://docs.zen-mesh.io/docs/contracts/public-trust-faq): FAQ about trust claims — no certification, what evidence means, what payload access means, what is not yet live
 
 ## Operations
 
