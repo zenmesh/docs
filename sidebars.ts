@@ -10,6 +10,7 @@ const sidebars: SidebarsConfig = {
         'start-here/what-is-zen-mesh',
         'start-here/who-should-use-zen-mesh',
         'start-here/current-status',
+        'start-here/launch-status',
         'start-here/concepts',
         'start-here/limits',
         'start-here/support',
@@ -101,6 +102,7 @@ const sidebars: SidebarsConfig = {
       items: [
         'architecture/overview',
         'architecture/three-plane-model',
+        'architecture/platform-layers',
         'architecture/delivery-modes',
         'architecture/security-model',
         'concepts/glossary',

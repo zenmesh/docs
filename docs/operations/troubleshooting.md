@@ -83,7 +83,7 @@ egress:
 
 ## Getting More Help
 
-- **Slack**: [Join the Zen Mesh workspace](https://zenmeshinc.slack.com/)
+- **Slack**: Public workspace not yet confirmed — do not rely on it for launch support
 - **Email**: [zen@zen-mesh.io](mailto:zen@zen-mesh.io)
 - **GitHub Issues**: [zen-platform](https://github.com/zenmesh/zen-platform/issues)
 - **Dashboard**: Check the delivery logs for detailed error messages

@@ -17,7 +17,7 @@ Zen Mesh offers a Free plan to get started and a Pro plan for production use. Th
 | Delivery evidence retention | 7 days |
 | Merkle inclusion proofs | Not available |
 | Labels | 5 per resource |
-| Support | Community (Discord) |
+| Support | Community docs + email (support@zen-mesh.io) |
 
 ## When to Upgrade
 
@@ -49,7 +49,7 @@ Pro includes:
 | Team members | 5 |
 | Delivery evidence retention | 30 days |
 | Labels | 50 per resource |
-| Support | Email + Slack |
+| Support | Email (support@zen-mesh.io); Slack workspace not yet confirmed |
 
 ### Pro+ Tier
 
