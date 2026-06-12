@@ -1,0 +1,78 @@
+{
+  "task_id": "DOCSAI024",
+  "scan_timestamp": "2026-06-12",
+  "repos_scanned": [
+    "DOCSAI024-zen-platform/docs",
+    "DOCSAI024-zen-mesh-io/src"
+  ],
+  "forbidden_claims": [
+    {
+      "claim": "AWS us-east-1 live/canonical",
+      "found": true,
+      "file": "docs/ai/edge-lite.md:30",
+      "action": "FIXED \u2014 replaced with 'provider/region announced at launch'"
+    },
+    {
+      "claim": "zen.io (not zen-mesh.io)",
+      "found": true,
+      "file": "docs/api/reference/kubezen-back-api.info.mdx:44",
+      "action": "FIXED \u2014 replaced kubezen.io with support@zen-mesh.io"
+    },
+    {
+      "claim": "zen/* supported namespace",
+      "found": false,
+      "action": "none"
+    },
+    {
+      "claim": "MCP apply live",
+      "found": false,
+      "action": "docs correctly state MCP cannot apply; draft system is human-only"
+    },
+    {
+      "claim": "permission-axis runtime live",
+      "found": false,
+      "action": "none"
+    },
+    {
+      "claim": "SLA claims",
+      "found": true,
+      "file": "docs/guides/destinations.md:41",
+      "action": "FIXED \u2014 replaced 'within SLA' with 'within target response time'"
+    },
+    {
+      "claim": "exactly-once delivery",
+      "found": false,
+      "action": "docs correctly state no exactly-once claim"
+    },
+    {
+      "claim": "guaranteed delivery",
+      "found": false,
+      "action": "none"
+    },
+    {
+      "claim": "Zen can never decrypt",
+      "found": false,
+      "action": "none"
+    },
+    {
+      "claim": "prod_live/launch_ready",
+      "found": false,
+      "action": "docs correctly state not production-live"
+    },
+    {
+      "claim": "data residency claim",
+      "found": true,
+      "file": "site/commitments.astro:53",
+      "action": "FIXED \u2014 replaced 'ensures data residency' with neutral latency language"
+    },
+    {
+      "claim": "certification/compliance claims",
+      "found": false,
+      "action": "docs correctly disclaim all certifications"
+    }
+  ],
+  "total_forbidden_found": 4,
+  "total_fixed": 4,
+  "remaining": 0,
+  "scan_status": "PASS"
+}

@@ -1,0 +1,13 @@
+{
+  "task_id": "DOCSAI024",
+  "canonical_support": "support@zen-mesh.io",
+  "canonical_security": "security@zen-mesh.io (pending setup)",
+  "site_current": "zen@zen-mesh.io (3 instances on pricing page)",
+  "mismatch": "Site uses zen@, canonical is support@",
+  "action": "DO NOT change without Leonardo decision. Report mismatch.",
+  "slack_status": "unconfirmed \u2014 do not claim",
+  "discord_status": "not_created \u2014 do not claim",
+  "no_leonardo_name": true,
+  "metadata_first_support": true,
+  "payload_access": "customer-authorized payload grant remains future/controlled path"
+}

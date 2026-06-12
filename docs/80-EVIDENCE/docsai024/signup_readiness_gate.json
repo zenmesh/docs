@@ -1,0 +1,62 @@
+{
+  "task_id": "DOCSAI024",
+  "signup_enabled": false,
+  "signup_blockers": [
+    {
+      "id": "B1",
+      "item": "Legal document sign-off (ToS, Privacy, DPA, AUP, Cookie)",
+      "status": "pending_legal",
+      "owner": "Legal"
+    },
+    {
+      "id": "B2",
+      "item": "Cookie/tracker decision + consent banner",
+      "status": "awaiting_leonardo",
+      "owner": "Leonardo"
+    },
+    {
+      "id": "B3",
+      "item": "support@zen-mesh.io mailbox operational",
+      "status": "pending_leonardo",
+      "owner": "Leonardo"
+    },
+    {
+      "id": "B4",
+      "item": "Pricing tier names finalized",
+      "status": "awaiting_leonardo",
+      "owner": "Leonardo"
+    },
+    {
+      "id": "B5",
+      "item": "Data-plane provider/region announced",
+      "status": "pending_leonardo",
+      "owner": "Leonardo"
+    },
+    {
+      "id": "B6",
+      "item": "Subprocessor list approved",
+      "status": "pending_legal",
+      "owner": "Legal"
+    },
+    {
+      "id": "B7",
+      "item": "SCC/transfer mechanism decided",
+      "status": "awaiting_leonardo",
+      "owner": "Legal/Leonardo"
+    },
+    {
+      "id": "B8",
+      "item": "Hermes runtime proof (delivery, retention)",
+      "status": "pending_hermes",
+      "owner": "Hermes"
+    }
+  ],
+  "can_proceed_without": [
+    "B8 \u2014 signup can proceed with design targets for retention/delivery"
+  ],
+  "cannot_proceed_without": [
+    "B1 \u2014 legal sign-off is hard blocker",
+    "B2 \u2014 if any trackers active, consent required"
+  ],
+  "status": "BLOCKED \u2014 legal sign-off required before signup enable"
+}

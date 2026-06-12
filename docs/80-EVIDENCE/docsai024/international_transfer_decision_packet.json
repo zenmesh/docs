@@ -1,0 +1,16 @@
+{
+  "task_id": "DOCSAI024",
+  "type": "explainer",
+  "subject": "International data transfer / SCC mechanism",
+  "owner": "Legal/Leonardo",
+  "status": "awaiting_decision",
+  "options_presented": [
+    "A: SCC in DPA",
+    "B: Adequacy/contractual",
+    "C: Conservative pending review"
+  ],
+  "recommended_default": "C",
+  "legal_review_required": true,
+  "legal_advice_provided": false,
+  "note": "This is an explainer, not legal advice"
+}

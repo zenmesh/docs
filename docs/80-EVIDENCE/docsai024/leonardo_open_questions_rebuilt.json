@@ -1,0 +1,43 @@
+{
+  "task_id": "DOCSAI024",
+  "rebuilt_at": "2026-06-12",
+  "removed_count": 30,
+  "remaining_count": 5,
+  "remaining_questions": [
+    {
+      "id": "Q1",
+      "question": "security.txt fields beyond contact \u2014 best-practice recommendations",
+      "owner": "DocsAI",
+      "status": "explainer_created",
+      "dependency": "none"
+    },
+    {
+      "id": "Q2",
+      "question": "international transfer / SCC position",
+      "owner": "Legal/Leonardo",
+      "status": "explainer_created",
+      "dependency": "legal_review"
+    },
+    {
+      "id": "Q3",
+      "question": "tracker/consent final choice",
+      "owner": "Leonardo",
+      "status": "explainer_created",
+      "dependency": "legal_review"
+    },
+    {
+      "id": "Q4",
+      "question": "final subprocessor evaluation for optional tools",
+      "owner": "Legal/Leonardo",
+      "status": "evaluation_roadmap_created",
+      "dependency": "legal_review"
+    },
+    {
+      "id": "Q5",
+      "question": "legal counsel approval / sign-off for Terms/Privacy/DPA/AUP",
+      "owner": "Legal",
+      "status": "blocked",
+      "dependency": "legal_counsel"
+    }
+  ]
+}

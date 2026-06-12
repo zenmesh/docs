@@ -38,7 +38,7 @@ Destinations can be scoped to environments (e.g., `production`, `staging`). This
 
 Zen Mesh monitors destination health:
 
-- **Healthy**: Delivery succeeding within SLA
+- **Healthy**: Delivery succeeding within target response time
 - **Degraded**: High latency or intermittent failures
 - **Unhealthy**: Consecutive delivery failures
 

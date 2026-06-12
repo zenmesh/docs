@@ -1,0 +1,21 @@
+{
+  "task_id": "DOCSAI023",
+  "reported_overall": "PASS",
+  "actual_overall": "PARTIAL",
+  "reason_stale_task_id": true,
+  "reason_missing_worktree": true,
+  "docs_branch": "DOCSAI023-launch-docs-max",
+  "docs_sha": "fbe70df3f28c3b37bf1c4078c1bee83987e1444b",
+  "site_branch": "DOCSAI023-site-max",
+  "site_sha": "2a6f7d9a82c3ee6cf840911005dd7d479f45aba8",
+  "pushed": "yes",
+  "docs_changed": true,
+  "site_changed": true,
+  "runtime_changed": false,
+  "deploy_changed": false,
+  "docs_build": "PASS",
+  "site_build": "PASS",
+  "broken_links": 0,
+  "claim_scan": "PASS",
+  "repair_action": "Recorded as PARTIAL; DOCSAI024 uses correct task ID and includes WORKTREE line"
+}

@@ -1,0 +1,66 @@
+{
+  "task_id": "DOCSAI001-DOCSAI024",
+  "generated_at": "2026-06-12",
+  "worktrees": {
+    "docs": "DOCSAI024-zen-platform (from zenmesh/docs, branch DOCSAI024-launch-docs-closure)",
+    "site": "DOCSAI024-zen-mesh-io (from zenmesh/zen-mesh.io, branch DOCSAI024-site-closure-v2)"
+  },
+  "evidence_files_count": 29,
+  "evidence_files": [
+    "breach_notice_update_manifest.json",
+    "claim_freeze_scan.json",
+    "data_lifecycle_decision_packet.md",
+    "design_partner_terms_update.json",
+    "discoverability_nav_links_audit.json",
+    "international_transfer_decision_packet.json",
+    "international_transfer_scc_explainer.md",
+    "legal_entity_update_manifest.json",
+    "legal_fulltext_review_packet.md",
+    "legal_signoff_packet.md",
+    "leonardo_canonical_decisions.json",
+    "leonardo_canonical_decisions.md",
+    "leonardo_open_questions_rebuilt.json",
+    "leonardo_open_questions_rebuilt.md",
+    "owner_board.json",
+    "pricing_billing_copy_manifest.json",
+    "provider_region_copy_manifest.json",
+    "reporting_repair.json",
+    "retention_policy_update_manifest.json",
+    "scope_copy_manifest.json",
+    "security_txt_best_practice_packet.md",
+    "signup_readiness_gate.json",
+    "subprocessor_baseline.json",
+    "subprocessor_evaluation_roadmap.md",
+    "subprocessor_public_copy_manifest.json",
+    "support_contact_manifest.json",
+    "tracker_consent_decision_matrix.json",
+    "tracker_consent_options_explainer.md",
+    "validation_results.json"
+  ],
+  "content_changes": {
+    "docs_repo": [
+      "docs/ai/edge-lite.md \u2014 fixed AWS us-east-1 hardcode",
+      "docs/api/reference/kubezen-back-api.info.mdx \u2014 fixed kubezen.io ref",
+      "docs/guides/destinations.md \u2014 fixed SLA reference",
+      "docs/80-EVIDENCE/docsai024/ \u2014 17 new evidence files created",
+      "docs/legal/ \u2014 empty directory created (awaiting legal drafts)",
+      "docs/review/ \u2014 empty directory created",
+      "docs/security/ \u2014 empty directory created"
+    ],
+    "site_repo": [
+      "src/pages/commitments.astro \u2014 fixed data residency overclaim",
+      "src/layouts/Layout.astro \u2014 fixed /blog to /blogs link (2 instances)"
+    ]
+  },
+  "claims_fixed": 4,
+  "links_fixed": 1,
+  "builds": {
+    "docs": "PASS",
+    "site": "PASS"
+  },
+  "broken_links": 0,
+  "forbidden_claims_remaining": 0,
+  "legal_stubs_draft": true,
+  "runtime_changed": false,
+  "deploy_changed": false
+}

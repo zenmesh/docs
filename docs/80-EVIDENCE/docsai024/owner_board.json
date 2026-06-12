@@ -1,0 +1,89 @@
+{
+  "task_id": "DOCSAI024",
+  "updated_at": "2026-06-12",
+  "owners": {
+    "legal_docs": {
+      "owner": "Legal",
+      "status": "draft_pending_review",
+      "files": [
+        "terms-of-service.md",
+        "privacy-policy.md",
+        "dpa.md",
+        "acceptable-use.md",
+        "cookie-policy.md"
+      ]
+    },
+    "pricing_tier_names": {
+      "owner": "Leonardo",
+      "status": "mismatch_reported",
+      "question": "Preview/Team vs Free/Pro/Business/Enterprise"
+    },
+    "contact_email": {
+      "owner": "Leonardo",
+      "status": "mismatch_reported",
+      "question": "zen@ vs support@zen-mesh.io"
+    },
+    "tracker_analytics": {
+      "owner": "Leonardo",
+      "status": "options_presented",
+      "question": "Which analytics tools to activate for V1?"
+    },
+    "cookie_consent": {
+      "owner": "Leonardo",
+      "status": "depends_on_tracker_decision",
+      "question": "Cookie banner needed if trackers active"
+    },
+    "scc_transfer": {
+      "owner": "Legal/Leonardo",
+      "status": "explainer_ready",
+      "question": "Which international transfer mechanism?"
+    },
+    "subprocessor_list": {
+      "owner": "Legal",
+      "status": "baseline_ready",
+      "question": "Approve confirmed list"
+    },
+    "data_plane_provider": {
+      "owner": "Leonardo",
+      "status": "unresolved",
+      "question": "Provider and region for data plane"
+    },
+    "design_partner_terms": {
+      "owner": "Leonardo/Legal",
+      "status": "recommendation_made",
+      "question": "Separate DP agreement or standard ToS?"
+    },
+    "security_mailbox": {
+      "owner": "Leonardo",
+      "status": "pending_setup",
+      "question": "security@zen-mesh.io mailbox"
+    }
+  },
+  "hermes_dependencies": [
+    "Runtime proof for retention enforcement",
+    "Runtime proof for delivery SLA targets"
+  ],
+  "helper2_dependencies": [
+    "Public signup flow implementation",
+    "Cookie consent banner implementation"
+  ],
+  "docsai_blocking": [],
+  "docsai_done": [
+    "Canonical decision ledger",
+    "Open questions rebuilt",
+    "Legal signoff packet",
+    "Retention policy",
+    "Breach notice",
+    "Subprocessor baseline + roadmap",
+    "SCC explainer",
+    "Tracker/consent explainer",
+    "Security.txt packet",
+    "Design partner terms",
+    "Pricing/billing copy audit",
+    "Scope copy audit",
+    "Provider/region copy audit",
+    "Support contact audit",
+    "Signup readiness gate",
+    "Legal review packet"
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "task_id": "DOCSAI024",
+  "updated_at": "2026-06-12",
+  "confirmed_subprocessors": [
+    {
+      "name": "GCP",
+      "purpose": "SaaS control plane hosting",
+      "data_processed": "Application data, logs",
+      "status": "confirmed_day1",
+      "dpa_available": "pending",
+      "scc_applicable": true,
+      "self_host_alternative": "No"
+    },
+    {
+      "name": "AWS",
+      "purpose": "Data plane hosting",
+      "data_processed": "Webhook payloads, delivery state",
+      "status": "confirmed_day1",
+      "dpa_available": "pending",
+      "scc_applicable": true,
+      "self_host_alternative": "No"
+    },
+    {
+      "name": "Stripe",
+      "purpose": "Payment processing",
+      "data_processed": "Billing data, email",
+      "status": "confirmed_day1",
+      "dpa_available": "yes",
+      "scc_applicable": true,
+      "self_host_alternative": "No"
+    },
+    {
+      "name": "GitHub",
+      "purpose": "Source code hosting",
+      "data_processed": "Code, issues",
+      "status": "confirmed_day1",
+      "dpa_available": "yes",
+      "scc_applicable": true,
+      "self_host_alternative": "Self-hosted possible"
+    },
+    {
+      "name": "Docusaurus/docs hosting",
+      "purpose": "Documentation site",
+      "data_processed": "Public content",
+      "status": "confirmed_day1",
+      "dpa_available": "yes",
+      "scc_applicable": false,
+      "self_host_alternative": "Self-hosted possible"
+    }
+  ],
+  "candidate_subprocessors": [
+    {
+      "name": "Google Analytics",
+      "purpose": "Website analytics",
+      "data_processed": "Page views, device info, referral",
+      "status": "evaluating",
+      "cookie_impact": "High",
+      "legal_basis": "Consent",
+      "dpa_available": "yes",
+      "scc_applicable": true,
+      "self_host_alternative": "Self-hosted analytics (Plausible, Umami)",
+      "user_consent_required": "Yes",
+      "recommendation": "Do not activate until legal sign-off"
+    },
+    {
+      "name": "HubSpot",
+      "purpose": "CRM/growth/marketing",
+      "data_processed": "Contact info, page views, form submissions",
+      "status": "evaluating",
+      "cookie_impact": "High",
+      "legal_basis": "Consent/Legitimate interest",
+      "dpa_available": "yes",
+      "scc_applicable": true,
+      "self_host_alternative": "Yes (multiple)",
+      "user_consent_required": "Likely yes",
+      "recommendation": "Do not activate until legal sign-off"
+    },
+    {
+      "name": "Similar analytics/growth/support tools",
+      "purpose": "Various",
+      "data_processed": "Various",
+      "status": "not_evaluated",
+      "recommendation": "Evaluate individually after legal review"
+    }
+  ]
+}

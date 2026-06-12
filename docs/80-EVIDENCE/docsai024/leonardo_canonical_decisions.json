@@ -1,0 +1,479 @@
+[
+  {
+    "id": 1,
+    "decision": "Shopify adapter scope",
+    "canonical_value": "V1 blocker",
+    "confidence": "canonical",
+    "affected_pages": [
+      "providers/shopify",
+      "docs-map-for-reviewers"
+    ],
+    "downstream_owner": "Hermes",
+    "legal_review_required": false,
+    "runtime_proof_required": true,
+    "public_copy_allowed": "guarded"
+  },
+  {
+    "id": 2,
+    "decision": "Twilio adapter scope",
+    "canonical_value": "V1 blocker",
+    "confidence": "canonical",
+    "affected_pages": [
+      "providers/twilio",
+      "docs-map-for-reviewers"
+    ],
+    "downstream_owner": "Hermes",
+    "legal_review_required": false,
+    "runtime_proof_required": true,
+    "public_copy_allowed": "guarded"
+  },
+  {
+    "id": 3,
+    "decision": "GitLab adapter scope",
+    "canonical_value": "V1.1/backlog",
+    "confidence": "canonical",
+    "affected_pages": [
+      "multiple"
+    ],
+    "downstream_owner": "Hermes",
+    "legal_review_required": false,
+    "runtime_proof_required": false,
+    "public_copy_allowed": "guarded"
+  },
+  {
+    "id": 4,
+    "decision": "Alipay adapter scope",
+    "canonical_value": "V1.1/backlog",
+    "confidence": "canonical",
+    "affected_pages": [
+      "multiple"
+    ],
+    "downstream_owner": "Hermes",
+    "legal_review_required": false,
+    "runtime_proof_required": false,
+    "public_copy_allowed": "guarded"
+  },
+  {
+    "id": 5,
+    "decision": "Pro monthly price",
+    "canonical_value": "$29/month early bird",
+    "confidence": "canonical",
+    "affected_pages": [
+      "pricing",
+      "buyer-room"
+    ],
+    "downstream_owner": "DocsAI",
+    "legal_review_required": false,
+    "runtime_proof_required": false,
+    "public_copy_allowed": "guarded"
+  },
+  {
+    "id": 6,
+    "decision": "Pro annual price",
+    "canonical_value": "$290/year early bird",
+    "confidence": "canonical",
+    "affected_pages": [
+      "pricing",
+      "buyer-room"
+    ],
+    "downstream_owner": "DocsAI",
+    "legal_review_required": false,
+    "runtime_proof_required": false,
+    "public_copy_allowed": "guarded"
+  },
+  {
+    "id": 7,
+    "decision": "Billing frequency",
+    "canonical_value": "Monthly and annual",
+    "confidence": "canonical",
+    "affected_pages": [
+      "pricing",
+      "billing"
+    ],
+    "downstream_owner": "Hermes",
+    "legal_review_required": false,
+    "runtime_proof_required": true,
+    "public_copy_allowed": "guarded"
+  },
+  {
+    "id": 8,
+    "decision": "Currency",
+    "canonical_value": "Multi-currency, USD-based",
+    "confidence": "canonical",
+    "affected_pages": [
+      "pricing"
+    ],
+    "downstream_owner": "DocsAI",
+    "legal_review_required": false,
+    "runtime_proof_required": false,
+    "public_copy_allowed": "guarded"
+  },
+  {
+    "id": 9,
+    "decision": "Payment processor",
+    "canonical_value": "Stripe",
+    "confidence": "canonical",
+    "affected_pages": [
+      "pricing",
+      "billing"
+    ],
+    "downstream_owner": "Hermes",
+    "legal_review_required": false,
+    "runtime_proof_required": true,
+    "public_copy_allowed": "yes"
+  },
+  {
+    "id": 10,
+    "decision": "Object-store scope",
+    "canonical_value": "Day-1 V1",
+    "confidence": "canonical",
+    "affected_pages": [
+      "delivery/object-store",
+      "architecture"
+    ],
+    "downstream_owner": "Hermes",
+    "legal_review_required": false,
+    "runtime_proof_required": true,
+    "public_copy_allowed": "guarded"
+  },
+  {
+    "id": 11,
+    "decision": "Object Lock scope",
+    "canonical_value": "V1.1",
+    "confidence": "canonical",
+    "affected_pages": [
+      "delivery/object-store"
+    ],
+    "downstream_owner": "Hermes",
+    "legal_review_required": false,
+    "runtime_proof_required": false,
+    "public_copy_allowed": "guarded"
+  },
+  {
+    "id": 12,
+    "decision": "SaaS control plane",
+    "canonical_value": "GCP/Toronto",
+    "confidence": "canonical",
+    "affected_pages": [
+      "architecture",
+      "security"
+    ],
+    "downstream_owner": "Hermes",
+    "legal_review_required": false,
+    "runtime_proof_required": false,
+    "public_copy_allowed": "yes"
+  },
+  {
+    "id": 13,
+    "decision": "First data plane",
+    "canonical_value": "US/AWS (sovereignty)",
+    "confidence": "canonical",
+    "affected_pages": [
+      "architecture"
+    ],
+    "downstream_owner": "Hermes",
+    "legal_review_required": false,
+    "runtime_proof_required": true,
+    "public_copy_allowed": "no"
+  },
+  {
+    "id": 14,
+    "decision": "Production credentials",
+    "canonical_value": "Provided later when close to prod-live",
+    "confidence": "canonical",
+    "affected_pages": [
+      "multiple"
+    ],
+    "downstream_owner": "Hermes",
+    "legal_review_required": false,
+    "runtime_proof_required": false,
+    "public_copy_allowed": "no"
+  },
+  {
+    "id": 15,
+    "decision": "Security contact",
+    "canonical_value": "security@zen-mesh.io",
+    "confidence": "canonical",
+    "affected_pages": [
+      "security",
+      "support",
+      "security.txt"
+    ],
+    "downstream_owner": "DocsAI",
+    "legal_review_required": false,
+    "runtime_proof_required": false,
+    "public_copy_allowed": "yes"
+  },
+  {
+    "id": 16,
+    "decision": "Legal entity name",
+    "canonical_value": "Zen Mesh Inc.",
+    "confidence": "canonical",
+    "affected_pages": [
+      "legal/terms-of-service",
+      "legal/privacy-policy",
+      "legal/dpa",
+      "footer"
+    ],
+    "downstream_owner": "Legal",
+    "legal_review_required": true,
+    "runtime_proof_required": false,
+    "public_copy_allowed": "yes"
+  },
+  {
+    "id": 17,
+    "decision": "Registered address",
+    "canonical_value": "2-14 Stadacona Drive, Toronto, ON, CA",
+    "confidence": "canonical",
+    "affected_pages": [
+      "legal/terms-of-service",
+      "legal/privacy-policy"
+    ],
+    "downstream_owner": "Legal",
+    "legal_review_required": true,
+    "runtime_proof_required": false,
+    "public_copy_allowed": "yes"
+  },
+  {
+    "id": 18,
+    "decision": "Jurisdiction",
+    "canonical_value": "Ontario, Canada (subject to legal review)",
+    "confidence": "canonical",
+    "affected_pages": [
+      "legal/terms-of-service"
+    ],
+    "downstream_owner": "Legal",
+    "legal_review_required": true,
+    "runtime_proof_required": false,
+    "public_copy_allowed": "guarded"
+  },
+  {
+    "id": 19,
+    "decision": "Governing law",
+    "canonical_value": "Ontario/Canada (subject to legal review)",
+    "confidence": "canonical",
+    "affected_pages": [
+      "legal/terms-of-service",
+      "legal/dpa"
+    ],
+    "downstream_owner": "Legal",
+    "legal_review_required": true,
+    "runtime_proof_required": false,
+    "public_copy_allowed": "guarded"
+  },
+  {
+    "id": 20,
+    "decision": "Payload retention Free",
+    "canonical_value": "7 days",
+    "confidence": "canonical",
+    "affected_pages": [
+      "privacy-policy",
+      "data-handling",
+      "retention"
+    ],
+    "downstream_owner": "Hermes",
+    "legal_review_required": false,
+    "runtime_proof_required": true,
+    "public_copy_allowed": "guarded"
+  },
+  {
+    "id": 21,
+    "decision": "Payload retention Pro",
+    "canonical_value": "30 days",
+    "confidence": "canonical",
+    "affected_pages": [
+      "privacy-policy",
+      "data-handling",
+      "retention"
+    ],
+    "downstream_owner": "Hermes",
+    "legal_review_required": false,
+    "runtime_proof_required": true,
+    "public_copy_allowed": "guarded"
+  },
+  {
+    "id": 22,
+    "decision": "DLQ/replay retention Free",
+    "canonical_value": "7 days",
+    "confidence": "canonical",
+    "affected_pages": [
+      "data-handling",
+      "retention"
+    ],
+    "downstream_owner": "Hermes",
+    "legal_review_required": false,
+    "runtime_proof_required": true,
+    "public_copy_allowed": "guarded"
+  },
+  {
+    "id": 23,
+    "decision": "DLQ/replay retention Pro",
+    "canonical_value": "30 days",
+    "confidence": "canonical",
+    "affected_pages": [
+      "data-handling",
+      "retention"
+    ],
+    "downstream_owner": "Hermes",
+    "legal_review_required": false,
+    "runtime_proof_required": true,
+    "public_copy_allowed": "guarded"
+  },
+  {
+    "id": 24,
+    "decision": "Logs retention Free",
+    "canonical_value": "1 month",
+    "confidence": "canonical",
+    "affected_pages": [
+      "privacy-policy",
+      "data-handling",
+      "retention"
+    ],
+    "downstream_owner": "Hermes",
+    "legal_review_required": false,
+    "runtime_proof_required": true,
+    "public_copy_allowed": "guarded"
+  },
+  {
+    "id": 25,
+    "decision": "Logs retention Pro",
+    "canonical_value": "3 months",
+    "confidence": "canonical",
+    "affected_pages": [
+      "privacy-policy",
+      "data-handling",
+      "retention"
+    ],
+    "downstream_owner": "Hermes",
+    "legal_review_required": false,
+    "runtime_proof_required": true,
+    "public_copy_allowed": "guarded"
+  },
+  {
+    "id": 26,
+    "decision": "Evidence retention Free",
+    "canonical_value": "1 month",
+    "confidence": "canonical",
+    "affected_pages": [
+      "evidence",
+      "data-handling"
+    ],
+    "downstream_owner": "Hermes",
+    "legal_review_required": false,
+    "runtime_proof_required": true,
+    "public_copy_allowed": "guarded"
+  },
+  {
+    "id": 27,
+    "decision": "Evidence retention Pro",
+    "canonical_value": "3 months",
+    "confidence": "canonical",
+    "affected_pages": [
+      "evidence",
+      "data-handling"
+    ],
+    "downstream_owner": "Hermes",
+    "legal_review_required": false,
+    "runtime_proof_required": true,
+    "public_copy_allowed": "guarded"
+  },
+  {
+    "id": 28,
+    "decision": "Deletion/return period Free",
+    "canonical_value": "1 month",
+    "confidence": "canonical",
+    "affected_pages": [
+      "privacy-policy",
+      "data-handling"
+    ],
+    "downstream_owner": "Hermes",
+    "legal_review_required": false,
+    "runtime_proof_required": true,
+    "public_copy_allowed": "guarded"
+  },
+  {
+    "id": 29,
+    "decision": "Deletion/return period Pro",
+    "canonical_value": "3 months",
+    "confidence": "canonical",
+    "affected_pages": [
+      "privacy-policy",
+      "data-handling"
+    ],
+    "downstream_owner": "Hermes",
+    "legal_review_required": false,
+    "runtime_proof_required": true,
+    "public_copy_allowed": "guarded"
+  },
+  {
+    "id": 30,
+    "decision": "Breach notification timeline",
+    "canonical_value": "Without undue delay",
+    "confidence": "canonical",
+    "affected_pages": [
+      "privacy-policy",
+      "dpa"
+    ],
+    "downstream_owner": "Legal",
+    "legal_review_required": true,
+    "runtime_proof_required": false,
+    "public_copy_allowed": "guarded"
+  },
+  {
+    "id": 31,
+    "decision": "Confirmed Day-1 subprocessors",
+    "canonical_value": "GCP, AWS, Stripe, GitHub, Docusaurus/docs",
+    "confidence": "canonical",
+    "affected_pages": [
+      "privacy-policy",
+      "subprocessors",
+      "dpa"
+    ],
+    "downstream_owner": "Legal",
+    "legal_review_required": true,
+    "runtime_proof_required": false,
+    "public_copy_allowed": "yes"
+  },
+  {
+    "id": 32,
+    "decision": "Potential subprocessors to evaluate",
+    "canonical_value": "Google Analytics, HubSpot, similar analytics/growth/support tools",
+    "confidence": "canonical",
+    "affected_pages": [
+      "privacy-policy",
+      "tracker-policy"
+    ],
+    "downstream_owner": "Legal",
+    "legal_review_required": true,
+    "runtime_proof_required": false,
+    "public_copy_allowed": "no"
+  },
+  {
+    "id": 33,
+    "decision": "Pilot program",
+    "canonical_value": "No default pilot; only if inbound interest contacts Zen Mesh",
+    "confidence": "canonical",
+    "affected_pages": [
+      "pricing",
+      "start-here"
+    ],
+    "downstream_owner": "DocsAI",
+    "legal_review_required": false,
+    "runtime_proof_required": false,
+    "public_copy_allowed": "yes"
+  },
+  {
+    "id": 34,
+    "decision": "Design partner offer",
+    "canonical_value": "6 months Pro free, conditional on monthly online survey; each completed survey unlocks following month free; max 6 months; survey starts Day 1",
+    "confidence": "canonical",
+    "affected_pages": [
+      "pricing",
+      "design-partners"
+    ],
+    "downstream_owner": "DocsAI",
+    "legal_review_required": true,
+    "runtime_proof_required": true,
+    "public_copy_allowed": "guarded"
+  }
+]

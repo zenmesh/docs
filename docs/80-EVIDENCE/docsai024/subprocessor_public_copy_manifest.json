@@ -1,0 +1,18 @@
+{
+  "task_id": "DOCSAI024",
+  "public_copy_status": "draft",
+  "confirmed_public_safe": [
+    "GCP",
+    "AWS",
+    "Stripe",
+    "GitHub",
+    "Docusaurus/docs"
+  ],
+  "not_public_safe": [
+    "Google Analytics",
+    "HubSpot",
+    "other candidates"
+  ],
+  "public_language": "Confirmed subprocessors listed in Privacy Policy. Candidate tools not listed until approved.",
+  "legal_review_required": true
+}

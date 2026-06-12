@@ -1,0 +1,48 @@
+{
+  "task_id": "DOCSAI024",
+  "scope_check": {
+    "Stripe": {
+      "status": "supported_at_launch",
+      "docs_claim": "consistent",
+      "runtime_proof": "required_before_day1_claim"
+    },
+    "GitHub": {
+      "status": "supported_at_launch",
+      "docs_claim": "consistent",
+      "runtime_proof": "required_before_day1_claim"
+    },
+    "Shopify": {
+      "status": "launch_target",
+      "docs_claim": "must_say_target_or_planned",
+      "runtime_proof": "not_proven"
+    },
+    "Twilio": {
+      "status": "launch_target",
+      "docs_claim": "must_say_target_or_planned",
+      "runtime_proof": "not_proven"
+    },
+    "object_store_fan_out": {
+      "status": "post_launch",
+      "docs_claim": "must_not_claim_day1",
+      "runtime_proof": "not_proven"
+    },
+    "k8s_crd_target": {
+      "status": "not_public_pre_prod",
+      "docs_claim": "must_not_mention_publicly"
+    },
+    "NATS_MQ_Slack": {
+      "status": "roadmap_only",
+      "docs_claim": "roadmap_or_future_only"
+    }
+  },
+  "action": "Scan all docs for overclaims. Mark targets as 'planned' or 'launch target'. Do not claim live for unproven providers.",
+  "files_to_scan": [
+    "docs/start-here/who-should-use-zen-mesh.md",
+    "docs/getting-started/quick-start.md",
+    "docs/ai/overview.md",
+    "docs/ai/wedge-overview.md",
+    "site index.astro",
+    "site how-it-works.astro",
+    "site pricing.astro"
+  ]
+}

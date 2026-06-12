@@ -1,0 +1,24 @@
+{
+  "task_id": "DOCSAI024",
+  "canonical_facts": {
+    "control_plane": "GCP Toronto \u2014 confirmed",
+    "data_plane_provider": "UNRESOLVED \u2014 do not claim specific provider",
+    "data_plane_region": "UNRESOLVED \u2014 do not claim specific region",
+    "aws_us_east_1": "FORBIDDEN \u2014 do not present as live/canonical"
+  },
+  "scan_targets": [
+    "docs/",
+    "site/src/pages/"
+  ],
+  "forbidden_claims": [
+    "AWS us-east-1 live/canonical",
+    "data residency in specific region",
+    "specific data-plane provider confirmed"
+  ],
+  "safe_language": [
+    "Control plane: GCP Toronto (confirmed)",
+    "Data plane: provider and region to be confirmed at launch",
+    "Entry point provider/region: to be announced"
+  ],
+  "status": "scan_pending"
+}

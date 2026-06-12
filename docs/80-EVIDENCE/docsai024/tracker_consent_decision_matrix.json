@@ -1,0 +1,63 @@
+{
+  "task_id": "DOCSAI024",
+  "type": "explainer",
+  "options": [
+    {
+      "name": "Google Analytics",
+      "privacy_impact": "high",
+      "v1_recommendation": "do_not_activate",
+      "legal_review": true
+    },
+    {
+      "name": "Vercel Analytics",
+      "privacy_impact": "low",
+      "v1_recommendation": "acceptable_if_hosting",
+      "legal_review": false
+    },
+    {
+      "name": "Vercel Speed Insights",
+      "privacy_impact": "none",
+      "v1_recommendation": "acceptable",
+      "legal_review": false
+    },
+    {
+      "name": "Google Fonts",
+      "privacy_impact": "medium",
+      "v1_recommendation": "self_host",
+      "legal_review": true
+    },
+    {
+      "name": "HubSpot",
+      "privacy_impact": "high",
+      "v1_recommendation": "do_not_activate",
+      "legal_review": true
+    },
+    {
+      "name": "Self-hosted analytics",
+      "privacy_impact": "low",
+      "v1_recommendation": "good_option",
+      "legal_review": false
+    },
+    {
+      "name": "No analytics",
+      "privacy_impact": "none",
+      "v1_recommendation": "acceptable",
+      "legal_review": false
+    },
+    {
+      "name": "Cookie banner",
+      "privacy_impact": "none",
+      "v1_recommendation": "required_if_trackers",
+      "legal_review": true
+    },
+    {
+      "name": "Server-side analytics",
+      "privacy_impact": "low",
+      "v1_recommendation": "acceptable",
+      "legal_review": false
+    }
+  ],
+  "owner": "Leonardo",
+  "status": "awaiting_decision",
+  "default_recommendation": "no_heavy_trackers_pre_legal"
+}

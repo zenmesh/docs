@@ -1,0 +1,15 @@
+{
+  "task_id": "DOCSAI024",
+  "canonical_terms": "Design partners use the same Terms of Service and DPA as all users. No separate DP agreement needed for V1.",
+  "reasoning": "Design partners are early-access users, not a separate legal category. Separate DP terms create complexity without clear benefit at this stage.",
+  "status": "incorporated_into_legal_drafts",
+  "legal_review_required": true,
+  "affected_pages": [
+    "terms-of-service",
+    "dpa"
+  ],
+  "caveats": [
+    "If Leonardo wants separate DP terms, legal must draft them",
+    "DPs should be aware of early-access status and its implications"
+  ]
+}

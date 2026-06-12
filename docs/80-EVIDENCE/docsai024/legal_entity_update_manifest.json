@@ -1,0 +1,43 @@
+{
+  "task_id": "DOCSAI024",
+  "canonical_entity": "Zen Mesh Inc.",
+  "canonical_address": "2-14 Stadacona Drive, Toronto, ON, CA",
+  "canonical_jurisdiction": "Ontario, Canada (subject to legal review)",
+  "canonical_governing_law": "Ontario/Canada (subject to legal review)",
+  "status": "draft \u2014 values applied where safe, all documents remain draft/non-effective",
+  "disclaimer": "All legal documents require legal counsel approval before becoming effective.",
+  "affected_files": [
+    {
+      "path": "docs/legal/terms-of-service.md",
+      "action": "create_draft",
+      "status": "pending_legal_review"
+    },
+    {
+      "path": "docs/legal/privacy-policy.md",
+      "action": "create_draft",
+      "status": "pending_legal_review"
+    },
+    {
+      "path": "docs/legal/dpa.md",
+      "action": "create_draft",
+      "status": "pending_legal_review"
+    },
+    {
+      "path": "docs/legal/acceptable-use.md",
+      "action": "create_draft",
+      "status": "pending_legal_review"
+    },
+    {
+      "path": "docs/legal/cookie-policy.md",
+      "action": "create_draft",
+      "status": "pending_legal_review"
+    },
+    {
+      "path": "site footer",
+      "action": "note_entity_name",
+      "status": "pending_legal_review"
+    }
+  ],
+  "legal_signoff_required": true,
+  "legal_approval_claimed": false
+}

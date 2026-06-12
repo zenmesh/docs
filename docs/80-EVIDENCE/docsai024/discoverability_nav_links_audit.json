@@ -1,0 +1,86 @@
+{
+  "task_id": "DOCSAI024",
+  "footer_nav_links": [
+    {
+      "path": "/",
+      "status": "OK",
+      "page": "index.astro"
+    },
+    {
+      "path": "/why",
+      "status": "OK"
+    },
+    {
+      "path": "/blogs",
+      "status": "OK (FIXED from /blog)"
+    },
+    {
+      "path": "/how-it-works",
+      "status": "OK"
+    },
+    {
+      "path": "/security",
+      "status": "OK"
+    },
+    {
+      "path": "/pricing",
+      "status": "OK"
+    },
+    {
+      "path": "/commitments",
+      "status": "OK"
+    },
+    {
+      "path": "/evidence",
+      "status": "OK"
+    },
+    {
+      "path": "/llms.txt",
+      "status": "OK (public/llms.txt)"
+    },
+    {
+      "path": "/llms-full.txt",
+      "status": "OK (public/llms-full.txt)"
+    },
+    {
+      "path": "/sitemap.xml",
+      "status": "MISSING \u2014 no sitemap files generated"
+    }
+  ],
+  "legal_pages_on_site": "NONE \u2014 legal pages are in docs repo only, not site",
+  "docs_legal_links": [
+    "Terms, Privacy, DPA, AUP, Cookie Policy \u2014 all in docs/legal/"
+  ],
+  "llms_txt_status": "Present and comprehensive",
+  "robots_txt_status": "Present, correct disallow/allow",
+  "sitemap_status": "Referenced in robots.txt but files not generated \u2014 build-time artifact",
+  "issues_fixed": [
+    {
+      "id": "L1",
+      "issue": "/blog link in footer/nav but page at /blogs",
+      "fix": "Changed href=\"/blog\" to href=\"/blogs\" in both nav and footer"
+    }
+  ],
+  "issues_reported": [
+    {
+      "id": "R1",
+      "issue": "No legal pages (ToS, Privacy, Cookie) on public site",
+      "severity": "low",
+      "note": "Legal pages live in docs.zen-mesh.io \u2014 acceptable for pre-signup"
+    }
+  ],
+  "search_intent_headings": {
+    "webhook_launch_readiness": "docs/start-here/launch-status.md",
+    "webhook_evidence_export": "docs/evidence/overview.md",
+    "webhook_support": "docs/start-here/support.md",
+    "MCP_permissions": "docs/mcp/read-only-v1-policy.md",
+    "API_permissions": "docs/api/rate-limits.md",
+    "UI_permissions": "docs/ai/permissions-overview.md",
+    "channel_aware_rbac": "docs/ai/permissions-overview.md",
+    "data_plane_selector": "docs/guides/destinations.md",
+    "object_store_fan_out": "docs/guides/destinations.md (mentioned as future)",
+    "billing_overage": "Not present \u2014 correct for V1",
+    "payload_access": "docs/security/security-capability-validation.md",
+    "proposed_vs_applied": "docs/mcp/draft-system.md"
+  }
+}

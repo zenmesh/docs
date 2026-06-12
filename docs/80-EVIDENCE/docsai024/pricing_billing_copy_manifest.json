@@ -1,0 +1,29 @@
+{
+  "task_id": "DOCSAI024",
+  "canonical_tier_names": {
+    "current_site": {
+      "free": "Preview",
+      "paid": "Team",
+      "enterprise": "Enterprise"
+    },
+    "leonardo_canonical": {
+      "free": "Free",
+      "pro": "Pro",
+      "business": "Business",
+      "enterprise": "Enterprise"
+    }
+  },
+  "mismatch": "Site uses 'Preview' and 'Team'; Leonardo spec uses 'Free', 'Pro', 'Business', 'Enterprise'",
+  "status": "reported_to_leonardo_for_decision",
+  "action": "DO NOT rename tiers without Leonardo decision. Keep current site naming.",
+  "prices": {
+    "Preview": "$0/month",
+    "Team": "$29/month",
+    "Enterprise": "Custom"
+  },
+  "contact_email": "Current site uses zen@zen-mesh.io \u2014 canonical support is support@zen-mesh.io",
+  "email_mismatch": "reported_to_leonardo",
+  "sla_claims": "NONE \u2014 verified no SLA claims on pricing page",
+  "billing_overage": "Not mentioned \u2014 correct for V1",
+  "legal_review_required": true
+}

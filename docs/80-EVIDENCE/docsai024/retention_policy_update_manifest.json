@@ -1,0 +1,38 @@
+{
+  "task_id": "DOCSAI024",
+  "canonical_retention": {
+    "payload": {
+      "Free": "7 days",
+      "Pro": "30 days"
+    },
+    "dlq_replay": {
+      "Free": "7 days",
+      "Pro": "30 days"
+    },
+    "logs": {
+      "Free": "1 month",
+      "Pro": "3 months"
+    },
+    "evidence": {
+      "Free": "1 month",
+      "Pro": "3 months"
+    },
+    "deletion_return": {
+      "Free": "1 month",
+      "Pro": "3 months"
+    }
+  },
+  "other_tiers": "Defined when wired \u2014 not live for Business/Enterprise",
+  "runtime_enforcement": "Requires Hermes runtime proof \u2014 not claimed",
+  "affected_pages": [
+    "privacy-policy",
+    "data-handling",
+    "retention",
+    "data-lifecycle"
+  ],
+  "caveats": [
+    "Retention periods are design targets, not runtime-proven enforcement",
+    "Business and Enterprise tiers will be defined when wired",
+    "All values subject to legal review"
+  ]
+}
