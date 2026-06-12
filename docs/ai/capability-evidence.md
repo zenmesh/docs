@@ -4,7 +4,7 @@ sidebar_label: Capability Evidence
 
 # Capability Evidence
 
-All capabilities are classified with a proof status. See `/ai/evidence-schema/manifest.json` for the full machine-readable manifest.
+All capabilities are classified with a proof status. See `ai/evidence-schema.md` for the full machine-readable manifest.
 
 ## Runtime Convergence
 

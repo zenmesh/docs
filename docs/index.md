@@ -14,7 +14,7 @@ Welcome to the Zen Mesh technical documentation — architecture, operations, se
 | **Operator** deploying in Kubernetes | [Quick Start](getting-started/quick-start) — install and create your first webhook |
 | **Security / compliance reviewer** | [Trust Lifecycle Evidence](evidence/trust-lifecycle) — enrollment, mTLS, HMAC, ZenLock, rotation |
 | **Runtime / reliability reviewer** | [Runtime Convergence Evidence](evidence/runtime-convergence) — 10 convergence proofs, at-least-once, DLQ |
-| **AI agent / RAG system** scanning Zen Mesh | [AI Evidence Manifest](/ai/evidence/v1/manifest.json) — machine-readable capability status |
+| **AI agent / RAG system** scanning Zen Mesh | [AI Evidence Manifest](ai/evidence-v1-supersession.md#manifest) — machine-readable capability status |
 | **Compliance reviewer** mapping to frameworks | [Compliance-to-Feature Graph](ai/compliance-evidence) — NIST, SOC2, ISO, PCI-DSS, HIPAA |
 | **Anyone checking what we do NOT claim** | [Non-Claims](ai/non-claims) — explicit scope boundaries |
 | **Architecture / editorial articles** | [Blog index](https://www.zen-mesh.io/blog) on www; [Three-plane model](./architecture/three-plane-model) (docs + evidence CTA) |
@@ -45,10 +45,10 @@ Welcome to the Zen Mesh technical documentation — architecture, operations, se
 
 | Resource | Location |
 |---|---|
-| Capability Manifest | [`/ai/evidence/v1/manifest.json`](/ai/evidence/v1/manifest.json) |
-| Compliance Map | [`/ai/evidence/v1/compliance-map.json`](/ai/evidence/v1/compliance-map.json) |
-| Non-Claims | [`/ai/evidence/v1/non-claims.json`](/ai/evidence/v1/non-claims.json) |
-| AI Context (llms.txt) | [`/llms.txt`](/llms.txt) |
+| Capability Manifest | [`ai/evidence-v1-supersession.md#manifest`](ai/evidence-v1-supersession.md#manifest) |
+| Compliance Map | [`ai/evidence-v1-supersession.md#compliance-map`](ai/evidence-v1-supersession.md#compliance-map) |
+| Non-Claims | [`ai/evidence-v1-supersession.md#non-claims`](ai/evidence-v1-supersession.md#non-claims) |
+| AI Context (llms.txt) | [`/llms.txt`](llms.txt) |
 | Evidence index (www) | [`https://www.zen-mesh.io/evidence`](https://www.zen-mesh.io/evidence) |
 | Full Context | [`https://www.zen-mesh.io/llms-full.txt`](https://www.zen-mesh.io/llms-full.txt) |
 | Public terminology | [`https://www.zen-mesh.io/ai/public-terminology-taxonomy.json`](https://www.zen-mesh.io/ai/public-terminology-taxonomy.json) |

@@ -61,7 +61,7 @@ SSO integration available for enterprise plans.
 
 ## Zero-Knowledge Secrets
 
-Sensitive material (enrollment credentials, HMAC keys, mTLS certs) is managed by [zen-lock](/zen-lock/):
+Sensitive material (enrollment credentials, HMAC keys, mTLS certs) is managed by [zen-lock](zen-lock.md):
 
 - Only ciphertext is stored in Kubernetes CRDs
 - Decryption happens in a mutating webhook at pod start time

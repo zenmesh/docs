@@ -30,4 +30,4 @@ Zen Mesh is a traffic-plane runtime for Kubernetes that delivers webhooks and ev
 | Check what is not claimed | [Non-Claims](../ai/non-claims) |
 | Validate locally | [Verification](../ai/verification) |
 | See webhook FAQs | [Webhook FAQ](../reference/webhook-faq) |
-| Inspect machine-readable evidence | [Manifest](/ai/evidence/v1/manifest.json) |
+| Inspect machine-readable evidence | [Manifest](ai/evidence-v1-supersession.md) |

@@ -50,7 +50,7 @@ Send adaptive card notifications to Teams channels.
 
 ## Adapter Configuration
 
-All adapter secrets (API keys, tokens) are stored in [zen-lock](/zen-lock/) with zero-knowledge encryption. They are never stored in plaintext.
+All adapter secrets (API keys, tokens) are stored in [zen-lock](../zen-lock.md) with zero-knowledge encryption. They are never stored in plaintext.
 
 ## Custom Adapters
 

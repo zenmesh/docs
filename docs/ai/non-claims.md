@@ -59,4 +59,4 @@ No. All proofs are local/mock unless stated. Production validation gates are pla
 
 ## Machine-Readable
 
-See [`/ai/evidence-schema/non-claims.json`](/ai/evidence-schema/non-claims.json) for the full machine-readable list.
+See [`ai/evidence-schema.md`](ai/evidence-schema.md) for the full machine-readable list.

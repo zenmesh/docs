@@ -57,7 +57,7 @@ helm upgrade --install zen-agent zenmesh/zen-agent \
 | Parameter | Default | Description |
 |-----------|---------|-------------|
 | `zenLock.enabled` | `true` | Deploy zen-lock |
-| `zenLock.image.repository` | `zenmesh/zen-lock` | Container image |
+| `zenLock.image.repository` | `zenmesh/zen-lock.md` | Container image |
 
 ## Example: Production Values
 

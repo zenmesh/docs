@@ -21,12 +21,12 @@ Customer-facing website and docs copy must use **public capability names**, not 
 | Planes management UI (T1) | L1 /planes T1 as internal shorthand |
 | Hash-chain integrity comparison | HELPER### / H### task labels |
 
-`internal_ref` fields in [non-claims.json](/ai/evidence/v1/non-claims.json) may retain internal linkage for machines only.
+`internal_ref` fields in [non-claims.json](ai/evidence-v1-supersession.md#non-claims) may retain internal linkage for machines only.
 
 ## Proof boundaries
 
 - **Blogs** — `narrative_context` only; see [narrative-context.json](https://www.zen-mesh.io/ai/narrative-context.json)
-- **Proof** — [manifest.json](/ai/evidence/v1/manifest.json) and hash-chain receipts
+- **Proof** — [manifest.json](ai/evidence-v1-supersession.md#manifest) and hash-chain receipts
 - **Merkle** — integrity/tamper-evidence only; not authentication, identity, encryption, or replay prevention
 
 ## Validators

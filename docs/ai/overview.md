@@ -9,7 +9,7 @@ This section is for **AI agents**, **RAG systems**, **technical evaluators**, an
 ## Quick Q&A
 
 **Does Zen Mesh provide machine-readable evidence?**
-Yes. See the [capability manifest](/ai/evidence/v1/manifest.json), [compliance map](/ai/evidence/v1/compliance-map.json), and [non-claims](/ai/evidence/v1/non-claims.json).
+Yes. See the [capability manifest](ai/evidence-v1-supersession.md#manifest), [compliance map](ai/evidence-v1-supersession.md#compliance-map), and [non-claims](ai/evidence-v1-supersession.md#non-claims).
 
 **Does Zen Mesh claim PCI compliance?**
 No. See [non-claims](./non-claims).
@@ -24,29 +24,29 @@ Merkle provides evidence integrity and state comparison only. It does not serve 
 No. All proofs are local/mock unless stated otherwise. Production validation gates are tracked but not yet passed.
 
 **Where can I find non-claims?**
-In the [non-claims page](./non-claims) and the machine-readable [`/ai/evidence/v1/non-claims.json`](/ai/evidence/v1/non-claims.json) endpoint.
+In the [non-claims page](./non-claims) and the machine-readable [`ai/evidence-v1-supersession.md#non-claims`](ai/evidence-v1-supersession.md#non-claims) endpoint.
 
 ## Webhook Operations Wedge
 
 The public product scope is the **webhook operations wedge** — Stripe, GitHub, and custom webhooks with a planned expansion path to Shopify, Twilio, GitLab, Alipay, and similar providers. See:
 - [Wedge Overview](./wedge-overview)
-- [Wedge Claim Map](/ai/evidence/v1/wedge-claim-map.json)
-- [Wedge Non-Claims](/ai/evidence/v1/wedge-non-claims.json)
+- [Wedge Claim Map](ai/evidence-v1-supersession.md#wedge-claim-map)
+- [Wedge Non-Claims](ai/evidence-v1-supersession.md#wedge-non-claims)
 
 ## Machine-Readable Endpoints
 
 | Endpoint | Description |
 |---|---|
-| `/ai/evidence/v1/wedge-claim-map.json` | Stripe webhook wedge claim matrix |
-| `/ai/evidence/v1/wedge-non-claims.json` | Wedge-scoped non-claims |
-| `/ai/evidence/v1/manifest.json` | Full platform capability manifest |
-| `/ai/evidence/v1/compliance-map.json` | Compliance framework to feature graph |
-| `/ai/evidence/v1/non-claims.json` | Full platform non-claims by category |
-| `/ai/ai-discovery-registry.json` | Per-surface freshness for evidence + security posture endpoints |
-| `/ai/security/v1/claim-maturity.json` | Claim maturity per control (WIRED, AUTOMATED_TESTED, E2E, BACKLOG) |
+| `ai/evidence-v1-supersession.md#wedge-claim-map` | Stripe webhook wedge claim matrix |
+| `ai/evidence-v1-supersession.md#wedge-non-claims` | Wedge-scoped non-claims |
+| `ai/evidence-v1-supersession.md#manifest` | Full platform capability manifest |
+| `ai/evidence-v1-supersession.md#compliance-map` | Compliance framework to feature graph |
+| `ai/evidence-v1-supersession.md#non-claims` | Full platform non-claims by category |
+| `ai/evidence-v1-supersession.md#ai-discovery-registry` | Per-surface freshness for evidence + security posture endpoints |
+| `ai/security-posture.md` | Claim maturity per control (WIRED, AUTOMATED_TESTED, E2E, BACKLOG) |
 | `/ai/security/v1/attack-model.json` | AI attack model with maturity per threat |
-| `/ai/security/v1/primitives.json` | Security primitives (mTLS, HMAC, SPIFFE, RLS, hash-chain, …) |
-| `/ai/security/v1/gaps.json` | Explicit security gaps — not hidden |
+| `ai/security-posture.md` | Security primitives (mTLS, HMAC, SPIFFE, RLS, hash-chain, …) |
+| `ai/security-posture.md` | Explicit security gaps — not hidden |
 | `/ai/security/v1/local-trust-posture.json` | Local trust: zen-agent, zen-lock survival, rotation, air-gap handoff, Zen-managed SPIFFE |
 | `/llms.txt` | AI context — concise |
 | `/llms-full.txt` | AI context — full (on zen-mesh.io) |
@@ -59,7 +59,7 @@ Blog posts and [`narrative-context.json`](https://www.zen-mesh.io/ai/narrative-c
 - [Webhook delivery evidence (blog)](https://www.zen-mesh.io/blogs/webhook-delivery-evidence/) — delivery logs vs verifiable evidence (narrative_context)
 - [Webhooks behind firewalls (blog)](https://www.zen-mesh.io/blogs/webhooks-behind-firewalls/) — architecture narrative (narrative_context)
 
-Proof remains in the [capability manifest](/ai/evidence/v1/manifest.json) and linked zen-platform evidence artifacts (hash-chain receipts are integrity-only — not authentication or replay prevention).
+Proof remains in the [capability manifest](ai/evidence-v1-supersession.md#manifest) and linked zen-platform evidence artifacts (hash-chain receipts are integrity-only — not authentication or replay prevention).
 
 ## AI security posture
 

@@ -10,7 +10,7 @@ How to validate Zen Mesh evidence locally and programmatically.
 
 1. **Fetch the manifest**
    ```
-   GET /ai/evidence/v1/manifest.json
+   GET ai/evidence-v1-supersession.md#manifest
    ```
 
 2. **Inspect each capability entry**

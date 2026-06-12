@@ -82,7 +82,7 @@ This is **readiness support only** — it does not constitute eligibility, quali
 | Merkle completion leaf | `docs/80-EVIDENCE/merkle/completion_evidence_merkle.json` |
 | Merkle completion manifest | `docs/80-EVIDENCE/merkle/manifests/completion_evidence_manifest.json` |
 | Evidence index | `docs/80-EVIDENCE/merkle/EVIDENCE_INDEX_2026_05_24.json` |
-| AI evidence manifest | [/ai/evidence/v1/manifest.json](/ai/evidence/v1/manifest.json) |
+| AI evidence manifest | [ai/evidence-v1-supersession.md](ai/evidence-v1-supersession.md) |
 
 ## Validation
 
@@ -109,4 +109,4 @@ The completion evidence contract contains entries for the following tasks:
 - **007** — Runtime Proof Matrix Hardening
 - **008** — Evidence Merkle Completion Gate
 
-See the [AI Evidence Manifest](/ai/evidence/v1/manifest.json) for machine-readable details.
+See the [AI Evidence Manifest](ai/evidence-v1-supersession.md) for machine-readable details.

@@ -43,4 +43,4 @@ Evidence tools provide structured proof that specific capabilities are implement
 - `list_non_claims` — Explicit non-claims organized by category
 - `list_merkle_evidence_refs` — Integrity receipt metadata
 
-See [Back API Reference](./api/reference/kubezen-back-api.info.mdx) for generated endpoint documentation.
+See [Back API Reference](api/reference/kubezen-back-api.info.mdx) for generated endpoint documentation.

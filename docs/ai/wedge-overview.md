@@ -35,7 +35,7 @@ All evidence is **local/demo/sandbox only**. Not customer-ready or production-li
 
 ## What Is Not Claimed
 
-See the [wedge non-claims](/ai/evidence-schema/wedge-non-claims.json) for the full list. Key points:
+See the [wedge non-claims](ai/evidence-schema.md) for the full list. Key points:
 
 - **Not production-live or customer-ready**
 - **No public edge/mesh/relay capability claim**
@@ -52,8 +52,8 @@ See the [wedge non-claims](/ai/evidence-schema/wedge-non-claims.json) for the fu
 | Endpoint | Description |
 |---|---|
 | `/ai/evidence-schema/wedge-claim-map.json` | Structured claim matrix (webhook wedge) |
-| `/ai/evidence-schema/wedge-non-claims.json` | Explicit non-claims for wedge scope |
-| `/ai/evidence-schema/manifest.json` | Full platform capability manifest |
+| `ai/evidence-schema.md` | Explicit non-claims for wedge scope |
+| `ai/evidence-schema.md` | Full platform capability manifest |
 
 ## Security Posture
 

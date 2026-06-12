@@ -14,4 +14,4 @@ For the current documentation, see:
 
 ## Legacy
 
-This page was previously hosted at `/zen-lock/` but has been moved to improve navigation.
+This page was previously hosted at `./zen-lock.md` but has been moved to improve navigation.

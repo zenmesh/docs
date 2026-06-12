@@ -30,11 +30,11 @@ Do not use “eliminates,” “replay-proof,” “SSRF-safe,” or bare “sec
 
 | Document | URL |
 |----------|-----|
-| **AI discovery registry (freshness)** | [`/ai/ai-discovery-registry.json`](/ai/ai-discovery-registry.json) |
-| **Claim maturity (canonical)** | [`/ai/security/v1/claim-maturity.json`](/ai/security/v1/claim-maturity.json) |
+| **AI discovery registry (freshness)** | [`ai/evidence-v1-supersession.md#ai-discovery-registry`](ai/evidence-v1-supersession.md#ai-discovery-registry) |
+| **Claim maturity (canonical)** | [`ai/security-posture.md`](ai/security-posture.md) |
 | Attack model | [`/ai/security/v1/attack-model.json`](/ai/security/v1/attack-model.json) |
-| Security primitives | [`/ai/security/v1/primitives.json`](/ai/security/v1/primitives.json) |
-| Security gaps | [`/ai/security/v1/gaps.json`](/ai/security/v1/gaps.json) |
+| Security primitives | [`ai/security-posture.md`](ai/security-posture.md) |
+| Security gaps | [`ai/security-posture.md`](ai/security-posture.md) |
 | Local trust posture | [`/ai/security/v1/local-trust-posture.json`](/ai/security/v1/local-trust-posture.json) |
 | Capability validation | [`/ai/security/v1/security-capability-validation.json`](/ai/security/v1/security-capability-validation.json) |
 
@@ -70,7 +70,7 @@ See [`local-trust-posture.json`](/ai/security/v1/local-trust-posture.json) and p
 
 ## Narrative vs proof
 
-Blogs and [`narrative-context.json`](https://www.zen-mesh.io/ai/narrative-context.json) are **narrative_context** only. Proof remains in the [capability manifest](/ai/evidence-schema/manifest.json) and [non-claims](/ai/evidence-schema/non-claims.json).
+Blogs and [`narrative-context.json`](https://www.zen-mesh.io/ai/narrative-context.json) are **narrative_context** only. Proof remains in the [capability manifest](ai/evidence-schema.md) and [non-claims](ai/evidence-schema.md).
 
 ## Hash-chain / Merkle
 
