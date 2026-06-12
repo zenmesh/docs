@@ -1,0 +1,898 @@
+[
+  {
+    "file": "docs/review/docs-map-for-reviewers.md",
+    "line": "93",
+    "text": "| Upgrade Free to Pro | PUBLIC | Upgrade path |",
+    "term": "Free",
+    "category": "review",
+    "repo": "docs"
+  },
+  {
+    "file": "docs/review/docsai-findings-001.md",
+    "line": "36",
+    "text": "| E1 | Pricing tier naming | Public site uses \"Preview / Team / Enterprise\"; docs use \"Free / Pro / Business / Enterprise\" | Align on one naming scheme across both surfaces before launch |",
+    "term": "Free",
+    "category": "review",
+    "repo": "docs"
+  },
+  {
+    "file": "docs/review/docsai-findings-001.md",
+    "line": "51",
+    "text": "- **Pricing tier naming** (E1 above) \u2014 Preview/Team vs Free/Pro alignment",
+    "term": "Free",
+    "category": "review",
+    "repo": "docs"
+  },
+  {
+    "file": "docs/review/editorial-checklist.md",
+    "line": "71",
+    "text": "| Preview / Team / Enterprise (site) | Free / Pro (docs) \u2014 ALIGN BEFORE LAUNCH |",
+    "term": "Free",
+    "category": "review",
+    "repo": "docs"
+  },
+  {
+    "file": "docs/ai/edge-lite.md",
+    "line": "136",
+    "text": "- \"Free-tier ready\"",
+    "term": "Free",
+    "category": "docs",
+    "repo": "docs"
+  },
+  {
+    "file": "src/pages/why.astro",
+    "line": "213",
+    "text": "<td>Free static IP</td>",
+    "term": "Free",
+    "category": "public-site",
+    "repo": "site"
+  },
+  {
+    "file": "src/pages/index.astro",
+    "line": "367",
+    "text": "<td>Free Static IP for webhook sources</td>",
+    "term": "Free",
+    "category": "public-site",
+    "repo": "site"
+  },
+  {
+    "file": "src/pages/how-it-works.astro",
+    "line": "83",
+    "text": "<li>Free public endpoint</li>",
+    "term": "Free",
+    "category": "public-site",
+    "repo": "site"
+  },
+  {
+    "file": "src/pages/how-it-works.astro",
+    "line": "106",
+    "text": "<li>Free public endpoint</li>",
+    "term": "Free",
+    "category": "public-site",
+    "repo": "site"
+  },
+  {
+    "file": "src/pages/how-it-works.astro",
+    "line": "131",
+    "text": "<li>Free public endpoint</li>",
+    "term": "Free",
+    "category": "public-site",
+    "repo": "site"
+  },
+  {
+    "file": "docs/review/docs-map-for-reviewers.md",
+    "line": "93",
+    "text": "| Upgrade Free to Pro | PUBLIC | Upgrade path |",
+    "term": "Pro",
+    "category": "review",
+    "repo": "docs"
+  },
+  {
+    "file": "docs/review/docsai-findings-001.md",
+    "line": "36",
+    "text": "| E1 | Pricing tier naming | Public site uses \"Preview / Team / Enterprise\"; docs use \"Free / Pro / Business / Enterprise\" | Align on one naming scheme across both surfaces before launch |",
+    "term": "Pro",
+    "category": "review",
+    "repo": "docs"
+  },
+  {
+    "file": "docs/review/docsai-findings-001.md",
+    "line": "51",
+    "text": "- **Pricing tier naming** (E1 above) \u2014 Preview/Team vs Free/Pro alignment",
+    "term": "Pro",
+    "category": "review",
+    "repo": "docs"
+  },
+  {
+    "file": "docs/review/editorial-checklist.md",
+    "line": "71",
+    "text": "| Preview / Team / Enterprise (site) | Free / Pro (docs) \u2014 ALIGN BEFORE LAUNCH |",
+    "term": "Pro",
+    "category": "review",
+    "repo": "docs"
+  },
+  {
+    "file": "docs/review/docs-map-for-reviewers.md",
+    "line": "18",
+    "text": "| Pricing | `/pricing` | LIVE | Preview/Team/Enterprise (naming may need alignment with docs) |",
+    "term": "Preview",
+    "category": "review",
+    "repo": "docs"
+  },
+  {
+    "file": "docs/review/docsai-findings-001.md",
+    "line": "36",
+    "text": "| E1 | Pricing tier naming | Public site uses \"Preview / Team / Enterprise\"; docs use \"Free / Pro / Business / Enterprise\" | Align on one naming scheme across both surfaces before launch |",
+    "term": "Preview",
+    "category": "review",
+    "repo": "docs"
+  },
+  {
+    "file": "docs/review/docsai-findings-001.md",
+    "line": "51",
+    "text": "- **Pricing tier naming** (E1 above) \u2014 Preview/Team vs Free/Pro alignment",
+    "term": "Preview",
+    "category": "review",
+    "repo": "docs"
+  },
+  {
+    "file": "docs/review/editorial-checklist.md",
+    "line": "71",
+    "text": "| Preview / Team / Enterprise (site) | Free / Pro (docs) \u2014 ALIGN BEFORE LAUNCH |",
+    "term": "Preview",
+    "category": "review",
+    "repo": "docs"
+  },
+  {
+    "file": "docs/delivery/replay.md",
+    "line": "35",
+    "text": "| **Dry-run mode** | Preview which events would be replayed without executing delivery |",
+    "term": "Preview",
+    "category": "docs",
+    "repo": "docs"
+  },
+  {
+    "file": "src/pages/pricing.astro",
+    "line": "22",
+    "text": "<!-- Preview -->",
+    "term": "Preview",
+    "category": "pricing-page",
+    "repo": "site"
+  },
+  {
+    "file": "src/pages/pricing.astro",
+    "line": "26",
+    "text": "<h3>Preview</h3>",
+    "term": "Preview",
+    "category": "pricing-page",
+    "repo": "site"
+  },
+  {
+    "file": "docs/review/docs-map-for-reviewers.md",
+    "line": "18",
+    "text": "| Pricing | `/pricing` | LIVE | Preview/Team/Enterprise (naming may need alignment with docs) |",
+    "term": "Team",
+    "category": "review",
+    "repo": "docs"
+  },
+  {
+    "file": "docs/review/docsai-findings-001.md",
+    "line": "36",
+    "text": "| E1 | Pricing tier naming | Public site uses \"Preview / Team / Enterprise\"; docs use \"Free / Pro / Business / Enterprise\" | Align on one naming scheme across both surfaces before launch |",
+    "term": "Team",
+    "category": "review",
+    "repo": "docs"
+  },
+  {
+    "file": "docs/review/docsai-findings-001.md",
+    "line": "51",
+    "text": "- **Pricing tier naming** (E1 above) \u2014 Preview/Team vs Free/Pro alignment",
+    "term": "Team",
+    "category": "review",
+    "repo": "docs"
+  },
+  {
+    "file": "docs/review/editorial-checklist.md",
+    "line": "71",
+    "text": "| Preview / Team / Enterprise (site) | Free / Pro (docs) \u2014 ALIGN BEFORE LAUNCH |",
+    "term": "Team",
+    "category": "review",
+    "repo": "docs"
+  },
+  {
+    "file": "src/pages/pricing.astro",
+    "line": "62",
+    "text": "<!-- Team -->",
+    "term": "Team",
+    "category": "pricing-page",
+    "repo": "site"
+  },
+  {
+    "file": "src/pages/pricing.astro",
+    "line": "65",
+    "text": "<h3>Team</h3>",
+    "term": "Team",
+    "category": "pricing-page",
+    "repo": "site"
+  },
+  {
+    "file": "src/pages/pricing.astro",
+    "line": "89",
+    "text": "Team access",
+    "term": "Team",
+    "category": "pricing-page",
+    "repo": "site"
+  },
+  {
+    "file": "docs/review/docsai-findings-001.md",
+    "line": "36",
+    "text": "| E1 | Pricing tier naming | Public site uses \"Preview / Team / Enterprise\"; docs use \"Free / Pro / Business / Enterprise\" | Align on one naming scheme across both surfaces before launch |",
+    "term": "Business",
+    "category": "review",
+    "repo": "docs"
+  },
+  {
+    "file": "docs/review/docsai-findings-001.md",
+    "line": "85",
+    "text": "| Business/Enterprise live | PASS \u2014 Enterprise is \"Contact us\"; no live Business tier on pricing page |",
+    "term": "Business",
+    "category": "review",
+    "repo": "docs"
+  },
+  {
+    "file": "docs/review/docs-map-for-reviewers.md",
+    "line": "18",
+    "text": "| Pricing | `/pricing` | LIVE | Preview/Team/Enterprise (naming may need alignment with docs) |",
+    "term": "Enterprise",
+    "category": "review",
+    "repo": "docs"
+  },
+  {
+    "file": "docs/review/docsai-findings-001.md",
+    "line": "36",
+    "text": "| E1 | Pricing tier naming | Public site uses \"Preview / Team / Enterprise\"; docs use \"Free / Pro / Business / Enterprise\" | Align on one naming scheme across both surfaces before launch |",
+    "term": "Enterprise",
+    "category": "review",
+    "repo": "docs"
+  },
+  {
+    "file": "docs/review/docsai-findings-001.md",
+    "line": "85",
+    "text": "| Business/Enterprise live | PASS \u2014 Enterprise is \"Contact us\"; no live Business tier on pricing page |",
+    "term": "Enterprise",
+    "category": "review",
+    "repo": "docs"
+  },
+  {
+    "file": "docs/review/editorial-checklist.md",
+    "line": "71",
+    "text": "| Preview / Team / Enterprise (site) | Free / Pro (docs) \u2014 ALIGN BEFORE LAUNCH |",
+    "term": "Enterprise",
+    "category": "review",
+    "repo": "docs"
+  },
+  {
+    "file": "src/pages/why.astro",
+    "line": "44",
+    "text": "<p>One product. Outbound-only. Zero-trust by default. Enterprise security included.</p>",
+    "term": "Enterprise",
+    "category": "public-site",
+    "repo": "site"
+  },
+  {
+    "file": "src/pages/why.astro",
+    "line": "95",
+    "text": "<p>Built on Kubernetes with GitOps. Enterprise-grade without the enterprise complexity.</p>",
+    "term": "Enterprise",
+    "category": "public-site",
+    "repo": "site"
+  },
+  {
+    "file": "src/pages/why.astro",
+    "line": "117",
+    "text": "<h3>Enterprise-Grade Data Plane</h3>",
+    "term": "Enterprise",
+    "category": "public-site",
+    "repo": "site"
+  },
+  {
+    "file": "src/pages/why.astro",
+    "line": "141",
+    "text": "<h3>Enterprise Features Included</h3>",
+    "term": "Enterprise",
+    "category": "public-site",
+    "repo": "site"
+  },
+  {
+    "file": "src/pages/pricing.astro",
+    "line": "101",
+    "text": "<!-- Enterprise -->",
+    "term": "Enterprise",
+    "category": "pricing-page",
+    "repo": "site"
+  },
+  {
+    "file": "src/pages/pricing.astro",
+    "line": "104",
+    "text": "<h3>Enterprise</h3>",
+    "term": "Enterprise",
+    "category": "pricing-page",
+    "repo": "site"
+  },
+  {
+    "file": "src/pages/pricing.astro",
+    "line": "133",
+    "text": "Enterprise support",
+    "term": "Enterprise",
+    "category": "pricing-page",
+    "repo": "site"
+  },
+  {
+    "file": "src/pages/security.astro",
+    "line": "442",
+    "text": "<span class=\"section-label\">Enterprise Grade</span>",
+    "term": "Enterprise",
+    "category": "public-site",
+    "repo": "site"
+  },
+  {
+    "file": "src/pages/index.astro",
+    "line": "143",
+    "text": "<h2>Enterprise-Grade Webhook Delivery</h2>",
+    "term": "Enterprise",
+    "category": "public-site",
+    "repo": "site"
+  },
+  {
+    "file": "src/pages/index.astro",
+    "line": "380",
+    "text": "<td class=\"partial\">Paid (Enterprise)</td>",
+    "term": "Enterprise",
+    "category": "public-site",
+    "repo": "site"
+  },
+  {
+    "file": "src/pages/index.astro",
+    "line": "389",
+    "text": "<td class=\"partial\">Enterprise only</td>",
+    "term": "Enterprise",
+    "category": "public-site",
+    "repo": "site"
+  },
+  {
+    "file": "docs/api/webhooks.md",
+    "line": "33",
+    "text": "- Stripe (checkout.session.completed, invoice.paid, ...)",
+    "term": "paid",
+    "category": "api-docs",
+    "repo": "docs"
+  },
+  {
+    "file": "docs/api/idempotency.md",
+    "line": "19",
+    "text": "-d '{\"event_type\": \"invoice.paid\", \"payload\": {...}}' \\",
+    "term": "paid",
+    "category": "api-docs",
+    "repo": "docs"
+  },
+  {
+    "file": "docs/guides/stripe.md",
+    "line": "25",
+    "text": "| **Invoices** | `invoice.paid`, `invoice.payment_failed`, `invoice.finalized` |",
+    "term": "paid",
+    "category": "docs",
+    "repo": "docs"
+  },
+  {
+    "file": "docs/guides/stripe.md",
+    "line": "27",
+    "text": "| **Payouts** | `payout.paid`, `payout.failed` |",
+    "term": "paid",
+    "category": "docs",
+    "repo": "docs"
+  },
+  {
+    "file": "docs/getting-started/first-webhook.md",
+    "line": "48",
+    "text": "4. Select events: `payment_intent.succeeded`, `invoice.paid`",
+    "term": "paid",
+    "category": "docs",
+    "repo": "docs"
+  },
+  {
+    "file": "src/pages/index.astro",
+    "line": "377",
+    "text": "<td class=\"check\">Included (paid plans)</td>",
+    "term": "paid",
+    "category": "public-site",
+    "repo": "site"
+  },
+  {
+    "file": "src/pages/index.astro",
+    "line": "378",
+    "text": "<td class=\"partial\">+$100/mo (paid plans)</td>",
+    "term": "paid",
+    "category": "public-site",
+    "repo": "site"
+  },
+  {
+    "file": "docs/architecture/security-model.md",
+    "line": "55",
+    "text": "| **Owner** | Full access to tenant, including billing and user management |",
+    "term": "illing",
+    "category": "docs",
+    "repo": "docs"
+  },
+  {
+    "file": "docs/networking/gateway-api-migration.md",
+    "line": "39",
+    "text": "- **14 SaaS control-plane routes** \u2014 frontend, BFF, back API, health, metrics, Stripe, billing, WebSocket",
+    "term": "illing",
+    "category": "docs",
+    "repo": "docs"
+  },
+  {
+    "file": "docs/review/docsai-findings-001.md",
+    "line": "71",
+    "text": "- `contracts/billing-overage-launch` \u2014 billing overage logic requires Helper2 implementation",
+    "term": "illing",
+    "category": "review",
+    "repo": "docs"
+  },
+  {
+    "file": "src/content/blogs/webhooks-behind-firewalls.md",
+    "line": "59",
+    "text": "But combining them means operating two separate systems with their own failure modes, billing, and operational surface. And the deeper problem: services like Hookdeck put their SaaS control plane in t",
+    "term": "illing",
+    "category": "public-site",
+    "repo": "site"
+  },
+  {
+    "file": "docs/operations/upgrades.md",
+    "line": "13",
+    "text": "helm upgrade zen-agent zenmesh/zen-agent \\",
+    "term": "upgrade",
+    "category": "docs",
+    "repo": "docs"
+  },
+  {
+    "file": "docs/operations/upgrades.md",
+    "line": "20",
+    "text": "Helm performs a rolling upgrade by default. The agent and egress pods are replaced one at a time, ensuring continuous delivery.",
+    "term": "upgrade",
+    "category": "docs",
+    "repo": "docs"
+  },
+  {
+    "file": "docs/operations/upgrades.md",
+    "line": "30",
+    "text": "If an upgrade causes issues:",
+    "term": "upgrade",
+    "category": "docs",
+    "repo": "docs"
+  },
+  {
+    "file": "docs/operations/backups.md",
+    "line": "28",
+    "text": "helm upgrade --install zen-agent zenmesh/zen-agent \\",
+    "term": "upgrade",
+    "category": "docs",
+    "repo": "docs"
+  },
+  {
+    "file": "docs/operations/backups.md",
+    "line": "57",
+    "text": "helm upgrade --install zen-agent zenmesh/zen-agent \\",
+    "term": "upgrade",
+    "category": "docs",
+    "repo": "docs"
+  },
+  {
+    "file": "docs/reference/helm-chart.md",
+    "line": "15",
+    "text": "helm upgrade --install zen-agent zenmesh/zen-agent \\",
+    "term": "upgrade",
+    "category": "docs",
+    "repo": "docs"
+  },
+  {
+    "file": "docs/reference/helm-chart.md",
+    "line": "90",
+    "text": "helm upgrade --install zen-agent zenmesh/zen-agent \\",
+    "term": "upgrade",
+    "category": "docs",
+    "repo": "docs"
+  },
+  {
+    "file": "docs/getting-started/installation.md",
+    "line": "28",
+    "text": "helm upgrade --install zen-agent zenmesh/zen-agent \\",
+    "term": "upgrade",
+    "category": "docs",
+    "repo": "docs"
+  },
+  {
+    "file": "docs/getting-started/installation.md",
+    "line": "53",
+    "text": "helm upgrade --install zen-agent zenmesh/zen-agent \\",
+    "term": "upgrade",
+    "category": "docs",
+    "repo": "docs"
+  },
+  {
+    "file": "docs/getting-started/installation.md",
+    "line": "63",
+    "text": "helm upgrade zen-agent zenmesh/zen-agent \\",
+    "term": "upgrade",
+    "category": "docs",
+    "repo": "docs"
+  },
+  {
+    "file": "docs/getting-started/quick-start.md",
+    "line": "44",
+    "text": "# Step 2: Install or upgrade the agent",
+    "term": "upgrade",
+    "category": "docs",
+    "repo": "docs"
+  },
+  {
+    "file": "docs/getting-started/quick-start.md",
+    "line": "48",
+    "text": "helm upgrade --install zen-agent zenmesh/zen-agent \\",
+    "term": "upgrade",
+    "category": "docs",
+    "repo": "docs"
+  },
+  {
+    "file": "docs/review/docsai-findings-001.md",
+    "line": "30",
+    "text": "| P3 | `docs:getting-started/upgrade-free-to-pro.md` L52 | \"Email + Slack\" implied Slack available | Changed to \"Email (support@zen-mesh.io); Slack workspace not yet confirmed\" |",
+    "term": "upgrade",
+    "category": "review",
+    "repo": "docs"
+  },
+  {
+    "file": "docs/api/logs.md",
+    "line": "49",
+    "text": "Platform logs are retained according to your tenant plan. Archived logs are available via the Evidence API for compliance use cases.",
+    "term": "plan",
+    "category": "api-docs",
+    "repo": "docs"
+  },
+  {
+    "file": "docs/mcp/tools.md",
+    "line": "9",
+    "text": "This page is hand-curated from the Go tool definitions in `src/saas/mcp/tools/handler.go` and `src/saas/mcp/evidence/tools.go`. The long-term plan is to generate this from MCP tool schema manifests.",
+    "term": "plan",
+    "category": "docs",
+    "repo": "docs"
+  },
+  {
+    "file": "docs/review/docs-map-for-reviewers.md",
+    "line": "64",
+    "text": "| First Customer Rehearsal | INTERNAL-REVIEW | Rehearsal plan |",
+    "term": "plan",
+    "category": "review",
+    "repo": "docs"
+  },
+  {
+    "file": "docs/review/public-reader-journey.md",
+    "line": "94",
+    "text": "4. **docs: Contracts \u2192 Support Center D1 Spec** \u2014 Support center plan (internal)",
+    "term": "plan",
+    "category": "review",
+    "repo": "docs"
+  },
+  {
+    "file": "src/pages/pricing.astro",
+    "line": "59",
+    "text": "<a href=\"mailto:zen@zen-mesh.io\" class=\"btn-plan btn-primary\">Join Early Access</a>",
+    "term": "plan",
+    "category": "pricing-page",
+    "repo": "site"
+  },
+  {
+    "file": "src/pages/pricing.astro",
+    "line": "98",
+    "text": "<a href=\"mailto:zen@zen-mesh.io\" class=\"btn-plan\">Contact us</a>",
+    "term": "plan",
+    "category": "pricing-page",
+    "repo": "site"
+  },
+  {
+    "file": "src/pages/pricing.astro",
+    "line": "136",
+    "text": "<a href=\"mailto:zen@zen-mesh.io\" class=\"btn-plan\">Contact us</a>",
+    "term": "plan",
+    "category": "pricing-page",
+    "repo": "site"
+  },
+  {
+    "file": "src/pages/pricing.astro",
+    "line": "292",
+    "text": ".btn-plan {",
+    "term": "plan",
+    "category": "pricing-page",
+    "repo": "site"
+  },
+  {
+    "file": "src/pages/pricing.astro",
+    "line": "305",
+    "text": ".btn-plan:hover {",
+    "term": "plan",
+    "category": "pricing-page",
+    "repo": "site"
+  },
+  {
+    "file": "src/pages/pricing.astro",
+    "line": "309",
+    "text": ".btn-plan.btn-primary {",
+    "term": "plan",
+    "category": "pricing-page",
+    "repo": "site"
+  },
+  {
+    "file": "src/pages/pricing.astro",
+    "line": "315",
+    "text": ".btn-plan.btn-primary:hover {",
+    "term": "plan",
+    "category": "pricing-page",
+    "repo": "site"
+  },
+  {
+    "file": "docs/getting-started/quick-start.md",
+    "line": "11",
+    "text": "- A [Zen Mesh account](https://zen-mesh.io) (free tier available)",
+    "term": "tier",
+    "category": "docs",
+    "repo": "docs"
+  },
+  {
+    "file": "docs/review/public-reader-journey.md",
+    "line": "15",
+    "text": "4. **/pricing** \u2014 Which tier fits",
+    "term": "tier",
+    "category": "review",
+    "repo": "docs"
+  },
+  {
+    "file": "docs/review/public-reader-journey.md",
+    "line": "38",
+    "text": "3. **/pricing** \u2014 Cost and tier selection",
+    "term": "tier",
+    "category": "review",
+    "repo": "docs"
+  },
+  {
+    "file": "docs/review/docsai-findings-001.md",
+    "line": "36",
+    "text": "| E1 | Pricing tier naming | Public site uses \"Preview / Team / Enterprise\"; docs use \"Free / Pro / Business / Enterprise\" | Align on one naming scheme across both surfaces before launch |",
+    "term": "tier",
+    "category": "review",
+    "repo": "docs"
+  },
+  {
+    "file": "docs/review/docsai-findings-001.md",
+    "line": "51",
+    "text": "- **Pricing tier naming** (E1 above) \u2014 Preview/Team vs Free/Pro alignment",
+    "term": "tier",
+    "category": "review",
+    "repo": "docs"
+  },
+  {
+    "file": "docs/review/docsai-findings-001.md",
+    "line": "85",
+    "text": "| Business/Enterprise live | PASS \u2014 Enterprise is \"Contact us\"; no live Business tier on pricing page |",
+    "term": "tier",
+    "category": "review",
+    "repo": "docs"
+  },
+  {
+    "file": "docs/ai/edge-lite.md",
+    "line": "136",
+    "text": "- \"Free-tier ready\"",
+    "term": "tier",
+    "category": "docs",
+    "repo": "docs"
+  },
+  {
+    "file": "docs/ai/edge-lite.md",
+    "line": "158",
+    "text": "5. **H504 launch gate**: Self-serve/free-tier/private-beta readiness (depends on S171/S172 + keyless identity)",
+    "term": "tier",
+    "category": "docs",
+    "repo": "docs"
+  },
+  {
+    "file": "docs/review/docs-map-for-reviewers.md",
+    "line": "18",
+    "text": "| Pricing | `/pricing` | LIVE | Preview/Team/Enterprise (naming may need alignment with docs) |",
+    "term": "pricing",
+    "category": "review",
+    "repo": "docs"
+  },
+  {
+    "file": "docs/review/public-reader-journey.md",
+    "line": "15",
+    "text": "4. **/pricing** \u2014 Which tier fits",
+    "term": "pricing",
+    "category": "review",
+    "repo": "docs"
+  },
+  {
+    "file": "docs/review/public-reader-journey.md",
+    "line": "38",
+    "text": "3. **/pricing** \u2014 Cost and tier selection",
+    "term": "pricing",
+    "category": "review",
+    "repo": "docs"
+  },
+  {
+    "file": "docs/review/docsai-findings-001.md",
+    "line": "85",
+    "text": "| Business/Enterprise live | PASS \u2014 Enterprise is \"Contact us\"; no live Business tier on pricing page |",
+    "term": "pricing",
+    "category": "review",
+    "repo": "docs"
+  },
+  {
+    "file": "docs/review/editorial-checklist.md",
+    "line": "30",
+    "text": "- [ ] Early-access status clear on homepage and pricing",
+    "term": "pricing",
+    "category": "review",
+    "repo": "docs"
+  },
+  {
+    "file": "src/pages/why.astro",
+    "line": "251",
+    "text": "<a href=\"/pricing\" class=\"btn-primary\">Become a Design Partner</a>",
+    "term": "pricing",
+    "category": "public-site",
+    "repo": "site"
+  },
+  {
+    "file": "src/pages/pricing.astro",
+    "line": "8",
+    "text": "<section class=\"pricing-hero\">",
+    "term": "pricing",
+    "category": "pricing-page",
+    "repo": "site"
+  },
+  {
+    "file": "src/pages/pricing.astro",
+    "line": "11",
+    "text": "<h1>Simple pricing for teams that need private webhook delivery</h1>",
+    "term": "pricing",
+    "category": "pricing-page",
+    "repo": "site"
+  },
+  {
+    "file": "src/pages/pricing.astro",
+    "line": "19",
+    "text": "<section class=\"pricing-cards\">",
+    "term": "pricing",
+    "category": "pricing-page",
+    "repo": "site"
+  },
+  {
+    "file": "src/pages/pricing.astro",
+    "line": "21",
+    "text": "<div class=\"pricing-grid\">",
+    "term": "pricing",
+    "category": "pricing-page",
+    "repo": "site"
+  },
+  {
+    "file": "src/pages/pricing.astro",
+    "line": "23",
+    "text": "<div class=\"pricing-card featured\">",
+    "term": "pricing",
+    "category": "pricing-page",
+    "repo": "site"
+  },
+  {
+    "file": "src/pages/pricing.astro",
+    "line": "63",
+    "text": "<div class=\"pricing-card\">",
+    "term": "pricing",
+    "category": "pricing-page",
+    "repo": "site"
+  },
+  {
+    "file": "src/pages/pricing.astro",
+    "line": "102",
+    "text": "<div class=\"pricing-card\">",
+    "term": "pricing",
+    "category": "pricing-page",
+    "repo": "site"
+  },
+  {
+    "file": "src/pages/pricing.astro",
+    "line": "184",
+    "text": ".pricing-hero {",
+    "term": "pricing",
+    "category": "pricing-page",
+    "repo": "site"
+  },
+  {
+    "file": "src/pages/pricing.astro",
+    "line": "190",
+    "text": ".pricing-hero h1 {",
+    "term": "pricing",
+    "category": "pricing-page",
+    "repo": "site"
+  },
+  {
+    "file": "src/pages/pricing.astro",
+    "line": "204",
+    "text": ".pricing-cards {",
+    "term": "pricing",
+    "category": "pricing-page",
+    "repo": "site"
+  },
+  {
+    "file": "src/pages/pricing.astro",
+    "line": "208",
+    "text": ".pricing-grid {",
+    "term": "pricing",
+    "category": "pricing-page",
+    "repo": "site"
+  },
+  {
+    "file": "src/pages/pricing.astro",
+    "line": "214",
+    "text": ".pricing-card {",
+    "term": "pricing",
+    "category": "pricing-page",
+    "repo": "site"
+  },
+  {
+    "file": "src/pages/pricing.astro",
+    "line": "223",
+    "text": ".pricing-card.featured {",
+    "term": "pricing",
+    "category": "pricing-page",
+    "repo": "site"
+  },
+  {
+    "file": "src/pages/pricing.astro",
+    "line": "387",
+    "text": ".pricing-grid {",
+    "term": "pricing",
+    "category": "pricing-page",
+    "repo": "site"
+  },
+  {
+    "file": "src/pages/pricing.astro",
+    "line": "393",
+    "text": ".pricing-hero h1 {",
+    "term": "pricing",
+    "category": "pricing-page",
+    "repo": "site"
+  },
+  {
+    "file": "src/pages/pricing.astro",
+    "line": "397",
+    "text": ".pricing-grid {",
+    "term": "pricing",
+    "category": "pricing-page",
+    "repo": "site"
+  },
+  {
+    "file": "src/layouts/Layout.astro",
+    "line": "75",
+    "text": "<a href=\"/pricing\">Pricing</a>",
+    "term": "pricing",
+    "category": "public-site",
+    "repo": "site"
+  },
+  {
+    "file": "src/layouts/Layout.astro",
+    "line": "108",
+    "text": "<a href=\"/pricing\">Pricing</a>",
+    "term": "pricing",
+    "category": "public-site",
+    "repo": "site"
+  }
+]

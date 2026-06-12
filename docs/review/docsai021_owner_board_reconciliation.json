@@ -1,0 +1,98 @@
+{
+  "leonardo_decisions": [
+    {
+      "item": "pricing_tier_naming",
+      "status": "decision_needed",
+      "artifact": "docsai021_pricing_decision_packet.md",
+      "options": "A(recommended): Free/Pro/Business coming soon/Enterprise contact"
+    },
+    {
+      "item": "support_channels",
+      "status": "decision_needed",
+      "detail": "Slack/Discord unconfirmed. support@zen-mesh.io is canonical."
+    },
+    {
+      "item": "provider_region_wording",
+      "status": "decision_needed",
+      "detail": "Entry point provider/region unresolved"
+    },
+    {
+      "item": "consent_tracker_decision",
+      "status": "decision_needed",
+      "detail": "Cookie/tracker approach not decided"
+    },
+    {
+      "item": "object_store_day1_scope",
+      "status": "decision_needed",
+      "detail": "Object-store fan-out runtime proof needed before Day 1 claim"
+    }
+  ],
+  "legal_decisions": [
+    {
+      "item": "terms_of_service_full_text",
+      "status": "draft_on_helper_branch_not_merged",
+      "action": "review and approve"
+    },
+    {
+      "item": "privacy_policy_full_text",
+      "status": "draft_on_helper_branch_not_merged",
+      "action": "review and approve"
+    },
+    {
+      "item": "cookie_policy",
+      "status": "draft_on_helper_branch_not_merged",
+      "action": "review and approve"
+    },
+    {
+      "item": "aup",
+      "status": "draft_on_helper_branch_not_merged",
+      "action": "review and approve"
+    },
+    {
+      "item": "dpa",
+      "status": "draft_on_helper_branch_not_merged",
+      "action": "review and approve"
+    },
+    {
+      "item": "subprocessor_list",
+      "status": "not_drafted",
+      "action": "draft and approve (blocks enterprise)"
+    },
+    {
+      "item": "data_deletion_export_policy",
+      "status": "not_drafted",
+      "action": "draft and approve (blocks EU customers)"
+    }
+  ],
+  "hermes_tasks": [
+    {
+      "item": "runtime_proof_only",
+      "detail": "DocsAI does not assign runtime tasks to Hermes"
+    }
+  ],
+  "docsai_tasks": [
+    {
+      "item": "claim_hygiene",
+      "status": "in_progress",
+      "detail": "DOCSAI021"
+    },
+    {
+      "item": "pricing_naming",
+      "status": "awaiting_leonardo",
+      "detail": "Decision packet ready"
+    },
+    {
+      "item": "legal_readiness",
+      "status": "awaiting_legal",
+      "detail": "Readiness packet ready"
+    },
+    {
+      "item": "site_support_email_gap",
+      "status": "identified",
+      "detail": "No support email on public site"
+    }
+  ],
+  "ownerless": 0,
+  "missing_acceptance": 0,
+  "leverage_legal_owner": "Leonardo to route legal documents for review"
+}

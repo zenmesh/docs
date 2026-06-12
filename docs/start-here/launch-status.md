@@ -9,7 +9,7 @@ Zen Mesh is in **early access**. We are completing final validations before open
 ## Current Phase
 
 - **Early access**: Available now. Contact us at zen@zen-mesh.io to join.
-- **Production access**: Planned after final validation gates pass. See [Runtime Proof Checklist](/docs/contracts/runtime-proof-checklist) and [Launch Readiness Gap to Action](/docs/contracts/launch-readiness-gap-to-action) for details.
+- **Production access**: Planned after final validation gates pass. See the [Evidence section](/docs/evidence/overview) for current validation state.
 - **SLA options**: Will be introduced as the service matures. No hard SLAs offered during early access.
 
 ## Evidence Status
@@ -19,4 +19,4 @@ Zen Mesh is in **early access**. We are completing final validations before open
 - Claims guard: 0 critical overclaims
 - Compliance mappings: support mappings only — no certifications
 
-All evidence lives in the [Evidence section](/docs/evidence/overview) and [AI evidence artifacts](/ai/evidence/v1/manifest.json).
+All evidence lives in the [Evidence section](/docs/evidence/overview).

@@ -1,0 +1,14 @@
+{
+  "reader_journey_page_exists": true,
+  "docs_map_exists": true,
+  "editorial_checklist_exists": true,
+  "support_email_canonical": "support@zen-mesh.io",
+  "support_email_on_docs": true,
+  "support_email_on_site": false,
+  "support_email_gap": "Public site has no support email \u2014 should add support@zen-mesh.io to footer or contact page",
+  "leonardo_name_in_public": false,
+  "site_to_docs_links": 61,
+  "positive_narrative_preserved": true,
+  "blocker_detail_in_status_pages": true,
+  "not_in_hero_pages": true
+}
