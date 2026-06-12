@@ -1,0 +1,16 @@
+{
+  "task_id": "DOCSAI027",
+  "phase": 9,
+  "page": "docs/legal/cookie-disclosure.md",
+  "status": "draft/legal-review-required",
+  "covers": [
+    "active_tracker_detection",
+    "candidate_list",
+    "no_heavy_trackers_default",
+    "self_host_fonts_recommendation",
+    "cookie_banner_decision_matrix",
+    "consent_pending",
+    "no_cookie_effective_claim",
+    "legal_review_marker"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "task_id": "DOCSAI027",
+  "phase": 15,
+  "page": "docs/legal/retention-lifecycle.md",
+  "status": "draft/legal-review-required",
+  "covers": [
+    "payload_free_7d_pro_30d",
+    "dlq_replay_free_7d_pro_30d",
+    "logs_free_1mo_pro_3mo",
+    "evidence_free_1mo_pro_3mo",
+    "deletion_return_free_1mo_pro_3mo",
+    "business_enterprise_later",
+    "hermes_runtime_pending",
+    "no_runtime_live",
+    "legal_review_marker"
+  ]
+}

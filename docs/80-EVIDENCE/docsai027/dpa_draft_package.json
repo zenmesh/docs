@@ -1,0 +1,17 @@
+{
+  "task_id": "DOCSAI027",
+  "phase": 7,
+  "page": "docs/legal/dpa.md",
+  "status": "draft/legal-review-required",
+  "covers": [
+    "controller_processor_pending",
+    "subprocessors",
+    "security_measures",
+    "data_return_deletion",
+    "transfer_pending",
+    "audit_no_overclaim",
+    "support_contact",
+    "no_sla_cert_overclaim",
+    "legal_review_marker"
+  ]
+}

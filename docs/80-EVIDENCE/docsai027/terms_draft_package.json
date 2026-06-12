@@ -1,0 +1,19 @@
+{
+  "task_id": "DOCSAI027",
+  "phase": 5,
+  "page": "docs/legal/terms.md",
+  "status": "draft/legal-review-required",
+  "covers": [
+    "entity_name",
+    "address",
+    "governing_law_pending_review",
+    "service_description",
+    "aup_crosslink",
+    "billing_crosslink",
+    "design_partner_crosslink",
+    "support_caveat",
+    "no_sla",
+    "no_production_live",
+    "legal_review_marker"
+  ]
+}

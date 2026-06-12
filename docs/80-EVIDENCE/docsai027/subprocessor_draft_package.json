@@ -1,0 +1,30 @@
+{
+  "task_id": "DOCSAI027",
+  "phase": 10,
+  "page": "docs/legal/subprocessors.md",
+  "status": "draft/legal-review-required",
+  "active": [
+    "GCP",
+    "AWS",
+    "Stripe",
+    "GitHub",
+    "Docusaurus"
+  ],
+  "candidates": [
+    "Google Analytics",
+    "HubSpot",
+    "Vercel Analytics",
+    "Vercel Speed Insights",
+    "Google Fonts",
+    "support/CRM tools"
+  ],
+  "covers": [
+    "status_per_subprocessor",
+    "purpose",
+    "data_type",
+    "transfer_impact",
+    "dpa_review_needed",
+    "approval_status",
+    "no_unsupported_claim"
+  ]
+}

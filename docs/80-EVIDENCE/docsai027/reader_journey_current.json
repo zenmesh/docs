@@ -1,0 +1,256 @@
+{
+  "task_id": "DOCSAI027",
+  "generated": "2026-06-12",
+  "journeys": [
+    {
+      "persona": "founder/operator evaluating Zen Mesh",
+      "entry": "site homepage (index.astro)",
+      "path": [
+        "index.astro",
+        "why.astro",
+        "how-it-works.astro",
+        "pricing.astro",
+        "security.astro",
+        "commitments.astro"
+      ],
+      "questions": [
+        "What is Zen Mesh?",
+        "Why use it?",
+        "How does it work?",
+        "What does it cost?",
+        "Is it secure?"
+      ],
+      "blockers": [
+        "signup not yet enabled",
+        "Business/Enterprise coming soon"
+      ],
+      "caveats": [
+        "Pro pricing is early-bird",
+        "no SLA claims",
+        "Shopify/Twilio V1 blockers"
+      ],
+      "legal_note": "Legal pages are draft/non-effective"
+    },
+    {
+      "persona": "developer integrating webhooks",
+      "entry": "docs/start-here/what-is-zen-mesh.md",
+      "path": [
+        "what-is-zen-mesh.md",
+        "quick-start.md",
+        "first-webhook.md",
+        "api/overview.md",
+        "api/webhooks.md",
+        "api/authentication.md",
+        "guides/stripe.md"
+      ],
+      "questions": [
+        "How do I send my first webhook?",
+        "What auth do I need?",
+        "How do I configure Stripe?"
+      ],
+      "blockers": [
+        "signup not yet enabled",
+        "runtime entitlement proof pending"
+      ],
+      "caveats": [
+        "MCP is read-scoped only",
+        "no apply-live"
+      ],
+      "legal_note": "Terms/Privacy/AUP draft/non-effective"
+    },
+    {
+      "persona": "buyer/security reviewer",
+      "entry": "site security.astro",
+      "path": [
+        "security.astro",
+        "commitments.astro",
+        "evidence.astro",
+        "docs/security/index.md",
+        "docs/legal/responsible-disclosure.md"
+      ],
+      "questions": [
+        "How is data protected?",
+        "What evidence exists?",
+        "What is the security posture?"
+      ],
+      "blockers": [
+        "no SOC2/ISO certification claims",
+        "residency guarantee not claimed"
+      ],
+      "caveats": [
+        "no SLA",
+        "no uptime guarantee",
+        "mTLS/crypto enrollment documented"
+      ],
+      "legal_note": "Responsible disclosure is draft/non-effective"
+    },
+    {
+      "persona": "legal/privacy reviewer",
+      "entry": "docs/legal/terms.md",
+      "path": [
+        "legal/terms.md",
+        "legal/privacy.md",
+        "legal/dpa.md",
+        "legal/aup.md",
+        "legal/subprocessors.md",
+        "legal/scc-transfer.md",
+        "legal/cookie-disclosure.md",
+        "legal/breach-notice.md"
+      ],
+      "questions": [
+        "What are the terms?",
+        "How is data handled?",
+        "Who are subprocessors?",
+        "What about international transfer?"
+      ],
+      "blockers": [
+        "ALL legal pages are draft/non-effective"
+      ],
+      "caveats": [
+        "jurisdiction Ontario/Canada pending legal review",
+        "no DPA is effective",
+        "SCC wording pending"
+      ],
+      "legal_note": "All legal pages require formal legal review before becoming effective"
+    },
+    {
+      "persona": "design partner prospect",
+      "entry": "site pricing.astro",
+      "path": [
+        "pricing.astro",
+        "docs/legal/design-partner-terms.md",
+        "docs/start-here/support.md"
+      ],
+      "questions": [
+        "How does the design partner program work?",
+        "What are the terms?",
+        "How long does it last?"
+      ],
+      "blockers": [
+        "no guaranteed acceptance",
+        "survey required monthly"
+      ],
+      "caveats": [
+        "6 months Pro free max",
+        "no SLA/support promise",
+        "terms are draft"
+      ],
+      "legal_note": "Design partner terms are draft/non-effective"
+    },
+    {
+      "persona": "support/contact user",
+      "entry": "docs/start-here/support.md",
+      "path": [
+        "support.md",
+        "docs/operations/troubleshooting.md"
+      ],
+      "questions": [
+        "How do I get help?",
+        "What is the support email?"
+      ],
+      "blockers": [
+        "support@zen-mesh.io is canonical but no SLA/responder commitment"
+      ],
+      "caveats": [
+        "Slack unconfirmed",
+        "Discord not created"
+      ],
+      "legal_note": "N/A"
+    },
+    {
+      "persona": "billing/pricing evaluator",
+      "entry": "site pricing.astro",
+      "path": [
+        "pricing.astro",
+        "docs/legal/billing-terms.md",
+        "docs/legal/retention-lifecycle.md"
+      ],
+      "questions": [
+        "What are the plans?",
+        "How much does Pro cost?",
+        "What are the refund terms?",
+        "How long is data retained?"
+      ],
+      "blockers": [
+        "checkout/portal not live",
+        "Stripe runtime pending"
+      ],
+      "caveats": [
+        "early-bird pricing",
+        "no billing-live claim"
+      ],
+      "legal_note": "Billing terms are draft/non-effective"
+    },
+    {
+      "persona": "incident/security reporter",
+      "entry": "docs/legal/responsible-disclosure.md",
+      "path": [
+        "legal/responsible-disclosure.md",
+        "docs/start-here/support.md"
+      ],
+      "questions": [
+        "How do I report a vulnerability?",
+        "What is the security contact?"
+      ],
+      "blockers": [
+        "no bounty program",
+        "no SLA on response"
+      ],
+      "caveats": [
+        "security@zen-mesh.io canonical",
+        "security.txt pending publication"
+      ],
+      "legal_note": "Responsible disclosure is draft/non-effective"
+    },
+    {
+      "persona": "API/MCP reader",
+      "entry": "docs/mcp/overview.md",
+      "path": [
+        "mcp/overview.md",
+        "mcp/read-only-v1-policy.md",
+        "mcp/tools.md",
+        "mcp/safety-and-boundaries.md",
+        "api/overview.md"
+      ],
+      "questions": [
+        "What MCP tools exist?",
+        "Is MCP read-only?",
+        "What are the safety boundaries?"
+      ],
+      "blockers": [
+        "no MCP apply-live",
+        "no permission-axis runtime-live"
+      ],
+      "caveats": [
+        "current posture is read-scoped/read-only"
+      ],
+      "legal_note": "N/A"
+    },
+    {
+      "persona": "pre-signup user",
+      "entry": "site try.astro or pricing.astro",
+      "path": [
+        "try.astro",
+        "pricing.astro",
+        "why.astro",
+        "how-it-works.astro",
+        "security.astro",
+        "docs/start-here/what-is-zen-mesh.md"
+      ],
+      "questions": [
+        "Can I sign up?",
+        "What happens after signup?",
+        "What is Free vs Pro?"
+      ],
+      "blockers": [
+        "public signup not enabled",
+        "legal signoff required first"
+      ],
+      "caveats": [
+        "Free + Pro V1 direction",
+        "Business/Enterprise coming soon"
+      ],
+      "legal_note": "All legal pages must be effective before public signup"
+    }
+  ]
+}

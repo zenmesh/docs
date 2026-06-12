@@ -1,0 +1,17 @@
+{
+  "task_id": "DOCSAI027",
+  "phase": 8,
+  "page": "docs/legal/aup.md",
+  "status": "draft/legal-review-required",
+  "covers": [
+    "prohibited_abuse",
+    "webhook_abuse",
+    "credential_misuse",
+    "illegal_content",
+    "platform_integrity",
+    "security_testing_contact",
+    "suspension_termination_pending",
+    "no_enforcement_overclaim",
+    "legal_review_marker"
+  ]
+}

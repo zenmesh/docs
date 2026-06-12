@@ -1,0 +1,654 @@
+{
+  "task_id": "DOCSAI027",
+  "generated": "2026-06-12",
+  "sections": {
+    "public_site": {
+      "status": "public",
+      "pages": [
+        {
+          "path": "src/pages/index.astro",
+          "title": "Homepage/Landing",
+          "scope": "public"
+        },
+        {
+          "path": "src/pages/pricing.astro",
+          "title": "Pricing",
+          "scope": "public"
+        },
+        {
+          "path": "src/pages/security.astro",
+          "title": "Security",
+          "scope": "public"
+        },
+        {
+          "path": "src/pages/why.astro",
+          "title": "Why Zen Mesh",
+          "scope": "public"
+        },
+        {
+          "path": "src/pages/how-it-works.astro",
+          "title": "How It Works",
+          "scope": "public"
+        },
+        {
+          "path": "src/pages/commitments.astro",
+          "title": "Commitments",
+          "scope": "public"
+        },
+        {
+          "path": "src/pages/evidence.astro",
+          "title": "Evidence",
+          "scope": "public"
+        },
+        {
+          "path": "src/pages/non-claims.json.ts",
+          "title": "Non-Claims",
+          "scope": "public"
+        },
+        {
+          "path": "src/pages/try.astro",
+          "title": "Try/Signup",
+          "scope": "public"
+        },
+        {
+          "path": "src/pages/docs/public-terminology-taxonomy.astro",
+          "title": "Public Terminology",
+          "scope": "public"
+        },
+        {
+          "path": "src/pages/blogs/index.astro",
+          "title": "Blog Index",
+          "scope": "public"
+        },
+        {
+          "path": "src/pages/blogs/[...slug].astro",
+          "title": "Blog Posts",
+          "scope": "public"
+        },
+        {
+          "path": "src/pages/zen-sdk/[...path].astro",
+          "title": "Zen SDK proxy",
+          "scope": "public"
+        }
+      ]
+    },
+    "docs_start_here": {
+      "status": "public",
+      "pages": [
+        {
+          "path": "docs/start-here/what-is-zen-mesh.md",
+          "title": "What Is Zen Mesh",
+          "scope": "public"
+        },
+        {
+          "path": "docs/start-here/who-should-use-zen-mesh.md",
+          "title": "Who Should Use",
+          "scope": "public"
+        },
+        {
+          "path": "docs/start-here/concepts.md",
+          "title": "Core Concepts",
+          "scope": "public"
+        },
+        {
+          "path": "docs/start-here/current-status.md",
+          "title": "Current Status",
+          "scope": "public"
+        },
+        {
+          "path": "docs/start-here/launch-status.md",
+          "title": "Launch Status",
+          "scope": "public"
+        },
+        {
+          "path": "docs/start-here/support.md",
+          "title": "Support",
+          "scope": "public"
+        }
+      ]
+    },
+    "docs_legal_draft": {
+      "status": "draft/non-effective/legal-review-required",
+      "pages": [
+        {
+          "path": "docs/legal/terms.md",
+          "title": "Terms of Service",
+          "scope": "draft-legal"
+        },
+        {
+          "path": "docs/legal/privacy.md",
+          "title": "Privacy Policy",
+          "scope": "draft-legal"
+        },
+        {
+          "path": "docs/legal/dpa.md",
+          "title": "DPA",
+          "scope": "draft-legal"
+        },
+        {
+          "path": "docs/legal/aup.md",
+          "title": "AUP",
+          "scope": "draft-legal"
+        },
+        {
+          "path": "docs/legal/cookie-disclosure.md",
+          "title": "Cookie/Tracker Disclosure",
+          "scope": "draft-legal"
+        },
+        {
+          "path": "docs/legal/subprocessors.md",
+          "title": "Subprocessor List",
+          "scope": "draft-legal"
+        },
+        {
+          "path": "docs/legal/scc-transfer.md",
+          "title": "SCC/International Transfer",
+          "scope": "draft-legal"
+        },
+        {
+          "path": "docs/legal/responsible-disclosure.md",
+          "title": "Responsible Disclosure",
+          "scope": "draft-legal"
+        },
+        {
+          "path": "docs/legal/billing-terms.md",
+          "title": "Billing/Refund/Plan Terms",
+          "scope": "draft-legal"
+        },
+        {
+          "path": "docs/legal/design-partner-terms.md",
+          "title": "Design Partner Terms",
+          "scope": "draft-legal"
+        },
+        {
+          "path": "docs/legal/retention-lifecycle.md",
+          "title": "Retention/Data Lifecycle",
+          "scope": "draft-legal"
+        },
+        {
+          "path": "docs/legal/breach-notice.md",
+          "title": "Breach Notice",
+          "scope": "draft-legal"
+        }
+      ]
+    },
+    "docs_trust_center": {
+      "status": "draft",
+      "pages": [
+        {
+          "path": "docs/trust/trust-center.md",
+          "title": "Trust Center / Buyer Room",
+          "scope": "draft"
+        }
+      ]
+    },
+    "docs_signup_gate": {
+      "status": "blocked",
+      "pages": [
+        {
+          "path": "docs/80-EVIDENCE/docsai027/public_signup_gate_repair.md",
+          "title": "Signup Gate",
+          "scope": "internal"
+        }
+      ]
+    },
+    "docs_api": {
+      "status": "public",
+      "pages": [
+        {
+          "path": "docs/api/overview.md",
+          "title": "API Overview",
+          "scope": "public"
+        },
+        {
+          "path": "docs/api/quickstart.md",
+          "title": "API Quickstart",
+          "scope": "public"
+        },
+        {
+          "path": "docs/api/webhooks.md",
+          "title": "Webhooks API",
+          "scope": "public"
+        },
+        {
+          "path": "docs/api/authentication.md",
+          "title": "Authentication",
+          "scope": "public"
+        },
+        {
+          "path": "docs/api/events.md",
+          "title": "Events",
+          "scope": "public"
+        },
+        {
+          "path": "docs/api/evidence.md",
+          "title": "Evidence API",
+          "scope": "public"
+        },
+        {
+          "path": "docs/api/logs.md",
+          "title": "Logs API",
+          "scope": "public"
+        },
+        {
+          "path": "docs/api/rate-limits.md",
+          "title": "Rate Limits",
+          "scope": "public"
+        },
+        {
+          "path": "docs/api/errors.md",
+          "title": "Errors",
+          "scope": "public"
+        },
+        {
+          "path": "docs/api/replay.md",
+          "title": "Replay API",
+          "scope": "public"
+        },
+        {
+          "path": "docs/api/idempotency.md",
+          "title": "Idempotency",
+          "scope": "public"
+        },
+        {
+          "path": "docs/api/versioning.md",
+          "title": "Versioning",
+          "scope": "public"
+        },
+        {
+          "path": "docs/api/changelog.md",
+          "title": "Changelog",
+          "scope": "public"
+        },
+        {
+          "path": "docs/api/websocket.md",
+          "title": "WebSocket",
+          "scope": "public"
+        },
+        {
+          "path": "docs/api/examples.md",
+          "title": "Examples",
+          "scope": "public"
+        }
+      ]
+    },
+    "docs_mcp": {
+      "status": "public",
+      "pages": [
+        {
+          "path": "docs/mcp/overview.md",
+          "title": "MCP Overview",
+          "scope": "public"
+        },
+        {
+          "path": "docs/mcp/read-only-v1-policy.md",
+          "title": "MCP Read-Only V1 Policy",
+          "scope": "public"
+        },
+        {
+          "path": "docs/mcp/authentication.md",
+          "title": "MCP Auth",
+          "scope": "public"
+        },
+        {
+          "path": "docs/mcp/authentication-and-mtls.md",
+          "title": "MCP Auth + mTLS",
+          "scope": "public"
+        },
+        {
+          "path": "docs/mcp/tools.md",
+          "title": "MCP Tools",
+          "scope": "public"
+        },
+        {
+          "path": "docs/mcp/safety-and-boundaries.md",
+          "title": "MCP Safety",
+          "scope": "public"
+        },
+        {
+          "path": "docs/mcp/draft-system.md",
+          "title": "MCP Draft System",
+          "scope": "public"
+        },
+        {
+          "path": "docs/mcp/examples.md",
+          "title": "MCP Examples",
+          "scope": "public"
+        }
+      ]
+    },
+    "docs_architecture": {
+      "status": "public",
+      "pages": [
+        {
+          "path": "docs/architecture/overview.md",
+          "title": "Architecture Overview",
+          "scope": "public"
+        },
+        {
+          "path": "docs/architecture/platform-layers.md",
+          "title": "Platform Layers",
+          "scope": "public"
+        },
+        {
+          "path": "docs/architecture/three-plane-model.md",
+          "title": "Three Plane Model",
+          "scope": "public"
+        },
+        {
+          "path": "docs/architecture/security-model.md",
+          "title": "Security Model",
+          "scope": "public"
+        },
+        {
+          "path": "docs/architecture/delivery-modes.md",
+          "title": "Delivery Modes",
+          "scope": "public"
+        }
+      ]
+    },
+    "docs_delivery": {
+      "status": "public",
+      "pages": [
+        {
+          "path": "docs/delivery/index.md",
+          "title": "Delivery Index",
+          "scope": "public"
+        },
+        {
+          "path": "docs/delivery/fan-out.md",
+          "title": "Fan-Out / Multi-Destination",
+          "scope": "public"
+        },
+        {
+          "path": "docs/delivery/event-routing.md",
+          "title": "Event Routing",
+          "scope": "public"
+        },
+        {
+          "path": "docs/delivery/filtering.md",
+          "title": "Filtering",
+          "scope": "public"
+        },
+        {
+          "path": "docs/delivery/delivery-failures.md",
+          "title": "Delivery Failures",
+          "scope": "public"
+        },
+        {
+          "path": "docs/delivery/webhook-reliability.md",
+          "title": "Webhook Reliability",
+          "scope": "public"
+        },
+        {
+          "path": "docs/delivery/replay-and-recovery.md",
+          "title": "Replay and Recovery",
+          "scope": "public"
+        },
+        {
+          "path": "docs/delivery/deduplication.md",
+          "title": "Deduplication",
+          "scope": "public"
+        },
+        {
+          "path": "docs/delivery/idempotency.md",
+          "title": "Idempotency",
+          "scope": "public"
+        },
+        {
+          "path": "docs/delivery/jsonpath-routing.md",
+          "title": "JSONPath Routing",
+          "scope": "public"
+        },
+        {
+          "path": "docs/delivery/jsonpath-transforms.md",
+          "title": "JSONPath Transforms",
+          "scope": "public"
+        },
+        {
+          "path": "docs/delivery/replay.md",
+          "title": "Replay",
+          "scope": "public"
+        },
+        {
+          "path": "docs/delivery/replay-vs-retry.md",
+          "title": "Replay vs Retry",
+          "scope": "public"
+        },
+        {
+          "path": "docs/delivery/routing-and-fan-out.md",
+          "title": "Routing and Fan-Out",
+          "scope": "public"
+        },
+        {
+          "path": "docs/delivery/deduplication-vs-idempotency.md",
+          "title": "Dedup vs Idempotency",
+          "scope": "public"
+        },
+        {
+          "path": "docs/delivery/dead-letter-queue.md",
+          "title": "Dead Letter Queue",
+          "scope": "public"
+        }
+      ]
+    },
+    "docs_guides": {
+      "status": "public",
+      "pages": [
+        {
+          "path": "docs/guides/stripe.md",
+          "title": "Stripe Guide",
+          "scope": "public"
+        },
+        {
+          "path": "docs/guides/github.md",
+          "title": "GitHub Guide",
+          "scope": "public"
+        },
+        {
+          "path": "docs/guides/sources.md",
+          "title": "Sources",
+          "scope": "public"
+        },
+        {
+          "path": "docs/guides/destinations.md",
+          "title": "Destinations",
+          "scope": "public"
+        },
+        {
+          "path": "docs/guides/endpoints.md",
+          "title": "Endpoints",
+          "scope": "public"
+        },
+        {
+          "path": "docs/guides/custom-webhooks.md",
+          "title": "Custom Webhooks",
+          "scope": "public"
+        },
+        {
+          "path": "docs/guides/adapters.md",
+          "title": "Adapters",
+          "scope": "public"
+        },
+        {
+          "path": "docs/guides/monitoring.md",
+          "title": "Monitoring",
+          "scope": "public"
+        },
+        {
+          "path": "docs/guides/cluster-enrollment.md",
+          "title": "Cluster Enrollment",
+          "scope": "public"
+        }
+      ]
+    },
+    "docs_security": {
+      "status": "public",
+      "pages": [
+        {
+          "path": "docs/security/index.md",
+          "title": "Security Index",
+          "scope": "public"
+        },
+        {
+          "path": "docs/security/secure-webhook-delivery.md",
+          "title": "Secure Delivery",
+          "scope": "public"
+        },
+        {
+          "path": "docs/security/webhook-access-control.md",
+          "title": "Access Control",
+          "scope": "public"
+        },
+        {
+          "path": "docs/security/tenant-isolation.md",
+          "title": "Tenant Isolation",
+          "scope": "public"
+        },
+        {
+          "path": "docs/security/agent-saas-mtls.md",
+          "title": "Agent-SaaS mTLS",
+          "scope": "public"
+        },
+        {
+          "path": "docs/security/cryptographic-enrollment.md",
+          "title": "Cryptographic Enrollment",
+          "scope": "public"
+        },
+        {
+          "path": "docs/security/header-validation.md",
+          "title": "Header Validation",
+          "scope": "public"
+        },
+        {
+          "path": "docs/security/ip-allowlisting.md",
+          "title": "IP Allowlisting",
+          "scope": "public"
+        },
+        {
+          "path": "docs/security/zenlock-credential-lifecycle.md",
+          "title": "ZenLock Lifecycle",
+          "scope": "public"
+        },
+        {
+          "path": "docs/security/security-capability-validation.md",
+          "title": "Capability Validation",
+          "scope": "public"
+        }
+      ]
+    },
+    "docs_evidence": {
+      "status": "internal-review",
+      "pages": [
+        {
+          "path": "docs/evidence/overview.md",
+          "title": "Evidence Overview",
+          "scope": "internal"
+        },
+        {
+          "path": "docs/evidence/non-claims.md",
+          "title": "Non-Claims",
+          "scope": "internal"
+        },
+        {
+          "path": "docs/evidence/completion-evidence.md",
+          "title": "Completion Evidence",
+          "scope": "internal"
+        },
+        {
+          "path": "docs/evidence/public-docs-claim-audit.md",
+          "title": "Claim Audit",
+          "scope": "internal"
+        },
+        {
+          "path": "docs/evidence/runtime-convergence.md",
+          "title": "Runtime Convergence",
+          "scope": "internal"
+        },
+        {
+          "path": "docs/evidence/trust-lifecycle.md",
+          "title": "Trust Lifecycle",
+          "scope": "internal"
+        },
+        {
+          "path": "docs/evidence/validation-map.md",
+          "title": "Validation Map",
+          "scope": "internal"
+        },
+        {
+          "path": "docs/evidence/merkle-integrity.md",
+          "title": "Merkle Integrity",
+          "scope": "internal"
+        },
+        {
+          "path": "docs/evidence/docs-experience-audit.md",
+          "title": "Docs Experience Audit",
+          "scope": "internal"
+        }
+      ]
+    },
+    "docs_ai_internal": {
+      "status": "internal",
+      "pages": [
+        {
+          "path": "docs/ai/overview.md",
+          "title": "AI Overview",
+          "scope": "internal"
+        },
+        {
+          "path": "docs/ai/non-claims.md",
+          "title": "AI Non-Claims",
+          "scope": "internal"
+        },
+        {
+          "path": "docs/ai/capability-evidence.md",
+          "title": "Capability Evidence",
+          "scope": "internal"
+        },
+        {
+          "path": "docs/ai/compliance-evidence.md",
+          "title": "Compliance Evidence",
+          "scope": "internal"
+        },
+        {
+          "path": "docs/ai/security-posture.md",
+          "title": "Security Posture",
+          "scope": "internal"
+        },
+        {
+          "path": "docs/ai/verification.md",
+          "title": "Verification",
+          "scope": "internal"
+        },
+        {
+          "path": "docs/ai/evidence-schema.md",
+          "title": "Evidence Schema",
+          "scope": "internal"
+        },
+        {
+          "path": "docs/ai/public-surface-traceability.md",
+          "title": "Public Surface Traceability",
+          "scope": "internal"
+        },
+        {
+          "path": "docs/ai/public-terminology-taxonomy.md",
+          "title": "Public Terminology",
+          "scope": "internal"
+        },
+        {
+          "path": "docs/ai/edge-lite.md",
+          "title": "Edge Lite",
+          "scope": "internal"
+        },
+        {
+          "path": "docs/ai/wedge-overview.md",
+          "title": "Wedge Overview",
+          "scope": "internal"
+        }
+      ]
+    }
+  },
+  "total_public_pages": 82,
+  "total_draft_legal_pages": 12,
+  "total_internal_pages": 33
+}

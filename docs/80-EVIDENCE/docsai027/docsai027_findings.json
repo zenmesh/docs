@@ -1,0 +1,59 @@
+{
+  "task_id": "DOCSAI027",
+  "route": "DocsAI",
+  "findings": {
+    "fixed": [
+      "DOCSAI026 report repair \u2014 full SHAs, worktree isolation, evidence gaps addressed",
+      "12 legal draft pages created (terms, privacy, dpa, aup, cookie, subprocessors, scc, responsible-disclosure, billing, design-partner, retention, breach-notice) \u2014 all marked draft/non-effective/legal-review-required",
+      "Trust center / buyer room page created with security posture, MCP read-only status, draft legal doc index, pricing direction, runtime proof pending caveats",
+      "Sidebar updated with Legal (Draft) and Trust categories for discoverability",
+      "Docs map for reviewers page created/updated",
+      "Public reader journey page created/updated with 7 audience paths",
+      "Launch docs editorial checklist created/updated",
+      "Public signup gate repair documented \u2014 17 blockers identified",
+      "Claim freeze scan pass \u2014 0 new forbidden claims",
+      "Active tracker/cookie recheck \u2014 no heavy trackers active",
+      "Review queue finalized \u2014 4 Leonardo, 12 legal, 7 Hermes runtime, 0 DocsAI, 0 Helper2"
+    ],
+    "remaining_editorial_risks": [
+      "46 pre-existing broken links (not from DOCSAI027) \u2014 need separate fix task",
+      "Some docs pages reference /ai/evidence/v1/*.json files that don't exist",
+      "guides/destinations.md uses 'SLA' in health status context (pre-existing, could confuse)",
+      "operations/troubleshooting.md references Slack workspace (unconfirmed)"
+    ],
+    "remaining_launch_blocker_docs": [
+      "All 12 legal pages need legal review before signup can be enabled",
+      "llms.txt and sitemap need creation/finalization",
+      "46 pre-existing broken links need fixing before public launch"
+    ],
+    "pages_needing_leonardo_review": [
+      "docs/legal/cookie-disclosure.md \u2014 tracker/consent final choice",
+      "docs/legal/scc-transfer.md \u2014 international transfer final position",
+      "docs/legal/subprocessors.md \u2014 optional subprocessors approval",
+      "docs/legal/responsible-disclosure.md \u2014 encryption key optional",
+      "docs/start-here/support.md \u2014 Slack/Discord confirmation",
+      "docs/80-EVIDENCE/docsai027/review_queue_final.md \u2014 final signoff"
+    ],
+    "pages_needing_legal_review": [
+      "docs/legal/terms.md",
+      "docs/legal/privacy.md",
+      "docs/legal/dpa.md",
+      "docs/legal/aup.md",
+      "docs/legal/cookie-disclosure.md",
+      "docs/legal/subprocessors.md",
+      "docs/legal/scc-transfer.md",
+      "docs/legal/responsible-disclosure.md",
+      "docs/legal/billing-terms.md",
+      "docs/legal/design-partner-terms.md",
+      "docs/legal/retention-lifecycle.md",
+      "docs/legal/breach-notice.md"
+    ],
+    "pages_dependent_on_hermes_runtime": [
+      "docs/legal/retention-lifecycle.md \u2014 retention enforcement proof",
+      "docs/trust/trust-center.md \u2014 runtime proof pending items",
+      "docs/legal/billing-terms.md \u2014 Stripe checkout/portal proof",
+      "docs/legal/design-partner-terms.md \u2014 entitlement proof"
+    ],
+    "pages_dependent_on_helper2": []
+  }
+}

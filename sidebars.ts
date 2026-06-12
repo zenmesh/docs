@@ -167,6 +167,31 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: 'Legal (Draft)',
+      items: [
+        'legal/terms',
+        'legal/privacy',
+        'legal/dpa',
+        'legal/aup',
+        'legal/cookie-disclosure',
+        'legal/subprocessors',
+        'legal/scc-transfer',
+        'legal/responsible-disclosure',
+        'legal/billing-terms',
+        'legal/design-partner-terms',
+        'legal/retention-lifecycle',
+        'legal/breach-notice',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Trust',
+      items: [
+        'trust/trust-center',
+      ],
+    },
+    {
+      type: 'category',
       label: 'Reference',
       items: [
         'reference/helm-chart',

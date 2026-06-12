@@ -1,0 +1,20 @@
+{
+  "task_id": "DOCSAI027",
+  "phase": 13,
+  "page": "docs/legal/billing-terms.md",
+  "status": "draft/legal-review-required",
+  "covers": [
+    "free_pro_v1",
+    "pro_29_month",
+    "pro_290_year",
+    "monthly_annual",
+    "multicurrency_usd",
+    "stripe",
+    "business_coming_soon",
+    "enterprise_contact",
+    "checkout_not_live",
+    "no_paid_live",
+    "refund_pending",
+    "legal_review_marker"
+  ]
+}

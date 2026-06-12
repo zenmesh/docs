@@ -1,0 +1,20 @@
+{
+  "task_id": "DOCSAI027",
+  "phase": 6,
+  "page": "docs/legal/privacy.md",
+  "status": "draft/legal-review-required",
+  "covers": [
+    "entity_address",
+    "contact",
+    "data_categories",
+    "subprocessors",
+    "retention",
+    "deletion_return",
+    "international_transfer_pending",
+    "tracker_pending",
+    "security_contact",
+    "breach_undue_delay",
+    "no_residency_guarantee",
+    "legal_review_marker"
+  ]
+}

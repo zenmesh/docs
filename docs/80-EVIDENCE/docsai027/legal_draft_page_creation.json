@@ -1,0 +1,95 @@
+{
+  "task_id": "DOCSAI027",
+  "phase": 4,
+  "total_pages": 12,
+  "pages": [
+    {
+      "path": "docs/legal/terms.md",
+      "draft_marker": "DRAFT \u2014 NOT EFFECTIVE \u2014 LEGAL REVIEW REQUIRED",
+      "binding_language": "none",
+      "approved_language": "none",
+      "effective_language": "none"
+    },
+    {
+      "path": "docs/legal/privacy.md",
+      "draft_marker": "DRAFT \u2014 NOT EFFECTIVE \u2014 LEGAL REVIEW REQUIRED",
+      "binding_language": "none",
+      "approved_language": "none",
+      "effective_language": "none"
+    },
+    {
+      "path": "docs/legal/dpa.md",
+      "draft_marker": "DRAFT \u2014 NOT EFFECTIVE \u2014 LEGAL REVIEW REQUIRED",
+      "binding_language": "none",
+      "approved_language": "none",
+      "effective_language": "none"
+    },
+    {
+      "path": "docs/legal/aup.md",
+      "draft_marker": "DRAFT \u2014 NOT EFFECTIVE \u2014 LEGAL REVIEW REQUIRED",
+      "binding_language": "none",
+      "approved_language": "none",
+      "effective_language": "none"
+    },
+    {
+      "path": "docs/legal/cookie-disclosure.md",
+      "draft_marker": "DRAFT \u2014 NOT EFFECTIVE \u2014 LEGAL REVIEW REQUIRED",
+      "binding_language": "none",
+      "approved_language": "none",
+      "effective_language": "none"
+    },
+    {
+      "path": "docs/legal/subprocessors.md",
+      "draft_marker": "DRAFT \u2014 NOT EFFECTIVE \u2014 LEGAL REVIEW REQUIRED",
+      "binding_language": "none",
+      "approved_language": "none",
+      "effective_language": "none"
+    },
+    {
+      "path": "docs/legal/scc-transfer.md",
+      "draft_marker": "DRAFT \u2014 NOT EFFECTIVE \u2014 LEGAL REVIEW REQUIRED",
+      "binding_language": "none",
+      "approved_language": "none",
+      "effective_language": "none"
+    },
+    {
+      "path": "docs/legal/responsible-disclosure.md",
+      "draft_marker": "DRAFT \u2014 NOT EFFECTIVE \u2014 LEGAL REVIEW REQUIRED",
+      "binding_language": "none",
+      "approved_language": "none",
+      "effective_language": "none"
+    },
+    {
+      "path": "docs/legal/billing-terms.md",
+      "draft_marker": "DRAFT \u2014 NOT EFFECTIVE \u2014 LEGAL REVIEW REQUIRED",
+      "binding_language": "none",
+      "approved_language": "none",
+      "effective_language": "none"
+    },
+    {
+      "path": "docs/legal/design-partner-terms.md",
+      "draft_marker": "DRAFT \u2014 NOT EFFECTIVE \u2014 LEGAL REVIEW REQUIRED",
+      "binding_language": "none",
+      "approved_language": "none",
+      "effective_language": "none"
+    },
+    {
+      "path": "docs/legal/retention-lifecycle.md",
+      "draft_marker": "DRAFT \u2014 NOT EFFECTIVE \u2014 LEGAL REVIEW REQUIRED",
+      "binding_language": "none",
+      "approved_language": "none",
+      "effective_language": "none"
+    },
+    {
+      "path": "docs/legal/breach-notice.md",
+      "draft_marker": "DRAFT \u2014 NOT EFFECTIVE \u2014 LEGAL REVIEW REQUIRED",
+      "binding_language": "none",
+      "approved_language": "none",
+      "effective_language": "none"
+    }
+  ],
+  "trust_center": {
+    "path": "docs/trust/trust-center.md",
+    "created": true
+  }
+}

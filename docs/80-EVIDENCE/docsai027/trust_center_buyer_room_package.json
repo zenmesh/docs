@@ -1,0 +1,20 @@
+{
+  "task_id": "DOCSAI027",
+  "phase": 17,
+  "page": "docs/trust/trust-center.md",
+  "status": "draft",
+  "covers": [
+    "product_overview",
+    "security_posture",
+    "mcp_read_only_current_scoped",
+    "support_security_contacts",
+    "subprocessors",
+    "retention_data_lifecycle",
+    "responsible_disclosure",
+    "draft_legal_docs_status",
+    "design_partner_status",
+    "pricing_direction",
+    "runtime_proof_pending_caveats",
+    "no_sla_certification_residency_overclaim"
+  ]
+}

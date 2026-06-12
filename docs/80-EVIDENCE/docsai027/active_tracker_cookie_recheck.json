@@ -1,0 +1,18 @@
+{
+  "task_id": "DOCSAI027",
+  "phase": 20,
+  "active_trackers": {
+    "google_analytics": false,
+    "google_tag_manager": false,
+    "hubspot": false,
+    "vercel_analytics": false,
+    "vercel_speed_insights": false,
+    "google_fonts_external": "candidate \u2014 self-host recommended",
+    "pixels": false,
+    "chat_widgets": false,
+    "crm_scripts": false,
+    "localStorage_cookie": "functional only (session tokens, preferences)"
+  },
+  "recommendation": "No heavy trackers active. Cookie banner needed only when trackers are added.",
+  "recheck_pass": true
+}

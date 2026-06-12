@@ -1,0 +1,29 @@
+{
+  "task_id": "DOCSAI027",
+  "phase": 19,
+  "scan_patterns": 30,
+  "forbidden_claims_found": 0,
+  "pre_existing_caveat_refs": [
+    "docs/architecture/platform-layers.md \u2014 exactly-once negative claim (pre-existing)",
+    "docs/api/rate-limits.md \u2014 no SLA claim (pre-existing)",
+    "docs/evidence/runtime-convergence.md \u2014 exactly-once negative (pre-existing)",
+    "docs/security/security-capability-validation.md \u2014 no cert/exactly-once (pre-existing)",
+    "docs/start-here/current-status.md \u2014 no cert, SLA future (pre-existing)",
+    "docs/start-here/launch-status.md \u2014 production access planned (pre-existing)",
+    "docs/ai/non-claims.md \u2014 exactly-once not claimed (pre-existing)",
+    "docs/ai/compliance-evidence.md \u2014 ISO reference as mapping only (pre-existing)",
+    "docs/ai/edge-lite.md \u2014 not production-ready (pre-existing)",
+    "docs/guides/destinations.md \u2014 SLA in status context (pre-existing)"
+  ],
+  "public_zen_io_refs": 0,
+  "public_zen_star_refs": 0,
+  "residency_guarantee": false,
+  "signup_enabled_claim": false,
+  "billing_live_claim": false,
+  "support_live_claim": false,
+  "legal_effective_claim": false,
+  "mcp_apply_live_claim": false,
+  "permission_axis_runtime_live_claim": false,
+  "cookie_effective_claim": false,
+  "scan_pass": true
+}

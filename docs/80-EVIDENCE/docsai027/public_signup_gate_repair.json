@@ -1,0 +1,26 @@
+{
+  "task_id": "DOCSAI027",
+  "phase": 16,
+  "signup_enabled": false,
+  "blocked_until": [
+    "legal_signoff_terms",
+    "legal_signoff_privacy",
+    "legal_signoff_dpa_if_needed",
+    "legal_signoff_aup",
+    "cookie_tracker_decision_approved",
+    "subprocessor_list_approved",
+    "scc_transfer_wording_approved",
+    "security_responsible_disclosure_approved",
+    "billing_refund_plan_terms_approved",
+    "design_partner_terms_approved",
+    "support_process_approved",
+    "hermes_signup_billing_entitlement_proof",
+    "hermes_retention_proof_if_public",
+    "hermes_object_store_shopify_twilio_proof_if_public",
+    "docs_site_build_pass",
+    "broken_links_zero",
+    "claim_scan_clean"
+  ],
+  "total_blockers": 17,
+  "status": "BLOCKED \u2014 not enabled"
+}

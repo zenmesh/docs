@@ -1,0 +1,17 @@
+{
+  "task_id": "DOCSAI027",
+  "phase": 12,
+  "page": "docs/legal/responsible-disclosure.md",
+  "status": "draft/legal-review-required",
+  "covers": [
+    "contact_security_zenmesh",
+    "location_well_known",
+    "canonical_url",
+    "policy_url",
+    "language_en",
+    "expires_12mo",
+    "encryption_optional_pending",
+    "no_bounty",
+    "no_sla"
+  ]
+}

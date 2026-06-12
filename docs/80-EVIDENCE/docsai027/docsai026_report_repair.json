@@ -1,0 +1,14 @@
+{
+  "task_id": "DOCSAI026",
+  "docs_full_sha": "027c8931c6e2bbd8024ae5eea51ee57b577709e7",
+  "site_full_sha": "39605a50f29f337f3bf81235d8d81bdf63d9b166",
+  "pushed": "yes",
+  "why_partial": [
+    "missing WORKTREE line in report",
+    "short SHAs (027c893 not full 40-char)",
+    "missing evidence/checkpoint/Merkle line",
+    "docs_map=no",
+    "reader_journey=no",
+    "NEXT_DOCS incorrectly waits for Leonardo to confirm canonical legal source"
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "task_id": "DOCSAI027",
+  "phase": 21,
+  "leonardo_remaining": [
+    "tracker/consent final choice after DocsAI options",
+    "scc/international transfer final position after DocsAI options",
+    "optional subprocessors approval/rejection",
+    "optional security.txt encryption key if desired"
+  ],
+  "leonardo_remaining_count": 4,
+  "legal_remaining": [
+    "Terms of Service",
+    "Privacy Policy",
+    "DPA",
+    "AUP",
+    "Cookie/tracker disclosure",
+    "Subprocessor list",
+    "SCC/international transfer wording",
+    "Responsible disclosure/security policy",
+    "Billing/refund/plan terms",
+    "Design partner terms",
+    "Retention/deletion wording",
+    "Breach notice wording"
+  ],
+  "legal_remaining_count": 12,
+  "hermes_runtime_remaining": [
+    "retention runtime enforcement proof",
+    "delivery/runtime proof if public copy mentions delivery behavior",
+    "object-store Day-1 runtime proof",
+    "Shopify V1 runtime proof",
+    "Twilio V1 runtime proof",
+    "Stripe checkout/portal proof",
+    "signup/billing entitlement proof if signup is enabled later"
+  ],
+  "hermes_runtime_remaining_count": 7,
+  "helper2_dependency": false,
+  "docsai_remaining_after_027": 0,
+  "exact": true
+}

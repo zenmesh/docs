@@ -1,0 +1,51 @@
+{
+  "task_id": "DOCSAI027",
+  "phase": 22,
+  "docs_build": {
+    "status": "PASS",
+    "command": "npx docusaurus build",
+    "warnings": [
+      "update available 3.10.0 -> 3.10.1 (cosmetic)",
+      "untracked files update date warning (worktree)"
+    ],
+    "errors": 0
+  },
+  "site_build": {
+    "status": "PASS",
+    "command": "npm run build (Astro)",
+    "pages_built": 48,
+    "warnings": 0,
+    "errors": 0,
+    "sitemap": "dist/sitemap-index.xml created (12 URLs)"
+  },
+  "broken_links": {
+    "total": 46,
+    "introduced_by_docsai027": 0,
+    "pre_existing": 46,
+    "categories": {
+      "ai_evidence_v1_json_refs": 26,
+      "zen_lock_asset_refs": 4,
+      "llms_txt_refs": 2,
+      "img_asset_refs": 1,
+      "api_reference_kubezen_refs": 4,
+      "docs_path_prefix_mismatch": 4,
+      "security_crosslink": 4,
+      "guides_adapter_endpoint": 1
+    },
+    "docsai027_new_pages_links_valid": true,
+    "note": "All 46 broken links pre-exist from Helper work. DOCSAI027 did not introduce any new broken links. DOCSAI027 new legal pages use only ../legal/ relative links to verified pages."
+  },
+  "claim_scan": {
+    "status": "PASS",
+    "forbidden_claims_found": 0,
+    "new_forbidden_claims": 0,
+    "pre_existing_caveats_preserved": true
+  },
+  "legal_stubs_status": {
+    "all_12_draft": true,
+    "all_marked_non_effective": true,
+    "all_marked_legal_review_required": true,
+    "no_binding_approved_effective_language": true
+  },
+  "runtime_deploy_unchanged": true
+}

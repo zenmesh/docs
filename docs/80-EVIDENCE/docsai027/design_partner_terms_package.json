@@ -1,0 +1,18 @@
+{
+  "task_id": "DOCSAI027",
+  "phase": 14,
+  "page": "docs/legal/design-partner-terms.md",
+  "status": "draft/legal-review-required",
+  "covers": [
+    "no_default_pilot",
+    "inbound_only",
+    "6_months_free",
+    "monthly_survey",
+    "survey_unlocks_next",
+    "max_6_months",
+    "survey_day_1",
+    "no_guaranteed_acceptance",
+    "no_sla_support",
+    "legal_review_marker"
+  ]
+}
