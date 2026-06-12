@@ -1,0 +1,25 @@
+{
+  "task_id": "DOCSAI025",
+  "repairing": "DOCSAI024",
+  "docsai024_full_shas": {
+    "docs": "6156c8954b91b99865b30cdb5a6155f95e3325ea",
+    "docs_branch": "DOCSAI024-launch-docs-closure",
+    "site": "09230c5c33ec44f145f5fac5b93ac20555d34cf0",
+    "site_branch": "DOCSAI024-site-closure-v2",
+    "pushed": true
+  },
+  "docsai024_partial_reasons": [
+    "stale_task_id: reported DOCSAI001-DOCSAI024 instead of DOCSAI024",
+    "missing_WORKTREE_line: no worktree paths recorded",
+    "short_SHAs: used 6156c89 and 09230c5 instead of full 40-char",
+    "review_needed_included_answered: tier names, contact email, DP provider, security mailbox all already answered by Leonardo",
+    "legal_approval_not_claimed: correct, preserved"
+  ],
+  "docsai025_corrections": [
+    "task_id: exact DOCSAI025_MEGA_PUBLIC_TRUST_LEGAL_SIGNUP_COOKIE_TRACKER_SUBPROCESSOR_SCC_DESIGN_PARTNER_PRICING_SECURITY_AND_SITE_FINALIZATION",
+    "WORKTREE line added with full paths",
+    "full branch@sha for both repos",
+    "answered items removed from REVIEW_NEEDED",
+    "all 34 canonical decisions ingested into superset ledger"
+  ]
+}

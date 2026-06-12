@@ -1,0 +1,11 @@
+{
+  "task_id": "DOCSAI025",
+  "canonical": {
+    "saas_control_plane": "GCP Toronto",
+    "first_data_plane": "US AWS \u2014 provider/region announced at launch",
+    "no_residency_guarantee": true,
+    "production_credentials": "Leonardo provides when close to prod-live"
+  },
+  "no_residency_guarantee_claim": true,
+  "no_prod_live_claim": true
+}

@@ -1,0 +1,29 @@
+{
+  "task_id": "DOCSAI025",
+  "canonical_contacts": {
+    "support": "support@zen-mesh.io",
+    "security": "security@zen-mesh.io",
+    "legal_inquiries": "support@zen-mesh.io (until legal@ designated)"
+  },
+  "forbidden_contacts": [
+    "support@zenmesh.io",
+    "security@zenmesh.io",
+    "api@kubezen.io",
+    "zen@zen-mesh.io (unless intentionally preserved)",
+    "ops@zen-mesh.io"
+  ],
+  "scan_results": {
+    "support@zen-mesh.io_correct": true,
+    "security@zen-mesh.io_correct": true,
+    "wrong_domains_found": 0,
+    "placeholders_found": 0
+  },
+  "pages_with_support_email": [
+    "docs/start-here/support.md",
+    "pricing.astro (in footer/nav)"
+  ],
+  "pages_with_security_email": [
+    "security.astro",
+    ".well-known/security.txt (recommended)"
+  ]
+}

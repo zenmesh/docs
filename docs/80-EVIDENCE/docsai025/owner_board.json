@@ -1,0 +1,81 @@
+{
+  "task_id": "DOCSAI025",
+  "leonardo_review_pages": {
+    "site": [
+      {
+        "page": "index.astro",
+        "reason": "homepage hero copy \u2014 final approval"
+      },
+      {
+        "page": "pricing.astro",
+        "reason": "pricing tiers \u2014 final approval"
+      },
+      {
+        "page": "security.astro",
+        "reason": "trust page \u2014 final approval"
+      },
+      {
+        "page": "commitments.astro",
+        "reason": "public commitments \u2014 final approval"
+      },
+      {
+        "page": "evidence.astro",
+        "reason": "evidence map \u2014 final approval"
+      },
+      {
+        "page": "try.astro",
+        "reason": "CTA page \u2014 final approval"
+      },
+      {
+        "page": "why.astro",
+        "reason": "positioning copy \u2014 final approval"
+      },
+      {
+        "page": "how-it-works.astro",
+        "reason": "technical flow \u2014 verify accuracy"
+      },
+      {
+        "page": "responsible-disclosure.astro",
+        "reason": "NEW \u2014 security disclosure policy"
+      }
+    ],
+    "docs": [
+      {
+        "page": "legal/*",
+        "reason": "all legal text \u2014 legal counsel required (RN-4)"
+      },
+      {
+        "page": "start-here/support.md",
+        "reason": "support process \u2014 verify contact/process"
+      },
+      {
+        "page": "guides/data-lifecycle.md",
+        "reason": "retention/breach \u2014 verify policy"
+      },
+      {
+        "page": "security/*",
+        "reason": "security claims \u2014 verify accuracy"
+      }
+    ]
+  },
+  "legal_review_pages": [
+    "legal/terms.md",
+    "legal/privacy.md",
+    "legal/dpa.md",
+    "legal/aup.md",
+    "legal/cookie-policy.md",
+    "legal/billing.md",
+    "legal/design-partner-terms.md"
+  ],
+  "hermes_runtime_dependent": [
+    "signup flow (site)",
+    "billing entitlement path",
+    "retention enforcement",
+    "delivery proof",
+    "object-store delivery"
+  ],
+  "helper2_dependent": [
+    "Shopify integration docs",
+    "Twilio integration docs"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "task_id": "DOCSAI025",
+  "canonical_periods": {
+    "payload": {
+      "free": "7 days",
+      "pro": "30 days"
+    },
+    "dlq_replay": {
+      "free": "7 days",
+      "pro": "30 days"
+    },
+    "logs": {
+      "free": "1 month",
+      "pro": "3 months"
+    },
+    "evidence": {
+      "free": "1 month",
+      "pro": "3 months"
+    },
+    "deletion_return": {
+      "free": "1 month",
+      "pro": "3 months"
+    }
+  },
+  "other_tiers": "defined when wired",
+  "runtime_enforcement": "Hermes-owned \u2014 not claimed live until proven",
+  "public_copy_status": "planned/configured policy",
+  "owner": "Legal/Hermes"
+}

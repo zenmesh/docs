@@ -1,0 +1,12 @@
+{
+  "task_id": "DOCSAI025",
+  "canonical": {
+    "no_default_pilot": true,
+    "design_partner_available": true,
+    "terms": "6 months Pro free, monthly online survey required, survey completion unlocks following month, max 6 months, survey starts Day 1",
+    "no_guaranteed_acceptance": true,
+    "no_support_sla_promise": true,
+    "no_free_forever": true
+  },
+  "copy_guidance": "Design partner program by invitation. 6 months Pro free with monthly feedback survey. Each completed monthly survey unlocks the following month free. Maximum 6 months."
+}

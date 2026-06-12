@@ -1,0 +1,70 @@
+{
+  "task_id": "DOCSAI025",
+  "title": "DOCSAI025 MEGA PUBLIC TRUST LEGAL SIGNUP COOKIE TRACKER SUBPROCESSOR SCC DESIGN PARTNER PRICING SECURITY AND SITE FINALIZATION",
+  "route": "DocsAI",
+  "date": "2026-06-12",
+  "scope": {
+    "docs_changed": true,
+    "site_changed": true,
+    "runtime_changed": false,
+    "deploy_changed": false
+  },
+  "evidence_files_created": 31,
+  "evidence_files": [
+    "worktree_baseline.json",
+    "reporting_repair.json",
+    "reporting_repair.md",
+    "leonardo_canonical_decisions_superset.json",
+    "leonardo_canonical_decisions_superset.md",
+    "review_needed_rebuilt.json",
+    "review_needed_rebuilt.md",
+    "contact_surface_fix.json",
+    "security_txt_best_practice.json",
+    "legal_entity_update.json",
+    "retention_policy_copy_gate.json",
+    "breach_notice_update.json",
+    "subprocessor_baseline.json",
+    "subprocessor_candidate_roadmap.md",
+    "international_transfer_scc_explainer.md",
+    "international_transfer_scc_recommendation.json",
+    "tracker_consent_options_matrix.md",
+    "tracker_consent_options_matrix.json",
+    "cookie_banner_copy_draft.md",
+    "cookie_banner_decision_spec.json",
+    "pricing_billing_copy_alignment.json",
+    "design_partner_pilot_copy_alignment.json",
+    "scope_copy_alignment.json",
+    "provider_region_copy_alignment.json",
+    "public_signup_readiness_gate.json",
+    "public_signup_readiness_gate.md",
+    "legal_full_text_review_matrix.json",
+    "legal_full_text_review_matrix.md",
+    "legal_full_text_signoff_packet.md",
+    "ia_audit_summary.json",
+    "claim_freeze_report.json",
+    "owner_board.json",
+    "owner_board.md",
+    "buyer_room_public_reader_journey.md",
+    "validation_megasuite.json",
+    "data_lifecycle_update.md",
+    "responsible_disclosure_packet.md"
+  ],
+  "site_files_created": 2,
+  "site_files_created_list": [
+    "public/.well-known/security.txt",
+    "src/pages/responsible-disclosure.astro"
+  ],
+  "site_files_modified": 1,
+  "site_files_modified_list": [
+    "src/layouts/Layout.astro (blog link fix + footer responsible-disclosure link)"
+  ],
+  "docs_files_modified": 2,
+  "docs_files_modified_list": [
+    "docs/index.md (blog link fix)",
+    "docs/api/reference/kubezen-back-api.info.mdx (kubezen.io -> support@zen-mesh.io)"
+  ],
+  "site_static_modified": 1,
+  "site_static_modified_list": [
+    "public/llms.txt (blog link fix)"
+  ]
+}

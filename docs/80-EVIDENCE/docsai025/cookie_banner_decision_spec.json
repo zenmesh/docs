@@ -1,0 +1,16 @@
+{
+  "task_id": "DOCSAI025",
+  "active_trackers_detected": {
+    "google_analytics": false,
+    "hubspot": false,
+    "vercel_analytics": false,
+    "vercel_speed_insights": false,
+    "google_fonts_external": "needs_verification",
+    "other_scripts": "needs_verification"
+  },
+  "recommendation": "No cookie banner needed if only cookie-free options used. Implement banner only if non-essential trackers are activated after RN-1 decision.",
+  "banner_implementation": "site-only (Astro component), not runtime",
+  "blocking_on": [
+    "RN-1: Leonardo tracker decision"
+  ]
+}

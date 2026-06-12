@@ -1,0 +1,53 @@
+{
+  "task_id": "DOCSAI025",
+  "scan_date": "2026-06-12",
+  "forbidden_claims_checked": [
+    "aws_us_east_1_live",
+    "data_residency_guarantee",
+    "zen.io",
+    "zen/_namespace",
+    "mcp_apply_live",
+    "permission_axis_runtime_live",
+    "object_store_runtime_live",
+    "business_enterprise_live",
+    "sla",
+    "certification",
+    "exactly_once",
+    "guaranteed_delivery",
+    "zen_can_never_decrypt",
+    "prod_live",
+    "launch_ready",
+    "billing_live",
+    "support_live",
+    "signup_enabled",
+    "uptime_guarantee"
+  ],
+  "forbidden_claims_found_in_content": 0,
+  "claims_correctly_framed": [
+    {
+      "claim": "exactly-once delivery",
+      "context": "security.astro: 'Not claimed. V1 uses LocalCA...'",
+      "status": "correctly_negated"
+    },
+    {
+      "claim": "production-ready",
+      "context": "blog: 'Zen Mesh does not claim production-live readiness as a platform today'",
+      "status": "correctly_negated"
+    },
+    {
+      "claim": "SLA",
+      "context": "docs/api/rate-limits.md: 'No SLA or uptime guarantee is made'",
+      "status": "correctly_negated"
+    },
+    {
+      "claim": "exactly-once/zero-loss",
+      "context": "docs/architecture/platform-layers.md: disclaimed explicitly",
+      "status": "correctly_negated"
+    }
+  ],
+  "references_fixed": [
+    "IA-1: blog link /blog -> /blogs",
+    "IA-2: kubezen.io -> support@zen-mesh.io"
+  ],
+  "scan_pass": true
+}

@@ -1,0 +1,19 @@
+{
+  "task_id": "DOCSAI025",
+  "recommendation": {
+    "url": "https://zen-mesh.io/.well-known/security.txt",
+    "contact": "mailto:security@zen-mesh.io",
+    "preferred_languages": "en",
+    "canonical": "https://zen-mesh.io/.well-known/security.txt",
+    "policy_url": "https://zen-mesh.io/security",
+    "expires": "2027-06-12T00:00:00.000Z",
+    "encryption": "omitted \u2014 Leonardo to provide public key if desired (RN-5)",
+    "hiring": "omitted \u2014 no security hiring page"
+  },
+  "status": "draft \u2014 awaiting Leonardo decision on encryption key",
+  "no_bounty_promise": true,
+  "no_sla_response_promise": true,
+  "blocking_on": [
+    "RN-5 (optional encryption key)"
+  ]
+}

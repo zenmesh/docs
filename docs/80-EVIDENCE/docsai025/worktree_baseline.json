@@ -1,0 +1,16 @@
+{
+  "task_id": "DOCSAI025",
+  "docs_worktree": "/home/neves/zenmesh/worktrees/DOCSAI025-zen-platform",
+  "site_worktree": "/home/neves/zenmesh/worktrees/DOCSAI025-zen-mesh.io",
+  "isolated": true,
+  "based_on_main": true,
+  "docs_base_sha": "9d7f99569ff926a95fb79a33ab15ba2f45c991eb",
+  "site_base_sha": "dd10f04c9981e9a37e82fcec2d2ed97873f6ad3e",
+  "docs_branch": "DOCSAI025-mega-closure",
+  "site_branch": "DOCSAI025-mega-closure",
+  "clean_start": true,
+  "no_runtime_files": true,
+  "no_deploy_files": true,
+  "docs_only_scope": true,
+  "site_only_scope": true
+}

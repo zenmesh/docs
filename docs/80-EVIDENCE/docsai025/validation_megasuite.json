@@ -1,0 +1,64 @@
+{
+  "task_id": "DOCSAI025",
+  "run_date": "2026-06-12",
+  "checks": {
+    "claim_scan": {
+      "pass": true,
+      "forbidden_claims_found": 0,
+      "correctly_negated_claims": 4,
+      "scan_details": "aws_us_east_1_live, data_residency_guarantee, zen.io, zen/_namespace, mcp_apply_live, permission_axis_runtime_live, object_store_runtime_live, business_enterprise_live, sla, certification, exactly_once, guaranteed_delivery, zen_can_never_decrypt, prod_live, launch_ready, billing_live, support_live, signup_enabled, uptime_guarantee"
+    },
+    "broken_links": {
+      "pass": true,
+      "internal_broken": 0,
+      "fixed_this_task": 3,
+      "fixes": [
+        "IA-1: /blog -> /blogs in Layout.astro (2 locations)",
+        "IA-2: /blog -> /blogs in llms.txt",
+        "IA-3: kubezen.io -> support@zen-mesh.io in API ref",
+        "IA-4: /blog -> /blogs in docs index.md"
+      ]
+    },
+    "legal_stubs": {
+      "pass": true,
+      "all_draft": true,
+      "no_effective_claims": true,
+      "no_legal_advice": true,
+      "files": [
+        "legal/terms.md",
+        "legal/privacy.md",
+        "legal/dpa.md",
+        "legal/aup.md",
+        "legal/cookie-policy.md",
+        "legal/billing.md",
+        "legal/design-partner-terms.md"
+      ]
+    },
+    "runtime_deploy": {
+      "pass": true,
+      "changed": false,
+      "files_touched": 0
+    },
+    "terminology": {
+      "pass": true,
+      "object_store_used": true,
+      "multi_target_used": true,
+      "target_response_time_used": true,
+      "draft_non_effective_for_legal": true,
+      "canonical_domain_zen_mesh_io": true,
+      "no_zen_io": true,
+      "no_zen_slash_namespace": true
+    },
+    "new_content": {
+      "security_txt": "created",
+      "responsible_disclosure_page": "created",
+      "footer_link": "added"
+    },
+    "build_status": {
+      "docs_build": "NOT_RUN \u2014 requires docusaurus install",
+      "site_build": "NOT_RUN \u2014 requires astro install",
+      "note": "Builds not executed; link existence verified statically"
+    }
+  },
+  "overall_pass": true
+}

@@ -1,0 +1,85 @@
+{
+  "task_id": "DOCSAI025",
+  "total_remaining": 5,
+  "items": [
+    {
+      "id": "RN-1",
+      "category": "leonardo",
+      "question": "Tracker/consent final choice \u2014 DocsAI provides options/recommendation in tracker_consent_options_matrix.md",
+      "blocking": "cookie banner, privacy policy, site analytics",
+      "owner": "Leonardo",
+      "dependencies": [
+        "tracker_consent_options_matrix.md"
+      ]
+    },
+    {
+      "id": "RN-2",
+      "category": "leonardo",
+      "question": "International transfer/SCC position \u2014 DocsAI provides explainer/recommendation in international_transfer_scc_explainer.md",
+      "blocking": "DPA, privacy policy, subprocessor list",
+      "owner": "Leonardo",
+      "dependencies": [
+        "international_transfer_scc_explainer.md",
+        "international_transfer_scc_recommendation.json"
+      ]
+    },
+    {
+      "id": "RN-3",
+      "category": "leonardo",
+      "question": "Optional subprocessor approval for Google Analytics, HubSpot, and similar analytics/growth/support tools",
+      "blocking": "DPA, subprocessor list, cookie policy",
+      "owner": "Leonardo",
+      "dependencies": [
+        "subprocessor_candidate_roadmap.md"
+      ]
+    },
+    {
+      "id": "RN-4",
+      "category": "legal",
+      "question": "Legal counsel signoff for Terms, Privacy, DPA, AUP, Cookie, and all draft legal documents",
+      "blocking": "public signup, legal effectiveness",
+      "owner": "Legal (process owner TBD by Leonardo)",
+      "dependencies": [
+        "legal_full_text_review_matrix.md"
+      ]
+    },
+    {
+      "id": "RN-5",
+      "category": "leonardo",
+      "question": "Security.txt optional encryption key \u2014 PGP/age/GPG publication if Zen Mesh wants encrypted vulnerability reporting",
+      "blocking": "security.txt completion",
+      "owner": "Leonardo",
+      "dependencies": [
+        "security_txt_best_practice.json"
+      ]
+    }
+  ],
+  "removed_answered": [
+    "tier names (D5-D9)",
+    "contact email (D17)",
+    "security mailbox (D18)",
+    "DP provider (D14-D15)",
+    "provider region (D14-D15)",
+    "legal entity (D19)",
+    "address (D20)",
+    "jurisdiction (D21)",
+    "governing law (D22)",
+    "retention periods (D23-D27)",
+    "breach notice (D28)",
+    "base subprocessors (D29)",
+    "no-default-pilot (D31)",
+    "design partner terms (D32)",
+    "Shopify/Twilio scope (D1-D2)",
+    "GitLab/Alipay scope (D3-D4)",
+    "Object-store scope (D12)",
+    "Object Lock scope (D13)",
+    "billing frequency/currency (D7-D9)",
+    "Stripe payments (D11)",
+    "company country (D10)"
+  ],
+  "not_docsai_scope": [
+    "Hermes runtime proof for retention/delivery/billing enforcement \u2014 belongs to Hermes lane",
+    "Hermes runtime proof for signup/billing entitlement path \u2014 belongs to Hermes lane",
+    "Hermes runtime proof for object-store/Shopify/Twilio \u2014 belongs to Hermes lane"
+  ]
+}

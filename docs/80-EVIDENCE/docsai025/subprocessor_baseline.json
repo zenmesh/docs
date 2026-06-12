@@ -1,0 +1,119 @@
+{
+  "task_id": "DOCSAI025",
+  "active_subprocessors": [
+    {
+      "name": "Google Cloud Platform",
+      "purpose": "SaaS control plane hosting",
+      "region": "Toronto",
+      "data_categories": [
+        "infrastructure",
+        "logs"
+      ],
+      "dpa_available": true,
+      "scc_available": true
+    },
+    {
+      "name": "Amazon Web Services",
+      "purpose": "Data plane / edge delivery",
+      "region": "US",
+      "data_categories": [
+        "webhook payloads",
+        "delivery logs"
+      ],
+      "dpa_available": true,
+      "scc_available": true
+    },
+    {
+      "name": "Stripe",
+      "purpose": "Payment processing",
+      "region": "US",
+      "data_categories": [
+        "billing info"
+      ],
+      "dpa_available": true,
+      "scc_available": true
+    },
+    {
+      "name": "GitHub",
+      "purpose": "Source code hosting",
+      "region": "US",
+      "data_categories": [
+        "code"
+      ],
+      "dpa_available": true,
+      "scc_available": true
+    }
+  ],
+  "candidate_subprocessors": [
+    {
+      "name": "Google Analytics",
+      "purpose": "Website analytics",
+      "data_categories": [
+        "anonymized pageviews"
+      ],
+      "dpa_available": true,
+      "scc_available": true,
+      "status": "not_active \u2014 requires RN-3 approval",
+      "recommendation": "defer to V2 or use privacy-light alternative"
+    },
+    {
+      "name": "HubSpot",
+      "purpose": "CRM/marketing",
+      "data_categories": [
+        "contact info, form submissions"
+      ],
+      "dpa_available": true,
+      "scc_available": true,
+      "status": "not_active \u2014 requires RN-3 approval",
+      "recommendation": "defer until legal review and growth stage"
+    },
+    {
+      "name": "Vercel Analytics",
+      "purpose": "Site performance",
+      "data_categories": [
+        "anonymized metrics"
+      ],
+      "dpa_available": true,
+      "status": "not_active \u2014 requires evaluation",
+      "recommendation": "privacy-light option if analytics needed"
+    },
+    {
+      "name": "Vercel Speed Insights",
+      "purpose": "Core Web Vitals",
+      "data_categories": [
+        "performance metrics"
+      ],
+      "dpa_available": true,
+      "status": "not_active",
+      "recommendation": "low risk, can enable without consent banner if truly anonymized"
+    },
+    {
+      "name": "Google Fonts (external)",
+      "purpose": "Typography",
+      "data_categories": [
+        "IP on font requests"
+      ],
+      "dpa_available": true,
+      "status": "not_active \u2014 recommend self-host",
+      "recommendation": "self-host fonts to avoid subprocessor"
+    },
+    {
+      "name": "Email/support provider",
+      "purpose": "Support ticket handling",
+      "data_categories": [
+        "support inquiries"
+      ],
+      "status": "not_active \u2014 future",
+      "recommendation": "evaluate with RN-3"
+    },
+    {
+      "name": "Monitoring/observability",
+      "purpose": "Infrastructure monitoring",
+      "data_categories": [
+        "system metrics"
+      ],
+      "status": "not active \u2014 future",
+      "recommendation": "evaluate later"
+    }
+  ]
+}

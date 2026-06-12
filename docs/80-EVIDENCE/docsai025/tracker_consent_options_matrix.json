@@ -1,0 +1,76 @@
+{
+  "task_id": "DOCSAI025",
+  "question": "RN-1: Tracker/consent final choice",
+  "options": [
+    {
+      "id": "no_analytics",
+      "v1_rec": "good",
+      "cookies": false,
+      "subprocessors": 0
+    },
+    {
+      "id": "privacy_light",
+      "v1_rec": "RECOMMENDED",
+      "cookies": false,
+      "subprocessors": 0
+    },
+    {
+      "id": "vercel_analytics",
+      "v1_rec": "ACCEPTABLE",
+      "cookies": false,
+      "subprocessors": 0
+    },
+    {
+      "id": "vercel_speed",
+      "v1_rec": "ACCEPTABLE",
+      "cookies": false,
+      "subprocessors": 0
+    },
+    {
+      "id": "google_analytics",
+      "v1_rec": "NOT RECOMMENDED",
+      "cookies": true,
+      "subprocessors": 1
+    },
+    {
+      "id": "hubspot",
+      "v1_rec": "NOT RECOMMENDED",
+      "cookies": true,
+      "subprocessors": 1
+    },
+    {
+      "id": "google_fonts_external",
+      "v1_rec": "REPLACE with self-hosted",
+      "cookies": false,
+      "subprocessors": 1
+    },
+    {
+      "id": "self_hosted_fonts",
+      "v1_rec": "RECOMMENDED",
+      "cookies": false,
+      "subprocessors": 0
+    },
+    {
+      "id": "cookie_banner",
+      "v1_rec": "only if non-essential trackers active",
+      "cookies": true,
+      "subprocessors": 0
+    },
+    {
+      "id": "cmp_platform",
+      "v1_rec": "NOT RECOMMENDED",
+      "cookies": true,
+      "subprocessors": 1
+    },
+    {
+      "id": "server_side_analytics",
+      "v1_rec": "good option",
+      "cookies": false,
+      "subprocessors": 0
+    }
+  ],
+  "v1_default_recommendation": "Vercel Analytics + Speed Insights + self-hosted fonts = zero consent friction, zero additional subprocessors",
+  "blocking_on": [
+    "RN-1: Leonardo decision"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "task_id": "DOCSAI025",
+  "canonical": "without undue delay",
+  "source": "Leonardo decision D28",
+  "pages_updated": [
+    "legal/privacy.md",
+    "legal/dpa.md"
+  ],
+  "no_certification_overclaim": true,
+  "legal_review_required": true
+}

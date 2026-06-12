@@ -1,0 +1,152 @@
+{
+  "task_id": "DOCSAI025",
+  "documents": [
+    {
+      "name": "Terms of Service",
+      "file": "legal/terms.md",
+      "status": "draft/non-effective",
+      "leonardo_decisions": [
+        "D19-D22"
+      ],
+      "legal_approval": "required",
+      "publish_blocker": true,
+      "remaining": "Legal counsel review",
+      "risk": "critical"
+    },
+    {
+      "name": "Privacy Policy",
+      "file": "legal/privacy.md",
+      "status": "draft/non-effective",
+      "leonardo_decisions": [
+        "D14-D15",
+        "D19-D20",
+        "D23-D28",
+        "D29-D30"
+      ],
+      "legal_approval": "required",
+      "publish_blocker": true,
+      "remaining": "Legal counsel review + RN-1 + RN-2",
+      "risk": "critical"
+    },
+    {
+      "name": "DPA",
+      "file": "legal/dpa.md",
+      "status": "draft/non-effective",
+      "leonardo_decisions": [
+        "D14-D15",
+        "D29-D30"
+      ],
+      "legal_approval": "required",
+      "publish_blocker": true,
+      "remaining": "Legal counsel review + RN-2",
+      "risk": "critical"
+    },
+    {
+      "name": "AUP",
+      "file": "legal/aup.md",
+      "status": "draft/non-effective",
+      "leonardo_decisions": [
+        "D19-D20"
+      ],
+      "legal_approval": "required",
+      "publish_blocker": true,
+      "remaining": "Legal counsel review",
+      "risk": "high"
+    },
+    {
+      "name": "Cookie Policy",
+      "file": "legal/cookie-policy.md",
+      "status": "draft \u2014 depends on RN-1",
+      "leonardo_decisions": [
+        "D30"
+      ],
+      "legal_approval": "required",
+      "publish_blocker": true,
+      "remaining": "RN-1 decision + legal review",
+      "risk": "high"
+    },
+    {
+      "name": "Subprocessor List",
+      "file": "legal/dpa.md (section)",
+      "status": "draft",
+      "leonardo_decisions": [
+        "D29-D30"
+      ],
+      "legal_approval": "required",
+      "publish_blocker": true,
+      "remaining": "RN-3 + legal review",
+      "risk": "medium"
+    },
+    {
+      "name": "Responsible Disclosure",
+      "file": "security.astro / docs/security/",
+      "status": "draft",
+      "leonardo_decisions": [
+        "D18"
+      ],
+      "legal_approval": "recommended",
+      "publish_blocker": false,
+      "remaining": "Legal review recommended",
+      "risk": "medium"
+    },
+    {
+      "name": "Data Lifecycle/Retention",
+      "file": "docs/guides/data-lifecycle.md",
+      "status": "draft \u2014 policy defined",
+      "leonardo_decisions": [
+        "D23-D27"
+      ],
+      "legal_approval": "recommended",
+      "publish_blocker": false,
+      "remaining": "Legal review of wording",
+      "risk": "low"
+    },
+    {
+      "name": "Billing/Refund Terms",
+      "file": "legal/billing.md (section)",
+      "status": "draft",
+      "leonardo_decisions": [
+        "D5-D9",
+        "D11"
+      ],
+      "legal_approval": "required",
+      "publish_blocker": true,
+      "remaining": "Legal review",
+      "risk": "high"
+    },
+    {
+      "name": "Design Partner Terms",
+      "file": "legal/design-partner-terms.md",
+      "status": "draft",
+      "leonardo_decisions": [
+        "D32"
+      ],
+      "legal_approval": "required",
+      "publish_blocker": true,
+      "remaining": "Legal review",
+      "risk": "high"
+    },
+    {
+      "name": "Support Payload Access",
+      "file": "docs/start-here/support.md",
+      "status": "draft",
+      "leonardo_decisions": [],
+      "legal_approval": "recommended",
+      "publish_blocker": false,
+      "remaining": "Process definition",
+      "risk": "medium"
+    },
+    {
+      "name": "Breach Notice",
+      "file": "legal/privacy.md (section)",
+      "status": "draft",
+      "leonardo_decisions": [
+        "D28"
+      ],
+      "legal_approval": "required",
+      "publish_blocker": true,
+      "remaining": "Legal review of exact wording",
+      "risk": "critical"
+    }
+  ]
+}

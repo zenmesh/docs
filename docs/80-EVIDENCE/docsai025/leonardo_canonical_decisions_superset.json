@@ -1,0 +1,527 @@
+[
+  {
+    "id": 1,
+    "decision": "Shopify adapter is V1 blocker",
+    "source": "Leonardo",
+    "public_copy": "Shopify webhook support planned post-launch",
+    "legal": "none",
+    "runtime": "Hermes adapter proof needed",
+    "pages": [
+      "docs/guides/adapters.md",
+      "docs/start-here/launch-status.md"
+    ],
+    "stale_risk": "docs saying Shopify V1.1",
+    "owner": "Helper/Hermes",
+    "status": "answered",
+    "in_review_needed": false
+  },
+  {
+    "id": 2,
+    "decision": "Twilio adapter is V1 blocker",
+    "source": "Leonardo",
+    "public_copy": "Twilio webhook support planned post-launch",
+    "legal": "none",
+    "runtime": "Hermes adapter proof needed",
+    "pages": [
+      "docs/guides/adapters.md",
+      "docs/start-here/launch-status.md"
+    ],
+    "stale_risk": "docs saying Twilio V1.1",
+    "owner": "Helper/Hermes",
+    "status": "answered",
+    "in_review_needed": false
+  },
+  {
+    "id": 3,
+    "decision": "GitLab adapter is V1.1/backlog",
+    "source": "Leonardo",
+    "public_copy": "GitLab webhook support on roadmap",
+    "legal": "none",
+    "runtime": "future",
+    "pages": [
+      "docs/guides/adapters.md"
+    ],
+    "stale_risk": "none",
+    "owner": "Hermes",
+    "status": "answered",
+    "in_review_needed": false
+  },
+  {
+    "id": 4,
+    "decision": "Alipay adapter is V1.1/backlog",
+    "source": "Leonardo",
+    "public_copy": "Alipay webhook support on roadmap",
+    "legal": "none",
+    "runtime": "future",
+    "pages": [
+      "docs/guides/adapters.md"
+    ],
+    "stale_risk": "none",
+    "owner": "Hermes",
+    "status": "answered",
+    "in_review_needed": false
+  },
+  {
+    "id": 5,
+    "decision": "Pro price is $29/month early bird",
+    "source": "Leonardo",
+    "public_copy": "$29/month (early bird pricing)",
+    "legal": "billing terms",
+    "runtime": "Stripe billing integration",
+    "pages": [
+      "pricing.astro",
+      "docs/start-here/pricing.md"
+    ],
+    "stale_risk": "undecided pricing",
+    "owner": "DocsAI/Site",
+    "status": "answered",
+    "in_review_needed": false
+  },
+  {
+    "id": 6,
+    "decision": "Pro annual price is $290/year early bird",
+    "source": "Leonardo",
+    "public_copy": "$290/year (early bird pricing)",
+    "legal": "billing terms",
+    "runtime": "Stripe billing integration",
+    "pages": [
+      "pricing.astro"
+    ],
+    "stale_risk": "none",
+    "owner": "DocsAI/Site",
+    "status": "answered",
+    "in_review_needed": false
+  },
+  {
+    "id": 7,
+    "decision": "Billing frequency is both monthly and annual",
+    "source": "Leonardo",
+    "public_copy": "Monthly and annual billing available",
+    "legal": "billing terms",
+    "runtime": "Stripe billing",
+    "pages": [
+      "pricing.astro"
+    ],
+    "stale_risk": "none",
+    "owner": "DocsAI/Site",
+    "status": "answered",
+    "in_review_needed": false
+  },
+  {
+    "id": 8,
+    "decision": "Currency is multi-currency",
+    "source": "Leonardo",
+    "public_copy": "Prices displayed in USD; additional currencies available",
+    "legal": "billing terms",
+    "runtime": "Stripe multi-currency",
+    "pages": [
+      "pricing.astro"
+    ],
+    "stale_risk": "none",
+    "owner": "DocsAI/Site",
+    "status": "answered",
+    "in_review_needed": false
+  },
+  {
+    "id": 9,
+    "decision": "Prices are based in USD",
+    "source": "Leonardo",
+    "public_copy": "USD base pricing",
+    "legal": "none",
+    "runtime": "Stripe",
+    "pages": [
+      "pricing.astro"
+    ],
+    "stale_risk": "none",
+    "owner": "DocsAI/Site",
+    "status": "answered",
+    "in_review_needed": false
+  },
+  {
+    "id": 10,
+    "decision": "Company is in Canada",
+    "source": "Leonardo",
+    "public_copy": "Zen Mesh Inc., Canada",
+    "legal": "Terms/Privacy/DPA",
+    "runtime": "none",
+    "pages": [
+      "legal/"
+    ],
+    "stale_risk": "wrong jurisdiction",
+    "owner": "Legal",
+    "status": "answered",
+    "in_review_needed": false
+  },
+  {
+    "id": 11,
+    "decision": "Stripe will receive payments",
+    "source": "Leonardo",
+    "public_copy": "Payments processed securely via Stripe",
+    "legal": "billing terms/Stripe ToS",
+    "runtime": "Stripe integration",
+    "pages": [
+      "pricing.astro",
+      "legal/billing.md"
+    ],
+    "stale_risk": "none",
+    "owner": "DocsAI/Hermes",
+    "status": "answered",
+    "in_review_needed": false
+  },
+  {
+    "id": 12,
+    "decision": "Object-store is Day-1 V1 scope",
+    "source": "Leonardo",
+    "public_copy": "Object store delivery available from launch",
+    "legal": "none",
+    "runtime": "Hermes proof needed",
+    "pages": [
+      "docs/guides/destinations.md"
+    ],
+    "stale_risk": "docs saying V1.1 or conditional",
+    "owner": "Hermes",
+    "status": "answered",
+    "in_review_needed": false
+  },
+  {
+    "id": 13,
+    "decision": "Object Lock is V1.1",
+    "source": "Leonardo",
+    "public_copy": "Object Lock on roadmap",
+    "legal": "none",
+    "runtime": "future",
+    "pages": [
+      "docs/guides/destinations.md"
+    ],
+    "stale_risk": "docs claiming Object Lock V1",
+    "owner": "Hermes",
+    "status": "answered",
+    "in_review_needed": false
+  },
+  {
+    "id": 14,
+    "decision": "SaaS runs on GCP/Toronto",
+    "source": "Leonardo",
+    "public_copy": "Control plane hosted on Google Cloud, Toronto region",
+    "legal": "data processing",
+    "runtime": "confirmed",
+    "pages": [
+      "security.astro",
+      "docs/security/"
+    ],
+    "stale_risk": "wrong provider/region",
+    "owner": "Hermes",
+    "status": "answered",
+    "in_review_needed": false
+  },
+  {
+    "id": 15,
+    "decision": "First data plane runs on US/AWS",
+    "source": "Leonardo",
+    "public_copy": "Edge delivery runs in US regions via AWS; provider/region announced at launch",
+    "legal": "data processing",
+    "runtime": "confirmed",
+    "pages": [
+      "commitments.astro",
+      "docs/guides/"
+    ],
+    "stale_risk": "docs claiming other provider",
+    "owner": "Hermes",
+    "status": "answered",
+    "in_review_needed": false
+  },
+  {
+    "id": 16,
+    "decision": "Production credentials provided by Leonardo later",
+    "source": "Leonardo",
+    "public_copy": "not applicable for public docs",
+    "legal": "none",
+    "runtime": "Leonardo",
+    "pages": [],
+    "stale_risk": "none",
+    "owner": "Leonardo",
+    "status": "answered",
+    "in_review_needed": false
+  },
+  {
+    "id": 17,
+    "decision": "Support contact is support@zen-mesh.io",
+    "source": "Leonardo",
+    "public_copy": "support@zen-mesh.io",
+    "legal": "none",
+    "runtime": "email forwarding",
+    "pages": [
+      "docs/start-here/support.md",
+      "pricing.astro",
+      "Layout.astro"
+    ],
+    "stale_risk": "wrong email",
+    "owner": "DocsAI",
+    "status": "answered",
+    "in_review_needed": false
+  },
+  {
+    "id": 18,
+    "decision": "Security contact is security@zen-mesh.io",
+    "source": "Leonardo",
+    "public_copy": "security@zen-mesh.io",
+    "legal": "none",
+    "runtime": "security.txt",
+    "pages": [
+      "security.astro",
+      ".well-known/security.txt"
+    ],
+    "stale_risk": "wrong email",
+    "owner": "DocsAI",
+    "status": "answered",
+    "in_review_needed": false
+  },
+  {
+    "id": 19,
+    "decision": "Legal entity is Zen Mesh Inc.",
+    "source": "Leonardo",
+    "public_copy": "Zen Mesh Inc.",
+    "legal": "all legal docs",
+    "runtime": "none",
+    "pages": [
+      "legal/terms.md",
+      "legal/privacy.md",
+      "legal/dpa.md"
+    ],
+    "stale_risk": "placeholder entity name",
+    "owner": "Legal",
+    "status": "answered",
+    "in_review_needed": false
+  },
+  {
+    "id": 20,
+    "decision": "Registered address is 2-14 Stadacona Drive, Toronto, ON, CA",
+    "source": "Leonardo",
+    "public_copy": "2-14 Stadacona Drive, Toronto, ON, CA",
+    "legal": "all legal docs",
+    "runtime": "none",
+    "pages": [
+      "legal/terms.md"
+    ],
+    "stale_risk": "placeholder address",
+    "owner": "Legal",
+    "status": "answered",
+    "in_review_needed": false
+  },
+  {
+    "id": 21,
+    "decision": "Jurisdiction is Ontario, Canada, subject to legal review",
+    "source": "Leonardo",
+    "public_copy": "Ontario, Canada",
+    "legal": "Terms",
+    "runtime": "none",
+    "pages": [
+      "legal/terms.md"
+    ],
+    "stale_risk": "wrong jurisdiction",
+    "owner": "Legal",
+    "status": "answered",
+    "in_review_needed": false
+  },
+  {
+    "id": 22,
+    "decision": "Governing law is Ontario/Canada, subject to legal review",
+    "source": "Leonardo",
+    "public_copy": "Laws of Ontario and Canada",
+    "legal": "Terms",
+    "runtime": "none",
+    "pages": [
+      "legal/terms.md"
+    ],
+    "stale_risk": "none",
+    "owner": "Legal",
+    "status": "answered",
+    "in_review_needed": false
+  },
+  {
+    "id": 23,
+    "decision": "Payload retention: Free 7d, Pro 30d",
+    "source": "Leonardo",
+    "public_copy": "Free: 7 days, Pro: 30 days",
+    "legal": "Privacy/DPA",
+    "runtime": "Hermes enforcement proof",
+    "pages": [
+      "legal/privacy.md",
+      "docs/guides/data-lifecycle.md"
+    ],
+    "stale_risk": "different periods",
+    "owner": "Legal/Hermes",
+    "status": "answered",
+    "in_review_needed": false
+  },
+  {
+    "id": 24,
+    "decision": "DLQ/replay retention: Free 7d, Pro 30d",
+    "source": "Leonardo",
+    "public_copy": "Free: 7 days, Pro: 30 days",
+    "legal": "Privacy/DPA",
+    "runtime": "Hermes enforcement proof",
+    "pages": [
+      "legal/privacy.md"
+    ],
+    "stale_risk": "none",
+    "owner": "Hermes",
+    "status": "answered",
+    "in_review_needed": false
+  },
+  {
+    "id": 25,
+    "decision": "Logs retention: Free 1mo, Pro 3mo",
+    "source": "Leonardo",
+    "public_copy": "Free: 1 month, Pro: 3 months",
+    "legal": "Privacy/DPA",
+    "runtime": "Hermes enforcement proof",
+    "pages": [
+      "legal/privacy.md"
+    ],
+    "stale_risk": "none",
+    "owner": "Hermes",
+    "status": "answered",
+    "in_review_needed": false
+  },
+  {
+    "id": 26,
+    "decision": "Evidence retention: Free 1mo, Pro 3mo",
+    "source": "Leonardo",
+    "public_copy": "Free: 1 month, Pro: 3 months",
+    "legal": "Privacy/DPA",
+    "runtime": "Hermes enforcement proof",
+    "pages": [
+      "legal/privacy.md"
+    ],
+    "stale_risk": "none",
+    "owner": "Hermes",
+    "status": "answered",
+    "in_review_needed": false
+  },
+  {
+    "id": 27,
+    "decision": "Deletion/return period: Free 1mo, Pro 3mo",
+    "source": "Leonardo",
+    "public_copy": "Free: 1 month, Pro: 3 months",
+    "legal": "Privacy/DPA",
+    "runtime": "Hermes enforcement proof",
+    "pages": [
+      "legal/privacy.md"
+    ],
+    "stale_risk": "none",
+    "owner": "Hermes",
+    "status": "answered",
+    "in_review_needed": false
+  },
+  {
+    "id": 28,
+    "decision": "Breach notification: without undue delay",
+    "source": "Leonardo",
+    "public_copy": "We will notify affected users without undue delay",
+    "legal": "Privacy/DPA",
+    "runtime": "incident response process",
+    "pages": [
+      "legal/privacy.md",
+      "legal/dpa.md"
+    ],
+    "stale_risk": "specific timeline promised",
+    "owner": "Legal/Hermes",
+    "status": "answered",
+    "in_review_needed": false
+  },
+  {
+    "id": 29,
+    "decision": "Day-1 subprocessors: GCP, AWS, Stripe, GitHub, Docusaurus/docs",
+    "source": "Leonardo",
+    "public_copy": "GCP, AWS, Stripe, GitHub",
+    "legal": "DPA/subprocessor list",
+    "runtime": "confirmed",
+    "pages": [
+      "legal/dpa.md",
+      "security.astro"
+    ],
+    "stale_risk": "missing subprocessor",
+    "owner": "DocsAI",
+    "status": "answered",
+    "in_review_needed": false
+  },
+  {
+    "id": 30,
+    "decision": "Candidate subprocessors: Google Analytics, HubSpot, similar tools",
+    "source": "Leonardo",
+    "public_copy": "not listed until approved",
+    "legal": "DPA",
+    "runtime": "none",
+    "pages": [
+      "legal/dpa.md"
+    ],
+    "stale_risk": "listed as active",
+    "owner": "Leonardo",
+    "status": "answered",
+    "in_review_needed": false
+  },
+  {
+    "id": 31,
+    "decision": "No default pilot; only if inbound interest",
+    "source": "Leonardo",
+    "public_copy": "Design partner program by invitation",
+    "legal": "design partner terms",
+    "runtime": "none",
+    "pages": [
+      "pricing.astro"
+    ],
+    "stale_risk": "pilot program listed",
+    "owner": "DocsAI",
+    "status": "answered",
+    "in_review_needed": false
+  },
+  {
+    "id": 32,
+    "decision": "Design partner: 6mo Pro free, monthly survey, survey unlocks month",
+    "source": "Leonardo",
+    "public_copy": "6 months Pro free with monthly feedback survey",
+    "legal": "design partner terms",
+    "runtime": "entitlement system",
+    "pages": [
+      "pricing.astro",
+      "docs/start-here/design-partners.md"
+    ],
+    "stale_risk": "wrong terms",
+    "owner": "Legal/Hermes",
+    "status": "answered",
+    "in_review_needed": false
+  },
+  {
+    "id": 33,
+    "decision": "SCC/explainer needed before Leonardo decides",
+    "source": "Leonardo",
+    "public_copy": "international transfer mechanism pending legal review",
+    "legal": "DPA/Privacy",
+    "runtime": "none",
+    "pages": [
+      "legal/dpa.md",
+      "legal/privacy.md"
+    ],
+    "stale_risk": "transfer claims without mechanism",
+    "owner": "DocsAI",
+    "status": "pending",
+    "in_review_needed": true
+  },
+  {
+    "id": 34,
+    "decision": "Tracker/consent pros/cons needed before Leonardo decides",
+    "source": "Leonardo",
+    "public_copy": "cookie/tracker decision pending",
+    "legal": "Privacy/Cookie",
+    "runtime": "site analytics",
+    "pages": [
+      "legal/cookie-policy.md",
+      "privacy-policy"
+    ],
+    "stale_risk": "trackers active without consent",
+    "owner": "DocsAI",
+    "status": "pending",
+    "in_review_needed": true
+  }
+]

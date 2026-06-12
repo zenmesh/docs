@@ -1,0 +1,19 @@
+{
+  "task_id": "DOCSAI025",
+  "signup_enabled": false,
+  "legal_prerequisites": 7,
+  "trust_prerequisites": 4,
+  "content_prerequisites": 5,
+  "operational_prerequisites": 3,
+  "runtime_prerequisites": 6,
+  "total_prerequisites": 25,
+  "docsai_own_prerequisites": 15,
+  "hermes_own_prerequisites": 6,
+  "legal_own_prerequisites": 7,
+  "blocking_on": [
+    "RN-1",
+    "RN-2",
+    "RN-3",
+    "RN-4"
+  ]
+}

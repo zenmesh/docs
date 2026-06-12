@@ -1,0 +1,21 @@
+{
+  "task_id": "DOCSAI025",
+  "canonical": {
+    "entity_name": "Zen Mesh Inc.",
+    "registered_address": "2-14 Stadacona Drive, Toronto, ON, CA",
+    "jurisdiction": "Ontario, Canada",
+    "governing_law": "Laws of Ontario and Canada",
+    "status": "subject to legal review"
+  },
+  "pages_requiring_update": [
+    "legal/terms.md",
+    "legal/privacy.md",
+    "legal/dpa.md",
+    "legal/aup.md",
+    "legal/cookie-policy.md"
+  ],
+  "all_legal_docs_status": "draft/non-effective until legal signoff",
+  "signoff_blocking": [
+    "RN-4: Legal counsel signoff"
+  ]
+}

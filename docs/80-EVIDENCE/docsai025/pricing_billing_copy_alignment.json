@@ -1,0 +1,37 @@
+{
+  "task_id": "DOCSAI025",
+  "canonical": {
+    "free": {
+      "public": true,
+      "price": "Free",
+      "billing": "no billing"
+    },
+    "pro_monthly": {
+      "public": true,
+      "price": "$29/month",
+      "label": "early bird",
+      "billing": "Stripe"
+    },
+    "pro_annual": {
+      "public": true,
+      "price": "$290/year",
+      "label": "early bird",
+      "billing": "Stripe"
+    },
+    "business": {
+      "public": true,
+      "status": "coming soon",
+      "no_price": true
+    },
+    "enterprise": {
+      "public": true,
+      "status": "contact for evaluation",
+      "no_price": true
+    },
+    "currency": "USD-based, multi-currency available",
+    "billing_frequency": "monthly and annual"
+  },
+  "no_paid_live_claim": true,
+  "no_stripe_runtime_claim": true,
+  "stripe_mention": "Payments processed securely via Stripe"
+}

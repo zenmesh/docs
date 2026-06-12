@@ -1,0 +1,13 @@
+{
+  "task_id": "DOCSAI025",
+  "canonical": {
+    "shopify": "V1 blocker (launch readiness blocker)",
+    "twilio": "V1 blocker (launch readiness blocker)",
+    "object_store": "Day-1 V1 scope",
+    "object_lock": "V1.1 roadmap",
+    "gitlab": "V1.1 backlog",
+    "alipay": "V1.1 backlog"
+  },
+  "no_runtime_complete_claim": true,
+  "scan_needed": true
+}

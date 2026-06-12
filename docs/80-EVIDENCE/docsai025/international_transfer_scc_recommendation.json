@@ -1,0 +1,29 @@
+{
+  "task_id": "DOCSAI025",
+  "question": "RN-2: International transfer/SCC position",
+  "options": {
+    "A_conservative": {
+      "name": "Conservative",
+      "description": "No transfer claims until legal review. List subprocessors accurately. Mark as pending.",
+      "risk": "none",
+      "recommendation": "RECOMMENDED FOR V1"
+    },
+    "B_operational": {
+      "name": "Operational",
+      "description": "Prepare SCC workflow, draft addenda, keep as pending legal review.",
+      "risk": "low",
+      "recommendation": "good intermediate step"
+    },
+    "C_aggressive": {
+      "name": "Aggressive",
+      "description": "Publish SCC-based transfer claims now without legal approval.",
+      "risk": "high",
+      "recommendation": "NOT RECOMMENDED"
+    }
+  },
+  "recommended": "A_conservative",
+  "blocking_on": [
+    "RN-2: Leonardo decision",
+    "RN-4: Legal counsel signoff"
+  ]
+}
