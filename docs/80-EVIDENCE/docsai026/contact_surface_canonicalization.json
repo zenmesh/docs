@@ -1,0 +1,9 @@
+{
+  "task_id": "DOCSAI026",
+  "canonical_support": "support@zen-mesh.io",
+  "canonical_security": "security@zen-mesh.io",
+  "wrong_domain_found": 0,
+  "unresolved_placeholders": 0,
+  "kubezen_refs_fixed": 1,
+  "status": "canonical"
+}

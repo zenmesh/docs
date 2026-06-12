@@ -1,0 +1,21 @@
+{
+  "task_id": "DOCSAI026",
+  "canonical": {
+    "free": "launch-facing",
+    "pro": "$29/month early bird, $290/year early bird",
+    "business": "coming soon",
+    "enterprise": "contact/evaluation only",
+    "billing": "monthly + annual",
+    "currency": "multi-currency, USD-based",
+    "processor": "Stripe"
+  },
+  "scan_results": {
+    "wrong_tier_names": 0,
+    "stale_undecided": 0,
+    "paid_live_claim": false,
+    "billing_live_claim": false,
+    "public_pricing_visible": false,
+    "internal_pricing_docs": true
+  },
+  "status": "aligned"
+}

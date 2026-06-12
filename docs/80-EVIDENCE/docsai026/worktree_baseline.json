@@ -1,0 +1,15 @@
+{
+  "task_id": "DOCSAI026",
+  "worktree_docs": "/home/neves/zenmesh/worktrees/DOCSAI026-zen-platform",
+  "worktree_site": "/home/neves/zenmesh/worktrees/DOCSAI026-zen-mesh.io",
+  "docs_base_sha": "9d7f99569ff926a95fb79a33ab15ba2f45c991eb",
+  "site_base_sha": "dd10f04c9981e9a37e82fcec2d2ed97873f6ad3e",
+  "docs_base_branch": "main",
+  "site_base_branch": "main",
+  "worktree_branch": "DOCSAI026-supermax-closure",
+  "isolated": true,
+  "based_on_main": true,
+  "clean_start": true,
+  "runtime_files_touched": 0,
+  "deploy_files_touched": 0
+}

@@ -1,0 +1,15 @@
+{
+  "task_id": "DOCSAI026",
+  "docs_build": {
+    "command": "cd $WT_DOCS && npm run build",
+    "result": "PASS",
+    "exit_code": 0,
+    "output_summary": "Generated static files in build"
+  },
+  "site_build": {
+    "command": "cd $WT_SITE && npm run build",
+    "result": "PASS",
+    "exit_code": 0,
+    "output_summary": "48 pages built in 2.47s, sitemap created"
+  }
+}

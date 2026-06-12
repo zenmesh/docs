@@ -1,0 +1,201 @@
+[
+  {
+    "id": "LG-1",
+    "item": "Terms",
+    "path": "legal/terms.md",
+    "status": "draft",
+    "leonardo_decisions_applied": [
+      "legal entity",
+      "address",
+      "jurisdiction",
+      "governing law"
+    ],
+    "legal_review_required": true,
+    "publish_blocker": true,
+    "reviewer": "Legal counsel",
+    "unresolved_question": "Full legal review and approval",
+    "risk": "cannot publish or enable signup without Terms approval",
+    "acceptance": "Legal counsel signs off"
+  },
+  {
+    "id": "LG-2",
+    "item": "Privacy",
+    "path": "legal/privacy.md",
+    "status": "draft",
+    "leonardo_decisions_applied": [
+      "legal entity",
+      "address",
+      "retention periods",
+      "breach timeline",
+      "subprocessors"
+    ],
+    "legal_review_required": true,
+    "publish_blocker": true,
+    "reviewer": "Legal counsel",
+    "unresolved_question": "Full legal review; SCC/transfer wording; subprocessor disclosure",
+    "risk": "cannot publish or enable signup without Privacy approval",
+    "acceptance": "Legal counsel signs off"
+  },
+  {
+    "id": "LG-3",
+    "item": "DPA",
+    "path": "legal/dpa.md",
+    "status": "draft",
+    "leonardo_decisions_applied": [
+      "legal entity",
+      "subprocessors",
+      "retention"
+    ],
+    "legal_review_required": true,
+    "publish_blocker": true,
+    "reviewer": "Legal counsel",
+    "unresolved_question": "Full legal review; subprocessor list approval",
+    "risk": "DPA needed for business/enterprise customers",
+    "acceptance": "Legal counsel signs off"
+  },
+  {
+    "id": "LG-4",
+    "item": "AUP",
+    "path": "legal/aup.md",
+    "status": "draft",
+    "leonardo_decisions_applied": [
+      "legal entity"
+    ],
+    "legal_review_required": true,
+    "publish_blocker": true,
+    "reviewer": "Legal counsel",
+    "unresolved_question": "Full legal review",
+    "risk": "needed before public signup",
+    "acceptance": "Legal counsel signs off"
+  },
+  {
+    "id": "LG-5",
+    "item": "Cookie/tracker disclosure",
+    "path": "legal/cookie-policy.md",
+    "status": "draft",
+    "leonardo_decisions_applied": [],
+    "legal_review_required": true,
+    "publish_blocker": false,
+    "reviewer": "Legal counsel",
+    "unresolved_question": "Depends on tracker/consent decision (L-1); full legal review after decision",
+    "risk": "cookie policy incomplete without tracker decision",
+    "acceptance": "Legal counsel signs off; Leonardo decides trackers first"
+  },
+  {
+    "id": "LG-6",
+    "item": "Subprocessor list",
+    "path": "legal/privacy.md",
+    "status": "draft",
+    "leonardo_decisions_applied": [
+      "confirmed: GCP, AWS, Stripe, GitHub, Docusaurus"
+    ],
+    "legal_review_required": true,
+    "publish_blocker": true,
+    "reviewer": "Legal counsel",
+    "unresolved_question": "Candidate subprocessors need Leonardo approval (L-3); legal review of final list",
+    "risk": "incomplete subprocessor disclosure",
+    "acceptance": "Legal counsel approves list; Leonardo decides candidates"
+  },
+  {
+    "id": "LG-7",
+    "item": "SCC/international transfer",
+    "path": "legal/privacy.md",
+    "status": "draft",
+    "leonardo_decisions_applied": [
+      "Canada entity",
+      "US/AWS DP",
+      "GCP/Toronto"
+    ],
+    "legal_review_required": true,
+    "publish_blocker": true,
+    "reviewer": "Legal counsel",
+    "unresolved_question": "SCC mechanism and wording (L-2); legal review of transfer disclosure",
+    "risk": "incorrect transfer mechanism creates legal exposure",
+    "acceptance": "Legal counsel approves wording; Leonardo decides position"
+  },
+  {
+    "id": "LG-8",
+    "item": "Responsible disclosure/security",
+    "path": "site: responsible-disclosure.astro",
+    "status": "draft",
+    "leonardo_decisions_applied": [
+      "security@zen-mesh.io"
+    ],
+    "legal_review_required": true,
+    "publish_blocker": false,
+    "reviewer": "Legal counsel",
+    "unresolved_question": "Liability boundary; disclosure timeline policy",
+    "risk": "low \u2014 already conservative",
+    "acceptance": "Legal counsel signs off"
+  },
+  {
+    "id": "LG-9",
+    "item": "Billing/refund/plan terms",
+    "path": "legal/billing.md",
+    "status": "draft",
+    "leonardo_decisions_applied": [
+      "$29/mo, $290/yr",
+      "monthly+annual",
+      "multi-currency USD",
+      "Stripe"
+    ],
+    "legal_review_required": true,
+    "publish_blocker": true,
+    "reviewer": "Legal counsel",
+    "unresolved_question": "Full legal review of billing terms, refund policy, plan changes",
+    "risk": "cannot enable billing without terms",
+    "acceptance": "Legal counsel signs off"
+  },
+  {
+    "id": "LG-10",
+    "item": "Design partner terms",
+    "path": "legal/design-partner-terms.md",
+    "status": "draft",
+    "leonardo_decisions_applied": [
+      "6mo Pro free",
+      "monthly survey",
+      "max 6mo",
+      "no default pilot"
+    ],
+    "legal_review_required": true,
+    "publish_blocker": false,
+    "reviewer": "Legal counsel",
+    "unresolved_question": "Survey requirements, termination clauses, IP rights",
+    "risk": "needed before design partner program launches",
+    "acceptance": "Legal counsel signs off"
+  },
+  {
+    "id": "LG-11",
+    "item": "Retention/deletion",
+    "path": "legal/privacy.md",
+    "status": "draft",
+    "leonardo_decisions_applied": [
+      "payload 7d/30d",
+      "DLQ 7d/30d",
+      "logs 1mo/3mo",
+      "evidence 1mo/3mo",
+      "deletion 1mo/3mo"
+    ],
+    "legal_review_required": true,
+    "publish_blocker": true,
+    "reviewer": "Legal counsel",
+    "unresolved_question": "Wording approval; runtime enforcement is Hermes-owned",
+    "risk": "retention claims without runtime proof are aspirational",
+    "acceptance": "Legal counsel approves wording; Hermes proves runtime enforcement"
+  },
+  {
+    "id": "LG-12",
+    "item": "Breach notification",
+    "path": "legal/privacy.md or security docs",
+    "status": "draft",
+    "leonardo_decisions_applied": [
+      "without undue delay"
+    ],
+    "legal_review_required": true,
+    "publish_blocker": true,
+    "reviewer": "Legal counsel",
+    "unresolved_question": "Wording approval; notification scope and channels",
+    "risk": "incorrect breach timeline creates legal exposure",
+    "acceptance": "Legal counsel signs off"
+  }
+]

@@ -1,0 +1,100 @@
+{
+  "task_id": "DOCSAI026",
+  "public_signup_blocked": true,
+  "blockers": [
+    {
+      "id": "G-1",
+      "item": "Terms legal signoff",
+      "owner": "Legal",
+      "status": "pending"
+    },
+    {
+      "id": "G-2",
+      "item": "Privacy legal signoff",
+      "owner": "Legal",
+      "status": "pending"
+    },
+    {
+      "id": "G-3",
+      "item": "DPA legal signoff if needed",
+      "owner": "Legal",
+      "status": "pending"
+    },
+    {
+      "id": "G-4",
+      "item": "AUP legal signoff",
+      "owner": "Legal",
+      "status": "pending"
+    },
+    {
+      "id": "G-5",
+      "item": "Cookie/tracker decision approved",
+      "owner": "Leonardo",
+      "status": "pending"
+    },
+    {
+      "id": "G-6",
+      "item": "Subprocessor list approved",
+      "owner": "Leonardo+Legal",
+      "status": "pending"
+    },
+    {
+      "id": "G-7",
+      "item": "SCC/transfer wording approved",
+      "owner": "Leonardo+Legal",
+      "status": "pending"
+    },
+    {
+      "id": "G-8",
+      "item": "security.txt/responsible disclosure approved",
+      "owner": "Legal",
+      "status": "pending"
+    },
+    {
+      "id": "G-9",
+      "item": "Pricing/billing copy approved",
+      "owner": "Legal",
+      "status": "pending"
+    },
+    {
+      "id": "G-10",
+      "item": "Support process approved",
+      "owner": "Leonardo",
+      "status": "pending"
+    },
+    {
+      "id": "G-11",
+      "item": "Hermes runtime signup/billing entitlement proof",
+      "owner": "Hermes",
+      "status": "pending"
+    },
+    {
+      "id": "G-12",
+      "item": "Hermes retention proof if retention public",
+      "owner": "Hermes",
+      "status": "pending"
+    },
+    {
+      "id": "G-13",
+      "item": "Hermes object-store/Shopify/Twilio proof if claimed",
+      "owner": "Hermes",
+      "status": "pending"
+    },
+    {
+      "id": "G-14",
+      "item": "Broken links zero",
+      "owner": "DocsAI",
+      "status": "PASS"
+    },
+    {
+      "id": "G-15",
+      "item": "Claim scan clean",
+      "owner": "DocsAI",
+      "status": "PASS"
+    }
+  ],
+  "total_blockers": 15,
+  "passing": 2,
+  "pending": 13,
+  "signup_enabled_claim": false
+}

@@ -1,0 +1,16 @@
+{
+  "task_id": "DOCSAI026",
+  "canonical": {
+    "saas": "GCP/Toronto",
+    "first_data_plane": "US/AWS",
+    "residency_guarantee": false,
+    "prod_creds": "Leonardo provides when close to prod-live"
+  },
+  "scan_results": {
+    "wrong_provider_claims": 0,
+    "residency_guarantee_claim": false,
+    "prod_live_claim": false,
+    "provider_unresolved_in_queues": 0
+  },
+  "status": "aligned"
+}

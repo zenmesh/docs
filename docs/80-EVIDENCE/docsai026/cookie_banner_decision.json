@@ -1,0 +1,14 @@
+{
+  "task_id": "DOCSAI026",
+  "decision": "minimal_notice",
+  "rationale": "If no non-essential trackers active, full cookie banner is unnecessary. Minimal privacy notice sufficient.",
+  "non_essential_trackers_active": false,
+  "banner_required": "no (minimal notice recommended)",
+  "banner_impl_status": "not implemented (awaiting tracker decision L-1)",
+  "necessary_cookies": [
+    "session",
+    "csrf",
+    "consent_preference (if banner later)"
+  ],
+  "legal_effective_claim": false
+}

@@ -1,0 +1,65 @@
+{
+  "task_id": "DOCSAI026",
+  "sections": [
+    {
+      "section": "product_scope",
+      "status": "draft"
+    },
+    {
+      "section": "security_posture",
+      "status": "draft"
+    },
+    {
+      "section": "mcp_read_only_caveat",
+      "status": "draft"
+    },
+    {
+      "section": "support_security_contacts",
+      "status": "aligned"
+    },
+    {
+      "section": "subprocessors",
+      "status": "draft"
+    },
+    {
+      "section": "retention",
+      "status": "draft"
+    },
+    {
+      "section": "data_lifecycle",
+      "status": "draft"
+    },
+    {
+      "section": "responsible_disclosure",
+      "status": "draft"
+    },
+    {
+      "section": "legal_docs_draft_status",
+      "status": "draft"
+    },
+    {
+      "section": "design_partner_terms",
+      "status": "draft"
+    },
+    {
+      "section": "pricing_direction",
+      "status": "draft"
+    },
+    {
+      "section": "known_pending_runtime_proof",
+      "status": "listed"
+    },
+    {
+      "section": "no_sla_certification_overclaim",
+      "status": "verified"
+    }
+  ],
+  "not_claimed": [
+    "SLA",
+    "certification",
+    "data residency guarantee",
+    "production live",
+    "zero trust complete"
+  ],
+  "status": "package_ready"
+}

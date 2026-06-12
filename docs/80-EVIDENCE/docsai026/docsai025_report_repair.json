@@ -1,0 +1,31 @@
+{
+  "task_id": "DOCSAI025",
+  "repair_task": "DOCSAI026",
+  "original_overall": "PARTIAL",
+  "repair_reasons": [
+    "missing WORKTREE line",
+    "short SHAs (65d1a8ac, 39e17b34)",
+    "docs_build=NOT_RUN",
+    "site_build=NOT_RUN",
+    "generic REVIEW_NEEDED: leonardo=yes, legal=yes, hermes_runtime=yes, helper2_implementation=yes",
+    "stale Helper2 dependency without proven current blocker",
+    "missing evidence/checkpoint/Merkle"
+  ],
+  "full_shas": {
+    "docs": "65d1a8ac8be8f1111f589200c761c92a5ee8b2f8",
+    "site": "39e17b3498d6838617531ec6782ecefe81b80579"
+  },
+  "branches": {
+    "docs": "DOCSAI025-mega-closure",
+    "site": "DOCSAI025-mega-closure"
+  },
+  "pushed": true,
+  "repairs_applied_in_docsai026": [
+    "full SHAs required",
+    "WORKTREE line required",
+    "builds must run",
+    "REVIEW_NEEDED must be exact queues",
+    "Helper2 dependency removed unless proven",
+    "evidence/checkpoint/Merkle required"
+  ]
+}

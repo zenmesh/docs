@@ -1,0 +1,209 @@
+[
+  {
+    "name": "No analytics",
+    "advantages": [
+      "Maximum privacy",
+      "No consent needed",
+      "No subprocessor impact",
+      "Simplest legal position"
+    ],
+    "disadvantages": [
+      "No visibility into user behavior",
+      "No conversion tracking",
+      "Hard to optimize UX"
+    ],
+    "data_collected": "none",
+    "cookie_impact": "none",
+    "subprocessor_impact": "none",
+    "legal_impact": "minimal",
+    "implementation_effort": "zero",
+    "growth_value": "none",
+    "recommended_v1": "This is the safest default if no trackers approved"
+  },
+  {
+    "name": "Vercel Analytics",
+    "advantages": [
+      "Privacy-light (no IP collection)",
+      "Built into Vercel",
+      "No cookie consent typically needed",
+      "Page views + Web Vitals"
+    ],
+    "disadvantages": [
+      "US data transfer",
+      "Limited to Vercel-hosted sites",
+      "Less feature-rich than GA"
+    ],
+    "data_collected": "anonymized page views, performance metrics",
+    "cookie_impact": "minimal to none",
+    "subprocessor_impact": "Vercel added to subprocessors",
+    "legal_impact": "disclosure needed",
+    "implementation_effort": "low (one line)",
+    "growth_value": "moderate",
+    "recommended_v1": "Acceptable if Leonardo approves and disclosed"
+  },
+  {
+    "name": "Vercel Speed Insights",
+    "advantages": [
+      "Core Web Vitals only",
+      "No PII",
+      "Privacy-focused"
+    ],
+    "disadvantages": [
+      "US transfer",
+      "Very limited scope",
+      "Vercel-specific"
+    ],
+    "data_collected": "Core Web Vitals, anonymized",
+    "cookie_impact": "none",
+    "subprocessor_impact": "Vercel",
+    "legal_impact": "disclosure needed",
+    "implementation_effort": "low",
+    "growth_value": "low",
+    "recommended_v1": "Acceptable if disclosed; Leonardo decides"
+  },
+  {
+    "name": "Google Analytics",
+    "advantages": [
+      "Industry standard",
+      "Rich insights",
+      "Free tier",
+      "Familiar to marketers"
+    ],
+    "disadvantages": [
+      "Third-party cookies",
+      "US data transfer",
+      "IP collection",
+      "Requires cookie consent banner",
+      "Privacy-sensitive",
+      "Heavy tracking"
+    ],
+    "data_collected": "IP, pages, device, session, behavior flow",
+    "cookie_impact": "sets multiple cookies",
+    "subprocessor_impact": "Google added",
+    "legal_impact": "consent banner required, DPA needed",
+    "implementation_effort": "moderate",
+    "growth_value": "high",
+    "recommended_v1": "Do NOT activate before legal signoff and Leonardo approval"
+  },
+  {
+    "name": "HubSpot",
+    "advantages": [
+      "CRM, marketing automation, lead tracking",
+      "Contact management"
+    ],
+    "disadvantages": [
+      "Heavy tracking",
+      "US transfer",
+      "Cost",
+      "Consent required",
+      "Cookie banners needed"
+    ],
+    "data_collected": "Contact info, email, page views, behavior",
+    "cookie_impact": "sets tracking cookies",
+    "subprocessor_impact": "HubSpot added",
+    "legal_impact": "consent banner, DPA, privacy policy update",
+    "implementation_effort": "high",
+    "growth_value": "high (but later stage)",
+    "recommended_v1": "Do NOT activate before legal signoff; likely V1.1+"
+  },
+  {
+    "name": "Google Fonts (external)",
+    "advantages": [
+      "Fast CDN, large library, free"
+    ],
+    "disadvantages": [
+      "IP logging by Google",
+      "US transfer",
+      "Self-host is easy alternative"
+    ],
+    "data_collected": "IP address, font request",
+    "cookie_impact": "none typically",
+    "subprocessor_impact": "Google added",
+    "legal_impact": "disclosure if external",
+    "implementation_effort": "low (but self-host is also low)",
+    "growth_value": "cosmetic only",
+    "recommended_v1": "Self-host fonts; do not rely on external Google Fonts"
+  },
+  {
+    "name": "Self-hosted fonts",
+    "advantages": [
+      "No third-party request",
+      "No data transfer",
+      "No subprocessor",
+      "Full control"
+    ],
+    "disadvantages": [
+      "Need to manage font files",
+      "Slightly more build config"
+    ],
+    "data_collected": "none",
+    "cookie_impact": "none",
+    "subprocessor_impact": "none",
+    "legal_impact": "none",
+    "implementation_effort": "low",
+    "growth_value": "cosmetic only",
+    "recommended_v1": "Yes \u2014 use self-hosted fonts as default"
+  },
+  {
+    "name": "Cookie banner",
+    "advantages": [
+      "Legal compliance tool",
+      "User control",
+      "Transparency"
+    ],
+    "disadvantages": [
+      "UX friction",
+      "Implementation complexity",
+      "Only needed if non-essential trackers active"
+    ],
+    "data_collected": "user consent preferences",
+    "cookie_impact": "sets consent cookie",
+    "subprocessor_impact": "none",
+    "legal_impact": "required if non-essential cookies/tracking",
+    "implementation_effort": "moderate",
+    "growth_value": "compliance only",
+    "recommended_v1": "Only if non-essential trackers are active; if no trackers, minimal notice sufficient"
+  },
+  {
+    "name": "Consent Management Platform",
+    "advantages": [
+      "Scalable consent management",
+      "Granular preferences",
+      "Audit trail"
+    ],
+    "disadvantages": [
+      "Cost",
+      "Complexity",
+      "Overkill if minimal trackers",
+      "Another subprocessor"
+    ],
+    "data_collected": "consent records",
+    "cookie_impact": "sets consent cookie",
+    "subprocessor_impact": "CMP vendor added",
+    "legal_impact": "reduces legal risk if complex tracking",
+    "implementation_effort": "high",
+    "growth_value": "compliance only",
+    "recommended_v1": "Not needed for V1; overkill without heavy trackers"
+  },
+  {
+    "name": "Support/chat/CRM tools",
+    "advantages": [
+      "Improved support UX",
+      "Ticket management",
+      "Live chat"
+    ],
+    "disadvantages": [
+      "Third-party data access",
+      "Cookie/session tracking",
+      "Varies by tool",
+      "Consent may be needed"
+    ],
+    "data_collected": "support tickets, chat content, customer info",
+    "cookie_impact": "may set session cookies",
+    "subprocessor_impact": "depends on tool",
+    "legal_impact": "DPA needed, privacy policy update",
+    "implementation_effort": "varies",
+    "growth_value": "moderate (support improvement)",
+    "recommended_v1": "Evaluate specific tool when selected; email support (support@zen-mesh.io) for V1 is simplest"
+  }
+]

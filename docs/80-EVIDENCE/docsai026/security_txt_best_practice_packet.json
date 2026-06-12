@@ -1,0 +1,12 @@
+{
+  "task_id": "DOCSAI026",
+  "location": "/.well-known/security.txt",
+  "contact": "mailto:security@zen-mesh.io",
+  "canonical_url": "https://zen-mesh.io/.well-known/security.txt",
+  "preferred_languages": "en",
+  "expires": "2027-06-12T00:00:00Z",
+  "encryption": "omit unless Leonardo provides key",
+  "bounty_promise": false,
+  "sla_promise": false,
+  "legal_signoff_status": "draft_legal_review_required"
+}

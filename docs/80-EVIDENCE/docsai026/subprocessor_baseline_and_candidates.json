@@ -1,0 +1,173 @@
+{
+  "task_id": "DOCSAI026",
+  "confirmed_subprocessors": [
+    {
+      "name": "GCP",
+      "purpose": "SaaS control plane hosting",
+      "data_categories": "infrastructure metadata, logs",
+      "transfer_impact": "Canada-resident",
+      "dpa_available": "Google Cloud DPA",
+      "legal_review": "needed for DPA terms"
+    },
+    {
+      "name": "AWS",
+      "purpose": "First data plane hosting",
+      "data_categories": "webhook payloads, delivery logs",
+      "transfer_impact": "US-resident",
+      "dpa_available": "AWS DPA",
+      "legal_review": "needed for DPA terms"
+    },
+    {
+      "name": "Stripe",
+      "purpose": "Payment processing",
+      "data_categories": "billing contact, payment tokens",
+      "transfer_impact": "US-resident",
+      "dpa_available": "Stripe DPA",
+      "legal_review": "needed for DPA terms"
+    },
+    {
+      "name": "GitHub",
+      "purpose": "Source code hosting, CI/CD",
+      "data_categories": "code (non-customer data)",
+      "transfer_impact": "US-resident",
+      "dpa_available": "GitHub DPA",
+      "legal_review": "minimal"
+    },
+    {
+      "name": "Docusaurus/docs",
+      "purpose": "Documentation hosting",
+      "data_categories": "public docs content only",
+      "transfer_impact": "US-resident",
+      "dpa_available": "N/A (public content)",
+      "legal_review": "minimal"
+    }
+  ],
+  "candidate_subprocessors": [
+    {
+      "name": "Google Analytics",
+      "status": "candidate",
+      "purpose": "Website analytics",
+      "data_categories": "IP, pages visited, device info",
+      "cookie_impact": "sets analytics cookies",
+      "transfer_impact": "US",
+      "dpa_available": "Google DPA",
+      "pros": [
+        "industry standard",
+        "rich insights",
+        "free tier"
+      ],
+      "cons": [
+        "third-party cookies",
+        "US data transfer",
+        "privacy-sensitive",
+        "requires cookie consent"
+      ],
+      "recommendation": "do not activate before Leonardo approval and legal review",
+      "legal_review_needed": true
+    },
+    {
+      "name": "HubSpot",
+      "status": "candidate",
+      "purpose": "CRM/marketing",
+      "data_categories": "contact info, email, page views",
+      "cookie_impact": "sets tracking cookies",
+      "transfer_impact": "US",
+      "dpa_available": "HubSpot DPA",
+      "pros": [
+        "marketing automation",
+        "CRM features",
+        "lead tracking"
+      ],
+      "cons": [
+        "heavy tracking",
+        "US data transfer",
+        "consent required",
+        "subscription cost"
+      ],
+      "recommendation": "do not activate before Leonardo approval",
+      "legal_review_needed": true
+    },
+    {
+      "name": "Vercel Analytics",
+      "status": "candidate",
+      "purpose": "Site performance analytics",
+      "data_categories": "pages visited, performance metrics",
+      "cookie_impact": "may set minimal cookies",
+      "transfer_impact": "US",
+      "dpa_available": "Vercel DPA",
+      "pros": [
+        "privacy-light (no IP)",
+        "built-in to Vercel",
+        "no cookie consent typically needed"
+      ],
+      "cons": [
+        "US transfer",
+        "limited features",
+        "Vercel-specific"
+      ],
+      "recommendation": "acceptable if disclosed; Leonardo decides",
+      "legal_review_needed": true
+    },
+    {
+      "name": "Vercel Speed Insights",
+      "status": "candidate",
+      "purpose": "Core Web Vitals",
+      "data_categories": "performance metrics, anonymized",
+      "cookie_impact": "minimal",
+      "transfer_impact": "US",
+      "dpa_available": "Vercel DPA",
+      "pros": [
+        "privacy-focused",
+        "Core Web Vitals only",
+        "no PII"
+      ],
+      "cons": [
+        "US transfer",
+        "limited to Vercel"
+      ],
+      "recommendation": "acceptable if disclosed; Leonardo decides",
+      "legal_review_needed": true
+    },
+    {
+      "name": "Google Fonts (external)",
+      "status": "candidate",
+      "purpose": "Web font hosting",
+      "data_categories": "IP address, font requests",
+      "cookie_impact": "none typically",
+      "transfer_impact": "US",
+      "dpa_available": "Google DPA",
+      "pros": [
+        "fast CDN",
+        "large library",
+        "free"
+      ],
+      "cons": [
+        "US transfer",
+        "IP logging",
+        "self-host is easy alternative"
+      ],
+      "recommendation": "self-host fonts where feasible; Leonardo decides",
+      "legal_review_needed": true
+    },
+    {
+      "name": "Support/CRM/chat tools",
+      "status": "candidate",
+      "purpose": "Customer support",
+      "data_categories": "support tickets, customer info",
+      "cookie_impact": "may set chat cookies",
+      "transfer_impact": "depends on tool",
+      "dpa_available": "depends on tool",
+      "pros": [
+        "improved support UX",
+        "ticket management"
+      ],
+      "cons": [
+        "third-party data access",
+        "varies widely",
+        "consent may be needed"
+      ],
+      "recommendation": "evaluate specific tool when selected; Leonardo decides",
+      "legal_review_needed": true
+    }
+  ]
+}

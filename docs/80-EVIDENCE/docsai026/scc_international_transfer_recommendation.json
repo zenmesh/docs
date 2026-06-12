@@ -1,0 +1,8 @@
+{
+  "task_id": "DOCSAI026",
+  "recommendation": "Option A: Conservative \u2014 list subprocessors, no broad transfer assurance, SCC legal review pending",
+  "leonardo_decision_needed": true,
+  "legal_review_needed": true,
+  "decision_queue_id": "L-2",
+  "transfer_matrix_summary": "SaaS stays Canada; data plane (AWS) and payments (Stripe) involve Canada\u2192US transfer"
+}

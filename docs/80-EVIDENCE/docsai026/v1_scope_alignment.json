@@ -1,0 +1,18 @@
+{
+  "task_id": "DOCSAI026",
+  "canonical": {
+    "shopify": "V1 blocker",
+    "twilio": "V1 blocker",
+    "object_store": "Day-1 V1",
+    "object_lock": "V1.1",
+    "gitlab": "V1.1/backlog",
+    "alipay": "V1.1/backlog"
+  },
+  "scan_results": {
+    "shopify_stale_v11": 0,
+    "twilio_stale_v11": 0,
+    "object_store_stale_v11": 0,
+    "object_lock_v1_claim": 0
+  },
+  "status": "aligned"
+}

@@ -1,0 +1,18 @@
+{
+  "task_id": "DOCSAI026",
+  "canonical": {
+    "default_pilot": false,
+    "design_partner": "6 months Pro free",
+    "survey_requirement": "monthly survey unlocks following month free",
+    "max_months": 6,
+    "survey_starts": "Day 1",
+    "trigger": "inbound interest only"
+  },
+  "scan_results": {
+    "default_pilot_claims_removed": 0,
+    "no_sla_promise": true,
+    "no_support_promise": true,
+    "no_free_forever": true
+  },
+  "status": "aligned"
+}

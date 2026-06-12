@@ -1,0 +1,165 @@
+{
+  "task_id": "DOCSAI026",
+  "replaces_generic": true,
+  "leonardo_remaining": 4,
+  "legal_remaining": 12,
+  "hermes_runtime_remaining": 7,
+  "helper2_remaining": 0,
+  "helper2_dependency": false,
+  "helper2_rationale": "No current, concrete file/owner path proves Helper2 as a V1 docs/site dependency. Default is no Helper2 dependency.",
+  "answered_removed": 25,
+  "leonardo_queue": [
+    {
+      "id": "L-1",
+      "item": "tracker/consent final choice",
+      "status": "awaiting_options_review",
+      "doc_path": "docs/80-EVIDENCE/docsai026/tracker_consent_decision_matrix.md",
+      "publish_impact": "cookie banner, cookie policy, site privacy notice",
+      "risk": "no default tracker decision may delay launch marketing optimization"
+    },
+    {
+      "id": "L-2",
+      "item": "SCC/international-transfer final position",
+      "status": "awaiting_explainer_review",
+      "doc_path": "docs/80-EVIDENCE/docsai026/scc_international_transfer_explainer.md",
+      "publish_impact": "privacy policy transfer wording",
+      "risk": "incorrect transfer mechanism may create legal exposure"
+    },
+    {
+      "id": "L-3",
+      "item": "optional subprocessors approval/rejection",
+      "status": "awaiting_evaluation_review",
+      "candidates": [
+        "Google Analytics",
+        "HubSpot",
+        "Vercel Analytics",
+        "Vercel Speed Insights",
+        "Google Fonts",
+        "support/CRM tools"
+      ],
+      "doc_path": "docs/80-EVIDENCE/docsai026/subprocessor_baseline_and_candidates.json",
+      "publish_impact": "subprocessor list, DPA, cookie policy",
+      "risk": "each candidate has data/tracker implications"
+    },
+    {
+      "id": "L-4",
+      "item": "security.txt optional: encryption key",
+      "status": "optional",
+      "default": "no encryption key",
+      "doc_path": "docs/80-EVIDENCE/docsai026/security_txt_best_practice_packet.json",
+      "publish_impact": "security.txt content",
+      "risk": "low \u2014 optional field only"
+    }
+  ],
+  "legal_queue": [
+    {
+      "id": "LG-1",
+      "item": "Terms signoff",
+      "file": "legal/terms.md",
+      "status": "draft_legal_review_required"
+    },
+    {
+      "id": "LG-2",
+      "item": "Privacy signoff",
+      "file": "legal/privacy.md",
+      "status": "draft_legal_review_required"
+    },
+    {
+      "id": "LG-3",
+      "item": "DPA signoff",
+      "file": "legal/dpa.md",
+      "status": "draft_legal_review_required"
+    },
+    {
+      "id": "LG-4",
+      "item": "AUP signoff",
+      "file": "legal/aup.md",
+      "status": "draft_legal_review_required"
+    },
+    {
+      "id": "LG-5",
+      "item": "Cookie/tracker disclosure signoff",
+      "file": "legal/cookie-policy.md",
+      "status": "draft_legal_review_required"
+    },
+    {
+      "id": "LG-6",
+      "item": "Subprocessor list approval",
+      "file": "legal/privacy.md (subprocessors section)",
+      "status": "draft_legal_review_required"
+    },
+    {
+      "id": "LG-7",
+      "item": "SCC/international transfer wording approval",
+      "file": "legal/privacy.md (transfer section)",
+      "status": "draft_legal_review_required"
+    },
+    {
+      "id": "LG-8",
+      "item": "Responsible disclosure/security policy review",
+      "file": "legal/security-policy.md or site page",
+      "status": "draft_legal_review_required"
+    },
+    {
+      "id": "LG-9",
+      "item": "Billing/refund/plan terms review",
+      "file": "legal/billing.md",
+      "status": "draft_legal_review_required"
+    },
+    {
+      "id": "LG-10",
+      "item": "Design partner terms review",
+      "file": "legal/design-partner-terms.md",
+      "status": "draft_legal_review_required"
+    },
+    {
+      "id": "LG-11",
+      "item": "Retention/deletion wording approval",
+      "file": "legal/privacy.md (retention section)",
+      "status": "draft_legal_review_required"
+    },
+    {
+      "id": "LG-12",
+      "item": "Breach notification wording approval",
+      "file": "legal/privacy.md or security docs",
+      "status": "draft_legal_review_required"
+    }
+  ],
+  "hermes_runtime_queue": [
+    {
+      "id": "H-1",
+      "item": "Retention runtime enforcement proof",
+      "status": "pending_runtime_proof"
+    },
+    {
+      "id": "H-2",
+      "item": "Delivery/runtime proof if public copy mentions delivery behavior",
+      "status": "pending_runtime_proof"
+    },
+    {
+      "id": "H-3",
+      "item": "Object-store Day-1 runtime proof",
+      "status": "pending_runtime_proof"
+    },
+    {
+      "id": "H-4",
+      "item": "Shopify V1 runtime proof",
+      "status": "pending_runtime_proof"
+    },
+    {
+      "id": "H-5",
+      "item": "Twilio V1 runtime proof",
+      "status": "pending_runtime_proof"
+    },
+    {
+      "id": "H-6",
+      "item": "Billing/Stripe checkout/portal proof",
+      "status": "pending_runtime_proof"
+    },
+    {
+      "id": "H-7",
+      "item": "Signup/billing entitlement proof if public signup enabled later",
+      "status": "pending_runtime_proof"
+    }
+  ]
+}

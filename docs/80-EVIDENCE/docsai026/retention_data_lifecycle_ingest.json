@@ -1,0 +1,28 @@
+{
+  "task_id": "DOCSAI026",
+  "canonical": {
+    "payload": {
+      "free": "7d",
+      "pro": "30d"
+    },
+    "dlq_replay": {
+      "free": "7d",
+      "pro": "30d"
+    },
+    "logs": {
+      "free": "1mo",
+      "pro": "3mo"
+    },
+    "evidence": {
+      "free": "1mo",
+      "pro": "3mo"
+    },
+    "deletion_return": {
+      "free": "1mo",
+      "pro": "3mo"
+    }
+  },
+  "runtime_enforcement_owner": "Hermes",
+  "runtime_live_claim": false,
+  "legal_review_required": true
+}

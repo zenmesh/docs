@@ -1,0 +1,14 @@
+{
+  "task_id": "DOCSAI026",
+  "docs_build": "PASS",
+  "site_build": "PASS",
+  "broken_links_scan": "ran (manual review needed for external links)",
+  "zen_io_public_refs": 0,
+  "zen_namespace_public_refs": 0,
+  "mcp_apply_live_claims": 0,
+  "permission_axis_runtime_live": 0,
+  "residency_guarantee_claims": 5,
+  "mcp_read_scoped_present": true,
+  "legal_stubs_draft_markers": 0,
+  "claim_scan": "FAIL"
+}

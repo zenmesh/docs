@@ -1,0 +1,43 @@
+{
+  "task_id": "DOCSAI026",
+  "scan_timestamp": "2026-06-12",
+  "results": {
+    "google_analytics": {
+      "found": false,
+      "matches": 0
+    },
+    "google_tag_manager": {
+      "found": false
+    },
+    "hubspot": {
+      "found": false,
+      "matches": 0
+    },
+    "vercel_analytics": {
+      "found": true,
+      "matches": 4
+    },
+    "vercel_speed_insights": {
+      "found": true,
+      "matches": 4
+    },
+    "google_fonts_external": {
+      "found": true,
+      "matches": 3
+    },
+    "chat_widgets": {
+      "found": true
+    },
+    "pixels": {
+      "found": false
+    },
+    "cookie_or_localStorage": {
+      "found": false,
+      "matches": 0
+    },
+    "analytics_packages": {
+      "found": true
+    }
+  },
+  "summary": "scan complete; details populated above"
+}
