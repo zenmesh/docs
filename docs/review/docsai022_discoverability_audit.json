@@ -1,0 +1,22 @@
+{
+  "llms_txt": true,
+  "llms_full": true,
+  "sitemap": false,
+  "robots_txt": true,
+  "search_intents_covered": [
+    "webhook support"
+  ],
+  "search_intents_missing": [
+    "webhook launch readiness",
+    "webhook evidence export",
+    "MCP permissions",
+    "API permissions",
+    "UI permissions",
+    "channel-aware RBAC",
+    "data-plane selector",
+    "object-store fan-out",
+    "billing overage",
+    "payload access",
+    "proposed vs applied"
+  ]
+}

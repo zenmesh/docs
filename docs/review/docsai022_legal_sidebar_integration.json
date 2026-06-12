@@ -1,0 +1,14 @@
+{
+  "legal_pages_added": [
+    "docs/legal/terms-of-service.md",
+    "docs/legal/privacy-policy.md",
+    "docs/legal/dpa.md",
+    "docs/legal/cookie-policy.md",
+    "docs/legal/acceptable-use.md"
+  ],
+  "sidebar_category": "Legal (Draft - Not Effective)",
+  "sidebar_added": true,
+  "all_marked_draft": true,
+  "source_branch": "helper031-launch-docs",
+  "build_validation": "pending"
+}

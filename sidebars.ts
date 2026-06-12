@@ -181,6 +181,27 @@ const sidebars: SidebarsConfig = {
         'reference/webhook-faq',
       ],
     },
+    {
+      type: 'category',
+      label: 'Legal (Draft — Not Effective)',
+      items: [
+        'legal/terms-of-service',
+        'legal/privacy-policy',
+        'legal/acceptable-use',
+        'legal/dpa',
+        'legal/cookie-policy',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Review',
+      items: [
+        'review/docsai-findings-001',
+        'review/docs-map-for-reviewers',
+        'review/public-reader-journey',
+        'review/editorial-checklist',
+      ],
+    },
   ],
 };
 

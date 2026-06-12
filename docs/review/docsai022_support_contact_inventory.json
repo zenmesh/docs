@@ -1,0 +1,19 @@
+{
+  "docs_refs": [
+    "/home/neves/zenmesh/worktrees/DOCSAI022-zen-platform/docs/start-here/support.md:14:| **Email** | [support@zen-mesh.io](mailto:support@zen-mesh.io) |"
+  ],
+  "site_refs": [
+    "/home/neves/zenmesh/worktrees/DOCSAI022-zen-mesh.io/src/pages/blogs/[...slug].astro:68:              <a href=\"mailto:support@zen-mesh.io\" class=\"btn-primary\">Contact us</a>",
+    "/home/neves/zenmesh/worktrees/DOCSAI022-zen-mesh.io/src/pages/index.astro:23:            <a href=\"mailto:support@zen-mesh.io?subject=Early%20access%20request\" class=\"btn-primary\">",
+    "/home/neves/zenmesh/worktrees/DOCSAI022-zen-mesh.io/src/pages/how-it-works.astro:412:          <a href=\"mailto:support@zen-mesh.io\" class=\"btn-primary\">Contact us</a>"
+  ],
+  "wrong_domain_refs": [],
+  "slack_discord_refs": [
+    "/home/neves/zenmesh/worktrees/DOCSAI022-zen-mesh.io/src/pages/how-it-works.astro:338:            <p>Slack, Linear, Intercom, and more.</p>"
+  ],
+  "sla_support_refs": [],
+  "footer_has_support": false,
+  "contact_page_exists": false,
+  "contact_page_path": null,
+  "canonical_email": "support@zen-mesh.io"
+}

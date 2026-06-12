@@ -1,0 +1,24 @@
+{
+  "changes": [
+    {
+      "file": "src/layouts/Layout.astro",
+      "change": "Added support@zen-mesh.io to footer Company section, renamed zen@ to General inquiries",
+      "type": "site"
+    }
+  ],
+  "canonical_email": "support@zen-mesh.io",
+  "general_email": "zen@zen-mesh.io",
+  "footer_links": [
+    "General inquiries (zen@zen-mesh.io)",
+    "Support (support@zen-mesh.io)"
+  ],
+  "site_cta_refs": [
+    "src/pages/blogs/[...slug].astro: mailto:support@zen-mesh.io",
+    "src/pages/index.astro: mailto:support@zen-mesh.io",
+    "src/pages/how-it-works.astro: mailto:support@zen-mesh.io"
+  ],
+  "contact_page": null,
+  "wrong_domain_count": 0,
+  "slack_discord_live_claims": 0,
+  "sla_support_claims": 0
+}

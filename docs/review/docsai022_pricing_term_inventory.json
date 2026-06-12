@@ -1,0 +1,26 @@
+{
+  "term_counts": {
+    "Free": 10,
+    "Pro": 3,
+    "Business": 2,
+    "Enterprise": 14,
+    "Preview": 3,
+    "Team": 4,
+    "Evaluation": 4
+  },
+  "pricing_page_exists": true,
+  "pricing_page_path": "/home/neves/zenmesh/worktrees/DOCSAI022-zen-mesh.io/src/pages/pricing.astro",
+  "site_pricing_content_preview": "11:        <h1>Simple pricing for teams that need private webhook delivery</h1>\n13:          Start free during early access. Upgrade when you need higher volume, dedicated entry points, or enterprise controls.\n22:          <!-- Preview -->\n26:              <h3>Preview</h3>\n31:              <span class=\"period\">/month \u2014 start free</span>\n59:            <a href=\"mailto:zen@zen-mesh.io\" class=\"btn-plan btn-primary\">Join Early Access</a>\n62:          <!-- Team -->\n65:              <h3>Team</h3>\n66: ",
+  "llms_pricing_refs": [
+    "> Zen Mesh helps teams receive, validate, observe, and operate webhooks across Stripe, GitHub, and custom sources. Current readiness is DEMO only (local/mock/sandbox and limited cloud-demo scope \u2014 not customer-ready or production-live).",
+    "Version: 1.0.0 \u00b7 Last-Updated: 2026-05-31T16:00:00Z \u00b7 Product scope: webhook ingestion, validation, delivery visibility, and security operations (evidence-first federated operational runtime/trust platform).",
+    "Non-claims and proof scope are authoritative \u2014 see the Non-Claims and Wedge Evidence links below before inferring production readiness.",
+    "- [Website](https://www.zen-mesh.io): Public product site",
+    "- [Capability manifest](https://docs.zen-mesh.io/ai/evidence/v1/manifest.json): Machine-readable capability and proof_status registry",
+    "- [Webhook Replay](https://docs.zen-mesh.io/docs/delivery/replay): Replay events from DLQ or delivery history for recovery and reprocessing",
+    "- [Webhook Idempotency](https://docs.zen-mesh.io/docs/delivery/idempotency): Idempotency controls for safe retry and duplicate processing",
+    "- [Errors and Problem Details](https://docs.zen-mesh.io/docs/api/errors): HTTP status codes, RFC 9457 format, retry-after",
+    "- [Evidence API](https://docs.zen-mesh.io/docs/api/evidence): Cryptographic delivery proofs, Merkle inclusion verification",
+    "- [Events and Evidence API Guide](https://docs.zen-mesh.io/docs/api/events): Event tracking, evidence endpoints, capability proofs"
+  ]
+}
