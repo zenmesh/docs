@@ -17,7 +17,7 @@ Zen Mesh exposes two API surfaces for different consumers:
 
 ## API Reference
 
-- [Back API Reference](./reference/kubezen-back-api) — Generated from OpenAPI spec
+- [Back API Reference](./api/reference/kubezen-back-api.info.mdx) — Generated from OpenAPI spec
 - [Customer API](../reference/customer-api.md) — Planned read-only operational truth API
 
 ## Core Capabilities

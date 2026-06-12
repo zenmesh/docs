@@ -1,0 +1,12 @@
+{
+  "task_id": "DOCSAI028",
+  "phase": 7,
+  "directory": "evidence",
+  "total_broken_refs": 0,
+  "fixed_links": [],
+  "supersession_links": [
+    "ai/evidence-v1-supersession.md created"
+  ],
+  "strategy": "supersession/link-map approach for Helper/Hermes evidence",
+  "status": "in_progress"
+}

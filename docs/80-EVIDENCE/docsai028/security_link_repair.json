@@ -1,0 +1,21 @@
+{
+  "task_id": "DOCSAI028",
+  "phase": 8,
+  "directory": "security",
+  "total_broken_refs": 4,
+  "broken_refs": [
+    "/docs/security/security-capability-validation",
+    "/docs/security/agent-saas-mtls",
+    "/docs/security/zenlock-credential-lifecycle",
+    "/docs/security/security-capability-validation"
+  ],
+  "fixed_links": [],
+  "skipped_links": [
+    "docs/security/security-capability-validation.md: target docs/security/security-capability-validation not found and can't fix",
+    "docs/security/agent-saas-mtls.md: target docs/security/agent-saas-mtls not found and can't fix",
+    "docs/security/zenlock-credential-lifecycle.md: target docs/security/zenlock-credential-lifecycle not found and can't fix"
+  ],
+  "strategy": "fix relative paths or create redirect stubs",
+  "status": "completed",
+  "fixed_links_count": 0
+}

@@ -80,5 +80,5 @@ The following statuses must NOT appear in any AI evidence artifact unless legall
 
 | Schema | URL |
 |---|---|
-| Manifest | `/ai/evidence/v1/manifest.schema.json` |
-| Compliance Map | `/ai/evidence/v1/compliance-map.schema.json` |
+| Manifest | `/ai/evidence-schema/manifest.schema.json` |
+| Compliance Map | `/ai/evidence-schema/compliance-map.schema.json` |

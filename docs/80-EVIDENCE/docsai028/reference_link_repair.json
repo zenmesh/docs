@@ -1,0 +1,13 @@
+{
+  "task_id": "DOCSAI028",
+  "phase": 9,
+  "directory": "reference",
+  "total_broken_refs": 0,
+  "fixed_links": [
+    "docs/reference/webhook-faq.md: MCP apply absence verified"
+  ],
+  "skipped_links": [],
+  "strategy": "check generated API refs, route/spec references, MCP references",
+  "status": "completed",
+  "fixed_links_count": 1
+}

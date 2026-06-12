@@ -1,0 +1,128 @@
+{
+  "task_id": "DOCSAI028",
+  "phase": 14,
+  "total_legal_pages": 12,
+  "status": "preserved",
+  "pages": [
+    {
+      "name": "Terms",
+      "path": "docs/legal/terms.md",
+      "exists": true,
+      "draft_marker": "DRAFT \u2014 NOT EFFECTIVE \u2014 LEGAL REVIEW REQUIRED",
+      "legal_review_required": true,
+      "non_effective": true,
+      "no_legal_approval_claim": true,
+      "links_valid": true
+    },
+    {
+      "name": "Privacy",
+      "path": "docs/legal/privacy.md",
+      "exists": true,
+      "draft_marker": "DRAFT \u2014 NOT EFFECTIVE \u2014 LEGAL REVIEW REQUIRED",
+      "legal_review_required": true,
+      "non_effective": true,
+      "no_legal_approval_claim": true,
+      "links_valid": true
+    },
+    {
+      "name": "DPA",
+      "path": "docs/legal/dpa.md",
+      "exists": true,
+      "draft_marker": "DRAFT \u2014 NOT EFFECTIVE \u2014 LEGAL REVIEW REQUIRED",
+      "legal_review_required": true,
+      "non_effective": true,
+      "no_legal_approval_claim": true,
+      "links_valid": true
+    },
+    {
+      "name": "AUP",
+      "path": "docs/legal/aup.md",
+      "exists": true,
+      "draft_marker": "DRAFT \u2014 NOT EFFECTIVE \u2014 LEGAL REVIEW REQUIRED",
+      "legal_review_required": true,
+      "non_effective": true,
+      "no_legal_approval_claim": true,
+      "links_valid": true
+    },
+    {
+      "name": "Cookie/Tracker",
+      "path": "docs/legal/cookie-disclosure.md",
+      "exists": true,
+      "draft_marker": "DRAFT \u2014 NOT EFFECTIVE \u2014 LEGAL REVIEW REQUIRED",
+      "legal_review_required": true,
+      "non_effective": true,
+      "no_legal_approval_claim": true,
+      "links_valid": true
+    },
+    {
+      "name": "Subprocessors",
+      "path": "docs/legal/subprocessors.md",
+      "exists": true,
+      "draft_marker": "DRAFT \u2014 NOT EFFECTIVE \u2014 LEGAL REVIEW REQUIRED",
+      "legal_review_required": true,
+      "non_effective": true,
+      "no_legal_approval_claim": true,
+      "links_valid": true
+    },
+    {
+      "name": "SCC/Transfer",
+      "path": "docs/legal/scc-transfer.md",
+      "exists": true,
+      "draft_marker": "DRAFT \u2014 NOT EFFECTIVE \u2014 LEGAL REVIEW REQUIRED",
+      "legal_review_required": true,
+      "non_effective": true,
+      "no_legal_approval_claim": true,
+      "links_valid": true
+    },
+    {
+      "name": "Responsible Disclosure",
+      "path": "docs/legal/responsible-disclosure.md",
+      "exists": true,
+      "draft_marker": "DRAFT \u2014 NOT EFFECTIVE \u2014 LEGAL REVIEW REQUIRED",
+      "legal_review_required": true,
+      "non_effective": true,
+      "no_legal_approval_claim": true,
+      "links_valid": true
+    },
+    {
+      "name": "Billing/Refund/Plan",
+      "path": "docs/legal/billing-terms.md",
+      "exists": true,
+      "draft_marker": "DRAFT \u2014 NOT EFFECTIVE \u2014 LEGAL REVIEW REQUIRED",
+      "legal_review_required": true,
+      "non_effective": true,
+      "no_legal_approval_claim": true,
+      "links_valid": true
+    },
+    {
+      "name": "Design Partner",
+      "path": "docs/legal/design-partner-terms.md",
+      "exists": true,
+      "draft_marker": "DRAFT \u2014 NOT EFFECTIVE \u2014 LEGAL REVIEW REQUIRED",
+      "legal_review_required": true,
+      "non_effective": true,
+      "no_legal_approval_claim": true,
+      "links_valid": true
+    },
+    {
+      "name": "Retention/Lifecycle",
+      "path": "docs/legal/retention-lifecycle.md",
+      "exists": true,
+      "draft_marker": "DRAFT \u2014 NOT EFFECTIVE \u2014 LEGAL REVIEW REQUIRED",
+      "legal_review_required": true,
+      "non_effective": true,
+      "no_legal_approval_claim": true,
+      "links_valid": true
+    },
+    {
+      "name": "Breach Notice",
+      "path": "docs/legal/breach-notice.md",
+      "exists": true,
+      "draft_marker": "DRAFT \u2014 NOT EFFECTIVE \u2014 LEGAL REVIEW REQUIRED",
+      "legal_review_required": true,
+      "non_effective": true,
+      "no_legal_approval_claim": true,
+      "links_valid": true
+    }
+  ]
+}

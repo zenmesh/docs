@@ -1,0 +1,11 @@
+{
+  "task_id": "DOCSAI028",
+  "phase": 19,
+  "status": "finalized",
+  "leonardo_remaining": 4,
+  "legal_remaining": 12,
+  "hermes_runtime_remaining": 7,
+  "helper2_dependency": false,
+  "docsai_remaining": 0,
+  "exact": true
+}

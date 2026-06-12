@@ -1,0 +1,19 @@
+{
+  "task_id": "DOCSAI028",
+  "phase": 17,
+  "status": "PASS",
+  "verified": {
+    "support_email": "support@zen-mesh.io",
+    "security_email": "security@zen-mesh.io",
+    "no_wrong_domains": true,
+    "GCP_Toronto": true,
+    "US_AWS_first_data_plane": true,
+    "no_residency_guarantee": true,
+    "Shopify_V1_blocker": true,
+    "Twilio_V1_blocker": true,
+    "object_store_Day_1_V1": true,
+    "Object_Lock_V1_1": true,
+    "GitLab_Alipay_V1_1": true
+  },
+  "passed": true
+}

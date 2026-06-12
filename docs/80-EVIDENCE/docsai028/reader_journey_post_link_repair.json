@@ -1,0 +1,57 @@
+{
+  "task_id": "DOCSAI028",
+  "phase": 13,
+  "audiences": [
+    {
+      "name": "developer/api_reader",
+      "path": "Getting Started \u2192 API Reference",
+      "status": "pass",
+      "broken_links": 0
+    },
+    {
+      "name": "ai/mcp_reader",
+      "path": "Start Here \u2192 AI Overview \u2192 MCP Read-Only",
+      "status": "pass",
+      "broken_links": 0
+    },
+    {
+      "name": "security_reviewer",
+      "path": "Security \u2192 Security Overview \u2192 ...",
+      "status": "pass",
+      "broken_links": 0
+    },
+    {
+      "name": "legal_reviewer",
+      "path": "Start Here \u2192 Current Status \u2192 Legal Drafts",
+      "status": "pass",
+      "broken_links": 0
+    },
+    {
+      "name": "buyer/trust_reviewer",
+      "path": "Start Here \u2192 Current Status \u2192 Trust Center",
+      "status": "pass",
+      "broken_links": 0
+    },
+    {
+      "name": "design_partner_prospect",
+      "path": "Start Here \u2192 Current Status \u2192 Design Partner Program",
+      "status": "pass",
+      "broken_links": 0
+    },
+    {
+      "name": "billing/pricing_evaluator",
+      "path": "Start Here \u2192 Pricing (public site)",
+      "status": "pass",
+      "broken_links": 0
+    },
+    {
+      "name": "support/security_contact_user",
+      "path": "Start Here \u2192 Support \u2192 support@zen-mesh.io",
+      "status": "pass",
+      "broken_links": 0
+    }
+  ],
+  "total_audiences": 8,
+  "pass_rate": "100%",
+  "note": "All reader journeys pass with broken_links=0"
+}

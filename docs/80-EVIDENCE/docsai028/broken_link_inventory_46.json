@@ -1,0 +1,107 @@
+{
+  "task_id": "DOCSAI028",
+  "phase": 2,
+  "total_broken_links_from_docsai027_report": 46,
+  "current_broken_links_inventory": {
+    "ai_evidence_v1_json": [],
+    "zen_lock_assets": [],
+    "llms_txt": [
+      {
+        "path": "/llms.txt",
+        "status": "not_found",
+        "owner": "docs",
+        "repair_type": "create_llms_txt_page",
+        "risk": "low"
+      },
+      {
+        "path": "llms.txt",
+        "status": "not_found",
+        "owner": "docs",
+        "repair_type": "create_llms_txt_page",
+        "risk": "low"
+      }
+    ],
+    "img_architecture": [],
+    "api_reference_kubezen": [
+      {
+        "target": "kubezen-back-api",
+        "status": "missing",
+        "owner": "API team",
+        "repair_type": "create_mdx_or_redirect",
+        "risk": "medium"
+      },
+      {
+        "target": "kubezen-back-api.mdx",
+        "status": "missing",
+        "owner": "API team",
+        "repair_type": "create_mdx_or_redirect",
+        "risk": "medium"
+      },
+      {
+        "target": "kubezen-back-api/info.mdx",
+        "status": "missing",
+        "owner": "API team",
+        "repair_type": "create_mdx_or_redirect",
+        "risk": "medium"
+      },
+      {
+        "target": "kubezen-back-api.md",
+        "status": "missing",
+        "owner": "API team",
+        "repair_type": "create_mdx_or_redirect",
+        "risk": "medium"
+      }
+    ],
+    "docs_path_prefix": [],
+    "security_crosslink": [
+      {
+        "source": "/docs/docs/security/security-capability-validation.md",
+        "target": "docs/security/security-capability-validation",
+        "status": "broken",
+        "repair_type": "fix_relative_path_or_create_redirect",
+        "risk": "low"
+      },
+      {
+        "source": "/docs/docs/security/agent-saas-mtls.md",
+        "target": "docs/security/agent-saas-mtls",
+        "status": "broken",
+        "repair_type": "fix_relative_path_or_create_redirect",
+        "risk": "low"
+      },
+      {
+        "source": "/docs/docs/security/zenlock-credential-lifecycle.md",
+        "target": "docs/security/zenlock-credential-lifecycle",
+        "status": "broken",
+        "repair_type": "fix_relative_path_or_create_redirect",
+        "risk": "low"
+      },
+      {
+        "source": "/docs/docs/security/security-capability-validation.md",
+        "target": "docs/security/security-capability-validation",
+        "status": "broken",
+        "repair_type": "fix_relative_path_or_create_redirect",
+        "risk": "low"
+      }
+    ],
+    "guides_adapter_endpoint": [
+      {
+        "source": "guides/adapter endpoint",
+        "target": "../api/reference/kubezen-back-api",
+        "status": "broken",
+        "repair_type": "fix_relative_path",
+        "risk": "low"
+      }
+    ]
+  },
+  "total_by_category": {
+    "ai_evidence_v1_json": 0,
+    "zen_lock_assets": 0,
+    "llms_txt": 2,
+    "img_architecture": 0,
+    "api_reference_kubezen": 4,
+    "docs_path_prefix": 0,
+    "security_crosslink": 4,
+    "guides_adapter_endpoint": 1
+  },
+  "total": 11
+}

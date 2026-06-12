@@ -37,7 +37,7 @@ The following mappings connect Zen Mesh technical features to compliance framewo
 The complete compliance graph is available at:
 
 ```
-/ai/evidence/v1/compliance-map.json
+/ai/evidence-schema/compliance-map.json
 ```
 
 Each entry includes framework, control_id, control_title, relationship, claim_status, evidence_refs, and a disclaimer note.

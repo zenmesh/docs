@@ -1,0 +1,20 @@
+{
+  "task_id": "DOCSAI028",
+  "phase": 5,
+  "directory": "api",
+  "total_broken_refs": 4,
+  "broken_refs": [
+    "../api/reference/kubezen-back-api",
+    "reference/kubezen-back-api"
+  ],
+  "fixed_links": [
+    "kubezen-back-api.info.mdx verified",
+    "docs/api/events.md",
+    "docs/api/overview.md",
+    "docs/api/webhooks.md"
+  ],
+  "skipped_links": [],
+  "strategy": "verify kubezen-back-api.info.mdx exists and fix anchor refs",
+  "status": "in_progress",
+  "fixed_links_count": 3
+}

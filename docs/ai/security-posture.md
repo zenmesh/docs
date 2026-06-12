@@ -70,7 +70,7 @@ See [`local-trust-posture.json`](/ai/security/v1/local-trust-posture.json) and p
 
 ## Narrative vs proof
 
-Blogs and [`narrative-context.json`](https://www.zen-mesh.io/ai/narrative-context.json) are **narrative_context** only. Proof remains in the [capability manifest](/ai/evidence/v1/manifest.json) and [non-claims](/ai/evidence/v1/non-claims.json).
+Blogs and [`narrative-context.json`](https://www.zen-mesh.io/ai/narrative-context.json) are **narrative_context** only. Proof remains in the [capability manifest](/ai/evidence-schema/manifest.json) and [non-claims](/ai/evidence-schema/non-claims.json).
 
 ## Hash-chain / Merkle
 

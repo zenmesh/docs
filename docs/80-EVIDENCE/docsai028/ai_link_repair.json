@@ -1,0 +1,30 @@
+{
+  "task_id": "DOCSAI028",
+  "phase": 4,
+  "directory": "ai",
+  "total_broken_refs": 26,
+  "broken_files": [
+    "/ai/evidence/v1/manifest.json",
+    "/ai/evidence/v1/compliance-map.json",
+    "/ai/evidence/v1/non-claims.json",
+    "/ai/evidence/v1/wedge-claim-map.json",
+    "/ai/evidence/v1/wedge-non-claims.json",
+    "/ai/evidence/v1/wedge-non-claims.json",
+    "/ai/evidence/v1/manifest.schema.json",
+    "/ai/evidence/v1/compliance-map.schema.json",
+    "/ai/evidence/v1/non-claims.json"
+  ],
+  "fixed_links": [
+    "ai/security-posture.md",
+    "ai/wedge-overview.md",
+    "ai/evidence-schema.md",
+    "ai/non-claims.md",
+    "ai/compliance-evidence.md",
+    "ai/capability-evidence.md"
+  ],
+  "skipped_links": [],
+  "strategy": "create_redirect_stub_pages_to_ai/evidence-schema.md",
+  "risk": "low",
+  "status": "completed",
+  "fixed_links_count": 6
+}

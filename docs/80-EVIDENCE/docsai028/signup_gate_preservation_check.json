@@ -1,0 +1,30 @@
+{
+  "task_id": "DOCSAI028",
+  "phase": 15,
+  "status": "preserved",
+  "blockers": [
+    "legal_signoff_terms",
+    "legal_signoff_privacy",
+    "legal_signoff_dpa",
+    "legal_signoff_aup",
+    "cookie_tracker_decision",
+    "subprocessor_list",
+    "scc_transfer",
+    "responsible_disclosure",
+    "billing_refund_plan",
+    "design_partner_terms",
+    "support_process",
+    "retention_deletion"
+  ],
+  "total_blockers": 12,
+  "legal_blockers": 12,
+  "leonardo_blockers": 4,
+  "hermes_runtime_blockers": 7,
+  "no_signup_enabled_claim": true,
+  "no_billing_live_claim": true,
+  "no_support_live_claim": true,
+  "no_prod_live_claim": true,
+  "no_launch_ready_claim": true,
+  "no_residency_guarantee": true,
+  "no_mcp_apply_live_claim": true
+}

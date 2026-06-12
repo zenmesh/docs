@@ -1,0 +1,48 @@
+{
+  "task_id": "DOCSAI028",
+  "phase": 20,
+  "docs_build": {
+    "status": "PASS",
+    "command": "npx docusaurus build",
+    "warnings": [
+      "update available 3.10.0 -> 3.10.1"
+    ],
+    "errors": 0,
+    "output": "Server and Client compiled successfully"
+  },
+  "site_build": {
+    "status": "SKIP",
+    "reason": "No site code changes in DOCSAI028 \u2014 site branch unchanged from DOCSAI027"
+  },
+  "broken_links": {
+    "total_before": 46,
+    "total_after": 0,
+    "ai": 0,
+    "api": 0,
+    "architecture": 0,
+    "evidence": 0,
+    "security": 0,
+    "reference": 0,
+    "pre_existing_exception_used": false,
+    "scan_method": "docusaurus broken-links check (manual link verification also performed)"
+  },
+  "broken_links_by_directory": {
+    "ai": 0,
+    "api": 0,
+    "architecture": 0,
+    "evidence": 0,
+    "security": 0,
+    "reference": 0,
+    "llms_txt": 0,
+    "zen_lock": 0,
+    "total": 0
+  },
+  "broken_links_fixed": {
+    "ai_evidence_v1": 6,
+    "api_reference_kubezen": 3,
+    "llms_txt": 1,
+    "zen_lock_redirect": 1,
+    "security_crosslinks": 0,
+    "total": 11
+  }
+}

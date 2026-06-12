@@ -1,0 +1,32 @@
+{
+  "task_id": "DOCSAI028",
+  "phase": 3,
+  "policy_name": "DOCSAI028 Broken Link Repair Policy",
+  "allowed_repair_types": [
+    "fix_wrong_relative_path",
+    "update_moved_target",
+    "add_missing_anchor",
+    "add_redirect_stub_page",
+    "create_canonical_index_page",
+    "replace_stale_link_with_current_canonical",
+    "remove_link_only_if_truly_obsolete",
+    "convert_historical_evidence_link_to_supersession",
+    "add_generated_reference_landing_page",
+    "create_link_map"
+  ],
+  "forbidden_actions": [
+    "delete_useful_content_just_to_pass_link_check",
+    "mutate_runtime_docs_into_false_claims",
+    "edit_helper_historical_evidence_destructively",
+    "create_fake_runtime_proof_pages",
+    "claim_broken_link_target_is_complete_when_not",
+    "link_to_public_site_when_docs_internal_target_required",
+    "hide_errors_by_disabling_link_checker_broadly"
+  ],
+  "ai_evidence_repair_strategy": "Create stub pages that redirect to ai/evidence-schema.md or explain that these are Hermes/Helper artifacts, not DocsAI-owned",
+  "zen_lock_repair_strategy": "Create redirect stub page with explanation that zen-lock is Hermes artifact, no longer part of docs",
+  "api_reference_repair_strategy": "Verify kubezen-back-api.info.mdx exists and is properly referenced",
+  "llms_txt_strategy": "Create llms.txt page with index of docs",
+  "evidence_supersession_strategy": "For Helper/Hermes evidence links, create supersession/link-map pages rather than mutating evidence",
+  "security_crosslink_strategy": "Fix relative paths or create redirect stubs"
+}
