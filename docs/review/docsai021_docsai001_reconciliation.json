@@ -1,0 +1,21 @@
+{
+  "task_id": "DOCSAI021",
+  "docsai001_reconciliation": {
+    "docs_branch": "helper031-launch-docs",
+    "docs_full_sha": "7cdf9b26496a354b5b07b7708a9eaa72c56ba016",
+    "docs_short_sha": "7cdf9b2",
+    "docs_pushed": true,
+    "docs_cherry_picked": true,
+    "docsai021_docs_sha": "4fea723",
+    "site_branch": "DOCSAI002-public-trust-legal-signup-readiness",
+    "site_full_sha": "82757681c33dad05bec23177d9f32dcc115d3ce9",
+    "site_short_sha": "8275768",
+    "site_pushed": true,
+    "site_cherry_picked": true,
+    "docsai021_site_sha": "ad1eced",
+    "conflicts_resolved": [
+      "sidebars.ts"
+    ],
+    "status": "reconciled"
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "existing_drafts_on_helper_branches": [
+    {
+      "path": "docs/legal/terms-of-service.md",
+      "branch": "helper031-launch-docs",
+      "status": "draft/not-effective",
+      "merged_to_main": false
+    },
+    {
+      "path": "docs/legal/privacy-policy.md",
+      "branch": "helper031-launch-docs",
+      "status": "draft/not-effective",
+      "merged_to_main": false
+    },
+    {
+      "path": "docs/legal/acceptable-use.md",
+      "branch": "helper031-launch-docs",
+      "status": "draft/not-effective",
+      "merged_to_main": false
+    },
+    {
+      "path": "docs/legal/cookie-policy.md",
+      "branch": "helper031-launch-docs",
+      "status": "draft/not-effective",
+      "merged_to_main": false
+    },
+    {
+      "path": "docs/legal/dpa.md",
+      "branch": "helper031-launch-docs",
+      "status": "draft/not-effective",
+      "merged_to_main": false
+    }
+  ],
+  "site_legal_pages": [
+    {
+      "path": "src/pages/terms.astro",
+      "status": "draft/not-effective"
+    },
+    {
+      "path": "src/pages/privacy.astro",
+      "status": "draft/not-effective"
+    },
+    {
+      "path": "src/pages/aup.astro",
+      "status": "draft/not-effective"
+    },
+    {
+      "path": "src/pages/dpa.astro",
+      "status": "draft/not-effective"
+    },
+    {
+      "path": "src/pages/cookies.astro",
+      "status": "draft/not-effective"
+    }
+  ],
+  "missing_documents": [
+    "subprocessors",
+    "responsible-disclosure",
+    "security-contact",
+    "support-payload-access-legal",
+    "data-deletion-policy",
+    "evidence-retention-policy",
+    "data-export-policy"
+  ],
+  "sidebar_issue": "Legal section removed from sidebar on DOCSAI021 branch because legal pages don't exist on main. Will be re-added when legal pages are merged."
+}

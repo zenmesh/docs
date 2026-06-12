@@ -1,0 +1,64 @@
+{
+  "data residency claim": {
+    "count": 0,
+    "hits": []
+  },
+  "AWS us-east-1 live": {
+    "count": 0,
+    "hits": []
+  },
+  "GCP Toronto residency": {
+    "count": 0,
+    "hits": []
+  },
+  "legal effective claim": {
+    "count": 0,
+    "hits": []
+  },
+  "SLA claim": {
+    "count": 0,
+    "hits": []
+  },
+  "compliance/certification claim": {
+    "count": 0,
+    "hits": []
+  },
+  "production-live claim": {
+    "count": 0,
+    "hits": []
+  },
+  "support-live overclaim": {
+    "count": 0,
+    "hits": []
+  },
+  "paid Pro/Stripe-live": {
+    "count": 0,
+    "hits": []
+  },
+  "object-store live": {
+    "count": 0,
+    "hits": []
+  },
+  "exactly-once": {
+    "count": 0,
+    "hits": []
+  },
+  "Slack/Discord live": {
+    "count": 0,
+    "hits": []
+  },
+  "public zen.io": {
+    "count": 0,
+    "hits": []
+  },
+  "public zen/*": {
+    "count": 1,
+    "hits": [
+      "/home/neves/zenmesh/worktrees/DOCSAI021-zen-mesh.io/src/pages/how-it-works.astro:204:                <pre><code>helm install zen-agent zen/zen-agent \\"
+    ]
+  },
+  "wrong support domain": {
+    "count": 0,
+    "hits": []
+  }
+}

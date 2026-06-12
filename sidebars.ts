@@ -191,17 +191,7 @@ const sidebars: SidebarsConfig = {
         'review/editorial-checklist',
       ],
     },
-    {
-      type: 'category',
-      label: 'Legal',
-      items: [
-        'legal/terms-of-service',
-        'legal/privacy-policy',
-        'legal/acceptable-use',
-        'legal/cookie-policy',
-        'legal/dpa',
-      ],
-    },
+
   ],
 };
 
