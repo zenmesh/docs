@@ -18,7 +18,7 @@ Zen Mesh is in **early access**. We are completing final validations before open
 - Planned after final validation gates pass
 - SLA options will be introduced as the service matures
 - No hard SLAs offered during early access
-- See [Validation Gates](https://github.com/zenmesh/zen-mesh.io/blob/main/docs/prod-live-validation-gates.md) for the full list
+- See [Runtime Proof Checklist](../contracts/runtime-proof-checklist) for the full list
 
 ## Evidence Status
 
