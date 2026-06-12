@@ -1,0 +1,22 @@
+{
+  "task_id": "DOCSAI023",
+  "repairing_task": "DOCSAI022",
+  "docs_branch": "DOCSAI022-launch-docs-full",
+  "docs_full_sha": "6ece7505a6dea8e2853278e398e5ff2a716cfd1d",
+  "docs_pushed": true,
+  "docs_clean": true,
+  "docs_worktree": "/home/neves/zenmesh/worktrees/DOCSAI022-zen-platform",
+  "site_branch": "DOCSAI022-site-full",
+  "site_full_sha": "918545002bd6079612dcc94a3d8701d9a45a01c7",
+  "site_pushed": true,
+  "site_clean": true,
+  "site_worktree": "/home/neves/zenmesh/worktrees/DOCSAI022-zen-mesh.io",
+  "docs022_mainline": false,
+  "site022_mainline": false,
+  "issues_found": [
+    "Missing WORKTREE line in report",
+    "Short SHAs instead of full SHAs",
+    "Stale task ID DOCSAI001 referenced instead of DOCSAI022"
+  ],
+  "fixed_in_023": true
+}

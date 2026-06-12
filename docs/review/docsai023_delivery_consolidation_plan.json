@@ -1,0 +1,610 @@
+{
+  "delivery_fragmentation_inventory": {
+    "files_analyzed": 16,
+    "summary": {
+      "total_pages": 16,
+      "redundant_pages": 5,
+      "special_pages": 3,
+      "decision_tree_needed": true
+    },
+    "file_analysis": [
+      {
+        "file": "delivery/index.md",
+        "title": "Webhook Reliability",
+        "main_topic": "Overall delivery reliability controls overview and index",
+        "key_concepts": [
+          "Dead Letter Queue",
+          "Webhook Replay",
+          "Webhook Deduplication",
+          "Webhook Idempotency",
+          "Webhook Filtering",
+          "Webhook Fan-Out",
+          "JSONPath Routing",
+          "JSONPath Transforms"
+        ],
+        "exactly_once_guaranteed": "None explicit. Mentions 'Reliable webhook delivery requires more than forwarding events'.",
+        "duplicate_sections_with_other_pages": "All links point to specific capability pages. Minor overlap in description across capabilities.",
+        "internal_links": [
+          "./dead-letter-queue",
+          "./replay",
+          "./deduplication",
+          "./idempotency",
+          "./filtering",
+          "./fan-out",
+          "./jsonpath-routing",
+          "./jsonpath-transforms"
+        ],
+        "missing_decision_tree_content": "Has architecture overview but no decision tree for selecting capabilities or configuration patterns."
+      },
+      {
+        "file": "delivery/fan-out.md",
+        "title": "Webhook Fan-Out",
+        "main_topic": "Multi-destination delivery with per-destination policies",
+        "key_concepts": [
+          "DeliveryFlow CRD",
+          "Multi-destination delivery",
+          "Failure isolation",
+          "Ordering/concurrency semantics"
+        ],
+        "exactly_once_guaranteed": "No explicit claims. Uses CRD-supported and contract-defined.",
+        "duplicate_sections_with_other_pages": "Significant overlap with routing-and-fan-out.md (capabilities, operational limits).",
+        "internal_links": [
+          "./filtering",
+          "./dead-letter-queue"
+        ],
+        "missing_decision_tree_content": "No decision tree. Mentions partial implementation but doesn't guide usage."
+      },
+      {
+        "file": "delivery/routing-and-fan-out.md",
+        "title": "Webhook Routing and Fan-Out",
+        "main_topic": "Routing decisions and DeliveryFlow configuration",
+        "key_concepts": [
+          "Event Filtering",
+          "Fan-Out Delivery",
+          "Delivery Flow Configuration",
+          "DeliveryFlow CRD"
+        ],
+        "exactly_once_guaranteed": "No explicit claims.",
+        "duplicate_sections_with_other_pages": "Overlaps with event-routing.md and fan-out.md. Fan-out section is a subset of this page.",
+        "internal_links": [
+          "./filtering",
+          "./replay-and-recovery"
+        ],
+        "missing_decision_tree_content": "No decision tree. Mentions delivery flow configuration but no guidance for choosing patterns."
+      },
+      {
+        "file": "delivery/replay.md",
+        "title": "Webhook Replay",
+        "main_topic": "Replay previously delivered or failed webhook events",
+        "key_concepts": [
+          "DLQ event replay",
+          "Delivery history replay",
+          "Event selection",
+          "Audit logging"
+        ],
+        "exactly_once_guaranteed": "No explicit claims about exactly-once delivery.",
+        "duplicate_sections_with_other_pages": "Replay-and-recovery.md is a subset/repetition of this page. replay-vs-retry.md compares replay vs retry.",
+        "internal_links": [
+          "./dead-letter-queue",
+          "./idempotency"
+        ],
+        "missing_decision_tree_content": "No decision tree. Explains how replay works but not when to use it."
+      },
+      {
+        "file": "delivery/replay-vs-retry.md",
+        "title": "Webhook Replay vs Retry",
+        "main_topic": "Comparison between automatic retry and manual replay",
+        "key_concepts": [
+          "Automatic retry",
+          "Manual replay",
+          "Failure classification",
+          "When to use each"
+        ],
+        "exactly_once_guaranteed": "No explicit claims.",
+        "duplicate_sections_with_other_pages": "Good comparison but content overlaps with replay.md and delivery-failures.md.",
+        "internal_links": [
+          "./dead-letter-queue",
+          "./replay",
+          "./replay-and-recovery",
+          "./delivery-failures"
+        ],
+        "missing_decision_tree_content": "Has comparison table but not a guidance decision tree."
+      },
+      {
+        "file": "delivery/dead-letter-queue.md",
+        "title": "Dead Letter Queue for Webhooks",
+        "main_topic": "Failed webhook delivery attempts and DLQ management",
+        "key_concepts": [
+          "DLQ storage and metadata",
+          "DLQ replay and recovery",
+          "DLQ configuration",
+          "Retention policies"
+        ],
+        "exactly_once_guaranteed": "No explicit claims. Provides preservation and recovery mechanisms.",
+        "duplicate_sections_with_other_pages": "Referenced by multiple pages but content is distinct. replay-and-recovery.md is a subset.",
+        "internal_links": [
+          "./replay",
+          "./idempotency"
+        ],
+        "missing_decision_tree_content": "No decision tree. Explains DLQ but not when to configure it."
+      },
+      {
+        "file": "delivery/deduplication.md",
+        "title": "Webhook Deduplication",
+        "main_topic": "System-level duplicate event detection",
+        "key_concepts": [
+          "Deduplication keys",
+          "Time-window matching",
+          "Dedup store",
+          "Event ID/correlation ID"
+        ],
+        "exactly_once_guaranteed": "No explicit claims. Designed to prevent duplicate processing.",
+        "duplicate_sections_with_other_pages": "Referenced by multiple pages. idempotency.md has cross-references.",
+        "internal_links": [
+          "./idempotency",
+          "./replay"
+        ],
+        "missing_decision_tree_content": "No decision tree. Explains mechanism but not when to enable it."
+      },
+      {
+        "file": "delivery/deduplication-vs-idempotency.md",
+        "title": "Webhook Deduplication vs Idempotency",
+        "main_topic": "Comparison between system-level deduplication and consumer-side idempotency",
+        "key_concepts": [
+          "System-level deduplication",
+          "Consumer-side idempotency",
+          "How they work together",
+          "Persistence differences"
+        ],
+        "exactly_once_guaranteed": "No explicit claims.",
+        "duplicate_sections_with_other_pages": "Comparison table is useful but content is already covered in deduplication.md and idempotency.md.",
+        "internal_links": [
+          "./deduplication",
+          "./idempotency",
+          "./replay",
+          "./webhook-reliability"
+        ],
+        "missing_decision_tree_content": "None - this is primarily a comparison document."
+      },
+      {
+        "file": "delivery/delivery-failures.md",
+        "main_topic": "Delivery failure handling overview",
+        "key_concepts": [
+          "Failure classification",
+          "Retry policy",
+          "Dead-Letter Queue",
+          "Recovery workflows"
+        ],
+        "exactly_once_guaranteed": "No explicit claims.",
+        "duplicate_sections_with_other_pages": "Content overlaps with dead-letter-queue.md, replay-and-recovery.md, replay-vs-retry.md.",
+        "internal_links": [
+          "./webhook-reliability",
+          "./replay-vs-retry",
+          "../reference/webhook-delivery-evidence"
+        ],
+        "missing_decision_tree_content": "Mentions failure types but no decision tree for handling failures."
+      },
+      {
+        "file": "delivery/event-routing.md",
+        "title": "Webhook Event Routing",
+        "main_topic": "Event routing flow and policies",
+        "key_concepts": [
+          "Routing decisions",
+          "Filtering",
+          "Fan-Out",
+          "Delivery policy"
+        ],
+        "exactly_once_guaranteed": "No explicit claims.",
+        "duplicate_sections_with_other_pages": "Significant overlap with routing-and-fan-out.md. This page covers filtering and fan-out; routing-and-fan-out.md is more comprehensive.",
+        "internal_links": [
+          "./routing-and-fan-out",
+          "./filtering",
+          "./fan-out",
+          "./webhook-reliability"
+        ],
+        "missing_decision_tree_content": "No decision tree. Explains flow but not guidance."
+      },
+      {
+        "file": "delivery/filtering.md",
+        "title": "Webhook Filtering",
+        "main_topic": "Route or suppress events based on conditions",
+        "key_concepts": [
+          "Filter conditions",
+          "Event attributes",
+          "Allow/drop/route behavior"
+        ],
+        "exactly_once_guaranteed": "No explicit claims.",
+        "duplicate_sections_with_other_pages": "Referenced by multiple pages. Content is distinct but part of broader routing functionality.",
+        "internal_links": [
+          "./fan-out",
+          "./deduplication"
+        ],
+        "missing_decision_tree_content": "No decision tree. Explains filtering but not when to use it."
+      },
+      {
+        "file": "delivery/idempotency.md",
+        "title": "Webhook Idempotency",
+        "main_topic": "Consumer-side duplicate processing prevention",
+        "key_concepts": [
+          "Idempotency keys",
+          "Safe duplicate processing",
+          "At-least-once delivery",
+          "Consumer patterns"
+        ],
+        "exactly_once_guaranteed": "Explicitly states 'Zen Mesh uses at-least-once delivery with idempotency — consumers must handle possible duplicates'.",
+        "duplicate_sections_with_other_pages": "Referenced by multiple pages. deduplication.md has cross-references.",
+        "internal_links": [
+          "./deduplication",
+          "./replay"
+        ],
+        "missing_decision_tree_content": "No decision tree. Explains idempotency but not when to implement it."
+      },
+      {
+        "file": "delivery/jsonpath-routing.md",
+        "title": "JSONPath Routing",
+        "main_topic": "Route webhooks with safe JSONPath filter and match rules",
+        "key_concepts": [
+          "JSONPath filter conditions",
+          "Route selection",
+          "Error policies",
+          "Safety features"
+        ],
+        "exactly_once_guaranteed": "No explicit claims about delivery guarantees.",
+        "duplicate_sections_with_other_pages": "Referenced by multiple pages. Distinct content focused on JSONPath specifically.",
+        "internal_links": [
+          "./jsonpath-transforms",
+          "./filtering",
+          "./routing-and-fan-out"
+        ],
+        "missing_decision_tree_content": "No decision tree. Explains JSONPath but not when to use it."
+      },
+      {
+        "file": "delivery/jsonpath-transforms.md",
+        "title": "JSONPath Transforms",
+        "main_topic": "Map and reshape webhook payloads with JSONPath expressions",
+        "key_concepts": [
+          "Mapping sources",
+          "Transform functions",
+          "Output modes",
+          "Provider normalization"
+        ],
+        "exactly_once_guaranteed": "No explicit claims.",
+        "duplicate_sections_with_other_pages": "Referenced by multiple pages. Distinct content focused on transformations.",
+        "internal_links": [
+          "./jsonpath-routing",
+          "./filtering",
+          "../guides/adapters"
+        ],
+        "missing_decision_tree_content": "No decision tree. Explains transforms but not when to use them."
+      },
+      {
+        "file": "delivery/replay-and-recovery.md",
+        "title": "Webhook Replay and Recovery",
+        "main_topic": "Replay and recovery capabilities overview",
+        "key_concepts": [
+          "DLQ management",
+          "Replay from history",
+          "Retry policy",
+          "Recovery workflows"
+        ],
+        "exactly_once_guaranteed": "No explicit claims.",
+        "duplicate_sections_with_other_pages": "Content is a subset/repetition of replay.md and dead-letter-queue.md. Should be consolidated.",
+        "internal_links": [
+          "./idempotency",
+          "./deduplication",
+          "../reference/webhook-delivery-evidence"
+        ],
+        "missing_decision_tree_content": "No decision tree. High-level overview without guidance."
+      }
+    ]
+  },
+  "consolidation_plan": {
+    "keep_pages": [
+      {
+        "file": "delivery/index.md",
+        "reason": "Central index and overview of all delivery capabilities. Essential navigation.",
+        "changes": "Add decision tree for choosing delivery capabilities."
+      },
+      {
+        "file": "delivery/fan-out.md",
+        "reason": "Detailed guide to multi-destination delivery with per-destination policies. Has unique operational limits and examples.",
+        "changes": "Merge event-routing.md content into this page."
+      },
+      {
+        "file": "delivery/replay.md",
+        "reason": "Primary replay documentation with detailed configuration and examples. Has unique operational limits.",
+        "changes": "Add decision tree for when to use replay vs retry."
+      },
+      {
+        "file": "delivery/dead-letter-queue.md",
+        "reason": "Primary DLQ documentation with detailed configuration and examples. Has unique operational limits.",
+        "changes": "Add decision tree for when to configure DLQ."
+      },
+      {
+        "file": "delivery/deduplication.md",
+        "reason": "Primary deduplication documentation with unique operational limits and provider examples.",
+        "changes": "Add decision tree for when to enable deduplication."
+      },
+      {
+        "file": "delivery/idempotency.md",
+        "reason": "Primary idempotency documentation with unique operational limits and consumer patterns.",
+        "changes": "Add decision tree for when to implement idempotency on consumer."
+      },
+      {
+        "file": "delivery/deduplication-vs-idempotency.md",
+        "reason": "Valuable comparison guide. Helps developers understand the difference between system-level and consumer-level duplicate handling.",
+        "changes": "Keep as-is or move to guides/ for broader audience."
+      },
+      {
+        "file": "delivery/filtering.md",
+        "reason": "Primary filtering documentation with unique operational limits and examples.",
+        "changes": "Add decision tree for when to use filtering."
+      },
+      {
+        "file": "delivery/jsonpath-routing.md",
+        "reason": "Detailed JSONPath routing guide with examples, safety features, and feature status. Highly technical but valuable.",
+        "changes": "Add decision tree for when to use JSONPath routing."
+      },
+      {
+        "file": "delivery/jsonpath-transforms.md",
+        "reason": "Detailed JSONPath transforms guide with examples and provider normalization. Highly technical but valuable.",
+        "changes": "Add decision tree for when to use transforms."
+      }
+    ],
+    "merge_pages": [
+      {
+        "source": "delivery/event-routing.md",
+        "destination": "delivery/fan-out.md",
+        "reason": "Routing and fan-out are tightly coupled. Fan-out.md has more comprehensive coverage. Event-routing.md is a subset.",
+        "merge_strategy": "Merge event-routing.md content into fan-out.md, update internal links."
+      },
+      {
+        "source": "delivery/replay-and-recovery.md",
+        "destination": "delivery/replay.md",
+        "reason": "Replay-and-recovery.md is a high-level summary that duplicates content from replay.md and dead-letter-queue.md. Should be a section in replay.md.",
+        "merge_strategy": "Merge replay-and-recovery.md into replay.md as a subsection. Add decision tree for recovery scenarios."
+      }
+    ],
+    "redirect_pages": [
+      {
+        "source": "delivery/event-routing.md",
+        "destination": "delivery/fan-out.html",
+        "reason": "After merge, redirect to updated page."
+      },
+      {
+        "source": "delivery/replay-and-recovery.md",
+        "destination": "delivery/replay.html",
+        "reason": "After merge, redirect to updated page."
+      }
+    ],
+    "pages_to_create": [
+      {
+        "file": "delivery/decision-tree.md",
+        "reason": "Decision tree is missing across all delivery pages. Users need guidance on which capabilities to use and when.",
+        "sections": [
+          "When to use Dead Letter Queue",
+          "When to use Replay vs Retry",
+          "When to use Deduplication vs Idempotency",
+          "How to choose delivery modes",
+          "How to configure routing and fan-out",
+          "How to use filtering and JSONPath",
+          "When to enable JSONPath transforms",
+          "Common delivery patterns and best practices"
+        ]
+      },
+      {
+        "file": "delivery/delivery-patterns.md",
+        "reason": "Common patterns and best practices are scattered across multiple pages. A patterns reference would help users build robust delivery configurations.",
+        "sections": [
+          "Basic webhook delivery pattern",
+          "Multi-destination fan-out pattern",
+          "Fallback and recovery pattern",
+          "Retry and backoff strategy",
+          "Deduplication and idempotency pattern",
+          "Filtering and routing pattern",
+          "JSONPath-based routing pattern",
+          "Provider normalization pattern"
+        ]
+      }
+    ],
+    "pages_to_delete": [
+      {
+        "file": "delivery/replay-and-recovery.md",
+        "reason": "Content merged into replay.md."
+      },
+      {
+        "file": "delivery/event-routing.md",
+        "reason": "Content merged into fan-out.md."
+      }
+    ],
+    "decision_tree_to_add": {
+      "file": "delivery/decision-tree.md",
+      "sections": [
+        {
+          "title": "When to use Dead Letter Queue",
+          "question": "Should I configure a dead-letter queue?",
+          "conditions": [
+            "Target is in a private network or behind a firewall",
+            "Need to inspect failed delivery attempts",
+            "Need to replay failed events after root cause resolution",
+            "Need audit trail for compliance"
+          ],
+          "no_dlq_when": [
+            "Target is publicly reachable (Mode A)",
+            "Need guaranteed delivery without manual intervention",
+            "Transient failures are rare and recoverable"
+          ]
+        },
+        {
+          "title": "When to use Replay vs Retry",
+          "question": "Should I use replay or automatic retry?",
+          "retry_when": [
+            "Network blip or temporary service restart",
+            "Temporary timeout or connection refused",
+            "Transient error that can be automatically recovered"
+          ],
+          "replay_when": [
+            "Configuration error (e.g., wrong destination)",
+            "Permanent destination change",
+            "Data loss from source (need to resend)",
+            "Need to replay historical events for reprocessing"
+          ],
+          "both_used_together": "System uses both - retry for transient failures, replay for recovery after diagnosis"
+        },
+        {
+          "title": "When to use Deduplication vs Idempotency",
+          "question": "Should I enable system-level deduplication or consumer-side idempotency?",
+          "deduplication_when": [
+            "Want to prevent duplicate delivery to the same destination",
+            "Need to save bandwidth and processing for duplicate events",
+            "Managing high volumes of duplicate events from sources"
+          ],
+          "idempotency_when": [
+            "Need to handle at-least-once delivery guarantees",
+            "Consumer cannot guarantee exactly-once processing",
+            "Need to safely handle retry events on the consumer side"
+          ],
+          "both_used_together": "Use both - deduplication to prevent duplicate delivery, idempotency to handle any duplicates that arrive"
+        },
+        {
+          "title": "How to choose delivery modes",
+          "question": "Which delivery mode should I use?",
+          "mode_a_when": [
+            "Target has a public endpoint (even behind load balancer)",
+            "Simplest deployment, no cluster requirements",
+            "Want minimal infrastructure complexity"
+          ],
+          "mode_b_when": [
+            "Target is private but reachable from Zen Mesh data plane (same VPC, VPN, WireGuard)",
+            "Need mTLS encryption between ingester and egress",
+            "Cluster is already enrolled"
+          ],
+          "mode_c_when": [
+            "Target is behind NAT or firewall with no inbound access",
+            "Only outbound connections are allowed",
+            "Target cannot be reached from outside cluster"
+          ]
+        },
+        {
+          "title": "How to configure routing and fan-out",
+          "question": "How should I route events to destinations?",
+          "single_destination": "Use simple filtering or routing conditions. Fan-out is overkill.",
+          "multi_destination": "Use DeliveryFlow CRD with multiple output destinations. Configure per-destination policies for retry, timeout, and DLQ.",
+          "conditional_routing": "Use JSONPath routing for complex filtering based on event content.",
+          "fan_out_when": [
+            "Single event needs to reach multiple consumers independently",
+            "Consumers have different delivery policies",
+            "Need failure isolation between destinations"
+          ],
+          "fan_out_not_when": [
+            "All consumers need the same policy",
+            "Ordering matters across destinations"
+          ]
+        },
+        {
+          "title": "When to use JSONPath routing",
+          "question": "Should I use JSONPath-based routing?",
+          "use_when": [
+            "Need to route based on event content (not just metadata)",
+            "Need complex conditional logic (AND/OR/NOT)",
+            "Need to support multiple event types with different routing"
+          ],
+          "not_use_when": [
+            "Simple header-based routing is sufficient",
+            "Need code execution or custom logic",
+            "Need performance-critical routing (filtering is faster)"
+          ]
+        },
+        {
+          "title": "When to use JSONPath transforms",
+          "question": "Should I use JSONPath transforms?",
+          "use_when": [
+            "Need to normalize payloads from multiple providers",
+            "Need to reshape event structure for downstream consumers",
+            "Need to add provider metadata or tags"
+          ],
+          "not_use_when": [
+            "Provider sends consistent structure",
+            "Can modify consumer code instead",
+            "Need complex business logic transformations"
+          ]
+        },
+        {
+          "title": "Common delivery patterns",
+          "patterns": [
+            {
+              "name": "Basic webhook delivery",
+              "description": "Simple public endpoint delivery with retry and DLQ for transient failures.",
+              "key_features": [
+                "Mode A delivery",
+                "Per-destination retry policy",
+                "DLQ enabled",
+                "Idempotency on consumer"
+              ]
+            },
+            {
+              "name": "Multi-destination fan-out",
+              "description": "Single event to multiple consumers with independent policies.",
+              "key_features": [
+                "DeliveryFlow CRD with multiple outputs",
+                "Per-destination policies (retry, DLQ, timeout)",
+                "Failure isolation",
+                "Per-destination audit trails"
+              ]
+            },
+            {
+              "name": "Fallback and recovery",
+              "description": "Primary destination with backup and manual recovery.",
+              "key_features": [
+                "Primary + backup destinations",
+                "Failover on primary failure",
+                "DLQ for unrecoverable failures",
+                "Manual replay capability"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "related_pages": {
+      "architecture/delivery-modes.md": {
+        "status": "Referenced but not consolidated",
+        "changes": "Add link to decision-tree.md in section 7 (Choosing a Mode)."
+      },
+      "api/replay.md": {
+        "status": "Referenced but not consolidated",
+        "changes": "Update API documentation to link to replay.md decision tree. Add note about idempotency during replay."
+      },
+      "api/idempotency.md": {
+        "status": "Referenced but not consolidated",
+        "changes": "Add link to idempotency consumer patterns from both API and delivery pages."
+      },
+      "reference/delivery-status.md": {
+        "status": "Referenced but not consolidated",
+        "changes": "Add link to replay.md and DLQ configuration in related section."
+      },
+      "reference/webhook-delivery-evidence.md": {
+        "status": "Referenced but not consolidated",
+        "changes": "Add link to evidence section from replay and DLQ pages."
+      },
+      "getting-started/first-webhook.md": {
+        "status": "Referenced but not consolidated",
+        "changes": "Add link to decision-tree.md and common patterns from troubleshooting section."
+      }
+    }
+  },
+  "redundancy_summary": {
+    "top_overlaps": [
+      "Routing and fan-out are split across 3 pages (event-routing.md, routing-and-fan-out.md, fan-out.md)",
+      "Replay and recovery coverage is split across 3 pages (replay.md, replay-and-recovery.md, replay-vs-retry.md)",
+      "DLQ and retry coverage is split across 4 pages (dead-letter-queue.md, replay.md, replay-and-recovery.md, delivery-failures.md)",
+      "Deduplication and idempotency comparison is isolated in separate pages (deduplication.md, idempotency.md, deduplication-vs-idempotency.md)"
+    ],
+    "missing_integration": [
+      "No unified decision tree across delivery capabilities",
+      "No consolidated patterns guide",
+      "No clear guidance on when to combine multiple capabilities",
+      "API documentation and delivery documentation are not well-integrated"
+    ]
+  }
+}

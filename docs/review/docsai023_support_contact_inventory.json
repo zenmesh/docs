@@ -1,0 +1,81 @@
+{
+  "task_id": "DOCSAI023",
+  "date": "2026-06-12",
+  "canonical_email": "support@zen-mesh.io",
+  "docs_refs": [
+    {
+      "file": "start-here/support.md",
+      "line": 14,
+      "context": "Support channel table"
+    },
+    {
+      "file": "legal/dpa.md",
+      "line": 24,
+      "context": "Data processor contact"
+    },
+    {
+      "file": "legal/dpa.md",
+      "line": 81,
+      "context": "DPA request contact"
+    },
+    {
+      "file": "legal/privacy-policy.md",
+      "line": 70,
+      "context": "Rights exercise"
+    },
+    {
+      "file": "legal/privacy-policy.md",
+      "line": 94,
+      "context": "Privacy inquiries"
+    },
+    {
+      "file": "legal/cookie-policy.md",
+      "line": 72,
+      "context": "Cookie policy questions"
+    },
+    {
+      "file": "legal/acceptable-use.md",
+      "line": 32,
+      "context": "Violation reporting"
+    },
+    {
+      "file": "legal/acceptable-use.md",
+      "line": 39,
+      "context": "AUP violation report"
+    },
+    {
+      "file": "legal/terms-of-service.md",
+      "line": 42,
+      "context": "Refund requests"
+    },
+    {
+      "file": "legal/terms-of-service.md",
+      "line": 91,
+      "context": "General questions"
+    }
+  ],
+  "site_refs": [
+    {
+      "file": "layouts/Layout.astro",
+      "line": 129,
+      "context": "Footer Company section"
+    },
+    {
+      "file": "pages/pricing.astro",
+      "line": 56,
+      "context": "Free tier community support"
+    },
+    {
+      "file": "pages/pricing.astro",
+      "line": 97,
+      "context": "Pro tier notify"
+    },
+    {
+      "file": "pages/pricing.astro",
+      "line": 135,
+      "context": "Business tier notify"
+    }
+  ],
+  "wrong_domain_refs": 0,
+  "assessment": "Canonical. All references use support@zen-mesh.io. No support@zenmesh.io. No Slack/Discord live claims."
+}

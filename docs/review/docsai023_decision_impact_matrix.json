@@ -1,0 +1,118 @@
+{
+  "task_id": "DOCSAI023",
+  "date": "2026-06-12",
+  "decisions": [
+    {
+      "id": "LD-001",
+      "topic": "Edge Lite visibility",
+      "impact": "low",
+      "blocker": false
+    },
+    {
+      "id": "LD-002",
+      "topic": "Blog strategy",
+      "impact": "low",
+      "blocker": false
+    },
+    {
+      "id": "LD-003",
+      "topic": "Evidence stats qualifier",
+      "impact": "low",
+      "blocker": false
+    },
+    {
+      "id": "LD-004",
+      "topic": "Subprocessor list",
+      "impact": "medium",
+      "blocker": true,
+      "blocks": "DPA effective date"
+    },
+    {
+      "id": "LD-005",
+      "topic": "Responsible disclosure",
+      "impact": "low",
+      "blocker": false
+    },
+    {
+      "id": "LD-006",
+      "topic": "Plan limits",
+      "impact": "medium",
+      "blocker": true,
+      "blocks": "Pricing page accuracy"
+    },
+    {
+      "id": "LD-007",
+      "topic": "Over-limit behavior",
+      "impact": "medium",
+      "blocker": true,
+      "blocks": "Billing documentation"
+    },
+    {
+      "id": "LD-008",
+      "topic": "Refund policy",
+      "impact": "low",
+      "blocker": false
+    },
+    {
+      "id": "LD-009",
+      "topic": "Public Leonardo name",
+      "impact": "low",
+      "blocker": false
+    },
+    {
+      "id": "LD-010",
+      "topic": "Jurisdiction",
+      "impact": "high",
+      "blocker": true,
+      "blocks": "All legal effective dates"
+    },
+    {
+      "id": "LD-011",
+      "topic": "Slack support",
+      "impact": "low",
+      "blocker": false
+    },
+    {
+      "id": "LD-012",
+      "topic": "Discord community",
+      "impact": "low",
+      "blocker": false
+    },
+    {
+      "id": "LD-013",
+      "topic": "MCP write contract",
+      "impact": "low",
+      "blocker": false
+    },
+    {
+      "id": "LD-014",
+      "topic": "Object store fan-out",
+      "impact": "high",
+      "blocker": true,
+      "blocks": "Day 1 fan-out claim"
+    },
+    {
+      "id": "LD-015",
+      "topic": "K8s CRD public",
+      "impact": "low",
+      "blocker": false
+    },
+    {
+      "id": "LD-016",
+      "topic": "Data plane provider/region",
+      "impact": "critical",
+      "blocker": true,
+      "blocks": "All residency claims"
+    }
+  ],
+  "runtime_blocking": [
+    "LD-006",
+    "LD-007",
+    "LD-014"
+  ],
+  "legal_blocking": [
+    "LD-004",
+    "LD-008",
+    "LD-010"
+  ]
+}

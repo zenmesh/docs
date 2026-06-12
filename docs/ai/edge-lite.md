@@ -27,7 +27,7 @@ curl -fsSL https://get.zen-mesh.io | bash
 The script will:
 1. Create a short-lived install session
 2. Open your browser for signup/login (Google SSO, or email)
-3. Automatically select a Webhook Entry Point (AWS us-east-1, shared, free)
+3. Automatically select a Webhook Entry Point (hypothetical: shared provider region, free tier)
 4. Create a personal EDGE plane for you
 5. Prompt for endpoint name (default: my-first-endpoint) and target URL (default: http://localhost:8080)
 6. Run a local reachability check (warning only, not blocking)

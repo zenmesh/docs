@@ -7,11 +7,14 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: 'Start Here',
       items: [
+        'start-here/index',
         'start-here/what-is-zen-mesh',
         'start-here/who-should-use-zen-mesh',
         'start-here/current-status',
         'start-here/concepts',
         'start-here/support',
+        'start-here/first-30-minutes',
+        'start-here/go-live-checklist',
       ],
     },
     {
@@ -28,6 +31,8 @@ const sidebars: SidebarsConfig = {
       label: 'Delivery',
       items: [
         'delivery/index',
+        'delivery/overview',
+        'delivery/object-store',
         'delivery/dead-letter-queue',
         'delivery/replay',
         'delivery/replay-and-recovery',
@@ -62,6 +67,7 @@ const sidebars: SidebarsConfig = {
       items: [
         'security/index',
         'security/security-capability-validation',
+        'security/data-handling',
         'security/agent-saas-mtls',
         'security/zenlock-credential-lifecycle',
         'security/ip-allowlisting',
@@ -83,6 +89,8 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: 'Guides',
       items: [
+        'guides/quickstart',
+        'guides/troubleshooting',
         'guides/cluster-enrollment',
         'guides/adapters',
         'guides/destinations',
@@ -117,6 +125,25 @@ const sidebars: SidebarsConfig = {
         'evidence/completion-evidence',
         'evidence/non-claims',
         'ai/verification',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Providers',
+      items: [
+        'providers/index',
+        'providers/stripe',
+        'providers/github',
+        'providers/custom',
+        'providers/shopify',
+        'providers/twilio',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Permissions',
+      items: [
+        'permissions/overview',
       ],
     },
     {
@@ -196,10 +223,15 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: 'Review',
       items: [
-        'review/docsai-findings-001',
+        'review/docsai-findings-002',
+        'review/docsai023_findings',
         'review/docs-map-for-reviewers',
         'review/public-reader-journey',
-        'review/editorial-checklist',
+        'review/launch-editorial-checklist',
+        'review/docsai023_leonardo_decision_queue',
+        'review/docsai023_legal_readiness_packet',
+        'review/docsai023_billing_product_decision_packet',
+        'review/docsai023_v1_v11_scope_proposal',
       ],
     },
   ],

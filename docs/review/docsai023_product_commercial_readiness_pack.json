@@ -1,0 +1,35 @@
+{
+  "task_id": "DOCSAI023",
+  "date": "2026-06-12",
+  "pricing": {
+    "status": "partial",
+    "free": "defined ($0)",
+    "pro": "notify only",
+    "business": "coming soon",
+    "enterprise": "contact"
+  },
+  "support": {
+    "status": "partial",
+    "channel": "email only",
+    "operational": false
+  },
+  "terms": {
+    "status": "draft",
+    "all_pages_draft": true
+  },
+  "pilot": {
+    "status": "not ready",
+    "runtime_dependency": true
+  },
+  "customer_criteria": {
+    "technical_evaluator": "docs complete \u2014 start-here/, guides/, api/, evidence/",
+    "security_reviewer": "docs complete \u2014 security/, evidence/, ai/non-claims.md",
+    "buyer": "docs partial \u2014 pricing TBD limits, terms draft",
+    "developer": "docs complete \u2014 quickstart, guides, API reference"
+  },
+  "go_no_go_blockers": [
+    "Legal pages effective (legal review required)",
+    "Data plane provider/region confirmed (LD-016)",
+    "Runtime proof pass (Hermes dependency)"
+  ]
+}

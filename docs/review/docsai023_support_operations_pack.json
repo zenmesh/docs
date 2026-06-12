@@ -1,0 +1,46 @@
+{
+  "task_id": "DOCSAI023",
+  "date": "2026-06-12",
+  "status": "DRAFT \u2014 Support is email-only, not operational",
+  "scenarios": [
+    {
+      "scenario": "Failed delivery",
+      "docs": "guides/troubleshooting.md",
+      "status": "documented"
+    },
+    {
+      "scenario": "Retry/DLQ",
+      "docs": "delivery/dead-letter-queue.md",
+      "status": "documented"
+    },
+    {
+      "scenario": "Route matching issues",
+      "docs": "delivery/event-routing.md",
+      "status": "documented"
+    },
+    {
+      "scenario": "Entitlement/plan issues",
+      "docs": "pricing page",
+      "status": "notify-only"
+    },
+    {
+      "scenario": "Target failure",
+      "docs": "delivery/delivery-failures.md",
+      "status": "documented"
+    },
+    {
+      "scenario": "Evidence generation",
+      "docs": "evidence/overview.md",
+      "status": "documented"
+    }
+  ],
+  "support_live_criteria": [
+    "automated_routing",
+    "response_targets",
+    "kb_coverage",
+    "escalation_playbook",
+    "staff_onboarding"
+  ],
+  "criteria_met": 0,
+  "criteria_total": 5
+}

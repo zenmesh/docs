@@ -33,7 +33,7 @@ description: Privacy Policy for Zen Mesh — draft placeholder pending legal rev
 - Webhook payload content is processed and stored as part of the service
 - Payload data is encrypted at rest and tenant-scoped
 - Raw payloads are not used for model training or analytics
-- See [Data Handling](/docs/start-here/data-handling) for retention and access policies
+- See [Data Handling](/docs/security/data-handling) for retention and access policies
 
 ### 2. How We Use Information
 
@@ -54,7 +54,7 @@ Zen Mesh does not sell personal information. We may share information:
 
 ### 4. Data Retention
 
-Retention periods are described on the [Data Handling](/docs/start-here/data-handling) page.
+Retention periods are described on the [Data Handling](/docs/security/data-handling) page.
 Data is automatically and permanently purged after the retention period expires.
 
 ### 5. Your Rights

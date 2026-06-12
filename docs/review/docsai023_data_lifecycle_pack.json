@@ -1,0 +1,27 @@
+{
+  "task_id": "DOCSAI023",
+  "date": "2026-06-12",
+  "retention_policies": {
+    "delivery_logs": "Referenced in api/logs.md \u2014 per tenant plan",
+    "evidence_artifacts": "docs/evidence/merkle-integrity.md \u2014 hash-chain preserved",
+    "audit_trail": "docs/security/security-capability-validation.md \u2014 immutable",
+    "legal_drafts": "All legal pages draft/non-effective"
+  },
+  "deletion": {
+    "pii": "Privacy policy draft references right to deletion (GDPR-aligned language)",
+    "event_payloads": "Configurable retention \u2014 docs reference but not operational detail",
+    "account": "Terms draft references termination"
+  },
+  "redaction": "Not documented as operational feature",
+  "legal_flags": [
+    "terms: draft",
+    "privacy: draft",
+    "dpa: draft",
+    "aup: draft",
+    "cookie: draft"
+  ],
+  "runtime_flags": [
+    "metering: not operational",
+    "billing: not operational"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "task_id": "DOCSAI023",
+  "date": "2026-06-12",
+  "sidebar_category": "Legal (Draft \u2014 Not Effective)",
+  "pages_in_sidebar": 5,
+  "pages": [
+    "legal/terms-of-service.md",
+    "legal/privacy-policy.md",
+    "legal/dpa.md",
+    "legal/acceptable-use.md",
+    "legal/cookie-policy.md"
+  ],
+  "category_label_makes_draft_visible": true,
+  "category_order": "After Review category in sidebar",
+  "status": "COMPLETE"
+}

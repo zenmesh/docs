@@ -1,0 +1,109 @@
+{
+  "task_id": "DOCSAI023",
+  "date": "2026-06-12",
+  "scan_scope": "all docs + site pages",
+  "claim_categories": [
+    {
+      "claim": "launch_ready",
+      "found": 4,
+      "verdict": "PASS",
+      "note": "All negative \u2014 launch_ready=false"
+    },
+    {
+      "claim": "prod_live",
+      "found": 11,
+      "verdict": "PASS",
+      "note": "All negative \u2014 prod_live=false or not production-ready"
+    },
+    {
+      "claim": "zero_trust_complete",
+      "found": 3,
+      "verdict": "PASS",
+      "note": "All negative"
+    },
+    {
+      "claim": "SLA",
+      "found": 6,
+      "verdict": "PASS",
+      "note": "1 fixed (destinations.md), rest negative framing"
+    },
+    {
+      "claim": "certification/compliance",
+      "found": 15,
+      "verdict": "PASS",
+      "note": "All negative \u2014 no certification claims"
+    },
+    {
+      "claim": "exactly_once",
+      "found": 12,
+      "verdict": "PASS",
+      "note": "All negative \u2014 at-least-once only"
+    },
+    {
+      "claim": "guaranteed_delivery",
+      "found": 0,
+      "verdict": "PASS"
+    },
+    {
+      "claim": "data_residency",
+      "found": 2,
+      "verdict": "PASS",
+      "note": "1 fixed (commitments.astro)"
+    },
+    {
+      "claim": "aws_us_east_1",
+      "found": 2,
+      "verdict": "PASS",
+      "note": "1 fixed (edge-lite.md)"
+    },
+    {
+      "claim": "billing_live",
+      "found": 1,
+      "verdict": "PASS",
+      "note": "Roadmap reference only"
+    },
+    {
+      "claim": "object_store_live",
+      "found": 0,
+      "verdict": "PASS"
+    },
+    {
+      "claim": "mcp_apply_live",
+      "found": 1,
+      "verdict": "PASS",
+      "note": "Audit meta only"
+    },
+    {
+      "claim": "permission_axis_runtime_live",
+      "found": 0,
+      "verdict": "PASS"
+    },
+    {
+      "claim": "social_live",
+      "found": 0,
+      "verdict": "PASS"
+    },
+    {
+      "claim": "zen.io (not zen-mesh.io)",
+      "found": 0,
+      "verdict": "PASS"
+    },
+    {
+      "claim": "zen/* namespace",
+      "found": 0,
+      "verdict": "PASS"
+    },
+    {
+      "claim": "support@zenmesh.io (wrong)",
+      "found": 0,
+      "verdict": "PASS"
+    }
+  ],
+  "overall_verdict": "PASS",
+  "fixes_applied": 3,
+  "fixes_detail": [
+    "guides/destinations.md:41 \u2014 'within SLA' \u2192 'within target response time'",
+    "site:commitments.astro:53 \u2014 'ensures data residency' \u2192 'provider/region to be confirmed'",
+    "ai/edge-lite.md:30 \u2014 'AWS us-east-1' \u2192 'hypothetical: shared provider region'"
+  ]
+}

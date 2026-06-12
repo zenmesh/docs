@@ -1,0 +1,57 @@
+{
+  "task_id": "DOCSAI023",
+  "date": "2026-06-12",
+  "purpose": "Register of false positives \u2014 legitimate negative references to forbidden terms",
+  "false_positives": [
+    {
+      "file": "ai/non-claims.md",
+      "term": "SLA/certification/exactly-once",
+      "reason": "Explicit non-claims page \u2014 lists what Zen Mesh does NOT claim"
+    },
+    {
+      "file": "ai/capability-evidence.md",
+      "term": "launch_ready/prod_live",
+      "reason": "Evidence matrix with explicit false/non-claim flags"
+    },
+    {
+      "file": "ai/edge-lite.md",
+      "term": "prod_live/zero_trust_complete",
+      "reason": "Status matrix with explicit false flags"
+    },
+    {
+      "file": "evidence/overview.md",
+      "term": "prod_live/exactly_once",
+      "reason": "Evidence scope disclaimer"
+    },
+    {
+      "file": "security/security-capability-validation.md",
+      "term": "exactly_once/certification",
+      "reason": "Explicit non-claims in security validation"
+    },
+    {
+      "file": "start-here/launch-status.md",
+      "term": "SLA/prod_live",
+      "reason": "Status page explicitly stating what is NOT yet available"
+    },
+    {
+      "file": "start-here/current-status.md",
+      "term": "SLA/certification/prod_live",
+      "reason": "Status page with negative framing"
+    },
+    {
+      "file": "api/rate-limits.md",
+      "term": "SLA",
+      "reason": "Explicitly states no SLA guarantee"
+    },
+    {
+      "file": "review/*",
+      "term": "all",
+      "reason": "Meta/audit references in review files"
+    },
+    {
+      "file": "ai/wedge-overview.md",
+      "term": "exactly_once",
+      "reason": "Explicit non-claim in wedge overview"
+    }
+  ]
+}

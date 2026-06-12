@@ -1,0 +1,18 @@
+{
+  "task_id": "DOCSAI023",
+  "date": "2026-06-12",
+  "mcp_apply_live_claim": false,
+  "permission_axis_runtime_live_claim": false,
+  "current_mcp_read_scoped": true,
+  "future_mcp_rw_contract": true,
+  "api_evidence_reader_live": false,
+  "ui_reviewer_apply_path": false,
+  "mcp_draft_system_documented": true,
+  "mcp_cannot_apply_drafts": true,
+  "guard_items": [
+    "mcp/overview: Not production-live, sandbox disabled, read-only surface, Merkle receipts integrity-only",
+    "mcp/draft-system: Drafts are proposal-only, MCP cannot apply, apply rejects MCP auth with 403",
+    "permissions/overview: Permission axis is design/contract unless runtime-proven",
+    "ui/permissions: UI apply path exists but not runtime-live"
+  ]
+}

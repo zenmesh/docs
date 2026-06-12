@@ -85,4 +85,4 @@ Events flow: Source → **Endpoint** → Delivery Flow → **Destination**
 
 - [Sources Overview](./sources) — supported webhook providers and sources
 - [Destinations](./destinations) — target service configuration
-- [API Reference: Ingesters](../api/reference/kubezen-back-api)
+- [API Overview: Ingesters](../api/overview)

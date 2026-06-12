@@ -1,0 +1,108 @@
+{
+  "task_id": "DOCSAI023",
+  "date": "2026-06-12",
+  "purpose": "Evidence-backed capability summary for buyer/evaluator review",
+  "capabilities_evidence_backed": [
+    {
+      "capability": "Webhook delivery",
+      "evidence": "delivery/ docs, evidence/ merkle integrity",
+      "status": "proven"
+    },
+    {
+      "capability": "Multi-destination routing",
+      "evidence": "delivery/fan-out.md, delivery/event-routing.md",
+      "status": "proven"
+    },
+    {
+      "capability": "JSONPath routing/transforms",
+      "evidence": "delivery/jsonpath-routing.md, delivery/jsonpath-transforms.md",
+      "status": "proven"
+    },
+    {
+      "capability": "Deduplication",
+      "evidence": "delivery/deduplication.md",
+      "status": "proven"
+    },
+    {
+      "capability": "Dead letter queue",
+      "evidence": "delivery/dead-letter-queue.md",
+      "status": "proven"
+    },
+    {
+      "capability": "Replay",
+      "evidence": "delivery/replay.md",
+      "status": "proven"
+    },
+    {
+      "capability": "Filtering",
+      "evidence": "delivery/filtering.md",
+      "status": "proven"
+    },
+    {
+      "capability": "MCP read surface",
+      "evidence": "mcp/overview.md",
+      "status": "proven"
+    },
+    {
+      "capability": "Evidence/Merkle integrity",
+      "evidence": "evidence/merkle-integrity.md",
+      "status": "proven"
+    },
+    {
+      "capability": "Cryptographic enrollment",
+      "evidence": "security/cryptographic-enrollment.md",
+      "status": "proven"
+    },
+    {
+      "capability": "Stripe webhook source",
+      "evidence": "providers/stripe.md",
+      "status": "proven"
+    },
+    {
+      "capability": "GitHub webhook source",
+      "evidence": "providers/github.md",
+      "status": "proven"
+    }
+  ],
+  "capabilities_pending_proof": [
+    {
+      "capability": "Object store fan-out",
+      "status": "pending_runtime_proof",
+      "decision": "LD-014"
+    },
+    {
+      "capability": "Shopify webhook",
+      "status": "launch_target",
+      "decision": "LD-014"
+    },
+    {
+      "capability": "Twilio webhook",
+      "status": "launch_target",
+      "decision": "LD-014"
+    },
+    {
+      "capability": "K8s CRD target",
+      "status": "post_prod_live",
+      "decision": "LD-015"
+    },
+    {
+      "capability": "MCP write/mutation",
+      "status": "future",
+      "decision": "LD-013"
+    },
+    {
+      "capability": "Permission axis runtime",
+      "status": "design_only",
+      "decision": "LD-013"
+    },
+    {
+      "capability": "Billing/payment",
+      "status": "not_operational",
+      "decision": "LD-006/007/008"
+    }
+  ],
+  "legal_status": "all_draft",
+  "support_status": "email_only_not_operational",
+  "billing_status": "not_operational",
+  "eval_path": "start-here/ \u2192 guides/ \u2192 api/ \u2192 evidence/ \u2192 security/ \u2192 pricing/"
+}

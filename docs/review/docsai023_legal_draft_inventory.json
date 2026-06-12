@@ -1,0 +1,46 @@
+{
+  "task_id": "DOCSAI023",
+  "date": "2026-06-12",
+  "legal_pages": [
+    {
+      "page": "Terms of Service",
+      "path": "legal/terms-of-service.md",
+      "status": "draft/non-effective",
+      "sidebar": "Legal (Draft \u2014 Not Effective)",
+      "needs_legal_review": true
+    },
+    {
+      "page": "Privacy Policy",
+      "path": "legal/privacy-policy.md",
+      "status": "draft/non-effective",
+      "sidebar": "Legal (Draft \u2014 Not Effective)",
+      "needs_legal_review": true
+    },
+    {
+      "page": "Data Processing Addendum",
+      "path": "legal/dpa.md",
+      "status": "draft/non-effective",
+      "sidebar": "Legal (Draft \u2014 Not Effective)",
+      "needs_legal_review": true,
+      "blocker": "LD-004 subprocessor list missing"
+    },
+    {
+      "page": "Acceptable Use Policy",
+      "path": "legal/acceptable-use.md",
+      "status": "draft/non-effective",
+      "sidebar": "Legal (Draft \u2014 Not Effective)",
+      "needs_legal_review": true
+    },
+    {
+      "page": "Cookie Policy",
+      "path": "legal/cookie-policy.md",
+      "status": "draft/non-effective",
+      "sidebar": "Legal (Draft \u2014 Not Effective)",
+      "needs_legal_review": true
+    }
+  ],
+  "sidebar_category": "Legal (Draft \u2014 Not Effective)",
+  "total_legal_pages": 5,
+  "all_draft": true,
+  "all_need_review": true
+}

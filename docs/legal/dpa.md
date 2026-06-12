@@ -65,7 +65,7 @@ nature, scope, and remediation of the breach.
 ### Return and Deletion of Data
 
 Upon termination of the Service, customer personal data is handled per the
-retention and deletion policies described in the [Data Handling](/docs/start-here/data-handling)
+retention and deletion policies described in the [Data Handling](/docs/security/data-handling)
 documentation.
 
 ### Intended Availability

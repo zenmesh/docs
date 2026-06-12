@@ -1,0 +1,73 @@
+{
+  "task_id": "DOCSAI023",
+  "date": "2026-06-12",
+  "sitemap": {
+    "status": "exists",
+    "file": "public/sitemap-0.xml (generated at build)",
+    "validated": "build-generates"
+  },
+  "llms_txt": {
+    "status": "exists",
+    "file": "public/llms.txt",
+    "canonical_domain": "zen-mesh.io"
+  },
+  "llms_full": {
+    "status": "not_checked",
+    "note": "llms-full.txt may exist at build time"
+  },
+  "canonical_urls": {
+    "domain": "zen-mesh.io",
+    "docs_domain": "docs.zen-mesh.io",
+    "incorrect_domains_found": 0
+  },
+  "search_intent_headings": {
+    "webhook_launch_readiness": {
+      "status": "partial",
+      "page": "start-here/launch-status.md"
+    },
+    "webhook_evidence_export": {
+      "status": "partial",
+      "page": "evidence/overview.md"
+    },
+    "webhook_support": {
+      "status": "found",
+      "page": "start-here/support.md"
+    },
+    "mcp_permissions": {
+      "status": "partial",
+      "page": "mcp/overview.md"
+    },
+    "api_permissions": {
+      "status": "partial",
+      "page": "api/authentication.md"
+    },
+    "ui_permissions": {
+      "status": "partial",
+      "page": "permissions/overview.md"
+    },
+    "channel_aware_rbac": {
+      "status": "partial",
+      "page": "permissions/overview.md"
+    },
+    "data_plane_selector": {
+      "status": "partial",
+      "page": "delivery/fan-out.md"
+    },
+    "object_store_fan_out": {
+      "status": "partial",
+      "page": "delivery/fan-out.md"
+    },
+    "billing_overage": {
+      "status": "missing",
+      "page": null
+    },
+    "payload_access": {
+      "status": "partial",
+      "page": "security/data-handling.md"
+    },
+    "proposed_vs_applied": {
+      "status": "found",
+      "page": "mcp/draft-system.md"
+    }
+  }
+}

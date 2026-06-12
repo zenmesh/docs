@@ -1,0 +1,125 @@
+{
+  "task_id": "DOCSAI023",
+  "date": "2026-06-12",
+  "total_docs_pages": 150,
+  "total_site_pages": 15,
+  "forbidden_claims": {
+    "total_found": 70,
+    "by_category": {
+      "launch_ready": {
+        "count": 4,
+        "all_non_claims": true,
+        "note": "All instances are negative/formula references like launch_ready=false"
+      },
+      "prod_live": {
+        "count": 11,
+        "all_non_claims": true,
+        "note": "All instances explicitly state prod_live=false or 'not production-ready'"
+      },
+      "zero_trust_complete": {
+        "count": 3,
+        "all_non_claims": true,
+        "note": "All instances state zero_trust_complete=false"
+      },
+      "sla": {
+        "count": 6,
+        "issues": [
+          {
+            "file": "guides/destinations.md",
+            "line": 41,
+            "status": "FIXED",
+            "fix": "Changed 'within SLA' to 'within target response time'"
+          },
+          {
+            "file": "api/rate-limits.md",
+            "line": 45,
+            "status": "OK",
+            "note": "'No SLA or uptime guarantee' \u2014 correct negative framing"
+          },
+          {
+            "file": "start-here/launch-status.md",
+            "line": 13,
+            "status": "OK",
+            "note": "'No hard SLAs offered' \u2014 correct negative framing"
+          },
+          {
+            "file": "start-here/current-status.md",
+            "line": 19,
+            "status": "OK",
+            "note": "'SLA options will be introduced' \u2014 future/conditional"
+          },
+          {
+            "file": "review/docsai022_roadmap_scope_notes.md",
+            "line": 33,
+            "status": "OK",
+            "note": "Roadmap item reference"
+          },
+          {
+            "file": "review/docsai-findings-002.md",
+            "line": 31,
+            "status": "OK",
+            "note": "Audit finding \u2014 meta reference"
+          }
+        ]
+      },
+      "certification": {
+        "count": 15,
+        "all_non_claims": true,
+        "note": "All instances are negative: 'no certification claim', 'not certified', compliance mappings marked 'maps_to not certified'"
+      },
+      "exactly_once": {
+        "count": 12,
+        "all_non_claims": true,
+        "note": "All instances are negative: 'no exactly-once claim', 'at-least-once semantics only'"
+      },
+      "data_residency": {
+        "count": 2,
+        "issues": [
+          {
+            "file": "site:pages/commitments.astro",
+            "line": 53,
+            "status": "FIXED",
+            "fix": "Changed 'ensures data residency' to 'provider/region to be confirmed at launch'"
+          },
+          {
+            "file": "review/docsai-findings-002.md",
+            "line": 25,
+            "status": "OK",
+            "note": "Audit finding \u2014 meta reference"
+          }
+        ]
+      },
+      "aws_us_east_1": {
+        "count": 2,
+        "issues": [
+          {
+            "file": "ai/edge-lite.md",
+            "line": 30,
+            "status": "FIXED",
+            "fix": "Changed to 'hypothetical: shared provider region, free tier'"
+          },
+          {
+            "file": "review/docsai-findings-002.md",
+            "line": 87,
+            "status": "OK",
+            "note": "Audit finding \u2014 meta reference"
+          }
+        ]
+      },
+      "mcp_apply_live": {
+        "count": 1,
+        "all_non_claims": true,
+        "note": "Audit finding reference only"
+      },
+      "paid_live": {
+        "count": 1,
+        "all_non_claims": true,
+        "note": "Roadmap reference \u2014 'until billing live'"
+      }
+    }
+  },
+  "zen_io_refs": 0,
+  "wrong_support_domain_refs": 0,
+  "helper2_active_refs": 1,
+  "helper2_ref_detail": "review/docsai-findings-002.md:77 \u2014 'Pages Depending on Helper2 Implementation' \u2014 meta/audit reference, not active dependency"
+}

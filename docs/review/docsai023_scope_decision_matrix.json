@@ -1,0 +1,37 @@
+{
+  "task_id": "DOCSAI023",
+  "date": "2026-06-12",
+  "v1_scope": [
+    "stripe_webhook",
+    "github_webhook",
+    "custom_webhook",
+    "http_delivery",
+    "mcp_read_scoped",
+    "free_tier",
+    "pro_tier_notify"
+  ],
+  "v11_scope": [
+    "gitlab_webhook",
+    "alipay",
+    "shopify_webhook",
+    "twilio_webhook",
+    "object_store_fanout",
+    "k8s_crd_target",
+    "mcp_write_contract",
+    "svid_identity",
+    "business_tier",
+    "billing_system",
+    "nats_mq"
+  ],
+  "hermes_dependencies_v1": [],
+  "hermes_dependencies_v11": [
+    "shopify_webhook",
+    "twilio_webhook",
+    "object_store_fanout",
+    "k8s_crd_target",
+    "mcp_write_contract",
+    "business_tier",
+    "billing_system",
+    "gitlab_webhook"
+  ]
+}

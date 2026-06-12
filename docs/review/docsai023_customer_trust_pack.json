@@ -1,0 +1,16 @@
+{
+  "task_id": "DOCSAI023",
+  "date": "2026-06-12",
+  "security_overview": "docs/security/security-capability-validation.md",
+  "data_handling": "docs/security/data-handling.md",
+  "encryption": "docs/security/cryptographic-enrollment.md",
+  "evidence": "docs/evidence/overview.md",
+  "non_claims": "docs/ai/non-claims.md",
+  "compliance_map": "static/ai/evidence/v1/compliance-map.json",
+  "compliance_map_status": "internal readiness mapping, NOT certified",
+  "terms_status": "draft/non-effective",
+  "privacy_status": "draft/non-effective",
+  "support_channel": "support@zen-mesh.io (email only, not operational SLA)",
+  "disclosure": "No responsible disclosure channel yet (LD-005)",
+  "public_trust_verdict": "PARTIAL \u2014 security docs comprehensive, legal pages draft, disclosure channel missing"
+}

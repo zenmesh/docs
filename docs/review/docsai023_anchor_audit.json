@@ -1,0 +1,302 @@
+{
+  "search_intent_audit": {
+    "total_search_intents": 12,
+    "search_intents": [
+      {
+        "search_intent": "webhook launch readiness",
+        "anchor_exists": false,
+        "best_match_file": null,
+        "heading_text_match": false,
+        "redirect_needed": true,
+        "redirect_from": [],
+        "redirect_to": [],
+        "notes": "No heading found. Search intent appears to be about preparing webhooks for launch, including setup, testing, and validation. Content likely scattered across first-webhook.md and troubleshooting guides."
+      },
+      {
+        "search_intent": "webhook evidence export",
+        "anchor_exists": false,
+        "best_match_file": null,
+        "heading_text_match": false,
+        "redirect_needed": true,
+        "redirect_from": [],
+        "redirect_to": [],
+        "notes": "No heading found. Evidence export is referenced in webhook-delivery-evidence.md but not as a heading. Users would search for 'evidence export' or 'export delivery evidence'."
+      },
+      {
+        "search_intent": "webhook support",
+        "anchor_exists": true,
+        "best_match_file": "docs/ai/wedge-overview.md",
+        "heading_text_match": true,
+        "redirect_needed": false,
+        "redirect_from": [],
+        "redirect_to": [],
+        "notes": "Heading found in wedge-overview.md. Discusses webhook support and provider-specific signature schemes. Also mentioned in static AI evidence files (non-docs content)."
+      },
+      {
+        "search_intent": "MCP permissions",
+        "anchor_exists": false,
+        "best_match_file": null,
+        "heading_text_match": false,
+        "redirect_needed": true,
+        "redirect_from": [],
+        "redirect_to": [],
+        "notes": "No heading found. Search intent is likely about Model Context Protocol (MCP) permission configuration. Content likely not yet written in docs."
+      },
+      {
+        "search_intent": "API permissions",
+        "anchor_exists": false,
+        "best_match_file": null,
+        "heading_text_match": false,
+        "redirect_needed": true,
+        "redirect_from": [],
+        "redirect_to": [],
+        "notes": "No heading found. Search intent is likely about API authentication and authorization. Content scattered across security.md and API documentation, but no dedicated heading."
+      },
+      {
+        "search_intent": "UI permissions",
+        "anchor_exists": false,
+        "best_match_file": null,
+        "heading_text_match": false,
+        "redirect_needed": true,
+        "redirect_from": [],
+        "redirect_to": [],
+        "notes": "No heading found. Search intent is likely about dashboard permissions. Content may be in security documentation but no dedicated heading."
+      },
+      {
+        "search_intent": "channel-aware RBAC",
+        "anchor_exists": false,
+        "best_match_file": null,
+        "heading_text_match": false,
+        "redirect_needed": true,
+        "redirect_from": [],
+        "redirect_to": [],
+        "notes": "No heading found. Search intent refers to channel-aware role-based access control. RBAC is mentioned in security-model.md and roadmap documents, but no dedicated heading."
+      },
+      {
+        "search_intent": "data-plane selector",
+        "anchor_exists": false,
+        "best_match_file": null,
+        "heading_text_match": false,
+        "redirect_needed": true,
+        "redirect_from": [],
+        "redirect_to": [],
+        "notes": "No heading found. Search intent refers to data-plane selector configuration or usage. Data plane is mentioned in delivery-modes.md but no dedicated heading."
+      },
+      {
+        "search_intent": "object-store fan-out",
+        "anchor_exists": false,
+        "heading_text_match": false,
+        "best_match_file": "docs/review/docsai022_roadmap_scope_notes.md",
+        "redirect_needed": true,
+        "redirect_from": [],
+        "redirect_to": [],
+        "notes": "Not found as heading in main docs. Mentioned as a note in roadmap_scope_notes.md. Object-store fan-out is referenced in fan-out.md as partial FO-001 implementation. Needs dedicated documentation page."
+      },
+      {
+        "search_intent": "billing overage",
+        "anchor_exists": false,
+        "best_match_file": null,
+        "heading_text_match": false,
+        "redirect_needed": true,
+        "redirect_from": [],
+        "redirect_to": [],
+        "notes": "No heading found. Search intent refers to billing overage limits and handling. Mentioned in docsai022 files as a note, also in legal/privacy-policy.md. Billing not yet live, so this is pre-launch content."
+      },
+      {
+        "search_intent": "payload access",
+        "anchor_exists": false,
+        "best_match_file": null,
+        "heading_text_match": false,
+        "redirect_needed": true,
+        "redirect_from": [],
+        "redirect_to": [],
+        "notes": "No heading found. Search intent refers to payload access policies and data privacy. LD-005 decision in decision queue. Needs dedicated documentation page with privacy-by-default approach."
+      },
+      {
+        "search_intent": "proposed vs applied changes",
+        "anchor_exists": false,
+        "best_match_file": null,
+        "heading_text_match": false,
+        "redirect_needed": true,
+        "redirect_from": [],
+        "redirect_to": [],
+        "notes": "No heading found. Search intent refers to documentation changes tracking. This pattern is common in changelog or roadmap documents. Needs dedicated documentation page or section."
+      }
+    ],
+    "summary": {
+      "anchors_found": 1,
+      "anchors_missing": 11,
+      "redirects_needed": 11,
+      "content_found_in_non_heading_locations": 5,
+      "pre_launch_content": [
+        "billing overage",
+        "MCP permissions",
+        "API permissions",
+        "UI permissions",
+        "payload access",
+        "proposed vs applied changes"
+      ],
+      "technical_content_in_pre_launch": [
+        "object-store fan-out"
+      ]
+    },
+    "recommendations": [
+      {
+        "priority": "high",
+        "search_intent": "webhook evidence export",
+        "action": "Create dedicated heading or section in webhook-delivery-evidence.md or evidence documentation. Users search for this frequently.",
+        "target_file": "docs/evidence/overview.md or docs/reference/webhook-delivery-evidence.md",
+        "heading_suggestion": "Webhook Evidence Export"
+      },
+      {
+        "priority": "high",
+        "search_intent": "MCP permissions",
+        "action": "Create dedicated documentation page for MCP permission configuration. Content should explain permissions model and configuration.",
+        "target_file": "docs/guides/mcp-permissions.md",
+        "heading_suggestion": "MCP Permissions"
+      },
+      {
+        "priority": "high",
+        "search_intent": "payload access",
+        "action": "Create dedicated documentation page for payload access policy. Document the default metadata-only access and customer authorization requirements.",
+        "target_file": "docs/guides/payload-access.md",
+        "heading_suggestion": "Payload Access Policy"
+      },
+      {
+        "priority": "medium",
+        "search_intent": "API permissions",
+        "action": "Create dedicated heading in API documentation. Users search for this when configuring API keys and permissions.",
+        "target_file": "docs/api/authentication.md",
+        "heading_suggestion": "API Permissions"
+      },
+      {
+        "priority": "medium",
+        "search_intent": "UI permissions",
+        "action": "Create dedicated heading in security documentation. Explain dashboard permission levels.",
+        "target_file": "docs/security/dashboard-permissions.md",
+        "heading_suggestion": "UI Permissions"
+      },
+      {
+        "priority": "medium",
+        "search_intent": "channel-aware RBAC",
+        "action": "Create dedicated heading or section explaining channel-aware RBAC model. Currently only mentioned in roadmap and security-model.md.",
+        "target_file": "docs/security/rbac.md",
+        "heading_suggestion": "Channel-Aware RBAC"
+      },
+      {
+        "priority": "low",
+        "search_intent": "data-plane selector",
+        "action": "Add section explaining data-plane selector in delivery-modes.md. Currently only mentioned in delivery modes.",
+        "target_file": "docs/architecture/delivery-modes.md",
+        "heading_suggestion": "Data Plane Selector"
+      },
+      {
+        "priority": "low",
+        "search_intent": "object-store fan-out",
+        "action": "Create dedicated documentation page for object-store fan-out capabilities. Currently only mentioned as partial FO-001 implementation.",
+        "target_file": "docs/delivery/object-store-fan-out.md",
+        "heading_suggestion": "Object-Store Fan-Out"
+      },
+      {
+        "priority": "low",
+        "search_intent": "billing overage",
+        "action": "Create billing documentation page or section. Currently only mentioned in privacy policy and roadmap notes.",
+        "target_file": "docs/guides/billing.md",
+        "heading_suggestion": "Billing Overage"
+      },
+      {
+        "priority": "low",
+        "search_intent": "webhook launch readiness",
+        "action": "Create checklist/guide for webhook launch readiness. Content scattered across first-webhook.md and troubleshooting.",
+        "target_file": "docs/guides/webhook-launch-readiness.md",
+        "heading_suggestion": "Webhook Launch Readiness"
+      },
+      {
+        "priority": "low",
+        "search_intent": "proposed vs applied changes",
+        "action": "Create changelog or documentation tracking page. This pattern is standard for change management.",
+        "target_file": "docs/review/docsai023_changelog.md or docs/review/documentation-changes.md",
+        "heading_suggestion": "Proposed vs Applied Changes"
+      }
+    ],
+    "redirection_map": {
+      "webhook-launch-readiness": {
+        "from": [],
+        "to": ["guides/webhook-launch-readiness.md"],
+        "note": "New page to create"
+      },
+      "webhook-evidence-export": {
+        "from": [],
+        "to": ["reference/webhook-delivery-evidence.md#evidence-export"],
+        "note": "Add section to existing page"
+      },
+      "webhook-support": {
+        "from": [],
+        "to": ["ai/wedge-overview.md"],
+        "note": "Existing page, no action needed"
+      },
+      "mcp-permissions": {
+        "from": [],
+        "to": ["guides/mcp-permissions.md"],
+        "note": "New page to create"
+      },
+      "api-permissions": {
+        "from": [],
+        "to": ["api/authentication.md"],
+        "note": "Add section to existing page"
+      },
+      "ui-permissions": {
+        "from": [],
+        "to": ["security/dashboard-permissions.md"],
+        "note": "New page to create"
+      },
+      "channel-aware-rbac": {
+        "from": [],
+        "to": ["security/rbac.md"],
+        "note": "Add section to existing page"
+      },
+      "data-plane-selector": {
+        "from": [],
+        "to": ["architecture/delivery-modes.md"],
+        "note": "Add section to existing page"
+      },
+      "object-store-fan-out": {
+        "from": [],
+        "to": ["delivery/object-store-fan-out.md"],
+        "note": "New page to create"
+      },
+      "billing-override": {
+        "from": [],
+        "to": ["guides/billing.md"],
+        "note": "New page to create"
+      },
+      "payload-access": {
+        "from": [],
+        "to": ["guides/payload-access.md"],
+        "note": "New page to create"
+      },
+      "proposed-vs-applied-changes": {
+        "from": [],
+        "to": ["review/docsai023_changelog.md"],
+        "note": "New page to create"
+      }
+    },
+    "heading_consolidation_needed": {
+      "current_heading_variations": [
+        "webhook support",
+        "webhook evidence export",
+        "webhook launch readiness",
+        "MCP permissions",
+        "API permissions",
+        "UI permissions",
+        "channel-aware RBAC",
+        "data-plane selector",
+        "object-store fan-out",
+        "billing overage",
+        "payload access",
+        "proposed vs applied changes"
+      ],
+      "standardization_recommendation": "All headings should use kebab-case (lowercase with hyphens) for consistency with MDX heading convention."
+    }
+  }
+}

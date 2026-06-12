@@ -1,0 +1,31 @@
+{
+  "task_id": "DOCSAI023",
+  "date": "2026-06-12",
+  "term_counts": {
+    "Free": 12,
+    "Pro": 4,
+    "Business": 3,
+    "Enterprise": 16,
+    "Preview": 3,
+    "Team": 4,
+    "Evaluation": 5
+  },
+  "plan_status": {
+    "Free": "launch-facing",
+    "Pro": "launch-facing",
+    "Business": "coming soon",
+    "Enterprise": "contact/evaluation only"
+  },
+  "deprecated_terms": [
+    "Preview",
+    "Team"
+  ],
+  "deprecated_notes": "Preview and Team appear in some docs but are not current plan names. Free/Pro/Business/Enterprise is the canonical V1 tier model.",
+  "inconsistencies": [
+    "Some pages reference 'Preview' tier \u2014 should align to 'Free' or remove",
+    "Some pages reference 'Team' tier \u2014 should align to 'Pro' or 'Business' or remove"
+  ],
+  "billing_live_claim": false,
+  "paid_pro_live_claim": false,
+  "overage_language": "No overage billing documented \u2014 pre-billing"
+}

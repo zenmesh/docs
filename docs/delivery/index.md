@@ -1,35 +1,33 @@
----
-sidebar_label: Webhook Reliability
-description: Operational controls for reliable webhook delivery — dead-letter queues, replay, deduplication, idempotency, filtering, and fan-out.
----
+# Delivery
 
-# Webhook Reliability
+Everything about how Zen Mesh delivers your webhooks to targets.
 
-Reliable webhook delivery requires more than forwarding events. Zen Mesh provides operational controls for recovery, duplicate handling, and targeted routing.
+## Core Delivery
 
-## Capabilities
+- **[How Delivery Works](overview)** — End-to-end delivery pipeline
+- **[Destinations](../guides/destinations)** — Adding and managing delivery targets
+- **[Event Routing](event-routing)** — Route events to targets based on conditions
+- **[JSONPath Routing](jsonpath-routing)** — Route using JSONPath expressions
+- **[JSONPath Transforms](jsonpath-transforms)** — Transform payloads with JSONPath
 
-| Capability | Purpose |
-|------------|---------|
-| [Dead Letter Queue](./dead-letter-queue) | Preserve failed delivery attempts for inspection, recovery, and replay |
-| [Webhook Replay](./replay) | Replay events from DLQ or delivery history for reprocessing |
-| [Webhook Deduplication](./deduplication) | Identify and handle duplicate events with configurable dedup keys |
-| [Webhook Idempotency](./idempotency) | Safe retry and duplicate processing with idempotency controls |
-| [Webhook Filtering](./filtering) | Route or suppress events according to configured conditions |
-| [Webhook Fan-Out](./fan-out) | Deliver events to multiple destinations with per-destination policies |
-| [JSONPath Routing](./jsonpath-routing) | Route webhooks with safe JSONPath filter and match rules |
-| [JSONPath Transforms](./jsonpath-transforms) | Map and reshape webhook payloads with JSONPath expressions |
+## Reliability
 
-## Architecture
+- **[Retry & Dead Letter Queue](dead-letter-queue)** — What happens when delivery fails
+- **[Replay](replay)** — Re-deliver events from history
+- **[Deduplication](deduplication)** — Prevent duplicate delivery
 
-All delivery capabilities operate within the Zen Mesh data plane. Events pass through:
+## Advanced Delivery
 
-1. **Ingester** — event intake, signature verification, filtering, deduplication
-2. **Delivery controller** — routing, retry, DLQ management, fan-out
-3. **Egress** — delivery to customer targets with per-destination policies
+- **[Fan-Out (Multi-Destination)](fan-out)** — Deliver one event to multiple targets, including object stores
+- **[Filtering](filtering)** — Filter which events get delivered
+- **[Object Store Targets](object-store)** — Deliver events to object storage (requires runtime proof for Day 1 claim)
 
-## Related
+## Monitoring & Evidence
 
-- [Webhook Security Controls](../security/)
-- [Webhook Delivery Evidence](../reference/webhook-delivery-evidence)
-- [Webhook Replay and Recovery](./replay-and-recovery)
+- **[Evidence Overview](../evidence/overview)** — Merkle receipts and proof of delivery
+- **[Delivery Logs](../api/logs)** — API access to delivery event history
+- **[Troubleshooting Delivery](../guides/troubleshooting)** — Common issues and fixes
+
+## Status
+
+Object store fan-out requires runtime proof before Day 1 claim (see [Leonardo Decision Queue](../review/docsai023_leonardo_decision_queue) — LD-014).

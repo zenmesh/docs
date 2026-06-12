@@ -33,7 +33,7 @@ Violations may result in account suspension or termination.
 
 ### 4. Payment and Billing
 
-- **Free plan:** No payment required. Limits apply as described on the [Plans & Limits](/docs/start-here/limits) page.
+- **Free plan:** No payment required. Limits apply as described on the [Rate Limits](/docs/api/rate-limits) page.
 - **Pro plan:** Paid subscription. Early bird pricing: $29/month or $23/month (annual).
 - **Business plan:** Coming soon — pricing to be announced.
 - **Enterprise:** Custom arrangements — contact us.
@@ -44,7 +44,7 @@ Violations may result in account suspension or termination.
 ### 5. Data Handling
 
 Data handling practices are described in the [Privacy Policy](./privacy-policy) and
-[Data Handling documentation](/docs/start-here/data-handling).
+[Data Handling documentation](/docs/security/data-handling).
 
 ### 6. Intellectual Property
 
@@ -55,7 +55,7 @@ Data handling practices are described in the [Privacy Policy](./privacy-policy) 
 ### 7. Termination
 
 - Either party may terminate for breach with notice and cure period.
-- Upon termination, data is retained per the [Data Handling](/docs/start-here/data-handling) policy (soft delete: 7 days, purge: 30 days).
+- Upon termination, data is retained per the [Data Handling](/docs/security/data-handling) policy (soft delete: 7 days, purge: 30 days).
 - Accrued payment obligations survive termination.
 
 ### 8. Disclaimer of Warranties (DRAFT)

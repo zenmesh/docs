@@ -29,8 +29,8 @@
 
 - [Non-claims registry](https://docs.zen-mesh.io/ai/evidence/v1/non-claims.json)
 - [Claim maturity matrix](https://docs.zen-mesh.io/ai/security/v1/claim-maturity.json)
-- [Compliance-to-feature mapping](ai/compliance-evidence)
-- [Delivery evidence](evidence/overview)
+- [Compliance-to-feature mapping](../ai/compliance-evidence)
+- [Delivery evidence](../evidence/overview)
 
 ## Support
 

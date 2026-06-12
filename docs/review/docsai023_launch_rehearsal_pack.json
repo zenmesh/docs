@@ -1,0 +1,35 @@
+{
+  "task_id": "DOCSAI023",
+  "date": "2026-06-12",
+  "status": "DRAFT \u2014 Rehearsal requires Hermes runtime",
+  "pilot_rehearsal": {
+    "description": "Design partner pilot with limited scope",
+    "prerequisites": [
+      "runtime proof pass",
+      "legal pages effective",
+      "support channel operational"
+    ],
+    "docs_ready": false,
+    "runtime_ready": false
+  },
+  "self_serve_rehearsal": {
+    "description": "Self-service signup flow test",
+    "prerequisites": [
+      "pilot complete",
+      "billing system operational",
+      "onboarding docs complete"
+    ],
+    "docs_ready": false,
+    "runtime_ready": false
+  },
+  "checklist": [
+    "Legal pages reviewed and effective",
+    "Support channel operational with response targets",
+    "Pricing page accurate with plan limits",
+    "Onboarding guide tested end-to-end",
+    "API reference matches runtime behavior",
+    "Evidence generation working",
+    "MCP read surface tested",
+    "Delivery pipeline stable"
+  ]
+}
