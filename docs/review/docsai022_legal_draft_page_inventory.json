@@ -1,0 +1,30 @@
+{
+  "legal_on_main": [],
+  "legal_on_helper_branches": {
+    "HELPER032-launch-policy-reconcile": [
+      "docs/contracts/legal-launch-checklist.md",
+      "docs/legal/acceptable-use.md",
+      "docs/legal/cookie-policy.md",
+      "docs/legal/dpa.md",
+      "docs/legal/privacy-policy.md",
+      "docs/legal/terms-of-service.md"
+    ],
+    "helper031-launch-docs": [
+      "docs/contracts/legal-launch-checklist.md",
+      "docs/legal/acceptable-use.md",
+      "docs/legal/cookie-policy.md",
+      "docs/legal/dpa.md",
+      "docs/legal/privacy-policy.md",
+      "docs/legal/terms-of-service.md"
+    ],
+    "remotes/origin/HELPER032-launch-policy-reconcile": [
+      "docs/contracts/legal-launch-checklist.md",
+      "docs/legal/acceptable-use.md",
+      "docs/legal/cookie-policy.md",
+      "docs/legal/dpa.md",
+      "docs/legal/privacy-policy.md",
+      "docs/legal/terms-of-service.md"
+    ]
+  },
+  "integration_plan": "cherry-pick legal pages from helper branch into DOCSAI022, mark draft/non-effective"
+}

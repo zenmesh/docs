@@ -1,0 +1,79 @@
+{
+  "Terms Of Service": {
+    "file": "docs/legal/terms-of-service.md",
+    "draft": "draft/non-effective",
+    "missing_text": false,
+    "legal_question": "Full legal review and approval required before effective date",
+    "needs_legal_review": true
+  },
+  "Privacy Policy": {
+    "file": "docs/legal/privacy-policy.md",
+    "draft": "draft/non-effective",
+    "missing_text": false,
+    "legal_question": "Full legal review and approval required before effective date",
+    "needs_legal_review": true
+  },
+  "Dpa": {
+    "file": "docs/legal/dpa.md",
+    "draft": "draft/non-effective",
+    "missing_text": false,
+    "legal_question": "Full legal review and approval required before effective date",
+    "needs_legal_review": true
+  },
+  "Cookie Policy": {
+    "file": "docs/legal/cookie-policy.md",
+    "draft": "draft/non-effective",
+    "missing_text": false,
+    "legal_question": "Full legal review and approval required before effective date",
+    "needs_legal_review": true
+  },
+  "Acceptable Use": {
+    "file": "docs/legal/acceptable-use.md",
+    "draft": "draft/non-effective",
+    "missing_text": false,
+    "legal_question": "Full legal review and approval required before effective date",
+    "needs_legal_review": true
+  },
+  "Subprocessor List": {
+    "file": null,
+    "draft": "not_created",
+    "missing_text": true,
+    "legal_question": "List required before DPA effective",
+    "needs_legal_review": true
+  },
+  "Responsible Disclosure": {
+    "file": null,
+    "draft": "not_created",
+    "missing_text": true,
+    "legal_question": "Security disclosure template needed",
+    "needs_legal_review": true
+  },
+  "Support Payload Access Policy": {
+    "file": null,
+    "draft": "not_created",
+    "missing_text": true,
+    "legal_question": "Policy for support access to customer payloads",
+    "needs_legal_review": true
+  },
+  "Deletion/Export Policy": {
+    "file": null,
+    "draft": "not_created",
+    "missing_text": true,
+    "legal_question": "GDPR/CCPA data portability",
+    "needs_legal_review": true
+  },
+  "Evidence Retention/Redaction Policy": {
+    "file": null,
+    "draft": "not_created",
+    "missing_text": true,
+    "legal_question": "How long delivery evidence retained",
+    "needs_legal_review": true
+  },
+  "Billing/Refund/Plan Migration": {
+    "file": null,
+    "draft": "not_created",
+    "missing_text": true,
+    "legal_question": "Refund policy for paid tiers",
+    "needs_legal_review": true
+  }
+}
