@@ -1,0 +1,11 @@
+{
+  "root_hash": "4527c001405b2476f5ecacb048787cc6b6b09550e7fd2e1041fd5f9130a51959",
+  "method": "sha256_concat_sorted",
+  "files": [
+    "av001_api_version_policy_record.md",
+    "count_delta.json",
+    "registry_patch_av001.json"
+  ],
+  "created_at": "2026-06-19T00:00:00Z",
+  "artifact_id": "DOCSAI034-av001-api-version-policy-close"
+}

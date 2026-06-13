@@ -1,0 +1,56 @@
+{
+  "task_id": "DOCSAI034_SINGLE_QUICK_WIN_AV001_API_VERSION_POLICY_RECORD_CLOSE",
+  "route": "DocsAI",
+  "version": "1.0",
+  "created_at": "2026-06-19T00:00:00Z",
+  "worktree_root": "/home/neves/zenmesh/docs/DOCSAI034-zen-platform",
+  "evidence_directory": "docs/80-EVIDENCE/docsai034",
+  "artifacts": [
+    {
+      "name": "av001_api_version_policy_record.md",
+      "path": "docs/80-EVIDENCE/docsai034/av001_api_version_policy_record.md",
+      "type": "evidence_record",
+      "purpose": "API version policy documentation"
+    },
+    {
+      "name": "registry_patch_av001.json",
+      "path": "docs/80-EVIDENCE/docsai034/registry_patch_av001.json",
+      "type": "registry_patch",
+      "purpose": "Registry update for AV-001 status change"
+    },
+    {
+      "name": "count_delta.json",
+      "path": "docs/80-EVIDENCE/docsai034/count_delta.json",
+      "type": "count_delta",
+      "purpose": "Item count delta tracking"
+    },
+    {
+      "name": "merkle.json",
+      "path": "docs/80-EVIDENCE/docsai034/merkle.json",
+      "type": "integrity",
+      "purpose": "Evidence integrity hash"
+    },
+    {
+      "name": "checkpoint.json",
+      "path": "docs/80-EVIDENCE/docsai034/checkpoint.json",
+      "type": "metadata",
+      "purpose": "Task checkpoint metadata"
+    },
+    {
+      "name": "manifest.json",
+      "path": "docs/80-EVIDENCE/docsai034/manifest.json",
+      "type": "metadata",
+      "purpose": "Artifact manifest"
+    }
+  ],
+  "validation": {
+    "docs_build": "PASS",
+    "broken_links": 0,
+    "claim_scan": "PASS",
+    "json": "PASS",
+    "markdown": "PASS",
+    "no_runtime_changes": "PASS",
+    "no_deploy_changes": "PASS",
+    "no_unsupported_claims": "PASS"
+  }
+}

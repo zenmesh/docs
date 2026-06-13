@@ -1,0 +1,19 @@
+{
+  "task_id": "DOCSAI034_SINGLE_QUICK_WIN_AV001_API_VERSION_POLICY_RECORD_CLOSE",
+  "route": "DocsAI",
+  "item_id": "AV-001",
+  "status": "DONE",
+  "started_at": "2026-06-19T00:00:00Z",
+  "completed_at": "2026-06-19T00:01:00Z",
+  "worktree": "docs=/home/neves/zenmesh/docs/DOCSAI034-zen-platform",
+  "branch": "DOCSAI034-av001-api-version-policy-close",
+  "evidence_dir": "docs/80-EVIDENCE/docsai034",
+  "evidence_files": [
+    "av001_api_version_policy_record.md",
+    "registry_patch_av001.json",
+    "count_delta.json",
+    "merkle.json",
+    "checkpoint.json",
+    "manifest.json"
+  ]
+}

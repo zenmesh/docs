@@ -1,0 +1,11 @@
+{
+  "item_id": "AV-001",
+  "old_status": "NOT_STARTED",
+  "new_status": "DONE",
+  "evidence_path": "docs/80-EVIDENCE/docsai034/av001_api_version_policy_record.md",
+  "count_effect": -1,
+  "before_remaining": 229,
+  "projected_remaining": 228,
+  "local_counts_global_truth": false,
+  "notes": "API version policy documented with version lifecycle, compatibility rules, breaking-change process, and deprecation notice requirements. Evidence-backed via AV-009 generated docs/spec sync reference."
+}
