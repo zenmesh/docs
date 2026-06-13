@@ -15,14 +15,14 @@ Zen Mesh installs into your Kubernetes cluster via Helm. The agent runs as a Dep
 
 ## Install with Helm
 
-### 1. Add the Helm repository
+## 1. Add the Helm repository
 
 ```bash
 helm repo add zenmesh https://zenmesh.github.io/helm-charts
 helm repo update
 ```
 
-### 2. Install the agent
+## 2. Install the agent
 
 ```bash
 helm upgrade --install zen-agent zenmesh/zen-agent \

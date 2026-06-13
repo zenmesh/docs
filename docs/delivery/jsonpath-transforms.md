@@ -21,7 +21,7 @@ Each mapping field specifies a source of data:
 | **`jsonpath`** | Extracts a value from the event body using a JSONPath expression |
 | **`static`** | Sets a constant value on the output field (e.g., provider name) |
 
-### Example: Normalize a Stripe charge.completed event
+## Example: Normalize a Stripe charge.completed event
 
 Incoming Stripe payload:
 
@@ -67,7 +67,7 @@ Result:
 }
 ```
 
-### Example: Normalize a GitHub push event
+## Example: Normalize a GitHub push event
 
 Incoming GitHub payload:
 

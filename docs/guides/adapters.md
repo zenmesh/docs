@@ -8,7 +8,7 @@ Adapters connect Zen Mesh delivery targets to external services. When an event a
 
 ## Supported Adapters
 
-### Splunk
+## Splunk
 
 Deliver webhook events to Splunk HTTP Event Collector (HEC).
 
@@ -16,7 +16,7 @@ Deliver webhook events to Splunk HTTP Event Collector (HEC).
 - **Format**: CloudEvents → Splunk event format
 - **Auth**: HEC token stored in zen-lock
 
-### PagerDuty
+## PagerDuty
 
 Create PagerDuty incidents from webhook events.
 
@@ -24,7 +24,7 @@ Create PagerDuty incidents from webhook events.
 - **Format**: CloudEvents → PagerDuty event envelope
 - **Features**: Automatic deduplication via `dedup_key`
 
-### Grafana
+## Grafana
 
 Forward events to Grafana OnCall or Grafana Alerting webhooks.
 
@@ -32,7 +32,7 @@ Forward events to Grafana OnCall or Grafana Alerting webhooks.
 - **Format**: CloudEvents → Grafana alert payload
 - **Features**: Severity mapping, group/label extraction
 
-### Microsoft Teams
+## Microsoft Teams
 
 Send adaptive card notifications to Teams channels.
 
@@ -50,7 +50,7 @@ Send adaptive card notifications to Teams channels.
 
 ## Adapter Configuration
 
-All adapter secrets (API keys, tokens) are stored in [zen-lock](/zen-lock/) with zero-knowledge encryption. They are never stored in plaintext.
+All adapter secrets (API keys, tokens) are stored in [zen-lock](../zen-lock.md) with zero-knowledge encryption. They are never stored in plaintext.
 
 ## Custom Adapters
 

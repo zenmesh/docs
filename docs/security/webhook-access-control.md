@@ -9,24 +9,24 @@ Access control for webhook delivery covers who can send events to your endpoints
 
 ## Incoming Access Control
 
-### IP Allowlisting
+## IP Allowlisting
 Restrict which source networks can deliver webhooks to Zen Mesh ingesters. The allowlist is deny-by-default — only explicitly permitted sources are accepted.
 
 [Learn more about IP Allowlisting](./ip-allowlisting)
 
-### Header Validation
+## Header Validation
 Verify that incoming webhook requests contain required headers and valid signatures. Requests with missing or invalid headers are rejected before delivery processing.
 
 [Learn more about Header Validation](./header-validation)
 
 ## Component Access Control
 
-### Cryptographic Enrollment
+## Cryptographic Enrollment
 Components establish trusted identity during enrollment. Subsequently, all communication is authenticated through enrolled identities.
 
 [Learn more about Cryptographic Enrollment](./cryptographic-enrollment)
 
-### mTLS Enforcement
+## mTLS Enforcement
 Data-plane communication between ingester and egress is protected by mandatory mTLS. The agent-to-SaaS path also requires mTLS + HMAC.
 
 [Learn more about Agent → SaaS mTLS](./agent-saas-mtls)

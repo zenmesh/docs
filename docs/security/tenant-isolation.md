@@ -11,7 +11,7 @@ Zen Mesh provides multi-tenant data isolation so each tenant's configuration, ev
 
 All tenant data is isolated using Row-Level Security at the database layer. Every query is scoped to the authenticated tenant's identifier. Cross-tenant data access is prevented structurally — no application-level check can bypass RLS.
 
-### How RLS Works
+## How RLS Works
 
 1. Each database table includes a tenant identifier column
 2. RLS policies enforce that queries can only read or write rows matching the session tenant
@@ -31,12 +31,12 @@ All tenant data is isolated using Row-Level Security at the database layer. Ever
 
 ## Data Access Boundaries
 
-### Within a Tenant
+## Within a Tenant
 
 - All users, agents, and API keys scoped to the same tenant share access to that tenant's resources
 - API keys can be further limited to specific scopes (read-only, specific resource types)
 
-### Across Tenants
+## Across Tenants
 
 - No cross-tenant data access is possible through standard APIs
 - MCP agents operate within their authenticated tenant scope

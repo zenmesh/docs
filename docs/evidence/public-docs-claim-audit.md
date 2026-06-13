@@ -7,7 +7,7 @@
 
 ## Audit Results by Doc
 
-### docs/architecture/security-model.md
+## docs/architecture/security-model.md
 
 | Claim | Classification | Action |
 |---|---|---|
@@ -18,11 +18,11 @@
 | ZenLock/zero-knowledge secrets | supported_as_written | TRUST-PROOF-005/009 match |
 | Encryption layers | supported_as_written | mTLS enforcement confirmed |
 
-### docs/architecture/delivery-modes.md — All claims supported_as_written
+## docs/architecture/delivery-modes.md — All claims supported_as_written
 
-### docs/guides/cluster-enrollment.md — All claims supported_as_written
+## docs/guides/cluster-enrollment.md — All claims supported_as_written
 
-### docs-zen-lock/security-properties.md — All claims supported_as_written
+## docs-zen-lock/security-properties.md — All claims supported_as_written
 
 ## Changes Applied
 

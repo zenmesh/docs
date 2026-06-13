@@ -20,11 +20,11 @@ Short changelog for **public-facing** website and docs improvements (terminology
 | AI discovery | AI Context nav link, llms head hints, robots allowances, homepage transparency section |
 | Narrative vs proof | Blogs/registry are `narrative_context`; manifest and hash-chain receipts remain proof |
 
-### Public capability terms used
+## Public capability terms used
 
 Runtime workload identity (SVID) rotation; DeliveryPolicy TLS/trust-chain controls; sandbox delivery validation (direct, egress, relay); planes management UI (T1); hash-chain integrity.
 
-### Non-claims preserved
+## Non-claims preserved
 
 Not production-live or customer-ready; blogs not accepted evidence; hash-chain integrity-only; compliance mentions are context, not certification.
 

@@ -27,20 +27,20 @@ Each layer depends on its predecessor:
 
 ## Failure Domain and Blast Radius
 
-### L1 Failure
+## L1 Failure
 - No new clusters, components, or enrollment.
 - Existing L2b/L3 flows may continue if already provisioned and local state is intact.
 
-### L2a Failure
+## L2a Failure
 - No new or changed flows.
 - Existing flow maintenance may continue if L2b is implemented and functional.
 
-### L2b Failure
+## L2b Failure
 - Existing flow state maintenance/survival is impaired.
 - L3 traffic may degrade depending on local cache freshness.
 - **24h survivability** is a target/planned proof gate, not a proven capability.
 
-### L3 Failure
+## L3 Failure
 - Event delivery interrupted or degraded.
 - Does not necessarily imply L1, L2a, or L2b failure.
 

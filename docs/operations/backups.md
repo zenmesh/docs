@@ -8,11 +8,11 @@ Zen Mesh state is split between the control plane (SaaS-managed) and your cluste
 
 ## What Needs Backing Up
 
-### Control Plane (Managed by Zen Mesh)
+## Control Plane (Managed by Zen Mesh)
 
 Tenant configuration, API keys, destination settings, and delivery history are managed by Zen Mesh and automatically backed up. No action needed on your side.
 
-### Edge Plane (Your Responsibility)
+## Edge Plane (Your Responsibility)
 
 | Resource | How to Back Up |
 |----------|---------------|
@@ -22,7 +22,7 @@ Tenant configuration, API keys, destination settings, and delivery history are m
 
 ## Restoring
 
-### Helm Values
+## Helm Values
 
 ```bash
 helm upgrade --install zen-agent zenmesh/zen-agent \
@@ -30,7 +30,7 @@ helm upgrade --install zen-agent zenmesh/zen-agent \
   -f values-backup.yaml
 ```
 
-### zen-lock CRDs
+## zen-lock CRDs
 
 ```bash
 kubectl apply -f zenlocks-backup.yaml
@@ -42,14 +42,14 @@ Enrollment bundles cannot be restored — they are single-use and time-limited. 
 
 ## Disaster Recovery (DR)
 
-### Recovery Objectives
+## Recovery Objectives
 
 | Metric | Target |
 |--------|--------|
 | **RPO** (Recovery Point Objective) | Configuration: ≤24 hours. Delivery events: determined by retention policy. |
 | **RTO** (Recovery Time Objective) | Standard failure: ≤4 hours. Regional outage: ≤24 hours. |
 
-### Recovery Procedure
+## Recovery Procedure
 
 1. **Provision a new cluster** following the [Cluster Enrollment](../guides/cluster-enrollment) guide
 2. **Restore Helm values** from backup to reinstall zen-agent:
@@ -65,7 +65,7 @@ Enrollment bundles cannot be restored — they are single-use and time-limited. 
 4. **Re-enroll the cluster** by generating a new enrollment bundle from the dashboard
 5. **Verify delivery** by checking the dashboard for healthy destinations
 
-### What Cannot Be Restored
+## What Cannot Be Restored
 
 - Enrollment bundles are single-use and time-limited. You must generate a new bundle.
 - Delivery event history older than the retention window is not recoverable.
@@ -73,7 +73,7 @@ Enrollment bundles cannot be restored — they are single-use and time-limited. 
 
 ## DR Runbook
 
-### Scenario: Cluster Failure (Total Loss)
+## Scenario: Cluster Failure (Total Loss)
 
 1. Provision new Kubernetes cluster
 2. Install Zen Mesh agent with latest Helm chart
@@ -82,14 +82,14 @@ Enrollment bundles cannot be restored — they are single-use and time-limited. 
 5. Verify destinations show healthy status
 6. Replay critical events from DLQ if needed
 
-### Scenario: Configuration Corruption
+## Scenario: Configuration Corruption
 
 1. Identify the corrupted configuration (dashboard or API)
 2. Restore from last known good configuration backup
 3. Reconcile any state drift via the dashboard
 4. Verify delivery flows are operational
 
-### Scenario: Credential Compromise
+## Scenario: Credential Compromise
 
 1. Revoke affected API keys in the dashboard
 2. Rotate shared secrets for affected sources (Stripe, GitHub, etc.)

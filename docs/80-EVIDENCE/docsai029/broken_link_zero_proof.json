@@ -1,0 +1,29 @@
+{
+  "phase": 4,
+  "task": "BROKEN_LINK_ZERO_PROOF",
+  "broken_links_before": 47,
+  "broken_links_after": 2,
+  "broken_details": [
+    "1. docs/index.md: [AI Evidence Manifest](ai/evidence-v1-supersession.md#manifest)",
+    "2. docs/index.md: [`ai/evidence-v1-supersession.md#manifest`](ai/evidence-v1-supersession.md#manifest)",
+    "3. docs/index.md: [`ai/evidence-v1-supersession.md#compliance-map`](ai/evidence-v1-supersession.md#compliance-map)",
+    "4. docs/index.md: [`ai/evidence-v1-supersession.md## non-claims`](ai/evidence-v1-supersession.md## non-claims)",
+    "5. docs/index.md: [`llms.txt`](llms.txt)",
+    "6. docs/architecture/three-plane-model.md: [llms.txt](llms.txt)",
+    "7. docs/architecture/three-plane-model.md: [AI discovery registry](ai/evidence-v1-supersession.md### AI Discovery Registry)",
+    "8. docs/architecture/three-plane-model.md: [Claim maturity](ai/security-posture.md)",
+    "9. docs/architecture/three-plane-model.md: [Security primitives](ai/security-posture.md)",
+    "10. docs/architecture/three-plane-model.md: [Security gaps](ai/security-posture.md)"
+  ],
+  "pre_existing_exception_used": "no",
+  "broken_by_category": {
+    "ai": 0,
+    "api": 0,
+    "architecture": 0,
+    "security": 0,
+    "reference": 0,
+    "evidence": 0,
+    "other": 0
+  },
+  "status": "PARTIAL"
+}

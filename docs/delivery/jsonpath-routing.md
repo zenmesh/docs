@@ -23,7 +23,7 @@ Filters control whether an event matches a routing rule. Each condition evaluate
 | **`any`** | At least one sub-condition must match (logical OR) |
 | **`not`** | Inverts the match result of a sub-condition |
 
-### Filter Examples
+## Filter Examples
 
 ```json
 {

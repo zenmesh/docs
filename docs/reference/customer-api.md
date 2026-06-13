@@ -20,7 +20,7 @@ The Customer API is the **planned read-only programmable interface** for operati
 | `GET /v1/runtime/proofs` | Runtime convergence proof ledger | planned |
 | `GET /v1/trust/proofs` | Trust lifecycle proof ledger | planned |
 | `GET /v1/compliance/mappings` | Compliance framework-to-feature graph | planned |
-| `GET /v1/non-claims` | Explicit non-claims | planned |
+| `GET /../ai/evidence-v1-supersession.md#non-claims` | Explici../ai/evidence-v1-supersession.md#non-claims | planned |
 | `GET /v1/evidence/merkle/root` | Merkle root hash for evidence tree | planned |
 | `GET /v1/readiness` | Readiness summary across domains | planned |
 

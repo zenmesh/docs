@@ -10,7 +10,7 @@ How to validate Zen Mesh evidence locally and programmatically.
 
 1. **Fetch the manifest**
    ```
-   GET /ai/evidence/v1/manifest.json
+   GET /ai/evidence/../ai/evidence-v1-supersession.md#manifest
    ```
 
 2. **Inspect each capability entry**
@@ -31,7 +31,7 @@ How to validate Zen Mesh evidence locally and programmatically.
 
 ## Make Targets (in zen-platform repo)
 
-### Runtime Convergence
+## Runtime Convergence
 
 ```bash
 make runtime-convergence-evidence-pack-v1-check   # Validate evidence pack
@@ -42,7 +42,7 @@ make runtime-claims-guard-burn-down-check          # 0 critical overclaims
 make runtime-victory-lock-check                    # Verify victory locks
 ```
 
-### Trust Lifecycle
+## Trust Lifecycle
 
 ```bash
 make trust-lifecycle-evidence-pack-v1-check        # Validate trust evidence pack
@@ -53,7 +53,7 @@ make zero-trust-proof-matrix-check                 # Validate proof matrix
 make trust-lifecycle-evidence-map-check            # Validate evidence map
 ```
 
-### Cross-Cutting
+## Cross-Cutting
 
 ```bash
 make docs-evidence-alignment-check                 # Docs reference current evidence

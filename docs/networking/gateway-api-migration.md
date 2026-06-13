@@ -22,7 +22,7 @@ Gateway API provides:
 
 All Zen Mesh routing currently uses **Kubernetes Ingress** with the **nginx** ingress class.
 
-### Hostname Ownership
+## Hostname Ownership
 
 | Host | Plane | Owner | Ingress Template |
 |---|---|---|---|
@@ -32,14 +32,14 @@ All Zen Mesh routing currently uses **Kubernetes Ingress** with the **nginx** in
 | platform.zen-mesh.io | Control Plane | nanobot | customer-api-ingress.yaml, mcp-ingress.yaml |
 | m2m.zenmesh.io | Control Plane | nanobot | ingress-m2m.yaml |
 
-### Route Inventory
+## Route Inventory
 
 **19 routes inventoried** across control plane and data plane:
 
 - **14 SaaS control-plane routes** — frontend, BFF, back API, health, metrics, Stripe, billing, WebSocket
 - **5 data-plane / platform routes** — webhook ingestion, gRPC health, customer API, MCP, M2M
 
-### TLS Ownership
+## TLS Ownership
 
 All routes use **cert-manager** for TLS certificate management:
 - Public routes: `letsencrypt-prod` ClusterIssuer
@@ -54,7 +54,7 @@ Migration target is **Gateway API v1.0+** with:
 - Full TLS parity with cert-manager
 - Rate limiting, timeouts, and backend protocol preserved
 
-### Planned Gateways
+## Planned Gateways
 
 | Gateway | Hosts | Routes | Status |
 |---|---|---|---|
@@ -90,20 +90,20 @@ After evaluating 9 controller candidates across all planes, the following per-pl
 | Edge Plane | **Envoy Gateway** | NGINX Gateway Fabric | GKE (cloud-only), Istio, Cilium, Traefik, Kong |
 | Private Data Plane | **Deferred** | Envoy Gateway (tentative) | All deferred |
 
-### Why Envoy Gateway for Data Plane and Edge
+## Why Envoy Gateway for Data Plane and Edge
 
 - **GRPCRoute** — native support for gRPC routes (required for data-plane ingester health)
 - **Cloud-agnostic** — no GKE/AWS dependency for edge-plane
 - **CNCF graduated GA** — production-grade maturity
 - **Full Gateway API v1.0+** — Gateway, HTTPRoute, GRPCRoute, TLSRoute, TCPRoute, BackendTLSPolicy
 
-### Why GKE Gateway Controller for SaaS
+## Why GKE Gateway Controller for SaaS
 
 - **Managed** — lowest operational overhead on GKE
 - **GA** — production-ready, no controller deployment needed
 - **Lock-in acceptable** — SaaS already GKE-dependent
 
-### What's Next for Controllers
+## What's Next for Controllers
 
 1. Install Envoy Gateway in k3d sandbox for local validation
 2. Enable GKE Gateway API on sandbox GKE cluster

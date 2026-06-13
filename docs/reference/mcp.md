@@ -44,7 +44,7 @@ The MCP server provides **programmatic access** to Zen Mesh data through the Mod
 | `zen://runtime/proofs` | Runtime proof ledger | planned |
 | `zen://trust/proofs` | Trust proof ledger | planned |
 | `zen://compliance/map` | Compliance feature graph | planned |
-| `zen://non-claims` | Non-claims by category | planned |
+| `zen../ai/evidence-v1-supersession.md#non-claims` | Non-claims by category | planned |
 | `zen://readiness` | Readiness and blocker summary | planned |
 
 ## Design Principles

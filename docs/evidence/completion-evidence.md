@@ -4,7 +4,7 @@ sidebar_label: Completion Evidence Gate
 
 # Completion Evidence Gate
 
-Validated work at Zen Mesh is not considered complete until it publishes structured evidence that is **discoverable**, **Merkle-indexed**, and **explicitly scoped** with non-claims.
+Validated work at Zen Mesh is not considered complete until it publishes structured evidence that is **discoverable**, **Merkle-indexed**, and **explicitly scoped** wit../ai/evidence-v1-supersession.md#non-claims.
 
 ## Why a Completion Gate?
 
@@ -54,7 +54,7 @@ Completion evidence entries are included as leaves in the canonical Merkle evide
 
 ## Non-Claims
 
-Every completion entry includes explicit non-claims. Common non-claims include:
+Every completion entry includes explici../ai/evidence-v1-supersession.md#non-claims. Commo../ai/evidence-v1-supersession.md#non-claims include:
 
 - "Not production-live" — all tests are local/mock
 - "Not general guarantee" — scenario-specific only
@@ -80,9 +80,9 @@ This is **readiness support only** — it does not constitute eligibility, quali
 | Completion evidence schema | `docs/80-EVIDENCE/completion/completion_evidence_contract.schema.json` |
 | Completion evidence validator | `scripts/validation/completion_evidence_gate_check.py` |
 | Merkle completion leaf | `docs/80-EVIDENCE/merkle/completion_evidence_merkle.json` |
-| Merkle completion manifest | `docs/80-EVIDENCE/merkle/manifests/completion_evidence_manifest.json` |
+| Merkle completion manifest | `docs/80-EVIDENCE/merkle/manifests/completion_evidenc../ai/evidence-v1-supersession.md#manifest` |
 | Evidence index | `docs/80-EVIDENCE/merkle/EVIDENCE_INDEX_2026_05_24.json` |
-| AI evidence manifest | [/ai/evidence/v1/manifest.json](/ai/evidence/v1/manifest.json) |
+| AI evidence manifest | [/ai/evidence/../ai/evidence-v1-supersession.md#manifest../ai/evidence-v1-supersession.md#manifest) |
 
 ## Validation
 
@@ -109,4 +109,4 @@ The completion evidence contract contains entries for the following tasks:
 - **007** — Runtime Proof Matrix Hardening
 - **008** — Evidence Merkle Completion Gate
 
-See the [AI Evidence Manifest](/ai/evidence/v1/manifest.json) for machine-readable details.
+See the [AI Evidence Manifest../ai/evidence-v1-supersession.md#manifest) for machine-readable details.

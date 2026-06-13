@@ -13,7 +13,7 @@ An endpoint (also called an ingester) is a configuration that defines how Zen Me
 
 ## Creating an Endpoint
 
-### Via Dashboard
+## Via Dashboard
 
 1. Navigate to **Sources → Add Source**
 2. Select the provider type (Stripe, GitHub, Generic HTTP, etc.)
@@ -23,7 +23,7 @@ An endpoint (also called an ingester) is a configuration that defines how Zen Me
    - **Verification**: Signature verification method (HMAC, Stripe signing secret, etc.)
 4. Save the endpoint
 
-### Via API
+## Via API
 
 ```bash
 curl -X POST https://api.zen-mesh.io/v1/tenants/{tenant}/ingesters \
@@ -50,14 +50,14 @@ curl -X POST https://api.zen-mesh.io/v1/tenants/{tenant}/ingesters \
 
 ## Managing Endpoints
 
-### Listing Endpoints
+## Listing Endpoints
 
 ```bash
 curl https://api.zen-mesh.io/v1/tenants/{tenant}/ingesters \
   -H "Authorization: Bearer {api_key}"
 ```
 
-### Updating an Endpoint
+## Updating an Endpoint
 
 ```bash
 curl -X PUT https://api.zen-mesh.io/v1/tenants/{tenant}/ingesters/{id} \
@@ -66,7 +66,7 @@ curl -X PUT https://api.zen-mesh.io/v1/tenants/{tenant}/ingesters/{id} \
   -d '{"name": "stripe-prod-v2", ...}'
 ```
 
-### Deleting an Endpoint
+## Deleting an Endpoint
 
 ```bash
 curl -X DELETE https://api.zen-mesh.io/v1/tenants/{tenant}/ingesters/{id} \

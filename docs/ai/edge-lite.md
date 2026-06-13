@@ -46,7 +46,7 @@ The script will:
 
 ## Current Status: Design-Partner Evaluation Only
 
-### What Can Be Evaluated Today
+## What Can Be Evaluated Today
 
 - **Same-bundle model**: Helm and Docker Edge Lite use the same enrollment bundle contract (H498)
 - **Installer dry-run**: The installer supports dry-run mode to validate enrollment intent without contacting the SaaS backend (H499)
@@ -54,14 +54,14 @@ The script will:
 - **Operator visibility structure**: The UI contract defines 14 status fields for operators (H506)
 - **Operator visibility fixture**: The UI shows what operators will see with demo/fixture data (H506B)
 
-### What Is Fixture/Demo Only
+## What Is Fixture/Demo Only
 
 - **Enrollment**: Real enrollment is pending S171 runtime implementation
 - **Heartbeat**: Real heartbeat is pending S171 runtime implementation
 - **Delivery**: Real SaaS delivery is pending S172 runtime implementation
 - **Operator visibility data**: The UI shows fixture data only; real API data is not wired (H506B clearly marks this)
 
-### Launch Blockers
+## Launch Blockers
 
 - **Signing/provenance**: Blocked by missing keyless identity (H505)
 - **Real enrollment**: Blocked on S171 runtime implementation
@@ -109,7 +109,7 @@ The script will:
 
 ## Language: What You Can and Cannot Say
 
-### Safe To Say
+## Safe To Say
 
 - "We have contract-level support for both Helm and Docker Edge Lite install options using the same enrollment bundle"
 - "The installer supports dry-run mode to validate enrollment intent"
@@ -119,7 +119,7 @@ The script will:
 - "This is fixture/demo data only. Not production-ready."
 - "Design-partner evaluation only."
 
-### Do Not Say
+## Do Not Say
 
 - "Edge Lite is production-ready"
 - "Edge Lite is customer-ready"

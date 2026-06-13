@@ -9,17 +9,17 @@ Control how webhook events are routed to their destinations with filtering, fan-
 
 ## Capabilities
 
-### Event Filtering
+## Event Filtering
 Filtering controls which events are delivered to which destinations. Conditions can be configured on event headers, body fields, or metadata to allow, drop, or route events to specific targets.
 
 See [Webhook Filtering](./filtering) for configuration details.
 
-### Fan-Out Delivery
+## Fan-Out Delivery
 A single incoming event can be delivered to multiple destinations simultaneously. Each destination has independent delivery policies — retry, timeout, and DLQ settings — so failure in one destination does not affect others.
 
 See [Webhook Fan-Out](./fan-out) for multi-destination delivery options.
 
-### Delivery Flow Configuration
+## Delivery Flow Configuration
 Routing behavior is defined through the DeliveryFlow CRD, which specifies:
 
 - Source event criteria

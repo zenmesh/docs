@@ -62,7 +62,7 @@ curl -H "Authorization: Bearer $ZEN_API_KEY" \
   https://api.zen-mesh.io/v1/deliveries/dlv_abc123
 ```
 
-### Delivery Attempts History
+## Delivery Attempts History
 
 ```bash
 curl -H "Authorization: Bearer $ZEN_API_KEY" \
@@ -72,7 +72,7 @@ curl -H "Authorization: Bearer $ZEN_API_KEY" \
 
 Each attempt includes HTTP status, response body (truncated), timestamp, and duration.
 
-### Dead-Letter Queue
+## Dead-Letter Queue
 
 When all retry attempts are exhausted, the event moves to the dead-letter queue:
 

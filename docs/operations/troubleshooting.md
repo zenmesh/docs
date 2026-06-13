@@ -8,7 +8,7 @@ Common issues and their solutions.
 
 ## Cluster Won't Connect
 
-### Agent shows "Not Connected"
+## Agent shows "Not Connected"
 
 **Check agent logs:**
 ```bash
@@ -22,7 +22,7 @@ kubectl logs -n zen-mesh -l app=zen-agent --tail=50
 
 ## Delivery Failures
 
-### Events showing "Failed" in dashboard
+## Events showing "Failed" in dashboard
 
 1. Check the delivery details for the error message
 2. Verify the destination URL is reachable from within the cluster:
@@ -35,7 +35,7 @@ kubectl logs -n zen-mesh -l app=zen-agent --tail=50
    kubectl logs -n zen-mesh -l app=zen-egress --tail=50
    ```
 
-### Intermittent Failures
+## Intermittent Failures
 
 - **Target service overloaded**: Check target service metrics
 - **Backpressure active**: Zen Mesh is throttling to protect the target. Check `zen_ingester_backpressure_active` metric
@@ -43,11 +43,11 @@ kubectl logs -n zen-mesh -l app=zen-agent --tail=50
 
 ## Enrollment Issues
 
-### Bundle expired before use
+## Bundle expired before use
 
 Generate a new bundle from the dashboard. Bundles expire after 30 minutes.
 
-### mTLS handshake failure
+## mTLS handshake failure
 
 ```bash
 # Check zen-lock status
@@ -60,13 +60,13 @@ kubectl get certificates -n zen-mesh
 
 ## Performance Issues
 
-### High delivery latency
+## High delivery latency
 
 1. Check ingester metrics: `zen_ingester_delivery_duration_seconds`
 2. Check egress connection pool: `zen_egress_connections_active`
 3. Check target service response times
 
-### High memory usage
+## High memory usage
 
 Default resource limits may be too low for high-throughput workloads. Increase via Helm values:
 

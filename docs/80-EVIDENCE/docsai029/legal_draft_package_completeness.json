@@ -1,0 +1,120 @@
+{
+  "phase": 8,
+  "task": "LEGAL_DRAFT_PACKAGE_COMPLETENESS",
+  "pages": [
+    {
+      "name": "terms",
+      "exists": false,
+      "path": "docs/legal/terms.md",
+      "has_legal_review_marker": false,
+      "has_non_effective_marker": false,
+      "has_legal_approval_claim": false,
+      "links_valid": false
+    },
+    {
+      "name": "privacy",
+      "exists": false,
+      "path": "docs/legal/privacy.md",
+      "has_legal_review_marker": false,
+      "has_non_effective_marker": false,
+      "has_legal_approval_claim": false,
+      "links_valid": false
+    },
+    {
+      "name": "dpa",
+      "exists": false,
+      "path": "docs/legal/dpa.md",
+      "has_legal_review_marker": false,
+      "has_non_effective_marker": false,
+      "has_legal_approval_claim": false,
+      "links_valid": false
+    },
+    {
+      "name": "aup",
+      "exists": false,
+      "path": "docs/legal/aup.md",
+      "has_legal_review_marker": false,
+      "has_non_effective_marker": false,
+      "has_legal_approval_claim": false,
+      "links_valid": false
+    },
+    {
+      "name": "cookie-disclosure",
+      "exists": false,
+      "path": "docs/legal/cookie-disclosure.md",
+      "has_legal_review_marker": false,
+      "has_non_effective_marker": false,
+      "has_legal_approval_claim": false,
+      "links_valid": false
+    },
+    {
+      "name": "subprocessors",
+      "exists": false,
+      "path": "docs/legal/subprocessors.md",
+      "has_legal_review_marker": false,
+      "has_non_effective_marker": false,
+      "has_legal_approval_claim": false,
+      "links_valid": false
+    },
+    {
+      "name": "scc-transfer",
+      "exists": false,
+      "path": "docs/legal/scc-transfer.md",
+      "has_legal_review_marker": false,
+      "has_non_effective_marker": false,
+      "has_legal_approval_claim": false,
+      "links_valid": false
+    },
+    {
+      "name": "responsible-disclosure",
+      "exists": false,
+      "path": "docs/legal/responsible-disclosure.md",
+      "has_legal_review_marker": false,
+      "has_non_effective_marker": false,
+      "has_legal_approval_claim": false,
+      "links_valid": false
+    },
+    {
+      "name": "billing-terms",
+      "exists": false,
+      "path": "docs/legal/billing-terms.md",
+      "has_legal_review_marker": false,
+      "has_non_effective_marker": false,
+      "has_legal_approval_claim": false,
+      "links_valid": false
+    },
+    {
+      "name": "design-partner-terms",
+      "exists": false,
+      "path": "docs/legal/design-partner-terms.md",
+      "has_legal_review_marker": false,
+      "has_non_effective_marker": false,
+      "has_legal_approval_claim": false,
+      "links_valid": false
+    },
+    {
+      "name": "retention-lifecycle",
+      "exists": false,
+      "path": "docs/legal/retention-lifecycle.md",
+      "has_legal_review_marker": false,
+      "has_non_effective_marker": false,
+      "has_legal_approval_claim": false,
+      "links_valid": false
+    },
+    {
+      "name": "breach-notice",
+      "exists": false,
+      "path": "docs/legal/breach-notice.md",
+      "has_legal_review_marker": false,
+      "has_non_effective_marker": false,
+      "has_legal_approval_claim": false,
+      "links_valid": false
+    }
+  ],
+  "total_pages": 12,
+  "existing_pages": 0,
+  "pages_with_legal_review_marker": 0,
+  "pages_with_non_effective_marker": 0,
+  "pages_with_legal_approval_claim": 0,
+  "status": "PARTIAL"
+}

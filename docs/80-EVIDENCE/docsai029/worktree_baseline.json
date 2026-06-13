@@ -1,0 +1,38 @@
+{
+  "phase": 1,
+  "task": "CLEAN_WORKTREE_BASELINE",
+  "worktrees": {
+    "docs": {
+      "path": "/home/neves/zenmesh/docs/DOCSAI029-zen-platform",
+      "based_on_main": "yes",
+      "clean": "yes",
+      "branch": "DOCSAI029-zen-platform",
+      "sha": "9d7f99569ff926a95fb79a33ab15ba2f45c991eb",
+      "commit_msg": "HELPER030 P2 docs: GitHub, custom webhooks, delivery status, CLI expansion"
+    },
+    "zen-mesh.io": {
+      "path": "/home/neves/zenmesh/worktrees/DOCSAI029-zen-mesh.io",
+      "based_on_main": "yes",
+      "clean": "yes",
+      "branch": "main",
+      "sha": "dd10f04c9981e9a37e82fcec2d2ed97873f6ad3e",
+      "commit_msg": "DOCSAI020 fix zen/ Helm chart namespace claim in how-it-works"
+    }
+  },
+  "docs_broken_link_state": {
+    "broken_before_d:2": 0,
+    "broken_after_phase1": 47,
+    "ai": 0,
+    "api": 0,
+    "architecture": 0,
+    "security": 0,
+    "reference": 0,
+    "evidence": 0
+  },
+  "site_build_state": {
+    "before": "PASS",
+    "after": "PASS",
+    "note": "Site unchanged - no site work required"
+  },
+  "status": "CLEAN_WORKTREES_CREATED"
+}

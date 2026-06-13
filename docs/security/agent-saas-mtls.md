@@ -1,7 +1,7 @@
 # Agent → SaaS mTLS
 
 **Status:** Required — fail-closed in production
-**Related:** [Security Capability Validation](/docs/security/security-capability-validation)
+**Related:** [Security Capability Validation](./security-capability-validation)
 
 ---
 

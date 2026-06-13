@@ -4,7 +4,7 @@ sidebar_label: Capability Evidence
 
 # Capability Evidence
 
-All capabilities are classified with a proof status. See `/ai/evidence/v1/manifest.json` for the full machine-readable manifest.
+All capabilities are classified with a proof status. See../ai/evidence-v1-supersession.md#manifest` for the full machine-readable manifest.
 
 ## Runtime Convergence
 
@@ -72,7 +72,7 @@ All capabilities are classified with a proof status. See `/ai/evidence/v1/manife
 
 ## Public Trust & Evidence Pack
 
-A buyer-readable summary of all Edge Lite and Gateway API evidence, non-claims, and launch blockers is available in the [zen-platform repository](https://github.com/zenmesh/zen-platform):
+A buyer-readable summary of all Edge Lite and Gateway API evidence../ai/evidence-v1-supersession.md#non-claims, and launch blockers is available in the [zen-platform repository](https://github.com/zenmesh/zen-platform):
 
 - [Edge Lite + Gateway API: Public Trust & Evidence Pack](https://github.com/zenmesh/zen-platform/blob/main/docs/10-ARCHITECTURE/EDGE_LITE_GATEWAY_PUBLIC_TRUST_EVIDENCE_PACK.md)
 - [Proven / Not Proven Matrix](https://github.com/zenmesh/zen-platform/blob/main/docs/80-EVIDENCE/edge/edge_lite_h501_proven_not_proven_matrix.json)

@@ -30,7 +30,7 @@ Zen Mesh can ingest webhooks from any HTTP client. A generic HTTP source accepts
 | **IP Allowlisting** | Restrict accepted source IPs | Source settings |
 | **None** | Accept all requests (not recommended for production) | Source settings |
 
-### HMAC Verification
+## HMAC Verification
 
 If your custom source supports signing requests:
 
@@ -39,7 +39,7 @@ If your custom source supports signing requests:
 3. Your source sends an `X-Signature-256` header with the HMAC-SHA256 digest of the request body
 4. Zen Mesh computes the expected signature and rejects mismatches
 
-### Header Validation
+## Header Validation
 
 Require specific headers to be present on incoming requests:
 

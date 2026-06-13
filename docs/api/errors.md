@@ -55,17 +55,17 @@ Zen Mesh APIs use standard HTTP status codes and return structured error respons
 
 ## Common Error Scenarios
 
-### Missing API Key
+## Missing API Key
 ```json
 {"title": "Authentication Required", "status": 401, "detail": "X-API-Key header is required"}
 ```
 
-### Invalid Scope
+## Invalid Scope
 ```json
 {"title": "Insufficient Scope", "status": 403, "detail": "Scope 'mcp:admin:keys' required but key has 'mcp:read:*'"}
 ```
 
-### Rate Limited
+## Rate Limited
 ```json
 {"title": "Rate Limit Exceeded", "status": 429, "detail": "Rate limit of 100 req/min exceeded. Retry after 45s"}
 ```

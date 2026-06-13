@@ -30,10 +30,10 @@ Process of registering a K8s cluster via age-encrypted bundle + zen-agent. Prove
 Proven in PROOF-001/008/009/010.
 
 ## Evidence Pack
-Consolidated machine-readable JSON with proof status, evidence refs, non-claims. One per domain (runtime, trust).
+Consolidated machine-readable JSON with proof status, evidence refs../ai/evidence-v1-supersession.md#non-claims. One per domain (runtime, trust).
 
 ## Victory Lock
-A commit-pinned proof artifact that records scenario, evidence refs, validation commands, and non-claims.
+A commit-pinned proof artifact that records scenario, evidence refs, validation commands, an../ai/evidence-v1-supersession.md#non-claims.
 
 ## Proof Ledger
 Index of all proofs with status, scenario, and evidence file paths.

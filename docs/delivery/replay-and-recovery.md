@@ -9,17 +9,17 @@ Recover from webhook delivery failures with replay, retry, and dead-letter queue
 
 ## Capabilities
 
-### Dead-Letter Queue
+## Dead-Letter Queue
 Failed delivery attempts are preserved in a dead-letter queue after retries are exhausted. Each failed event carries metadata about the delivery attempt, failure reason, and original payload. From the DLQ, events can be inspected, replayed, or archived.
 
 See [Dead Letter Queue](./dead-letter-queue) for configuration options.
 
-### Replay
+## Replay
 Events from the DLQ or delivery history can be replayed to the original or alternate destinations. Replay supports event selection by time range, source, or correlation ID, and each replay attempt is recorded for audit.
 
 See [Webhook Replay](./replay) for details.
 
-### Retry Policy
+## Retry Policy
 Delivery retries are configurable per destination, including maximum retry attempts, backoff intervals, and failure classification. Transient failures are retried automatically; permanent failures move events to the DLQ.
 
 See [Dead Letter Queue configuration](./dead-letter-queue#configuration-options) for retry policy settings.

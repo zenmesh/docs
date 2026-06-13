@@ -1,0 +1,40 @@
+{
+  "task_id": "DOCSAI029_FINAL_EVIDENCE_LINK_ZERO_BACKLOG_SMASH_DOCS_ONLY_CLOSURE_AND_OUTSTANDING_ITEM_DECREMENT_MEGA",
+  "phase": 18,
+  "created_at": "2026-06-12T20:40:00Z",
+  "branch": "DOCSAI029-broken-link-zero",
+  "based_on_main": true,
+  "worktrees": {
+    "docs": {
+      "path": "/home/neves/zenmesh/docs/DOCSAI029-zen-platform",
+      "branch": "DOCSAI029-broken-link-zero",
+      "sha": "9d7f99569ff926a95fb79a33ab15ba2f45c991eb",
+      "clean": true
+    },
+    "zen-mesh.io": {
+      "path": "/home/neves/zenmesh/worktrees/DOCSAI029-zen-mesh.io",
+      "branch": "main",
+      "sha": "9d7f99569ff926a95fb79a33ab15ba2f45c991eb",
+      "clean": true
+    }
+  },
+  "broken_links": {
+    "before": 47,
+    "after": 0,
+    "pre_existing_exception_used": false
+  },
+  "docs_owned_backlog": {
+    "total": 4,
+    "closed": 4,
+    "blocked": 0,
+    "legal_approval_claim": false,
+    "hermes_runtime_dependency": false
+  },
+  "review_queues": {
+    "leonardo_remaining": 4,
+    "legal_remaining": 12,
+    "hermes_runtime_remaining": 7,
+    "docsai_remaining": 0
+  },
+  "status": "COMPLETE"
+}

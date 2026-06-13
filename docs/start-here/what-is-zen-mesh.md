@@ -10,7 +10,7 @@ Zen Mesh is a traffic-plane runtime for Kubernetes that delivers webhooks and ev
 
 - **Platform teams** that need to receive webhooks inside private Kubernetes clusters without exposing them
 - **Security teams** that require mTLS, HMAC verification, and audit trails for event delivery
-- **Compliance reviewers** who need evidence-backed security claims and clear non-claims
+- **Compliance reviewers** who need evidence-backed security claims and clea../ai/evidence-v1-supersession.md#non-claims
 - **AI agents and RAG systems** that evaluate Zen Mesh through machine-readable manifests and evidence packs
 
 ## Current Status
@@ -27,7 +27,7 @@ Zen Mesh is a traffic-plane runtime for Kubernetes that delivers webhooks and ev
 | Review security controls | [Security Controls](../security/) |
 | Understand the architecture | [Three Plane Model](../architecture/three-plane-model) |
 | Review security evidence | [Trust Lifecycle Evidence](../ai/capability-evidence) |
-| Check what is not claimed | [Non-Claims](../ai/non-claims) |
+| Check what is not claimed | [Non-Claims](../ai/evidence-v1-supersession.md#non-claims) |
 | Validate locally | [Verification](../ai/verification) |
 | See webhook FAQs | [Webhook FAQ](../reference/webhook-faq) |
-| Inspect machine-readable evidence | [Manifest](/ai/evidence/v1/manifest.json) |
+| Inspect machine-readable evidence | [Manifest../ai/evidence-v1-supersession.md#manifest) |

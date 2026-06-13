@@ -1,7 +1,7 @@
 # ZenLock and Credential Lifecycle Ownership
 
 **Status:** Active — clarifies ZenLock's role vs. credential lifecycle owners
-**Related:** [Security Capability Validation](/docs/security/security-capability-validation)
+**Related:** [Security Capability Validation](./security-capability-validation)
 
 ---
 

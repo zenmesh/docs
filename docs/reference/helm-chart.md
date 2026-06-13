@@ -21,14 +21,14 @@ helm upgrade --install zen-agent zenmesh/zen-agent \
 
 ## Values
 
-### Global
+## Global
 
 | Parameter | Default | Description |
 |-----------|---------|-------------|
 | `saas.endpoint` | `https://api.zen-mesh.io` | Control plane API endpoint |
 | `imagePullSecrets` | `[]` | Secrets for pulling images from private registries |
 
-### Agent
+## Agent
 
 | Parameter | Default | Description |
 |-----------|---------|-------------|
@@ -42,7 +42,7 @@ helm upgrade --install zen-agent zenmesh/zen-agent \
 | `agent.enrollment.secretRef.name` | — | Name of enrollment Secret (required) |
 | `agent.enrollment.secretRef.namespace` | Release namespace | Namespace of enrollment Secret |
 
-### Egress
+## Egress
 
 | Parameter | Default | Description |
 |-----------|---------|-------------|
@@ -52,7 +52,7 @@ helm upgrade --install zen-agent zenmesh/zen-agent \
 | `egress.replicas` | `1` | Number of egress replicas |
 | `egress.tls.enabled` | `true` | Enable mTLS for delivery |
 
-### zen-lock
+## zen-lock
 
 | Parameter | Default | Description |
 |-----------|---------|-------------|

@@ -31,11 +31,11 @@ Zen Mesh is in **early access**. We are completing final validations before open
 
 ## What is not claimed
 
-See [Non-Claims](../ai/non-claims) for a complete list. Key items:
+See [Non-Claims](../ai/evidence-v1-supersession.md#non-claims) for a complete list. Key items:
 - No PCI, HIPAA, FedRAMP, SOC 2, or ISO certification
 - No delivery guarantee beyond scenario-specific local/mock/cloud-demo proofs
 - No production-level zero-trust status
-- Merkle is evidence integrity only — see non-claims for scope
+- Merkle is evidence integrity only — se../ai/evidence-v1-supersession.md#non-claims for scope
 - Proofs are local/mock or cloud-demo (Stripe FLOW-03 on GKE) unless stated; no production-live claim
 
 ## Documentation Gap Disposition

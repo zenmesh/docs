@@ -30,13 +30,13 @@ Do not use “eliminates,” “replay-proof,” “SSRF-safe,” or bare “sec
 
 | Document | URL |
 |----------|-----|
-| **AI discovery registry (freshness)** | [`/ai/ai-discovery-registry.json`](/ai/ai-discovery-registry.json) |
-| **Claim maturity (canonical)** | [`/ai/security/v1/claim-maturity.json`](/ai/security/v1/claim-maturity.json) |
-| Attack model | [`/ai/security/v1/attack-model.json`](/ai/security/v1/attack-model.json) |
-| Security primitives | [`/ai/security/v1/primitives.json`](/ai/security/v1/primitives.json) |
-| Security gaps | [`/ai/security/v1/gaps.json`](/ai/security/v1/gaps.json) |
-| Local trust posture | [`/ai/security/v1/local-trust-posture.json`](/ai/security/v1/local-trust-posture.json) |
-| Capability validation | [`/ai/security/v1/security-capability-validation.json`](/ai/security/v1/security-capability-validation.json) |
+| **AI discovery registry (freshness)** | ../ai/evidence-v1-supersession.md### AI Discovery Registry`../ai/evidence-v1-supersession.md### AI Discovery Registry) |
+| **Claim maturity (canonical)** | [`ai/security-posture.md`](ai/security-posture.md) |
+| Attack model | [`ai/security-posture.md`](ai/security-posture.md) |
+| Security primitives | [`ai/security-posture.md`](ai/security-posture.md) |
+| Security gaps | [`ai/security-posture.md`](ai/security-posture.md) |
+| Local trust posture | [`ai/security-posture.md`](ai/security-posture.md) |
+| Capability validation | [`ai/security-posture.md`](ai/security-posture.md) |
 
 ## Threat-model split
 
@@ -51,7 +51,7 @@ Do not use “eliminates,” “replay-proof,” “SSRF-safe,” or bare “sec
 - **Fail-closed** — expired/invalid local material is rejected on enforced paths.
 - **Not claimed:** validated 24h survival, compliance certification, customer-managed SPIRE, ST-003/N086/DeliveryPolicy PASS without evidence.
 
-See [`local-trust-posture.json`](/ai/security/v1/local-trust-posture.json) and primitive IDs `PRIM-ZEN-LOCAL-TRUST-AUTHORITY`, `PRIM-ZEN-LOCK-SURVIVAL-STORE`, `PRIM-KEY-MATERIAL-ROTATION`, `PRIM-AIR-GAPPED-ADAPTER-HANDOFF`, `PRIM-SPIFFE-SPIRE-NATIVE-INTERNAL`, `PRIM-LOCAL-MATERIAL-EXPIRY-FAIL-CLOSED`.
+See [`ai/security-posture.md`](ai/security-posture.md) and primitive IDs `PRIM-ZEN-LOCAL-TRUST-AUTHORITY`, `PRIM-ZEN-LOCK-SURVIVAL-STORE`, `PRIM-KEY-MATERIAL-ROTATION`, `PRIM-AIR-GAPPED-ADAPTER-HANDOFF`, `PRIM-SPIFFE-SPIRE-NATIVE-INTERNAL`, `PRIM-LOCAL-MATERIAL-EXPIRY-FAIL-CLOSED`.
 
 ## Highlights (2026-05-31)
 
@@ -70,7 +70,7 @@ See [`local-trust-posture.json`](/ai/security/v1/local-trust-posture.json) and p
 
 ## Narrative vs proof
 
-Blogs and [`narrative-context.json`](https://www.zen-mesh.io/ai/narrative-context.json) are **narrative_context** only. Proof remains in the [capability manifest](/ai/evidence/v1/manifest.json) and [non-claims](/ai/evidence/v1/non-claims.json).
+Blogs and [`narrative-context.json`](https://www.zen-mesh.io/ai/narrative-context.json) are **narrative_context** only. Proof remains in the../ai/evidence-v1-supersession.md#manifest../ai/evidence-v1-supersession.md#manifest) and../ai/evidence-v1-supersession.md#non-claims../ai/evidence-v1-supersession.md## non-claims).
 
 ## Hash-chain / Merkle
 
@@ -79,5 +79,5 @@ Integrity and tamper-evidence for **evidence bundles** only — not authenticati
 ## Related
 
 - [AI overview](./overview)
-- [Non-claims](./non-claims)
+- [Non-claims](../ai/evidence-v1-supersession.md#non-claims)
 - [Verification](./verification)

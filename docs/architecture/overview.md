@@ -12,21 +12,21 @@ Zen Mesh uses a **three-plane architecture** that separates control from runtime
 
 ## Design Principles
 
-### Outbound-Only
+## Outbound-Only
 
 Your cluster never receives inbound connections. All delivery is outbound from your infrastructure. No firewall changes, no VPN, no exposed ports.
 
-### Enrollment-Based Identity
+## Enrollment-Based Identity
 
 Trust starts with enrollment — a cryptographic bundle exchange during cluster registration. Identity is never configured manually. Short-lived credentials auto-rotate.
 
-### SaaS-Optional Runtime
+## SaaS-Optional Runtime
 
 After enrollment, the data plane continues operating even if the control plane is temporarily unavailable. Delivery does not depend on the SaaS being up.
 
-### Zero-Knowledge Secrets
+## Zero-Knowledge Secrets
 
-Sensitive material (enrollment credentials, HMAC keys, mTLS certificates) is managed by [zen-lock](/zen-lock/), a zero-knowledge secret manager. Only ciphertext is stored; decryption happens at runtime in ephemeral sidecar injection.
+Sensitive material (enrollment credentials, HMAC keys, mTLS certificates) is managed by [zen-lock](../zen-lock.md), a zero-knowledge secret manager. Only ciphertext is stored; decryption happens at runtime in ephemeral sidecar injection.
 
 ## Key Components
 

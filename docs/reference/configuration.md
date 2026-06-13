@@ -8,7 +8,7 @@ Zen Mesh components are configured via Helm values, environment variables, and C
 
 ## Environment Variables
 
-### Agent
+## Agent
 
 | Variable | Default | Description |
 |----------|---------|-------------|
@@ -17,7 +17,7 @@ Zen Mesh components are configured via Helm values, environment variables, and C
 | `ZEN_TENANT_ID` | — | Tenant ID (extracted from enrollment bundle) |
 | `ZEN_LOG_LEVEL` | `info` | Log level: `debug`, `info`, `warn`, `error` |
 
-### Egress
+## Egress
 
 | Variable | Default | Description |
 |----------|---------|-------------|
@@ -26,18 +26,18 @@ Zen Mesh components are configured via Helm values, environment variables, and C
 
 ## CRDs
 
-### DeliveryFlow
+## DeliveryFlow
 
 Defines how events are routed from an ingester to a destination.
 
-### Destination
+## Destination
 
 A delivery target (URL + cluster + adapter mapping).
 
-### EndpointConfig
+## EndpointConfig
 
 Configuration for delivery endpoints (timeouts, retries, headers).
 
-### Ingester
+## Ingester
 
 An event intake point with its routing rules.

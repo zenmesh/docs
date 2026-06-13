@@ -11,7 +11,7 @@ AI drafts your infrastructure. You approve it.
 
 The Draft System lets MCP agents propose infrastructure changes without directly mutating production. Agents create drafts; humans review, approve, and apply them. This ensures AI-generated proposals go through a human governance gate before taking effect.
 
-### How It Works
+## How It Works
 
 1. An agent creates a draft describing a proposed configuration change
 2. The draft is stored in a pending state — no production resources are modified
@@ -23,7 +23,7 @@ The Draft System lets MCP agents propose infrastructure changes without directly
 
 Agents create drafts through dedicated MCP tools. In V1, agents can create draft endpoints only.
 
-### V1 Draft Types
+## V1 Draft Types
 
 | Type | Agent-Creatable in V1 |
 |------|----------------------|
@@ -33,7 +33,7 @@ Agents create drafts through dedicated MCP tools. In V1, agents can create draft
 | `target` | No (V1.1+) |
 | `source` | No (V1.1+) |
 
-### Draft Status Lifecycle
+## Draft Status Lifecycle
 
 ```
   pending  →  applied
@@ -83,7 +83,7 @@ This is a governance design — not a temporary limitation. Human-in-the-loop ap
 
 ## Draft Review and Apply Model
 
-### Review Surface
+## Review Surface
 
 Drafts can be reviewed through two surfaces:
 
@@ -100,7 +100,7 @@ Drafts can be reviewed through two surfaces:
 - Human-only Apply and Discard buttons (gated by session authentication)
 - Empty state and expired draft indicators
 
-### Apply-Time Validation
+## Apply-Time Validation
 
 When a human applies a draft, these validations run and the apply is fail-closed:
 
@@ -114,7 +114,7 @@ When a human applies a draft, these validations run and the apply is fail-closed
 8. **Target URL format check** — endpoint target URL must be well-formed and non-empty
 9. **Secret material check** — proposed spec must not contain raw secrets (uses secret references)
 
-### Evidence Artifacts
+## Evidence Artifacts
 
 Each draft lifecycle event produces separate evidence artifacts:
 
@@ -136,7 +136,7 @@ Drafts have a configurable time-to-live. Expired drafts are automatically cleane
 
 ## V1 vs V1.1 Scope
 
-### V1 (Current)
+## V1 (Current)
 
 | Feature | Available |
 |---------|-----------|
@@ -148,7 +148,7 @@ Drafts have a configurable time-to-live. Expired drafts are automatically cleane
 | Draft expiry and GC | Yes |
 | MCP cannot apply (403 enforcement) | Yes |
 
-### V1.1+ (Planned)
+## V1.1+ (Planned)
 
 | Feature | Timeline |
 |---------|----------|

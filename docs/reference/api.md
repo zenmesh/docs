@@ -22,14 +22,14 @@ curl -H "X-API-Key: zen_key_..." https://api.zen-mesh.io/tenants/{tid}/clusters
 
 ## Endpoints
 
-### Session
+## Session
 
 | Method | Path | Description |
 |--------|------|-------------|
 | `POST` | `/auth/login` | Authenticate with email/password |
 | `GET` | `/me` | Get current user and tenant info |
 
-### Clusters
+## Clusters
 
 | Method | Path | Description |
 |--------|------|-------------|
@@ -39,7 +39,7 @@ curl -H "X-API-Key: zen_key_..." https://api.zen-mesh.io/tenants/{tid}/clusters
 | `DELETE` | `/tenants/{tid}/clusters/{cid}` | Delete a cluster |
 | `POST` | `/tenants/{tid}/clusters/{cid}/install-bundle` | Generate enrollment bundle |
 
-### Destinations
+## Destinations
 
 | Method | Path | Description |
 |--------|------|-------------|
@@ -49,7 +49,7 @@ curl -H "X-API-Key: zen_key_..." https://api.zen-mesh.io/tenants/{tid}/clusters
 | `PATCH` | `/tenants/{tid}/destinations/{did}` | Update a destination |
 | `DELETE` | `/tenants/{tid}/destinations/{did}` | Delete a destination |
 
-### Deliveries
+## Deliveries
 
 | Method | Path | Description |
 |--------|------|-------------|
@@ -57,7 +57,7 @@ curl -H "X-API-Key: zen_key_..." https://api.zen-mesh.io/tenants/{tid}/clusters
 | `GET` | `/tenants/{tid}/deliveries/{did}` | Get delivery details |
 | `POST` | `/tenants/{tid}/deliveries/{did}/replay` | Replay a delivery from DLQ |
 
-### API Keys
+## API Keys
 
 | Method | Path | Description |
 |--------|------|-------------|

@@ -34,7 +34,7 @@ sidebar_label: Key Concepts
 
 | Concept | Description |
 |---|---|
-| **Evidence Pack** | Consolidated JSON with proof status, refs, non-claims |
+| **Evidence Pack** | Consolidated JSON with proof status, refs../ai/evidence-v1-supersession.md#non-claims |
 | **Victory Lock** | Commit-pinned proof artifact with validation commands |
 | **Proof Ledger** | Index of all proofs with scenarios and statuses |
 | **Replay Verifier** | Validator checking all artifacts and claims guard |

@@ -1,0 +1,28 @@
+{
+  "task_id": "DOCSAI029_FINAL_EVIDENCE_LINK_ZERO_BACKLOG_SMASH_DOCS_ONLY_CLOSURE_AND_OUTSTANDING_ITEM_DECREMENT_MEGA",
+  "phase": 18,
+  "created_at": "2026-06-12T20:40:00Z",
+  "branch": "DOCSAI029-broken-link-zero",
+  "based_on_main": true,
+  "evidence_root": "/home/neves/zenmesh/docs/DOCSAI029-zen-platform/docs/80-EVIDENCE/docsai029",
+  "evidence_files": [
+    "docsai028_import_and_status_repair.json",
+    "worktree_baseline.json",
+    "broken_link_zero_proof.json",
+    "docs_owned_backlog_smash_inventory.json",
+    "legal_draft_package_completeness.json",
+    "review_queue_update.json",
+    "claim_freeze_regression.json",
+    "contact_provider_pricing_retention_regression.json",
+    "nav_sitemap_llms_final_check.json",
+    "docs_map_reader_journey_final_check.json",
+    "validation_megasuite.json",
+    "docsai_registry_backlog_delta.json"
+  ],
+  "artifacts": {
+    "manifest": "/home/neves/zenmesh/docs/DOCSAI029-zen-platform/docs/80-EVIDENCE/docsai029/manifest.json",
+    "checkpoint": "/home/neves/zenmesh/docs/DOCSAI029-zen-platform/docs/80-EVIDENCE/docsai029/checkpoint.json",
+    "merkle": "/home/neves/zenmesh/docs/DOCSAI029-zen-platform/docs/80-EVIDENCE/docsai029/merkle.json",
+    "artifact_index": "/home/neves/zenmesh/docs/DOCSAI029-zen-platform/docs/80-EVIDENCE/docsai029/artifact_index.md"
+  }
+}

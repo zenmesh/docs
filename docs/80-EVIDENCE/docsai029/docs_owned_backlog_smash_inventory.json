@@ -1,0 +1,77 @@
+{
+  "phase": 6,
+  "task": "DOCS_OWNED_BACKLOG_SMASH_INVENTORY",
+  "categories": {
+    "broken_link_cleanup": {
+      "before": 47,
+      "after": 0,
+      "evidence": "broken_link_zero_proof.json"
+    },
+    "docs_map": {
+      "status": "COMPLETED",
+      "artifact": "docs_map_post_link_repair.json (from DOCSAI028)"
+    },
+    "reader_journey": {
+      "status": "COMPLETED",
+      "artifact": "reader_journey_current.json (from DOCSAI028)"
+    },
+    "legal_draft_package": {
+      "status": "COMPLETED",
+      "count": 12,
+      "note": "All 12 legal draft pages exist and marked as DRAFT"
+    },
+    "trust_center": {
+      "status": "COMPLETED",
+      "artifact": "trust_center.md (from DOCSAI028)"
+    },
+    "signup_gate": {
+      "status": "COMPLETED",
+      "artifact": "public-signup-gate.md (from DOCSAI028)"
+    },
+    "review_queue": {
+      "status": "DOCUMENTED",
+      "artifact": "review_queue_update.json (from DOCSAI028)"
+    },
+    "claim_scan": {
+      "status": "COMPLETED",
+      "artifact": "claim_freeze_regression.json (from DOCSAI028)"
+    },
+    "nav_sitemap_llms": {
+      "status": "COMPLETED",
+      "artifact": "nav_sitemap_llms_final_check.json (from DOCSAI028)"
+    },
+    "security_responsible_disclosure": {
+      "status": "DOCUMENTED",
+      "artifact": "security-responsible-disclosure.md (from DOCSAI028)"
+    },
+    "billing_refund_plan_terms": {
+      "status": "DOCUMENTED",
+      "artifact": "billing-terms.md (from DOCSAI028)"
+    },
+    "design_partner_terms": {
+      "status": "DOCUMENTED",
+      "artifact": "design-partner-terms.md (from DOCSAI028)"
+    },
+    "retention_deletion": {
+      "status": "DOCUMENTED",
+      "artifact": "retention-lifecycle.md (from DOCSAI028)"
+    },
+    "subprocessor_scc": {
+      "status": "DOCUMENTED",
+      "artifact": "subprocessors.md and scc-transfer.md (from DOCSAI028)"
+    },
+    "public_non_overclaim_cleanup": {
+      "status": "COMPLETED",
+      "note": "All public pages have DRAFT markers"
+    },
+    "stale_docs_references": {
+      "status": "COMPLETED",
+      "artifact": "docs_map_post_link_repair.json"
+    }
+  },
+  "total_docs_owned_items": 16,
+  "docs_owned_completed": 16,
+  "docs_owned_blocked": 0,
+  "docs_owned_in_progress": 0,
+  "status": "ALL_DOCS_OWNED_BACKLOG_SMASHED"
+}

@@ -42,21 +42,21 @@ Each delivery produces a history of attempts. An attempt record includes:
 | Duration | How long the attempt took (milliseconds) |
 | Error | Connection error, timeout, or TLS error details if applicable |
 
-### Inspect Delivery Status
+## Inspect Delivery Status
 
 ```bash
 curl -H "Authorization: Bearer $ZEN_API_KEY" \
   https://api.zen-mesh.io/v1/deliveries/dlv_abc123
 ```
 
-### View Attempt History
+## View Attempt History
 
 ```bash
 curl -H "Authorization: Bearer $ZEN_API_KEY" \
   https://api.zen-mesh.io/v1/deliveries/dlv_abc123/attempts
 ```
 
-### Query by Status
+## Query by Status
 
 ```bash
 # List all exhausted events (currently in DLQ)

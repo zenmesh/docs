@@ -29,7 +29,7 @@ GitHub sends events for all repository and organization activity:
 
 ## Setting Up Delivery
 
-### 1. Create a Destination
+## 1. Create a Destination
 
 Create a destination pointing to your internal service:
 
@@ -39,7 +39,7 @@ URL: http://ci-svc:8080/webhooks/github
 Cluster: prod-us-east
 ```
 
-### 2. Configure the Delivery Flow
+## 2. Configure the Delivery Flow
 
 Set up a delivery flow that routes GitHub events to your destination. Use [JSONPath Routing](../delivery/jsonpath-routing) to filter by event type or repository:
 
@@ -54,7 +54,7 @@ Set up a delivery flow that routes GitHub events to your destination. Use [JSONP
 }
 ```
 
-### 3. Configure GitHub Webhook
+## 3. Configure GitHub Webhook
 
 In your GitHub repository (or organization), go to **Settings → Webhooks → Add webhook**:
 
@@ -64,7 +64,7 @@ In your GitHub repository (or organization), go to **Settings → Webhooks → A
 4. **Events**: Select individual events or "Send me everything"
 5. **SSL verification**: Enable (Zen Mesh supports TLS 1.3)
 
-### 4. Signature Verification
+## 4. Signature Verification
 
 GitHub signs webhook events using HMAC-SHA256 with a shared secret. Configure the secret in Zen Mesh:
 

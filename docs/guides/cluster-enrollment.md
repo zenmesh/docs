@@ -27,11 +27,11 @@ The enrollment bundle is single-use and time-limited (typically 30 minutes). If 
 
 ## Enrolling a Cluster
 
-### 1. Create the Cluster in the Dashboard
+## 1. Create the Cluster in the Dashboard
 
 Navigate to **Clusters** → **Add Cluster** → enter a name → **Create**.
 
-### 2. Generate the Install Command
+## 2. Generate the Install Command
 
 Click **Get install command** on your cluster. The modal shows a single command with two steps:
 
@@ -40,14 +40,14 @@ Click **Get install command** on your cluster. The modal shows a single command 
 
 Click **Copy all** to copy the entire command.
 
-### 3. Run on Your Cluster
+## 3. Run on Your Cluster
 
 ```bash
 # Paste the copied command into a terminal with kubectl access
 # The command applies the enrollment secret, then installs the agent
 ```
 
-### 4. Verify
+## 4. Verify
 
 - The cluster status in the dashboard changes to **Connected**
 - Agent logs show successful enrollment:

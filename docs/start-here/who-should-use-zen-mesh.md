@@ -11,7 +11,7 @@ Zen Mesh is designed for teams that need to receive webhooks and events inside p
 - **You run Kubernetes clusters behind NAT or corporate firewalls** and need to receive webhooks from Stripe, GitHub, Shopify, or custom sources.
 - **Your security team blocks inbound connections** — you need outbound-only delivery from a private cluster.
 - **You need mTLS, HMAC verification, and audit trails** for every webhook delivery.
-- **You operate in a compliance-sensitive environment** and need evidence-backed security claims with clear non-claims.
+- **You operate in a compliance-sensitive environment** and need evidence-backed security claims with clea../ai/evidence-v1-supersession.md#non-claims.
 - **You want to avoid building your own ingress proxy, relay, and monitoring infrastructure.**
 
 ## Who this is NOT for
@@ -26,6 +26,6 @@ Zen Mesh is designed for teams that need to receive webhooks and events inside p
 |---|---|
 | **Platform Engineer** | Deploys and operates the data/edge plane; configures routes and adapters |
 | **Security Engineer** | Reviews mTLS, HMAC, ZenLock trust model; inspects evidence artifacts |
-| **Compliance Reviewer** | Reviews compliance-to-feature mappings and non-claims |
-| **AI Agent / RAG System** | Reads machine-readable manifests, compliance maps, and evidence packs |
+| **Compliance Reviewer** | Reviews compliance-to-feature mappings an../ai/evidence-v1-supersession.md#non-claims |
+| **AI Agent / RAG System** | Reads machine-readable manifests../ai/evidence-v1-supersession.md#compliance-maps, and evidence packs |
 | **Operator** | Monitors deliveries, manages upgrades, handles troubleshooting |

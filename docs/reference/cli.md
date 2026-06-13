@@ -13,7 +13,7 @@ The Zen Mesh CLI provides command-line access to platform operations. Most confi
 
 ## Commands
 
-### `zen-mesh enroll`
+## `zen-mesh enroll`
 
 Generate an enrollment bundle for a cluster.
 
@@ -27,7 +27,7 @@ zen-mesh enroll --cluster my-cluster --endpoint https://api.zen-mesh.io
 | `--endpoint` | API endpoint URL | Yes |
 | `--environment` | Environment scope (production, staging) | No |
 
-### `zen-mesh status`
+## `zen-mesh status`
 
 Check the enrollment and delivery status of your cluster.
 
@@ -37,7 +37,7 @@ zen-mesh status
 
 Output includes cluster health, destination status, and recent delivery stats.
 
-### `zen-mesh destinations`
+## `zen-mesh destinations`
 
 Manage delivery destinations.
 
@@ -52,7 +52,7 @@ zen-mesh destinations show <destination-id>
 zen-mesh destinations create --name payment-svc --url http://svc:8080/webhooks
 ```
 
-### `zen-mesh deliveries`
+## `zen-mesh deliveries`
 
 Inspect and manage webhook deliveries.
 
@@ -70,7 +70,7 @@ zen-mesh deliveries attempts <delivery-id>
 zen-mesh deliveries list --status failed --last 24h
 ```
 
-### `zen-mesh replay`
+## `zen-mesh replay`
 
 Replay events from the dead-letter queue.
 
@@ -78,7 +78,7 @@ Replay events from the dead-letter queue.
 zen-mesh replay <delivery-id>
 ```
 
-### `zen-mesh sources`
+## `zen-mesh sources`
 
 Manage webhook sources.
 
@@ -90,7 +90,7 @@ zen-mesh sources list
 zen-mesh sources show <source-id>
 ```
 
-### `zen-mesh help`
+## `zen-mesh help`
 
 Show help for any command.
 

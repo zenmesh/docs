@@ -8,7 +8,7 @@ Zen Mesh provides built-in Prometheus metrics and Grafana dashboards for observa
 
 ## Built-in Metrics
 
-### Data Plane Metrics
+## Data Plane Metrics
 
 | Metric | Type | Description |
 |--------|------|-------------|
@@ -17,7 +17,7 @@ Zen Mesh provides built-in Prometheus metrics and Grafana dashboards for observa
 | `zen_ingester_deliveries_failed_total` | Counter | Failed delivery attempts |
 | `zen_ingester_dlq_size` | Gauge | Current dead letter queue depth |
 
-### Edge Plane Metrics
+## Edge Plane Metrics
 
 | Metric | Type | Description |
 |--------|------|-------------|
@@ -25,7 +25,7 @@ Zen Mesh provides built-in Prometheus metrics and Grafana dashboards for observa
 | `zen_egress_connections_active` | Gauge | Active mTLS connections |
 | `zen_egress_events_delivered_total` | Counter | Events delivered to local targets |
 
-### Infrastructure Metrics
+## Infrastructure Metrics
 
 | Metric | Type | Description |
 |--------|------|-------------|

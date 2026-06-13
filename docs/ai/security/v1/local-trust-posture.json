@@ -1,0 +1,6 @@
+{
+  "document_type": "local_trust_posture",
+  "superseded_by": "ai/security-posture.md",
+  "version": "v1-supersession",
+  "status": "DRAFT"
+}

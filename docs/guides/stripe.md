@@ -29,7 +29,7 @@ Stripe sends events across all API resources. Common event categories include:
 
 ## Setting Up Delivery
 
-### 1. Create a Destination
+## 1. Create a Destination
 
 Create a destination pointing to your internal service:
 
@@ -41,11 +41,11 @@ URL: http://payment-svc:8080/webhooks/stripe
 
 See [Destinations](./destinations) for destination configuration details.
 
-### 2. Configure the Delivery Flow
+## 2. Configure the Delivery Flow
 
 Set up a delivery flow that routes Stripe events to your destination. You can filter by event type, apply [JSONPath routing](../delivery/jsonpath-routing) rules, and set per-destination delivery policies.
 
-### 3. Configure Stripe Webhook Endpoint
+## 3. Configure Stripe Webhook Endpoint
 
 In the Stripe Dashboard, go to **Developers → Webhooks** and add an endpoint:
 
@@ -53,7 +53,7 @@ In the Stripe Dashboard, go to **Developers → Webhooks** and add an endpoint:
 2. **Events**: Select the event types you want to receive
 3. **API version**: Keep your account's default or pin a specific version
 
-### 4. Signature Verification
+## 4. Signature Verification
 
 Stripe signs webhook events with a secret key. Configure signing secret validation in Zen Mesh to reject unsigned or tampered requests:
 

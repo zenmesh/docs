@@ -1,0 +1,30 @@
+# LLM Index for Zen Mesh
+
+This is a draft discovery index for AI and human reviewers.
+
+**Status:** DRAFT - NOT EFFECTIVE - REVIEW PENDING
+
+## Overview
+
+This document is a draft discovery index for large language models and human reviewers to discover relevant pages.
+
+## Categories
+
+### Getting Started
+- start-here/what-is-zen-mesh.md
+- start-here/current-status.md
+- guides/quick-start.md
+
+### Architecture
+- architecture/overview.md
+- architecture/three-plane-model.md
+- architecture/security-model.md
+
+### API
+- api/webhooks.md
+- api/messaging.md
+
+### Documentation
+- docs/
+
+**Document Status:** DRAFT - NOT EFFECTIVE - REVIEW PENDING

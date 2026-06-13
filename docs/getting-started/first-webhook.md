@@ -40,7 +40,7 @@ https://ingest.zen-mesh.io/hooks/<hook-id>
 
 ## Configure Your Webhook Source
 
-### Stripe
+## Stripe
 
 1. Go to Stripe Dashboard → Developers → Webhooks
 2. Click **Add endpoint**
@@ -48,7 +48,7 @@ https://ingest.zen-mesh.io/hooks/<hook-id>
 4. Select events: `payment_intent.succeeded`, `invoice.paid`
 5. Click **Create endpoint**
 
-### GitHub
+## GitHub
 
 1. Go to your repository → Settings → Webhooks → Add webhook
 2. Paste the Zen Mesh ingestion URL
@@ -56,7 +56,7 @@ https://ingest.zen-mesh.io/hooks/<hook-id>
 4. Select events: `push`, `pull_request`
 5. Click **Add webhook**
 
-### Generic cURL Test
+## Generic cURL Test
 
 ```bash
 curl -X POST "https://ingest.zen-mesh.io/hooks/<hook-id>" \

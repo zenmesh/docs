@@ -76,8 +76,8 @@ SPIFFE/SPIRE is part of the Zen Mesh security architecture:
 
 ## Related Pages
 
-- [Agent → SaaS mTLS Details](/docs/security/agent-saas-mtls)
-- [ZenLock and Credential Lifecycle Ownership](/docs/security/zenlock-credential-lifecycle)
+- [Agent → SaaS mTLS Details](./agent-saas-mtls)
+- [ZenLock and Credential Lifecycle Ownership](./zenlock-credential-lifecycle)
 - [Security Mechanism Operational Matrix](https://github.com/zenmesh/zen-platform/blob/main/docs/30-SECURITY/SECURITY_MECHANISM_OPERATIONAL_MATRIX.md)
 
 ## AI/RAG Summary
