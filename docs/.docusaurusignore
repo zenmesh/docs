@@ -5,3 +5,23 @@ legal_draft_package_completeness.json
 broken_link_zero_proof.json
 worktree_baseline.json
 review_queue_update.json
+
+# DOCSAI030 evidence files
+checkpoint.json
+review_queue_update.json
+docs_map_reader_journey_final_check.json
+docsai_registry_backlog_delta.json
+docs_owned_backlog_smash_inventory.json
+merkle.json
+nav_sitemap_llms_final_check.json
+contact_provider_pricing_retention_regression.json
+legal_draft_package_completeness.json
+claim_freeze_regression.json
+worktree_baseline.json
+manifest.json
+validation_megasuite.json
+broken_link_zero_proof.json
+
+# DOCSAI030 report artifacts (not for build)
+artifact_index.md
+FINAL_REPORT.md

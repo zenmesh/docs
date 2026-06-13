@@ -1,8 +1,8 @@
 {
   "task_id": "DOCSAI029_FINAL_EVIDENCE_LINK_ZERO_BACKLOG_SMASH_DOCS_ONLY_CLOSURE_AND_OUTSTANDING_ITEM_DECREMENT_MEGA",
-  "root_hash": "dd73ca3ce845fb62",
-  "evidence_files_count": 12,
-  "artifacts_count": 4,
-  "broken_links_fixed": 47,
-  "legal_drafts_created": 12
+  "merkle_method": "sha256_of_all_docs_markdown_files_contents",
+  "files_count": 122,
+  "root_hash": "b3c1143f96d7d41f4e5ca3d0c07a8243e1baecc6f093f5a91b933f181f451e42",
+  "root_hash_prefix": "b3c1143f96d7d41f",
+  "timestamp": "2026-06-12T21:00:00Z"
 }
