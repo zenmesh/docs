@@ -1,0 +1,23 @@
+{
+  "task_id": "DOCSAI036_RECONCILE_STALE_DOCS_WITH_CURRENT_PRODUCT_TRUTH_EDGE_LITE_SELF_SERVE_FLOW03_MCP",
+  "route": "DocsAI",
+  "item_id": "DOCSAI036",
+  "status": "DONE",
+  "started_at": "2026-06-19T00:05:00Z",
+  "completed_at": "2026-06-19T00:06:00Z",
+  "worktree": "docs=/home/neves/zenmesh/docs/DOCSAI036-zen-platform",
+  "branch": "DOCSAI036-current-product-truth-docs-reconciliation",
+  "evidence_dir": "docs/80-EVIDENCE/docsai036",
+  "evidence_files": [
+    "stale_docs_inventory.json",
+    "edge_lite_truth_reconciliation.md",
+    "self_serve_v1_roadmap_reconciliation.md",
+    "flow03_truth_reconciliation.md",
+    "mcp_v1_truth_reconciliation.md",
+    "registry_or_roadmap_patch.json",
+    "count_delta.json",
+    "merkle.json",
+    "checkpoint.json",
+    "manifest.json"
+  ]
+}

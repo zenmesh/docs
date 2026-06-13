@@ -1,0 +1,81 @@
+{
+  "task_id": "DOCSAI036_RECONCILE_STALE_DOCS_WITH_CURRENT_PRODUCT_TRUTH_EDGE_LITE_SELF_SERVE_FLOW03_MCP",
+  "route": "DocsAI",
+  "version": "1.0",
+  "created_at": "2026-06-19T00:05:00Z",
+  "worktree_root": "/home/neves/zenmesh/docs/DOCSAI036-zen-platform",
+  "evidence_directory": "docs/80-EVIDENCE/docsai036",
+  "artifacts": [
+    {
+      "name": "stale_docs_inventory.json",
+      "path": "docs/80-EVIDENCE/docsai036/stale_docs_inventory.json",
+      "type": "inventory",
+      "purpose": "Categorization of stale claims found and corrected"
+    },
+    {
+      "name": "edge_lite_truth_reconciliation.md",
+      "path": "docs/80-EVIDENCE/docsai036/edge_lite_truth_reconciliation.md",
+      "type": "truth_reconciliation",
+      "purpose": "Edge Lite documentation correctness verification"
+    },
+    {
+      "name": "self_serve_v1_roadmap_reconciliation.md",
+      "path": "docs/80-EVIDENCE/docsai036/self_serve_v1_roadmap_reconciliation.md",
+      "type": "truth_reconciliation",
+      "purpose": "Self-serve V1 roadmap scope verification"
+    },
+    {
+      "name": "flow03_truth_reconciliation.md",
+      "path": "docs/80-EVIDENCE/docsai036/flow03_truth_reconciliation.md",
+      "type": "truth_reconciliation",
+      "purpose": "FLOW-03 proof status verification"
+    },
+    {
+      "name": "mcp_v1_truth_reconciliation.md",
+      "path": "docs/80-EVIDENCE/docsai036/mcp_v1_truth_reconciliation.md",
+      "type": "truth_reconciliation",
+      "purpose": "MCP V1 scope verification"
+    },
+    {
+      "name": "registry_or_roadmap_patch.json",
+      "path": "docs/80-EVIDENCE/docsai036/registry_or_roadmap_patch.json",
+      "type": "registry_patch",
+      "purpose": "Documentation reconciliation summary"
+    },
+    {
+      "name": "count_delta.json",
+      "path": "docs/80-EVIDENCE/docsai036/count_delta.json",
+      "type": "count_delta",
+      "purpose": "Item count tracking (no decrement, docs reconciliation only)"
+    },
+    {
+      "name": "merkle.json",
+      "path": "docs/80-EVIDENCE/docsai036/merkle.json",
+      "type": "integrity",
+      "purpose": "Evidence integrity hash"
+    },
+    {
+      "name": "checkpoint.json",
+      "path": "docs/80-EVIDENCE/docsai036/checkpoint.json",
+      "type": "metadata",
+      "purpose": "Task checkpoint metadata"
+    },
+    {
+      "name": "manifest.json",
+      "path": "docs/80-EVIDENCE/docsai036/manifest.json",
+      "type": "metadata",
+      "purpose": "Artifact manifest"
+    }
+  ],
+  "validation": {
+    "docs_build": "PASS",
+    "broken_links": 0,
+    "claim_scan": "PASS",
+    "stale_phrase_scan": "PASS",
+    "markdown": "PASS",
+    "json": "PASS",
+    "no_runtime_changes": "PASS",
+    "no_deploy_changes": "PASS",
+    "no_unsupported_claims": "PASS"
+  }
+}

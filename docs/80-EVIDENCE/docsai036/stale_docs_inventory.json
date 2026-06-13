@@ -1,0 +1,65 @@
+{
+  "summary": {
+    "total_docs_reviewed": 15,
+    "docs_updated": 0,
+    "docs_superseded": 0,
+    "roadmap_fields_added": false
+  },
+  "stale_claims_found": [
+    {
+      "category": "edge_lite",
+      "claim": "Edge Lite not started / not implemented",
+      "source": "docs/ai/edge-lite.md",
+      "corrected_truth": "Edge Lite is wired and documented. 13 proofs documented as PASS (H484-H499). No prod-live claims.",
+      "evidence": "docs/ai/capability-evidence.md lists Edge Lite proofs with status PASS and non-claims section",
+      "action": "NONE - documentation is current and accurate",
+      "issue": null
+    },
+    {
+      "category": "flow03",
+      "claim": "FLOW-03 unproven or absent",
+      "source": "docs/evidence/overview.md, docs/start-here/current-status.md",
+      "corrected_truth": "FLOW-03 documented as VALIDATED PASS (sandbox) and Stripe E2E GKE\u2192k3d as VALIDATED PASS (demo). No generic FLOW-03 full-pass production claim.",
+      "evidence": "docs/evidence/overview.md lines 47-55 show FLOW-03 VALIDATED PASS with caveats",
+      "action": "NONE - documentation accurately reflects prior proof",
+      "issue": null
+    },
+    {
+      "category": "mcp_v1",
+      "claim": "MCP apply V1 / RW tools claimed as V1",
+      "source": "docs/mcp/authentication.md",
+      "corrected_truth": "MCP V1 read-only supported. RW tools (create_api_key, revoke_api_key) require admin scope and are not on default surface.",
+      "evidence": "docs/mcp/authentication.md lines 25-37 document default read-only surface and admin tools separately",
+      "action": "NONE - documentation accurate",
+      "issue": null
+    },
+    {
+      "category": "tenant_auto_create",
+      "claim": "Tenant auto-create not implemented",
+      "source": "Not found in current docs",
+      "corrected_truth": "Documentation does not claim tenant auto-create as a product feature; claims are appropriately scoped to runtime proofs.",
+      "evidence": "No stale claims found in current docs",
+      "action": "NONE - no issues found",
+      "issue": null
+    },
+    {
+      "category": "docs_legal",
+      "claim": "docs/legal canonical",
+      "source": "Not found in current docs",
+      "corrected_truth": "docs/legal/ references not found in current docs. Migration to docs/20-POLICY/ appears complete.",
+      "evidence": "Search for 'docs/legal/' returned 0 results",
+      "action": "NONE - no issues found",
+      "issue": null
+    }
+  ],
+  "check_notes": {
+    "edge_lite_not_started": "NOT FOUND - Edge Lite correctly documented as design-partner evaluation",
+    "no_edge_lite_runtime": "NOT FOUND - Edge Lite runtime documented with proofs",
+    "no_docker_compose": "NOT FOUND - Docker installation documented",
+    "self_serve_future_only": "NOT FOUND - self-serve scope correctly scoped",
+    "flow03_unproven": "NOT FOUND - FLOW-03 documented as validated PASS",
+    "tenant_auto_create_not_implemented": "NOT FOUND - no such claim in docs",
+    "mcp_apply_v1": "NOT FOUND - MCP correctly scoped to read-only",
+    "docs_legal_canonical": "NOT FOUND - docs/legal references absent"
+  }
+}

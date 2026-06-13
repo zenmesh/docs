@@ -1,0 +1,62 @@
+{
+  "type": "documentation_reconciliation",
+  "task_id": "DOCSAI036_RECONCILE_STALE_DOCS_WITH_CURRENT_PRODUCT_TRUTH_EDGE_LITE_SELF_SERVE_FLOW03_MCP",
+  "description": "Reconciliation of docs with current accepted product truth",
+  "created_at": "2026-06-19T00:05:00Z",
+  "summary": {
+    "total_docs_reviewed": 15,
+    "stale_claims_found": 0,
+    "stale_claims_corrected": 0,
+    "roadmap_fields_added": false,
+    "registry_patches": 0
+  },
+  "reconciliations": [
+    {
+      "category": "edge_lite",
+      "status": "CORRECT",
+      "notes": "docs/ai/edge-lite.md and docs/ai/capability-evidence.md accurately document Edge Lite as design-partner evaluation with 13 PASS proofs. No stale 'not started' or 'contract-only only' claims found."
+    },
+    {
+      "category": "self_serve",
+      "status": "CORRECT",
+      "notes": "docs/architecture/three-plane-model.md correctly scopes self-serve within V1 roadmap. No 'self-serve future-only' or 'separate track' claims found."
+    },
+    {
+      "category": "flow03",
+      "status": "CORRECT",
+      "notes": "docs/evidence/overview.md and docs/start-here/current-status.md accurately document FLOW-03 as VALIDATED PASS (sandbox) and Stripe E2E as VALIDATED PASS (demo). Prior proof accepted; architecture_reopened=false."
+    },
+    {
+      "category": "mcp_v1",
+      "status": "CORRECT",
+      "notes": "docs/mcp/authentication.md correctly documents MCP V1 read-only surface. RW/apply tools correctly scoped to admin only, not V1."
+    },
+    {
+      "category": "tenant_auto_create",
+      "status": "NOT_FOUND",
+      "notes": "No stale claims about tenant auto-create not implemented found in current docs."
+    },
+    {
+      "category": "docs_legal",
+      "status": "CLEARED",
+      "notes": "Search for 'docs/legal/' references returned 0 results. Migration to docs/20-POLICY/ appears complete."
+    }
+  ],
+  "phrase_scans": {
+    "edge_lite_not_started": "NOT_FOUND",
+    "no_edge_lite_runtime": "NOT_FOUND",
+    "no_docker_compose": "NOT_FOUND",
+    "self_serve_future_only": "NOT_FOUND",
+    "flow03_unproven": "NOT_FOUND",
+    "tenant_auto_create_not_implemented": "NOT_FOUND",
+    "mcp_apply_v1": "NOT_FOUND",
+    "docs_legal_canonical": "NOT_FOUND"
+  },
+  "no_unsupported_claims": true,
+  "documentation_scope": {
+    "no_runtime_changes": true,
+    "no_deploy_changes": true,
+    "no_public_site_changes": true,
+    "no_legal_live_claims": true
+  }
+}
