@@ -1,0 +1,16 @@
+{
+  "task_id": "DOCSAI031_NO_DEPENDENCY_DOCS_CONTENT_TRUST_BACKLOG_CLOSURE_NEXT_25_SMALL",
+  "generated_at": "2026-06-13T01:31:20.085737+00:00",
+  "before_remaining": 240,
+  "local_counts_global_truth": false,
+  "note": "Formal 240 count remains until Helper reconciles. This is DocsAI local delta only.",
+  "decrement_proposed": 2,
+  "items_retagged_not_decremented": {
+    "LEGAL_REVIEW": 3,
+    "LEONARDO_DECISION": 8,
+    "HERMES_DEPENDENCY": 12
+  },
+  "projected_remaining": 238,
+  "projection_confidence": "LOW",
+  "projection_note": "Local delta only. Global truth requires Helper reconciliation against full 251-item registry."
+}

@@ -1,0 +1,25 @@
+{
+  "task_id": "DOCSAI031_NO_DEPENDENCY_DOCS_CONTENT_TRUST_BACKLOG_CLOSURE_NEXT_25_SMALL",
+  "generated_at": "2026-06-13T01:34:17.753458+00:00",
+  "route": "DocsAI",
+  "worktree_docs": "/home/neves/zenmesh/docs/DOCSAI031-zen-platform",
+  "worktree_site": "/home/neves/zenmesh/worktrees/DOCSAI031-zen-mesh.io",
+  "branch": "DOCSAI031-no-dependency-docs-content-trust-backlog",
+  "based_on_main": true,
+  "isolated": true,
+  "evidence_dir": "docs/80-EVIDENCE/docsai031",
+  "merkle_root": "e48774700d7a9aca219a5ac227816234d7e855aadd823bde186cf9aea63bb6a9",
+  "artifacts": [
+    "docsai031_candidate_list.json",
+    "docsai031_closure_decision_table.json",
+    "docsai031_registry_patch_proposal.json",
+    "docsai031_dependency_tags.json",
+    "docsai031_count_delta.json",
+    "docsai031_claim_scan.json",
+    "legal_scan.json",
+    "validation_manifest.json",
+    "manifest.json",
+    "checkpoint.json",
+    "merkle.json"
+  ]
+}

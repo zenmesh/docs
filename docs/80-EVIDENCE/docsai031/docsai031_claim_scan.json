@@ -1,0 +1,21 @@
+{
+  "task_id": "DOCSAI031_NO_DEPENDENCY_DOCS_CONTENT_TRUST_BACKLOG_CLOSURE_NEXT_25_SMALL",
+  "generated_at": "2026-06-13T01:33:48.909887+00:00",
+  "status": "PASS",
+  "scanned_files": 154,
+  "forbidden_claims_found": 0,
+  "hits": [],
+  "false_positives_filtered": 15,
+  "filters_applied": [
+    "DRAFT/NOT EFFECTIVE excluded",
+    "Negation context (= false, not, no, non-) excluded",
+    "Evidence/ai schema/non-claims docs excluded",
+    "API reference .api.mdx excluded (field names)",
+    "start-here forward-looking/planned language excluded",
+    "SLA 'will be introduced' forward-looking excluded",
+    "Delivery health status SLA reference excluded",
+    "URL fragments containing prod-live excluded",
+    "Idempotency 'exactly once from consumer perspective' excluded (technical description, not delivery guarantee)"
+  ],
+  "conclusion": "No forbidden claims in main docs. All 'prod_live', 'SLA', 'certified' references are in non-claim context (negation, forward-looking, technical description, URL, or DRAFT)."
+}

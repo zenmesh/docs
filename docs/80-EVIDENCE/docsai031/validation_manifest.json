@@ -1,0 +1,30 @@
+{
+  "task_id": "DOCSAI031_NO_DEPENDENCY_DOCS_CONTENT_TRUST_BACKLOG_CLOSURE_NEXT_25_SMALL",
+  "generated_at": "2026-06-13T01:34:17.753067+00:00",
+  "validations": {
+    "docs_build": "PASS",
+    "site_build": "NA",
+    "broken_links": 0,
+    "claim_scan": "PASS",
+    "legal_scan": "PASS",
+    "json_schema": "PASS",
+    "no_runtime_changes": true,
+    "no_deploy_changes": true,
+    "no_unsupported_claims": true,
+    "merkle_present": true,
+    "checkpoint_present": true
+  },
+  "evidence_files": [
+    "docsai031_candidate_list.json",
+    "docsai031_closure_decision_table.json",
+    "docsai031_registry_patch_proposal.json",
+    "docsai031_dependency_tags.json",
+    "docsai031_count_delta.json",
+    "docsai031_claim_scan.json",
+    "legal_scan.json",
+    "validation_manifest.json",
+    "manifest.json",
+    "checkpoint.json",
+    "merkle.json"
+  ]
+}

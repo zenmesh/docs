@@ -1,0 +1,11 @@
+{
+  "task_id": "DOCSAI031_NO_DEPENDENCY_DOCS_CONTENT_TRUST_BACKLOG_CLOSURE_NEXT_25_SMALL",
+  "generated_at": "2026-06-13T01:34:17.753420+00:00",
+  "route": "DocsAI",
+  "phase": "backlog_closure",
+  "status": "ARTIFACTS_COMPLETE",
+  "evidence_dir": "docs/80-EVIDENCE/docsai031",
+  "merkle_root": "e48774700d7a9aca219a5ac227816234d7e855aadd823bde186cf9aea63bb6a9",
+  "files_generated": 11,
+  "next_action": "Commit, push, report"
+}

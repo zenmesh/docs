@@ -1,0 +1,41 @@
+{
+  "task_id": "DOCSAI031_NO_DEPENDENCY_DOCS_CONTENT_TRUST_BACKLOG_CLOSURE_NEXT_25_SMALL",
+  "generated_at": "2026-06-13T01:34:17.753332+00:00",
+  "algorithm": "sha256",
+  "merkle_root": "e48774700d7a9aca219a5ac227816234d7e855aadd823bde186cf9aea63bb6a9",
+  "leaf_count": 8,
+  "leaves": [
+    {
+      "file": "docsai031_candidate_list.json",
+      "sha256": "a019bc47938adbaba4147abe6d7e75bc09a3c5ddc9672cf73e4f6ea855c18f0b"
+    },
+    {
+      "file": "docsai031_closure_decision_table.json",
+      "sha256": "722792cb251063233036c9aba6315e80a36f5fd6d9805b7cede126c03810d8bb"
+    },
+    {
+      "file": "docsai031_registry_patch_proposal.json",
+      "sha256": "2f2d5c3b718fb2a9bc9828145a1d0e6d7539497a678805b123fda78650e2c054"
+    },
+    {
+      "file": "docsai031_dependency_tags.json",
+      "sha256": "0eed6030e9715272365212ec6a8615ae15fe2503e2c369d8ec8106b22069de93"
+    },
+    {
+      "file": "docsai031_count_delta.json",
+      "sha256": "ebbd192363dc291789be921734d5482b64e51745f3c62efadc2125bb130a0f5d"
+    },
+    {
+      "file": "docsai031_claim_scan.json",
+      "sha256": "3413126c4e3383989c34ae6716662037a13c0099b59464e055f26e48143207d8"
+    },
+    {
+      "file": "legal_scan.json",
+      "sha256": "14c704880ea9669ab58999bf116b2b239aebee00a971f37c14ec218908d1bc6f"
+    },
+    {
+      "file": "validation_manifest.json",
+      "sha256": "1861b8ad773be5073c11fe5deef5cabc30effe1124d19de38d712b38c28745fd"
+    }
+  ]
+}

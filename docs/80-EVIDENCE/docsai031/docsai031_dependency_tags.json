@@ -1,0 +1,265 @@
+{
+  "task_id": "DOCSAI031_NO_DEPENDENCY_DOCS_CONTENT_TRUST_BACKLOG_CLOSURE_NEXT_25_SMALL",
+  "generated_at": "2026-06-13T01:31:03.267243+00:00",
+  "total_tagged": 23,
+  "by_tag": {
+    "HERMES_DEPENDENCY": 12,
+    "LEONARDO_DECISION": 8,
+    "LEGAL_REVIEW": 3
+  },
+  "tags": [
+    {
+      "item_id": "CT-008",
+      "title": "Responsible disclosure / security contact",
+      "current_owner": "Business",
+      "category": "CT",
+      "priority": "P0",
+      "tag": "LEGAL_REVIEW",
+      "blocking_deps": "NONE",
+      "rationale": "Content drafted and published. Requires legal sign-off on process language. Not DONE because legal approval pending.",
+      "lane_handoff": "Legal counsel"
+    },
+    {
+      "item_id": "CT-003",
+      "title": "Subprocessors/infrastructure statement",
+      "current_owner": "Legal",
+      "category": "CT",
+      "priority": "P1",
+      "tag": "LEGAL_REVIEW",
+      "blocking_deps": "NONE",
+      "rationale": "Subprocessor list drafted with DRAFT marker. Legal must approve list accuracy and SCC transfer language.",
+      "lane_handoff": "Legal counsel"
+    },
+    {
+      "item_id": "PC-004",
+      "title": "Terms/privacy/security docs",
+      "current_owner": "Helper",
+      "category": "L",
+      "priority": "P1",
+      "tag": "LEGAL_REVIEW",
+      "blocking_deps": "NONE",
+      "rationale": "Full Commercial Trust Pack exists as internal drafts. Cannot mark DONE \u2014 all 12 require legal approval before effective.",
+      "lane_handoff": "Legal counsel"
+    },
+    {
+      "item_id": "PC-002",
+      "title": "Pricing readiness",
+      "current_owner": "Helper",
+      "category": "L",
+      "priority": "P1",
+      "tag": "LEONARDO_DECISION",
+      "blocking_deps": "NONE",
+      "rationale": "Draft pricing docs and billing terms exist. Pricing page published on zen-mesh.io. But pricing model is a Leonardo business decision \u2014 cannot finalize without approval.",
+      "lane_handoff": "Leonardo (product/business decision)"
+    },
+    {
+      "item_id": "PC-003",
+      "title": "Support readiness",
+      "current_owner": "Helper",
+      "category": "L",
+      "priority": "P1",
+      "tag": "LEONARDO_DECISION",
+      "blocking_deps": "NONE",
+      "rationale": "Support page exists but PC-003 memory says no responder/SLA operational. Requires Leonardo decision on support model before DONE.",
+      "lane_handoff": "Leonardo (product/business decision)"
+    },
+    {
+      "item_id": "PC-005",
+      "title": "Pilot scope definition",
+      "current_owner": "Helper",
+      "category": "L",
+      "priority": "P1",
+      "tag": "LEONARDO_DECISION",
+      "blocking_deps": "PC-002 (PARTIAL)",
+      "rationale": "Pilot scope documented but depends on pricing model (PC-002) which is a Leonardo decision. Cannot finalize pilot scope without pricing approval.",
+      "lane_handoff": "Leonardo (product/business decision)"
+    },
+    {
+      "item_id": "PC-006",
+      "title": "Customer-ready criteria",
+      "current_owner": "Helper",
+      "category": "L",
+      "priority": "P1",
+      "tag": "HERMES_DEPENDENCY",
+      "blocking_deps": "PC-005, PC-002 (both PARTIAL)",
+      "rationale": "MISSING artifact. Depends on PC-005 (Leonardo decision) and PC-002 (Leonardo decision). Cannot create customer-ready criteria without pricing and pilot scope finalized. Tag HERMES_DEPENDENCY for Helper lane.",
+      "lane_handoff": "Hermes runtime lane (currently H751)"
+    },
+    {
+      "item_id": "PC-007",
+      "title": "Production-live criteria",
+      "current_owner": "Helper",
+      "category": "L",
+      "priority": "P1",
+      "tag": "HERMES_DEPENDENCY",
+      "blocking_deps": "NONE",
+      "rationale": "MISSING artifact. Production-live criteria requires runtime proof completion (Hermes lane H751+). Cannot define prod-live criteria without knowing runtime status. Tag HERMES_DEPENDENCY.",
+      "lane_handoff": "Hermes runtime lane (currently H751)"
+    },
+    {
+      "item_id": "DL-001",
+      "title": "Payload retention policy",
+      "current_owner": "Hermes",
+      "category": "DL",
+      "priority": "P0",
+      "tag": "HERMES_DEPENDENCY",
+      "blocking_deps": "AC-010 (DONE)",
+      "rationale": "Draft retention lifecycle doc exists but policy requires runtime implementation. Owner is Hermes. Payload retention needs TTL auto-purge in runtime. HERMES_DEPENDENCY.",
+      "lane_handoff": "Hermes runtime lane (currently H751)"
+    },
+    {
+      "item_id": "DL-002",
+      "title": "Logs retention policy",
+      "current_owner": "Hermes",
+      "category": "DL",
+      "priority": "P0",
+      "tag": "HERMES_DEPENDENCY",
+      "blocking_deps": "OBS-003 (DONE), ST-006 (DONE)",
+      "rationale": "All deps DONE. Draft retention doc exists. But logs retention requires runtime log rotation/TTL implementation. Owner=Hermes. HERMES_DEPENDENCY.",
+      "lane_handoff": "Hermes runtime lane (currently H751)"
+    },
+    {
+      "item_id": "DL-004",
+      "title": "DLQ/replay retention policy",
+      "current_owner": "Hermes",
+      "category": "DL",
+      "priority": "P1",
+      "tag": "HERMES_DEPENDENCY",
+      "blocking_deps": "ED-006 (PARTIAL, nanobot)",
+      "rationale": "Dep ED-006 is nanobot (install stage), not pure docs. DLQ retention needs runtime implementation. HERMES_DEPENDENCY.",
+      "lane_handoff": "Hermes runtime lane (currently H751)"
+    },
+    {
+      "item_id": "DL-005",
+      "title": "Tenant/customer deletion process",
+      "current_owner": "Hermes",
+      "category": "DL",
+      "priority": "P0",
+      "tag": "HERMES_DEPENDENCY",
+      "blocking_deps": "AC-003 (DONE), DL-001 (NOT_STARTED), DL-002 (NOT_STARTED)",
+      "rationale": "Owner=Hermes. Deletion requires runtime cascade-delete across payloads, logs, evidence. Deps DL-001, DL-002 both HERMES_DEPENDENCY. HERMES_DEPENDENCY.",
+      "lane_handoff": "Hermes runtime lane (currently H751)"
+    },
+    {
+      "item_id": "DL-006",
+      "title": "Export/delete request process",
+      "current_owner": "Business",
+      "category": "DL",
+      "priority": "P0",
+      "tag": "HERMES_DEPENDENCY",
+      "blocking_deps": "DL-005 (NOT_STARTED)",
+      "rationale": "Dep DL-005 is HERMES_DEPENDENCY. Export/delete requires runtime data export pipeline. HERMES_DEPENDENCY.",
+      "lane_handoff": "Hermes runtime lane (currently H751)"
+    },
+    {
+      "item_id": "DL-007",
+      "title": "PII/redaction policy",
+      "current_owner": "Hermes",
+      "category": "DL",
+      "priority": "P0",
+      "tag": "HERMES_DEPENDENCY",
+      "blocking_deps": "ST-006 (DONE), DL-002 (NOT_STARTED)",
+      "rationale": "Owner=Hermes. PII redaction is a runtime feature (field masking in logs, evidence, support views). HERMES_DEPENDENCY.",
+      "lane_handoff": "Hermes runtime lane (currently H751)"
+    },
+    {
+      "item_id": "DL-008",
+      "title": "Fields never logged",
+      "current_owner": "Hermes",
+      "category": "DL",
+      "priority": "P0",
+      "tag": "HERMES_DEPENDENCY",
+      "blocking_deps": "ST-006 (DONE), ST-007 (DONE)",
+      "rationale": "Owner=Hermes. 'Fields never logged' is a runtime constraint enforced by code validators. HERMES_DEPENDENCY.",
+      "lane_handoff": "Hermes runtime lane (currently H751)"
+    },
+    {
+      "item_id": "DL-009",
+      "title": "Support/debug view redaction",
+      "current_owner": "Hermes",
+      "category": "DL",
+      "priority": "P1",
+      "tag": "HERMES_DEPENDENCY",
+      "blocking_deps": "DL-007 (NOT_STARTED), DL-008 (NOT_STARTED)",
+      "rationale": "Owner=Hermes. Both deps HERMES_DEPENDENCY. Debug view redaction is runtime UI code. HERMES_DEPENDENCY.",
+      "lane_handoff": "Hermes runtime lane (currently H751)"
+    },
+    {
+      "item_id": "CT-002",
+      "title": "Data handling statement",
+      "current_owner": "Legal",
+      "category": "CT",
+      "priority": "P0",
+      "tag": "HERMES_DEPENDENCY",
+      "blocking_deps": "DL-001 (NOT_STARTED), DL-007 (NOT_STARTED)",
+      "rationale": "Owner=Legal but deps DL-001, DL-007 are both HERMES_DEPENDENCY. Data handling statement needs runtime policies defined. HERMES_DEPENDENCY.",
+      "lane_handoff": "Hermes runtime lane (currently H751)"
+    },
+    {
+      "item_id": "CT-009",
+      "title": "Terms/privacy/DPA status",
+      "current_owner": "Legal",
+      "category": "CT",
+      "priority": "P0",
+      "tag": "HERMES_DEPENDENCY",
+      "blocking_deps": "DL-006 (NOT_STARTED)",
+      "rationale": "DRAFT content exists. Legal owner. But dep DL-006 (export/delete process) is HERMES_DEPENDENCY. Terms cannot be effective without export/delete capability. HERMES_DEPENDENCY.",
+      "lane_handoff": "Hermes runtime lane (currently H751)"
+    },
+    {
+      "item_id": "LAUNCH-001",
+      "title": "Tenant plan tiers and pricing model",
+      "current_owner": "product",
+      "category": "LR",
+      "priority": "P0",
+      "tag": "LEONARDO_DECISION",
+      "blocking_deps": "LABELS-003 (DONE)",
+      "rationale": "Dep LABELS-003 DONE. Pricing page exists. But plan tiers and pricing model is a core product decision requiring Leonardo sign-off.",
+      "lane_handoff": "Leonardo (product/business decision)"
+    },
+    {
+      "item_id": "LAUNCH-002",
+      "title": "Trial period and sandbox limits",
+      "current_owner": "product",
+      "category": "LR",
+      "priority": "P0",
+      "tag": "LEONARDO_DECISION",
+      "blocking_deps": "LAUNCH-001 (NOT_STARTED)",
+      "rationale": "Dep LAUNCH-001 (pricing model) is LEONARDO_DECISION. Trial limits derive from pricing. Product decision.",
+      "lane_handoff": "Leonardo (product/business decision)"
+    },
+    {
+      "item_id": "LAUNCH-003",
+      "title": "Enterprise features and SLA model",
+      "current_owner": "product",
+      "category": "LR",
+      "priority": "P1",
+      "tag": "LEONARDO_DECISION",
+      "blocking_deps": "LAUNCH-001 (NOT_STARTED), LABELS-006 (DONE)",
+      "rationale": "Dep LAUNCH-001 (pricing) is LEONARDO_DECISION. SLA model is a business commitment requiring Leonardo approval. Cannot claim DONE.",
+      "lane_handoff": "Leonardo (product/business decision)"
+    },
+    {
+      "item_id": "LAUNCH-004",
+      "title": "Data residency and region selection",
+      "current_owner": "platform",
+      "category": "LR",
+      "priority": "P1",
+      "tag": "LEONARDO_DECISION",
+      "blocking_deps": "NONE",
+      "rationale": "No region canonical per memory. Data residency is a product/infra decision requiring Leonardo direction. Cannot claim DONE without region selection.",
+      "lane_handoff": "Leonardo (product/business decision)"
+    },
+    {
+      "item_id": "LAUNCH-005",
+      "title": "Onboarding flow and first-run experience",
+      "current_owner": "product",
+      "category": "LR",
+      "priority": "P1",
+      "tag": "LEONARDO_DECISION",
+      "blocking_deps": "LAUNCH-001 (NOT_STARTED), LAUNCH-002 (NOT_STARTED)",
+      "rationale": "Both deps LEONARDO_DECISION. Onboarding UX is a product design decision. HERMES_DEPENDENCY would also apply (runtime signup flow). Tag LEONARDO_DECISION as primary blocker.",
+      "lane_handoff": "Leonardo (product/business decision)"
+    }
+  ]
+}

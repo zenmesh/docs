@@ -1,0 +1,235 @@
+{
+  "task_id": "DOCSAI031_NO_DEPENDENCY_DOCS_CONTENT_TRUST_BACKLOG_CLOSURE_NEXT_25_SMALL",
+  "generated_at": "2026-06-13T01:30:49.031103+00:00",
+  "registry_source": "docs/90-RELEASES/V1_0_PROD_LIVE_READINESS_REGISTRY.json in zen-platform-h751",
+  "total_patches": 25,
+  "safe_to_apply": 13,
+  "requires_helper_reconciliation": 12,
+  "patches": [
+    {
+      "item_id": "CT-008",
+      "field": "status",
+      "old_value": "NOT_STARTED",
+      "new_value": "LEGAL_REVIEW",
+      "rationale": "Content drafted and published. Requires legal sign-off on process language. Not DONE because legal approval pending.",
+      "evidence": "docs/legal/responsible-disclosure.md exists (34 lines, DRAFT marker). Zenbot docsai_unblock_pack has security.txt validator. support@ and security@ confirmed canonical.",
+      "safe_to_apply": true
+    },
+    {
+      "item_id": "CT-003",
+      "field": "status",
+      "old_value": "NOT_STARTED",
+      "new_value": "LEGAL_REVIEW",
+      "rationale": "Subprocessor list drafted with DRAFT marker. Legal must approve list accuracy and SCC transfer language.",
+      "evidence": "docs/legal/subprocessors.md exists (34 lines, DRAFT). Zenbot subprocessor_tracker_inventory.json available as cross-reference.",
+      "safe_to_apply": true
+    },
+    {
+      "item_id": "PC-004",
+      "field": "status",
+      "old_value": "PARTIAL",
+      "new_value": "LEGAL_REVIEW",
+      "rationale": "Full Commercial Trust Pack exists as internal drafts. Cannot mark DONE \u2014 all 12 require legal approval before effective.",
+      "evidence": "12 legal draft pages exist in docs/legal/: terms.md, privacy.md, dpa.md, retention-lifecycle.md, aup.md, billing-terms.md, breach-notice.md, cookie-disclosure.md, design-partner-terms.md, responsible-",
+      "safe_to_apply": true
+    },
+    {
+      "item_id": "CT-001",
+      "field": "status",
+      "old_value": "NOT_STARTED",
+      "new_value": "DONE",
+      "rationale": "Security overview content exists across three published docs pages. Dep SEC-V1-006 is DONE. AcceptanceGate met.",
+      "evidence": "docs/security/index.md (37 lines), docs/security/security-capability-validation.md (86 lines), docs/architecture/security-model.md (74 lines). Content covers architecture, encryption, access control, ",
+      "safe_to_apply": true
+    },
+    {
+      "item_id": "LAUNCH-009",
+      "field": "status",
+      "old_value": "NOT_STARTED",
+      "new_value": "DONE",
+      "rationale": "Full documentation set exists (125 pages). API reference, quick-start, guides, CLI reference all published. AcceptanceGate met.",
+      "evidence": "125 markdown pages in docs/ including: api/overview.md, getting-started/quick-start.md, reference/api.md, reference/cli.md, reference/configuration.md, guides/, concepts/glossary.md. Public docs site ",
+      "safe_to_apply": true
+    },
+    {
+      "item_id": "PC-002",
+      "field": "status",
+      "old_value": "PARTIAL",
+      "new_value": "LEONARDO_DECISION",
+      "rationale": "Draft pricing docs and billing terms exist. Pricing page published on zen-mesh.io. But pricing model is a Leonardo business decision \u2014 cannot finalize without approval.",
+      "evidence": "docs/legal/billing-terms.md (DRAFT, 34 lines). Zenbot pricing_plan_static_validation.json available. zen-mesh.io has pricing.astro page. Canonical: Pro $29/mo.",
+      "safe_to_apply": true
+    },
+    {
+      "item_id": "PC-003",
+      "field": "status",
+      "old_value": "PARTIAL",
+      "new_value": "LEONARDO_DECISION",
+      "rationale": "Support page exists but PC-003 memory says no responder/SLA operational. Requires Leonardo decision on support model before DONE.",
+      "evidence": "docs/start-here/support.md (46 lines). Zenbot support_security_ops_static_scan.json confirms support@zen-mesh.io. Note: PC-003 says support@ exists but no responder/SLA operational per memory.",
+      "safe_to_apply": true
+    },
+    {
+      "item_id": "PC-005",
+      "field": "status",
+      "old_value": "PARTIAL",
+      "new_value": "LEONARDO_DECISION",
+      "rationale": "Pilot scope documented but depends on pricing model (PC-002) which is a Leonardo decision. Cannot finalize pilot scope without pricing approval.",
+      "evidence": "docs/start-here/current-status.md (53 lines). Zenbot design_partner_pilot_validation.json references canonical: no default pilot, 6mo Pro free.",
+      "safe_to_apply": true
+    },
+    {
+      "item_id": "PC-006",
+      "field": "status",
+      "old_value": "MISSING",
+      "new_value": "HERMES_DEPENDENCY",
+      "rationale": "MISSING artifact. Depends on PC-005 (Leonardo decision) and PC-002 (Leonardo decision). Cannot create customer-ready criteria without pricing and pilot scope finalized. Tag HERMES_DEPENDENCY for Helper lane.",
+      "evidence": "AcceptanceGate references docs/90-RELEASES/CUSTOMER_READY_CRITERIA.md. That file does NOT exist in docs repo. No customer-ready criteria artifact found.",
+      "safe_to_apply": false
+    },
+    {
+      "item_id": "PC-007",
+      "field": "status",
+      "old_value": "MISSING",
+      "new_value": "HERMES_DEPENDENCY",
+      "rationale": "MISSING artifact. Production-live criteria requires runtime proof completion (Hermes lane H751+). Cannot define prod-live criteria without knowing runtime status. Tag HERMES_DEPENDENCY.",
+      "evidence": "AcceptanceGate references docs/90-RELEASES/PRODUCTION_LIVE_CRITERIA.md. That file does NOT exist in docs repo. No production-live criteria artifact found.",
+      "safe_to_apply": false
+    },
+    {
+      "item_id": "DL-001",
+      "field": "status",
+      "old_value": "NOT_STARTED",
+      "new_value": "HERMES_DEPENDENCY",
+      "rationale": "Draft retention lifecycle doc exists but policy requires runtime implementation. Owner is Hermes. Payload retention needs TTL auto-purge in runtime. HERMES_DEPENDENCY.",
+      "evidence": "docs/legal/retention-lifecycle.md exists (DRAFT). No runtime payload retention implementation confirmed.",
+      "safe_to_apply": false
+    },
+    {
+      "item_id": "DL-002",
+      "field": "status",
+      "old_value": "NOT_STARTED",
+      "new_value": "HERMES_DEPENDENCY",
+      "rationale": "All deps DONE. Draft retention doc exists. But logs retention requires runtime log rotation/TTL implementation. Owner=Hermes. HERMES_DEPENDENCY.",
+      "evidence": "docs/legal/retention-lifecycle.md exists (DRAFT). Logs retention requires runtime log rotation and TTL purge.",
+      "safe_to_apply": false
+    },
+    {
+      "item_id": "DL-004",
+      "field": "status",
+      "old_value": "NOT_STARTED",
+      "new_value": "HERMES_DEPENDENCY",
+      "rationale": "Dep ED-006 is nanobot (install stage), not pure docs. DLQ retention needs runtime implementation. HERMES_DEPENDENCY.",
+      "evidence": "docs/legal/retention-lifecycle.md exists (DRAFT). DLQ retention requires runtime DLQ TTL config.",
+      "safe_to_apply": false
+    },
+    {
+      "item_id": "DL-005",
+      "field": "status",
+      "old_value": "NOT_STARTED",
+      "new_value": "HERMES_DEPENDENCY",
+      "rationale": "Owner=Hermes. Deletion requires runtime cascade-delete across payloads, logs, evidence. Deps DL-001, DL-002 both HERMES_DEPENDENCY. HERMES_DEPENDENCY.",
+      "evidence": "docs/legal/privacy.md and retention-lifecycle.md exist (DRAFT). Deletion process requires runtime cascade-delete implementation.",
+      "safe_to_apply": false
+    },
+    {
+      "item_id": "DL-006",
+      "field": "status",
+      "old_value": "NOT_STARTED",
+      "new_value": "HERMES_DEPENDENCY",
+      "rationale": "Dep DL-005 is HERMES_DEPENDENCY. Export/delete requires runtime data export pipeline. HERMES_DEPENDENCY.",
+      "evidence": "docs/legal/privacy.md exists (DRAFT). Export/delete requires runtime implementation (GDPR data portability).",
+      "safe_to_apply": false
+    },
+    {
+      "item_id": "DL-007",
+      "field": "status",
+      "old_value": "NOT_STARTED",
+      "new_value": "HERMES_DEPENDENCY",
+      "rationale": "Owner=Hermes. PII redaction is a runtime feature (field masking in logs, evidence, support views). HERMES_DEPENDENCY.",
+      "evidence": "docs/legal/privacy.md exists (DRAFT). PII redaction requires runtime field-level redaction in logs/evidence.",
+      "safe_to_apply": false
+    },
+    {
+      "item_id": "DL-008",
+      "field": "status",
+      "old_value": "NOT_STARTED",
+      "new_value": "HERMES_DEPENDENCY",
+      "rationale": "Owner=Hermes. 'Fields never logged' is a runtime constraint enforced by code validators. HERMES_DEPENDENCY.",
+      "evidence": "All deps DONE. docs/legal/privacy.md references PII handling. Requires runtime never-log validator.",
+      "safe_to_apply": false
+    },
+    {
+      "item_id": "DL-009",
+      "field": "status",
+      "old_value": "NOT_STARTED",
+      "new_value": "HERMES_DEPENDENCY",
+      "rationale": "Owner=Hermes. Both deps HERMES_DEPENDENCY. Debug view redaction is runtime UI code. HERMES_DEPENDENCY.",
+      "evidence": "Both deps HERMES_DEPENDENCY. Support view redaction is a runtime UI feature.",
+      "safe_to_apply": false
+    },
+    {
+      "item_id": "CT-002",
+      "field": "status",
+      "old_value": "NOT_STARTED",
+      "new_value": "HERMES_DEPENDENCY",
+      "rationale": "Owner=Legal but deps DL-001, DL-007 are both HERMES_DEPENDENCY. Data handling statement needs runtime policies defined. HERMES_DEPENDENCY.",
+      "evidence": "docs/legal/privacy.md exists (DRAFT). Data handling statement needs runtime retention and PII redaction policies finalized first.",
+      "safe_to_apply": false
+    },
+    {
+      "item_id": "CT-009",
+      "field": "status",
+      "old_value": "NOT_STARTED",
+      "new_value": "HERMES_DEPENDENCY",
+      "rationale": "DRAFT content exists. Legal owner. But dep DL-006 (export/delete process) is HERMES_DEPENDENCY. Terms cannot be effective without export/delete capability. HERMES_DEPENDENCY.",
+      "evidence": "docs/legal/terms.md, privacy.md, dpa.md all exist (DRAFT). But export/delete process (DL-006) not implemented.",
+      "safe_to_apply": false
+    },
+    {
+      "item_id": "LAUNCH-001",
+      "field": "status",
+      "old_value": "NOT_STARTED",
+      "new_value": "LEONARDO_DECISION",
+      "rationale": "Dep LABELS-003 DONE. Pricing page exists. But plan tiers and pricing model is a core product decision requiring Leonardo sign-off.",
+      "evidence": "zen-mesh.io pricing.astro exists. docs/legal/billing-terms.md (DRAFT). Zenbot pricing validation confirms Pro $29/mo.",
+      "safe_to_apply": true
+    },
+    {
+      "item_id": "LAUNCH-002",
+      "field": "status",
+      "old_value": "NOT_STARTED",
+      "new_value": "LEONARDO_DECISION",
+      "rationale": "Dep LAUNCH-001 (pricing model) is LEONARDO_DECISION. Trial limits derive from pricing. Product decision.",
+      "evidence": "Dep LAUNCH-001 is LEONARDO_DECISION. Trial/sandbox limits follow from pricing model.",
+      "safe_to_apply": true
+    },
+    {
+      "item_id": "LAUNCH-003",
+      "field": "status",
+      "old_value": "NOT_STARTED",
+      "new_value": "LEONARDO_DECISION",
+      "rationale": "Dep LAUNCH-001 (pricing) is LEONARDO_DECISION. SLA model is a business commitment requiring Leonardo approval. Cannot claim DONE.",
+      "evidence": "Dep LAUNCH-001 is LEONARDO_DECISION. Enterprise features and SLA model is a product/business decision.",
+      "safe_to_apply": true
+    },
+    {
+      "item_id": "LAUNCH-004",
+      "field": "status",
+      "old_value": "NOT_STARTED",
+      "new_value": "LEONARDO_DECISION",
+      "rationale": "No region canonical per memory. Data residency is a product/infra decision requiring Leonardo direction. Cannot claim DONE without region selection.",
+      "evidence": "Memory: Data plane UNRESOLVED. No region canonical. SaaS control plane Toronto/GCP confirmed. No data residency claim possible.",
+      "safe_to_apply": true
+    },
+    {
+      "item_id": "LAUNCH-005",
+      "field": "status",
+      "old_value": "NOT_STARTED",
+      "new_value": "LEONARDO_DECISION",
+      "rationale": "Both deps LEONARDO_DECISION. Onboarding UX is a product design decision. HERMES_DEPENDENCY would also apply (runtime signup flow). Tag LEONARDO_DECISION as primary blocker.",
+      "evidence": "Both deps are LEONARDO_DECISION. Onboarding flow design is a product decision.",
+      "safe_to_apply": true
+    }
+  ]
+}

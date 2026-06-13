@@ -1,0 +1,94 @@
+{
+  "task_id": "DOCSAI031_NO_DEPENDENCY_DOCS_CONTENT_TRUST_BACKLOG_CLOSURE_NEXT_25_SMALL",
+  "generated_at": "2026-06-13T01:34:17.752863+00:00",
+  "status": "PASS",
+  "total_legal_pages": 12,
+  "all_marked_draft": true,
+  "none_claim_effective": true,
+  "pages": [
+    {
+      "file": "subprocessors.md",
+      "lines": 34,
+      "has_draft_marker": true,
+      "has_effective_claim": false,
+      "status": "DRAFT - LEGAL REVIEW REQUIRED"
+    },
+    {
+      "file": "retention-lifecycle.md",
+      "lines": 34,
+      "has_draft_marker": true,
+      "has_effective_claim": false,
+      "status": "DRAFT - LEGAL REVIEW REQUIRED"
+    },
+    {
+      "file": "design-partner-terms.md",
+      "lines": 34,
+      "has_draft_marker": true,
+      "has_effective_claim": false,
+      "status": "DRAFT - LEGAL REVIEW REQUIRED"
+    },
+    {
+      "file": "billing-terms.md",
+      "lines": 34,
+      "has_draft_marker": true,
+      "has_effective_claim": false,
+      "status": "DRAFT - LEGAL REVIEW REQUIRED"
+    },
+    {
+      "file": "cookie-disclosure.md",
+      "lines": 34,
+      "has_draft_marker": true,
+      "has_effective_claim": false,
+      "status": "DRAFT - LEGAL REVIEW REQUIRED"
+    },
+    {
+      "file": "aup.md",
+      "lines": 34,
+      "has_draft_marker": true,
+      "has_effective_claim": false,
+      "status": "DRAFT - LEGAL REVIEW REQUIRED"
+    },
+    {
+      "file": "responsible-disclosure.md",
+      "lines": 34,
+      "has_draft_marker": true,
+      "has_effective_claim": false,
+      "status": "DRAFT - LEGAL REVIEW REQUIRED"
+    },
+    {
+      "file": "privacy.md",
+      "lines": 34,
+      "has_draft_marker": true,
+      "has_effective_claim": false,
+      "status": "DRAFT - LEGAL REVIEW REQUIRED"
+    },
+    {
+      "file": "terms.md",
+      "lines": 30,
+      "has_draft_marker": true,
+      "has_effective_claim": false,
+      "status": "DRAFT - LEGAL REVIEW REQUIRED"
+    },
+    {
+      "file": "dpa.md",
+      "lines": 38,
+      "has_draft_marker": true,
+      "has_effective_claim": false,
+      "status": "DRAFT - LEGAL REVIEW REQUIRED"
+    },
+    {
+      "file": "scc-transfer.md",
+      "lines": 34,
+      "has_draft_marker": true,
+      "has_effective_claim": false,
+      "status": "DRAFT - LEGAL REVIEW REQUIRED"
+    },
+    {
+      "file": "breach-notice.md",
+      "lines": 34,
+      "has_draft_marker": true,
+      "has_effective_claim": false,
+      "status": "DRAFT - LEGAL REVIEW REQUIRED"
+    }
+  ]
+}
