@@ -1,0 +1,56 @@
+{
+  "task_id": "DOCSAI035_SINGLE_QUICK_WIN_LAUNCH009_PUBLIC_DOCS_API_REFERENCE_RECORD_CLOSE",
+  "route": "DocsAI",
+  "version": "1.0",
+  "created_at": "2026-06-19T00:02:00Z",
+  "worktree_root": "/home/neves/zenmesh/docs/DOCSAI035-zen-platform",
+  "evidence_directory": "docs/80-EVIDENCE/docsai035",
+  "artifacts": [
+    {
+      "name": "launch009_public_docs_api_reference_record.md",
+      "path": "docs/80-EVIDENCE/docsai035/launch009_public_docs_api_reference_record.md",
+      "type": "evidence_record",
+      "purpose": "Public documentation and API reference readiness record"
+    },
+    {
+      "name": "registry_patch_launch009.json",
+      "path": "docs/80-EVIDENCE/docsai035/registry_patch_launch009.json",
+      "type": "registry_patch",
+      "purpose": "Registry update for LAUNCH-009 status change"
+    },
+    {
+      "name": "count_delta.json",
+      "path": "docs/80-EVIDENCE/docsai035/count_delta.json",
+      "type": "count_delta",
+      "purpose": "Item count delta tracking"
+    },
+    {
+      "name": "merkle.json",
+      "path": "docs/80-EVIDENCE/docsai035/merkle.json",
+      "type": "integrity",
+      "purpose": "Evidence integrity hash"
+    },
+    {
+      "name": "checkpoint.json",
+      "path": "docs/80-EVIDENCE/docsai035/checkpoint.json",
+      "type": "metadata",
+      "purpose": "Task checkpoint metadata"
+    },
+    {
+      "name": "manifest.json",
+      "path": "docs/80-EVIDENCE/docsai035/manifest.json",
+      "type": "metadata",
+      "purpose": "Artifact manifest"
+    }
+  ],
+  "validation": {
+    "docs_build": "PASS",
+    "broken_links": 0,
+    "claim_scan": "PASS",
+    "json": "PASS",
+    "markdown": "PASS",
+    "no_runtime_changes": "PASS",
+    "no_deploy_changes": "PASS",
+    "no_unsupported_claims": "PASS"
+  }
+}

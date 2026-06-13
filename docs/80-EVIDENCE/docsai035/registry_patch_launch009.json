@@ -1,0 +1,11 @@
+{
+  "item_id": "LAUNCH-009",
+  "old_status": "NOT_STARTED",
+  "new_status": "DONE",
+  "evidence_path": "docs/80-EVIDENCE/docsai035/launch009_public_docs_api_reference_record.md",
+  "count_effect": -1,
+  "before_remaining": 228,
+  "projected_remaining": 227,
+  "local_counts_global_truth": false,
+  "notes": "Public documentation and API reference documented at docs.zen-mesh.io with auto-generated API reference from OpenAPI spec. Evidence-backed via AV-009 generated docs/spec sync. 32 API endpoints documented, broken links=0, docs_build=PASS."
+}

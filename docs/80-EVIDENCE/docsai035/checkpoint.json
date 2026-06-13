@@ -1,0 +1,19 @@
+{
+  "task_id": "DOCSAI035_SINGLE_QUICK_WIN_LAUNCH009_PUBLIC_DOCS_API_REFERENCE_RECORD_CLOSE",
+  "route": "DocsAI",
+  "item_id": "LAUNCH-009",
+  "status": "DONE",
+  "started_at": "2026-06-19T00:02:00Z",
+  "completed_at": "2026-06-19T00:03:00Z",
+  "worktree": "docs=/home/neves/zenmesh/docs/DOCSAI035-zen-platform",
+  "branch": "DOCSAI035-launch009-public-docs-api-reference-close",
+  "evidence_dir": "docs/80-EVIDENCE/docsai035",
+  "evidence_files": [
+    "launch009_public_docs_api_reference_record.md",
+    "registry_patch_launch009.json",
+    "count_delta.json",
+    "merkle.json",
+    "checkpoint.json",
+    "manifest.json"
+  ]
+}
