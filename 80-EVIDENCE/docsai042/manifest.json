@@ -1,0 +1,22 @@
+branch: main
+commit_sha: bd6e89e609031e4858906a740e49f33bd926fbf3
+controls:
+  evidence_archive_rule: true
+  registry_source_doc: true
+  report_cap_12_lines: true
+  worktree_hygiene: true
+created_at: '2026-06-19T00:20:00Z'
+evidence_root: docs/80-EVIDENCE/docsai042/
+files:
+- docs_control_runbook.md
+- README.md
+- checkpoint.json
+merkle_hash: 3cdcfaca7e4410aa93dd3483d749c1f49464337774ea2815279b4d97e8a79ee8
+no_deploy_changes: true
+no_runtime_changes: true
+no_website_changes: true
+route: DocsAI
+status: DONE
+task_id: DOCSAI042_DOCS_CONTROL_HYGIENE_EVIDENCE_ARCHIVE_AND_REPORT_CAP
+version: '1.0'
+worktree_root: /home/neves/zenmesh/docs
