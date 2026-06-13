@@ -1,0 +1,18 @@
+{
+  "task_id": "DOCSAI033_SINGLE_QUICK_WIN_AV009_GENERATED_DOCS_SPEC_SYNC_RECORD_CLOSE",
+  "branch": "DOCSAI033-av009-generated-docs-spec-sync-close",
+  "branch_sha": "ea5a327",
+  "worktree": "/home/neves/zenmesh/docs/DOCSAI033-zen-platform",
+  "evidence_directory": "/home/neves/zenmesh/docs/DOCSAI033-zen-platform/docs/80-EVIDENCE/docsai033",
+  "registry_patch_file": "docs/80-EVIDENCE/docsai033/registry_patch_av009.json",
+  "files": [
+    {
+      "name": "count_delta.json",
+      "path": "/home/neves/zenmesh/docs/DOCSAI033-zen-platform/docs/80-EVIDENCE/docsai033/count_delta.json"
+    },
+    {
+      "name": "registry_patch_av009.json",
+      "path": "/home/neves/zenmesh/docs/DOCSAI033-zen-platform/docs/80-EVIDENCE/docsai033/registry_patch_av009.json"
+    }
+  ]
+}

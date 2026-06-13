@@ -1,0 +1,17 @@
+{
+  "task_id": "DOCSAI033_SINGLE_QUICK_WIN_AV009_GENERATED_DOCS_SPEC_SYNC_RECORD_CLOSE",
+  "merkle_root": "a2e6f79511a34bea3fbc8649927f44d398306e4b0b920ed05c85456178c03c94",
+  "timestamp": "2026-06-12",
+  "files": [
+    {
+      "file": "count_delta.json",
+      "sha256": "1d68d7124c106701da533a90b3387b963af617515c62e12cef576a42cb25943d",
+      "size": 214
+    },
+    {
+      "file": "registry_patch_av009.json",
+      "sha256": "a4c7d82c0947ba4c23fa13d66a9f49413eacf2742fb9628f05097d56b3254556",
+      "size": 545
+    }
+  ]
+}

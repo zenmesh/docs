@@ -1,0 +1,14 @@
+{
+  "task_id": "DOCSAI033_SINGLE_QUICK_WIN_AV009_GENERATED_DOCS_SPEC_SYNC_RECORD_CLOSE",
+  "item_id": "AV-009",
+  "item_title": "Generated docs/spec sync",
+  "old_status": "NOT_STARTED",
+  "new_status": "DONE",
+  "evidence_path": "docs/80-EVIDENCE/docsai033/av009_generated_docs_spec_sync_record.md",
+  "count_effect": -1,
+  "before_remaining": 230,
+  "projected_remaining": 229,
+  "local_counts_global_truth": false,
+  "worktree": "/home/neves/zenmesh/docs/DOCSAI033-zen-platform",
+  "branch": "DOCSAI033-av009-generated-docs-spec-sync-close"
+}
