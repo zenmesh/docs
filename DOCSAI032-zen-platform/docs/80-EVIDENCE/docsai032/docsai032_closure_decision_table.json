@@ -280,7 +280,7 @@
       "owner": "product",
       "dependency": "leonardo-decision",
       "evidence_source": "LEONARLO_BUSINESS",
-      "proposed_status": "LEONARLO_DECISION",
+      "proposed_status": "LEONARDO_DECISION",
       "closeable": false,
       "reason": "Support channel/escalation model requires product decision"
     }
