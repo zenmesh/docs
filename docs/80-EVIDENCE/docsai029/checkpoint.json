@@ -36,5 +36,15 @@
     "hermes_runtime_remaining": 7,
     "docsai_remaining": 0
   },
-  "status": "COMPLETE"
+  "status": "COMPLETE",
+  "external_queue": {
+    "leonardo_remaining": 4,
+    "legal_remaining": 12,
+    "hermes_runtime_current": "H751",
+    "helper_dependency": false,
+    "docsai_remaining": 0,
+    "docsai_lane_status": "CLOSED"
+  },
+  "docsai_blockers": 0,
+  "docsai_lane_status": "CLOSED"
 }
