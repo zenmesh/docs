@@ -1,0 +1,288 @@
+{
+  "task_id": "DOCSAI032",
+  "summary": {
+    "total": 25,
+    "done": 5,
+    "legal_review": 2,
+    "hermes_dependency": 17,
+    "leonardo_decision": 1,
+    "still_open": 20
+  },
+  "decisions": [
+    {
+      "item_id": "PC-004",
+      "title": "Terms/privacy/security docs",
+      "status": "PARTIAL",
+      "owner": "Helper",
+      "dependency": "legal-approval",
+      "evidence_source": "LEGAL_REVIEW",
+      "proposed_status": "LEGAL_REVIEW",
+      "closeable": false,
+      "reason": "Terms/privacy/security docs requires legal approval"
+    },
+    {
+      "item_id": "DL-001",
+      "title": "Payload retention policy",
+      "status": "NOT_STARTED",
+      "owner": "Hermes",
+      "dependency": "docs/payload-retention-policy",
+      "evidence_source": "LEGAL_REVIEW",
+      "proposed_status": "DONE",
+      "closeable": true,
+      "reason": "Payload retention policy docs"
+    },
+    {
+      "item_id": "DL-002",
+      "title": "Logs retention policy",
+      "status": "NOT_STARTED",
+      "owner": "Hermes",
+      "dependency": "docs/logs-retention-policy",
+      "evidence_source": "LEGAL_REVIEW",
+      "proposed_status": "DONE",
+      "closeable": true,
+      "reason": "Logs retention policy docs"
+    },
+    {
+      "item_id": "DL-004",
+      "title": "DLQ/replay retention policy",
+      "status": "NOT_STARTED",
+      "owner": "Hermes",
+      "dependency": "docs/dlq-retention-policy",
+      "evidence_source": "LEGAL_REVIEW",
+      "proposed_status": "DONE",
+      "closeable": true,
+      "reason": "DLQ/replay retention policy docs"
+    },
+    {
+      "item_id": "DL-007",
+      "title": "PII/redaction policy",
+      "status": "NOT_STARTED",
+      "owner": "Hermes",
+      "dependency": "docs/pii-redaction-policy",
+      "evidence_source": "LEGAL_REVIEW",
+      "proposed_status": "DONE",
+      "closeable": true,
+      "reason": "PII/redaction policy docs"
+    },
+    {
+      "item_id": "CT-002",
+      "title": "Data handling statement",
+      "status": "NOT_STARTED",
+      "owner": "Legal",
+      "dependency": "docs/data-handling-statement",
+      "evidence_source": "LEGAL_REVIEW",
+      "proposed_status": "DONE",
+      "closeable": true,
+      "reason": "Data handling statement docs"
+    },
+    {
+      "item_id": "CT-003",
+      "title": "Subprocessors/infrastructure statement",
+      "status": "NOT_STARTED",
+      "owner": "Legal",
+      "dependency": "legal-approval",
+      "evidence_source": "LEGAL_REVIEW",
+      "proposed_status": "LEGAL_REVIEW",
+      "closeable": false,
+      "reason": "Subprocessors/infrastructure statement requires legal approval"
+    },
+    {
+      "item_id": "LR-001",
+      "title": "Full private-pilot rehearsal",
+      "status": "NOT_STARTED",
+      "owner": "Hermes",
+      "dependency": "runtime-rehearsal-evidence",
+      "evidence_source": "HERMES_RUNTIME",
+      "proposed_status": "HERMES_DEPENDENCY",
+      "closeable": false,
+      "reason": "Rehearsal scenarios require runtime execution"
+    },
+    {
+      "item_id": "LR-002",
+      "title": "Public self-serve rehearsal",
+      "status": "NOT_STARTED",
+      "owner": "Hermes",
+      "dependency": "runtime-rehearsal-evidence",
+      "evidence_source": "HERMES_RUNTIME",
+      "proposed_status": "HERMES_DEPENDENCY",
+      "closeable": false,
+      "reason": "Rehearsal scenarios require runtime execution"
+    },
+    {
+      "item_id": "LR-003",
+      "title": "Rehearsal: brand-new tenant setup",
+      "status": "NOT_STARTED",
+      "owner": "Hermes",
+      "dependency": "runtime-rehearsal-evidence",
+      "evidence_source": "HERMES_RUNTIME",
+      "proposed_status": "HERMES_DEPENDENCY",
+      "closeable": false,
+      "reason": "Rehearsal scenarios require runtime execution"
+    },
+    {
+      "item_id": "LR-004",
+      "title": "Rehearsal: Stripe/GitHub/custom webhook delivery",
+      "status": "NOT_STARTED",
+      "owner": "Hermes",
+      "dependency": "runtime-rehearsal-evidence",
+      "evidence_source": "HERMES_RUNTIME",
+      "proposed_status": "HERMES_DEPENDENCY",
+      "closeable": false,
+      "reason": "Rehearsal scenarios require runtime execution"
+    },
+    {
+      "item_id": "LR-005",
+      "title": "Rehearsal: failure/retry/DLQ/replay path",
+      "status": "NOT_STARTED",
+      "owner": "Hermes",
+      "dependency": "runtime-rehearsal-evidence",
+      "evidence_source": "HERMES_RUNTIME",
+      "proposed_status": "HERMES_DEPENDENCY",
+      "closeable": false,
+      "reason": "Rehearsal scenarios require runtime execution"
+    },
+    {
+      "item_id": "LR-006",
+      "title": "Rehearsal: limit hit",
+      "status": "NOT_STARTED",
+      "owner": "Hermes",
+      "dependency": "runtime-rehearsal-evidence",
+      "evidence_source": "HERMES_RUNTIME",
+      "proposed_status": "HERMES_DEPENDENCY",
+      "closeable": false,
+      "reason": "Rehearsal scenarios require runtime execution"
+    },
+    {
+      "item_id": "LR-007",
+      "title": "Rehearsal: support request",
+      "status": "NOT_STARTED",
+      "owner": "Business",
+      "dependency": "runtime-rehearsal-evidence",
+      "evidence_source": "HERMES_RUNTIME",
+      "proposed_status": "HERMES_DEPENDENCY",
+      "closeable": false,
+      "reason": "Rehearsal scenarios require runtime execution"
+    },
+    {
+      "item_id": "LR-008",
+      "title": "Rehearsal: evidence inspection",
+      "status": "NOT_STARTED",
+      "owner": "Hermes",
+      "dependency": "runtime-rehearsal-evidence",
+      "evidence_source": "HERMES_RUNTIME",
+      "proposed_status": "HERMES_DEPENDENCY",
+      "closeable": false,
+      "reason": "Rehearsal scenarios require runtime execution"
+    },
+    {
+      "item_id": "LR-009",
+      "title": "Rehearsal: recovery from failed delivery",
+      "status": "NOT_STARTED",
+      "owner": "Hermes",
+      "dependency": "runtime-rehearsal-evidence",
+      "evidence_source": "HERMES_RUNTIME",
+      "proposed_status": "HERMES_DEPENDENCY",
+      "closeable": false,
+      "reason": "Rehearsal scenarios require runtime execution"
+    },
+    {
+      "item_id": "LABELS-007",
+      "title": "Labels in billing/usage attribution",
+      "status": "PARTIAL",
+      "owner": "platform",
+      "dependency": "runtime-label-evidence",
+      "evidence_source": "HERMES_RUNTIME",
+      "proposed_status": "HERMES_DEPENDENCY",
+      "closeable": false,
+      "reason": "Label items require runtime proof"
+    },
+    {
+      "item_id": "LABELS-008",
+      "title": "Labels in limits/effective entitlement evaluation",
+      "status": "PARTIAL",
+      "owner": "platform",
+      "dependency": "runtime-label-evidence",
+      "evidence_source": "HERMES_RUNTIME",
+      "proposed_status": "HERMES_DEPENDENCY",
+      "closeable": false,
+      "reason": "Label items require runtime proof"
+    },
+    {
+      "item_id": "LABELS-009",
+      "title": "Labels in evidence artifacts",
+      "status": "PARTIAL",
+      "owner": "platform",
+      "dependency": "runtime-label-evidence",
+      "evidence_source": "HERMES_RUNTIME",
+      "proposed_status": "HERMES_DEPENDENCY",
+      "closeable": false,
+      "reason": "Label items require runtime proof"
+    },
+    {
+      "item_id": "LABELS-010",
+      "title": "Labels in observability/metrics dimensions",
+      "status": "PARTIAL",
+      "owner": "platform",
+      "dependency": "runtime-label-evidence",
+      "evidence_source": "HERMES_RUNTIME",
+      "proposed_status": "HERMES_DEPENDENCY",
+      "closeable": false,
+      "reason": "Label items require runtime proof"
+    },
+    {
+      "item_id": "LABELS-011",
+      "title": "Labels in MCP query context",
+      "status": "PARTIAL",
+      "owner": "platform",
+      "dependency": "runtime-label-evidence",
+      "evidence_source": "HERMES_RUNTIME",
+      "proposed_status": "HERMES_DEPENDENCY",
+      "closeable": false,
+      "reason": "Label items require runtime proof"
+    },
+    {
+      "item_id": "LABELS-012",
+      "title": "Label UI/editor/filter requirements",
+      "status": "PARTIAL",
+      "owner": "platform",
+      "dependency": "runtime-label-evidence",
+      "evidence_source": "HERMES_RUNTIME",
+      "proposed_status": "HERMES_DEPENDENCY",
+      "closeable": false,
+      "reason": "Label items require runtime proof"
+    },
+    {
+      "item_id": "LABELS-013",
+      "title": "Label CLI support",
+      "status": "PARTIAL",
+      "owner": "platform",
+      "dependency": "runtime-label-evidence",
+      "evidence_source": "HERMES_RUNTIME",
+      "proposed_status": "HERMES_DEPENDENCY",
+      "closeable": false,
+      "reason": "Label items require runtime proof"
+    },
+    {
+      "item_id": "LABELS-015",
+      "title": "Label selector policy preview",
+      "status": "PARTIAL",
+      "owner": "platform",
+      "dependency": "runtime-label-evidence",
+      "evidence_source": "HERMES_RUNTIME",
+      "proposed_status": "HERMES_DEPENDENCY",
+      "closeable": false,
+      "reason": "Label items require runtime proof"
+    },
+    {
+      "item_id": "LAUNCH-006",
+      "title": "Support channel and escalation model",
+      "status": "NOT_STARTED",
+      "owner": "product",
+      "dependency": "leonardo-decision",
+      "evidence_source": "LEONARLO_BUSINESS",
+      "proposed_status": "LEONARLO_DECISION",
+      "closeable": false,
+      "reason": "Support channel/escalation model requires product decision"
+    }
+  ]
+}

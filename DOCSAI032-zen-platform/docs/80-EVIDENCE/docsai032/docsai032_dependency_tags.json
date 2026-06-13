@@ -1,0 +1,180 @@
+{
+  "task_id": "DOCSAI032",
+  "tags": [
+    {
+      "item_id": "PC-004",
+      "tag_type": "HERMES_DEPENDENCY",
+      "dependency": "legal-approval",
+      "evidence_source": "LEGAL_REVIEW",
+      "reason": "Terms/privacy/security docs requires legal approval"
+    },
+    {
+      "item_id": "DL-001",
+      "tag_type": "HERMES_DEPENDENCY",
+      "dependency": "docs/payload-retention-policy",
+      "evidence_source": "LEGAL_REVIEW",
+      "reason": "Payload retention policy docs"
+    },
+    {
+      "item_id": "DL-002",
+      "tag_type": "HERMES_DEPENDENCY",
+      "dependency": "docs/logs-retention-policy",
+      "evidence_source": "LEGAL_REVIEW",
+      "reason": "Logs retention policy docs"
+    },
+    {
+      "item_id": "DL-004",
+      "tag_type": "HERMES_DEPENDENCY",
+      "dependency": "docs/dlq-retention-policy",
+      "evidence_source": "LEGAL_REVIEW",
+      "reason": "DLQ/replay retention policy docs"
+    },
+    {
+      "item_id": "DL-007",
+      "tag_type": "HERMES_DEPENDENCY",
+      "dependency": "docs/pii-redaction-policy",
+      "evidence_source": "LEGAL_REVIEW",
+      "reason": "PII/redaction policy docs"
+    },
+    {
+      "item_id": "CT-002",
+      "tag_type": "HERMES_DEPENDENCY",
+      "dependency": "docs/data-handling-statement",
+      "evidence_source": "LEGAL_REVIEW",
+      "reason": "Data handling statement docs"
+    },
+    {
+      "item_id": "CT-003",
+      "tag_type": "HERMES_DEPENDENCY",
+      "dependency": "legal-approval",
+      "evidence_source": "LEGAL_REVIEW",
+      "reason": "Subprocessors/infrastructure statement requires legal approval"
+    },
+    {
+      "item_id": "LR-001",
+      "tag_type": "HERMES_DEPENDENCY",
+      "dependency": "runtime-rehearsal-evidence",
+      "evidence_source": "HERMES_RUNTIME",
+      "reason": "Rehearsal scenarios require runtime execution"
+    },
+    {
+      "item_id": "LR-002",
+      "tag_type": "HERMES_DEPENDENCY",
+      "dependency": "runtime-rehearsal-evidence",
+      "evidence_source": "HERMES_RUNTIME",
+      "reason": "Rehearsal scenarios require runtime execution"
+    },
+    {
+      "item_id": "LR-003",
+      "tag_type": "HERMES_DEPENDENCY",
+      "dependency": "runtime-rehearsal-evidence",
+      "evidence_source": "HERMES_RUNTIME",
+      "reason": "Rehearsal scenarios require runtime execution"
+    },
+    {
+      "item_id": "LR-004",
+      "tag_type": "HERMES_DEPENDENCY",
+      "dependency": "runtime-rehearsal-evidence",
+      "evidence_source": "HERMES_RUNTIME",
+      "reason": "Rehearsal scenarios require runtime execution"
+    },
+    {
+      "item_id": "LR-005",
+      "tag_type": "HERMES_DEPENDENCY",
+      "dependency": "runtime-rehearsal-evidence",
+      "evidence_source": "HERMES_RUNTIME",
+      "reason": "Rehearsal scenarios require runtime execution"
+    },
+    {
+      "item_id": "LR-006",
+      "tag_type": "HERMES_DEPENDENCY",
+      "dependency": "runtime-rehearsal-evidence",
+      "evidence_source": "HERMES_RUNTIME",
+      "reason": "Rehearsal scenarios require runtime execution"
+    },
+    {
+      "item_id": "LR-007",
+      "tag_type": "HERMES_DEPENDENCY",
+      "dependency": "runtime-rehearsal-evidence",
+      "evidence_source": "HERMES_RUNTIME",
+      "reason": "Rehearsal scenarios require runtime execution"
+    },
+    {
+      "item_id": "LR-008",
+      "tag_type": "HERMES_DEPENDENCY",
+      "dependency": "runtime-rehearsal-evidence",
+      "evidence_source": "HERMES_RUNTIME",
+      "reason": "Rehearsal scenarios require runtime execution"
+    },
+    {
+      "item_id": "LR-009",
+      "tag_type": "HERMES_DEPENDENCY",
+      "dependency": "runtime-rehearsal-evidence",
+      "evidence_source": "HERMES_RUNTIME",
+      "reason": "Rehearsal scenarios require runtime execution"
+    },
+    {
+      "item_id": "LABELS-007",
+      "tag_type": "HERMES_DEPENDENCY",
+      "dependency": "runtime-label-evidence",
+      "evidence_source": "HERMES_RUNTIME",
+      "reason": "Label items require runtime proof"
+    },
+    {
+      "item_id": "LABELS-008",
+      "tag_type": "HERMES_DEPENDENCY",
+      "dependency": "runtime-label-evidence",
+      "evidence_source": "HERMES_RUNTIME",
+      "reason": "Label items require runtime proof"
+    },
+    {
+      "item_id": "LABELS-009",
+      "tag_type": "HERMES_DEPENDENCY",
+      "dependency": "runtime-label-evidence",
+      "evidence_source": "HERMES_RUNTIME",
+      "reason": "Label items require runtime proof"
+    },
+    {
+      "item_id": "LABELS-010",
+      "tag_type": "HERMES_DEPENDENCY",
+      "dependency": "runtime-label-evidence",
+      "evidence_source": "HERMES_RUNTIME",
+      "reason": "Label items require runtime proof"
+    },
+    {
+      "item_id": "LABELS-011",
+      "tag_type": "HERMES_DEPENDENCY",
+      "dependency": "runtime-label-evidence",
+      "evidence_source": "HERMES_RUNTIME",
+      "reason": "Label items require runtime proof"
+    },
+    {
+      "item_id": "LABELS-012",
+      "tag_type": "HERMES_DEPENDENCY",
+      "dependency": "runtime-label-evidence",
+      "evidence_source": "HERMES_RUNTIME",
+      "reason": "Label items require runtime proof"
+    },
+    {
+      "item_id": "LABELS-013",
+      "tag_type": "HERMES_DEPENDENCY",
+      "dependency": "runtime-label-evidence",
+      "evidence_source": "HERMES_RUNTIME",
+      "reason": "Label items require runtime proof"
+    },
+    {
+      "item_id": "LABELS-015",
+      "tag_type": "HERMES_DEPENDENCY",
+      "dependency": "runtime-label-evidence",
+      "evidence_source": "HERMES_RUNTIME",
+      "reason": "Label items require runtime proof"
+    },
+    {
+      "item_id": "LAUNCH-006",
+      "tag_type": "HERMES_DEPENDENCY",
+      "dependency": "leonardo-decision",
+      "evidence_source": "LEONARLO_BUSINESS",
+      "reason": "Support channel/escalation model requires product decision"
+    }
+  ]
+}

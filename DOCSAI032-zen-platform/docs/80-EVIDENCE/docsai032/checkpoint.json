@@ -1,0 +1,23 @@
+{
+  "task_id": "DOCSAI032",
+  "branch": "DOCSAI032-decision-ready-queue-and-docs-backlog-closure",
+  "branch_sha": "8be53bf725ecd3dd60315f41773d361f4d4a25d6",
+  "worktree": "/home/neves/zenmesh/docs/DOCSAI032-zen-platform",
+  "tasks_completed": [
+    "load_registry",
+    "extract_queues",
+    "generate_leonardo_packet",
+    "generate_legal_packet",
+    "screen_candidates",
+    "build_closure_table",
+    "generate_dependency_tags",
+    "generate_count_delta",
+    "perform_claim_scan"
+  ],
+  "total_candidates": 25,
+  "total_decisions": 25,
+  "done": 5,
+  "legal_review": 2,
+  "hermes_dependency": 17,
+  "leonardo_decision": 1
+}

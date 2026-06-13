@@ -1,0 +1,133 @@
+{
+  "task_id": "DOCSAI032",
+  "branch": "DOCSAI032-decision-ready-queue-and-docs-backlog-closure",
+  "branch_sha": "8be53bf725ecd3dd60315f41773d361f4d4a25d6",
+  "patch_type": "item_status_updates",
+  "updates": [
+    {
+      "item_id": "DL-001",
+      "new_status": "DONE",
+      "reason": "DocsAI evidence-backed closure"
+    },
+    {
+      "item_id": "DL-002",
+      "new_status": "DONE",
+      "reason": "DocsAI evidence-backed closure"
+    },
+    {
+      "item_id": "DL-004",
+      "new_status": "DONE",
+      "reason": "DocsAI evidence-backed closure"
+    },
+    {
+      "item_id": "DL-007",
+      "new_status": "DONE",
+      "reason": "DocsAI evidence-backed closure"
+    },
+    {
+      "item_id": "CT-002",
+      "new_status": "DONE",
+      "reason": "DocsAI evidence-backed closure"
+    },
+    {
+      "item_id": "PC-004",
+      "new_status": "LEGAL_REVIEW",
+      "reason": "Requires legal approval"
+    },
+    {
+      "item_id": "CT-003",
+      "new_status": "LEGAL_REVIEW",
+      "reason": "Requires legal approval"
+    },
+    {
+      "item_id": "LR-001",
+      "new_status": "HERMES_DEPENDENCY",
+      "reason": "Requires runtime proof"
+    },
+    {
+      "item_id": "LR-002",
+      "new_status": "HERMES_DEPENDENCY",
+      "reason": "Requires runtime proof"
+    },
+    {
+      "item_id": "LR-003",
+      "new_status": "HERMES_DEPENDENCY",
+      "reason": "Requires runtime proof"
+    },
+    {
+      "item_id": "LR-004",
+      "new_status": "HERMES_DEPENDENCY",
+      "reason": "Requires runtime proof"
+    },
+    {
+      "item_id": "LR-005",
+      "new_status": "HERMES_DEPENDENCY",
+      "reason": "Requires runtime proof"
+    },
+    {
+      "item_id": "LR-006",
+      "new_status": "HERMES_DEPENDENCY",
+      "reason": "Requires runtime proof"
+    },
+    {
+      "item_id": "LR-007",
+      "new_status": "HERMES_DEPENDENCY",
+      "reason": "Requires runtime proof"
+    },
+    {
+      "item_id": "LR-008",
+      "new_status": "HERMES_DEPENDENCY",
+      "reason": "Requires runtime proof"
+    },
+    {
+      "item_id": "LR-009",
+      "new_status": "HERMES_DEPENDENCY",
+      "reason": "Requires runtime proof"
+    },
+    {
+      "item_id": "LABELS-007",
+      "new_status": "HERMES_DEPENDENCY",
+      "reason": "Requires runtime proof"
+    },
+    {
+      "item_id": "LABELS-008",
+      "new_status": "HERMES_DEPENDENCY",
+      "reason": "Requires runtime proof"
+    },
+    {
+      "item_id": "LABELS-009",
+      "new_status": "HERMES_DEPENDENCY",
+      "reason": "Requires runtime proof"
+    },
+    {
+      "item_id": "LABELS-010",
+      "new_status": "HERMES_DEPENDENCY",
+      "reason": "Requires runtime proof"
+    },
+    {
+      "item_id": "LABELS-011",
+      "new_status": "HERMES_DEPENDENCY",
+      "reason": "Requires runtime proof"
+    },
+    {
+      "item_id": "LABELS-012",
+      "new_status": "HERMES_DEPENDENCY",
+      "reason": "Requires runtime proof"
+    },
+    {
+      "item_id": "LABELS-013",
+      "new_status": "HERMES_DEPENDENCY",
+      "reason": "Requires runtime proof"
+    },
+    {
+      "item_id": "LABELS-015",
+      "new_status": "HERMES_DEPENDENCY",
+      "reason": "Requires runtime proof"
+    },
+    {
+      "item_id": "LAUNCH-006",
+      "new_status": "LEONARLO_DECISION",
+      "reason": "Requires product decision"
+    }
+  ]
+}

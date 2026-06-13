@@ -1,0 +1,52 @@
+{
+  "task_id": "DOCSAI032",
+  "merkle_root": "f2bc1962913cadc4d550d66848ca08495cba6bca74eba39b3a4bb5ad1914baeb",
+  "timestamp": "2026-06-12",
+  "files": [
+    {
+      "file": "docsai031_repair_import.json",
+      "sha256": "3590c0b787d68c8575b4891280ed9f479afa77c66959a7918aac3312b4822fa3",
+      "size": 1815
+    },
+    {
+      "file": "docsai032_candidate_list.json",
+      "sha256": "5c9bee300e23eb5be808c1f76ce2d26a1304388a2edc4739dac4a3ed05c50785",
+      "size": 9218
+    },
+    {
+      "file": "docsai032_claim_scan.json",
+      "sha256": "43e2cf50ae228e2974224fece600bf150b9818c583a7066cb1b8ab3f2ff31c0f",
+      "size": 152
+    },
+    {
+      "file": "docsai032_closure_decision_table.json",
+      "sha256": "13d04b22d82e215304eb91716cb87abaa08580901b4ff1534cfe659e8a52183c",
+      "size": 9291
+    },
+    {
+      "file": "docsai032_count_delta.json",
+      "sha256": "e35598514bfded995407c7979261c3c004f9ef19af0eb2092fb174ddcd1de8d0",
+      "size": 150
+    },
+    {
+      "file": "docsai032_dependency_tags.json",
+      "sha256": "ba4b30d1099546eb2a2f8a679c190c7e300ef44f7d1d3e84eacb43dcee0dd6a4",
+      "size": 5762
+    },
+    {
+      "file": "docsai032_registry_patch_proposal.json",
+      "sha256": "49fecb4bd512ff2e259e7fa278a94995dafc5634e9328b117ce1c9a00b4538c4",
+      "size": 3273
+    },
+    {
+      "file": "legal_review_packet.json",
+      "sha256": "12ecb0d8584933ea4c62eb4d4ae563db00452bf6b9dddb23baf5eba5bec834bb",
+      "size": 5411
+    },
+    {
+      "file": "leonardo_decision_packet.json",
+      "sha256": "4b9303059071f743dd0b07591c2f7e78d405f07ab1c49fae5fa79abf309b760f",
+      "size": 9655
+    }
+  ]
+}

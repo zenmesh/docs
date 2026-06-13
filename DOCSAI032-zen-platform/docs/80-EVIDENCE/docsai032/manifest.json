@@ -1,0 +1,58 @@
+{
+  "task_id": "DOCSAI032",
+  "branch": "DOCSAI032-decision-ready-queue-and-docs-backlog-closure",
+  "branch_sha": "8be53bf725ecd3dd60315f41773d361f4d4a25d6",
+  "worktree": "/home/neves/zenmesh/docs/DOCSAI032-zen-platform",
+  "evidence_directory": "/home/neves/zenmesh/docs/DOCSAI032-zen-platform/docs/80-EVIDENCE/docsai032",
+  "registry_source": "/home/neves/zenmesh/zen-platform-h751/docs/90-RELEASES/V1_0_PROD_LIVE_READINESS_REGISTRY.json",
+  "files": [
+    {
+      "name": "checkpoint.json",
+      "path": "/home/neves/zenmesh/docs/DOCSAI032-zen-platform/docs/80-EVIDENCE/docsai032/checkpoint.json"
+    },
+    {
+      "name": "docsai031_repair_import.json",
+      "path": "/home/neves/zenmesh/docs/DOCSAI032-zen-platform/docs/80-EVIDENCE/docsai032/docsai031_repair_import.json"
+    },
+    {
+      "name": "docsai032_candidate_list.json",
+      "path": "/home/neves/zenmesh/docs/DOCSAI032-zen-platform/docs/80-EVIDENCE/docsai032/docsai032_candidate_list.json"
+    },
+    {
+      "name": "docsai032_claim_scan.json",
+      "path": "/home/neves/zenmesh/docs/DOCSAI032-zen-platform/docs/80-EVIDENCE/docsai032/docsai032_claim_scan.json"
+    },
+    {
+      "name": "docsai032_closure_decision_table.json",
+      "path": "/home/neves/zenmesh/docs/DOCSAI032-zen-platform/docs/80-EVIDENCE/docsai032/docsai032_closure_decision_table.json"
+    },
+    {
+      "name": "docsai032_count_delta.json",
+      "path": "/home/neves/zenmesh/docs/DOCSAI032-zen-platform/docs/80-EVIDENCE/docsai032/docsai032_count_delta.json"
+    },
+    {
+      "name": "docsai032_dependency_tags.json",
+      "path": "/home/neves/zenmesh/docs/DOCSAI032-zen-platform/docs/80-EVIDENCE/docsai032/docsai032_dependency_tags.json"
+    },
+    {
+      "name": "docsai032_registry_patch_proposal.json",
+      "path": "/home/neves/zenmesh/docs/DOCSAI032-zen-platform/docs/80-EVIDENCE/docsai032/docsai032_registry_patch_proposal.json"
+    },
+    {
+      "name": "legal_review_packet.json",
+      "path": "/home/neves/zenmesh/docs/DOCSAI032-zen-platform/docs/80-EVIDENCE/docsai032/legal_review_packet.json"
+    },
+    {
+      "name": "leonardo_decision_packet.json",
+      "path": "/home/neves/zenmesh/docs/DOCSAI032-zen-platform/docs/80-EVIDENCE/docsai032/leonardo_decision_packet.json"
+    },
+    {
+      "name": "merkle.json",
+      "path": "/home/neves/zenmesh/docs/DOCSAI032-zen-platform/docs/80-EVIDENCE/docsai032/merkle.json"
+    },
+    {
+      "name": "validation_manifest.json",
+      "path": "/home/neves/zenmesh/docs/DOCSAI032-zen-platform/docs/80-EVIDENCE/docsai032/validation_manifest.json"
+    }
+  ]
+}

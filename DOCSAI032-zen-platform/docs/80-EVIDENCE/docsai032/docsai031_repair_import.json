@@ -1,0 +1,52 @@
+{
+  "task_id": "DOCSAI032_DECISION_READY_QUEUE_AND_NEXT_NO_DEPENDENCY_DOCS_BACKLOG_CLOSURE_SMALL",
+  "generated_at": "2026-06-13T02:00:00.000000+00:00",
+  "doctable_import": {
+    "source_file": "DOCSAI031-zen-platform/docs/80-EVIDENCE/docsai031/docsai031_closure_decision_table.json",
+    "imported_at": "2026-06-13T02:00:00.000000+00:00",
+    "task_id_reference": "DOCSAI031_NO_DEPENDENCY_DOCS_CONTENT_TRUST_BACKLOG_CLOSURE_NEXT_25_SMALL",
+    "branch_sha": "8be53bf725ecd3dd60315f41773d361f4d4a25d6",
+    "branch_name": "DOCSAI031-no-dependency-docs-content-trust-backlog",
+    "queue_prose_location": "Inside docsai031_closure_decision_table.json (not after final report). All item-level rationale/evidence captured at line 4-365, before FINAL_REPORT.md line 1.",
+    "queues_extracted": {
+      "leonardo_decision": [
+        "LAUNCH-001",
+        "LAUNCH-002",
+        "LAUNCH-003",
+        "LAUNCH-004",
+        "LAUNCH-005",
+        "PC-002",
+        "PC-003",
+        "PC-005"
+      ],
+      "legal_review": [
+        "CT-003",
+        "CT-008",
+        "PC-004"
+      ],
+      "hermes_dependency": [
+        "CT-002",
+        "CT-009",
+        "DL-001",
+        "DL-002",
+        "DL-004",
+        "DL-005",
+        "DL-006",
+        "DL-007",
+        "DL-008",
+        "DL-009",
+        "PC-006",
+        "PC-007"
+      ]
+    },
+    "decrements": 2,
+    "retagged": 23
+  },
+  "evidence_structure": {
+    "docsai031_repair_import": "This file",
+    "docsai031_closure_decision_table": "Item-level decision rationale and evidence",
+    "docsai031_count_delta": "Decrement 2, projected 238, local_counts_global_truth=false",
+    "docsai031_dependency_tags": "HERMES_DEPENDENCY (12), LEONARDO_DECISION (8), LEGAL_REVIEW (3)",
+    "docsai031_candidate_list": "25 candidates screened from 45 candidates"
+  }
+}
