@@ -59,7 +59,7 @@ curl -s -H "Authorization: Bearer $ZEN_API_KEY" \
   https://api.zen-mesh.io/v1/evidence/dlv_abc123 | jq .
 ```
 
-The evidence receipt includes the Merkle proof for cryptographic verification of delivery:
+The evidence receipt includes a Merkle proof for evidence integrity verification:
 
 ```json
 {

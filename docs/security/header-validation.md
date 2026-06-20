@@ -41,11 +41,15 @@ Header validation operates on incoming webhook requests:
 
 ## Operational Status
 
+Signature verification is implemented and tested for Stripe, GitHub, Shopify, and Twilio when configured. Custom/generic HMAC/header validation is available where configured.
+
 - **Stripe**: `Stripe-Signature` header verification — implemented and validated
 - **GitHub**: `X-Hub-Signature-256` header verification — implemented and validated
 - **Twilio**: `Twilio-Signature` header verification — implemented and validated
 - **Shopify**: `X-Shopify-Hmac-SHA256` header verification — implemented and validated
 - **Custom**: User-configured secret with HMAC-SHA256 — available
+
+Live external provider validation is distinct from backend signature-verification tests.
 
 ## Example Scenario
 

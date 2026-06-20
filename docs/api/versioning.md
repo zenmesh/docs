@@ -23,7 +23,7 @@ Breaking changes require a new major version (`/v2`). Backward-compatible additi
 
 ## BFF API Versioning
 
-The BFF (Backend-for-Frontend) API follows the same URL-based versioning: `https://app.zen-mesh.io/api/bff/v1`. The BFF API changes independently and may have different version numbers.
+The BFF (Backend-for-Frontend) API follows the same URL-based versioning as the Back API. The BFF API changes independently and may have different version numbers.
 
 ## Spec Maintenance
 

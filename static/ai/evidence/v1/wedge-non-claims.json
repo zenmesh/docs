@@ -44,7 +44,7 @@
   {
     "id": "wedge-nc-roadmap-providers-supported",
     "category": "scope",
-    "claim": "Shopify, Twilio, GitLab, and Alipay webhook support is currently available",
+    "claim": "Shopify and Twilio webhook support are available as public source types",
     "scope": "Not claimed. These are on the provider expansion roadmap only. The modular provider adapter model is designed to extend to these and similar providers, but no implementation or validation has been completed.",
     "evidence_status": "not_claimed"
   },

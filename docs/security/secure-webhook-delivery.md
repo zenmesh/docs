@@ -23,6 +23,8 @@ Incoming webhooks are verified using provider-specific signature headers:
 
 - **Stripe:** Stripe-Signature header verification
 - **GitHub:** X-Hub-Signature-256 HMAC verification
+- **Twilio:** Twilio-Signature header verification
+- **Shopify:** X-Shopify-Hmac-SHA256 HMAC verification
 - **Custom:** Configurable header validation
 
 [Learn more about Header Validation](./header-validation)

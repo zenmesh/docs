@@ -43,7 +43,7 @@ The Helm chart deploys:
 | `zen-agent` | Deployment | Enrollment, agent heartbeat, config sync |
 | `zen-egress` | Deployment | Delivers events to local services via mTLS |
 | `zen-lock` | Controller + Webhook | Zero-knowledge secret management |
-| `zen-ingester` | (Optional) | Local event intake for Mode A delivery |
+| `zen-ingester` | (Optional) | Local event intake |
 
 ## Namespace
 

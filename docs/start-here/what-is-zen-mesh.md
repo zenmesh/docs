@@ -10,13 +10,14 @@ Zen Mesh is a traffic-plane runtime for Kubernetes that delivers webhooks and ev
 
 - **Platform teams** that need to receive webhooks inside private Kubernetes clusters without exposing them
 - **Security teams** that require mTLS, HMAC verification, and audit trails for event delivery
-- **Compliance reviewers** who need evidence-backed security claims and clea../ai/evidence-v1-supersession.md#non-claims
+- **Compliance reviewers** who need evidence-backed security claims and explicit non-claims boundaries
 - **AI agents and RAG systems** that evaluate Zen Mesh through machine-readable manifests and evidence packs
 
 ## Current Status
 
-- **Early access** is open now. Contact us at zen@zen-mesh.io to get started.
-- We are finishing final validations before opening broader production access.
+- Zen Mesh Free and Pro are the public buyer-facing plans. Self-serve evaluation is supported through the docs and quick-start path.
+- Free and Pro include best-effort support. No SLA or on-call is included.
+- Business and Enterprise operational guarantees are planned separately.
 
 ## Quick Links
 
@@ -26,8 +27,8 @@ Zen Mesh is a traffic-plane runtime for Kubernetes that delivers webhooks and ev
 | Understand delivery reliability | [Webhook Reliability](../delivery/) |
 | Review security controls | [Security Controls](../security/) |
 | Understand the architecture | [Three Plane Model](../architecture/three-plane-model) |
-| Review security evidence | [Trust Lifecycle Evidence](../ai/capability-evidence) |
-| Check what is not claimed | [Non-Claims](../ai/evidence-v1-supersession.md#non-claims) |
+| Review security evidence | [Trust Lifecycle Evidence](../evidence/trust-lifecycle) |
+| Check what is not claimed | [Non-Claims](../ai/non-claims) |
 | Validate locally | [Verification](../ai/verification) |
 | See webhook FAQs | [Webhook FAQ](../reference/webhook-faq) |
-| Inspect machine-readable evidence | [Manifest../ai/evidence-v1-supersession.md#manifest) |
+| Inspect machine-readable evidence | [AI Evidence Manifest](../ai/evidence-v1-supersession#manifest) |

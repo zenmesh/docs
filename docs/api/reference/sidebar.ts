@@ -158,36 +158,6 @@ const sidebar: SidebarsConfig = {
     },
     {
       type: "category",
-      label: "Channels",
-      items: [
-        {
-          type: "doc",
-          id: "api/reference/list-channels",
-          label: "List channels (bridge-only)",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "api/reference/create-channel",
-          label: "Create a channel (bridge-only)",
-          className: "api-method post",
-        },
-        {
-          type: "doc",
-          id: "api/reference/get-channel",
-          label: "Get channel details (bridge-only)",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "api/reference/delete-channel",
-          label: "Delete a channel (bridge-only)",
-          className: "api-method delete",
-        },
-      ],
-    },
-    {
-      type: "category",
       label: "Webhooks",
       items: [
         {

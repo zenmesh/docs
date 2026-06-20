@@ -29,6 +29,13 @@ Rate-limited requests receive a `429 Too Many Requests` response with a `Retry-A
 
 See [API Versioning and Compatibility](./versioning.md).
 
+## How Webhooks Are Counted
+
+- A webhook is counted when Zen Mesh receives an inbound webhook request at an endpoint.
+- Provider retries count as additional inbound webhooks.
+- Zen Mesh internal delivery retries do not count as additional webhooks.
+- Filtered or dropped requests may count against abuse and rate limits even if they are not delivered downstream.
+
 ## Non-Claims
 
 - These limits apply per deployment and tenant configuration

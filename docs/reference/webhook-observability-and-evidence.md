@@ -30,9 +30,9 @@ Delivery evidence is protected against tampering:
 
 Evidence manifests are available for automated review:
 
-- [Capability Manifest../ai/evidence-v1-supersession.md#manifest) — machine-readable capability status and proof status
-- [Non-Claims Registry../ai/evidence-v1-supersession.md## non-claims) — explicit scope boundaries
-- [Compliance Map../ai/evidence-v1-supersession.md#compliance-map) — internal readiness mapping
+- [Capability Manifest](../ai/evidence-v1-supersession#manifest) — machine-readable capability status and proof status
+- [Non-Claims Registry](../ai/evidence-v1-supersession#non-claims) — explicit scope boundaries
+- [Compliance Map](../ai/evidence-v1-supersession#compliance-map) — internal readiness mapping
 - [Validation Map](../evidence/validation-map) — how to validate evidence locally
 
 ## Related Capabilities

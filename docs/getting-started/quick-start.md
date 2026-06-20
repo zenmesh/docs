@@ -8,86 +8,71 @@ Get webhooks flowing to your private network in under 5 minutes.
 
 ## Prerequisites
 
-- A [Zen Mesh account](https://zen-mesh.io) (free tier available)
+- A [Zen Mesh account](https://zen-mesh.io) (Free Forever tier available — no credit card required)
 - A Kubernetes cluster (any version 1.24+)
-  - **Don't have K8s?** Use the one-command k3s installer (coming soon)
 - `helm` CLI installed
 
-## Step 1: Create a Cluster
+## Step 1: Create or open your Zen Mesh account
 
-1. Contact us at zen@zen-mesh.io to get started
-2. Navigate to **Clusters** in the sidebar
-3. Click **Add Cluster** and give it a name (e.g., `production`)
-4. Click **Create**
+Sign up for the Free Forever plan. No credit card required. After signing in, navigate to the dashboard.
 
-## Step 2: Get the Install Command
+## Step 2: Create a webhook endpoint
 
-1. In the clusters list, find your new cluster
-2. Click **Get install command**
-3. The enrollment bundle modal will appear with a single command
+1. Navigate to **Endpoints** in the sidebar
+2. Click **Create Endpoint**
+3. Give it a name (e.g., `stripe-payments`)
 
-The command looks like:
+## Step 3: Choose a source template
 
-```bash
-# Step 1: Apply enrollment secret
-kubectl apply -f - <<'ENROLLMENT_SECRET'
-apiVersion: v1
-kind: Secret
-metadata:
-  name: zen-enrollment-bundle
-  namespace: zen-mesh
-type: Opaque
-data:
-  enrollment_bundle: <base64-encoded-bundle>
-ENROLLMENT_SECRET
+Select the source type for your webhook:
 
-# Step 2: Install or upgrade the agent
-helm repo add zenmesh https://zenmesh.github.io/helm-charts || true
-helm repo update
+| Source | Template |
+|---|---|
+| Stripe | Pre-configured Stripe webhook template |
+| GitHub | Pre-configured GitHub webhook template |
+| Twilio | Pre-configured Twilio webhook template |
+| Shopify | Pre-configured Shopify webhook template |
+| Custom | Generic HTTP webhook with configurable header validation |
 
-helm upgrade --install zen-agent zenmesh/zen-agent \
-  --namespace zen-mesh \
-  --create-namespace \
-  --set saas.endpoint="https://api.zen-mesh.io" \
-  --set agent.enrollment.secretRef.name="zen-enrollment-bundle"
-```
+Copy the ingestion URL provided by Zen Mesh (e.g., `https://ingest.zen-mesh.io/hooks/<hook-id>`).
 
-Click **Copy all** and paste into your terminal.
+## Step 4: Choose delivery mode
 
-## Step 3: Run the Command
+| Mode | When to use |
+|---|---|
+| **Standard delivery** | Your destination is reachable from the Zen Mesh data plane |
+| **Outbound-only private delivery** | Your destination is behind NAT or firewall (requires edge enrollment) |
 
-Run the command on any machine with `kubectl` access to your cluster.
+Default is **Standard delivery**.
 
-The agent will:
-1. Read the enrollment bundle
-2. Register with the control plane
-3. Start watching for delivery targets in your cluster
+## Step 5: Configure a destination
 
-Your cluster status will change to **Connected** in the dashboard.
-
-## Step 4: Create a Destination
-
-1. In the dashboard, navigate to **Destinations**
+1. Navigate to **Destinations** in the sidebar
 2. Click **Add Destination**
-3. Enter the URL of the service in your cluster you want to receive webhooks
-4. Select your cluster as the delivery target
+3. Enter the URL of the service that should receive webhooks
+4. Select the delivery mode
 
-## Step 5: Point Your Webhook Source
+## Step 6: Point your webhook source
 
-Copy the ingester URL from your destination and configure your webhook source:
+Configure your webhook provider to send events to your ingestion URL:
 
-- **Stripe**: Settings → Webhooks → Add endpoint
+- **Stripe**: Dashboard → Developers → Webhooks → Add endpoint
 - **GitHub**: Repository → Settings → Webhooks → Add webhook
-- **Shopify**: Settings → Notifications → Create webhook
+- **Twilio**: Console → Phone Numbers → Webhook configuration
+- **Shopify**: Settings → Notifications → Webhook
+- **Custom**: Configure your HTTP client to POST to the ingestion URL
 
-Use the URL provided by Zen Mesh (e.g., `https://ingest.zen-mesh.io/hooks/<hook-id>`).
+## Step 7: Send a test event
 
-## Step 6: Verify
+Trigger a test event from your webhook source. In the dashboard **Deliveries** view, you should see the event with status details.
 
-Trigger a test event from your webhook source. You should see it appear in the **Deliveries** view in the dashboard, and your service should receive the payload.
+## Step 8: Verify delivery
+
+Check the delivery status and logs in the dashboard. Your service should receive the payload.
 
 ## Next Steps
 
-- [Set up adapters](../guides/adapters) for Splunk, PagerDuty, Grafana, Teams, and more
 - [Configure delivery modes](../architecture/delivery-modes) for your network topology
-- [Set up monitoring](../guides/monitoring) with built-in Prometheus metrics
+- [Set up header validation](../security/header-validation) for source authenticity
+- [Review plans and limits](../start-here/current-status) for Free/Pro boundaries
+- Follow the [Stripe integration guide](../guides/stripe) or [GitHub integration guide](../guides/github) for detailed source setup

@@ -8,14 +8,6 @@ Adapters connect Zen Mesh delivery targets to external services. When an event a
 
 ## Supported Adapters
 
-## Splunk
-
-Deliver webhook events to Splunk HTTP Event Collector (HEC).
-
-- **Delivery**: Push events as Splunk HEC payloads
-- **Format**: CloudEvents → Splunk event format
-- **Auth**: HEC token stored in zen-lock
-
 ## Stripe
 
 Receive and process Stripe webhook events.

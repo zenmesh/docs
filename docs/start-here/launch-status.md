@@ -4,13 +4,13 @@ sidebar_label: Launch Status
 
 # Launch Status
 
-Zen Mesh is in **early access**. We are completing final validations before opening broader production access.
+Zen Mesh Free and Pro are available as public buyer-facing plans. This page documents current evidence maturity and scope boundaries.
 
 ## Current Phase
 
-- **Early access**: Available now. Contact us at zen@zen-mesh.io to join.
-- **Production access**: Planned after final validation gates pass. See [Validation Gates](https://github.com/zenmesh/zen-mesh.io/blob/main/docs/prod-live-validation-gates.md) for details.
-- **SLA options**: Will be introduced as the service matures. No hard SLAs offered during early access.
+- **Free and Pro**: Public plans with best-effort support, no SLA.
+- **Business**: Coming soon — qualitative commitments only, no public numeric limits.
+- **Enterprise**: Contact us for custom requirements.
 
 ## Evidence Status
 

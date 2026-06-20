@@ -13,16 +13,16 @@ Zen Mesh exposes two API surfaces for different consumers:
 | Surface | Base URL | Purpose | Auth |
 |---------|----------|---------|------|
 | **Back API** | `https://api.zen-mesh.io/v1` | Platform management (CRDs, tenants, clusters, destinations) | Bearer JWT, API Key, HMAC |
-| **BFF API** | `https://app.zen-mesh.io/api/bff/v1` | Dashboard aggregation (features, config, jobs, events) | Session cookie, API Key |
+| **BFF API** | Dashboard API (`/api/bff/v1`) | Dashboard aggregation (features, config, jobs, events) | Session cookie, API Key |
 
 ## API Reference
 
 - [Back API Reference](./reference/kubezen-back-api) — Generated from OpenAPI spec
-- [Customer API](../reference/customer-api.md) — Planned read-only operational truth API
+- [Customer API](../reference/customer-api) — read-only operational truth API
 
 ## Core Capabilities
 
-- **Webhook delivery**: Ingest, validate, and deliver webhooks from Stripe, GitHub, and custom sources
+- **Webhook delivery**: Ingest, validate, and deliver webhooks from Stripe, GitHub, Twilio, Shopify, and custom sources
 - **Security controls**: IP allowlisting, header validation, mTLS enrollment, cryptographic enrollment
 - **Delivery reliability**: Dead-letter queues, replays, deduplication, idempotency, filtering, fan-out
 - **Observability**: Delivery tracking, evidence proofs, Merkle integrity receipts

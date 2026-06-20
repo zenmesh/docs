@@ -4,7 +4,7 @@ sidebar_label: Customer API
 
 # Customer API
 
-The Customer API is the **planned read-only programmable interface** for operational truth.
+The Customer API is the **read-only programmable interface** for operational truth.
 
 ## Current Status
 

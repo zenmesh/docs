@@ -109,4 +109,4 @@ The completion evidence contract contains entries for the following tasks:
 - **007** — Runtime Proof Matrix Hardening
 - **008** — Evidence Merkle Completion Gate
 
-See the [AI Evidence Manifest../ai/evidence-v1-supersession.md#manifest) for machine-readable details.
+See the [AI Evidence Manifest](../ai/evidence-v1-supersession#manifest) for machine-readable details.

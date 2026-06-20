@@ -1,6 +1,6 @@
 # Zen Mesh — Webhook Operations
 
-> Zen Mesh helps teams receive, validate, observe, and operate webhooks across Stripe, GitHub, Twilio, Shopify, and custom sources. Current readiness is DEMO only (local/mock/sandbox and limited cloud-demo scope — not customer-ready or production-live).
+> Zen Mesh helps teams receive, validate, observe, and operate webhooks across Stripe, GitHub, Twilio, Shopify, and custom sources. Runtime workload identity (SVID) rotation is not yet automated. DeliveryPolicy TLS/trust-chain controls are deferred.
 
 Version: 1.0.0 · Last-Updated: 2026-06-19 · Product scope: webhook ingestion, validation, delivery visibility, and security operations (evidence-first federated operational runtime/trust platform).
 

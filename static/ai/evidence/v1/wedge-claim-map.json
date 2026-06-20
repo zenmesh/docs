@@ -199,7 +199,7 @@
     {
       "id": "wedge-provider-expansion",
       "category": "provider_expansion",
-      "claim": "Modular provider adapter model enables expansion to Shopify, Twilio, GitLab, Alipay, and similar providers",
+      "claim": "Modular provider adapter model supports Stripe, GitHub, Twilio, Shopify, and Custom sources",
       "status": "PLANNED",
       "proof_scope": "none",
       "evidence_refs": [],

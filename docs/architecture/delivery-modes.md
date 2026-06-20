@@ -4,72 +4,51 @@ sidebar_label: Delivery Modes
 
 # Delivery Modes
 
-Zen Mesh supports three delivery modes for different network topologies. Choose based on whether your target is publicly reachable, reachable from the ingester, or completely firewalled.
+Zen Mesh supports two delivery modes for different network topologies.
 
-## Mode A — Direct Public Target
+## Standard delivery
 
 ```mermaid
 graph LR
     SRC[Source] --> ING[zen-ingester] --> TGT[Your Service]
 ```
 
-Use when: Your service has a public endpoint (even behind a load balancer).
+Use when the destination is reachable from the selected Zen Mesh data plane.
 
 | Property | Value |
-|----------|-------|
+|---|---|
 | **Complexity** | Lowest |
-| **Security** | HTTPS (source to ingester) + HTTPS (ingester to target) |
-| **Network** | No special requirements |
+| **Security** | HTTPS (source to ingester) + TLS (ingester to target) |
+| **Network** | No special requirements. Destination must be reachable from the data plane. |
 
-This is the simplest mode. The ingester receives the event and forwards it to your public URL. No egress or agent required.
+This is the default mode and the simplest to set up. The ingester receives the event and forwards it to your destination. No egress or edge enrollment required.
 
-## Mode B — Egress Direct
+## Outbound-only private delivery
 
 ```mermaid
 graph LR
-    SRC[Source] --> ING[zen-ingester] --> EGR[zen-egress] -- "mTLS" --> TGT[Your Service]
+    SRC[Source] --> ING[zen-ingester] --> EGR[zen-egress] --> TGT[Your Service]
 ```
 
-Use when: Your service is private but reachable from the Zen Mesh data plane via mTLS.
+Use when the destination is behind NAT or a corporate firewall and an enrolled edge adapter can maintain an outbound relay connection.
 
 | Property | Value |
-|----------|-------|
+|---|---|
 | **Complexity** | Medium |
-| **Security** | mTLS between ingester and egress, mTLS between egress and target |
-| **Network** | Egress must be able to reach your cluster (or be in the same VPC) |
+| **Security** | mTLS between ingester and egress, mTLS or TLS between egress and target |
+| **Network** | Outbound connection from the edge adapter to Zen Mesh. No inbound ports required. |
 
-The egress proxy runs in your cluster and establishes an mTLS connection. Events are routed through this encrypted tunnel to your private services.
+The egress component runs in your environment and establishes an outbound connection to the Zen Mesh data plane. Events are tunneled through this connection to your private services without opening any inbound firewall ports.
 
-## Mode C — Egress Relay
+## Choosing a mode
 
-```mermaid
-graph LR
-    SRC[Source] --> ING[zen-ingester] --> EGR[zen-egress] -- "relay" --> TGT[Your Service]
-```
+Zen Mesh uses **Standard delivery** by default. The system does not silently auto-detect the mode in V1. If your destination is private and requires relay-based delivery, select **Outbound-only private delivery** when configuring the destination.
 
-Use when: Your service is behind NAT or a firewall with no inbound access.
+Relay selection is gated by selected data-plane capability and edge enrollment readiness.
 
-| Property | Value |
-|----------|-------|
-| **Complexity** | Highest |
-| **Security** | mTLS + HMAC-SHA256, outbound-only from your cluster |
-| **Network** | Outbound connection only. No inbound ports required. |
-
-The egress uses relay mode to connect through NAT/firewalls. Your cluster initiates the connection outward — nothing needs to be opened inbound.
-
-## Choosing a Mode
-
-```mermaid
-flowchart TD
-    Q1{"Publicly reachable?"}
-    Q2{"Reachable from Zen Mesh?\n(same VPC, VPN, WireGuard)"}
-    Q1 -- Yes --> A["Mode A — Direct\n(simplest)"]
-    Q1 -- No --> Q2
-    Q2 -- Yes --> B["Mode B — mTLS Direct"]
-    Q2 -- No --> C["Mode C — Relay\n(outbound-only)"]
-```
+Default is **Standard delivery**.
 
 ## See Also
 
-- [Cluster Enrollment](../guides/cluster-enrollment) — Set up your cluster for Mode B/C
-- [Security Model](./security-model) — How mTLS and HMAC protect each mode
+- [Quick Start](../getting-started/quick-start) — create your first endpoint
+- [Security controls](../security/) — mTLS, HMAC, and header validation
