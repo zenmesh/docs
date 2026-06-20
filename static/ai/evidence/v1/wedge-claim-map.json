@@ -1,12 +1,12 @@
 {
   "@context": "http://schema.org/",
   "@type": "Dataset",
-  "name": "Zen Mesh — Webhook Operations Wedge Claim Map",
-  "product": "Zen Mesh (Webhook Operations — Stripe, GitHub, Custom)",
+  "name": "Zen Mesh \u2014 Webhook Operations Wedge Claim Map",
+  "product": "Zen Mesh (Webhook Operations \u2014 Stripe, GitHub, Custom)",
   "version": "1.0.0",
   "last_updated": "2026-05-25",
   "proof_scope": "local_mock_harness_only",
-  "overall_readiness": "DEMO — local/demo/sandbox only, not customer-ready or production-live",
+  "overall_readiness": "Sandbox/local validation. Free and Pro plans are buyer-facing. Production-live cloud deployment is tracked separately.",
   "claims": [
     {
       "id": "wedge-stripe-ingestion",
@@ -23,8 +23,13 @@
       ],
       "limitation": "Signature verification tested in mock scenarios only. Production Stripe key validation pending.",
       "last_updated": "2026-05-25",
-      "plane_refs": ["CONTROL_PLANE", "DATA_PLANE"],
-      "layer_refs": ["L3_TRAFFIC"]
+      "plane_refs": [
+        "CONTROL_PLANE",
+        "DATA_PLANE"
+      ],
+      "layer_refs": [
+        "L3_TRAFFIC"
+      ]
     },
     {
       "id": "wedge-github-ingestion",
@@ -36,8 +41,12 @@
       "validator_refs": [],
       "limitation": "GitHub provider adapter exists in architecture. Webhook-specific signature validation and end-to-end testing not yet performed.",
       "last_updated": "2026-05-25",
-      "plane_refs": ["DATA_PLANE"],
-      "layer_refs": ["L3_TRAFFIC"]
+      "plane_refs": [
+        "DATA_PLANE"
+      ],
+      "layer_refs": [
+        "L3_TRAFFIC"
+      ]
     },
     {
       "id": "wedge-custom-ingestion",
@@ -66,8 +75,12 @@
       ],
       "limitation": "Delivery attempt struct is in-memory only. Persistence and customer-facing visibility are separate.",
       "last_updated": "2026-05-25",
-      "plane_refs": ["DATA_PLANE"],
-      "layer_refs": ["L3_TRAFFIC"]
+      "plane_refs": [
+        "DATA_PLANE"
+      ],
+      "layer_refs": [
+        "L3_TRAFFIC"
+      ]
     },
     {
       "id": "wedge-retry-dlq",
@@ -81,8 +94,12 @@
       "validator_refs": [],
       "limitation": "DLQ behavior tested in local mock only. Customer-facing DLQ retry UI is separate.",
       "last_updated": "2026-05-25",
-      "plane_refs": ["DATA_PLANE"],
-      "layer_refs": ["L3_TRAFFIC"]
+      "plane_refs": [
+        "DATA_PLANE"
+      ],
+      "layer_refs": [
+        "L3_TRAFFIC"
+      ]
     },
     {
       "id": "wedge-idempotency",
@@ -96,8 +113,12 @@
       "validator_refs": [],
       "limitation": "Idempotency tested in mock only. Provider-native idempotency interop not yet validated per source.",
       "last_updated": "2026-05-25",
-      "plane_refs": ["DATA_PLANE"],
-      "layer_refs": ["L3_TRAFFIC"]
+      "plane_refs": [
+        "DATA_PLANE"
+      ],
+      "layer_refs": [
+        "L3_TRAFFIC"
+      ]
     },
     {
       "id": "wedge-mtls",
@@ -113,8 +134,12 @@
       ],
       "limitation": "mTLS enforced on internal control-plane paths. Not all data-plane paths have mTLS yet.",
       "last_updated": "2026-05-25",
-      "plane_refs": ["CONTROL_PLANE"],
-      "layer_refs": ["L1_BASE"]
+      "plane_refs": [
+        "CONTROL_PLANE"
+      ],
+      "layer_refs": [
+        "L1_BASE"
+      ]
     },
     {
       "id": "wedge-hmac-signing",
@@ -130,8 +155,13 @@
       ],
       "limitation": "HMAC verification tested in mock scenarios. Provider-specific webhook signing integration per source.",
       "last_updated": "2026-05-25",
-      "plane_refs": ["CONTROL_PLANE", "DATA_PLANE"],
-      "layer_refs": ["L1_BASE"]
+      "plane_refs": [
+        "CONTROL_PLANE",
+        "DATA_PLANE"
+      ],
+      "layer_refs": [
+        "L1_BASE"
+      ]
     },
     {
       "id": "wedge-evidence-integrity",
@@ -146,10 +176,15 @@
       "validator_refs": [
         "scripts/validation/merkle_evidence_verify.py"
       ],
-      "limitation": "Merkle provides evidence integrity only — not delivery confirmation, ordering, or identity verification.",
+      "limitation": "Merkle provides evidence integrity only \u2014 not delivery confirmation, ordering, or identity verification.",
       "last_updated": "2026-05-25",
-      "plane_refs": ["CONTROL_PLANE", "DATA_PLANE"],
-      "layer_refs": ["L1_BASE"]
+      "plane_refs": [
+        "CONTROL_PLANE",
+        "DATA_PLANE"
+      ],
+      "layer_refs": [
+        "L1_BASE"
+      ]
     },
     {
       "id": "wedge-spiffe-identity",
@@ -165,8 +200,12 @@
       ],
       "limitation": "SPIFFE identity scoped to internal paths. SVID rotation is not yet automated.",
       "last_updated": "2026-05-25",
-      "plane_refs": ["CONTROL_PLANE"],
-      "layer_refs": ["L1_BASE"]
+      "plane_refs": [
+        "CONTROL_PLANE"
+      ],
+      "layer_refs": [
+        "L1_BASE"
+      ]
     },
     {
       "id": "wedge-compliance-mapping",
@@ -180,8 +219,12 @@
       "validator_refs": [],
       "limitation": "Control mappings are internal readiness only. No certification, audit, or attestation has been performed.",
       "last_updated": "2026-05-25",
-      "plane_refs": ["CONTROL_PLANE"],
-      "layer_refs": ["L1_BASE"]
+      "plane_refs": [
+        "CONTROL_PLANE"
+      ],
+      "layer_refs": [
+        "L1_BASE"
+      ]
     },
     {
       "id": "wedge-ui-route-quality",
@@ -193,8 +236,12 @@
       "validator_refs": [],
       "limitation": "Route configuration UI exists. Comprehensive delivery status dashboard is planned. Rendered browser validation not yet performed.",
       "last_updated": "2026-05-25",
-      "plane_refs": ["CONTROL_PLANE"],
-      "layer_refs": ["L1_BASE"]
+      "plane_refs": [
+        "CONTROL_PLANE"
+      ],
+      "layer_refs": [
+        "L1_BASE"
+      ]
     },
     {
       "id": "wedge-provider-expansion",

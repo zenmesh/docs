@@ -23,9 +23,9 @@ Ciphertext-only secret management via Kubernetes CRDs. Proven in TRUST-PROOF-005
 Process of registering a K8s cluster via age-encrypted bundle + zen-agent. Proven in TRUST-PROOF-001/002.
 
 ## Delivery Modes
-- **Direct**: Ingester to public target
-- **Egress Direct**: Outbound-only private delivery mode — ingester routes through an egress gateway with mTLS to reach private targets
-- **Egress Relay**: Outbound-only private delivery mode — ingester routes through a relay egress gateway to reach NAT/firewalled targets
+- **Direct**: Standard delivery — destination reachable from data plane
+- **Standard delivery**: Default delivery mode — the destination is reachable from the selected Zen Mesh data plane (maps to `transport.mode=direct`)
+- **Outbound-only private delivery**: Delivery mode for destinations behind NAT/firewall — an enrolled edge adapter maintains an outbound relay connection (maps to `transport.mode=relay`)
 
 Proven in PROOF-001/008/009/010.
 

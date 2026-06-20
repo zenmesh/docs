@@ -16,9 +16,8 @@ sidebar_label: Key Concepts
 
 | Path | Description | Evidence |
 |---|---|---|
-| **Direct** | Ingester → public target | PROOF-001, 003, 004 |
-| **Relay** | Ingester → egress (mTLS) → NAT/firewalled target | PROOF-008, 009 |
-| **Private Edge** | Edge source → private_edge path → mock data target | PROOF-010 |
+| **Standard delivery** | Destination reachable from data plane | PROOF-001, 003, 004 |
+| **Outbound-only private delivery** | Egress relay to NAT/firewalled target | PROOF-008, 009 |
 
 ## Trust Mechanisms
 

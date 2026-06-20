@@ -52,7 +52,7 @@
     "id": "wedge-nc-roadmap-equals-production",
     "category": "scope",
     "claim": "Provider expansion roadmap implies production support",
-    "scope": "Not claimed. Roadmap providers are planned — not validated, not production-ready, not customer-ready.",
+    "scope": "Not claimed. Roadmap providers are planned \u2014 not yet validated for V1 public launch.",
     "evidence_status": "not_claimed"
   },
   {
