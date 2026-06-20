@@ -16,9 +16,19 @@ Header validation checks that incoming webhook requests contain the required hea
 Header validation operates on incoming webhook requests:
 
 1. The request headers are inspected for required fields and accepted value patterns
-2. Where signature verification is supported (e.g., Stripe webhook signatures, GitHub HMAC-SHA256), the signature is validated against the expected secret
+2. Where signature verification is supported, the signature is validated against the expected secret
 3. Requests with missing, invalid, or mismatched headers are rejected before delivery processing
 4. Validation outcomes are recorded in delivery evidence for audit purposes
+
+## Supported Providers
+
+| Provider | Signature Header | Scheme |
+|----------|-----------------|--------|
+| **Stripe** | `Stripe-Signature` | Timestamped HMAC-SHA256 with signing secret |
+| **GitHub** | `X-Hub-Signature-256` | HMAC-SHA256 with shared secret |
+| **Twilio** | `Twilio-Signature` | Twilio-Signature validation using URL, params, and auth token |
+| **Shopify** | `X-Shopify-Hmac-SHA256` | HMAC-SHA256 with shared secret |
+| **Custom** | User-configured | HMAC-SHA256 with user-configured secret |
 
 ## Configuration Options
 
@@ -26,24 +36,22 @@ Header validation operates on incoming webhook requests:
 |---------|-------------|
 | **Required headers** | Headers that must be present on incoming webhook requests |
 | **Accepted values/patterns** | Expected values or patterns for validated headers |
-| **Signature header** | Support for provider-specific signature headers (Stripe, GitHub, generic HMAC) |
+| **Signature header** | Support for provider-specific signature headers |
 | **Failure behavior** | What happens when header validation fails (reject, log, route to quarantine) |
 
-## Operational Limits
+## Operational Status
 
-- Webhook signature verification is implemented and validated for Stripe and GitHub
-- Generic header filtering and validation is partially implemented
-- Evidence references: AC-004 (PARTIAL), Stripe/GitHub signature verification (DONE)
+- **Stripe**: `Stripe-Signature` header verification — implemented and validated
+- **GitHub**: `X-Hub-Signature-256` header verification — implemented and validated
+- **Twilio**: `Twilio-Signature` header verification — implemented and validated
+- **Shopify**: `X-Shopify-Hmac-SHA256` header verification — implemented and validated
+- **Custom**: User-configured secret with HMAC-SHA256 — available
 
 ## Example Scenario
 
-An organization receives webhooks from both Stripe and GitHub. Header validation is configured to verify Stripe's `Stripe-Signature` header and GitHub's `X-Hub-Signature-256` header. A forged webhook request without a valid signature is rejected — protecting downstream services from processing unverified events.
+An organization receives webhooks from Stripe, GitHub, Twilio, and Shopify. Header validation is configured for each provider's signature scheme. A forged webhook request without a valid signature is rejected — protecting downstream services from processing unverified events.
 
 ## Related Capabilities
 
 - [Webhook IP Allowlisting](./ip-allowlisting)
 - [Cryptographic Enrollment](./cryptographic-enrollment)
-
-## Evidence and Status
-
-**Status as of 2026-06:** Signature verification for Stripe and GitHub providers is implemented and validated. Comprehensive generic header filtering and validation is under active development.

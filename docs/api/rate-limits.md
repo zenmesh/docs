@@ -4,25 +4,16 @@ sidebar_label: Rate Limits & Operational Limits
 
 # Rate Limits and Operational Limits
 
-## API Rate Limits
+## Plans and Quotas
 
-| Surface | Limit | Burst | Scope |
-|---------|-------|-------|-------|
-| Back API | 100 req/min | 200 | Per tenant |
-| BFF API | 300 req/min | 500 | Per session |
-| MCP API | 50 req/s | 100 | Per API key |
-| Customer API | 100 req/min | 200 | Per tenant (planned) |
+| Tier | Webhooks / Month | Max Payload | Max Endpoints | Max Destinations |
+|------|-----------------|-------------|---------------|------------------|
+| **Free Forever** | 25,000 | 256 KB | 3 | 3 |
+| **Pro — Early Bird** | 500,000 | 1 MB | 50 | 25 |
+| **Business (Coming Soon)** | Custom | Custom | Custom | Custom |
+| **Enterprise (Contact Us)** | Custom | Custom | Custom | Custom |
 
 Rate-limited requests receive a `429 Too Many Requests` response with a `Retry-After` header.
-
-## Payload Limits
-
-| Limit | Value | Notes |
-|-------|-------|-------|
-| Max webhook payload | 256 KB | Configurable per source |
-| Max request body | 1 MB | API and BFF |
-| Max header size | 16 KB | Per request |
-| Max page size | 100 | List endpoint default: 20 |
 
 ## Delivery Operational Limits
 

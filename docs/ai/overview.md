@@ -9,10 +9,10 @@ This section is for **AI agents**, **RAG systems**, **technical evaluators**, an
 ## Quick Q&A
 
 **Does Zen Mesh provide machine-readable evidence?**
-Yes. See the../ai/evidence-v1-supersession.md#manifest../ai/evidence-v1-supersession.md#manifest),../ai/evidence-v1-supersession.md#compliance-map../ai/evidence-v1-supersession.md#compliance-map), and../ai/evidence-v1-supersession.md#non-claims../ai/evidence-v1-supersession.md## non-claims).
+Yes. See the [manifest](../ai/evidence-v1-supersession.md#manifest), [compliance map](../ai/evidence-v1-supersession.md#compliance-map), and [non-claims](../ai/evidence-v1-supersession.md#non-claims).
 
 **Does Zen Mesh claim PCI compliance?**
-No. See../ai/evidence-v1-supersession.md#non-claims](../ai/evidence-v1-supersession.md#non-claims).
+No. See [non-claims](../ai/evidence-v1-supersession.md#non-claims).
 
 **How does an AI agent verify a runtime proof?**
 Fetch the manifest, check `proof_status`, verify `evidence_refs` point to existing artifacts, and run validators listed in [verification](./verification).
@@ -23,26 +23,26 @@ Merkle provides evidence integrity and state comparison only. It does not serve 
 **Is local/mock evidence the same as production proof?**
 No. All proofs are local/mock unless stated otherwise. Production validation gates are tracked but not yet passed.
 
-**Where can I fin../ai/evidence-v1-supersession.md#non-claims?**
-In the../ai/evidence-v1-supersession.md#non-claims page](../ai/evidence-v1-supersession.md#non-claims) and the machine-readable ../ai/evidence-v1-supersession.md## non-claims`../ai/evidence-v1-supersession.md## non-claims) endpoint.
+**Where can I find non-claims?**
+In the [non-claims page](../ai/evidence-v1-supersession.md#non-claims) and the machine-readable [`non-claims` endpoint](../ai/evidence-v1-supersession.md#non-claims).
 
 ## Webhook Operations Wedge
 
-The public product scope is the **webhook operations wedge** — Stripe, GitHub, and custom webhooks with a planned expansion path to Shopify, Twilio, GitLab, Alipay, and similar providers. See:
+The public product scope is the **webhook operations wedge** — Stripe, GitHub, Twilio, Shopify, and custom webhooks. See:
 - [Wedge Overview](./wedge-overview)
--../ai/evidence-v1-supersession.md#wedge-claim-map../ai/evidence-v1-supersession.md#wedge-claim-map)
--../ai/evidence-v1-supersession.md#wedge-non-claims../ai/evidence-v1-supersession.md#wedg../ai/evidence-v1-supersession.md#non-claims)
+- [Wedge claim map](../ai/evidence-v1-supersession.md#wedge-claim-map)
+- [Wedge non-claims](../ai/evidence-v1-supersession.md#non-claims)
 
 ## Machine-Readable Endpoints
 
 | Endpoint | Description |
 |---|---|
-|../ai/evidence-v1-supersession.md#wedge-claim-map` | Stripe webhook wedge claim matrix |
-|../ai/evidence-v1-supersession.md#wedg../ai/evidence-v1-supersession.md#non-claims` | Wedge-scope../ai/evidence-v1-supersession.md#non-claims |
-|../ai/evidence-v1-supersession.md#manifest` | Full platfor../ai/evidence-v1-supersession.md#manifest |
-|../ai/evidence-v1-supersession.md#compliance-map` | Compliance framework to feature graph |
-|../ai/evidence-v1-supersession.md## non-claims` | Full platfor../ai/evidence-v1-supersession.md#non-claims by category |
-|../ai/evidence-v1-supersession.md### AI Discovery Registry` | Per-surface freshness for evidence + security posture endpoints |
+| `ai/evidence-v1-supersession.md#wedge-claim-map` | Stripe webhook wedge claim matrix |
+| `ai/evidence-v1-supersession.md#non-claims` | Wedge-scope non-claims |
+| `ai/evidence-v1-supersession.md#manifest` | Full platform manifest |
+| `ai/evidence-v1-supersession.md#compliance-map` | Compliance framework to feature graph |
+| `ai/evidence-v1-supersession.md#non-claims` | Full platform non-claims by category |
+| `ai/evidence-v1-supersession.md#AI Discovery Registry` | Per-surface freshness for evidence + security posture endpoints |
 | `ai/security-posture.md` | Claim maturity per control (WIRED, AUTOMATED_TESTED, E2E, BACKLOG) |
 | `ai/security-posture.md` | AI attack model with maturity per threat |
 | `ai/security-posture.md` | Security primitives (mTLS, HMAC, SPIFFE, RLS, hash-chain, …) |
@@ -59,7 +59,7 @@ Blog posts and [`narrative-context.json`](https://www.zen-mesh.io/ai/narrative-c
 - [Webhook delivery evidence (blog)](https://www.zen-mesh.io/blogs/webhook-delivery-evidence/) — delivery logs vs verifiable evidence (narrative_context)
 - [Webhooks behind firewalls (blog)](https://www.zen-mesh.io/blogs/webhooks-behind-firewalls/) — architecture narrative (narrative_context)
 
-Proof remains in the../ai/evidence-v1-supersession.md#manifest../ai/evidence-v1-supersession.md#manifest) and linked zen-platform evidence artifacts (hash-chain receipts are integrity-only — not authentication or replay prevention).
+Proof remains in the [manifest](../ai/evidence-v1-supersession.md#manifest) and linked zen-platform evidence artifacts (hash-chain receipts are integrity-only — not authentication or replay prevention).
 
 ## AI security posture
 

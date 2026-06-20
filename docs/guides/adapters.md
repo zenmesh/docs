@@ -16,29 +16,37 @@ Deliver webhook events to Splunk HTTP Event Collector (HEC).
 - **Format**: CloudEvents → Splunk event format
 - **Auth**: HEC token stored in zen-lock
 
-## PagerDuty
+## Stripe
 
-Create PagerDuty incidents from webhook events.
+Receive and process Stripe webhook events.
 
-- **Delivery**: POST to PagerDuty Events API v2
-- **Format**: CloudEvents → PagerDuty event envelope
-- **Features**: Automatic deduplication via `dedup_key`
+- **Delivery**: POST to Stripe webhook endpoint
+- **Format**: CloudEvents → Stripe event format
+- **Features**: Signature verification, event-type filtering
 
-## Grafana
+## GitHub
 
-Forward events to Grafana OnCall or Grafana Alerting webhooks.
+Forward GitHub webhook events to delivery targets.
 
-- **Delivery**: POST to Grafana webhook endpoint
-- **Format**: CloudEvents → Grafana alert payload
-- **Features**: Severity mapping, group/label extraction
+- **Delivery**: POST to GitHub webhook endpoint
+- **Format**: CloudEvents → GitHub event format
+- **Features**: Signature verification, event-type routing
 
-## Microsoft Teams
+## Twilio
 
-Send adaptive card notifications to Teams channels.
+Process Twilio webhook events (SMS, voice, status callbacks).
 
-- **Delivery**: POST to Microsoft Teams incoming webhook
-- **Format**: CloudEvents → Teams Adaptive Card
-- **Features**: Channel-specific formatting, action buttons
+- **Delivery**: POST to Twilio webhook endpoint
+- **Format**: CloudEvents → Twilio event format
+- **Features**: Twilio signature validation, media handling
+
+## Shopify
+
+Receive and process Shopify webhook events.
+
+- **Delivery**: POST to Shopify webhook endpoint
+- **Format**: CloudEvents → Shopify event format
+- **Features**: HMAC verification, topic-based routing
 
 ## Creating an Adapter
 

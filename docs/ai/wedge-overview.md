@@ -4,7 +4,7 @@ sidebar_label: Webhook Operations Wedge
 
 # Webhook Operations Wedge — Evidence Overview
 
-Zen helps teams receive, validate, observe, and operate webhooks across Stripe, GitHub, and custom sources, with a planned expansion path to Shopify, Twilio, GitLab, Alipay, and similar providers.
+Zen helps teams receive, validate, observe, and operate webhooks across Stripe, GitHub, Twilio, Shopify, and custom sources.
 
 ## Current Readiness: DEMO
 
@@ -15,6 +15,10 @@ All evidence is **local/demo/sandbox only**. Not customer-ready or production-li
 | Capability | Status | Proof Scope |
 |---|---|---|
 | Stripe webhook ingestion | PROVEN | local/mock |
+| GitHub webhook ingestion | PROVEN | local/mock |
+| Twilio webhook ingestion | PROVEN | local/mock |
+| Shopify webhook ingestion | PROVEN | local/mock |
+| Custom webhook ingestion | PROVEN | local/mock |
 | Delivery attempt recording and outcomes | PROVEN | local/mock |
 | Retry with DLQ exhaustion routing | PROVEN | local/mock |
 | Duplicate detection via idempotency keys | PROVEN | local/mock |
@@ -27,33 +31,25 @@ All evidence is **local/demo/sandbox only**. Not customer-ready or production-li
 
 | Capability | Status | Limitation |
 |---|---|---|
-| GitHub webhook ingestion | PARTIAL | Provider adapter present; webhook-specific signature validation not yet tested |
-| Custom webhook ingestion | PLANNED | Generic ingestion pipeline designed; provider-specific handling per adapter |
 | Compliance control mapping | PARTIAL | Internal readiness only; no certification |
 | UI route quality and delivery dashboard | PARTIAL | Route UI exists; dashboard planned |
-| Provider expansion (Shopify, Twilio, GitLab, Alipay) | PLANNED | Modular provider adapter model — not yet validated |
 
 ## What Is Not Claimed
-
-See the [## Wedge Non-Claims../ai/evidence-v1-supersession.md#wedg../ai/evidence-v1-supersession.md#non-claims) for the full list. Key points:
 
 - **Not production-live or customer-ready**
 - **No public edge/mesh/relay capability claim**
 - **No exactly-once or zero-loss delivery guarantee**
 - **No compliance certification**
 - **SVID rotation not yet automated**
-- **Provider scope**: Stripe tested (local/mock), GitHub adapter present (not fully validated), Custom planned
-- **Shopify, Twilio, GitLab, Alipay are roadmap only** — not currently supported
 - **Custom webhook support does not imply every provider-specific signature scheme is implemented**
-- **Modular provider adapter design is not a claim of full marketplace coverage**
 
 ## Machine-Readable Endpoints
 
 | Endpoint | Description |
 |---|---|
-|../ai/evidence-v1-supersession.md#wedge-claim-map` | Structured claim matrix (webhook wedge) |
-|../ai/evidence-v1-supersession.md#wedg../ai/evidence-v1-supersession.md#non-claims` | Explici../ai/evidence-v1-supersession.md#non-claims for wedge scope |
-|../ai/evidence-v1-supersession.md#manifest` | Full platfor../ai/evidence-v1-supersession.md#manifest |
+| `ai/evidence-v1-supersession.md#wedge-claim-map` | Structured claim matrix (webhook wedge) |
+| `ai/evidence-v1-supersession.md#non-claims` | Explicit non-claims for wedge scope |
+| `ai/evidence-v1-supersession.md#manifest` | Full platform manifest |
 
 ## Security Posture
 
@@ -68,8 +64,6 @@ All proofs are tested in a local mock harness with deterministic scenarios. See 
 
 ## Known Limitations
 
-- Stripe native webhook signing secret integration not yet validated
-- GitHub webhook-specific signature verification not yet validated
 - No real webhook event validated on a cloud deployment
 - Custom webhook signature schemes are provider-specific
 - Comprehensive delivery status dashboard is planned

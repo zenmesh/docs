@@ -198,26 +198,8 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "api/reference/servicenow-webhook",
-          label: "ServiceNow webhook endpoint",
-          className: "api-method post",
-        },
-        {
-          type: "doc",
           id: "api/reference/jira-webhook",
           label: "Jira webhook endpoint",
-          className: "api-method post",
-        },
-        {
-          type: "doc",
-          id: "api/reference/datadog-webhook",
-          label: "Datadog webhook endpoint",
-          className: "api-method post",
-        },
-        {
-          type: "doc",
-          id: "api/reference/pagerduty-webhook",
-          label: "PagerDuty webhook endpoint",
           className: "api-method post",
         },
       ],

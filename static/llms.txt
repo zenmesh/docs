@@ -1,8 +1,8 @@
 # Zen Mesh — Webhook Operations
 
-> Zen Mesh helps teams receive, validate, observe, and operate webhooks across Stripe, GitHub, and custom sources. Current readiness is DEMO only (local/mock/sandbox and limited cloud-demo scope — not customer-ready or production-live).
+> Zen Mesh helps teams receive, validate, observe, and operate webhooks across Stripe, GitHub, Twilio, Shopify, and custom sources. Current readiness is DEMO only (local/mock/sandbox and limited cloud-demo scope — not customer-ready or production-live).
 
-Version: 1.0.0 · Last-Updated: 2026-05-31T16:00:00Z · Product scope: webhook ingestion, validation, delivery visibility, and security operations (evidence-first federated operational runtime/trust platform).
+Version: 1.0.0 · Last-Updated: 2026-06-19 · Product scope: webhook ingestion, validation, delivery visibility, and security operations (evidence-first federated operational runtime/trust platform).
 
 Non-claims and proof scope are authoritative — see the Non-Claims and Wedge Evidence links below before inferring production readiness.
 
@@ -86,7 +86,7 @@ Non-claims and proof scope are authoritative — see the Non-Claims and Wedge Ev
 ## Guides
 
 - [Endpoints](https://docs.zen-mesh.io/docs/guides/endpoints): Create and manage webhook endpoints — ingesters, destinations, delivery flows
-- [Sources](https://docs.zen-mesh.io/docs/guides/sources): Supported webhook source types — Stripe, GitHub, generic HTTP
+- [Sources](https://docs.zen-mesh.io/docs/guides/sources): Supported webhook source types — Stripe, GitHub, Twilio, Shopify, Custom
 - [Stripe Integration](https://docs.zen-mesh.io/docs/guides/stripe): Stripe webhook events, setup, signature verification, event types
 - [GitHub Integration](https://docs.zen-mesh.io/docs/guides/github): GitHub webhook events, setup, signature verification, event types
 - [Custom Webhooks](https://docs.zen-mesh.io/docs/guides/custom-webhooks): Receive webhooks from any HTTP source — verification, IP allowlisting, routing
@@ -144,17 +144,6 @@ Non-claims and proof scope are authoritative — see the Non-Claims and Wedge Ev
 ## Community OSS
 
 - [zen-gc](https://github.com/zen-mesh/zen-gc) — Free Apache-2.0 Kubernetes garbage collection controller (declarative TTL cleanup policies). Independent OSS from the Zen Mesh team.
-
-## V1 governance (2026-05-30)
-
-- Not production-live, not customer-ready, not demo-ready as global platform readiness
-- Canonical failure-stop: canonical script failure requires STOP — ad hoc runtime is not accepted evidence
-- Integrity-chain authority: accepted deploy/UI/completion evidence artifacts require hash-chain inclusion; comparison is integrity-only — not authentication, not identity proof, not encryption, not replay prevention
-- Planes management UI (T1): not product-pass; management-console boring-readiness not complete
-- Runtime sandbox delivery validation: relay-path proof is mandatory for demo scope; see manifest proof_status for direct/egress/relay receipts — not a platform go-live claim
-- Runtime workload identity (SVID) rotation: operational proof not complete on mainline
-- DeliveryPolicy TLS/trust-chain controls: policy-driven delivery controls at L2 deferred — not PASS
-- [Non-claims registry](https://docs.zen-mesh.io/ai/evidence/v1/non-claims.json)
 
 ## Narrative context (not proof)
 
