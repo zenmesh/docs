@@ -8,7 +8,7 @@
     "http://schema.org/SoftwareSourceCode"
   ],
   "schema_version": "1.0.0",
-  "generated_at": "2026-05-24T17:51:13Z",
+  "generated_at": "2026-06-23T23:30:00Z",
   "product": "Zen Mesh",
   "repository": "https://github.com/zenmesh/zen-platform",
   "evidence_scope": "local_mock_harness_plus_gke_cloud_demo",
@@ -911,11 +911,24 @@
     {
       "id": "networking-gateway-api-migration-readiness",
       "name": "Gateway API Migration Readiness",
-      "status": "planned",
-      "evidence_scope": "inventory_only",
+      "status": "validated_local",
+      "evidence_scope": "sandbox_local",
       "json_url": "/ai/networking/v1/gateway-api-migration-readiness.json",
       "docs_url": "https://docs.zen-mesh.io/networking/gateway-api-migration",
-      "non_claim": "No runtime migration performed. No Gateway API resources created in clusters."
+      "non_claim": "No persistent/production Gateway API resources created. No MCP-specific route proven (GAPI005 pending). Local kubeadm sandbox only.",
+      "proven_at": "2026-06-15",
+      "proof_type": "sandbox"
+    },
+    {
+      "id": "gateway-api-option-d-local-proof",
+      "name": "Gateway API Option D Local Kubeadm Traffic Proof",
+      "status": "validated_local",
+      "evidence_scope": "sandbox_local",
+      "json_url": "/ai/networking/v1/gateway-api-migration-readiness.json",
+      "docs_url": "https://docs.zen-mesh.io/networking/gateway-api-migration",
+      "proven_at": "2026-06-15",
+      "proof_type": "sandbox",
+      "non_claim": "Not MCP-specific. Not production/cloud migration. Not customer-ready."
     },
     {
       "id": "flow01-direct-public-target",
@@ -987,7 +1000,7 @@
   "ai_discovery": {
     "registry_ref": "https://docs.zen-mesh.io/ai/ai-discovery-registry.json",
     "registry_updated_at": "2026-05-31T23:59:59.000Z",
-    "capabilities_manifest_generated_at": "2026-05-24T17:51:13Z",
+    "capabilities_manifest_generated_at": "2026-06-23T23:30:00Z",
     "security_posture_surfaces": [
       "/ai/security/v1/claim-maturity.json",
       "/ai/security/v1/attack-model.json",

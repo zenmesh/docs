@@ -237,5 +237,13 @@
     "claim": "Ad hoc runtime recovery counts as accepted proof after canonical failure",
     "scope": "Not claimed. CANONICAL-FAIL-STOP-001 requires STOP and canonical reproduction.",
     "evidence_status": "not_claimed"
+  },
+  {
+    "id": "gapi004-option-d-proof",
+    "category": "network_gateway_api",
+    "claim": "Gateway API Option D external route is validated via MetalLB VIP through Envoy Gateway",
+    "scope": "GAPI004 Option D proof does NOT imply production/cloud Gateway API migration. GAPI004 does NOT imply MCP-specific route proof (follow-up: GAPI005). GAPI004 does NOT imply customer-ready or production-live. docsai125r2 MCP-GAPI proof is PARTIAL (NodePort blocker in k3d) — not PASS.",
+    "internal_ref": "GAPI004",
+    "evidence_status": "not_claimed"
   }
 ]

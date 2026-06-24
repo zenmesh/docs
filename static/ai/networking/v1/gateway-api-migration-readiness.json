@@ -1,16 +1,18 @@
 {
   "schema_version": "1.0.0",
-  "description": "Gateway API migration readiness for Zen Mesh. All routes inventoried. No runtime migration performed.",
-  "generated_at": "2026-05-24T23:56:00Z",
-  "evidence_scope": "inventory_only",
+  "description": "Gateway API migration readiness for Zen Mesh. All routes inventoried. Local libvirt/kubeadm Option D traffic proof validated via MetalLB VIP through Envoy Gateway (GAPI004). Production/cloud migration and MCP-specific route pending.",
+  "generated_at": "2026-06-23T23:30:00Z",
+  "evidence_scope": "inventory_only_plus_local_libvirt_kubeamd",
   "current_state": {
     "ingress_class": "nginx",
     "total_routes": 19,
     "control_plane_routes": 14,
     "data_plane_routes": 5,
     "tls_owner": "cert-manager",
-    "gateway_api_resources_created": false,
-    "traffic_cutover_performed": false
+    "gateway_api_resources_created": true,
+    "gateway_api_resources_note": "Ephemeral libvirt/kubeadm sandbox — not persistent/production",
+    "traffic_cutover_performed": true,
+    "traffic_cutover_note": "Ephemeral local kubeadm sandbox only — no DNS/cert cutover, not production"
   },
   "target_state": {
     "gateway_api_version": "v1.0+",
@@ -57,14 +59,14 @@
   "blockers": [
     "GRPCRoute requires Gateway API v1.2+",
     "BackendTLSPolicy needed for HTTPS backend-protocol routes",
-    "No controller installed in sandbox"
+    "MCP-specific Gateway route not yet proven (GAPI005 pending)"
   ],
   "non_claims": [
-    "No runtime migration performed",
+    "No persistent/production traffic proof — local libvirt/kubeadm sandbox only",
     "No production-live Gateway API claim",
     "No DNS cutover",
     "No cert rotation performed",
-    "No traffic proof",
+    "No MCP-specific route proof (GAPI005 pending)",
     "No app UI freshness claim"
   ],
   "docs_urls": [
