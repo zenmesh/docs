@@ -1,30 +1,125 @@
-# LLM Index for Zen Mesh
+# Zen Mesh — Documentation Index
 
-This is a draft discovery index for AI and human reviewers.
+> Zen Mesh is zero-trust webhook delivery infrastructure for private networks. Services behind NAT or firewall connect outbound-only to receive webhooks from Stripe, GitHub, Shopify, Twilio, and custom senders — no inbound ports, no VPN, no kernel modules. Free for development and evaluation. 6-month Pro trial available. Business and Enterprise plans coming soon.
 
-**Status:** DRAFT - NOT EFFECTIVE - REVIEW PENDING
+**Version:** 1.0 · **Last-Updated:** 2026-06-25 · **Docs:** https://docs.zen-mesh.io · **Site:** https://www.zen-mesh.io · **Repository:** https://github.com/zenmesh/zen-platform
 
-## Overview
+## Getting started
 
-This document is a draft discovery index for large language models and human reviewers to discover relevant pages.
+- [Quick start](getting-started/quick-start): Sandbox-oriented setup — create endpoints, targets, flows, send test webhooks
+- [Installation](getting-started/installation): Install paths for evaluation (Docker, Edge Lite binary, source)
+- [First webhook](getting-started/first-webhook): Step-by-step first webhook walkthrough
+- [Edge Lite](ai/edge-lite): Pre-launch design-partner evaluation mode — single-container Docker-based Zen Mesh Edge
 
-## Categories
+## Pricing
 
-### Getting Started
-- start-here/what-is-zen-mesh.md
-- start-here/current-status.md
-- guides/quick-start.md
+- **Free Forever:** $0/month — 3 webhook endpoints, 25,000 webhooks/month, 256 KB max payload, 3 targets, 3 routes/flows, 7-day retention, shared receive IPs. Development and evaluation only — not for production use.
+- **Pro — Early Bird:** $29/month (6-month free trial with monthly feedback survey; reference standard $49/month). 50 endpoints, 500,000 webhooks/month, 1 MB payload, 25 targets, 50 routes, 30-day retention, S3 log export, 1 seat. No SLA or dedicated IP.
+- **Business:** Coming soon. Planned: dedicated receive IP add-on, higher limits, payload export and Object Lock, stronger liability posture.
+- **Enterprise:** Contact zen@zen-mesh.io for custom pricing, SLAs, dedicated infrastructure, and compliance workflows.
 
-### Architecture
-- architecture/overview.md
-- architecture/three-plane-model.md
-- architecture/security-model.md
+See [plans and limits](start-here/plans-and-limits) and [site pricing](https://www.zen-mesh.io/pricing).
 
-### API
-- api/webhooks.md
-- api/messaging.md
+## Competitive positioning
 
-### Documentation
-- docs/
+Zen Mesh differentiates on private-network delivery. Most webhook tools assume the receiver has a public endpoint or uses polling/tunnels. Zen Mesh uses outbound-only connections (Edge Lite / zen-agent) so services behind NAT or firewall can receive webhooks without opening inbound ports, VPN, or kernel modules.
 
-**Document Status:** DRAFT - NOT EFFECTIVE - REVIEW PENDING
+Additional differentiators:
+- Docker-first / private-environment path: Start with Edge Lite; no Kubernetes required for evaluation
+- Zero-trust webhook infrastructure: mTLS, SPIFFE/SPIRE, HMAC on every data-plane path — non-negotiable
+- Verifiable delivery evidence: Hash-chain receipts and tamper-evident delivery logs
+- Provider templates: Out-of-the-box support for Stripe, GitHub, Twilio, Shopify, and Custom webhook signature verification
+- Kubernetes/cloud-native path: Full helm-based deployment for production environments
+- Non-claims and gaps published alongside claims
+
+## Support channels
+
+| Channel | Scope | Response |
+|---------|-------|----------|
+| Documentation | Self-service | https://docs.zen-mesh.io |
+| Free tier | Community / best-effort | No SLA. Best-effort during business hours. |
+| Pro tier | Email + Slack/Discord | Best-effort. No on-call or guaranteed response time. |
+| Business | SLA-backed | Planned — coming soon. |
+| Enterprise | Custom support and escalation | Contact zen@zen-mesh.io. |
+| Security disclosures | Email | zen@zen-mesh.io. No bug bounty or CVD program at this time. |
+
+See [support](start-here/support).
+
+## Architecture
+
+- [Overview](architecture/overview): Three-plane model and system design
+- [Three-plane model](architecture/three-plane-model): Control plane, data plane, edge plane
+- [Platform layers](architecture/platform-layers): API, ingress, delivery, and security layers
+- [Security model](architecture/security-model): Tenant isolation, mTLS, cryptographic controls
+- [Delivery modes](architecture/delivery-modes): Direct, egress, relay delivery paths
+
+## Security
+
+- [Security posture](ai/security-posture): Claim maturity legend and reviewer highlights
+- [Capability evidence](ai/capability-evidence): Edge Lite + Gateway API evidence and proof ledger
+- [Trust lifecycle evidence](evidence/trust-lifecycle): Enrollment, mTLS, HMAC, ZenLock — TRUST-PROOF-001 through TRUST-PROOF-010
+- [Authentication and mTLS](mcp/authentication-and-mtls): mTLS architecture and SPIFFE-based identity
+- [MCP safety and boundaries](mcp/safety-and-boundaries): Connection security, sandboxing, data isolation
+- [ZenLock](zen-lock): Credential lifecycle management
+- [Non-claims](ai/non-claims): What Zen Mesh does not protect
+- [Security features](security): TLS, mTLS, IP allowlisting, header validation, cryptographic enrollment
+
+## API
+
+- [Overview](api/overview): REST API for webhook management
+- [Quickstart](api/quickstart): API authentication and first request
+- [Webhooks](api/webhooks): Ingestion and delivery API
+- [Events](api/events): Event management and querying
+- [Authentication](api/authentication): API key and session management
+- [Rate limits](api/rate-limits): Usage thresholds and limits
+- [Changelog](api/changelog): API version history and breaking changes
+
+## Delivery
+
+- [Dead letter queue](delivery/dead-letter-queue): Failed event storage and replay
+- [Deduplication](delivery/deduplication): Idempotency and duplicate detection
+- [Fan-out delivery](delivery/fan-out): Multi-destination event routing
+- [Event routing](delivery/event-routing): JSONPath-based routing and transforms
+- [Replay and recovery](delivery/replay-and-recovery): Event replay and delivery recovery
+- [Webhook reliability](delivery/webhook-reliability): Retry, backoff, and delivery guarantees
+
+## Guides
+
+- [Sources](guides/sources): Configure webhook sources (Stripe, GitHub, Twilio, Shopify, Custom)
+- [Endpoints](guides/endpoints): Manage webhook endpoints and webhook URLs
+- [Destinations](guides/destinations): Delivery target configuration
+- [Cluster enrollment](guides/cluster-enrollment): Edge Lite and Kubernetes enrollment setup
+- [Monitoring](guides/monitoring): Delivery metrics, logging, and alerting
+
+## Evidence and AI
+
+- [AI evidence index](evidence/overview): Human-readable map of evidence artifacts
+- [Capability manifest](https://docs.zen-mesh.io/ai/evidence/v1/manifest.json): Machine-readable capability registry
+- [Non-claims registry](https://docs.zen-mesh.io/ai/evidence/v1/non-claims.json): Global non-claims for AI use
+- [Verification guide](ai/verification): How claims are verified in-repo
+- [Terminology taxonomy](ai/public-terminology-taxonomy): Canonical public terminology JSON definitions
+- [Public surface traceability](ai/public-surface-traceability): Per-surface freshness for evidence and llms.txt
+
+## Platform
+
+- [What is Zen Mesh](start-here/what-is-zen-mesh): Product overview and core concepts
+- [Current status](start-here/current-status): Release status and production readiness
+- [Plans and limits](start-here/plans-and-limits): Plan comparison, quotas, and retention limits
+- [Launch status](start-here/launch-status): Feature gates and v1 readiness
+- [CLI reference](reference/cli): Zen Mesh CLI tool documentation
+
+## Legal
+
+- [Privacy notice](legal/privacy): Data processing, retention, and subprocessors
+- [Acceptable use](legal/aup): Acceptable use policy
+- [Data Processing Addendum](legal/dpa): DPA terms and data protection
+- [Cookie disclosure](legal/cookie-disclosure): Cookie and tracking disclosure
+- [Breach notice](legal/breach-notice): Data breach notification process
+- [Billing terms](legal/billing-terms): Payment and billing terms
+
+## Operations
+
+- [Troubleshooting](operations/troubleshooting): Common issues and solutions
+- [Gateway API migration](networking/gateway-api-migration): Migration and deployment operations
+- [Runbooks](runbooks): Operating procedures and maintenance
+- [Provider flow](providerflow): Webhook provider integration documentation
