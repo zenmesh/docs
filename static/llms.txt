@@ -176,18 +176,14 @@ See [support](https://docs.zen-mesh.io/docs/start-here/support).
 ## Zen-GC
 
 - [docs](https://docs.zen-mesh.io/zen-gc): Apache-2.0 Kubernetes garbage collection controller — declarative TTL cleanup policies, retention hygiene, and lifecycle management
-- [repository](https://github.com/zen-mesh/zen-gc): Source code and deployment manifests
 
 ## Narrative context (not proof)
 
-- [Narrative context registry](https://www.zen-mesh.io/ai/narrative-context.json): Blog/editorial URLs — narrative_context only; not manifest proof
 - [Webhook delivery evidence (blog)](https://www.zen-mesh.io/blogs/webhook-delivery-evidence/): Editorial — proof remains in manifest/hash-chain receipts
 - [Webhooks behind firewalls (blog)](https://www.zen-mesh.io/blogs/webhooks-behind-firewalls/): Architecture narrative — not proof
 
 ## Optional
 
-- [Public surface traceability](https://www.zen-mesh.io/ai/public-surface-traceability.json): Changelog for public terminology and AI discovery (capability language only)
-- [Public terminology taxonomy](https://www.zen-mesh.io/ai/public-terminology-taxonomy.json): Internal-ref → public capability map (regression gate)
 - [Terminology guide](https://docs.zen-mesh.io/docs/ai/public-terminology-taxonomy): Docs mirror of public copy policy
 - [Full AI context](https://www.zen-mesh.io/llms-full.txt): Expanded curated context (community convention)
 - [Marketing llms.txt](https://www.zen-mesh.io/llms.txt): www editorial index (JSON registries on docs host only)

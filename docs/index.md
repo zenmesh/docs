@@ -51,7 +51,6 @@ Welcome to the Zen Mesh technical documentation — architecture, operations, se
 | AI Context (llms.txt) | [`llms.txt`](llms.txt) |
 | Evidence index (www) | [`https://www.zen-mesh.io/evidence`](https://www.zen-mesh.io/evidence) |
 | Full Context | [`https://www.zen-mesh.io/llms-full.txt`](https://www.zen-mesh.io/llms-full.txt) |
-| Public terminology | [`https://www.zen-mesh.io/ai/public-terminology-taxonomy.json`](https://www.zen-mesh.io/ai/public-terminology-taxonomy.json) |
 
 ## Also available
 

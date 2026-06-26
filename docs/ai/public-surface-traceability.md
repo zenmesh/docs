@@ -8,7 +8,6 @@ Short changelog for **public-facing** website and docs improvements (terminology
 
 ## Machine-readable
 
-- [public-surface-traceability.json](https://www.zen-mesh.io/ai/public-surface-traceability.json) on the marketing site
 - [PUBLIC_AI_SURFACE_CHANGELOG.md](https://github.com/zenmesh/zen-mesh.io/blob/main/docs/PUBLIC_AI_SURFACE_CHANGELOG.md) in the zen-mesh.io repo
 
 ## 2026-05-29 summary

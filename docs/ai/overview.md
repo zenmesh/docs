@@ -51,11 +51,9 @@ The public product scope is the **webhook operations wedge** — Stripe, GitHub,
 | `ai/security-posture.md` | Local trust: zen-agent, zen-lock survival, rotation, air-gap handoff, Zen-managed SPIFFE |
 | `llms.txt` | AI context — concise |
 | `/llms-full.txt` | AI context — full (on zen-mesh.io) |
-| `https://www.zen-mesh.io/ai/narrative-context.json` | Narrative context registry (blogs — **not** proof) |
 
 ## Narrative context (not proof)
 
-Blog posts and [`narrative-context.json`](https://www.zen-mesh.io/ai/narrative-context.json) on the marketing site are **editorial narrative** for reviewers and LLMs. They explain why delivery evidence and path transparency matter. They are **not** `accepted_evidence`, do not set `proof_status`, and do not replace manifest entries or hash-chain integrity receipts.
 
 - [Webhook delivery evidence (blog)](https://www.zen-mesh.io/blogs/webhook-delivery-evidence/) — delivery logs vs verifiable evidence (narrative_context)
 - [Webhooks behind firewalls (blog)](https://www.zen-mesh.io/blogs/webhooks-behind-firewalls/) — architecture narrative (narrative_context)
@@ -68,8 +66,5 @@ For what Zen Mesh **does and does not** mitigate (SSRF, payloads, mTLS, hash-cha
 
 ## Public terminology
 
-Do not use internal task IDs in customer-facing copy. See [Public terminology taxonomy](./public-terminology-taxonomy), [Public surface traceability](./public-surface-traceability), and [public-terminology-taxonomy.json](https://www.zen-mesh.io/ai/public-terminology-taxonomy.json).
 
 ## Community OSS from the Zen Mesh team
-
-- [**zen-gc**](https://github.com/zen-mesh/zen-gc) — A free Apache-2.0 Kubernetes garbage collection controller. Define declarative cleanup policies (TTL, selectors, dry-run, rate limits) for any Kubernetes resource. zen-gc is an independent OSS controller from the Zen Mesh team; it does not require Zen Mesh, and Zen Mesh does not require it.

@@ -120,7 +120,6 @@ See [support](start-here/support).
 ## Zen-GC
 
 - [Overview](zen-gc): Apache-2.0 Kubernetes garbage collection controller — declarative TTL cleanup policies and lifecycle management
-- [Repository](https://github.com/zen-mesh/zen-gc): Source code, deployment manifests, and full documentation
 
 ## Operations
 

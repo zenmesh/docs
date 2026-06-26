@@ -8,7 +8,6 @@ Customer-facing website and docs copy must use **public capability names**, not 
 
 ## Machine-readable source
 
-- [public-terminology-taxonomy.json](https://www.zen-mesh.io/ai/public-terminology-taxonomy.json) on the marketing site
 - [Human guide](https://www.zen-mesh.io/docs/public-terminology-taxonomy)
 
 ## Policy
@@ -25,7 +24,6 @@ Customer-facing website and docs copy must use **public capability names**, not 
 
 ## Proof boundaries
 
-- **Blogs** — `narrative_context` only; see [narrative-context.json](https://www.zen-mesh.io/ai/narrative-context.json)
 - **Proof** —../ai/evidence-v1-supersession.md#manifest../ai/evidence-v1-supersession.md#manifest) and hash-chain receipts
 - **Merkle** — integrity/tamper-evidence only; not authentication, identity, encryption, or replay prevention
 

@@ -70,7 +70,6 @@ See [`ai/security-posture.md`](ai/security-posture.md) and primitive IDs `PRIM-Z
 
 ## Narrative vs proof
 
-Blogs and [`narrative-context.json`](https://www.zen-mesh.io/ai/narrative-context.json) are **narrative_context** only. Proof remains in the../ai/evidence-v1-supersession.md#manifest../ai/evidence-v1-supersession.md#manifest) and../ai/evidence-v1-supersession.md#non-claims../ai/evidence-v1-supersession.md## non-claims).
 
 ## Hash-chain / Merkle
 
