@@ -93,7 +93,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/Tenant'
         '404':
-          description: Tenant not found
           $ref: '#/components/responses/NotFound'
 
   /tenants/{tenant_id}/clusters:
@@ -888,24 +887,23 @@ paths:
                     items:
                       $ref: '#/components/schemas/Integration'
 
-securitySchemes:
-  tenantAuth:
-    type: http
-    scheme: bearer
-    bearerFormat: JWT
-    description: OIDC/Session-based tenant authentication for UI and API client calls
-  hmacAuth:
-    type: apiKey
-    in: header
-    name: X-KubeZen-Signature
-    description: HMAC-based authentication for cluster-originated writes and webhooks
-  bridgeAuth:
-    type: http
-    scheme: bearer
-    bearerFormat: JWT
-    description: Bridge-only authentication for control plane channel management
-
 components:
+  securitySchemes:
+    tenantAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: OIDC/Session-based tenant authentication for UI and API client calls
+    hmacAuth:
+      type: apiKey
+      in: header
+      name: X-KubeZen-Signature
+      description: HMAC-based authentication for cluster-originated writes and webhooks
+    bridgeAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: Bridge-only authentication for control plane channel management
   schemas:
     Tenant:
       type: object
