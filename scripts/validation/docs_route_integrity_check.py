@@ -140,3 +140,188 @@ def main():
 
 if __name__ == "__main__":
     sys.exit(main())
+
+# Wrong-path variant checks
+wrong_path_urls = [
+    "/ai/compliance-evidence",
+    "/ai/overview",
+    "/api/overview",
+    "/delivery/idempotency",
+    "/security/tenant-isolation",
+    "/start-here/what-is-zen-mesh",
+    "/mcp/overview",
+    "/providerflow/template-packs",
+    "/legal/*",
+    "/runbooks/*",
+    "/security/*",
+    "/delivery/*",
+]
+
+print("\n--- Wrong-Path Variant Checks ---")
+print(f"Checking {len(wrong_path_urls)} no-prefix/doc-like paths...")
+print()
+
+wrong_path_errors = []
+
+for path in wrong_path_urls:
+    full_url = f"https://docs.zen-mesh.io{path}"
+    
+    try:
+        result = subprocess.run(
+            ['timeout', '20s', 'curl', '-sS', '-L', '-o', '/dev/null', '-w',
+             ['timeout', '20s', 'curl', '-sS', '-L', '-o', '/dev/null', '-w',
+             'CODE=%{http_code} REDIRECT=%{url_effective}',
+             full_url],
+             full_url],
+            capture_output=True,
+            text=True,
+            timeout=25
+        )
+        
+        code = result.stdout.strip().split('\n')[0].split('=')[1]
+        redirect = result.stdout.strip().split('\n')[1].split('=')[1]
+        
+        if code == '404':
+            wrong_path_errors.append(f"  ✗ {full_url} -> 404 (should redirect to /docs/... or 200)")
+        elif code == '200' and not path.startswith('/docs'):
+            wrong_path_errors.append(f"  ✗ {full_url} -> 200 (not /docs/... - should redirect)")
+        elif code in ['301', '302']:
+            if '/docs/' not in redirect:
+                wrong_path_errors.append(f"  ✗ {full_url} -> {code} to {redirect} (missing /docs/ prefix)")
+            else:
+                print(f"  ✓ {full_url} -> {code} to {redirect}")
+        else:
+            print(f"  ? {full_url} -> {code} (unexpected)")
+    
+    except subprocess.TimeoutExpired:
+        wrong_path_errors.append(f"  ✗ {full_url} -> TIMEOUT")
+    except Exception as e:
+        wrong_path_errors.append(f"  ✗ {full_url} -> ERROR: {e}")
+
+if wrong_path_errors:
+    print()
+    print("WRONG-PATH ERRORS FOUND:")
+    for error in wrong_path_errors:
+        print(error)
+else:
+    print()
+    print("✓ All no-prefix paths properly handled")
+
+# Wrong-Path Variant Checks
+wrong_path_urls = [
+    "/ai/compliance-evidence",
+    "/ai/overview",
+    "/api/overview",
+    "/delivery/idempotency",
+    "/security/tenant-isolation",
+    "/start-here/what-is-zen-mesh",
+    "/mcp/overview",
+    "/providerflow/template-packs",
+]
+
+print("\n--- Wrong-Path Variant Checks ---")
+print(f"Checking {len(wrong_path_urls)} no-prefix/doc-like paths...")
+print()
+
+wrong_path_errors = []
+
+for path in wrong_path_urls:
+    full_url = f"https://docs.zen-mesh.io{path}"
+    try:
+        result = subprocess.run(
+            ['timeout', '20s', 'curl', '-sS', '-L', '-o', '/dev/null', '-w',
+             'CODE=%{http_code} REDIRECT=%{url_effective}',
+             full_url],
+            capture_output=True,
+            text=True,
+            timeout=25
+        )
+        
+        lines = result.stdout.strip().split('\n')
+        code = lines[0].split('=')[1] if len(lines) > 0 else 'UNKNOWN'
+        redirect = lines[1].split('=')[1] if len(lines) > 1 else 'UNKNOWN'
+        
+        if code == '404':
+            wrong_path_errors.append(f"  ✗ {full_url} -> 404 (should redirect to /docs/... or 200)")
+        elif code == '200' and not path.startswith('/docs'):
+            wrong_path_errors.append(f"  ✗ {full_url} -> 200 (not /docs/... - should redirect)")
+        elif code in ['301', '302']:
+            if '/docs/' not in redirect:
+                wrong_path_errors.append(f"  ✗ {full_url} -> {code} to {redirect} (missing /docs/ prefix)")
+            else:
+                print(f"  ✓ {full_url} -> {code} to {redirect}")
+        else:
+            print(f"  ? {full_url} -> {code}")
+    except subprocess.TimeoutExpired:
+        wrong_path_errors.append(f"  ✗ {full_url} -> TIMEOUT")
+    except Exception as e:
+        wrong_path_errors.append(f"  ✗ {full_url} -> ERROR: {e}")
+
+if wrong_path_errors:
+    print()
+    print("WRONG-PATH ERRORS FOUND:")
+    for error in wrong_path_errors:
+        print(error)
+else:
+    print()
+    print("✓ All no-prefix paths properly handled")
+
+
+# Wrong-Path Variant Checks
+wrong_path_urls = [
+    "/ai/compliance-evidence",
+    "/ai/overview",
+    "/api/overview",
+    "/delivery/idempotency",
+    "/security/tenant-isolation",
+    "/start-here/what-is-zen-mesh",
+    "/mcp/overview",
+    "/providerflow/template-packs",
+]
+
+print("\n--- Wrong-Path Variant Checks ---")
+print(f"Checking {len(wrong_path_urls)} no-prefix/doc-like paths...")
+print()
+
+wrong_path_errors = []
+
+for path in wrong_path_urls:
+    full_url = f"https://docs.zen-mesh.io{path}"
+    try:
+        result = subprocess.run(
+            ['timeout', '20s', 'curl', '-sS', '-L', '-o', '/dev/null', '-w',
+             'CODE=%{http_code} REDIRECT=%{url_effective}',
+             full_url],
+            capture_output=True,
+            text=True,
+            timeout=25
+        )
+        
+        lines = result.stdout.strip().split('\n')
+        code = lines[0].split('=')[1] if len(lines) > 0 else 'UNKNOWN'
+        redirect = lines[1].split('=')[1] if len(lines) > 1 else 'UNKNOWN'
+        
+        if code == '404':
+            wrong_path_errors.append(f"  ✗ {full_url} -> 404 (should redirect to /docs/... or 200)")
+        elif code == '200' and not path.startswith('/docs'):
+            wrong_path_errors.append(f"  ✗ {full_url} -> 200 (not /docs/... - should redirect)")
+        elif code in ['301', '302']:
+            if '/docs/' not in redirect:
+                wrong_path_errors.append(f"  ✗ {full_url} -> {code} to {redirect} (missing /docs/ prefix)")
+            else:
+                print(f"  ✓ {full_url} -> {code} to {redirect}")
+        else:
+            print(f"  ? {full_url} -> {code}")
+    except subprocess.TimeoutExpired:
+        wrong_path_errors.append(f"  ✗ {full_url} -> TIMEOUT")
+    except Exception as e:
+        wrong_path_errors.append(f"  ✗ {full_url} -> ERROR: {e}")
+
+if wrong_path_errors:
+    print()
+    print("WRONG-PATH ERRORS FOUND:")
+    for error in wrong_path_errors:
+        print(error)
+else:
+    print()
+    print("✓ All no-prefix paths properly handled")
