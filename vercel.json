@@ -4,24 +4,556 @@
   "framework": "docusaurus",
   "redirects": [
     {
-      "source": "/docs/operations/zen-gc(/?)$",
-      "destination": "/zen-gc/",
-      "statusCode": 308
+      "source": "/ai/compliance-evidence",
+      "destination": "/docs/ai/compliance-evidence",
+      "permanent": true
+    },
+    {
+      "source": "/ai/overview",
+      "destination": "/docs/ai/overview",
+      "permanent": true
+    },
+    {
+      "source": "/ai/capability-evidence",
+      "destination": "/docs/ai/capability-evidence",
+      "permanent": true
+    },
+    {
+      "source": "/ai/non-claims",
+      "destination": "/docs/ai/non-claims",
+      "permanent": true
+    },
+    {
+      "source": "/ai/evidence-schema",
+      "destination": "/docs/ai/evidence-schema",
+      "permanent": true
+    },
+    {
+      "source": "/ai/evidence-v1-supersession",
+      "destination": "/docs/ai/evidence-v1-supersession",
+      "permanent": true
+    },
+    {
+      "source": "/ai/verification",
+      "destination": "/docs/ai/verification",
+      "permanent": true
+    },
+    {
+      "source": "/ai/security-posture",
+      "destination": "/docs/ai/security-posture",
+      "permanent": true
+    },
+    {
+      "source": "/ai/public-surface-traceability",
+      "destination": "/docs/ai/public-surface-traceability",
+      "permanent": true
+    },
+    {
+      "source": "/ai/public-terminology-taxonomy",
+      "destination": "/docs/ai/public-terminology-taxonomy",
+      "permanent": true
+    },
+    {
+      "source": "/ai/wedge-overview",
+      "destination": "/docs/ai/wedge-overview",
+      "permanent": true
+    },
+    {
+      "source": "/ai/edge-lite",
+      "destination": "/docs/ai/edge-lite",
+      "permanent": true
+    },
+    {
+      "source": "/ai/discovery-crawler-smoke-v1.json",
+      "destination": "/ai/discovery-crawler-smoke-v1.json",
+      "permanent": true
+    },
+    {
+      "source": "/ai/ai-discovery-registry.json",
+      "destination": "/ai/ai-discovery-registry.json",
+      "permanent": true
+    },
+    {
+      "source": "/ai/evidence/v1/manifest.json",
+      "destination": "/ai/evidence/v1/manifest.json",
+      "permanent": true
+    },
+    {
+      "source": "/ai/evidence/v1/non-claims.json",
+      "destination": "/ai/evidence/v1/non-claims.json",
+      "permanent": true
+    },
+    {
+      "source": "/ai/evidence/v1/wedge-claim-map.json",
+      "destination": "/ai/evidence/v1/wedge-claim-map.json",
+      "permanent": true
+    },
+    {
+      "source": "/api/overview",
+      "destination": "/docs/api/overview",
+      "permanent": true
+    },
+    {
+      "source": "/api/authentication",
+      "destination": "/docs/api/authentication",
+      "permanent": true
+    },
+    {
+      "source": "/api/changelog",
+      "destination": "/docs/api/changelog",
+      "permanent": true
+    },
+    {
+      "source": "/api/errors",
+      "destination": "/docs/api/errors",
+      "permanent": true
+    },
+    {
+      "source": "/api/events",
+      "destination": "/docs/api/events",
+      "permanent": true
+    },
+    {
+      "source": "/api/evidence",
+      "destination": "/docs/api/evidence",
+      "permanent": true
+    },
+    {
+      "source": "/api/examples",
+      "destination": "/docs/api/examples",
+      "permanent": true
+    },
+    {
+      "source": "/api/idempotency",
+      "destination": "/docs/api/idempotency",
+      "permanent": true
+    },
+    {
+      "source": "/api/logs",
+      "destination": "/docs/api/logs",
+      "permanent": true
+    },
+    {
+      "source": "/api/quickstart",
+      "destination": "/docs/api/quickstart",
+      "permanent": true
+    },
+    {
+      "source": "/api/rate-limits",
+      "destination": "/docs/api/rate-limits",
+      "permanent": true
+    },
+    {
+      "source": "/api/replay",
+      "destination": "/docs/api/replay",
+      "permanent": true
+    },
+    {
+      "source": "/api/versioning",
+      "destination": "/docs/api/versioning",
+      "permanent": true
+    },
+    {
+      "source": "/api/webhooks",
+      "destination": "/docs/api/webhooks",
+      "permanent": true
+    },
+    {
+      "source": "/api/reference/create-channel",
+      "destination": "/docs/api/reference/create-channel",
+      "permanent": true
+    },
+    {
+      "source": "/api/reference/create-cluster",
+      "destination": "/docs/api/reference/create-cluster",
+      "permanent": true
+    },
+    {
+      "source": "/api/reference/create-delivery-flow",
+      "destination": "/docs/api/reference/create-delivery-flow",
+      "permanent": true
+    },
+    {
+      "source": "/api/reference/create-destination",
+      "destination": "/docs/api/reference/create-destination",
+      "permanent": true
+    },
+    {
+      "source": "/api/reference/create-ingester",
+      "destination": "/docs/api/reference/create-ingester",
+      "permanent": true
+    },
+    {
+      "source": "/api/reference/health-check",
+      "destination": "/docs/api/reference/health-check",
+      "permanent": true
+    },
+    {
+      "source": "/api/reference/list-channels",
+      "destination": "/docs/api/reference/list-channels",
+      "permanent": true
+    },
+    {
+      "source": "/api/reference/list-clusters",
+      "destination": "/docs/api/reference/list-clusters",
+      "permanent": true
+    },
+    {
+      "source": "/api/reference/list-delivery-flows",
+      "destination": "/docs/api/reference/list-delivery-flows",
+      "permanent": true
+    },
+    {
+      "source": "/api/reference/list-destinations",
+      "destination": "/docs/api/reference/list-destinations",
+      "permanent": true
+    },
+    {
+      "source": "/api/reference/list-ingesters",
+      "destination": "/docs/api/reference/list-ingesters",
+      "permanent": true
+    },
+    {
+      "source": "/api/reference/list-integrations",
+      "destination": "/docs/api/reference/list-integrations",
+      "permanent": true
+    },
+    {
+      "source": "/api/reference/update-delivery-flow",
+      "destination": "/docs/api/reference/update-delivery-flow",
+      "permanent": true
+    },
+    {
+      "source": "/api/reference/update-destination",
+      "destination": "/docs/api/reference/update-destination",
+      "permanent": true
+    },
+    {
+      "source": "/api/reference/update-ingester",
+      "destination": "/docs/api/reference/update-ingester",
+      "permanent": true
+    },
+    {
+      "source": "/api/reference/readiness-check",
+      "destination": "/docs/api/reference/readiness-check",
+      "permanent": true
+    },
+    {
+      "source": "/api/reference/servicenow-webhook",
+      "destination": "/docs/api/reference/servicenow-webhook",
+      "permanent": true
+    },
+    {
+      "source": "/api/reference/slack-webhook",
+      "destination": "/docs/api/reference/slack-webhook",
+      "permanent": true
+    },
+    {
+      "source": "/api/reference/jira-webhook",
+      "destination": "/docs/api/reference/jira-webhook",
+      "permanent": true
+    },
+    {
+      "source": "/api/reference/pagerduty-webhook",
+      "destination": "/docs/api/reference/pagerduty-webhook",
+      "permanent": true
+    },
+    {
+      "source": "/api/reference/datadog-webhook",
+      "destination": "/docs/api/reference/datadog-webhook",
+      "permanent": true
+    },
+    {
+      "source": "/api/reference/get-channel",
+      "destination": "/docs/api/reference/get-channel",
+      "permanent": true
+    },
+    {
+      "source": "/api/reference/get-cluster",
+      "destination": "/docs/api/reference/get-cluster",
+      "permanent": true
+    },
+    {
+      "source": "/api/reference/get-delivery-flow",
+      "destination": "/docs/api/reference/get-delivery-flow",
+      "permanent": true
+    },
+    {
+      "source": "/api/reference/get-destination",
+      "destination": "/docs/api/reference/get-destination",
+      "permanent": true
+    },
+    {
+      "source": "/api/reference/get-ingester",
+      "destination": "/docs/api/reference/get-ingester",
+      "permanent": true
+    },
+    {
+      "source": "/api/reference/get-tenant",
+      "destination": "/docs/api/reference/get-tenant",
+      "permanent": true
+    },
+    {
+      "source": "/api/reference/list-channels",
+      "destination": "/docs/api/reference/list-channels",
+      "permanent": true
+    },
+    {
+      "source": "/api/reference/list-clusters",
+      "destination": "/docs/api/reference/list-clusters",
+      "permanent": true
+    },
+    {
+      "source": "/api/reference/list-integrations",
+      "destination": "/docs/api/reference/list-integrations",
+      "permanent": true
+    },
+    {
+      "source": "/api/reference/update-delivery-flow",
+      "destination": "/docs/api/reference/update-delivery-flow",
+      "permanent": true
+    },
+    {
+      "source": "/api/reference/update-destination",
+      "destination": "/docs/api/reference/update-destination",
+      "permanent": true
+    },
+    {
+      "source": "/api/reference/update-ingester",
+      "destination": "/docs/api/reference/update-ingester",
+      "permanent": true
+    },
+    {
+      "source": "/api/reference/readiness-check",
+      "destination": "/docs/api/reference/readiness-check",
+      "permanent": true
+    },
+    {
+      "source": "/api/reference/servicenow-webhook",
+      "destination": "/docs/api/reference/servicenow-webhook",
+      "permanent": true
+    },
+    {
+      "source": "/api/reference/slack-webhook",
+      "destination": "/docs/api/reference/slack-webhook",
+      "permanent": true
+    },
+    {
+      "source": "/api/reference/jira-webhook",
+      "destination": "/docs/api/reference/jira-webhook",
+      "permanent": true
+    },
+    {
+      "source": "/api/reference/pagerduty-webhook",
+      "destination": "/docs/api/reference/pagerduty-webhook",
+      "permanent": true
+    },
+    {
+      "source": "/architecture/overview",
+      "destination": "/docs/architecture/overview",
+      "permanent": true
+    },
+    {
+      "source": "/architecture/platform-layers",
+      "destination": "/docs/architecture/platform-layers",
+      "permanent": true
+    },
+    {
+      "source": "/architecture/security-model",
+      "destination": "/docs/architecture/security-model",
+      "permanent": true
+    },
+    {
+      "source": "/architecture/three-plane-model",
+      "destination": "/docs/architecture/three-plane-model",
+      "permanent": true
+    },
+    {
+      "source": "/architecture/delivery-modes",
+      "destination": "/docs/architecture/delivery-modes",
+      "permanent": true
+    },
+    {
+      "source": "/architecture/api-docs-hosting-options",
+      "destination": "/docs/architecture/api-docs-hosting-options",
+      "permanent": true
+    },
+    {
+      "source": "/concepts/glossary",
+      "destination": "/docs/concepts/glossary",
+      "permanent": true
+    },
+    {
+      "source": "/delivery/",
+      "destination": "/docs/delivery/",
+      "permanent": true
+    },
+    {
+      "source": "/delivery/idempotency",
+      "destination": "/docs/delivery/idempotency",
+      "permanent": true
+    },
+    {
+      "source": "/delivery/deduplication",
+      "destination": "/docs/delivery/deduplication",
+      "permanent": true
+    },
+    {
+      "source": "/delivery/delivery-failures",
+      "destination": "/docs/delivery/delivery-failures",
+      "permanent": true
+    },
+    {
+      "source": "/delivery/dead-letter-queue",
+      "destination": "/docs/delivery/dead-letter-queue",
+      "permanent": true
+    },
+    {
+      "source": "/evidence/overview",
+      "destination": "/docs/evidence/overview",
+      "permanent": true
+    },
+    {
+      "source": "/evidence/runtime-convergence",
+      "destination": "/docs/evidence/runtime-convergence",
+      "permanent": true
+    },
+    {
+      "source": "/evidence/trust-lifecycle",
+      "destination": "/docs/evidence/trust-lifecycle",
+      "permanent": true
+    },
+    {
+      "source": "/evidence/validation-map",
+      "destination": "/docs/evidence/validation-map",
+      "permanent": true
+    },
+    {
+      "source": "/evidence/merkle-integrity",
+      "destination": "/docs/evidence/merkle-integrity",
+      "permanent": true
+    },
+    {
+      "source": "/evidence/completion-evidence",
+      "destination": "/docs/evidence/completion-evidence",
+      "permanent": true
+    },
+    {
+      "source": "/evidence/non-claims",
+      "destination": "/docs/evidence/non-claims",
+      "permanent": true
+    },
+    {
+      "source": "/EVIDENCE/docsai029/FINAL_REPORT",
+      "destination": "/docs/EVIDENCE/docsai029/FINAL_REPORT",
+      "permanent": true
+    },
+    {
+      "source": "/EVIDENCE/docsai029/artifact_index",
+      "destination": "/docs/EVIDENCE/docsai029/artifact_index",
+      "permanent": true
+    },
+    {
+      "source": "/getting-started/quick-start",
+      "destination": "/docs/getting-started/quick-start",
+      "permanent": true
+    },
+    {
+      "source": "/guides/cluster-enrollment",
+      "destination": "/docs/guides/cluster-enrollment",
+      "permanent": true
+    },
+    {
+      "source": "/legal/*",
+      "destination": "/docs/legal/*",
+      "permanent": true
+    },
+    {
+      "source": "/mcp/overview",
+      "destination": "/docs/mcp/overview",
+      "permanent": true
+    },
+    {
+      "source": "/networking/gateway-api-migration",
+      "destination": "/docs/networking/gateway-api-migration",
+      "permanent": true
+    },
+    {
+      "source": "/operations/upgrades",
+      "destination": "/docs/operations/upgrades",
+      "permanent": true
+    },
+    {
+      "source": "/providerflow/template-packs",
+      "destination": "/docs/providerflow/template-packs",
+      "permanent": true
+    },
+    {
+      "source": "/providerflow/nonclaims",
+      "destination": "/docs/providerflow/nonclaims",
+      "permanent": true
+    },
+    {
+      "source": "/reference/helm-chart",
+      "destination": "/docs/reference/helm-chart",
+      "permanent": true
+    },
+    {
+      "source": "/runbooks/*",
+      "destination": "/docs/runbooks/*",
+      "permanent": true
+    },
+    {
+      "source": "/security/tenant-isolation",
+      "destination": "/docs/security/tenant-isolation",
+      "permanent": true
+    },
+    {
+      "source": "/security/*",
+      "destination": "/docs/security/*",
+      "permanent": true
+    },
+    {
+      "source": "/start-here/what-is-zen-mesh",
+      "destination": "/docs/start-here/what-is-zen-mesh",
+      "permanent": true
+    },
+    {
+      "source": "/start-here/current-status",
+      "destination": "/docs/start-here/current-status",
+      "permanent": true
+    },
+    {
+      "source": "/start-here/who-should-use-zen-mesh",
+      "destination": "/docs/start-here/who-should-use-zen-mesh",
+      "permanent": true
     }
   ],
   "headers": [
     {
       "source": "/llms.txt",
       "headers": [
-        { "key": "Content-Type", "value": "text/plain; charset=utf-8" },
-        { "key": "Cache-Control", "value": "public, max-age=3600, must-revalidate" }
+        {
+          "key": "Content-Type",
+          "value": "text/plain; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, must-revalidate"
+        }
       ]
     },
     {
       "source": "/ai/(.*\\.json)",
       "headers": [
-        { "key": "Content-Type", "value": "application/json; charset=utf-8" },
-        { "key": "Cache-Control", "value": "public, max-age=300, must-revalidate" }
+        {
+          "key": "Content-Type",
+          "value": "application/json; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=300, must-revalidate"
+        }
       ]
     }
   ]
