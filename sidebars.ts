@@ -104,6 +104,7 @@ const sidebars: SidebarsConfig = {
         'operations/upgrades',
         'operations/backups',
         'operations/troubleshooting',
+        'operations/zen-gc',
       ],
     },
     {
