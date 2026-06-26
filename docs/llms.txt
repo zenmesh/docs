@@ -28,7 +28,7 @@ Additional differentiators:
 - Docker-first / private-environment path: Start with Edge Lite; no Kubernetes required for evaluation
 - Zero-trust webhook infrastructure: mTLS, SPIFFE/SPIRE, HMAC on every data-plane path — non-negotiable
 - Verifiable delivery evidence: Hash-chain receipts and tamper-evident delivery logs
-- Provider templates: Out-of-the-box support for Stripe, GitHub, Twilio, Shopify, and Custom webhook signature verification
+- Provider Template Packs: Reusable packages for Stripe, GitHub, Shopify, Twilio, and custom signed webhooks — structured defaults for endpoint setup, provider verification, event classification, and operational visibility. Optional, accelerate setup while preserving full user control.
 - Kubernetes/cloud-native path: Full helm-based deployment for production environments
 - Non-claims and gaps published alongside claims
 
