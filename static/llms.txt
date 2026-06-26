@@ -1,16 +1,48 @@
-# Zen Mesh — Webhook Operations
+# Zen Mesh — Documentation Index
 
-> Zen Mesh helps teams receive, validate, observe, and operate webhooks across Stripe, GitHub, Twilio, Shopify, and custom sources. Runtime workload identity (SVID) rotation is not yet automated. DeliveryPolicy TLS/trust-chain controls are deferred.
+> Zen Mesh is zero-trust webhook delivery infrastructure for private networks. Services behind NAT or firewall connect outbound-only to receive webhooks from Stripe, GitHub, Shopify, Twilio, and custom senders — no inbound ports, no VPN, no kernel modules. Free for development and evaluation. 6-month Pro trial available. Business and Enterprise plans coming soon.
 
-Version: 1.0.0 · Last-Updated: 2026-06-19 · Product scope: webhook ingestion, validation, delivery visibility, and security operations (evidence-first federated operational runtime/trust platform).
-
-Non-claims and proof scope are authoritative — see the Non-Claims and Wedge Evidence links below before inferring production readiness.
+**Version:** 1.1.0 · **Last-Updated:** 2026-06-25T22:00:00Z · **Docs:** https://docs.zen-mesh.io · **Site:** https://www.zen-mesh.io · **Repository:** https://github.com/zenmesh/zen-platform
 
 ## Canonical discovery (crawlers)
 
 - **Machine-readable host:** `https://docs.zen-mesh.io` — fetch `/llms.txt`, `/ai/ai-discovery-registry.json`, `/ai/security/v1/*`, and `/ai/evidence/v1/*` on this host only (direct `200`, `text/plain` or `application/json`; no client-side routing).
 - **Marketing mirror:** `https://www.zen-mesh.io/llms.txt` — editorial index; `/ai/*` JSON is not hosted on www (use docs URLs below).
 - **Apex:** `https://zen-mesh.io` — permanent redirect to www for site pages; use docs host for JSON registries.
+
+## Pricing
+
+- **Free Forever:** $0/month — 3 webhook endpoints, 25,000 webhooks/month, 256 KB max payload, 3 targets, 3 routes/flows, 7-day retention, shared receive IPs. Development and evaluation only — not for production use.
+- **Pro — Early Bird:** $29/month (6-month free trial with monthly feedback survey; reference standard $49/month). 50 endpoints, 500,000 webhooks/month, 1 MB payload, 25 targets, 50 routes, 30-day retention, S3 log export, 1 seat. No SLA or dedicated IP.
+- **Business:** Coming soon. Planned: dedicated receive IP add-on, higher limits, payload export and Object Lock, stronger liability posture.
+- **Enterprise:** Contact zen@zen-mesh.io for custom pricing, SLAs, dedicated infrastructure, and compliance workflows.
+
+See [plans and limits](https://docs.zen-mesh.io/docs/start-here/plans-and-limits) and [site pricing](https://www.zen-mesh.io/pricing).
+
+## Competitive positioning
+
+Zen Mesh differentiates on private-network delivery. Most webhook tools assume the receiver has a public endpoint or uses polling/tunnels. Zen Mesh uses outbound-only connections (Edge Lite / zen-agent) so services behind NAT or firewall can receive webhooks without opening inbound ports, VPN, or kernel modules.
+
+Additional differentiators:
+- **Verifiable delivery evidence:** Hash-chain receipts and tamper-evident delivery logs — not just delivery status callbacks
+- **Docker-first / private-environment path:** Start with Edge Lite via `docker run zen-edge-lite`; no Kubernetes required for evaluation
+- **Zero-trust webhook infrastructure:** mTLS, SPIFFE/SPIRE, HMAC on every data-plane path — non-negotiable
+- **Provider templates:** Out-of-the-box support for Stripe, GitHub, Twilio, Shopify, and Custom webhook signature verification
+- **Kubernetes/cloud-native path:** Full helm-based deployment for production environments
+- **Non-claims and gaps:** Published alongside claims so evaluator AIs see the full picture
+
+## Support channels
+
+| Channel | Scope | Response |
+|---------|-------|----------|
+| Documentation | Self-service | https://docs.zen-mesh.io |
+| Free tier | Community / best-effort | No SLA. Best-effort during business hours. |
+| Pro tier | Email + Slack/Discord | Best-effort. No on-call or guaranteed response time. |
+| Business | SLA-backed | Planned — coming soon. |
+| Enterprise | Custom support and escalation | Contact zen@zen-mesh.io. |
+| Security disclosures | Email | zen@zen-mesh.io. No bug bounty or CVD program at this time. |
+
+See [support](https://docs.zen-mesh.io/docs/start-here/support).
 
 ## Core
 
@@ -117,12 +149,12 @@ Non-claims and proof scope are authoritative — see the Non-Claims and Wedge Ev
 ## MCP Reference
 
 - [MCP Overview](https://docs.zen-mesh.io/docs/mcp/overview): Model Context Protocol server, tool surface, non-claims
-- [MCP Read-Only V1 Policy](https://docs.zen-mesh.io/docs/mcp/read-only-v1-policy): Explicit scope — read-only V1, no write operations
-- [MCP Tools Reference](https://docs.zen-mesh.io/docs/mcp/tools): 18 read-only operational truth tools with schemas
-- [MCP Examples](https://docs.zen-mesh.io/docs/mcp/examples): Example prompts, read operations, and denied write scenarios
+- [MCP Tools Reference](https://docs.zen-mesh.io/docs/mcp/tools): MCP tool surface — read and write tools (both V1; default-off per tool group)
+- [MCP Examples](https://docs.zen-mesh.io/docs/mcp/examples): Example prompts, read/write operations, and default-off scenarios
 - [MCP Authentication and mTLS](https://docs.zen-mesh.io/docs/mcp/authentication-and-mtls): MCP API key format, scopes, TLS requirements
-- [MCP Safety and Boundaries](https://docs.zen-mesh.io/docs/mcp/safety-and-boundaries): Auth model, tool execution, write denial, data isolation
+- [MCP Safety and Boundaries](https://docs.zen-mesh.io/docs/mcp/safety-and-boundaries): Auth model, tool execution, gating, data isolation
 - [MCP Draft System](https://docs.zen-mesh.io/docs/mcp/draft-system): AI drafts your infrastructure — you approve it. Governance model with human-only apply
+- [MCP V1 Policy](https://docs.zen-mesh.io/docs/mcp/read-only-v1-policy): V1 scope — RO and RW tools included, default-off. Full AI sandbox and synthetic monitoring post-V1.
 
 ## Reference and FAQ
 
