@@ -1,7 +1,7 @@
 {
   "schema_version": "1.1.0",
   "document": "security-gaps",
-  "last_updated": "2026-05-31",
+  "last_updated": "2026-06-25",
   "claim_maturity_index": "https://docs.zen-mesh.io/ai/security/v1/claim-maturity.json",
   "purpose": "Explicit gaps — must remain visible; never convert to product claims.",
   "readiness_scope": "DEMO-scoped platform. Gaps stay in public AI docs intentionally.",
@@ -148,6 +148,28 @@
       "public_evidence_ref": "https://docs.zen-mesh.io/ai/security/v1/local-trust-posture.json",
       "public_safe_summary": "SPIRE is Zen-managed internally in V1 — customers do not run SPIRE.",
       "must_not_claim": ["customers manage SPIRE", "customer-operated SPIRE", "bring your own SPIRE in V1", "No SPIRE for V1"]
+    },
+    {
+      "id": "GAP-HEADER-SPOOFING",
+      "gap": "No validated header/forwarded-identity spoofing protection",
+      "claim_maturity": "NOT_CLAIMED",
+      "roadmap_ref": null,
+      "attack_ref": "ATK-HEADER-SPOOFING",
+      "primitive_ref": "PRIM-HEADER-TRUST",
+      "public_evidence_ref": null,
+      "public_safe_summary": "Forwarded-identity header trust boundary not validated.",
+      "must_not_claim": ["prevents header spoofing", "X-Forwarded-* validated", "identity spoofing protected"]
+    },
+    {
+      "id": "GAP-TIMING-SIDE-CHANNEL",
+      "gap": "No validated timing side-channel resistance for HMAC/signatures",
+      "claim_maturity": "NOT_CLAIMED",
+      "roadmap_ref": null,
+      "attack_ref": "ATK-TIMING-SIDE-CHANNEL",
+      "primitive_ref": "PRIM-CONSTANT-TIME",
+      "public_evidence_ref": null,
+      "public_safe_summary": "Constant-time comparison for HMAC/signatures not validated.",
+      "must_not_claim": ["timing side-channel safe", "constant-time proven", "timing attack resistant"]
     }
   ]
 }
