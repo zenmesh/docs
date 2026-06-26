@@ -28,7 +28,7 @@ export default function Home() {
               <p>Official charts for deploying zen-agent, zen-suite, and the full Zen Mesh edge stack.</p>
               <span className={styles.cta}>Read docs →</span>
             </Link>
-            <Link to="/docs/operations/zen-gc" className={styles.card}>
+            <Link to="/zen-gc" className={styles.card}>
               <h2>🧹 Zen-GC</h2>
               <p>Apache-2.0 Kubernetes garbage-collection controller for declarative TTL cleanup and lifecycle hygiene.</p>
               <span className={styles.cta}>Read docs →</span>

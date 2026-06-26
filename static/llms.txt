@@ -173,9 +173,10 @@ See [support](https://docs.zen-mesh.io/docs/start-here/support).
 
 - [Backups and Disaster Recovery](https://docs.zen-mesh.io/docs/operations/backups): Backup procedures, restore, DR runbook, RPO/RTO targets
 
-## Community OSS
+## Zen-GC
 
-- [zen-gc](https://github.com/zen-mesh/zen-gc) — Free Apache-2.0 Kubernetes garbage collection controller (declarative TTL cleanup policies). Independent OSS from the Zen Mesh team.
+- [docs](https://docs.zen-mesh.io/zen-gc): Apache-2.0 Kubernetes garbage collection controller — declarative TTL cleanup policies, retention hygiene, and lifecycle management
+- [repository](https://github.com/zen-mesh/zen-gc): Source code and deployment manifests
 
 ## Narrative context (not proof)
 

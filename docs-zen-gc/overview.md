@@ -1,5 +1,7 @@
 ---
-sidebar_label: Zen-GC
+slug: /
+title: Zen-GC
+sidebar_label: Overview
 ---
 
 # Zen-GC — Kubernetes Garbage Collection Controller

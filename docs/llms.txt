@@ -117,6 +117,11 @@ See [support](start-here/support).
 - [Breach notice](legal/breach-notice): Data breach notification process
 - [Billing terms](legal/billing-terms): Payment and billing terms
 
+## Zen-GC
+
+- [Overview](zen-gc): Apache-2.0 Kubernetes garbage collection controller — declarative TTL cleanup policies and lifecycle management
+- [Repository](https://github.com/zen-mesh/zen-gc): Source code, deployment manifests, and full documentation
+
 ## Operations
 
 - [Troubleshooting](operations/troubleshooting): Common issues and solutions

@@ -74,6 +74,16 @@ const config: Config = {
       },
     ],
     [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'zen-gc',
+        path: 'docs-zen-gc',
+        routeBasePath: 'zen-gc',
+        sidebarPath: './sidebars-zen-gc.ts',
+        editUrl: 'https://github.com/zenmesh/docs/tree/main/',
+      },
+    ],
+    [
       'docusaurus-plugin-openapi-docs',
       {
         id: 'apiReference',
@@ -174,6 +184,13 @@ const config: Config = {
           position: 'left',
           label: 'Helm Charts',
           docsPluginId: 'helm-charts',
+        },
+        {
+          type: 'docSidebar',
+          sidebarId: 'zenGcSidebar',
+          position: 'left',
+          label: 'Zen-GC',
+          docsPluginId: 'zen-gc',
         },
         {
           href: 'pathname:///llms.txt',
