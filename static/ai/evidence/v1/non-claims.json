@@ -4,168 +4,192 @@
     "category": "runtime",
     "claim": "Exactly-once delivery guarantee",
     "scope": "Not claimed in v1alpha1. Zen Mesh provides at-least-once with idempotency, not exactly-once.",
-    "evidence_status": "not_claimed"
+    "evidence_status": "needs_revalidation",
+    "source": "Source/runtime/render/public scan - pending evidence collection"
   },
   {
     "id": "non-claim-runtime-zero-loss",
     "category": "runtime",
     "claim": "Zero event loss under all failure conditions",
     "scope": "Not claimed in v1alpha1. Evidence buffering tested in mock scenarios only.",
-    "evidence_status": "not_claimed"
+    "evidence_status": "needs_revalidation",
+    "source": "Source/runtime/render/public scan - pending evidence collection"
   },
   {
     "id": "non-claim-runtime-ordering",
     "category": "runtime",
     "claim": "Per-source ordering or causal ordering guarantees",
     "scope": "Not claimed in v1alpha1. No ordering guarantee provided.",
-    "evidence_status": "not_claimed"
+    "evidence_status": "needs_revalidation",
+    "source": "Source/runtime/render/public scan - pending evidence collection"
   },
   {
     "id": "non-claim-runtime-single-settle",
     "category": "runtime",
     "claim": "Single-settle delivery semantics",
     "scope": "Explicitly excluded in v1alpha1. Conformance fixtures validate rejection of single-settle claims.",
-    "evidence_status": "not_claimed"
+    "evidence_status": "needs_revalidation",
+    "source": "Source/runtime/render/public scan - pending evidence collection"
   },
   {
     "id": "non-claim-runtime-all-paths-proven",
     "category": "runtime",
     "claim": "All runtime paths are proven",
     "scope": "Not claimed. Victory-locked proofs are scenario-specific. General at-least-once, failover autonomy, and disconnected operation remain unproven.",
-    "evidence_status": "not_claimed"
+    "evidence_status": "needs_revalidation",
+    "source": "Source/runtime/render/public scan - pending evidence collection"
   },
   {
     "id": "non-claim-runtime-production-readiness",
     "category": "runtime",
     "claim": "Production-ready runtime",
     "scope": "Not claimed. All evidence is local mock harness only. Sandbox validation in progress.",
-    "evidence_status": "not_claimed"
+    "evidence_status": "needs_revalidation",
+    "source": "Source/runtime/render/public scan - pending evidence collection"
   },
   {
     "id": "non-claim-trust-merkle-integrity-only",
     "category": "trust",
     "claim": "Merkle evidence chain used for integrity verification",
     "scope": "Not claimed. Merkle provides evidence integrity only, not an access control function.",
-    "evidence_status": "not_claimed"
+    "evidence_status": "needs_revalidation",
+    "source": "Source/runtime/render/public scan - pending evidence collection"
   },
   {
     "id": "non-claim-trust-merkle-integrity-scope",
     "category": "trust",
     "claim": "Merkle evidence chain used for integrity verification",
     "scope": "Not claimed. Merkle provides evidence integrity only, not an event ordering function.",
-    "evidence_status": "not_claimed"
+    "evidence_status": "needs_revalidation",
+    "source": "Source/runtime/render/public scan - pending evidence collection"
   },
   {
     "id": "non-claim-trust-merkle-not-workload",
     "category": "trust",
     "claim": "Merkle evidence chain used for integrity verification",
     "scope": "Not claimed. Merkle provides evidence integrity only, not a workload principal function.",
-    "evidence_status": "not_claimed"
+    "evidence_status": "needs_revalidation",
+    "source": "Source/runtime/render/public scan - pending evidence collection"
   },
   {
     "id": "non-claim-trust-merkle-not-send",
     "category": "trust",
     "claim": "Merkle evidence chain used for integrity verification",
     "scope": "Not claimed. Merkle provides evidence integrity only, not a send confirmation function.",
-    "evidence_status": "not_claimed"
+    "evidence_status": "needs_revalidation",
+    "source": "Source/runtime/render/public scan - pending evidence collection"
   },
   {
     "id": "non-claim-trust-blanket-zero-trust",
     "category": "trust",
     "claim": "Blanket zero-trust across all paths and layers",
     "scope": "Not claimed. Zero-trust-oriented controls scoped to control-plane paths only. Data-plane expansion is planned.",
-    "evidence_status": "not_claimed"
+    "evidence_status": "needs_revalidation",
+    "source": "Source/runtime/render/public scan - pending evidence collection"
   },
   {
     "id": "non-claim-trust-spiffe-everywhere",
     "category": "trust",
     "claim": "SPIFFE identity on all workloads and data-plane paths",
-    "scope": "Not claimed. SPIFFE identity scoped to control-plane paths only.",
-    "evidence_status": "not_claimed"
+    "scope": "EVIDENCED for control-plane workloads and data-plane components (ingester, egress) using SPIRE SVID-backed mTLS. Full SPIRE Agent Workload API and SVID rotation (ST-003) are deferred to post-V1 (marked \"Future\" in H216, H261 contracts). Some components use file-based SVIDs or static certs as fallback. Workload identity root is SPIFFE, but coverage is partial.",
+    "evidence_status": "evidence_incomplete",
+    "source": "zen-platform source code (helm values, templates, src/shared/authz), manifests, public surface traceability"
   },
   {
     "id": "non-claim-trust-secrets-eliminated",
     "category": "trust",
     "claim": "All secrets eliminated from the system",
     "scope": "Not claimed. Architecture targets secretless operation but has not been audited for secret hygiene.",
-    "evidence_status": "not_claimed"
+    "evidence_status": "needs_revalidation",
+    "source": "Source/runtime/render/public scan - pending evidence collection"
   },
   {
     "id": "non-claim-compliance-pci-attestation",
     "category": "compliance",
     "claim": "PCI-DSS attestation",
     "scope": "Not claimed. Technical controls map to PCI-DSS requirements but no PCI attestation has been pursued.",
-    "evidence_status": "not_claimed"
+    "evidence_status": "needs_revalidation",
+    "source": "Source/runtime/render/public scan - pending evidence collection"
   },
   {
     "id": "non-claim-compliance-soc2-audit",
     "category": "compliance",
     "claim": "SOC2 audit attestation",
     "scope": "Not claimed. Internal control mapping and readiness assessment exist but no SOC2 audit has been performed.",
-    "evidence_status": "not_claimed"
+    "evidence_status": "needs_revalidation",
+    "source": "Source/runtime/render/public scan - pending evidence collection"
   },
   {
     "id": "non-claim-compliance-iso27001-audit",
     "category": "compliance",
     "claim": "ISO/IEC 27001 audit attestation",
     "scope": "Not claimed. Control mapping to ISO 27001 exists but no formal audit has been performed.",
-    "evidence_status": "not_claimed"
+    "evidence_status": "needs_revalidation",
+    "source": "Source/runtime/render/public scan - pending evidence collection"
   },
   {
     "id": "non-claim-compliance-hipaa-baa",
     "category": "compliance",
     "claim": "HIPAA readiness or BAA in place",
     "scope": "Not claimed. Technical controls map to HIPAA Security Rule but no HIPAA business associate agreement has been established.",
-    "evidence_status": "not_claimed"
+    "evidence_status": "needs_revalidation",
+    "source": "Source/runtime/render/public scan - pending evidence collection"
   },
   {
     "id": "non-claim-compliance-fedramp-assessment",
     "category": "compliance",
     "claim": "FedRAMP assessment",
     "scope": "Not claimed. No FedRAMP assessment has been pursued or completed.",
-    "evidence_status": "not_claimed"
+    "evidence_status": "needs_revalidation",
+    "source": "Source/runtime/render/public scan - pending evidence collection"
   },
   {
     "id": "non-claim-general-external-audit-passed",
     "category": "general",
     "claim": "External audit or penetration test passed",
     "scope": "Not claimed. No external audit or third-party penetration test has been conducted.",
-    "evidence_status": "not_claimed"
+    "evidence_status": "needs_revalidation",
+    "source": "Source/runtime/render/public scan - pending evidence collection"
   },
   {
     "id": "non-claim-general-production-deployment",
     "category": "general",
     "claim": "Deployed in production environments",
     "scope": "Not claimed. All testing and evidence is local mock harness only.",
-    "evidence_status": "not_claimed"
+    "evidence_status": "needs_revalidation",
+    "source": "Source/runtime/render/public scan - pending evidence collection"
   },
   {
     "id": "non-claim-security-compliance-certification",
     "category": "security",
     "claim": "Compliance certification (PCI, HIPAA, SOC 2, ISO, FedRAMP)",
     "scope": "Not claimed. Zen Mesh has compliance-oriented controls but no certification.",
-    "evidence_status": "not_claimed"
+    "evidence_status": "needs_revalidation",
+    "source": "Source/runtime/render/public scan - pending evidence collection"
   },
   {
     "id": "non-claim-security-production-zero-trust",
     "category": "security",
     "claim": "Production zero-trust fully proven",
     "scope": "Not claimed. Zero-trust-oriented controls exist on control-plane paths. Data-plane workload identity is planned, not deployed everywhere.",
-    "evidence_status": "not_claimed"
+    "evidence_status": "needs_revalidation",
+    "source": "Source/runtime/render/public scan - pending evidence collection"
   },
   {
     "id": "non-claim-security-zenlock-universal-rotation",
     "category": "security",
     "claim": "ZenLock rotates all credentials",
     "scope": "Not claimed. ZenLock provides custody/distribution/audit. Rotation is owned by HMACKeyRotationController, cert-manager, JWT service.",
-    "evidence_status": "not_claimed"
+    "evidence_status": "needs_revalidation",
+    "source": "Source/runtime/render/public scan - pending evidence collection"
   },
   {
     "id": "non-claim-security-zenlock-svid-owner",
     "category": "security",
     "claim": "ZenLock owns SVID lifecycle",
     "scope": "Not claimed. SVID lifecycle is managed by cert-manager and future SPIRE. ZenLock does not own any credential lifecycle.",
-    "evidence_status": "not_claimed"
+    "evidence_status": "needs_revalidation",
+    "source": "Source/runtime/render/public scan - pending evidence collection"
   },
   {
     "id": "non-claim-security-agent-mtls-planned",
@@ -186,7 +210,8 @@
     "category": "v1_readiness",
     "claim": "Production-live or customer-ready platform",
     "scope": "Not claimed. V1 readiness rollup: l1_boring NOT_READY; product_ui_pass false.",
-    "evidence_status": "not_claimed"
+    "evidence_status": "needs_revalidation",
+    "source": "Source/runtime/render/public scan - pending evidence collection"
   },
   {
     "id": "non-claim-runtime-svid-rotation-missing",
@@ -195,7 +220,8 @@
     "claim": "Operational workload identity (SVID) rotation proven on mainline",
     "scope": "Not claimed. Automated runtime SVID rotation wiring is not complete on mainline.",
     "internal_ref": "ST-003",
-    "evidence_status": "not_claimed"
+    "evidence_status": "needs_revalidation",
+    "source": "Source/runtime/render/public scan - pending evidence collection"
   },
   {
     "id": "non-claim-deliverypolicy-tls-deferred",
@@ -204,7 +230,8 @@
     "claim": "DeliveryPolicy TLS/trust-chain controls PASS",
     "scope": "Not claimed. Policy-driven delivery TLS/trust-chain controls at L2 are deferred; trust-chain root cause open.",
     "internal_ref": "N086",
-    "evidence_status": "not_claimed"
+    "evidence_status": "needs_revalidation",
+    "source": "Source/runtime/render/public scan - pending evidence collection"
   },
   {
     "id": "non-claim-sandbox-delivery-proof-bundle",
@@ -213,7 +240,8 @@
     "claim": "Full canonical runtime delivery proof bundle accepted on mainline",
     "scope": "Not claimed as a customer-facing go-live. Direct/egress/relay sandbox receipts and proof_status are listed in the capability manifest only.",
     "internal_ref": "runtime-delivery-validation-bundle",
-    "evidence_status": "not_claimed"
+    "evidence_status": "needs_revalidation",
+    "source": "Source/runtime/render/public scan - pending evidence collection"
   },
   {
     "id": "non-claim-planes-ui-product-pass",
@@ -222,28 +250,32 @@
     "claim": "Planes management UI (T1) product-pass",
     "scope": "Not claimed. T1 regression gates fail on current UI; product_ui_pass false.",
     "internal_ref": "L1-planes-t1",
-    "evidence_status": "not_claimed"
+    "evidence_status": "needs_revalidation",
+    "source": "Source/runtime/render/public scan - pending evidence collection"
   },
   {
     "id": "non-claim-merkle-not-auth",
     "category": "trust",
     "claim": "Merkle provides authentication, identity, encryption, or replay prevention",
     "scope": "Not claimed. Merkle provides evidence bundle inclusion/integrity comparison only.",
-    "evidence_status": "not_claimed"
+    "evidence_status": "needs_revalidation",
+    "source": "Source/runtime/render/public scan - pending evidence collection"
   },
   {
     "id": "non-claim-canonical-stop",
     "category": "governance",
     "claim": "Ad hoc runtime recovery counts as accepted proof after canonical failure",
     "scope": "Not claimed. CANONICAL-FAIL-STOP-001 requires STOP and canonical reproduction.",
-    "evidence_status": "not_claimed"
+    "evidence_status": "needs_revalidation",
+    "source": "Source/runtime/render/public scan - pending evidence collection"
   },
   {
     "id": "gapi004-option-d-proof",
     "category": "network_gateway_api",
     "claim": "Gateway API Option D external route is validated via MetalLB VIP through Envoy Gateway",
-    "scope": "GAPI004 Option D proof does NOT imply production/cloud Gateway API migration. GAPI004 does NOT imply MCP-specific route proof (follow-up: GAPI005). GAPI004 does NOT imply customer-ready or production-live. docsai125r2 MCP-GAPI proof is PARTIAL (NodePort blocker in k3d) — not PASS.",
+    "scope": "GAPI004 Option D proof does NOT imply production/cloud Gateway API migration. GAPI004 does NOT imply MCP-specific route proof (follow-up: GAPI005). GAPI004 does NOT imply customer-ready or production-live. docsai125r2 MCP-GAPI proof is PARTIAL (NodePort blocker in k3d) \u2014 not PASS.",
     "internal_ref": "GAPI004",
-    "evidence_status": "not_claimed"
+    "evidence_status": "needs_revalidation",
+    "source": "Source/runtime/render/public scan - pending evidence collection"
   }
 ]
