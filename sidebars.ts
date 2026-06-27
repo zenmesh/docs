@@ -71,6 +71,9 @@ const sidebars: SidebarsConfig = {
         'security/secure-webhook-delivery',
         'security/webhook-access-control',
         'security/tenant-isolation',
+        'security/trust-lab',
+        'security/security-tiering',
+        'security/git-sdk-ssrf-classification',
       ],
     },
     {

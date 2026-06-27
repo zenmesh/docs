@@ -2,7 +2,7 @@
 
 > Zen Mesh is zero-trust webhook delivery infrastructure for private networks. Services behind NAT or firewall connect outbound-only to receive webhooks from Stripe, GitHub, Shopify, Twilio, and custom senders — no inbound ports, no VPN, no kernel modules. Free for development and evaluation. 6-month Pro trial available. Business and Enterprise plans coming soon.
 
-**Version:** 1.1.0 · **Last-Updated:** 2026-06-25T22:00:00Z · **Docs:** https://docs.zen-mesh.io · **Site:** https://www.zen-mesh.io · **Repository:** https://github.com/zenmesh/zen-platform
+**Version:** 1.1.0 · **Last-Updated:** 2026-06-26T23:30:00Z · **Docs:** https://docs.zen-mesh.io · **Site:** https://www.zen-mesh.io · **Repository:** https://github.com/zenmesh/zen-platform
 
 ## Canonical discovery (crawlers)
 
@@ -103,10 +103,13 @@ See [support](https://docs.zen-mesh.io/docs/start-here/support).
 - [Security Controls Overview](https://docs.zen-mesh.io/docs/security/): Overview of webhook security controls
 - [Secure Webhook Delivery](https://docs.zen-mesh.io/docs/security/secure-webhook-delivery): Transport security, source verification, access control
 - [Webhook Access Control](https://docs.zen-mesh.io/docs/security/webhook-access-control): IP allowlisting, header validation, cryptographic enrollment
+- [Trust Lab](https://docs.zen-mesh.io/docs/security/trust-lab): Continuous trust validation — deterministic trust scenarios, security validation suite
+- [Security Feature Tiering](https://docs.zen-mesh.io/docs/security/security-tiering): IP allowlist Pro+, header management V1.1 Business+
+- [Git SDK SSRF Classification](https://docs.zen-mesh.io/docs/security/git-sdk-ssrf-classification): GitHub/GitLab/Bitbucket BaseURL SSRF risk classification
 
 ## Security capabilities
 
-- [IP Allowlisting](https://docs.zen-mesh.io/docs/security/ip-allowlisting): Restrict delivery sources with identity-based allowlisting
+- [IP Allowlisting](https://docs.zen-mesh.io/docs/security/ip-allowlisting): Restrict delivery sources with identity-based allowlisting (Pro+)
 - [Header Validation](https://docs.zen-mesh.io/docs/security/header-validation): Verify event source authenticity with signature verification
 - [Cryptographic Enrollment](https://docs.zen-mesh.io/docs/security/cryptographic-enrollment): HMAC-based enrollment with X.509 SVID for component identity
 
@@ -114,6 +117,10 @@ See [support](https://docs.zen-mesh.io/docs/start-here/support).
 
 - [JSONPath Routing](https://docs.zen-mesh.io/docs/delivery/jsonpath-routing): Route webhooks with safe JSONPath filter and match rules — no code execution
 - [JSONPath Transforms](https://docs.zen-mesh.io/docs/delivery/jsonpath-transforms): Map and reshape webhook payloads with JSONPath expressions and safe transform functions
+
+## Provider packages
+
+- [Provider Package Lifecycle](https://docs.zen-mesh.io/docs/providerflow/provider-package-lifecycle): Ownership/maturity classification (Official/Community × Draft/Preview/Beta/Verified/GA), billing model, quality gates
 
 ## Guides
 

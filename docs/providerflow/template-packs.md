@@ -29,13 +29,13 @@ Zen Mesh provides Provider Template Packs for popular webhook sources. Each pack
 
 ### Maturity Levels
 
-Packs are tagged with maturity levels:
+Packs are tagged with maturity levels using the [Provider Package Lifecycle](./provider-package-lifecycle) classification:
 
-- **Production** — Fully validated, recommended for production use
-- **Beta** — Validated but may evolve
-- **Experimental** — Early implementation, subject to change
+- **GA** — Fully validated, recommended for production use
+- **Beta** — Most quality gates passing, free grace period active
+- **Preview** — Functional with core quality gates passing, free/quota-exempt
 
-All four core provider packs (Stripe, GitHub, Shopify, Twilio) are at **Production** maturity.
+All four core provider packs (Stripe, GitHub) are at **GA** maturity. Shopify and Twilio are at **Preview** maturity with a parity path to GA.
 
 ## Architecture Mapping
 

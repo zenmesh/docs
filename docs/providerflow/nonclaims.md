@@ -6,6 +6,10 @@ sidebar_label: Known Nonclaims
 
 ProviderFlow is **NOT** a public marketplace or production-ready deployment mechanism. These are explicitly stated non-claims.
 
+> **See also:** [Provider Package Lifecycle](./provider-package-lifecycle) for
+> the ownership/maturity classification system that replaces the deprecated
+> "experimental" label.
+
 ## What ProviderFlow Is
 
 ProviderFlow is an **internal/private framework for V1** that defines how webhook events flow through the platform.
