@@ -4,6 +4,8 @@ sidebar_label: Stripe v2
 
 # Stripe v2 Package
 
+**Ownership:** Official
+**Maturity:** GA
 **Visibility:** Internal/Private
 **Public Listing:** No
 **Canonical Layer:** Data

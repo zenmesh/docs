@@ -41,8 +41,13 @@ The allowlist is deny-by-default — only explicitly permitted sources are allow
 
 A platform team wants to ensure that only Stripe's published webhook IP ranges can deliver events to their webhook endpoints. They configure the ingester allowlist with Stripe's CIDR ranges — any event arriving from outside those ranges is automatically rejected.
 
+## Plan Tiering
+
+IP allowlist/block is a **Pro+** feature (V1). Free plan users see an upgrade prompt when accessing this feature. See [Security Feature Tiering](./security-tiering) for details.
+
 ## Related Capabilities
 
+- [Security Feature Tiering](./security-tiering)
 - [Webhook Header Validation](./header-validation)
 - [Cryptographic Enrollment](./cryptographic-enrollment)
 

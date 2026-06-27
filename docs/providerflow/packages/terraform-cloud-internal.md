@@ -4,6 +4,8 @@ sidebar_label: Terraform Cloud Internal
 
 # Terraform Cloud Internal Package
 
+**Ownership:** Community
+**Maturity:** Preview
 **Visibility:** Internal/Private
 **Public Listing:** No
 **Canonical Layer:** Infra

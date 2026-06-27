@@ -62,6 +62,9 @@ See [support](start-here/support).
 - [MCP safety and boundaries](mcp/safety-and-boundaries): Connection security, sandboxing, data isolation
 - [ZenLock](zen-lock): Credential lifecycle management
 - [Non-claims](ai/non-claims): What Zen Mesh does not protect
+- [Trust Lab](security/trust-lab): Deterministic validation scenarios for webhook delivery
+- [Security Validation Suite](security/security-validation-suite): Adversarial and boundary validation
+- [Security plan tiering](security/security-tiering): Feature availability by plan (V1 / V1.1)
 - [Security features](security): TLS, mTLS, IP allowlisting, header validation, cryptographic enrollment
 
 ## API

@@ -66,5 +66,8 @@ For what Zen Mesh **does and does not** mitigate (SSRF, payloads, mTLS, hash-cha
 
 ## Public terminology
 
+- [Trust Lab](../security/trust-lab) — deterministic validation scenarios for webhook delivery
+- [Security Validation Suite](../security/security-validation-suite) — adversarial/security scenario validation
+- [Provider Package Lifecycle](../providerflow/provider-package-lifecycle) — ownership × maturity classification
 
 ## Community OSS from the Zen Mesh team

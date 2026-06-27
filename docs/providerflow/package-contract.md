@@ -6,6 +6,8 @@ sidebar_label: Package Contract
 
 A ProviderFlow package defines how webhook events are processed and delivered. Packages are **internal/private for V1** and not part of a public marketplace.
 
+Every package carries an [ownership and maturity classification](./provider-package-lifecycle) that governs support, billing, and quality gate expectations.
+
 ## Package Definition
 
 ```yaml
@@ -13,10 +15,15 @@ package:
   name: stripe-v2
   version: 2.0.0
   provider: stripe
+  ownership: Official
+  maturity: GA
   visibility: internal/private
   description: "Stripe webhook processing package for payments"
   canonical_layer: data
   canonical_area: payment-processing
+  evidence_status: verified
+  compatibility:
+    min_platform_version: "1.0.0"
 
 endpoints:
   - name: payment-event
@@ -56,6 +63,8 @@ flows:
 | `name` | string | ✅ | Package name |
 | `version` | string | ✅ | Package version (semver) |
 | `provider` | string | ✅ | Provider name (e.g., stripe, shopify) |
+| `ownership` | string | ✅ | Ownership: `Official`, `Verified Community`, `Community` |
+| `maturity` | string | ✅ | Maturity: `Draft`, `Preview`, `Beta`, `Verified`, `GA` |
 | `visibility` | string | ✅ | Visibility: `internal/private` |
 | `description` | string | ✅ | Package description |
 | `canonical_layer` | string | ✅ | Layer: `data`, `infra`, `app` |

@@ -21,7 +21,7 @@ Short changelog for **public-facing** website and docs improvements (terminology
 
 ## Public capability terms used
 
-Runtime workload identity (SVID) rotation; DeliveryPolicy TLS/trust-chain controls; sandbox delivery validation (direct, egress, relay); planes management UI (T1); hash-chain integrity.
+Runtime workload identity (SVID) rotation; DeliveryPolicy TLS/trust-chain controls; Trust Lab delivery validation (direct, egress, relay); planes management UI (T1); hash-chain integrity.
 
 ## Non-claims preserved
 

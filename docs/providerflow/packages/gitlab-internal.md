@@ -4,6 +4,8 @@ sidebar_label: GitLab Internal
 
 # GitLab Internal Package
 
+**Ownership:** Community
+**Maturity:** Draft
 **Visibility:** Internal/Private
 **Public Listing:** No
 **Canonical Layer:** Data

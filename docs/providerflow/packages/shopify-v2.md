@@ -4,6 +4,8 @@ sidebar_label: Shopify v2
 
 # Shopify v2 Package
 
+**Ownership:** Official
+**Maturity:** Preview
 **Visibility:** Internal/Private
 **Public Listing:** No
 **Canonical Layer:** Data

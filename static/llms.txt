@@ -161,7 +161,7 @@ See [support](https://docs.zen-mesh.io/docs/start-here/support).
 - [MCP Authentication and mTLS](https://docs.zen-mesh.io/docs/mcp/authentication-and-mtls): MCP API key format, scopes, TLS requirements
 - [MCP Safety and Boundaries](https://docs.zen-mesh.io/docs/mcp/safety-and-boundaries): Auth model, tool execution, gating, data isolation
 - [MCP Draft System](https://docs.zen-mesh.io/docs/mcp/draft-system): AI drafts your infrastructure — you approve it. Governance model with human-only apply
-- [MCP V1 Policy](https://docs.zen-mesh.io/docs/mcp/read-only-v1-policy): V1 scope — RO and RW tools included, default-off. Full AI sandbox and synthetic monitoring post-V1.
+- [MCP V1 Policy](https://docs.zen-mesh.io/docs/mcp/read-only-v1-policy): V1 scope — RO and RW tools included, default-off. Full Trust Lab and synthetic monitoring post-V1.
 
 ## Reference and FAQ
 

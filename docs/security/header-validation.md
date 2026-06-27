@@ -55,7 +55,12 @@ Live external provider validation is distinct from backend signature-verificatio
 
 An organization receives webhooks from Stripe, GitHub, Twilio, and Shopify. Header validation is configured for each provider's signature scheme. A forged webhook request without a valid signature is rejected — protecting downstream services from processing unverified events.
 
+## Plan Tiering
+
+Header filtering, blocking, and transform management is a **Business+** feature planned for V1.1. Free and Pro plans do not include header management. See [Security Feature Tiering](./security-tiering) for details.
+
 ## Related Capabilities
 
 - [Webhook IP Allowlisting](./ip-allowlisting)
 - [Cryptographic Enrollment](./cryptographic-enrollment)
+- [Security Feature Tiering](./security-tiering)

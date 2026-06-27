@@ -1,136 +1,97 @@
 ---
 sidebar_label: Trust Lab
+description: Continuous Trust Validation — deterministic validation scenarios for webhook delivery security and reliability.
 ---
 
-# Trust Lab — Continuous Trust Validation
+# Trust Lab
 
-Trust Lab is Zen Mesh's framework for deterministic, repeatable trust and
-security validation. It replaces the internal "AI Sandbox" terminology for
-public positioning. AI assistants are **clients** of Trust Lab, not the product.
-
-## Core Principle
-
-> Pass/fail comes from **deterministic validators**, not AI judgment.
-
-Trust Lab defines Trust Scenarios — executable, deterministic validation
-artifacts that can be run by:
-
-- Humans (manual or guided)
-- CI pipelines
-- Scheduled synthetic monitoring
-- AI assistants (orchestration and explanation only)
-- Customers, where the scenario is explicitly safe
+Trust Lab is Zen Mesh's deterministic validation framework for webhook delivery. It runs **Trust Scenarios** — repeatable, deterministic checks that produce pass/fail results with verifiable evidence.
 
 ## What Trust Lab Is
 
-Trust Lab is a collection of Trust Scenarios that validate security properties
-of webhook delivery, signature verification, replay protection, tenant isolation,
-and evidence integrity. Each scenario produces a deterministic pass/fail result
-with evidence artifacts.
+Trust Lab is a **product capability** — a catalog of Trust Scenarios that validate webhook delivery behavior, security boundaries, and operational correctness. Results are produced by deterministic validators (not AI judgment) and can be used to support synthetic monitoring, regression gates, and historical trust evidence.
 
-## What Trust Lab Is Not
+### Key Properties
 
-- Not an AI product. AI is one orchestrator among several.
-- Not a substitute for compliance audits.
-- Not a claim of universal protection. Scope is stated per scenario.
+- **Deterministic** — Same inputs always produce the same result.
+- **Verifiable** — Every execution produces evidence artifacts.
+- **Composable** — Scenarios can be run individually or as suites.
+- **Auditable** — Results are stored for historical comparison.
 
-## Trust Scenario Schema
+## Trust Scenarios
 
-Each Trust Scenario is defined with:
+A Trust Scenario is a structured, repeatable validation:
 
 | Field | Description |
 |-------|-------------|
 | `id` | Unique scenario identifier |
-| `title` | Human-readable title |
-| `purpose` | What security property is being validated |
-| `prerequisites` | What must be set up before running |
-| `execution_steps` | Deterministic steps to execute |
-| `expected_result` | What the validator expects |
-| `deterministic_validator` | The code/logic that decides pass/fail |
-| `evidence_produced` | Artifacts generated (logs, receipts, hashes) |
-| `severity_if_failed` | Critical / High / Medium / Low |
-| `safe_in_prod` | Whether this scenario can run against production |
-| `customer_runnable` | Whether customers can run this safely |
-| `ai_runnable` | Whether an AI assistant can orchestrate this |
-| `schedule` | Revalidation cadence (e.g., daily, weekly) |
-| `historical_result_storage` | Where results are stored for trend analysis |
+| `purpose` | What this scenario validates |
+| `prerequisites` | Conditions that must be met before execution |
+| `execution steps` | Step-by-step procedure |
+| `expected result` | Deterministic pass/fail criteria |
+| `deterministic validator` | The tool or process that decides pass/fail |
+| `evidence produced` | Artifact generated on execution |
+| `severity if failed` | Impact classification |
+| `safe_in_prod` | Whether the scenario can run in production |
+| `customer_runnable` | Whether customers can execute this scenario |
+| `ai_runnable` | Whether an AI assistant can execute this scenario |
+| `cadence` | Recommended execution frequency |
 
-## Scenario Categories
+### Example Scenarios
 
-### Signature and Authenticity
+| Scenario | What It Validates |
+|----------|-------------------|
+| Replay attack rejection | A replayed webhook with a valid signature but reused nonce/timestamp is rejected |
+| Invalid signature rejection | A webhook with a forged or mismatched signature is rejected |
+| Expired timestamp rejection | A webhook with a timestamp outside the allowed window is rejected |
+| Malformed request rejection | A webhook with missing or malformed required fields is rejected |
+| Duplicate delivery behavior | A duplicate webhook is handled according to idempotency policy |
+| Stripe validation suite | End-to-end Stripe webhook ingestion, validation, delivery |
+| GitHub validation suite | End-to-end GitHub webhook ingestion, validation, delivery |
+| Shopify validation suite | End-to-end Shopify webhook ingestion, validation, delivery |
+| Twilio validation suite | End-to-end Twilio webhook ingestion, validation, delivery |
+| Policy freshness | DeliveryPolicy and AuthProfile updates take effect within expected window |
+| Merkle verification | Delivery evidence hash-chain integrity is verifiable |
+| Tenant isolation / RLS | Cross-tenant data isolation is enforced |
+| Edge Lite reconnect | Edge Lite agent reconnects after network interruption within SLO |
+| Evidence chain validation | Full evidence chain from ingestion to delivery is intact |
 
-| Scenario | Validates |
-|----------|-----------|
-| Invalid signature rejection | HMAC mismatch detected and rejected |
-| Missing signature rejection | Required header absent — request rejected |
-| Payload tampering rejection | Digest/signature mismatch on modified payload |
+## Who Runs Scenarios
 
-### Replay Protection
+Trust Scenarios can be executed by multiple actors:
 
-| Scenario | Validates |
-|----------|-----------|
-| Replay attack rejection | Duplicate nonce/timestamp detected and rejected |
-| Expired timestamp rejection | Request outside skew window rejected |
+| Actor | Scope |
+|-------|-------|
+| **Zen Mesh operators** | Full catalog — CI, scheduled, on-demand |
+| **AI assistant** | AI-runnable scenarios (subset gated by `ai_runnable`) — the AI is a client/orchestrator, not the decision authority |
+| **Customers** | Customer-runnable scenarios (subset gated by `customer_runnable`) — self-service validation |
+| **CI/CD** | Automated regression gates |
 
-### Request Integrity
+**AI is a client and orchestrator, not the product.** Trust Lab does not require an AI to function. Pass/fail is decided by deterministic validators, not by AI judgment. When an AI orchestrates a Trust Scenario, it executes the steps and reads the deterministic pass/fail result — it does not decide the outcome.
 
-| Scenario | Validates |
-|----------|-----------|
-| Malformed request rejection | Invalid structure detected |
-| Missing/tampered header rejection | Required headers validated |
-| Unsupported content type rejection | Policy enforcement on content types |
-| Oversized payload rejection | Size limit enforced |
+## Validation Lab
 
-### Provider-Specific
+For broader or non-branded contexts, refer to **Validation Lab**. This is the generic term for the validation environment that hosts Trust Scenarios. Trust Lab is the branded product capability name.
 
-| Scenario | Validates |
-|----------|-----------|
-| Stripe validation suite | Stripe signature verification end-to-end |
-| GitHub validation suite | GitHub HMAC verification end-to-end |
-| Shopify validation suite | Shopify HMAC-SHA256 verification |
-| Twilio validation suite | Twilio-Signature verification |
+## Relationship to Security Validation
 
-### Evidence and Trust Chain
+Trust Scenarios validate correctness, security boundaries, and operational reliability. Adversarial/security-specific scenarios (attack simulation, boundary testing, fuzzing) belong to the [Security Validation Suite / Negative Security Test Suite](./security-validation-suite), which follows a separate schema:
 
-| Scenario | Validates |
-|----------|-----------|
-| Merkle verification | Hash-chain evidence integrity |
-| Evidence chain validation | End-to-end delivery evidence chain |
-| Policy freshness | Active policies match expected state |
+- Scenario / attack
+- Result (accepted / rejected / detected)
+- Why the result occurred
+- Evidence artifact
+- Operator visibility level
 
-### Tenant Isolation (Safe Contexts Only)
+Trust Scenarios and Security Validation Suite scenarios share the same deterministic-first philosophy but target different audiences: Trust Scenarios for operational validation, Security Validation Suite for adversarial verification.
 
-| Scenario | Validates | Safe In Prod? |
-|----------|-----------|---------------|
-| Tenant isolation / RLS | Row-level security enforcement | No — synthetic data only |
-| Edge Lite reconnect | Reconnection after network interruption | Yes |
+## Status
 
-> RLS / tenant isolation scenarios use synthetic data and are not run against
-> customer production environments.
+Trust Lab is under active development. Not all scenarios listed above are implemented. See the [capability manifest](https://docs.zen-mesh.io/ai/evidence/v1/manifest.json) for current proof_status per scenario.
 
-## Historical Trust Evidence
+## Related
 
-Trust Lab stores historical results for trend analysis. This enables detection
-of behavioral or security regressions that ordinary monitoring might miss.
-
-## Security Validation Suite
-
-The deterministic validators backing Trust Lab are collectively called the
-**Security Validation Suite** (also: **Negative Security Test Suite**). Each
-validator tests a specific attack vector and produces evidence.
-
-### Display Pattern
-
-| Attack / Scenario | Result | Why Rejected | Evidence Artifact | Operator Visibility |
-|--------------------|--------|--------------|-------------------|---------------------|
-| Replay attack | Rejected | Duplicate nonce/timestamp policy | validator output | Security event recorded |
-| Invalid signature | Rejected | HMAC mismatch | validator output | Audit/security event |
-| Expired timestamp | Rejected | Outside skew window | validator output | Audit log |
-| Missing signature | Rejected | Required header absent | validator output | Security event |
-| Payload tampering | Rejected | Digest/signature mismatch | validator output | Security event |
-
-### Scope Statement
-
-Validators prove rejection within their defined scope (time window, provider,
-header set). They do not claim universal protection against all attack vectors.
-Scope is stated explicitly per scenario.
+- [Security Validation Suite](./security-validation-suite)
+- [Security Capability Validation](./security-capability-validation)
+- [Provider Package Lifecycle](../providerflow/provider-package-lifecycle)
+- [Package Validation](../providerflow/package-validation)

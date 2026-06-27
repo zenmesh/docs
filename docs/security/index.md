@@ -17,6 +17,10 @@ Security controls for webhook delivery covering source verification, access rest
 | [Security Capability Validation](./security-capability-validation) | Authoritative reference for all security claims |
 | [Agent → SaaS mTLS](./agent-saas-mtls) | Required mTLS enforcement for agent communication |
 | [ZenLock Credential Lifecycle](./zenlock-credential-lifecycle) | Secure credential custody and distribution |
+| [Trust Lab](./trust-lab) | Deterministic validation scenarios for webhook delivery |
+| [Security Validation Suite](./security-validation-suite) | Adversarial and boundary validation scenarios |
+| [Security Feature Tiering](./security-tiering) | Feature availability by plan (V1 / V1.1) |
+| [Git SDK SSRF Classification](./git-sdk-ssrf-classification) | SSRF risk classification for Git provider SDKs |
 
 ## Security Model
 

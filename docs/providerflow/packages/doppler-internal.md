@@ -4,6 +4,8 @@ sidebar_label: Doppler Internal
 
 # Doppler Internal Package
 
+**Ownership:** Community
+**Maturity:** Preview
 **Visibility:** Internal/Private
 **Public Listing:** No
 **Canonical Layer:** Data
