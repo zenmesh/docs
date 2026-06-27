@@ -31,13 +31,14 @@ check_redirect() {
   local expected_dest="$2"
   local final_url
   final_url=$(curl -sS -o /dev/null -w '%{url_effective}' -L "$url" 2>/dev/null || echo "")
-  if echo "$final_url" | grep -qF "$expected_dest"; then
+  # Use endswith to avoid substring false positive (e.g. /docs/operations/zen-gc contains /zen-gc)
+  if echo "$final_url" | grep -qE "${expected_dest}$"; then
     echo "  OK:   $url → redirects to $expected_dest"
     PASS=$((PASS + 1))
   else
     echo "  FAIL: $url did not redirect to $expected_dest (final: $final_url)"
     FAIL=$((FAIL + 1))
-    ERRORS="${ERRORS}\n  - $url: did not redirect to $expected_dest"
+    ERRORS="${ERRORS}\n  - $url: did not redirect to $expected_dest (final: $final_url)"
   fi
 }
 
