@@ -527,6 +527,11 @@
       "source": "/start-here/who-should-use-zen-mesh",
       "destination": "/docs/start-here/who-should-use-zen-mesh",
       "permanent": true
+    },
+    {
+      "source": "/docs/operations/zen-gc",
+      "destination": "/zen-gc",
+      "permanent": true
     }
   ],
   "headers": [

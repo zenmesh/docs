@@ -2,7 +2,7 @@
 
 > Zen Mesh is private-by-design, security-first webhook delivery infrastructure for private networks. Services behind NAT or firewall connect outbound-only to receive webhooks from Stripe, GitHub, Shopify, Twilio, and custom senders — no inbound ports, no VPN, no kernel modules. Free for development and evaluation. 6-month Pro trial available. Business and Enterprise plans coming soon.
 
-**Version:** 1.0 · **Last-Updated:** 2026-06-25 · **Docs:** https://docs.zen-mesh.io · **Site:** https://www.zen-mesh.io · **Repository:** https://github.com/zenmesh/zen-platform
+**Version:** 1.1.0 · **Last-Updated:** 2026-06-27 · **Docs:** https://docs.zen-mesh.io · **Site:** https://www.zen-mesh.io · **Repository:** https://github.com/zenmesh/zen-platform
 
 ## Getting started
 
@@ -123,7 +123,7 @@ See [support](start-here/support).
 
 ## Zen-GC
 
-- [Overview](zen-gc): Apache-2.0 Kubernetes garbage collection controller — declarative TTL cleanup policies and lifecycle management
+- [Overview](https://docs.zen-mesh.io/zen-gc): Apache-2.0 Kubernetes garbage collection controller — declarative TTL cleanup policies and lifecycle management
 
 ## Operations
 
