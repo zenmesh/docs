@@ -67,6 +67,7 @@ See [`ai/security-posture.md`](ai/security-posture.md) and primitive IDs `PRIM-Z
 | Hash-chain evidence | `AUTOMATED_TESTED` | Tamper-**detection** for evidence artifacts only |
 | SSRF on SaaS dispatch | `BACKLOG` | Not SSRF-protected — see gaps |
 | Payload / parser / header / redirect hardening | `BACKLOG` | WH-AS backlog — remain visible in gaps.json |
+| Local auth 2FA/MFA | `NOT_CLAIMED` | V1 prerequisite — blocked pending Hermes R22 runtime evidence |
 
 ## Narrative vs proof
 

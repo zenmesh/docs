@@ -1,10 +1,10 @@
 {
   "task_id": "DOCSAI_P0_V1_PROVIDER_PACKAGES_AND_SECURITY_VALIDATION_COMPLETION_AUDIT_R2",
   "generated_at": "2026-06-26T21:00:00Z",
-  "last_updated": "2026-06-26T23:00:00Z",
-  "updated_by": "DOCSAI_P0_TWILIO_PROVIDER_DOCS_PACKAGE_CLOSEOUT_R4",
+  "last_updated": "2026-06-26T23:30:00Z",
+  "updated_by": "DOCSAI_P0_V1_2FA_MFA_SECURITY_CONTRACT_ALIGNMENT_R5",
   "commit_inputs": {
-    "docs": "ccf1bbe21f6acf1973bd80799f1fa0ec39daa936",
+    "docs": "a2ad6bccdc83b207c4e4964bd592c30e2666a4d4",
     "platform": "read-only",
     "website": "4f7bc5fef9731d92474015b6302cfba9bb198c19"
   },
@@ -121,7 +121,8 @@
     "Twilio: Live E2E webhook receipt NOT VALIDATED (TW-02) — Hermes + DocsAI",
     "Twilio: Form-encoding runtime verification PENDING (TW-03) — Hermes",
     "GitHub: Insufficient fixture coverage (1 of 5+ needed) — GH-01 (Hermes)",
-    "Stripe: Excluded from golden validation test suite — ST-02 (Hermes)"
+    "Stripe: Excluded from golden validation test suite — ST-02 (Hermes)",
+    "2FA/MFA: Local/password auth requires app-level 2FA — V1_BLOCKER pending Hermes R22"
   ],
   "recommended_next_executor_tasks": [
     {"task_id": "SH-01", "title": "Shopify HMAC-SHA256 enforcement", "owner": "Hermes", "priority": "P0"},
@@ -131,6 +132,7 @@
     {"task_id": "SH-02", "title": "Live Shopify E2E validation + evidence capture", "owner": "Hermes + DocsAI", "priority": "P1"},
     {"task_id": "TW-02", "title": "Live Twilio E2E validation + evidence capture", "owner": "Hermes + DocsAI", "priority": "P1"},
     {"task_id": "TW-03", "title": "Twilio form-encoding runtime verification", "owner": "Hermes", "priority": "P1"},
+    {"task_id": "R22-2FA", "title": "Implement 2FA/MFA enrollment, verification, route acceptance, audit events", "owner": "Hermes", "priority": "P0"},
     {"task_id": "CR-01", "title": "Reconcile package.yaml maturity=production with actual readiness", "owner": "Hermes + DocsAI", "priority": "P2"}
   ]
 }

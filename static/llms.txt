@@ -107,6 +107,8 @@ See [support](https://docs.zen-mesh.io/docs/start-here/support).
 - [Security Feature Tiering](https://docs.zen-mesh.io/docs/security/security-tiering): IP allowlist Pro+, header management V1.1 Business+
 - [Git SDK SSRF Classification](https://docs.zen-mesh.io/docs/security/git-sdk-ssrf-classification): GitHub/GitLab/Bitbucket BaseURL SSRF risk classification
 
+> Note: 2FA/MFA is a V1 security prerequisite currently tracked as a blocker until runtime evidence lands. Local/password auth requires app-level 2FA for V1. OIDC MFA may be delegated to the identity provider for V1 when configured.
+
 ## Security capabilities
 
 - [IP Allowlisting](https://docs.zen-mesh.io/docs/security/ip-allowlisting): Restrict delivery sources with identity-based allowlisting (Pro+)

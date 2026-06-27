@@ -42,6 +42,21 @@ Every scenario follows a consistent schema:
 | Cross-tenant delivery target | Rejected | Tenant isolation / RLS |
 | Unauthorized delivery endpoint | Rejected | Target authentication |
 
+### 2FA/MFA Authentication
+
+| Scenario | Expected Result | V1 Status | Notes |
+|----------|-----------------|-----------|-------|
+| Local login with 2FA enabled | TWO_FACTOR_REQUIRED (403) | V1_BLOCKER pending R22 | Route returns 403 until 2FA completed |
+| TOTP enrollment | Seed provisioned | V1_BLOCKER pending R22 | Sandbox-safe seed path required for testing |
+| Invalid OTP verification | Rejected (401) | V1_BLOCKER pending R22 | Deterministic OTP validation |
+| Valid OTP verification | Authenticated (200) | V1_BLOCKER pending R22 | Session/token issued after 2FA |
+| /me after 2FA | Route accessible | V1_BLOCKER pending R22 | Proves auth session carries 2FA context |
+| Authenticated routes after 2FA | Full route matrix accessible | V1_BLOCKER pending R22 | All V1 routes pass auth gate |
+| 2FA audit event emission | Event recorded | V1_BLOCKER pending R22 | Enrollment/success/failure events |
+| OIDC IdP MFA (when configured) | Delegated to IdP | V1_PARTIAL | Must be documented; no app-level MFA for OIDC V1 |
+
+These scenarios are V1_BLOCKER until Hermes R22 proves end-to-end enrollment, verification, and route acceptance after 2FA. Do not claim 2FA is complete until all scenarios pass with runtime evidence.
+
 ### Schema and Input Validation
 
 | Scenario | Expected Result | Control |

@@ -64,6 +64,7 @@ See [support](start-here/support).
 - [Non-claims](ai/non-claims): What Zen Mesh does not protect
 - [Trust Lab](security/trust-lab): Deterministic validation scenarios for webhook delivery
 - [Security Validation Suite](security/security-validation-suite): Adversarial and boundary validation
+- 2FA/MFA is a V1 security prerequisite currently tracked as a blocker until runtime evidence lands. Local/password auth requires app-level 2FA for V1. OIDC MFA may be delegated to the identity provider for V1 when configured.
 - [Security plan tiering](security/security-tiering): Feature availability by plan (V1 / V1.1)
 - [Security features](security): TLS, mTLS, IP allowlisting, header validation, cryptographic enrollment
 

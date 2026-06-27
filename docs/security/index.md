@@ -19,6 +19,7 @@ Security controls for webhook delivery covering source verification, access rest
 | [ZenLock Credential Lifecycle](./zenlock-credential-lifecycle) | Secure credential custody and distribution |
 | [Trust Lab](./trust-lab) | Deterministic validation scenarios for webhook delivery |
 | [Security Validation Suite](./security-validation-suite) | Adversarial and boundary validation scenarios |
+| [2FA/MFA Authentication](./v1-security-readiness-checklist) | V1 prerequisite — app-level 2FA for local/password auth, IdP-delegated MFA for OIDC |
 | [Security Feature Tiering](./security-tiering) | Feature availability by plan (V1 / V1.1) |
 | [Git SDK SSRF Classification](./git-sdk-ssrf-classification) | SSRF risk classification for Git provider SDKs |
 

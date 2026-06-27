@@ -1,0 +1,54 @@
+{
+  "task_id": "DOCSAI_P0_V1_2FA_MFA_SECURITY_CONTRACT_ALIGNMENT_R5",
+  "generated_at": "2026-06-26T23:30:00Z",
+  "generator": "DocsAI",
+  "commit_inputs": {
+    "docs": "a2ad6bccdc83b207c4e4964bd592c30e2666a4d4"
+  },
+  "surfaces_updated": [
+    "docs/security/security-validation-v1-cutline.md — added 2FA to V1 Required table",
+    "docs/security/trust-scenario-registry.md — added 8 AUTH-2FA-* V1_BLOCKER scenarios",
+    "docs/security/security-validation-suite.md — added 2FA/MFA scenario section",
+    "docs/security/v1-security-readiness-checklist.md — created with 18 items including 2FA",
+    "docs/security/index.md — added 2FA/MFA to capabilities table",
+    "docs/80-EVIDENCE/docsai/r5-2fa-v1-security-contract/2fa_v1_security_contract_alignment.json — evidence JSON",
+    "docs/80-EVIDENCE/docsai/r5-2fa-v1-security-contract/2fa_v1_security_contract_alignment.md — evidence MD",
+    "docs/80-EVIDENCE/docsai/r2-audit/provider_package_v1_gap_audit.json — added 2FA global blocker",
+    "docs/80-EVIDENCE/docsai/r2-audit/provider_package_v1_gap_audit.md — added R5 2FA section",
+    "docs/llms.txt — added 2FA prerequisite note",
+    "static/llms.txt — added 2FA prerequisite note",
+    "docs/ai/security-posture.md — added Local auth 2FA to highlights"
+  ],
+  "scenarios_added": [
+    {"id": "AUTH-2FA-01", "title": "Local login returns TWO_FACTOR_REQUIRED", "status": "V1_BLOCKER", "owner": "Hermes"},
+    {"id": "AUTH-2FA-02", "title": "TOTP enrollment or sandbox-safe seed", "status": "V1_BLOCKER", "owner": "Hermes"},
+    {"id": "AUTH-2FA-03", "title": "Invalid OTP rejected", "status": "V1_BLOCKER", "owner": "Hermes"},
+    {"id": "AUTH-2FA-04", "title": "Valid OTP completes authentication", "status": "V1_BLOCKER", "owner": "Hermes"},
+    {"id": "AUTH-2FA-05", "title": "/me succeeds after 2FA", "status": "V1_BLOCKER", "owner": "Hermes"},
+    {"id": "AUTH-2FA-06", "title": "Authenticated route matrix after 2FA", "status": "V1_BLOCKER", "owner": "Hermes"},
+    {"id": "AUTH-2FA-07", "title": "2FA audit/security events", "status": "V1_BLOCKER", "owner": "Hermes"},
+    {"id": "AUTH-2FA-08", "title": "Recovery/reset path", "status": "V1_BLOCKER", "owner": "Hermes"}
+  ],
+  "current_status": "DocsAI alignment PASS — all security contract surfaces updated. Hermes R22 runtime evidence PENDING.",
+  "v1_blockers": [
+    "2FA/MFA is a V1 blocker until Hermes R22 proves end-to-end enrollment/verification and route acceptance after 2FA"
+  ],
+  "owner_lanes": {
+    "docs_alignment": "DocsAI (R5)",
+    "runtime_evidence_2fa": "Hermes (R22)"
+  },
+  "required_hermes_r22_evidence": [
+    "TOTP enrollment endpoint works (seed provisioned)",
+    "Invalid OTP returns 401",
+    "Valid OTP returns 200/session",
+    "/me succeeds after 2FA",
+    "Routes accessible after 2FA (full matrix)",
+    "Audit events for 2FA lifecycle",
+    "Recovery/reset path documented"
+  ],
+  "claim_safety_result": {
+    "matches": 590,
+    "violations_from_r5_changes": 0,
+    "status": "PASS"
+  }
+}

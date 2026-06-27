@@ -29,6 +29,7 @@ These are negative security basics that every V1 deployment must pass:
 | Unknown provider endpoint rejection | Provider routing validation | ✅ DONE |
 | Duplicate delivery detection | Idempotency key matching | ✅ DONE |
 | Delivery timeout enforcement | Delivery timeout | ✅ DONE |
+| Local auth 2FA/MFA enrollment and verification | TOTP enrollment + OTP validation + route matrix after 2FA | ❌ V1_BLOCKER — PENDING Hermes R22 |
 
 ## V1 Pro+ Required
 
@@ -84,3 +85,4 @@ These scenarios are documented in the Security Validation Suite but are NOT clai
 3. **Do not claim Shopify/Twilio security validation** until HMAC/signature enforcement is implemented and live E2E validated.
 4. **Deterministic validators for V1 claims must exist before V1.** AI-judged results are not sufficient for security claims.
 5. **V1.1 items are not V1 blockers.** Do not block V1 on V1.1 scope.
+6. **2FA/MFA is a V1 prerequisite.** Local/password auth requires app-level 2FA enrollment and verification for V1. Google/OIDC users may rely on IdP MFA for V1 when configured and documented. Do not claim 2FA is DONE until Hermes R22 proves end-to-end enrollment, OTP validation, and route acceptance after 2FA.
