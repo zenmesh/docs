@@ -26,10 +26,10 @@ This matrix audits the four V1 provider packages (Stripe, GitHub, Shopify, Twili
 
 | Artifact | Stripe | GitHub | Shopify | Twilio |
 |----------|--------|--------|---------|--------|
-| **Ownership** | Official | — | Official | — |
-| **Maturity (docs)** | GA | — | Preview | — |
+| **Ownership** | Official | Official | Official | — |
+| **Maturity (docs)** | GA | Preview | Preview | — |
 | **Maturity (package.yaml)** | production | production | production | production |
-| **Package docs** | ✅ stripe-v2.md | ❌ MISSING | ✅ shopify-v2.md | ❌ MISSING |
+| **Package docs** | ✅ stripe-v2.md | ✅ github-v2.md | ✅ shopify-v2.md | ❌ MISSING |
 | **Transform package** | ✅ DONE | ✅ DONE | ✅ DONE | ✅ DONE |
 | **Event YAML definitions** | ✅ 4 files | ✅ 3 files | ✅ 3 files | ✅ 4 files |
 | **Fixtures** | ✅ 13 scenarios | 🔶 1 scenario | ✅ 5 scenarios | ✅ 5 scenarios |
@@ -37,11 +37,11 @@ This matrix audits the four V1 provider packages (Stripe, GitHub, Shopify, Twili
 | **Golden test validation** | 🔶 EXCLUDED | ✅ PASS | ✅ PASS | ✅ PASS |
 | **Offline transform tests** | ✅ PASS | ✅ PASS | ✅ PASS | ✅ PASS |
 | **Example files** | ✅ 1 | ✅ 1 | ✅ 1 | ✅ 1 |
-| **Quickstart** | ✅ DONE | 🔶 Partial | ✅ DONE | ✅ DONE |
-| **E2E runbook** | ✅ DONE | ❌ MISSING | ✅ DONE | ✅ DONE |
-| **Troubleshooting** | ❌ MISSING | ❌ MISSING | ✅ DONE | ✅ DONE |
-| **Readiness gate** | ❌ MISSING | ❌ MISSING | ✅ DONE | ✅ DONE |
-| **Launch hardening** | ❌ MISSING | ❌ MISSING | ✅ DONE | ✅ DONE |
+| **Quickstart** | ✅ DONE | ✅ DONE | ✅ DONE | ✅ DONE |
+| **E2E runbook** | ✅ DONE | ✅ DONE | ✅ DONE | ✅ DONE |
+| **Troubleshooting** | ✅ DONE | ✅ DONE | ✅ DONE | ✅ DONE |
+| **Readiness gate** | ✅ DONE | ✅ DONE | ✅ DONE | ✅ DONE |
+| **Launch hardening** | ✅ DONE | ✅ DONE | ✅ DONE | ✅ DONE |
 | **Authprofile module** | ✅ DONE | ✅ DONE | ✅ DONE | ✅ DONE |
 | **Ingester examples** | ✅ DONE | ✅ DONE | ✅ DONE | ✅ DONE |
 | **HMAC/signature enforcement** | ✅ DONE | ✅ DONE | 🔶 PENDING | 🔶 PENDING |
@@ -56,17 +56,14 @@ This matrix audits the four V1 provider packages (Stripe, GitHub, Shopify, Twili
 
 ## V1 Blocker Summary
 
-| Blocker | Providers | Severity |
-|---------|-----------|----------|
-| HMAC/signature enforcement PENDING | Shopify, Twilio | V1_BLOCKER (security) |
-| Live E2E validation not performed | GitHub, Shopify, Twilio | V1_BLOCKER (integration) |
-| Thin fixture coverage (1 fixture) | GitHub | V1_BLOCKER (quality) |
-| Missing package docs | GitHub, Twilio | V1_BLOCKER (documentation) |
-| Missing readiness gate doc | Stripe, GitHub | V1_BLOCKER (governance) |
-| Missing launch hardening doc | Stripe, GitHub | V1_BLOCKER (governance) |
-| Missing troubleshooting doc | Stripe, GitHub | V1_BLOCKER (operability) |
-| Golden test suite excludes Stripe | Stripe | V1_BLOCKER (validation) |
-| package.yaml maturity=production vs docs maturity mismatch | All | Needs reconciliation |
+| Blocker | Providers | Severity | Owner |
+|---------|-----------|----------|-------|
+| HMAC/signature enforcement PENDING | Shopify, Twilio | V1_BLOCKER (security) | Hermes |
+| Live E2E validation not performed | GitHub, Shopify, Twilio | V1_BLOCKER (integration) | Hermes + DocsAI |
+| Thin fixture coverage (1 fixture) | GitHub | V1_BLOCKER (quality) | Hermes |
+| Missing package docs | Twilio | V1_BLOCKER (documentation) | DocsAI |
+| Golden test suite excludes Stripe | Stripe | V1_BLOCKER (validation) | Hermes |
+| package.yaml maturity=production vs docs maturity mismatch | All | Needs reconciliation | Hermes + DocsAI |
 
 ## V1.1 Items
 
@@ -83,14 +80,15 @@ This matrix audits the four V1 provider packages (Stripe, GitHub, Shopify, Twili
 ### Stripe — CONDITIONAL PASS
 - Strongest fixture coverage (13 scenarios)
 - Live E2E validated with multiple runbooks
-- **Blockers**: Missing readiness gate, launch hardening, troubleshooting docs; excluded from golden test suite
-- **To close**: Add READINESS_GATE.md, LAUNCH_HARDENING.md, TROUBLESHOOTING.md; include Stripe in golden validation
+- **Docs-owned blockers closed**: Readiness gate, launch hardening, troubleshooting — ✅ DONE
+- **Remaining blocker**: Excluded from golden test suite (ST-02, Hermes)
+- **To close**: Include Stripe in golden validation (Hermes — ST-02)
 
 ### GitHub — V1_BLOCKED
 - Thinnest coverage of all providers (1 fixture)
-- No provider docs package in docs/providerflow/packages/
-- No E2E runbook, no troubleshooting, no readiness gate, no launch hardening
-- **To close**: Add docs package doc; expand fixtures (minimum 5); add E2E runbook, troubleshooting, readiness gate, launch hardening
+- **Docs-owned blockers closed**: Package doc, E2E runbook, troubleshooting, readiness gate, launch hardening — ✅ DONE
+- **Remaining blockers**: Fixture expansion (GH-01, Hermes), live E2E validation (Hermes + DocsAI)
+- **To close**: Expand fixtures to minimum 5 (Hermes — GH-01); run live E2E validation and capture evidence
 
 ### Shopify — V1_BLOCKED
 - Template parity achieved but two V1_BLOCKER gaps:
@@ -107,11 +105,12 @@ This matrix audits the four V1 provider packages (Stripe, GitHub, Shopify, Twili
 
 ## Cross-Cutting Actions
 
-| Action | Owner | Target |
-|--------|-------|--------|
-| Reconcile package.yaml `maturity: production` with actual readiness | Hermes + DocsAI | Pre-V1 |
-| Add READINESS_GATE.md and LAUNCH_HARDENING.md for Stripe and GitHub | DocsAI | Pre-V1 |
-| Add TROUBLESHOOTING.md for Stripe and GitHub | DocsAI | Pre-V1 |
-| Include Stripe in golden validation test suite | Hermes | Pre-V1 |
-| Expand GitHub fixtures to minimum 5 scenarios | Hermes | Pre-V1 |
-| Add docs package for GitHub and Twilio | DocsAI | Pre-V1 |
+| Action | Owner | Target | Status |
+|--------|-------|--------|--------|
+| Reconcile package.yaml `maturity: production` with actual readiness | Hermes + DocsAI | Pre-V1 | 🔶 PENDING |
+| GitHub docs package (github-v2.md) | DocsAI | Pre-V1 | ✅ DONE |
+| GitHub E2E runbook, troubleshooting, readiness gate, launch hardening | DocsAI | Pre-V1 | ✅ DONE |
+| Stripe readiness gate, launch hardening, troubleshooting docs | DocsAI | Pre-V1 | ✅ DONE |
+| Include Stripe in golden validation test suite | Hermes | Pre-V1 | ❌ PENDING (ST-02) |
+| Expand GitHub fixtures to minimum 5 scenarios | Hermes | Pre-V1 | ❌ PENDING (GH-01) |
+| Add Twilio docs package (twilio-v2.md) | DocsAI | Pre-V1 | ❌ PENDING |

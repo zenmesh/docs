@@ -31,7 +31,15 @@ Audited all 4 V1 provider packages (Stripe, GitHub, Shopify, Twilio) and 40 secu
 
 Zero ACTIVE_PUBLIC_FIX_REQUIRED. No public claim exceeds available evidence.
 
-## V1 Blocker Summary
+## R3 Update (DocsAI-owned blockers closed)
+
+GitHub and Stripe documentation gaps closed:
+
+- **GitHub docs package**: github-v2.md created (Official, Preview) with full readiness sections
+- **GitHub readiness assets**: E2E runbook, troubleshooting, readiness gate, launch hardening all included in github-v2.md
+- **Stripe readiness assets**: Readiness gate, troubleshooting, launch hardening added to stripe-v2.md
+
+## Remaining V1 Blockers (Post-R3)
 
 | # | Blocker | Provider | Severity | Owner |
 |---|---------|----------|----------|-------|
@@ -41,14 +49,14 @@ Zero ACTIVE_PUBLIC_FIX_REQUIRED. No public claim exceeds available evidence.
 | 4 | Live E2E webhook receipt NOT VALIDATED | Twilio | V1_BLOCKER | Hermes + DocsAI |
 | 5 | Form-encoding runtime verification PENDING | Twilio | V1_BLOCKER | Hermes |
 | 6 | Only 1 test fixture (need 5+) | GitHub | V1_BLOCKER | Hermes |
-| 7 | Missing docs package, runbook, troubleshooting, readiness gate, launch hardening | GitHub | V1_BLOCKER | DocsAI |
+| 7 | Golden test suite excludes Stripe | Stripe | V1_BLOCKER | Hermes |
 
-## Files Created/Updated
+## Updated Files
 
-| File | Description |
-|------|-------------|
-| docs/providerflow/provider-package-v1-readiness-matrix.md | Provider parity matrix with V1 blocker analysis |
-| docs/security/security-validation-v1-cutline.md | V1 vs V1.1 vs post-V1 cutline |
-| docs/security/trust-scenario-registry.md | Complete scenario registry (36 scenarios across 3 tiers) |
-| docs/80-EVIDENCE/docsai/r2-audit/provider_package_v1_gap_audit.json | Evidence JSON |
-| docs/80-EVIDENCE/docsai/r2-audit/provider_package_v1_gap_audit.md | Evidence MD |
+| File | Description | Action |
+|------|-------------|--------|
+| docs/providerflow/packages/github-v2.md | New GitHub provider package doc | ✅ CREATED |
+| docs/providerflow/packages/stripe-v2.md | Updated with readiness/hardening/troubleshooting | ✅ UPDATED |
+| docs/providerflow/provider-package-v1-readiness-matrix.md | Updated GitHub/Stripe maturity and blocker status | ✅ UPDATED |
+| docs/80-EVIDENCE/docsai/r2-audit/provider_package_v1_gap_audit.json | Updated blocked/owner split | ✅ UPDATED |
+| docs/80-EVIDENCE/docsai/r2-audit/provider_package_v1_gap_audit.md | Updated with R3 progress | ✅ UPDATED |

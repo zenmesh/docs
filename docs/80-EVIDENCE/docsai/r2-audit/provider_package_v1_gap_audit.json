@@ -1,11 +1,29 @@
 {
   "task_id": "DOCSAI_P0_V1_PROVIDER_PACKAGES_AND_SECURITY_VALIDATION_COMPLETION_AUDIT_R2",
   "generated_at": "2026-06-26T21:00:00Z",
-  "generated_by": "DocsAI",
+  "last_updated": "2026-06-26T22:00:00Z",
+  "updated_by": "DOCSAI_P0_GITHUB_STRIPE_PROVIDER_DOCS_AND_READINESS_CLOSEOUT_R3",
   "commit_inputs": {
-    "docs": "90adb33f430049d11c69637f1c385c9d1a109692",
+    "docs": "2e3501deef3685c96bcc08ba3d03df29b72569c0",
     "platform": "read-only",
     "website": "4f7bc5fef9731d92474015b6302cfba9bb198c19"
+  },
+  "r3_update": {
+    "docsai_owned_blockers_closed": [
+      "GH-02: GitHub docs package (github-v2.md) — CREATED",
+      "GH-03: GitHub E2E runbook, troubleshooting, readiness gate, launch hardening — CREATED",
+      "ST-01: Stripe readiness gate, launch hardening, troubleshooting docs — UPDATED"
+    ],
+    "remaining_runtime_owned_blockers": [
+      "GH-01: GitHub fixture expansion (5+ scenarios) — Hermes",
+      "ST-02: Include Stripe in golden validation test suite — Hermes",
+      "SH-01: Shopify HMAC enforcement — Hermes",
+      "TW-01: Twilio signature enforcement — Hermes",
+      "SH-02: Live Shopify E2E — Hermes + DocsAI",
+      "TW-02: Live Twilio E2E — Hermes + DocsAI",
+      "TW-03: Twilio form-encoding runtime verification — Hermes",
+      "TW-04: Twilio docs package — DocsAI (not in this task)"
+    ]
   },
   "providers_audited": [
     "stripe",
@@ -19,10 +37,12 @@
       "maturity": "GA",
       "v1_readiness": "CONDITIONAL_PASS",
       "blockers": [
-        "Missing READINESS_GATE.md",
-        "Missing LAUNCH_HARDENING.md",
-        "Missing TROUBLESHOOTING.md",
-        "Excluded from golden test suite (test_provider_pack_golden_validation.py)"
+        "Excluded from golden test suite (ST-02, Hermes)"
+      ],
+      "docsai_blockers_closed": [
+        "Missing READINESS_GATE.md — DONE",
+        "Missing LAUNCH_HARDENING.md — DONE",
+        "Missing TROUBLESHOOTING.md — DONE"
       ],
       "fixture_count": 13,
       "golden_count": 13,
@@ -30,28 +50,31 @@
       "has_docs_package": true
     },
     "github": {
-      "ownership": null,
-      "maturity": null,
+      "ownership": "Official",
+      "maturity": "Preview",
       "v1_readiness": "V1_BLOCKED",
       "blockers": [
-        "Only 1 test fixture (minimum 5 needed)",
-        "Missing docs package (docs/providerflow/packages/github-v2.md)",
-        "Missing E2E runbook",
-        "Missing troubleshooting doc",
-        "Missing readiness gate doc",
-        "Missing launch hardening doc"
+        "Only 1 test fixture (minimum 5 needed) — GH-01 (Hermes)",
+        "Live E2E webhook receipt NOT VALIDATED"
+      ],
+      "docsai_blockers_closed": [
+        "Missing docs package (github-v2.md) — DONE",
+        "Missing E2E runbook — DONE",
+        "Missing troubleshooting doc — DONE",
+        "Missing readiness gate doc — DONE",
+        "Missing launch hardening doc — DONE"
       ],
       "fixture_count": 1,
       "golden_count": 1,
       "live_e2e_validated": false,
-      "has_docs_package": false
+      "has_docs_package": true
     },
     "shopify": {
       "ownership": "Official",
       "maturity": "Preview",
       "v1_readiness": "V1_BLOCKED",
       "blockers": [
-        "HMAC signature enforcement PENDING (high severity)",
+        "HMAC signature enforcement PENDING (SH-01, Hermes)",
         "Live webhook receipt NOT VALIDATED"
       ],
       "fixture_count": 5,
@@ -64,9 +87,10 @@
       "maturity": null,
       "v1_readiness": "V1_BLOCKED",
       "blockers": [
-        "Request signature enforcement PENDING (high severity)",
+        "Request signature enforcement PENDING (TW-01, Hermes)",
         "Live webhook receipt NOT VALIDATED",
-        "Form-encoding runtime verification PENDING"
+        "Form-encoding runtime verification PENDING (TW-03, Hermes)",
+        "Missing docs package (TW-04, DocsAI)"
       ],
       "fixture_count": 5,
       "golden_count": 5,
@@ -74,45 +98,24 @@
       "has_docs_package": false
     }
   },
-  "security_scenarios_audited": 40,
-  "security_counts": {
-    "DONE": 20,
-    "PARTIAL": 9,
-    "V1_BLOCKER": 6,
-    "V1_1": 3,
-    "DOCUMENTED_GAP": 1,
-    "POST_V1": 1
-  },
   "v1_blockers": [
-    "Shopify: HMAC-SHA256 signature enforcement PENDING (SH-01)",
-    "Shopify: Live E2E webhook receipt NOT VALIDATED (SH-02)",
-    "Twilio: X-Twilio-Signature enforcement PENDING (TW-01)",
-    "Twilio: Live E2E webhook receipt NOT VALIDATED (TW-02)",
-    "GitHub: Insufficient fixture coverage (1 of 5+ needed)",
-    "GitHub: Missing docs package, runbook, troubleshooting, readiness gate, launch hardening"
+    "Shopify: HMAC-SHA256 signature enforcement PENDING (SH-01) — Hermes",
+    "Shopify: Live E2E webhook receipt NOT VALIDATED (SH-02) — Hermes + DocsAI",
+    "Twilio: X-Twilio-Signature enforcement PENDING (TW-01) — Hermes",
+    "Twilio: Live E2E webhook receipt NOT VALIDATED (TW-02) — Hermes + DocsAI",
+    "Twilio: Form-encoding runtime verification PENDING (TW-03) — Hermes",
+    "GitHub: Insufficient fixture coverage (1 of 5+ needed) — GH-01 (Hermes)",
+    "Stripe: Excluded from golden validation test suite — ST-02 (Hermes)"
   ],
-  "v1_1_items": [
-    "Header filtering/blocking/transform (Business+)",
-    "GitHub BaseURL SSRF hardening",
-    "Trust Lab automated suite",
-    "Observability mappings (all providers)",
-    "Compatibility matrix (all providers)",
-    "Benchmark/performance profiles (all providers)",
-    "Migration guides (all providers)",
-    "Version support policies (all providers)"
-  ],
-  "recommended_executor_tasks": [
-    {"task_id": "SH-01", "title": "Shopify HMAC-SHA256 enforcement", "owner": "Hermes", "v1_blocker": true},
-    {"task_id": "SH-02", "title": "Live Shopify E2E validation", "owner": "Hermes + DocsAI", "v1_blocker": true},
-    {"task_id": "TW-01", "title": "Twilio X-Twilio-Signature enforcement", "owner": "Hermes", "v1_blocker": true},
-    {"task_id": "TW-02", "title": "Live Twilio E2E validation", "owner": "Hermes + DocsAI", "v1_blocker": true},
-    {"task_id": "TW-03", "title": "Twilio form-encoding runtime verification", "owner": "Hermes", "v1_blocker": true},
-    {"task_id": "GH-01", "title": "GitHub fixture expansion (5+ scenarios)", "owner": "Hermes", "v1_blocker": true},
-    {"task_id": "GH-02", "title": "GitHub docs package (github-v2.md)", "owner": "DocsAI", "v1_blocker": true},
-    {"task_id": "GH-03", "title": "GitHub E2E runbook, troubleshooting, readiness gate, launch hardening", "owner": "DocsAI", "v1_blocker": true},
-    {"task_id": "ST-01", "title": "Stripe readiness gate, launch hardening, troubleshooting docs", "owner": "DocsAI", "v1_blocker": false},
-    {"task_id": "ST-02", "title": "Include Stripe in golden validation test suite", "owner": "Hermes", "v1_blocker": false},
-    {"task_id": "TW-04", "title": "Twilio docs package (twilio-v2.md)", "owner": "DocsAI", "v1_blocker": false},
-    {"task_id": "CR-01", "title": "Reconcile package.yaml maturity=production with actual readiness", "owner": "Hermes + DocsAI", "v1_blocker": false}
+  "recommended_next_executor_tasks": [
+    {"task_id": "SH-01", "title": "Shopify HMAC-SHA256 enforcement", "owner": "Hermes", "priority": "P0"},
+    {"task_id": "TW-01", "title": "Twilio X-Twilio-Signature enforcement", "owner": "Hermes", "priority": "P0"},
+    {"task_id": "GH-01", "title": "GitHub fixture expansion (5+ scenarios)", "owner": "Hermes", "priority": "P0"},
+    {"task_id": "ST-02", "title": "Include Stripe in golden validation test suite", "owner": "Hermes", "priority": "P1"},
+    {"task_id": "SH-02", "title": "Live Shopify E2E validation + evidence capture", "owner": "Hermes + DocsAI", "priority": "P1"},
+    {"task_id": "TW-02", "title": "Live Twilio E2E validation + evidence capture", "owner": "Hermes + DocsAI", "priority": "P1"},
+    {"task_id": "TW-03", "title": "Twilio form-encoding runtime verification", "owner": "Hermes", "priority": "P1"},
+    {"task_id": "TW-04", "title": "Twilio docs package (twilio-v2.md)", "owner": "DocsAI", "priority": "P1"},
+    {"task_id": "CR-01", "title": "Reconcile package.yaml maturity=production with actual readiness", "owner": "Hermes + DocsAI", "priority": "P2"}
   ]
 }
