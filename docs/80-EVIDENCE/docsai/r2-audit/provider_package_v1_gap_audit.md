@@ -39,7 +39,15 @@ GitHub and Stripe documentation gaps closed:
 - **GitHub readiness assets**: E2E runbook, troubleshooting, readiness gate, launch hardening all included in github-v2.md
 - **Stripe readiness assets**: Readiness gate, troubleshooting, launch hardening added to stripe-v2.md
 
-## Remaining V1 Blockers (Post-R3)
+## R4 Update (Twilio docs package closed)
+
+Twilio documentation gap closed:
+
+- **Twilio docs package**: twilio-v2.md created (Official, Preview) with readiness gate, troubleshooting, launch hardening, and known gaps documentation
+- TW-04 closed — all DocsAI-owned provider package blockers are now resolved
+- Twilio remains V1_BLOCKED on runtime blockers TW-01, TW-02, TW-03
+
+## Remaining V1 Blockers (Post-R4)
 
 | # | Blocker | Provider | Severity | Owner |
 |---|---------|----------|----------|-------|
@@ -55,8 +63,9 @@ GitHub and Stripe documentation gaps closed:
 
 | File | Description | Action |
 |------|-------------|--------|
-| docs/providerflow/packages/github-v2.md | New GitHub provider package doc | ✅ CREATED |
-| docs/providerflow/packages/stripe-v2.md | Updated with readiness/hardening/troubleshooting | ✅ UPDATED |
-| docs/providerflow/provider-package-v1-readiness-matrix.md | Updated GitHub/Stripe maturity and blocker status | ✅ UPDATED |
-| docs/80-EVIDENCE/docsai/r2-audit/provider_package_v1_gap_audit.json | Updated blocked/owner split | ✅ UPDATED |
-| docs/80-EVIDENCE/docsai/r2-audit/provider_package_v1_gap_audit.md | Updated with R3 progress | ✅ UPDATED |
+| docs/providerflow/packages/github-v2.md | New GitHub provider package doc | ✅ CREATED (R3) |
+| docs/providerflow/packages/stripe-v2.md | Updated with readiness/hardening/troubleshooting | ✅ UPDATED (R3) |
+| docs/providerflow/packages/twilio-v2.md | New Twilio provider package doc | ✅ CREATED (R4) |
+| docs/providerflow/provider-package-v1-readiness-matrix.md | Updated GitHub/Stripe maturity and blocker status | ✅ UPDATED (R3+R4) |
+| docs/80-EVIDENCE/docsai/r2-audit/provider_package_v1_gap_audit.json | Updated blocked/owner split | ✅ UPDATED (R3+R4) |
+| docs/80-EVIDENCE/docsai/r2-audit/provider_package_v1_gap_audit.md | Updated with R3+R4 progress | ✅ UPDATED (R3+R4) |

@@ -26,10 +26,10 @@ This matrix audits the four V1 provider packages (Stripe, GitHub, Shopify, Twili
 
 | Artifact | Stripe | GitHub | Shopify | Twilio |
 |----------|--------|--------|---------|--------|
-| **Ownership** | Official | Official | Official | — |
-| **Maturity (docs)** | GA | Preview | Preview | — |
+| **Ownership** | Official | Official | Official | Official |
+| **Maturity (docs)** | GA | Preview | Preview | Preview |
 | **Maturity (package.yaml)** | production | production | production | production |
-| **Package docs** | ✅ stripe-v2.md | ✅ github-v2.md | ✅ shopify-v2.md | ❌ MISSING |
+| **Package docs** | ✅ stripe-v2.md | ✅ github-v2.md | ✅ shopify-v2.md | ✅ twilio-v2.md |
 | **Transform package** | ✅ DONE | ✅ DONE | ✅ DONE | ✅ DONE |
 | **Event YAML definitions** | ✅ 4 files | ✅ 3 files | ✅ 3 files | ✅ 4 files |
 | **Fixtures** | ✅ 13 scenarios | 🔶 1 scenario | ✅ 5 scenarios | ✅ 5 scenarios |
@@ -61,7 +61,7 @@ This matrix audits the four V1 provider packages (Stripe, GitHub, Shopify, Twili
 | HMAC/signature enforcement PENDING | Shopify, Twilio | V1_BLOCKER (security) | Hermes |
 | Live E2E validation not performed | GitHub, Shopify, Twilio | V1_BLOCKER (integration) | Hermes + DocsAI |
 | Thin fixture coverage (1 fixture) | GitHub | V1_BLOCKER (quality) | Hermes |
-| Missing package docs | Twilio | V1_BLOCKER (documentation) | DocsAI |
+| Docs package created | Twilio | ✅ CLOSED | DocsAI |
 | Golden test suite excludes Stripe | Stripe | V1_BLOCKER (validation) | Hermes |
 | package.yaml maturity=production vs docs maturity mismatch | All | Needs reconciliation | Hermes + DocsAI |
 
@@ -97,11 +97,10 @@ This matrix audits the four V1 provider packages (Stripe, GitHub, Shopify, Twili
 - **To close**: Implement HMAC-SHA256 verification in authprofile; run live E2E with Shopify development store
 
 ### Twilio — V1_BLOCKED
-- Template parity achieved but two V1_BLOCKER gaps:
-  1. Request signature validation PENDING (high severity)
-  2. Live webhook receipt NOT VALIDATED
-  3. Form-encoding parsing runtime verification PENDING
-- **To close**: Implement X-Twilio-Signature validation in authprofile; run live E2E with Twilio trial account
+- Template parity achieved with package doc (twilio-v2.md) — ✅ DONE
+- **Docs-owned blockers closed**: Package doc — ✅ DONE
+- **Remaining blockers**: Request signature enforcement (TW-01, Hermes), Live E2E validation (TW-02, Hermes + DocsAI), Form-encoding runtime verification (TW-03, Hermes)
+- **To close**: Close TW-01, TW-02, TW-03 before V1 claim
 
 ## Cross-Cutting Actions
 
@@ -113,4 +112,4 @@ This matrix audits the four V1 provider packages (Stripe, GitHub, Shopify, Twili
 | Stripe readiness gate, launch hardening, troubleshooting docs | DocsAI | Pre-V1 | ✅ DONE |
 | Include Stripe in golden validation test suite | Hermes | Pre-V1 | ❌ PENDING (ST-02) |
 | Expand GitHub fixtures to minimum 5 scenarios | Hermes | Pre-V1 | ❌ PENDING (GH-01) |
-| Add Twilio docs package (twilio-v2.md) | DocsAI | Pre-V1 | ❌ PENDING |
+| Add Twilio docs package (twilio-v2.md) | DocsAI | Pre-V1 | ✅ DONE |

@@ -1,8 +1,8 @@
 {
   "task_id": "DOCSAI_P0_V1_PROVIDER_PACKAGES_AND_SECURITY_VALIDATION_COMPLETION_AUDIT_R2",
   "generated_at": "2026-06-26T21:00:00Z",
-  "last_updated": "2026-06-26T22:00:00Z",
-  "updated_by": "DOCSAI_P0_GITHUB_STRIPE_PROVIDER_DOCS_AND_READINESS_CLOSEOUT_R3",
+  "last_updated": "2026-06-26T23:00:00Z",
+  "updated_by": "DOCSAI_P0_TWILIO_PROVIDER_DOCS_PACKAGE_CLOSEOUT_R4",
   "commit_inputs": {
     "docs": "2e3501deef3685c96bcc08ba3d03df29b72569c0",
     "platform": "read-only",
@@ -23,6 +23,20 @@
       "TW-02: Live Twilio E2E — Hermes + DocsAI",
       "TW-03: Twilio form-encoding runtime verification — Hermes",
       "TW-04: Twilio docs package — DocsAI (not in this task)"
+    ]
+  },
+  "r4_update": {
+    "docsai_owned_blockers_closed": [
+      "TW-04: Twilio docs package (twilio-v2.md) — CREATED"
+    ],
+    "remaining_runtime_owned_blockers": [
+      "GH-01: GitHub fixture expansion (5+ scenarios) — Hermes",
+      "ST-02: Include Stripe in golden validation test suite — Hermes",
+      "SH-01: Shopify HMAC enforcement — Hermes",
+      "TW-01: Twilio signature enforcement — Hermes",
+      "SH-02: Live Shopify E2E — Hermes + DocsAI",
+      "TW-02: Live Twilio E2E — Hermes + DocsAI",
+      "TW-03: Twilio form-encoding runtime verification — Hermes"
     ]
   },
   "providers_audited": [
@@ -83,19 +97,21 @@
       "has_docs_package": true
     },
     "twilio": {
-      "ownership": null,
-      "maturity": null,
+      "ownership": "Official",
+      "maturity": "Preview",
       "v1_readiness": "V1_BLOCKED",
       "blockers": [
         "Request signature enforcement PENDING (TW-01, Hermes)",
-        "Live webhook receipt NOT VALIDATED",
-        "Form-encoding runtime verification PENDING (TW-03, Hermes)",
-        "Missing docs package (TW-04, DocsAI)"
+        "Live webhook receipt NOT VALIDATED (TW-02, Hermes + DocsAI)",
+        "Form-encoding runtime verification PENDING (TW-03, Hermes)"
       ],
       "fixture_count": 5,
       "golden_count": 5,
       "live_e2e_validated": false,
-      "has_docs_package": false
+      "has_docs_package": true,
+      "docsai_blockers_closed": [
+        "Missing docs package (twilio-v2.md) — DONE"
+      ]
     }
   },
   "v1_blockers": [
@@ -115,7 +131,6 @@
     {"task_id": "SH-02", "title": "Live Shopify E2E validation + evidence capture", "owner": "Hermes + DocsAI", "priority": "P1"},
     {"task_id": "TW-02", "title": "Live Twilio E2E validation + evidence capture", "owner": "Hermes + DocsAI", "priority": "P1"},
     {"task_id": "TW-03", "title": "Twilio form-encoding runtime verification", "owner": "Hermes", "priority": "P1"},
-    {"task_id": "TW-04", "title": "Twilio docs package (twilio-v2.md)", "owner": "DocsAI", "priority": "P1"},
     {"task_id": "CR-01", "title": "Reconcile package.yaml maturity=production with actual readiness", "owner": "Hermes + DocsAI", "priority": "P2"}
   ]
 }
