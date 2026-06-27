@@ -1,0 +1,140 @@
+{
+  "task_id": "GLM_P0_ZEN_STRATEGY_AND_POST_V1_ARCHITECTURE_DECISION_RECORD_R13",
+  "generated_at": "2026-06-27T00:00:00Z",
+  "decisions_documented": 6,
+  "V1_scope": {
+    "confirmed": [
+      "Single Target per Flow",
+      "Provider signature verification (where supported)",
+      "HTTPS/mTLS on Zen-managed paths",
+      "Endpoint-level rate limiting",
+      "Evidence and replay",
+      "DLQ/idempotency",
+      "Safe logs (redacted)",
+      "Security signals baseline",
+      "Provider Template Packs"
+    ],
+    "confirmed_not_in_V1": [
+      "Multiple Targets/fan-out",
+      "AI Transform",
+      "Slack approval",
+      "Encrypted logs/evidence downloads",
+      "Customer AGE keys/BYOK",
+      "Per-provider/customer secrets",
+      "Egress control (outbound policing)",
+      "Agent/MCP control",
+      "Cross-tenant delegation"
+    ]
+  },
+  "post_V1_items": {
+    "fanout": {
+      "Pro_Plus": "Conditional fan-out with YAML templates",
+      "Business_Plus": "Advanced branching, per-branch policies, approval workflows",
+      "Enterprise": "Cross-tenant delegation (future scoped delegation model)"
+    },
+    "ai_transform": {
+      "Business_Plus": "AI proposes, humans approve, rules captured",
+      "Enterprise": "Private models, KMS, custom workflows"
+    },
+    "customer_secrets": {
+      "Business_Plus": "Customer AGE keys/BYOK-lite",
+      "Enterprise": "KMS/customer key lifecycle"
+    },
+    "egress_control": {
+      "Business_Plus": "Outbound network policing",
+      "Enterprise": "Agent/MCP control, advanced egress governance"
+    },
+    "advanced_security": {
+      "Business_Plus": "SIEM integration, advanced redaction, team/audit controls",
+      "Enterprise": "Custom compliance workflows"
+    }
+  },
+  "Pro_plus_items": [
+    "Multiple Targets per Flow",
+    "IP allowlist/block",
+    "Configurable endpoint limits",
+    "Provider/source-specific rate policies (when validated)",
+    "Webhook security alerts",
+    "Longer evidence/log retention (if supported)"
+  ],
+  "Business_plus_items": [
+    "All Pro features",
+    "AI Transform with Slack approval",
+    "Encrypted log/evidence downloads",
+    "Advanced redaction rules",
+    "SIEM/PagerDuty/Slack routing",
+    "Team/audit controls"
+  ],
+  "Enterprise_items": [
+    "All Business features",
+    "KMS/customer key lifecycle",
+    "Dedicated infrastructure/IPs",
+    "Custom trust roots/private CA",
+    "Custom retention and compliance workflows"
+  ],
+  "conversion_features": [
+    "Multiple Targets per Flow (Pro+)",
+    "IP allowlist/block (Pro+)",
+    "AI Transform with Slack approval (Business+)",
+    "Encrypted logs/evidence downloads (Business+)",
+    "SIEM integration (Business+)",
+    "KMS/customer key lifecycle (Enterprise)"
+  ],
+  "V1_hardening_gaps": [
+    "Safe logging needs hardening",
+    "Security signals need hardening",
+    "Per-source/provider rate-limit proof gap",
+    "Live Shopify/Twilio validation needs prod-live public endpoint/credentials"
+  ],
+  "V1_1_candidates": [
+    "Customer AGE keys/BYOK-lite",
+    "Per-provider/environment customer secrets (if decided)",
+    "Encrypted logs/evidence downloads",
+    "Basic fan-out (single conditional fan-out)"
+  ],
+  "runtime_followups_for_Hermes": [
+    "Verify no V1 feature claims in public documentation",
+    "Verify admin secrets are separated from customer secrets in docs",
+    "Verify fan-out, AI Transform, customer secrets, AGE keys are correctly marked as post-V1",
+    "Verify webhook-vs-egress boundary is clearly documented",
+    "Verify GTM asset checklist is up to date",
+    "Verify claim safety scan passes on all public docs"
+  ],
+  "claim_safety_status": "PASSED",
+  "forbidden_claims": [
+    "\"Multiple Targets\" or \"fan-out\" as V1 features",
+    "\"AI Transform\" or \"Slack approval\" as available",
+    "\"Customer AGE keys\" or \"BYOK\" as implemented",
+    "\"Per-provider secrets\" or \"BYOK\" as supported",
+    "\"Zen prevents all webhook attacks\" or \"fully secure\"",
+    "\"Zero risk\" or \"guaranteed\"",
+    "\"All providers live-validated\"",
+    "\"Cross-tenant fan-out\" or \"scoped delegation\"",
+    "\"Agent egress enforced by Zen\" (bypass must be closed by customer infrastructure)"
+  ],
+  "GTM_assets_needed": [
+    "Homepage hero",
+    "Webhook security checklist page",
+    "Stripe landing page",
+    "Shopify landing page",
+    "GitHub landing page",
+    "Twilio landing page",
+    "Demo video/GIF",
+    "Pricing/tier page",
+    "Design partner pitch",
+    "Migration guide: replacing a webhook handler",
+    "Public evidence/trust page",
+    "Docs freshness/live deployment validator"
+  ],
+  "architecture_parking_lot": [
+    "Fan-out/branch templates (designed but not implemented)",
+    "AI Transform with Slack approval (designed but not implemented)",
+    "Customer AGE keys/BYOK (designed but not implemented)",
+    "Per-provider/customer secrets (not implemented)",
+    "Cross-tenant delegation (scoped model needed)",
+    "Advanced egress controls (Business+/Enterprise)",
+    "SIEM integration defaults (Business+)",
+    "Agent/MCP control (Business+/Enterprise)"
+  ],
+  "GTM_asset_checklist_status": "COMPLETE"
+}
