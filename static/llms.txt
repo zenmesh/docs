@@ -2,7 +2,7 @@
 
 > Zen Mesh is private-by-design, security-first webhook delivery infrastructure for private networks. Services behind NAT or firewall connect outbound-only to receive webhooks from Stripe, GitHub, Shopify, Twilio, and custom senders — no inbound ports, no VPN, no kernel modules. Free for development and evaluation. 6-month Pro trial available. Business and Enterprise plans coming soon.
 
-**Version:** 1.1.0 · **Last-Updated:** 2026-06-27T00:10:00Z · **Docs:** https://docs.zen-mesh.io · **Site:** https://www.zen-mesh.io · **Repository:** https://github.com/zenmesh/zen-platform
+**Version:** 1.1.0 · **Last-Updated:** 2026-06-27T23:30:00Z · **Docs:** https://docs.zen-mesh.io · **Site:** https://www.zen-mesh.io · **Repository:** https://github.com/zenmesh/zen-platform
 
 ## Canonical discovery (crawlers)
 
@@ -63,6 +63,7 @@ See [support](https://docs.zen-mesh.io/docs/start-here/support).
 
 ## AI security posture (trust docs — not pen test)
 
+- [V1 security validation summary](https://github.com/zenmesh/zen-platform/blob/main/docs/30-SECURITY/V1_SECURITY_VALIDATION_SUMMARY.md): Local/sandbox validation for 20 attack classes (18 proven, 1 cloud-gated, 1 not claimed). Not production-live proof.
 - [Security posture index](https://docs.zen-mesh.io/docs/ai/security-posture): Claim maturity legend and reviewer highlights
 - [Claim maturity](https://docs.zen-mesh.io/ai/security/v1/claim-maturity.json): WIRED / AUTOMATED_TESTED / E2E / BACKLOG per control
 - [Attack model](https://docs.zen-mesh.io/ai/security/v1/attack-model.json): Threats, maturity, and non-claims per attack

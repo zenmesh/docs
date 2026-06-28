@@ -30,7 +30,8 @@ Do not use “eliminates,” “replay-proof,” “SSRF-safe,” or bare “sec
 
 | Document | URL |
 |----------|-----|
-| **AI discovery registry (freshness)** | ../ai/evidence-v1-supersession.md### AI Discovery Registry`../ai/evidence-v1-supersession.md### AI Discovery Registry) |
+| **AI discovery registry (freshness)** | [`../ai/evidence-v1-supersession.md### AI Discovery Registry`](../ai/evidence-v1-supersession.md### AI Discovery Registry) |
+| **V1 security validation summary** | [`V1_SECURITY_VALIDATION_SUMMARY.md`](https://github.com/zenmesh/zen-platform/blob/main/docs/30-SECURITY/V1_SECURITY_VALIDATION_SUMMARY.md) — 20 attacks classified (18 proven, 1 cloud-gated, 1 not claimed) |
 | **Claim maturity (canonical)** | [`ai/security-posture.md`](ai/security-posture.md) |
 | Attack model | [`ai/security-posture.md`](ai/security-posture.md) |
 | Security primitives | [`ai/security-posture.md`](ai/security-posture.md) |
