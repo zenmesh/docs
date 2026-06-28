@@ -50,7 +50,7 @@ Do not use “eliminates,” “replay-proof,” “SSRF-safe,” or bare “sec
 - **zen-lock** — encrypted local survival store; adapters/ingester/egress consume **projected** material on hot paths, not per-delivery SaaS fetches.
 - **SPIFFE/SPIRE-native identity** — internal and **Zen-managed** in V1; customers **do not** operate SPIRE.
 - **Fail-closed** — expired/invalid local material is rejected on enforced paths.
-- **Not claimed:** validated 24h survival, compliance certification, customer-managed SPIRE, ST-003/N086/DeliveryPolicy PASS without evidence.
+- **Not claimed:** validated 24h survival, compliance certification, customer-managed SPIRE, ST-003/N086/DeliveryPolicy PASS without evidence, certificate pinning/compromised-CA MITM (standard TLS only for V1; V1.1 candidate).
 
 See [`ai/security-posture.md`](ai/security-posture.md) and primitive IDs `PRIM-ZEN-LOCAL-TRUST-AUTHORITY`, `PRIM-ZEN-LOCK-SURVIVAL-STORE`, `PRIM-KEY-MATERIAL-ROTATION`, `PRIM-AIR-GAPPED-ADAPTER-HANDOFF`, `PRIM-SPIFFE-SPIRE-NATIVE-INTERNAL`, `PRIM-LOCAL-MATERIAL-EXPIRY-FAIL-CLOSED`.
 
