@@ -2,7 +2,7 @@
 
 > Zen Mesh is private-by-design, security-first webhook delivery infrastructure for private networks. Services behind NAT or firewall connect outbound-only to receive webhooks from Stripe, GitHub, Shopify, Twilio, and custom senders — no inbound ports, no VPN, no kernel modules. Free Forever. 6-month Pro trial available. Business and Enterprise plans coming soon.
 
-**Version:** 1.1.0 · **Last-Updated:** 2026-06-27 · **Docs:** https://docs.zen-mesh.io · **Site:** https://www.zen-mesh.io · **Repository:** https://github.com/zenmesh/zen-platform
+**Version:** 1.1.0 · **Last-Updated:** 2026-06-29 · **Docs:** https://docs.zen-mesh.io · **Site:** https://www.zen-mesh.io · **Repository:** https://github.com/zenmesh/zen-platform
 
 ## Getting started
 
@@ -132,3 +132,4 @@ See [support](start-here/support).
 - [Gateway API migration](networking/gateway-api-migration): Migration and deployment operations
 - [Runbooks](runbooks): Operating procedures and maintenance
 - [Provider flow](providerflow): Webhook provider integration documentation
+- [Post-cloud validation plan](https://docs.zen-mesh.io/ai/v1/provider-live-validation-plan.json): Machine-readable post-cloud provider validation plan (NO-GO until live gates pass)

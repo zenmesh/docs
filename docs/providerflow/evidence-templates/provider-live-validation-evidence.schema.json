@@ -1,0 +1,186 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://docs.zen-mesh.io/providerflow/evidence-templates/provider-live-validation-evidence.schema.json",
+  "title": "Provider Live Validation Evidence",
+  "description": "Schema for post-cloud provider live validation evidence artifacts",
+  "type": "object",
+  "required": [
+    "metadata",
+    "positive_tests",
+    "signature_validation",
+    "negative_tests",
+    "claim_guard_check",
+    "overall_result"
+  ],
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "required": ["provider", "validation_date", "cloud_endpoint", "validator", "platform_version"],
+      "properties": {
+        "provider": {
+          "type": "string",
+          "enum": ["stripe", "github", "shopify", "twilio"],
+          "description": "Provider identifier"
+        },
+        "validation_date": {
+          "type": "string",
+          "format": "date",
+          "description": "Date of validation (YYYY-MM-DD)"
+        },
+        "cloud_endpoint": {
+          "type": "string",
+          "format": "uri",
+          "description": "Public cloud endpoint URL used for validation"
+        },
+        "provider_account_id": {
+          "type": "string",
+          "description": "Provider account identifier (e.g., Stripe acct_..., GitHub owner/repo)"
+        },
+        "provider_account_type": {
+          "type": "string",
+          "enum": ["test", "live", "trial", "development"],
+          "description": "Type of provider account used"
+        },
+        "validator": {
+          "type": "string",
+          "description": "Person or system that performed validation"
+        },
+        "platform_version": {
+          "type": "string",
+          "description": "Commit SHA or version tag of the platform under test"
+        }
+      }
+    },
+    "positive_tests": {
+      "type": "object",
+      "required": ["webhook_received", "delivery_status", "event_type_matched"],
+      "properties": {
+        "webhook_received": {
+          "type": "boolean",
+          "description": "Was the webhook event received by the platform?"
+        },
+        "delivery_status": {
+          "type": "string",
+          "enum": ["delivered", "pending", "failed"],
+          "description": "Platform delivery status for the event"
+        },
+        "event_type_matched": {
+          "type": "boolean",
+          "description": "Did the event type match the triggered event?"
+        },
+        "delivery_latency_ms": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Milliseconds between event trigger and delivery receipt"
+        },
+        "evidence_ref": {
+          "type": "string",
+          "description": "Path to the delivery log evidence artifact"
+        }
+      }
+    },
+    "signature_validation": {
+      "type": "object",
+      "required": [
+        "signature_header_present",
+        "platform_verification_valid",
+        "manual_verification_matches"
+      ],
+      "properties": {
+        "signature_header_present": {
+          "type": "boolean",
+          "description": "Was the provider-specific signature header present?"
+        },
+        "platform_verification_valid": {
+          "type": "boolean",
+          "description": "Did the platform report valid signature?"
+        },
+        "manual_verification_matches": {
+          "type": "boolean",
+          "description": "Did manual re-verification match platform result?"
+        },
+        "signature_header_name": {
+          "type": "string",
+          "description": "Name of the signature header (e.g., Stripe-Signature)"
+        },
+        "evidence_ref": {
+          "type": "string",
+          "description": "Path to the validation evidence artifact"
+        }
+      }
+    },
+    "negative_tests": {
+      "type": "array",
+      "description": "Results of each negative (rejection) test",
+      "items": {
+        "type": "object",
+        "required": ["test_name", "expected_status", "actual_status", "passed"],
+        "properties": {
+          "test_name": {
+            "type": "string",
+            "description": "Name of the negative test"
+          },
+          "expected_status": {
+            "type": "integer",
+            "description": "Expected HTTP status code"
+          },
+          "actual_status": {
+            "type": "integer",
+            "description": "Actual HTTP status code received"
+          },
+          "passed": {
+            "type": "boolean",
+            "description": "Did the test pass (correct rejection)?"
+          },
+          "evidence_ref": {
+            "type": "string",
+            "description": "Path to the negative test evidence artifact"
+          }
+        }
+      }
+    },
+    "claim_guard_check": {
+      "type": "object",
+      "required": [
+        "contains_live_credentials",
+        "claims_live_validated_all_providers",
+        "claims_ga_or_public_launch_go",
+        "claims_free_is_evaluation_only"
+      ],
+      "properties": {
+        "contains_live_credentials": {
+          "type": "boolean",
+          "description": "Does this evidence contain live credentials?"
+        },
+        "claims_live_validated_all_providers": {
+          "type": "boolean",
+          "description": "Does this evidence claim 'live validated' for all providers?"
+        },
+        "claims_ga_or_public_launch_go": {
+          "type": "boolean",
+          "description": "Does this evidence claim GA or public launch GO?"
+        },
+        "claims_free_is_evaluation_only": {
+          "type": "boolean",
+          "description": "Does this evidence claim 'Free is evaluation-only'?"
+        }
+      }
+    },
+    "overall_result": {
+      "type": "string",
+      "enum": ["PASS", "FAIL"],
+      "description": "Overall validation result"
+    },
+    "artifact_list": {
+      "type": "array",
+      "description": "List of all evidence artifact files",
+      "items": {
+        "type": "string"
+      }
+    },
+    "notes": {
+      "type": "string",
+      "description": "Free-form notes about the validation run"
+    }
+  }
+}

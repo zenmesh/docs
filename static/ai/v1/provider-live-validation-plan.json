@@ -1,0 +1,83 @@
+{
+  "plan_id": "v1-provider-live-validation-plan",
+  "title": "V1 Provider Live Validation Plan",
+  "description": "Post-cloud live validation plan for V1 providers. Defines scope, prerequisites, validation rules, and forbidden claims.",
+  "updated": "2026-06-29",
+  "status": "not_public_launch_ready",
+  "public_launch": "NO_GO",
+  "prerequisites": [
+    "public_cloud_endpoint_deployed",
+    "live_provider_test_accounts",
+    "provider_webhook_secrets",
+    "leonardo_test_account_provisioning"
+  ],
+  "providers": {
+    "stripe": {
+      "maturity": "verified",
+      "live_e2e_status": "cloud_gated",
+      "credential_gated": true,
+      "post_cloud_action": "revalidate",
+      "validation_type": "positive_and_negative",
+      "signature_header": "Stripe-Signature"
+    },
+    "github": {
+      "maturity": "verified",
+      "live_e2e_status": "cloud_gated",
+      "credential_gated": true,
+      "post_cloud_action": "first_time_validation",
+      "validation_type": "positive_and_negative",
+      "signature_header": "X-Hub-Signature-256"
+    },
+    "shopify": {
+      "maturity": "verified",
+      "live_e2e_status": "cloud_gated",
+      "credential_gated": true,
+      "post_cloud_action": "first_time_validation",
+      "validation_type": "positive_and_negative",
+      "signature_header": "X-Shopify-Hmac-SHA256"
+    },
+    "twilio": {
+      "maturity": "verified",
+      "live_e2e_status": "cloud_gated",
+      "credential_gated": true,
+      "post_cloud_action": "first_time_validation",
+      "validation_type": "positive_and_negative",
+      "signature_header": "X-Twilio-Signature"
+    }
+  },
+  "validation_sequence": [
+    "deploy_control_plane_to_public_cloud_endpoint",
+    "leonardo_creates_test_accounts_per_provider",
+    "per_provider_validation_positive_test",
+    "per_provider_validation_negative_tests",
+    "evidence_capture_to_80_EVIDENCE",
+    "aggregate_evidence_update_truth_matrix",
+    "publication_review_update_ai_surfaces"
+  ],
+  "forbidden_claims": {
+    "provider_registry_ga": false,
+    "live_provider_e2e_complete": false,
+    "public_launch_go": false,
+    "free_is_evaluation_only": false
+  },
+  "evidence_requirements": {
+    "positive_tests_required": true,
+    "negative_tests_required": true,
+    "signature_verification_required": true,
+    "claim_guard_check_required": true,
+    "evidence_artifact_pattern": "docs/80-EVIDENCE/public-docs/{provider}-post-cloud-YYYYMMDD/"
+  },
+  "related_runbooks": [
+    "docs/providerflow/stripe-post-cloud-validation-runbook.md",
+    "docs/providerflow/github-post-cloud-validation-runbook.md",
+    "docs/providerflow/shopify-post-cloud-validation-runbook.md",
+    "docs/providerflow/twilio-post-cloud-validation-runbook.md"
+  ],
+  "related_templates": [
+    "docs/providerflow/evidence-templates/stripe-live-validation-evidence-template.md",
+    "docs/providerflow/evidence-templates/github-live-validation-evidence-template.md",
+    "docs/providerflow/evidence-templates/shopify-live-validation-evidence-template.md",
+    "docs/providerflow/evidence-templates/twilio-live-validation-evidence-template.md",
+    "docs/providerflow/evidence-templates/provider-live-validation-evidence.schema.json"
+  ]
+}
