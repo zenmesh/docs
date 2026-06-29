@@ -113,15 +113,6 @@ See [support](start-here/support).
 - [V1 live truth matrix / launch lock](launch/v1-live-truth-matrix): V1 live readiness state — public launch remains NO-GO until live gates pass
 - [CLI reference](reference/cli): Zen Mesh CLI tool documentation
 
-## Legal
-
-- [Privacy notice](legal/privacy): Data processing, retention, and subprocessors
-- [Acceptable use](legal/aup): Acceptable use policy
-- [Data Processing Addendum](legal/dpa): DPA terms and data protection
-- [Cookie disclosure](legal/cookie-disclosure): Cookie and tracking disclosure
-- [Breach notice](legal/breach-notice): Data breach notification process
-- [Billing terms](legal/billing-terms): Payment and billing terms
-
 ## Zen-GC
 
 - [Overview](https://docs.zen-mesh.io/zen-gc): Apache-2.0 Kubernetes garbage collection controller — declarative TTL cleanup policies and lifecycle management

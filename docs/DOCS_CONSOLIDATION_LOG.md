@@ -229,6 +229,17 @@ classification by area and maturity.
 | `docs/mcp/authentication.md` | Superseded | ✅ Archived to `docs/99-ARCHIVE/superseded/mcp-authentication.md` |
 | `sidebars.ts` | Sidebar | Updated: removed `mcp/authentication` entry |
 
+### R15A Stale Reference Fix (llms.txt)
+
+After archiving the legal drafts, `docs/llms.txt` still referenced them under
+`## Legal` (6 lines: privacy, aup, dpa, cookie-disclosure, breach-notice,
+billing-terms). These were removed in a follow-up repair.
+
+| Reference | Action |
+|-----------|--------|
+| `docs/llms.txt` lines 116-123 (`## Legal` section) | ✅ Removed — all 6 stale draft URLs deleted |
+| `static/llms.txt` | ✅ No legal references — no change needed |
+
 ### Group 11: Placeholder Legal Drafts
 
 | Doc | Classification | Action |
