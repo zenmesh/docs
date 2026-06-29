@@ -165,4 +165,4 @@ files are not navigation docs and do not need to be published).
 - [V1 Live Truth Matrix](../launch/v1-live-truth-matrix)
 - [Docs Consolidation Log](../DOCS_CONSOLIDATION_LOG)
 - `docs/99-ARCHIVE/ARCHIVE_MANIFEST` — Archive record of R15 actions
-- [Public Surface Update Policy](../OPERATIONS/PUBLIC_SURFACE_UPDATE_POLICY)
+- [Public Surface Update Policy](../20-OPERATIONS/PUBLIC_SURFACE_UPDATE_POLICY.md)
