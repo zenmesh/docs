@@ -1,0 +1,40 @@
+{
+  "status": "not_public_launch_ready",
+  "public_launch": "NO_GO",
+  "ip_restricted_prod_validation": "planned",
+  "provider_registry": {
+    "maturity_semantics": "verified_local_contract_readiness",
+    "ga_claimed": false
+  },
+  "providers": {
+    "stripe": {
+      "maturity": "verified",
+      "live_e2e_status": "cloud_gated",
+      "credential_gated": true,
+      "post_cloud_validation_required": true
+    },
+    "github": {
+      "maturity": "verified",
+      "live_e2e_status": "cloud_gated",
+      "credential_gated": true,
+      "post_cloud_validation_required": true
+    },
+    "shopify": {
+      "maturity": "verified",
+      "live_e2e_status": "cloud_gated",
+      "credential_gated": true,
+      "post_cloud_validation_required": true
+    },
+    "twilio": {
+      "maturity": "verified",
+      "live_e2e_status": "cloud_gated",
+      "credential_gated": true,
+      "post_cloud_validation_required": true
+    }
+  },
+  "forbidden_claims": {
+    "provider_registry_ga": false,
+    "live_provider_e2e_complete": false,
+    "public_launch_go": false
+  }
+}
