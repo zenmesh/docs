@@ -123,6 +123,7 @@ See [support](https://docs.zen-mesh.io/docs/start-here/support).
 
 ## Provider packages
 
+- [Provider Ecosystem](https://docs.zen-mesh.io/docs/ai/provider-ecosystem): Provider Packs, Provider Registry contract, and V1 provider verification scoping
 - [Provider Package Lifecycle](https://docs.zen-mesh.io/docs/providerflow/provider-package-lifecycle): Ownership/maturity classification (Official/Community × Draft/Preview/Beta/Verified/GA), billing model, quality gates
 
 ## Guides
