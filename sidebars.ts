@@ -132,6 +132,7 @@ const sidebars: SidebarsConfig = {
       items: [
         'ai/overview',
         'ai/security-posture',
+        'ai/v1-security-validation-summary',
         'ai/wedge-overview',
         'ai/evidence-schema',
         'ai/non-claims',

@@ -232,15 +232,18 @@
       "id": "PRIM-SSRF-SAAS-DISPATCH",
       "name": "SSRF controls for SaaS dispatch",
       "claim_maturity": "BACKLOG",
-      "helps_prevent": [],
+      "helps_prevent": [
+        "Scoped SSRF on FLOW-03 proxy-mode ServiceRef path (local/mock validated)",
+        "Scoped SSRF on FLOW-02 egress target validation"
+      ],
       "helps_detect": [],
-      "does_not_prevent": ["SSRF", "Redirect bypass"],
-      "validation_level": "Webhook-security gates only — not SSRF contract",
-      "current_limitation": "Not SSRF-protected",
-      "next_validation": "WH-AS-001 negative SSRF suite",
+      "does_not_prevent": ["SaaS-wide SSRF", "Provider dispatcher SSRF", "Redirect bypass on unvalidated paths"],
+      "validation_level": "Central ValidateTargetURL + SSRFDialContext library tested (409-line negative suite). FLOW-03 proxy path validated local/mock. SaaS-wide dispatch not validated.",
+      "current_limitation": "Scoped SSRF controls exist on FLOW-02/03 paths — SaaS-wide dispatch SSRF is not validated",
+      "next_validation": "WH-AS-001 negative SSRF suite + public gate receipt",
       "public_evidence_ref": null,
       "roadmap_ref": "WH-AS-001",
-      "public_safe_summary": "SSRF hardening is backlog — gates do not justify SSRF-safe wording."
+      "public_safe_summary": "Scoped SSRF controls exist for FLOW-02/03 dispatch paths. SaaS-wide SSRF hardening is backlog — do not use SSRF-safe wording."
     },
     {
       "id": "PRIM-PAYLOAD-POINTER",

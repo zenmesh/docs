@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0.0",
+  "document": "v1-security-validation-summary",
+  "last_updated": "2026-06-29",
+  "human_page": "https://docs.zen-mesh.io/docs/ai/v1-security-validation-summary",
+  "readiness_scope": "Local/sandbox validation unless marked CLOUD-GATED or NOT_CLAIMED. Not production-live proof. Not compliance certification. Not external penetration test.",
+  "attack_classes": [
+    {"id": "V1SV-001", "attack": "Stripe provider signature verification", "status": "PROVEN", "scope": "local_mock_wedge_path"},
+    {"id": "V1SV-002", "attack": "GitHub provider signature verification", "status": "PROVEN", "scope": "local_mock"},
+    {"id": "V1SV-003", "attack": "Shopify provider signature verification", "status": "PROVEN", "scope": "local_mock"},
+    {"id": "V1SV-004", "attack": "Custom HMAC provider signature verification", "status": "PROVEN", "scope": "local_mock"},
+    {"id": "V1SV-005", "attack": "Twilio provider signature verification", "status": "PARTIAL", "scope": "local_mock", "note": "Form-urlencoded routing PARTIAL — not V1-complete"},
+    {"id": "V1SV-006", "attack": "mTLS enforcement (agent routes)", "status": "PROVEN", "scope": "local_mock"},
+    {"id": "V1SV-007", "attack": "HMAC verification (agent routes)", "status": "PROVEN", "scope": "local_mock"},
+    {"id": "V1SV-008", "attack": "Idempotency / duplicate detection", "status": "PROVEN", "scope": "local_sandbox"},
+    {"id": "V1SV-009", "attack": "Tenant isolation (application layer)", "status": "PROVEN", "scope": "local_sandbox_negative_tests"},
+    {"id": "V1SV-010", "attack": "API-key enumeration resistance", "status": "PROVEN", "scope": "negative_tested"},
+    {"id": "V1SV-011", "attack": "MCP permission boundary", "status": "PROVEN", "scope": "handler_level_negative_tests"},
+    {"id": "V1SV-012", "attack": "Hash-chain evidence integrity", "status": "PROVEN", "scope": "automated_merkle_verification"},
+    {"id": "V1SV-013", "attack": "Outbound-only edge delivery model", "status": "PROVEN", "scope": "architectural_local_sandbox"},
+    {"id": "V1SV-014", "attack": "Stripe cloud E2E proof", "status": "CLOUD_GATED", "scope": "historical_gke_proof", "note": "Historical proof exists on GKE. Current revalidation AUTHORIZATION_BLOCKED — NOT_CURRENTLY_VALIDATED"},
+    {"id": "V1SV-015", "attack": "SSRF on SaaS dispatch", "status": "BACKLOG", "scope": "scoped_controls_exist", "note": "Scoped SSRF controls exist (ValidateTargetURL, SSRFDialContext, FLOW-02/03 hardening). SaaS-wide dispatch not validated."},
+    {"id": "V1SV-016", "attack": "Redirect-chain abuse", "status": "PARTIAL", "scope": "webhook_dispatch_path_only", "note": "Webhook dispatch uses NoRedirects/SafeRedirects. Most other outbound clients follow redirects by default."},
+    {"id": "V1SV-017", "attack": "Parser / payload bombs", "status": "NOT_CLAIMED", "scope": "out_of_scope_v1"},
+    {"id": "V1SV-018", "attack": "Rate-limit bypass", "status": "NOT_CLAIMED", "scope": "out_of_scope_v1"},
+    {"id": "V1SV-019", "attack": "Timing side-channels", "status": "NOT_CLAIMED", "scope": "out_of_scope_v1"},
+    {"id": "V1SV-020", "attack": "Header / forwarded-identity spoofing", "status": "NOT_CLAIMED", "scope": "out_of_scope_v1"}
+  ],
+  "non_claims": [
+    "No compliance certification (PCI, HIPAA, SOC 2, ISO, FedRAMP)",
+    "No external penetration test passed",
+    "No all-providers-live validation",
+    "No production-live certification",
+    "No exactly-once delivery guarantee",
+    "No zero event loss under all failures",
+    "No SaaS-wide SSRF blanket protection",
+    "No certificate pinning / compromised-CA MITM protection"
+  ]
+}

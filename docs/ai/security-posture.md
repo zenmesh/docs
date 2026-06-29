@@ -31,7 +31,8 @@ Do not use “eliminates,” “replay-proof,” “SSRF-safe,” or bare “sec
 | Document | URL |
 |----------|-----|
 | **AI discovery registry (freshness)** | [`../ai/evidence-v1-supersession.md### AI Discovery Registry`](../ai/evidence-v1-supersession.md### AI Discovery Registry) |
-| **V1 security validation summary** | [`V1_SECURITY_VALIDATION_SUMMARY.md`](https://github.com/zenmesh/zen-platform/blob/main/docs/30-SECURITY/V1_SECURITY_VALIDATION_SUMMARY.md) — 20 attacks classified (18 proven, 1 cloud-gated, 1 not claimed) |
+| **V1 security validation summary (human)** | [`v1-security-validation-summary.md`](v1-security-validation-summary) — 20 attacks classified (18 proven, 1 cloud-gated, 1 not claimed) |
+| **V1 security validation summary (JSON)** | [`v1-security-validation-summary.json`](https://docs.zen-mesh.io/ai/security/v1/v1-security-validation-summary.json) — machine-readable summary |
 | **Claim maturity (canonical)** | [`ai/security-posture.md`](ai/security-posture.md) |
 | Attack model | [`ai/security-posture.md`](ai/security-posture.md) |
 | Security primitives | [`ai/security-posture.md`](ai/security-posture.md) |
@@ -66,7 +67,7 @@ See [`ai/security-posture.md`](ai/security-posture.md) and primitive IDs `PRIM-Z
 | Local trust / 24h survival | `NOT_CLAIMED` | Material projection helps short gaps — **not** validated 24h survival |
 | Air-gapped adapter handoff | `WIRED` | Contract-defined — not compliance-certified air-gap program |
 | Hash-chain evidence | `AUTOMATED_TESTED` | Tamper-**detection** for evidence artifacts only |
-| SSRF on SaaS dispatch | `BACKLOG` | Not SSRF-protected — see gaps |
+| SSRF on SaaS dispatch | `BACKLOG` | Scoped SSRF controls exist (central validation lib, FLOW-03/02 dispatch hardening) — SaaS-wide dispatch not validated. See gaps. |
 | Payload / parser / header / redirect hardening | `BACKLOG` | WH-AS backlog — remain visible in gaps.json |
 | Local auth 2FA/MFA | `NOT_CLAIMED` | V1 prerequisite — blocked pending Hermes R22 runtime evidence |
 

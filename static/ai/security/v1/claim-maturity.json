@@ -427,10 +427,11 @@
       "helps_detect": [],
       "does_not_prevent": [
         "SSRF to internal networks",
-        "Redirect-chain bypass"
+        "Redirect-chain bypass",
+        "SaaS-wide SSRF coverage"
       ],
-      "validation_level": "Webhook-security smoke gates exist \u2014 not full SSRF contract",
-      "current_limitation": "Do not describe dispatch as SSRF-protected",
+      "validation_level": "Scoped SSRF controls exist: central ValidateTargetURL + SSRFDialContext library tested (409-line negative suite), FLOW-03 proxy-mode ServiceRef path validated in local/mock, FLOW-02 egress target validation, BFF internal client hardened. SaaS-wide API dispatch and provider dispatchers not yet validated.",
+      "current_limitation": "Scoped SSRF controls exist on FLOW-02/03 and BFF paths. SaaS-wide control-plane dispatch, provider dispatchers (Splunk/Grafana/PagerDuty/Teams/Git), and shared client libraries not yet validated. Do not describe dispatch as fully SSRF-protected.",
       "next_validation": "Negative SSRF test suite + public gate receipt",
       "public_evidence_ref": null,
       "roadmap_ref": "WH-AS-001"
