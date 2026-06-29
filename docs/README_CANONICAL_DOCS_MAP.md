@@ -129,7 +129,7 @@ Fabric docs page exists beyond the architecture docs.
 
 | Doc | Path | Status |
 |-----|------|--------|
-| Billing Terms | `docs/legal/billing-terms.md` | Active |
+| Billing Terms | `docs/legal/billing-terms.md` | Archived (draft template) |
 | Plans and Limits | `docs/start-here/plans-and-limits.md` | Active |
 | Launch Status | `docs/start-here/launch-status.md` | Active |
 
@@ -156,7 +156,7 @@ validation sequence).
 | Public Surface Update Policy | `docs/20-OPERATIONS/PUBLIC_SURFACE_UPDATE_POLICY.md` |
 | Canonical Docs Map (this file) | `docs/README_CANONICAL_DOCS_MAP.md` |
 | Docs Consolidation Log | `docs/DOCS_CONSOLIDATION_LOG.md` |
-| Evidence Navigation Index | `docs/80-EVIDENCE/EVIDENCE_INDEX.md` |
+| Evidence Navigation Index | `docs/evidence/evidence-index.md` |
 | Hooks-only validation | `zen-platform` repo |
 | No `.github` / workflows | Policy |
 | Fixed report paths | `/tmp/docsai-report.{md,json}` |
@@ -164,18 +164,19 @@ validation sequence).
 
 ## 9. Archive / Evidence-Only Docs
 
-These are historical or evidence artifacts. They are not active navigation
-docs and should not be treated as canonical references:
+These are historical or evidence artifacts, or archived docs. They are not
+active navigation docs and should not be treated as canonical references:
 
-- `docs/80-EVIDENCE/*` — All audit evidence (see [Evidence Index](./80-EVIDENCE/EVIDENCE_INDEX) for classification)
+- `docs/80-EVIDENCE/*` — All audit evidence (see [Evidence Index](/docs/evidence/evidence-index) for classification)
 - `docs/evidence/public-docs-claim-audit.{json,md}` — Historical claim audit
 - `docs/ai/evidence-v1-supersession.md` — Supersession log
-- `docs/api/_reference_placeholder.md.bak` — Dead file
+- `docs/99-ARCHIVE/` — Archived docs (see `docs/99-ARCHIVE/ARCHIVE_MANIFEST` for details)
+- `docs/legal/*.md` — Archived as draft templates (all 12 legal docs)
+- `docs/mcp/authentication.md` — Archived, superseded by authentication-and-mtls.md
 - `docs/delivery/replay.md` — Superseded by replay-and-recovery.md
 - `docs/delivery/deduplication-vs-idempotency.md` — Superseded by individual files
 - `docs/delivery/replay-vs-retry.md` — Superseded by individual files
 - `docs/delivery/routing-and-fan-out.md` — Superseded by individual files
-- `docs/mcp/authentication.md` — Superseded by authentication-and-mtls.md
 - `docs/reference/api.md` — Superseded by docs/api/*
 - `docs/reference/mcp.md` — Superseded by docs/mcp/*
 

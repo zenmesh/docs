@@ -59,4 +59,4 @@ package lifecycle, and validation evidence.
 - [Runbooks](../runbooks) — Operational procedures
 - [Evidence Overview](../evidence/overview) — Evidence index and validation map
 - [Canonical Docs Map](../README_CANONICAL_DOCS_MAP) — Full canonical index
-- [Evidence Index](../80-EVIDENCE/EVIDENCE_INDEX) — Evidence classification by area
+- [Evidence Index](/docs/evidence/evidence-index) — Evidence classification by area

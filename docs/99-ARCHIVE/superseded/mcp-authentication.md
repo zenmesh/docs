@@ -1,3 +1,8 @@
+> Archived by DOCSAI_R15.
+> Reason: superseded — content fully contained in docs/mcp/authentication-and-mtls.md.
+> Canonical replacement: docs/mcp/authentication-and-mtls.md.
+> Do not use as current status.
+
 ---
 sidebar_label: MCP Authentication
 ---

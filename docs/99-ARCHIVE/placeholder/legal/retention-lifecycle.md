@@ -1,3 +1,7 @@
+> Archived by DOCSAI_R15.
+> Reason: placeholder — draft template, not effective, no legal review.
+> Canonical replacement: none.
+> Do not use as current status.
 # Retention and Deletion Lifecycle
 
 **DRAFT — NOT EFFECTIVE — LEGAL REVIEW REQUIRED**

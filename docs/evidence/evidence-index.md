@@ -84,7 +84,7 @@ runs. The validation plan JSON is public with NO-GO disclaimer.
 
 | Artifact | Path | Maturity | Publication | Owner |
 |----------|------|----------|-------------|-------|
-| Billing Terms | `docs/legal/billing-terms.md` | Active | Public-safe | Legal |
+| Billing Terms | `docs/99-ARCHIVE/placeholder/legal/billing-terms.md` | Archived (R15) | Archived (draft template) | Legal |
 | Plans and Limits | `docs/start-here/plans-and-limits.md` | Active | Public-safe | Product |
 | Launch Status | `docs/start-here/launch-status.md` | Active | Public-safe | Product |
 
@@ -164,4 +164,5 @@ files are not navigation docs and do not need to be published).
 - [Canonical Docs Map](../README_CANONICAL_DOCS_MAP)
 - [V1 Live Truth Matrix](../launch/v1-live-truth-matrix)
 - [Docs Consolidation Log](../DOCS_CONSOLIDATION_LOG)
-- [Public Surface Update Policy](../20-OPERATIONS/PUBLIC_SURFACE_UPDATE_POLICY)
+- `docs/99-ARCHIVE/ARCHIVE_MANIFEST` — Archive record of R15 actions
+- [Public Surface Update Policy](../OPERATIONS/PUBLIC_SURFACE_UPDATE_POLICY)

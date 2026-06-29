@@ -168,7 +168,6 @@ const sidebars: SidebarsConfig = {
         'mcp/tools',
         'mcp/examples',
         'mcp/authentication-and-mtls',
-        'mcp/authentication',
         'mcp/safety-and-boundaries',
         'mcp/draft-system',
       ],

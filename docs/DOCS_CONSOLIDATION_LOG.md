@@ -4,8 +4,9 @@ sidebar_label: Docs Consolidation Log
 
 # Docs Consolidation Log
 
-Inventory and classification of duplicate, stale, conflicting, and archive-candidate
-docs. This log does not delete files — it tracks classification for future cleanup.
+Inventory and classification of duplicate, stale, conflicting, archive-candidate,
+archived, and deleted docs. Active classification for future cleanup + record of
+completed archive actions.
 
 ## Duplicate Entries
 
@@ -15,12 +16,24 @@ docs. This log does not delete files — it tracks classification for future cle
 | `docs/delivery/deduplication-vs-idempotency.md` | Dedup vs idempotency | Stale duplicate | Merge later | Content split into `docs/delivery/deduplication.md` and `docs/delivery/idempotency.md` |
 | `docs/delivery/replay-vs-retry.md` | Replay vs retry | Stale duplicate | Merge later | Content covered by `replay-and-recovery.md` and `webhook-reliability.md` |
 | `docs/delivery/routing-and-fan-out.md` | Routing and fan-out | Stale duplicate | Merge later | Content covered by `event-routing.md` and `fan-out.md` |
-| `docs/mcp/authentication.md` | MCP authentication | Stale duplicate | Remove link only | Superseded by `docs/mcp/authentication-and-mtls.md` |
+| `docs/mcp/authentication.md` | MCP authentication | Stale duplicate | ✅ Archived (R15) | Superseded by `docs/mcp/authentication-and-mtls.md` |
 | `docs/reference/api.md` | API reference | Stale | Archive later | Superseded by `docs/api/*` directory |
 | `docs/reference/mcp.md` | MCP reference | Stale | Archive later | Superseded by `docs/mcp/*` directory |
-| `docs/api/_reference_placeholder.md.bak` | Backup/placeholder | Dead file | Remove | Not referenced, `.bak` extension, no content value |
+| `docs/api/_reference_placeholder.md.bak` | Backup/placeholder | Dead file | ✅ Deleted (R15) | Not referenced, `.bak` extension, no content value |
 | `docs/providerflow/template-packs.md~` | Template packs swap | Dead file | Remove | Swap/backup file from editor |
 | `docs/ai/overview.md` | AI overview | Partial overlap | No action | Contains non-duplicated content (evidence links, scope) |
+| `docs/legal/aup.md` | Legal draft | Placeholder | ✅ Archived (R15) | Draft template, not effective, no legal review |
+| `docs/legal/billing-terms.md` | Legal draft | Placeholder | ✅ Archived (R15) | Draft template, not effective, no legal review |
+| `docs/legal/breach-notice.md` | Legal draft | Placeholder | ✅ Archived (R15) | Draft template, not effective, no legal review |
+| `docs/legal/cookie-disclosure.md` | Legal draft | Placeholder | ✅ Archived (R15) | Draft template, not effective, no legal review |
+| `docs/legal/design-partner-terms.md` | Legal draft | Placeholder | ✅ Archived (R15) | Draft template, not effective, no legal review |
+| `docs/legal/dpa.md` | Legal draft | Placeholder | ✅ Archived (R15) | Draft template, not effective, no legal review |
+| `docs/legal/privacy.md` | Legal draft | Placeholder | ✅ Archived (R15) | Draft template, not effective, no legal review |
+| `docs/legal/responsible-disclosure.md` | Legal draft | Placeholder | ✅ Archived (R15) | Draft template, not effective, no legal review |
+| `docs/legal/retention-lifecycle.md` | Legal draft | Placeholder | ✅ Archived (R15) | Draft template, not effective, no legal review |
+| `docs/legal/scc-transfer.md` | Legal draft | Placeholder | ✅ Archived (R15) | Draft template, not effective, no legal review |
+| `docs/legal/subprocessors.md` | Legal draft | Placeholder | ✅ Archived (R15) | Draft template, not effective, no legal review |
+| `docs/legal/terms.md` | Legal draft | Placeholder | ✅ Archived (R15) | Draft template, not effective, no legal review |
 
 ## Stale Docs
 
@@ -49,7 +62,9 @@ surfaces are updated.
 | `docs/delivery/routing-and-fan-out.md` | Routing and fan-out | Archive later | Content merged into other files |
 | `docs/reference/api.md` | API reference | Archive later | Content migrated to docs/api/ |
 | `docs/reference/mcp.md` | MCP reference | Archive later | Content migrated to docs/mcp/ |
-| `docs/mcp/authentication.md` | MCP auth | Archive later | Content merged into authentication-and-mtls.md |
+| `docs/mcp/authentication.md` | MCP auth | ✅ Archived (R15) | Content merged into authentication-and-mtls.md |
+| `docs/legal/*.md` (12 files) | Legal draft templates | ✅ Archived (R15) | Draft templates, not effective, no legal review |
+| `docs/api/_reference_placeholder.md.bak` | Backup file | ✅ Deleted (R15) | Not referenced, `.bak` extension |
 
 ## Docs That Should Not Be Public / AI-Discoverable
 
@@ -129,13 +144,14 @@ duplicate or stale Fabric docs identified.
 
 | Doc | Classification | Action |
 |-----|---------------|--------|
-| `docs/legal/billing-terms.md` | Canonical | Keep canonical |
+| `docs/legal/billing-terms.md` | Draft template | ✅ Archived (R15) |
 | `docs/start-here/plans-and-limits.md` | Canonical | Keep canonical |
 | `docs/start-here/launch-status.md` | Canonical | Keep canonical |
 | `docs/guides/stripe.md` | Integration guide | Keep canonical |
 
-Stripe billing is `cloud_gated` in the truth matrix. No duplicate billing
-docs identified.
+Stripe billing is `cloud_gated` in the truth matrix. The billing-terms draft
+was archived in R15 — only the active plans-and-limits and launch-status docs
+remain as billing surfaces.
 
 ### Group 5: Security and Public Trust
 
@@ -199,10 +215,59 @@ The public surface update policy governs all changes to these surfaces.
 |-----|---------------|--------|
 | `docs/80-EVIDENCE/*` | Evidence artifacts | Leave as evidence |
 | `docs/evidence/*.md` | Evidence docs | Leave as evidence |
-| `docs/80-EVIDENCE/EVIDENCE_INDEX.md` | Evidence index | ✅ Created in R14 |
+| `docs/evidence/evidence-index.md` | Evidence index | ✅ Created in R14 (moved from 80-EVIDENCE/ in R15) |
 
-See the [Evidence Index](./80-EVIDENCE/EVIDENCE_INDEX) for detailed evidence
+See the [Evidence Index](/docs/evidence/evidence-index) for detailed evidence
 classification by area and maturity.
+
+## R15 Consolidation Groups
+
+### Group 10: Superseded MCP Auth Doc
+
+| Doc | Classification | Action |
+|-----|---------------|--------|
+| `docs/mcp/authentication.md` | Superseded | ✅ Archived to `docs/99-ARCHIVE/superseded/mcp-authentication.md` |
+| `sidebars.ts` | Sidebar | Updated: removed `mcp/authentication` entry |
+
+### Group 11: Placeholder Legal Drafts
+
+| Doc | Classification | Action |
+|-----|---------------|--------|
+| `docs/legal/*.md` (12 files) | Draft templates | ✅ Archived to `docs/99-ARCHIVE/placeholder/legal/` |
+| Canonical map | Reference | Updated: billing-terms status changed to "Archived" |
+| Evidence index | Reference | Updated: legal entries changed to "Archived" |
+
+All 12 legal docs were created in the same commit (DOCSAI029) and are
+DRAFT — NOT EFFECTIVE — LEGAL REVIEW REQUIRED. They have zero effective
+legal content. Draft existence is preserved in the archive and in the
+DOCSAI029 evidence artifacts.
+
+### Group 12: Backup File Deletion
+
+| File | Classification | Action |
+|------|---------------|--------|
+| `docs/api/_reference_placeholder.md.bak` | Dead file | ✅ Deleted (git rm) |
+
+Not referenced by any active doc, no evidence value.
+
+### Group 13: Archive Infrastructure
+
+| Doc | Classification | Action |
+|-----|---------------|--------|
+| `docs/99-ARCHIVE/ARCHIVE_MANIFEST.md` | Archive index | ✅ Created in R15 |
+| `docs/99-ARCHIVE/superseded/` | Archive subdir | ✅ Created |
+| `docs/99-ARCHIVE/placeholder/legal/` | Archive subdir | ✅ Created |
+
+### Group 14: Active Docs Retained (Evaluated, No Action)
+
+| Doc | Rationale |
+|-----|-----------|
+| `docs/architecture/api-docs-hosting-options.md` | Real ADR with recommendations, not speculative (115 lines) |
+| `docs/api/changelog.md` | Has real content (567 bytes), not empty |
+| `docs/zen-lock.md` | Cross-referenced concept doc, in llms.txt |
+| `docs/ai/evidence-v1-supersession.md` | Heavily cross-referenced anchor target |
+| `docs/evidence/docs-experience-audit.md` | Historical evidence |
+| `docs/evidence/public-docs-claim-audit.{json,md}` | Historical audit evidence |
 
 ## Docs Needing Future Consolidation
 
@@ -210,6 +275,7 @@ classification by area and maturity.
 |-------|------|------|
 | Delivery replay docs | After V1 | Merge replay.md, replay-vs-retry.md, replay-and-recovery.md |
 | Delivery dedup docs | After V1 | Merge deduplication.md, deduplication-vs-idempotency.md, idempotency.md |
-| MCP auth docs | After V1 | Remove authentication.md, keep authentication-and-mtls.md |
+| MCP auth docs | ✅ Done (R15) | authentication.md archived, authentication-and-mtls.md kept |
 | Provider integration guides | After V1 | Consolidate providerflow/packages/ with guides/ |
 | Evidence artifacts | When superseded | Relocate from docs/80-EVIDENCE/docsai* to archive |
+| Reference dir cleanup | After V1 | Archive reference/api.md and reference/mcp.md |
