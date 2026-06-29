@@ -130,5 +130,4 @@ See [support](start-here/support).
 - [Troubleshooting](operations/troubleshooting): Common issues and solutions
 - [Gateway API migration](networking/gateway-api-migration): Migration and deployment operations
 - [Runbooks](runbooks): Operating procedures and maintenance
-- [Provider ecosystem](ai/provider-ecosystem): Provider Packs, Provider Registry contract, and V1 provider verification scoping
 - [Provider flow](providerflow): Webhook provider integration documentation
