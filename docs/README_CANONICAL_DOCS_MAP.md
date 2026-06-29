@@ -156,6 +156,7 @@ validation sequence).
 | Public Surface Update Policy | `docs/20-OPERATIONS/PUBLIC_SURFACE_UPDATE_POLICY.md` |
 | Canonical Docs Map (this file) | `docs/README_CANONICAL_DOCS_MAP.md` |
 | Docs Consolidation Log | `docs/DOCS_CONSOLIDATION_LOG.md` |
+| Evidence Navigation Index | `docs/80-EVIDENCE/EVIDENCE_INDEX.md` |
 | Hooks-only validation | `zen-platform` repo |
 | No `.github` / workflows | Policy |
 | Fixed report paths | `/tmp/docsai-report.{md,json}` |
@@ -166,7 +167,7 @@ validation sequence).
 These are historical or evidence artifacts. They are not active navigation
 docs and should not be treated as canonical references:
 
-- `docs/80-EVIDENCE/*` — All audit evidence
+- `docs/80-EVIDENCE/*` — All audit evidence (see [Evidence Index](./80-EVIDENCE/EVIDENCE_INDEX) for classification)
 - `docs/evidence/public-docs-claim-audit.{json,md}` — Historical claim audit
 - `docs/ai/evidence-v1-supersession.md` — Supersession log
 - `docs/api/_reference_placeholder.md.bak` — Dead file
