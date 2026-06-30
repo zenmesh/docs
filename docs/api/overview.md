@@ -48,6 +48,29 @@ See [API Versioning and Compatibility](./versioning.md) for the compatibility po
 
 - [Authentication and API Keys](./authentication.md)
 - [Errors and Problem Details](./errors.md)
+- [Fabric Adapters API](./fabric-adapters.md) - Manage adapters in your Fabric
+- [MCP Overview](../mcp/overview.md) - AI agent integration
+
+## Status and Scope
+
+This documentation covers the documented user-facing API endpoints. Not all platform endpoints are documented — some are internal, admin-only, or still evolving.
+
+**Current scope:**
+- User-facing tenant-scoped operations
+- Webhook ingestion and delivery management
+- Adapter and plane management
+- Delivery flows and destinations
+- Evidence and observability
+
+**Not covered in this section:**
+- Internal admin-only endpoints
+- Debug/diagnostic endpoints
+- BFF-only internal routes
+
+The API is in active development. Endpoint availability reflects the current deployed product.
+
+## Additional Guides
+
 - [Rate Limits and Operational Limits](./rate-limits.md)
 - [Webhook Delivery API Guide](./webhooks.md)
 - [Events and Evidence API Guide](./events.md)
