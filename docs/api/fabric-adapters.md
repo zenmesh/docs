@@ -144,4 +144,3 @@ GET /v1/mcp/planes
 - [Adapters Guide](../guides/adapters.md) - UI-based adapter management
 - [Architecture](../architecture/overview.md) - Three-plane model
 - [MCP Overview](../mcp/overview.md) - MCP integration
-<!-- force rebuild -->
