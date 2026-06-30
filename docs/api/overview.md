@@ -16,6 +16,20 @@ Zen Mesh exposes two API surfaces for different consumers:
 | **BFF API** | Dashboard API (`/api/bff/v1`) | Dashboard aggregation (features, config, jobs, events) | Session cookie, API Key |
 
 ## API Reference
+## Workflow Recipes
+
+Use these step-by-step recipes to accomplish common tasks with the Zen Mesh API:
+
+- [List Planes and Inspect Adapters](./recipes/list-planes-and-adapters.md)
+- [Create a Webhook Endpoint](./recipes/create-webhook-endpoint.md)
+- [Create a Target](./recipes/create-target.md)
+- [Create a Flow](./recipes/create-flow.md)
+- [Validate, Test, and Publish a Draft](./recipes/drafts-validate-test-publish.md)
+- [Handle Errors and Rate Limits](./recipes/errors-and-rate-limits.md)
+
+These recipes provide complete, copy-paste-ready examples for common workflows, including curl, Python, and JavaScript samples.
+
+**Full API Reference**: [OpenAPI Specification](./openapi-reference.html)
 
 - [Back API Reference](./reference/kubezen-back-api) — Generated from OpenAPI spec
 - [Customer API](../reference/customer-api) — read-only operational truth API

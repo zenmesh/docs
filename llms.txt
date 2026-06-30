@@ -3,6 +3,13 @@
 
 ## API Doc (expanded)
 
+docs/api/recipes/list-planes-and-adapters.md - List Planes and Inspect Adapters with copy-paste examples
+docs/api/recipes/create-webhook-endpoint.md - Create Webhook Endpoints for integrations
+docs/api/recipes/create-target.md - Create and Configure Destinations
+docs/api/recipes/create-flow.md - Create Delivery Flows
+docs/api/recipes/drafts-validate-test-publish.md - Validate, Test, and Publish Flows
+docs/api/recipes/errors-and-rate-limits.md - Handle API Errors and Rate Limits
+
 
 
 docs/api/quickstart - API Quickstart - Get started with the Zen Mesh API with curl, Python, and JavaScript examples
