@@ -18,7 +18,7 @@ This recipe covers the UI-based workflow for:
 
 Before you can validate or publish a flow, you must create it first.
 
-See [Create a Flow](./create-flow.md) for instructions on creating a flow using the API.
+See [Create a Flow]() for instructions on creating a flow using the API.
 
 ## Validating a Flow
 
@@ -97,12 +97,12 @@ When you publish a flow, it becomes a new version. The previous version remains 
 
 ## Next Steps
 
-- [Create a Flow](./create-flow.md)
-- [Inspect Flows](./list-planes-and-adapters.md)
-- [Troubleshooting](../errors-and-rate-limits.md)
+- [Create a Flow]()
+- [Inspect Flows]()
+- [Troubleshooting](../../errors)
 
 ---
 
-**Full API Reference**: [OpenAPI Specification](../openapi-reference.html)
+**Full API Reference**: [OpenAPI Specification](../../openapi-reference.html)
 
-**More Information**: [Authentication](../authentication) | [Common Errors](../errors)
+**More Information**: [Authentication](../../authentication) | [Common Errors](../../errors)

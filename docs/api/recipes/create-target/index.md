@@ -137,12 +137,12 @@ curl -sS   -H "Authorization: Bearer $ZEN_API_TOKEN"   "$ZEN_API_BASE/tenants/$Z
 
 ## Next Steps
 
-- [Create a Flow](./create-flow.md)
-- [Inspect Destinations](./list-planes-and-adapters.md)
-- [Update Destination](../openapi-reference.html) (use updateDestination endpoint)
+- [Create a Flow]()
+- [Inspect Destinations]()
+- [Update Destination](../../openapi-reference.html) (use updateDestination endpoint)
 
 ---
 
-**Full API Reference**: [OpenAPI Specification](../openapi-reference.html)
+**Full API Reference**: [OpenAPI Specification](../../openapi-reference.html)
 
-**More Information**: [Authentication](../authentication) | [Common Errors](../errors)
+**More Information**: [Authentication](../../authentication) | [Common Errors](../../errors)

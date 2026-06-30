@@ -88,12 +88,12 @@ These endpoints are used by Zen Mesh to send notifications to your configured in
 
 ## Next Steps
 
-- [List Planes](./list-planes-and-adapters.md)
-- [Create a Target](./create-target.md)
-- [Create a Flow](./create-flow.md)
+- [List Planes]()
+- *Create a Target* (see dedicated recipe)
+- [Create a Flow]()
 
 ---
 
-**Full API Reference**: [OpenAPI Specification](../openapi-reference.html)
+**Full API Reference**: [OpenAPI Specification](../../openapi-reference.html)
 
-**More Information**: [Authentication](../authentication) | [Common Errors](../errors)
+**More Information**: [Authentication](../../authentication) | [Common Errors](../../errors)

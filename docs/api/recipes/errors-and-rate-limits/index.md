@@ -263,12 +263,12 @@ for plane in plane_list['clusters']:
 
 ## Next Steps
 
-- [Authentication](../authentication)
-- [Create a Flow](./create-flow.md)
-- [List Planes](./list-planes-and-adapters.md)
+- [Authentication](../../authentication)
+- [Create a Flow]()
+- [List Planes]()
 
 ---
 
-**Full API Reference**: [OpenAPI Specification](../openapi-reference.html)
+**Full API Reference**: [OpenAPI Specification](../../openapi-reference.html)
 
-**More Information**: [Authentication](../authentication) | [Common Errors](../errors)
+**More Information**: [Authentication](../../authentication) | [Common Errors](../../errors)
