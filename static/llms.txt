@@ -2,7 +2,7 @@
 
 > Zen Mesh is private-by-design, security-first webhook delivery infrastructure for private networks. Services behind NAT or firewall connect outbound-only to receive webhooks from Stripe, GitHub, Shopify, Twilio, and custom senders — no inbound ports, no VPN, no kernel modules. Free Forever. 6-month Pro trial available. Business and Enterprise plans coming soon.
 
-**Version:** 1.1.0 · **Last-Updated:** 2026-06-29T23:30:00Z · **Docs:** https://docs.zen-mesh.io · **Site:** https://www.zen-mesh.io · **Repository:** https://github.com/zenmesh/zen-platform
+**Version:** 1.1.0 · **Last-Updated:** 2026-06-30T13:30:00Z · **Docs:** https://docs.zen-mesh.io · **Site:** https://www.zen-mesh.io · **Repository:** https://github.com/zenmesh/zen-platform
 
 ## Canonical discovery (crawlers)
 
@@ -154,6 +154,7 @@ See [support](https://docs.zen-mesh.io/docs/start-here/support).
 - [Replay](https://docs.zen-mesh.io/docs/api/replay): Re-process delivered events from DLQ or history
 - [API Versioning and Compatibility](https://docs.zen-mesh.io/docs/api/versioning): URL-based versioning, compatibility policy, spec maintenance
 - [Rate Limits and Operational Limits](https://docs.zen-mesh.io/docs/api/rate-limits): Per-endpoint rate limits, payload limits, delivery config
+- [Fabric Adapters API](https://docs.zen-mesh.io/docs/api/fabric-adapters): Manage Fabric adapters — list, disable, enable adapters per tenant/cluster
 - [API Changelog](https://docs.zen-mesh.io/docs/api/changelog): Version history and migration notes
 - [OpenAPI spec (YAML)](https://github.com/zenmesh/zen-platform-hermes/blob/main/api-specifications/zen-back.v1.yaml): Canonical OpenAPI 3.0.3 specification
 
