@@ -464,8 +464,8 @@
       "permanent": true
     },
     {
-      "source": "/legal/*",
-      "destination": "/docs/legal/*",
+      "source": "/legal/(.*)",
+      "destination": "/docs/legal/$1",
       "permanent": true
     },
     {
@@ -499,8 +499,8 @@
       "permanent": true
     },
     {
-      "source": "/runbooks/*",
-      "destination": "/docs/runbooks/*",
+      "source": "/runbooks/(.*)",
+      "destination": "/docs/runbooks/$1",
       "permanent": true
     },
     {
@@ -509,8 +509,8 @@
       "permanent": true
     },
     {
-      "source": "/security/*",
-      "destination": "/docs/security/*",
+      "source": "/security/(.*)",
+      "destination": "/docs/security/$1",
       "permanent": true
     },
     {

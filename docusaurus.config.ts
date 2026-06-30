@@ -37,7 +37,7 @@ const config: Config = {
           editUrl: 'https://github.com/zenmesh/docs/tree/main/',
           breadcrumbs: true,
           showLastUpdateAuthor: false,
-          showLastUpdateTime: true,
+          showLastUpdateTime: false,
         },
         blog: false,
         theme: {
