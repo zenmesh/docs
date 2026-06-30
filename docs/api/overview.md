@@ -46,8 +46,8 @@ See [API Versioning and Compatibility](./versioning.md) for the compatibility po
 
 ## Related Docs
 
-- [Authentication and API Keys](./authentication.md)
-- [Errors and Problem Details](./errors.md)
+- [Authentication and API Keys](/api/authentication.md)
+- [Errors and Problem Details](/api/errors.md)
 - [Fabric Adapters API](./fabric-adapters.md) - Manage adapters in your Fabric
 - [MCP Overview](../mcp/overview.md) - AI agent integration
 
@@ -75,3 +75,8 @@ The API is in active development. Endpoint availability reflects the current dep
 - [Webhook Delivery API Guide](./webhooks.md)
 - [Events and Evidence API Guide](./events.md)
 - [API Changelog](./changelog.md)
+
+
+## API Reference
+
+- [OpenAPI Reference](/openapi-reference) - Complete API specification with code examples

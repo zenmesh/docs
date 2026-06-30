@@ -60,6 +60,27 @@ paths:
                     - degraded
                   version:
                     type: string
+      x-codeSamples:
+      - lang: curl
+        label: curl
+        source: "curl \\\n  -sS \\\n  -H \\\n  Authorization: Bearer $ZEN_API_TOKEN\
+          \ \\\n  -H \\\n  Content-Type: application/json \\\n  \"https://api.zen-mesh.io/v1/health\""
+      - lang: Python
+        label: Python
+        source: "import os\nimport requests\n\nbase_url = os.environ[\"ZEN_API_BASE\"\
+          ].rstrip(\"/\")\ntoken = os.environ[\"ZEN_API_TOKEN\"]\n\nresponse = requests.get(\n\
+          \    f\"https://api.zen-mesh.io/v1/health\",\n    headers={\n        \"\
+          Authorization\": f\"Bearer {token}\",\n        \"Content-Type\": \"application/json\"\
+          ,\n    },\n    timeout=30,\n)\nresponse.raise_for_status()\nprint(response.json())"
+      - lang: JavaScript
+        label: JavaScript
+        source: "const baseUrl = process.env.ZEN_API_BASE.replace(/\\/$/, \"\");\n\
+          const token = process.env.ZEN_API_TOKEN;\n\nconst url = baseUrl + path;\n\
+          const response = await fetch(url, {\n  method: \"GET\",\n  headers: {\n\
+          \    Authorization: `Bearer ${token}`,\n    \"Content-Type\": \"application/json\"\
+          ,\n  },\n});\n\nif (!response.ok) {\n  throw new Error(`Request failed:\
+          \ ${response.status} ${await response.text()}`);\n}\n\nconsole.log(await\
+          \ response.json());"
   /ready:
     get:
       tags:
@@ -76,6 +97,27 @@ paths:
                 properties:
                   ready:
                     type: boolean
+      x-codeSamples:
+      - lang: curl
+        label: curl
+        source: "curl \\\n  -sS \\\n  -H \\\n  Authorization: Bearer $ZEN_API_TOKEN\
+          \ \\\n  -H \\\n  Content-Type: application/json \\\n  \"https://api.zen-mesh.io/v1/ready\""
+      - lang: Python
+        label: Python
+        source: "import os\nimport requests\n\nbase_url = os.environ[\"ZEN_API_BASE\"\
+          ].rstrip(\"/\")\ntoken = os.environ[\"ZEN_API_TOKEN\"]\n\nresponse = requests.get(\n\
+          \    f\"https://api.zen-mesh.io/v1/ready\",\n    headers={\n        \"Authorization\"\
+          : f\"Bearer {token}\",\n        \"Content-Type\": \"application/json\",\n\
+          \    },\n    timeout=30,\n)\nresponse.raise_for_status()\nprint(response.json())"
+      - lang: JavaScript
+        label: JavaScript
+        source: "const baseUrl = process.env.ZEN_API_BASE.replace(/\\/$/, \"\");\n\
+          const token = process.env.ZEN_API_TOKEN;\n\nconst url = baseUrl + path;\n\
+          const response = await fetch(url, {\n  method: \"GET\",\n  headers: {\n\
+          \    Authorization: `Bearer ${token}`,\n    \"Content-Type\": \"application/json\"\
+          ,\n  },\n});\n\nif (!response.ok) {\n  throw new Error(`Request failed:\
+          \ ${response.status} ${await response.text()}`);\n}\n\nconsole.log(await\
+          \ response.json());"
   /tenants/{tenant_id}:
     get:
       tags:
@@ -100,6 +142,28 @@ paths:
         '404':
           description: Tenant not found
           $ref: '#/components/responses/NotFound'
+      x-codeSamples:
+      - lang: curl
+        label: curl
+        source: "curl \\\n  -sS \\\n  -H \\\n  Authorization: Bearer $ZEN_API_TOKEN\
+          \ \\\n  -H \\\n  Content-Type: application/json \\\n  \"https://api.zen-mesh.io/v1/tenants/{tenant_id}\""
+      - lang: Python
+        label: Python
+        source: "import os\nimport requests\n\nbase_url = os.environ[\"ZEN_API_BASE\"\
+          ].rstrip(\"/\")\ntoken = os.environ[\"ZEN_API_TOKEN\"]\n\nresponse = requests.get(\n\
+          \    f\"https://api.zen-mesh.io/v1/tenants/{tenant_id}\",\n    headers={\n\
+          \        \"Authorization\": f\"Bearer {token}\",\n        \"Content-Type\"\
+          : \"application/json\",\n    },\n    timeout=30,\n)\nresponse.raise_for_status()\n\
+          print(response.json())"
+      - lang: JavaScript
+        label: JavaScript
+        source: "const baseUrl = process.env.ZEN_API_BASE.replace(/\\/$/, \"\");\n\
+          const token = process.env.ZEN_API_TOKEN;\n\nconst url = baseUrl + path;\n\
+          const response = await fetch(url, {\n  method: \"GET\",\n  headers: {\n\
+          \    Authorization: `Bearer ${token}`,\n    \"Content-Type\": \"application/json\"\
+          ,\n  },\n});\n\nif (!response.ok) {\n  throw new Error(`Request failed:\
+          \ ${response.status} ${await response.text()}`);\n}\n\nconsole.log(await\
+          \ response.json());"
   /tenants/{tenant_id}/clusters:
     get:
       tags:
@@ -126,6 +190,28 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/Cluster'
+      x-codeSamples:
+      - lang: curl
+        label: curl
+        source: "curl \\\n  -sS \\\n  -H \\\n  Authorization: Bearer $ZEN_API_TOKEN\
+          \ \\\n  -H \\\n  Content-Type: application/json \\\n  \"https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters\""
+      - lang: Python
+        label: Python
+        source: "import os\nimport requests\n\nbase_url = os.environ[\"ZEN_API_BASE\"\
+          ].rstrip(\"/\")\ntoken = os.environ[\"ZEN_API_TOKEN\"]\n\nresponse = requests.get(\n\
+          \    f\"https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters\",\n   \
+          \ headers={\n        \"Authorization\": f\"Bearer {token}\",\n        \"\
+          Content-Type\": \"application/json\",\n    },\n    timeout=30,\n)\nresponse.raise_for_status()\n\
+          print(response.json())"
+      - lang: JavaScript
+        label: JavaScript
+        source: "const baseUrl = process.env.ZEN_API_BASE.replace(/\\/$/, \"\");\n\
+          const token = process.env.ZEN_API_TOKEN;\n\nconst url = baseUrl + path;\n\
+          const response = await fetch(url, {\n  method: \"GET\",\n  headers: {\n\
+          \    Authorization: `Bearer ${token}`,\n    \"Content-Type\": \"application/json\"\
+          ,\n  },\n});\n\nif (!response.ok) {\n  throw new Error(`Request failed:\
+          \ ${response.status} ${await response.text()}`);\n}\n\nconsole.log(await\
+          \ response.json());"
     post:
       tags:
       - Clusters
@@ -152,6 +238,29 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Cluster'
+      x-codeSamples:
+      - lang: curl
+        label: curl
+        source: "curl \\\n  -sS \\\n  -X \\\n  POST \\\n  -H \\\n  Authorization:\
+          \ Bearer $ZEN_API_TOKEN \\\n  -H \\\n  Content-Type: application/json \\\
+          \n  \"https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters\""
+      - lang: Python
+        label: Python
+        source: "import os\nimport requests\n\nbase_url = os.environ[\"ZEN_API_BASE\"\
+          ].rstrip(\"/\")\ntoken = os.environ[\"ZEN_API_TOKEN\"]\n\nresponse = requests.post(\n\
+          \    f\"https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters\",\n   \
+          \ headers={\n        \"Authorization\": f\"Bearer {token}\",\n        \"\
+          Content-Type\": \"application/json\",\n    },\n    timeout=30,\n)\nresponse.raise_for_status()\n\
+          print(response.json())"
+      - lang: JavaScript
+        label: JavaScript
+        source: "const baseUrl = process.env.ZEN_API_BASE.replace(/\\/$/, \"\");\n\
+          const token = process.env.ZEN_API_TOKEN;\n\nconst url = baseUrl + path;\n\
+          const response = await fetch(url, {\n  method: \"POST\",\n  headers: {\n\
+          \    Authorization: `Bearer ${token}`,\n    \"Content-Type\": \"application/json\"\
+          ,\n  },\n});\n\nif (!response.ok) {\n  throw new Error(`Request failed:\
+          \ ${response.status} ${await response.text()}`);\n}\n\nconsole.log(await\
+          \ response.json());"
   /tenants/{tenant_id}/clusters/{cluster_id}:
     get:
       tags:
@@ -183,6 +292,28 @@ paths:
                 $ref: '#/components/schemas/Cluster'
         '404':
           $ref: '#/components/responses/NotFound'
+      x-codeSamples:
+      - lang: curl
+        label: curl
+        source: "curl \\\n  -sS \\\n  -H \\\n  Authorization: Bearer $ZEN_API_TOKEN\
+          \ \\\n  -H \\\n  Content-Type: application/json \\\n  \"https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters/{cluster_id}\""
+      - lang: Python
+        label: Python
+        source: "import os\nimport requests\n\nbase_url = os.environ[\"ZEN_API_BASE\"\
+          ].rstrip(\"/\")\ntoken = os.environ[\"ZEN_API_TOKEN\"]\n\nresponse = requests.get(\n\
+          \    f\"https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters/{cluster_id}\"\
+          ,\n    headers={\n        \"Authorization\": f\"Bearer {token}\",\n    \
+          \    \"Content-Type\": \"application/json\",\n    },\n    timeout=30,\n\
+          )\nresponse.raise_for_status()\nprint(response.json())"
+      - lang: JavaScript
+        label: JavaScript
+        source: "const baseUrl = process.env.ZEN_API_BASE.replace(/\\/$/, \"\");\n\
+          const token = process.env.ZEN_API_TOKEN;\n\nconst url = baseUrl + path;\n\
+          const response = await fetch(url, {\n  method: \"GET\",\n  headers: {\n\
+          \    Authorization: `Bearer ${token}`,\n    \"Content-Type\": \"application/json\"\
+          ,\n  },\n});\n\nif (!response.ok) {\n  throw new Error(`Request failed:\
+          \ ${response.status} ${await response.text()}`);\n}\n\nconsole.log(await\
+          \ response.json());"
   /tenants/{tenant_id}/clusters/{cluster_id}/ingesters:
     get:
       tags:
@@ -214,6 +345,28 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/Ingester'
+      x-codeSamples:
+      - lang: curl
+        label: curl
+        source: "curl \\\n  -sS \\\n  -H \\\n  Authorization: Bearer $ZEN_API_TOKEN\
+          \ \\\n  -H \\\n  Content-Type: application/json \\\n  \"https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters/{cluster_id}/ingesters\""
+      - lang: Python
+        label: Python
+        source: "import os\nimport requests\n\nbase_url = os.environ[\"ZEN_API_BASE\"\
+          ].rstrip(\"/\")\ntoken = os.environ[\"ZEN_API_TOKEN\"]\n\nresponse = requests.get(\n\
+          \    f\"https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters/{cluster_id}/ingesters\"\
+          ,\n    headers={\n        \"Authorization\": f\"Bearer {token}\",\n    \
+          \    \"Content-Type\": \"application/json\",\n    },\n    timeout=30,\n\
+          )\nresponse.raise_for_status()\nprint(response.json())"
+      - lang: JavaScript
+        label: JavaScript
+        source: "const baseUrl = process.env.ZEN_API_BASE.replace(/\\/$/, \"\");\n\
+          const token = process.env.ZEN_API_TOKEN;\n\nconst url = baseUrl + path;\n\
+          const response = await fetch(url, {\n  method: \"GET\",\n  headers: {\n\
+          \    Authorization: `Bearer ${token}`,\n    \"Content-Type\": \"application/json\"\
+          ,\n  },\n});\n\nif (!response.ok) {\n  throw new Error(`Request failed:\
+          \ ${response.status} ${await response.text()}`);\n}\n\nconsole.log(await\
+          \ response.json());"
     post:
       tags:
       - CRDs
@@ -245,6 +398,29 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Ingester'
+      x-codeSamples:
+      - lang: curl
+        label: curl
+        source: "curl \\\n  -sS \\\n  -X \\\n  POST \\\n  -H \\\n  Authorization:\
+          \ Bearer $ZEN_API_TOKEN \\\n  -H \\\n  Content-Type: application/json \\\
+          \n  \"https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters/{cluster_id}/ingesters\""
+      - lang: Python
+        label: Python
+        source: "import os\nimport requests\n\nbase_url = os.environ[\"ZEN_API_BASE\"\
+          ].rstrip(\"/\")\ntoken = os.environ[\"ZEN_API_TOKEN\"]\n\nresponse = requests.post(\n\
+          \    f\"https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters/{cluster_id}/ingesters\"\
+          ,\n    headers={\n        \"Authorization\": f\"Bearer {token}\",\n    \
+          \    \"Content-Type\": \"application/json\",\n    },\n    timeout=30,\n\
+          )\nresponse.raise_for_status()\nprint(response.json())"
+      - lang: JavaScript
+        label: JavaScript
+        source: "const baseUrl = process.env.ZEN_API_BASE.replace(/\\/$/, \"\");\n\
+          const token = process.env.ZEN_API_TOKEN;\n\nconst url = baseUrl + path;\n\
+          const response = await fetch(url, {\n  method: \"POST\",\n  headers: {\n\
+          \    Authorization: `Bearer ${token}`,\n    \"Content-Type\": \"application/json\"\
+          ,\n  },\n});\n\nif (!response.ok) {\n  throw new Error(`Request failed:\
+          \ ${response.status} ${await response.text()}`);\n}\n\nconsole.log(await\
+          \ response.json());"
   /tenants/{tenant_id}/clusters/{cluster_id}/ingesters/{ingester_id}:
     get:
       tags:
@@ -278,6 +454,28 @@ paths:
                 $ref: '#/components/schemas/Ingester'
         '404':
           $ref: '#/components/responses/NotFound'
+      x-codeSamples:
+      - lang: curl
+        label: curl
+        source: "curl \\\n  -sS \\\n  -H \\\n  Authorization: Bearer $ZEN_API_TOKEN\
+          \ \\\n  -H \\\n  Content-Type: application/json \\\n  \"https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters/{cluster_id}/ingesters/{ingester_id}\""
+      - lang: Python
+        label: Python
+        source: "import os\nimport requests\n\nbase_url = os.environ[\"ZEN_API_BASE\"\
+          ].rstrip(\"/\")\ntoken = os.environ[\"ZEN_API_TOKEN\"]\n\nresponse = requests.get(\n\
+          \    f\"https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters/{cluster_id}/ingesters/{ingester_id}\"\
+          ,\n    headers={\n        \"Authorization\": f\"Bearer {token}\",\n    \
+          \    \"Content-Type\": \"application/json\",\n    },\n    timeout=30,\n\
+          )\nresponse.raise_for_status()\nprint(response.json())"
+      - lang: JavaScript
+        label: JavaScript
+        source: "const baseUrl = process.env.ZEN_API_BASE.replace(/\\/$/, \"\");\n\
+          const token = process.env.ZEN_API_TOKEN;\n\nconst url = baseUrl + path;\n\
+          const response = await fetch(url, {\n  method: \"GET\",\n  headers: {\n\
+          \    Authorization: `Bearer ${token}`,\n    \"Content-Type\": \"application/json\"\
+          ,\n  },\n});\n\nif (!response.ok) {\n  throw new Error(`Request failed:\
+          \ ${response.status} ${await response.text()}`);\n}\n\nconsole.log(await\
+          \ response.json());"
     put:
       tags:
       - CRDs
@@ -316,6 +514,29 @@ paths:
                 $ref: '#/components/schemas/Ingester'
         '404':
           $ref: '#/components/responses/NotFound'
+      x-codeSamples:
+      - lang: curl
+        label: curl
+        source: "curl \\\n  -sS \\\n  -X \\\n  PUT \\\n  -H \\\n  Authorization: Bearer\
+          \ $ZEN_API_TOKEN \\\n  -H \\\n  Content-Type: application/json \\\n  \"\
+          https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters/{cluster_id}/ingesters/{ingester_id}\""
+      - lang: Python
+        label: Python
+        source: "import os\nimport requests\n\nbase_url = os.environ[\"ZEN_API_BASE\"\
+          ].rstrip(\"/\")\ntoken = os.environ[\"ZEN_API_TOKEN\"]\n\nresponse = requests.put(\n\
+          \    f\"https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters/{cluster_id}/ingesters/{ingester_id}\"\
+          ,\n    headers={\n        \"Authorization\": f\"Bearer {token}\",\n    \
+          \    \"Content-Type\": \"application/json\",\n    },\n    timeout=30,\n\
+          )\nresponse.raise_for_status()\nprint(response.json())"
+      - lang: JavaScript
+        label: JavaScript
+        source: "const baseUrl = process.env.ZEN_API_BASE.replace(/\\/$/, \"\");\n\
+          const token = process.env.ZEN_API_TOKEN;\n\nconst url = baseUrl + path;\n\
+          const response = await fetch(url, {\n  method: \"PUT\",\n  headers: {\n\
+          \    Authorization: `Bearer ${token}`,\n    \"Content-Type\": \"application/json\"\
+          ,\n  },\n});\n\nif (!response.ok) {\n  throw new Error(`Request failed:\
+          \ ${response.status} ${await response.text()}`);\n}\n\nconsole.log(await\
+          \ response.json());"
     delete:
       tags:
       - CRDs
@@ -344,6 +565,29 @@ paths:
           description: Ingester deleted
         '404':
           $ref: '#/components/responses/NotFound'
+      x-codeSamples:
+      - lang: curl
+        label: curl
+        source: "curl \\\n  -sS \\\n  -X \\\n  DELETE \\\n  -H \\\n  Authorization:\
+          \ Bearer $ZEN_API_TOKEN \\\n  -H \\\n  Content-Type: application/json \\\
+          \n  \"https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters/{cluster_id}/ingesters/{ingester_id}\""
+      - lang: Python
+        label: Python
+        source: "import os\nimport requests\n\nbase_url = os.environ[\"ZEN_API_BASE\"\
+          ].rstrip(\"/\")\ntoken = os.environ[\"ZEN_API_TOKEN\"]\n\nresponse = requests.delete(\n\
+          \    f\"https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters/{cluster_id}/ingesters/{ingester_id}\"\
+          ,\n    headers={\n        \"Authorization\": f\"Bearer {token}\",\n    \
+          \    \"Content-Type\": \"application/json\",\n    },\n    timeout=30,\n\
+          )\nresponse.raise_for_status()\nprint(response.json())"
+      - lang: JavaScript
+        label: JavaScript
+        source: "const baseUrl = process.env.ZEN_API_BASE.replace(/\\/$/, \"\");\n\
+          const token = process.env.ZEN_API_TOKEN;\n\nconst url = baseUrl + path;\n\
+          const response = await fetch(url, {\n  method: \"DELETE\",\n  headers: {\n\
+          \    Authorization: `Bearer ${token}`,\n    \"Content-Type\": \"application/json\"\
+          ,\n  },\n});\n\nif (!response.ok) {\n  throw new Error(`Request failed:\
+          \ ${response.status} ${await response.text()}`);\n}\n\nconsole.log(await\
+          \ response.json());"
   /tenants/{tenant_id}/clusters/{cluster_id}/destinations:
     get:
       tags:
@@ -375,6 +619,28 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/Destination'
+      x-codeSamples:
+      - lang: curl
+        label: curl
+        source: "curl \\\n  -sS \\\n  -H \\\n  Authorization: Bearer $ZEN_API_TOKEN\
+          \ \\\n  -H \\\n  Content-Type: application/json \\\n  \"https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters/{cluster_id}/destinations\""
+      - lang: Python
+        label: Python
+        source: "import os\nimport requests\n\nbase_url = os.environ[\"ZEN_API_BASE\"\
+          ].rstrip(\"/\")\ntoken = os.environ[\"ZEN_API_TOKEN\"]\n\nresponse = requests.get(\n\
+          \    f\"https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters/{cluster_id}/destinations\"\
+          ,\n    headers={\n        \"Authorization\": f\"Bearer {token}\",\n    \
+          \    \"Content-Type\": \"application/json\",\n    },\n    timeout=30,\n\
+          )\nresponse.raise_for_status()\nprint(response.json())"
+      - lang: JavaScript
+        label: JavaScript
+        source: "const baseUrl = process.env.ZEN_API_BASE.replace(/\\/$/, \"\");\n\
+          const token = process.env.ZEN_API_TOKEN;\n\nconst url = baseUrl + path;\n\
+          const response = await fetch(url, {\n  method: \"GET\",\n  headers: {\n\
+          \    Authorization: `Bearer ${token}`,\n    \"Content-Type\": \"application/json\"\
+          ,\n  },\n});\n\nif (!response.ok) {\n  throw new Error(`Request failed:\
+          \ ${response.status} ${await response.text()}`);\n}\n\nconsole.log(await\
+          \ response.json());"
     post:
       tags:
       - CRDs
@@ -406,6 +672,29 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Destination'
+      x-codeSamples:
+      - lang: curl
+        label: curl
+        source: "curl \\\n  -sS \\\n  -X \\\n  POST \\\n  -H \\\n  Authorization:\
+          \ Bearer $ZEN_API_TOKEN \\\n  -H \\\n  Content-Type: application/json \\\
+          \n  \"https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters/{cluster_id}/destinations\""
+      - lang: Python
+        label: Python
+        source: "import os\nimport requests\n\nbase_url = os.environ[\"ZEN_API_BASE\"\
+          ].rstrip(\"/\")\ntoken = os.environ[\"ZEN_API_TOKEN\"]\n\nresponse = requests.post(\n\
+          \    f\"https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters/{cluster_id}/destinations\"\
+          ,\n    headers={\n        \"Authorization\": f\"Bearer {token}\",\n    \
+          \    \"Content-Type\": \"application/json\",\n    },\n    timeout=30,\n\
+          )\nresponse.raise_for_status()\nprint(response.json())"
+      - lang: JavaScript
+        label: JavaScript
+        source: "const baseUrl = process.env.ZEN_API_BASE.replace(/\\/$/, \"\");\n\
+          const token = process.env.ZEN_API_TOKEN;\n\nconst url = baseUrl + path;\n\
+          const response = await fetch(url, {\n  method: \"POST\",\n  headers: {\n\
+          \    Authorization: `Bearer ${token}`,\n    \"Content-Type\": \"application/json\"\
+          ,\n  },\n});\n\nif (!response.ok) {\n  throw new Error(`Request failed:\
+          \ ${response.status} ${await response.text()}`);\n}\n\nconsole.log(await\
+          \ response.json());"
   /tenants/{tenant_id}/clusters/{cluster_id}/destinations/{destination_id}:
     get:
       tags:
@@ -439,6 +728,28 @@ paths:
                 $ref: '#/components/schemas/Destination'
         '404':
           $ref: '#/components/responses/NotFound'
+      x-codeSamples:
+      - lang: curl
+        label: curl
+        source: "curl \\\n  -sS \\\n  -H \\\n  Authorization: Bearer $ZEN_API_TOKEN\
+          \ \\\n  -H \\\n  Content-Type: application/json \\\n  \"https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters/{cluster_id}/destinations/{destination_id}\""
+      - lang: Python
+        label: Python
+        source: "import os\nimport requests\n\nbase_url = os.environ[\"ZEN_API_BASE\"\
+          ].rstrip(\"/\")\ntoken = os.environ[\"ZEN_API_TOKEN\"]\n\nresponse = requests.get(\n\
+          \    f\"https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters/{cluster_id}/destinations/{destination_id}\"\
+          ,\n    headers={\n        \"Authorization\": f\"Bearer {token}\",\n    \
+          \    \"Content-Type\": \"application/json\",\n    },\n    timeout=30,\n\
+          )\nresponse.raise_for_status()\nprint(response.json())"
+      - lang: JavaScript
+        label: JavaScript
+        source: "const baseUrl = process.env.ZEN_API_BASE.replace(/\\/$/, \"\");\n\
+          const token = process.env.ZEN_API_TOKEN;\n\nconst url = baseUrl + path;\n\
+          const response = await fetch(url, {\n  method: \"GET\",\n  headers: {\n\
+          \    Authorization: `Bearer ${token}`,\n    \"Content-Type\": \"application/json\"\
+          ,\n  },\n});\n\nif (!response.ok) {\n  throw new Error(`Request failed:\
+          \ ${response.status} ${await response.text()}`);\n}\n\nconsole.log(await\
+          \ response.json());"
     put:
       tags:
       - CRDs
@@ -477,6 +788,29 @@ paths:
                 $ref: '#/components/schemas/Destination'
         '404':
           $ref: '#/components/responses/NotFound'
+      x-codeSamples:
+      - lang: curl
+        label: curl
+        source: "curl \\\n  -sS \\\n  -X \\\n  PUT \\\n  -H \\\n  Authorization: Bearer\
+          \ $ZEN_API_TOKEN \\\n  -H \\\n  Content-Type: application/json \\\n  \"\
+          https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters/{cluster_id}/destinations/{destination_id}\""
+      - lang: Python
+        label: Python
+        source: "import os\nimport requests\n\nbase_url = os.environ[\"ZEN_API_BASE\"\
+          ].rstrip(\"/\")\ntoken = os.environ[\"ZEN_API_TOKEN\"]\n\nresponse = requests.put(\n\
+          \    f\"https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters/{cluster_id}/destinations/{destination_id}\"\
+          ,\n    headers={\n        \"Authorization\": f\"Bearer {token}\",\n    \
+          \    \"Content-Type\": \"application/json\",\n    },\n    timeout=30,\n\
+          )\nresponse.raise_for_status()\nprint(response.json())"
+      - lang: JavaScript
+        label: JavaScript
+        source: "const baseUrl = process.env.ZEN_API_BASE.replace(/\\/$/, \"\");\n\
+          const token = process.env.ZEN_API_TOKEN;\n\nconst url = baseUrl + path;\n\
+          const response = await fetch(url, {\n  method: \"PUT\",\n  headers: {\n\
+          \    Authorization: `Bearer ${token}`,\n    \"Content-Type\": \"application/json\"\
+          ,\n  },\n});\n\nif (!response.ok) {\n  throw new Error(`Request failed:\
+          \ ${response.status} ${await response.text()}`);\n}\n\nconsole.log(await\
+          \ response.json());"
     delete:
       tags:
       - CRDs
@@ -505,6 +839,29 @@ paths:
           description: Destination deleted
         '404':
           $ref: '#/components/responses/NotFound'
+      x-codeSamples:
+      - lang: curl
+        label: curl
+        source: "curl \\\n  -sS \\\n  -X \\\n  DELETE \\\n  -H \\\n  Authorization:\
+          \ Bearer $ZEN_API_TOKEN \\\n  -H \\\n  Content-Type: application/json \\\
+          \n  \"https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters/{cluster_id}/destinations/{destination_id}\""
+      - lang: Python
+        label: Python
+        source: "import os\nimport requests\n\nbase_url = os.environ[\"ZEN_API_BASE\"\
+          ].rstrip(\"/\")\ntoken = os.environ[\"ZEN_API_TOKEN\"]\n\nresponse = requests.delete(\n\
+          \    f\"https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters/{cluster_id}/destinations/{destination_id}\"\
+          ,\n    headers={\n        \"Authorization\": f\"Bearer {token}\",\n    \
+          \    \"Content-Type\": \"application/json\",\n    },\n    timeout=30,\n\
+          )\nresponse.raise_for_status()\nprint(response.json())"
+      - lang: JavaScript
+        label: JavaScript
+        source: "const baseUrl = process.env.ZEN_API_BASE.replace(/\\/$/, \"\");\n\
+          const token = process.env.ZEN_API_TOKEN;\n\nconst url = baseUrl + path;\n\
+          const response = await fetch(url, {\n  method: \"DELETE\",\n  headers: {\n\
+          \    Authorization: `Bearer ${token}`,\n    \"Content-Type\": \"application/json\"\
+          ,\n  },\n});\n\nif (!response.ok) {\n  throw new Error(`Request failed:\
+          \ ${response.status} ${await response.text()}`);\n}\n\nconsole.log(await\
+          \ response.json());"
   /tenants/{tenant_id}/clusters/{cluster_id}/delivery-flows:
     get:
       tags:
@@ -536,6 +893,28 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/DeliveryFlow'
+      x-codeSamples:
+      - lang: curl
+        label: curl
+        source: "curl \\\n  -sS \\\n  -H \\\n  Authorization: Bearer $ZEN_API_TOKEN\
+          \ \\\n  -H \\\n  Content-Type: application/json \\\n  \"https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters/{cluster_id}/delivery-flows\""
+      - lang: Python
+        label: Python
+        source: "import os\nimport requests\n\nbase_url = os.environ[\"ZEN_API_BASE\"\
+          ].rstrip(\"/\")\ntoken = os.environ[\"ZEN_API_TOKEN\"]\n\nresponse = requests.get(\n\
+          \    f\"https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters/{cluster_id}/delivery-flows\"\
+          ,\n    headers={\n        \"Authorization\": f\"Bearer {token}\",\n    \
+          \    \"Content-Type\": \"application/json\",\n    },\n    timeout=30,\n\
+          )\nresponse.raise_for_status()\nprint(response.json())"
+      - lang: JavaScript
+        label: JavaScript
+        source: "const baseUrl = process.env.ZEN_API_BASE.replace(/\\/$/, \"\");\n\
+          const token = process.env.ZEN_API_TOKEN;\n\nconst url = baseUrl + path;\n\
+          const response = await fetch(url, {\n  method: \"GET\",\n  headers: {\n\
+          \    Authorization: `Bearer ${token}`,\n    \"Content-Type\": \"application/json\"\
+          ,\n  },\n});\n\nif (!response.ok) {\n  throw new Error(`Request failed:\
+          \ ${response.status} ${await response.text()}`);\n}\n\nconsole.log(await\
+          \ response.json());"
     post:
       tags:
       - CRDs
@@ -567,6 +946,29 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/DeliveryFlow'
+      x-codeSamples:
+      - lang: curl
+        label: curl
+        source: "curl \\\n  -sS \\\n  -X \\\n  POST \\\n  -H \\\n  Authorization:\
+          \ Bearer $ZEN_API_TOKEN \\\n  -H \\\n  Content-Type: application/json \\\
+          \n  \"https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters/{cluster_id}/delivery-flows\""
+      - lang: Python
+        label: Python
+        source: "import os\nimport requests\n\nbase_url = os.environ[\"ZEN_API_BASE\"\
+          ].rstrip(\"/\")\ntoken = os.environ[\"ZEN_API_TOKEN\"]\n\nresponse = requests.post(\n\
+          \    f\"https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters/{cluster_id}/delivery-flows\"\
+          ,\n    headers={\n        \"Authorization\": f\"Bearer {token}\",\n    \
+          \    \"Content-Type\": \"application/json\",\n    },\n    timeout=30,\n\
+          )\nresponse.raise_for_status()\nprint(response.json())"
+      - lang: JavaScript
+        label: JavaScript
+        source: "const baseUrl = process.env.ZEN_API_BASE.replace(/\\/$/, \"\");\n\
+          const token = process.env.ZEN_API_TOKEN;\n\nconst url = baseUrl + path;\n\
+          const response = await fetch(url, {\n  method: \"POST\",\n  headers: {\n\
+          \    Authorization: `Bearer ${token}`,\n    \"Content-Type\": \"application/json\"\
+          ,\n  },\n});\n\nif (!response.ok) {\n  throw new Error(`Request failed:\
+          \ ${response.status} ${await response.text()}`);\n}\n\nconsole.log(await\
+          \ response.json());"
   /tenants/{tenant_id}/clusters/{cluster_id}/delivery-flows/{flow_id}:
     get:
       tags:
@@ -600,6 +1002,28 @@ paths:
                 $ref: '#/components/schemas/DeliveryFlow'
         '404':
           $ref: '#/components/responses/NotFound'
+      x-codeSamples:
+      - lang: curl
+        label: curl
+        source: "curl \\\n  -sS \\\n  -H \\\n  Authorization: Bearer $ZEN_API_TOKEN\
+          \ \\\n  -H \\\n  Content-Type: application/json \\\n  \"https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters/{cluster_id}/delivery-flows/{flow_id}\""
+      - lang: Python
+        label: Python
+        source: "import os\nimport requests\n\nbase_url = os.environ[\"ZEN_API_BASE\"\
+          ].rstrip(\"/\")\ntoken = os.environ[\"ZEN_API_TOKEN\"]\n\nresponse = requests.get(\n\
+          \    f\"https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters/{cluster_id}/delivery-flows/{flow_id}\"\
+          ,\n    headers={\n        \"Authorization\": f\"Bearer {token}\",\n    \
+          \    \"Content-Type\": \"application/json\",\n    },\n    timeout=30,\n\
+          )\nresponse.raise_for_status()\nprint(response.json())"
+      - lang: JavaScript
+        label: JavaScript
+        source: "const baseUrl = process.env.ZEN_API_BASE.replace(/\\/$/, \"\");\n\
+          const token = process.env.ZEN_API_TOKEN;\n\nconst url = baseUrl + path;\n\
+          const response = await fetch(url, {\n  method: \"GET\",\n  headers: {\n\
+          \    Authorization: `Bearer ${token}`,\n    \"Content-Type\": \"application/json\"\
+          ,\n  },\n});\n\nif (!response.ok) {\n  throw new Error(`Request failed:\
+          \ ${response.status} ${await response.text()}`);\n}\n\nconsole.log(await\
+          \ response.json());"
     put:
       tags:
       - CRDs
@@ -638,6 +1062,29 @@ paths:
                 $ref: '#/components/schemas/DeliveryFlow'
         '404':
           $ref: '#/components/responses/NotFound'
+      x-codeSamples:
+      - lang: curl
+        label: curl
+        source: "curl \\\n  -sS \\\n  -X \\\n  PUT \\\n  -H \\\n  Authorization: Bearer\
+          \ $ZEN_API_TOKEN \\\n  -H \\\n  Content-Type: application/json \\\n  \"\
+          https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters/{cluster_id}/delivery-flows/{flow_id}\""
+      - lang: Python
+        label: Python
+        source: "import os\nimport requests\n\nbase_url = os.environ[\"ZEN_API_BASE\"\
+          ].rstrip(\"/\")\ntoken = os.environ[\"ZEN_API_TOKEN\"]\n\nresponse = requests.put(\n\
+          \    f\"https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters/{cluster_id}/delivery-flows/{flow_id}\"\
+          ,\n    headers={\n        \"Authorization\": f\"Bearer {token}\",\n    \
+          \    \"Content-Type\": \"application/json\",\n    },\n    timeout=30,\n\
+          )\nresponse.raise_for_status()\nprint(response.json())"
+      - lang: JavaScript
+        label: JavaScript
+        source: "const baseUrl = process.env.ZEN_API_BASE.replace(/\\/$/, \"\");\n\
+          const token = process.env.ZEN_API_TOKEN;\n\nconst url = baseUrl + path;\n\
+          const response = await fetch(url, {\n  method: \"PUT\",\n  headers: {\n\
+          \    Authorization: `Bearer ${token}`,\n    \"Content-Type\": \"application/json\"\
+          ,\n  },\n});\n\nif (!response.ok) {\n  throw new Error(`Request failed:\
+          \ ${response.status} ${await response.text()}`);\n}\n\nconsole.log(await\
+          \ response.json());"
     delete:
       tags:
       - CRDs
@@ -666,6 +1113,29 @@ paths:
           description: Delivery flow deleted
         '404':
           $ref: '#/components/responses/NotFound'
+      x-codeSamples:
+      - lang: curl
+        label: curl
+        source: "curl \\\n  -sS \\\n  -X \\\n  DELETE \\\n  -H \\\n  Authorization:\
+          \ Bearer $ZEN_API_TOKEN \\\n  -H \\\n  Content-Type: application/json \\\
+          \n  \"https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters/{cluster_id}/delivery-flows/{flow_id}\""
+      - lang: Python
+        label: Python
+        source: "import os\nimport requests\n\nbase_url = os.environ[\"ZEN_API_BASE\"\
+          ].rstrip(\"/\")\ntoken = os.environ[\"ZEN_API_TOKEN\"]\n\nresponse = requests.delete(\n\
+          \    f\"https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters/{cluster_id}/delivery-flows/{flow_id}\"\
+          ,\n    headers={\n        \"Authorization\": f\"Bearer {token}\",\n    \
+          \    \"Content-Type\": \"application/json\",\n    },\n    timeout=30,\n\
+          )\nresponse.raise_for_status()\nprint(response.json())"
+      - lang: JavaScript
+        label: JavaScript
+        source: "const baseUrl = process.env.ZEN_API_BASE.replace(/\\/$/, \"\");\n\
+          const token = process.env.ZEN_API_TOKEN;\n\nconst url = baseUrl + path;\n\
+          const response = await fetch(url, {\n  method: \"DELETE\",\n  headers: {\n\
+          \    Authorization: `Bearer ${token}`,\n    \"Content-Type\": \"application/json\"\
+          ,\n  },\n});\n\nif (!response.ok) {\n  throw new Error(`Request failed:\
+          \ ${response.status} ${await response.text()}`);\n}\n\nconsole.log(await\
+          \ response.json());"
   /bridge/tenants/{tenant_id}/clusters/{cluster_id}/channels:
     get:
       tags:
@@ -699,6 +1169,28 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/Channel'
+      x-codeSamples:
+      - lang: curl
+        label: curl
+        source: "curl \\\n  -sS \\\n  -H \\\n  Authorization: Bearer $ZEN_API_TOKEN\
+          \ \\\n  -H \\\n  Content-Type: application/json \\\n  \"https://api.zen-mesh.io/v1/bridge/tenants/{tenant_id}/clusters/{cluster_id}/channels\""
+      - lang: Python
+        label: Python
+        source: "import os\nimport requests\n\nbase_url = os.environ[\"ZEN_API_BASE\"\
+          ].rstrip(\"/\")\ntoken = os.environ[\"ZEN_API_TOKEN\"]\n\nresponse = requests.get(\n\
+          \    f\"https://api.zen-mesh.io/v1/bridge/tenants/{tenant_id}/clusters/{cluster_id}/channels\"\
+          ,\n    headers={\n        \"Authorization\": f\"Bearer {token}\",\n    \
+          \    \"Content-Type\": \"application/json\",\n    },\n    timeout=30,\n\
+          )\nresponse.raise_for_status()\nprint(response.json())"
+      - lang: JavaScript
+        label: JavaScript
+        source: "const baseUrl = process.env.ZEN_API_BASE.replace(/\\/$/, \"\");\n\
+          const token = process.env.ZEN_API_TOKEN;\n\nconst url = baseUrl + path;\n\
+          const response = await fetch(url, {\n  method: \"GET\",\n  headers: {\n\
+          \    Authorization: `Bearer ${token}`,\n    \"Content-Type\": \"application/json\"\
+          ,\n  },\n});\n\nif (!response.ok) {\n  throw new Error(`Request failed:\
+          \ ${response.status} ${await response.text()}`);\n}\n\nconsole.log(await\
+          \ response.json());"
     post:
       tags:
       - Channels
@@ -732,6 +1224,29 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Channel'
+      x-codeSamples:
+      - lang: curl
+        label: curl
+        source: "curl \\\n  -sS \\\n  -X \\\n  POST \\\n  -H \\\n  Authorization:\
+          \ Bearer $ZEN_API_TOKEN \\\n  -H \\\n  Content-Type: application/json \\\
+          \n  \"https://api.zen-mesh.io/v1/bridge/tenants/{tenant_id}/clusters/{cluster_id}/channels\""
+      - lang: Python
+        label: Python
+        source: "import os\nimport requests\n\nbase_url = os.environ[\"ZEN_API_BASE\"\
+          ].rstrip(\"/\")\ntoken = os.environ[\"ZEN_API_TOKEN\"]\n\nresponse = requests.post(\n\
+          \    f\"https://api.zen-mesh.io/v1/bridge/tenants/{tenant_id}/clusters/{cluster_id}/channels\"\
+          ,\n    headers={\n        \"Authorization\": f\"Bearer {token}\",\n    \
+          \    \"Content-Type\": \"application/json\",\n    },\n    timeout=30,\n\
+          )\nresponse.raise_for_status()\nprint(response.json())"
+      - lang: JavaScript
+        label: JavaScript
+        source: "const baseUrl = process.env.ZEN_API_BASE.replace(/\\/$/, \"\");\n\
+          const token = process.env.ZEN_API_TOKEN;\n\nconst url = baseUrl + path;\n\
+          const response = await fetch(url, {\n  method: \"POST\",\n  headers: {\n\
+          \    Authorization: `Bearer ${token}`,\n    \"Content-Type\": \"application/json\"\
+          ,\n  },\n});\n\nif (!response.ok) {\n  throw new Error(`Request failed:\
+          \ ${response.status} ${await response.text()}`);\n}\n\nconsole.log(await\
+          \ response.json());"
   /bridge/tenants/{tenant_id}/clusters/{cluster_id}/channels/{channel_id}:
     get:
       tags:
@@ -767,6 +1282,28 @@ paths:
                 $ref: '#/components/schemas/Channel'
         '404':
           $ref: '#/components/responses/NotFound'
+      x-codeSamples:
+      - lang: curl
+        label: curl
+        source: "curl \\\n  -sS \\\n  -H \\\n  Authorization: Bearer $ZEN_API_TOKEN\
+          \ \\\n  -H \\\n  Content-Type: application/json \\\n  \"https://api.zen-mesh.io/v1/bridge/tenants/{tenant_id}/clusters/{cluster_id}/channels/{channel_id}\""
+      - lang: Python
+        label: Python
+        source: "import os\nimport requests\n\nbase_url = os.environ[\"ZEN_API_BASE\"\
+          ].rstrip(\"/\")\ntoken = os.environ[\"ZEN_API_TOKEN\"]\n\nresponse = requests.get(\n\
+          \    f\"https://api.zen-mesh.io/v1/bridge/tenants/{tenant_id}/clusters/{cluster_id}/channels/{channel_id}\"\
+          ,\n    headers={\n        \"Authorization\": f\"Bearer {token}\",\n    \
+          \    \"Content-Type\": \"application/json\",\n    },\n    timeout=30,\n\
+          )\nresponse.raise_for_status()\nprint(response.json())"
+      - lang: JavaScript
+        label: JavaScript
+        source: "const baseUrl = process.env.ZEN_API_BASE.replace(/\\/$/, \"\");\n\
+          const token = process.env.ZEN_API_TOKEN;\n\nconst url = baseUrl + path;\n\
+          const response = await fetch(url, {\n  method: \"GET\",\n  headers: {\n\
+          \    Authorization: `Bearer ${token}`,\n    \"Content-Type\": \"application/json\"\
+          ,\n  },\n});\n\nif (!response.ok) {\n  throw new Error(`Request failed:\
+          \ ${response.status} ${await response.text()}`);\n}\n\nconsole.log(await\
+          \ response.json());"
     delete:
       tags:
       - Channels
@@ -797,6 +1334,29 @@ paths:
           description: Channel deleted
         '404':
           $ref: '#/components/responses/NotFound'
+      x-codeSamples:
+      - lang: curl
+        label: curl
+        source: "curl \\\n  -sS \\\n  -X \\\n  DELETE \\\n  -H \\\n  Authorization:\
+          \ Bearer $ZEN_API_TOKEN \\\n  -H \\\n  Content-Type: application/json \\\
+          \n  \"https://api.zen-mesh.io/v1/bridge/tenants/{tenant_id}/clusters/{cluster_id}/channels/{channel_id}\""
+      - lang: Python
+        label: Python
+        source: "import os\nimport requests\n\nbase_url = os.environ[\"ZEN_API_BASE\"\
+          ].rstrip(\"/\")\ntoken = os.environ[\"ZEN_API_TOKEN\"]\n\nresponse = requests.delete(\n\
+          \    f\"https://api.zen-mesh.io/v1/bridge/tenants/{tenant_id}/clusters/{cluster_id}/channels/{channel_id}\"\
+          ,\n    headers={\n        \"Authorization\": f\"Bearer {token}\",\n    \
+          \    \"Content-Type\": \"application/json\",\n    },\n    timeout=30,\n\
+          )\nresponse.raise_for_status()\nprint(response.json())"
+      - lang: JavaScript
+        label: JavaScript
+        source: "const baseUrl = process.env.ZEN_API_BASE.replace(/\\/$/, \"\");\n\
+          const token = process.env.ZEN_API_TOKEN;\n\nconst url = baseUrl + path;\n\
+          const response = await fetch(url, {\n  method: \"DELETE\",\n  headers: {\n\
+          \    Authorization: `Bearer ${token}`,\n    \"Content-Type\": \"application/json\"\
+          ,\n  },\n});\n\nif (!response.ok) {\n  throw new Error(`Request failed:\
+          \ ${response.status} ${await response.text()}`);\n}\n\nconsole.log(await\
+          \ response.json());"
   /webhooks/slack:
     post:
       tags:
@@ -816,6 +1376,29 @@ paths:
           description: Webhook processed
         '401':
           $ref: '#/components/responses/Unauthorized'
+      x-codeSamples:
+      - lang: curl
+        label: curl
+        source: "curl \\\n  -sS \\\n  -X \\\n  POST \\\n  -H \\\n  Authorization:\
+          \ Bearer $ZEN_API_TOKEN \\\n  -H \\\n  Content-Type: application/json \\\
+          \n  \"https://api.zen-mesh.io/v1/webhooks/slack\""
+      - lang: Python
+        label: Python
+        source: "import os\nimport requests\n\nbase_url = os.environ[\"ZEN_API_BASE\"\
+          ].rstrip(\"/\")\ntoken = os.environ[\"ZEN_API_TOKEN\"]\n\nresponse = requests.post(\n\
+          \    f\"https://api.zen-mesh.io/v1/webhooks/slack\",\n    headers={\n  \
+          \      \"Authorization\": f\"Bearer {token}\",\n        \"Content-Type\"\
+          : \"application/json\",\n    },\n    timeout=30,\n)\nresponse.raise_for_status()\n\
+          print(response.json())"
+      - lang: JavaScript
+        label: JavaScript
+        source: "const baseUrl = process.env.ZEN_API_BASE.replace(/\\/$/, \"\");\n\
+          const token = process.env.ZEN_API_TOKEN;\n\nconst url = baseUrl + path;\n\
+          const response = await fetch(url, {\n  method: \"POST\",\n  headers: {\n\
+          \    Authorization: `Bearer ${token}`,\n    \"Content-Type\": \"application/json\"\
+          ,\n  },\n});\n\nif (!response.ok) {\n  throw new Error(`Request failed:\
+          \ ${response.status} ${await response.text()}`);\n}\n\nconsole.log(await\
+          \ response.json());"
   /webhooks/servicenow:
     post:
       tags:
@@ -835,6 +1418,29 @@ paths:
           description: Webhook processed
         '401':
           $ref: '#/components/responses/Unauthorized'
+      x-codeSamples:
+      - lang: curl
+        label: curl
+        source: "curl \\\n  -sS \\\n  -X \\\n  POST \\\n  -H \\\n  Authorization:\
+          \ Bearer $ZEN_API_TOKEN \\\n  -H \\\n  Content-Type: application/json \\\
+          \n  \"https://api.zen-mesh.io/v1/webhooks/servicenow\""
+      - lang: Python
+        label: Python
+        source: "import os\nimport requests\n\nbase_url = os.environ[\"ZEN_API_BASE\"\
+          ].rstrip(\"/\")\ntoken = os.environ[\"ZEN_API_TOKEN\"]\n\nresponse = requests.post(\n\
+          \    f\"https://api.zen-mesh.io/v1/webhooks/servicenow\",\n    headers={\n\
+          \        \"Authorization\": f\"Bearer {token}\",\n        \"Content-Type\"\
+          : \"application/json\",\n    },\n    timeout=30,\n)\nresponse.raise_for_status()\n\
+          print(response.json())"
+      - lang: JavaScript
+        label: JavaScript
+        source: "const baseUrl = process.env.ZEN_API_BASE.replace(/\\/$/, \"\");\n\
+          const token = process.env.ZEN_API_TOKEN;\n\nconst url = baseUrl + path;\n\
+          const response = await fetch(url, {\n  method: \"POST\",\n  headers: {\n\
+          \    Authorization: `Bearer ${token}`,\n    \"Content-Type\": \"application/json\"\
+          ,\n  },\n});\n\nif (!response.ok) {\n  throw new Error(`Request failed:\
+          \ ${response.status} ${await response.text()}`);\n}\n\nconsole.log(await\
+          \ response.json());"
   /webhooks/jira:
     post:
       tags:
@@ -854,6 +1460,29 @@ paths:
           description: Webhook processed
         '401':
           $ref: '#/components/responses/Unauthorized'
+      x-codeSamples:
+      - lang: curl
+        label: curl
+        source: "curl \\\n  -sS \\\n  -X \\\n  POST \\\n  -H \\\n  Authorization:\
+          \ Bearer $ZEN_API_TOKEN \\\n  -H \\\n  Content-Type: application/json \\\
+          \n  \"https://api.zen-mesh.io/v1/webhooks/jira\""
+      - lang: Python
+        label: Python
+        source: "import os\nimport requests\n\nbase_url = os.environ[\"ZEN_API_BASE\"\
+          ].rstrip(\"/\")\ntoken = os.environ[\"ZEN_API_TOKEN\"]\n\nresponse = requests.post(\n\
+          \    f\"https://api.zen-mesh.io/v1/webhooks/jira\",\n    headers={\n   \
+          \     \"Authorization\": f\"Bearer {token}\",\n        \"Content-Type\"\
+          : \"application/json\",\n    },\n    timeout=30,\n)\nresponse.raise_for_status()\n\
+          print(response.json())"
+      - lang: JavaScript
+        label: JavaScript
+        source: "const baseUrl = process.env.ZEN_API_BASE.replace(/\\/$/, \"\");\n\
+          const token = process.env.ZEN_API_TOKEN;\n\nconst url = baseUrl + path;\n\
+          const response = await fetch(url, {\n  method: \"POST\",\n  headers: {\n\
+          \    Authorization: `Bearer ${token}`,\n    \"Content-Type\": \"application/json\"\
+          ,\n  },\n});\n\nif (!response.ok) {\n  throw new Error(`Request failed:\
+          \ ${response.status} ${await response.text()}`);\n}\n\nconsole.log(await\
+          \ response.json());"
   /webhooks/datadog:
     post:
       tags:
@@ -873,6 +1502,29 @@ paths:
           description: Webhook processed
         '401':
           $ref: '#/components/responses/Unauthorized'
+      x-codeSamples:
+      - lang: curl
+        label: curl
+        source: "curl \\\n  -sS \\\n  -X \\\n  POST \\\n  -H \\\n  Authorization:\
+          \ Bearer $ZEN_API_TOKEN \\\n  -H \\\n  Content-Type: application/json \\\
+          \n  \"https://api.zen-mesh.io/v1/webhooks/datadog\""
+      - lang: Python
+        label: Python
+        source: "import os\nimport requests\n\nbase_url = os.environ[\"ZEN_API_BASE\"\
+          ].rstrip(\"/\")\ntoken = os.environ[\"ZEN_API_TOKEN\"]\n\nresponse = requests.post(\n\
+          \    f\"https://api.zen-mesh.io/v1/webhooks/datadog\",\n    headers={\n\
+          \        \"Authorization\": f\"Bearer {token}\",\n        \"Content-Type\"\
+          : \"application/json\",\n    },\n    timeout=30,\n)\nresponse.raise_for_status()\n\
+          print(response.json())"
+      - lang: JavaScript
+        label: JavaScript
+        source: "const baseUrl = process.env.ZEN_API_BASE.replace(/\\/$/, \"\");\n\
+          const token = process.env.ZEN_API_TOKEN;\n\nconst url = baseUrl + path;\n\
+          const response = await fetch(url, {\n  method: \"POST\",\n  headers: {\n\
+          \    Authorization: `Bearer ${token}`,\n    \"Content-Type\": \"application/json\"\
+          ,\n  },\n});\n\nif (!response.ok) {\n  throw new Error(`Request failed:\
+          \ ${response.status} ${await response.text()}`);\n}\n\nconsole.log(await\
+          \ response.json());"
   /webhooks/pagerduty:
     post:
       tags:
@@ -892,6 +1544,29 @@ paths:
           description: Webhook processed
         '401':
           $ref: '#/components/responses/Unauthorized'
+      x-codeSamples:
+      - lang: curl
+        label: curl
+        source: "curl \\\n  -sS \\\n  -X \\\n  POST \\\n  -H \\\n  Authorization:\
+          \ Bearer $ZEN_API_TOKEN \\\n  -H \\\n  Content-Type: application/json \\\
+          \n  \"https://api.zen-mesh.io/v1/webhooks/pagerduty\""
+      - lang: Python
+        label: Python
+        source: "import os\nimport requests\n\nbase_url = os.environ[\"ZEN_API_BASE\"\
+          ].rstrip(\"/\")\ntoken = os.environ[\"ZEN_API_TOKEN\"]\n\nresponse = requests.post(\n\
+          \    f\"https://api.zen-mesh.io/v1/webhooks/pagerduty\",\n    headers={\n\
+          \        \"Authorization\": f\"Bearer {token}\",\n        \"Content-Type\"\
+          : \"application/json\",\n    },\n    timeout=30,\n)\nresponse.raise_for_status()\n\
+          print(response.json())"
+      - lang: JavaScript
+        label: JavaScript
+        source: "const baseUrl = process.env.ZEN_API_BASE.replace(/\\/$/, \"\");\n\
+          const token = process.env.ZEN_API_TOKEN;\n\nconst url = baseUrl + path;\n\
+          const response = await fetch(url, {\n  method: \"POST\",\n  headers: {\n\
+          \    Authorization: `Bearer ${token}`,\n    \"Content-Type\": \"application/json\"\
+          ,\n  },\n});\n\nif (!response.ok) {\n  throw new Error(`Request failed:\
+          \ ${response.status} ${await response.text()}`);\n}\n\nconsole.log(await\
+          \ response.json());"
   /integrations:
     get:
       tags:
@@ -912,6 +1587,28 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/Integration'
+      x-codeSamples:
+      - lang: curl
+        label: curl
+        source: "curl \\\n  -sS \\\n  -H \\\n  Authorization: Bearer $ZEN_API_TOKEN\
+          \ \\\n  -H \\\n  Content-Type: application/json \\\n  \"https://api.zen-mesh.io/v1/integrations\""
+      - lang: Python
+        label: Python
+        source: "import os\nimport requests\n\nbase_url = os.environ[\"ZEN_API_BASE\"\
+          ].rstrip(\"/\")\ntoken = os.environ[\"ZEN_API_TOKEN\"]\n\nresponse = requests.get(\n\
+          \    f\"https://api.zen-mesh.io/v1/integrations\",\n    headers={\n    \
+          \    \"Authorization\": f\"Bearer {token}\",\n        \"Content-Type\":\
+          \ \"application/json\",\n    },\n    timeout=30,\n)\nresponse.raise_for_status()\n\
+          print(response.json())"
+      - lang: JavaScript
+        label: JavaScript
+        source: "const baseUrl = process.env.ZEN_API_BASE.replace(/\\/$/, \"\");\n\
+          const token = process.env.ZEN_API_TOKEN;\n\nconst url = baseUrl + path;\n\
+          const response = await fetch(url, {\n  method: \"GET\",\n  headers: {\n\
+          \    Authorization: `Bearer ${token}`,\n    \"Content-Type\": \"application/json\"\
+          ,\n  },\n});\n\nif (!response.ok) {\n  throw new Error(`Request failed:\
+          \ ${response.status} ${await response.text()}`);\n}\n\nconsole.log(await\
+          \ response.json());"
 securitySchemes:
   tenantAuth:
     type: http

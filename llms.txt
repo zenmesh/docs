@@ -1,7 +1,14 @@
 
 ---
 
-## API Documentation
+## API Doc (expanded)
+
+
+
+docs/api/quickstart - API Quickstart - Get started with the Zen Mesh API with curl, Python, and JavaScript examples
+docs/api/authentication - Authentication - How to authenticate with API tokens and handle 401 errors
+docs/api/errors - Common API Errors - Reference for HTTP status codes and error handling
+
 
 - [OpenAPI Reference](./api/openapi-reference) - Interactive API reference rendered from the canonical OpenAPI specification
   - Live YAML: https://docs.zen-mesh.io/openapi/zen-mesh-user-api.v1.yaml
