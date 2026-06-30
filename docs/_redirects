@@ -122,4 +122,6 @@
 
 /start-here/what-is-zen-mesh /docs/start-here/what-is-zen-mesh 301!
 /start-here/current-status /docs/start-here/current-status 301!
-/start-here/who-should-use-zen-mesh /docs/start-here/who-should-use-zen-mesh 301!
+/start-here/who-should-use-zen-mesh /docs/start-here/who-should-use-zen-mesh 301!# OpenAPI Reference
+/openapi-reference /openapi-reference.html 302
+

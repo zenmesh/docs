@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenAPI Reference</title>
+    <link rel="stylesheet" href="/assets/css/styles.1b067cd1.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #f8f9fa;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        h1 {
+            color: #24292f;
+            border-bottom: 2px solid #d0d7de;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .subtitle {
+            color: #57606a;
+            margin-bottom: 30px;
+        }
+        .links {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .link-item {
+            margin: 8px 0;
+        }
+        .link-item a {
+            color: #0969da;
+            text-decoration: none;
+        }
+        .link-item a:hover {
+            text-decoration: underline;
+        }
+        iframe {
+            width: 100%;
+            height: calc(100vh - 200px);
+            border: none;
+            background: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>OpenAPI Reference</h1>
+        <p class="subtitle">Zen Mesh provides an interactive API reference rendered from our canonical OpenAPI specification.</p>
+        
+        <div class="links">
+            <div class="link-item"><strong>Overview:</strong> This page renders the <a href="/openapi/zen-mesh-user-api.v1.yaml" target="_blank">Zen Mesh User API</a> specification using the pinned <code>@scalar/api-reference</code> renderer.</p>
+        </div>
+        
+        <div class="links">
+            <div class="link-item"><strong>Spec URLs:</strong></div>
+            <div class="link-item"><a href="/openapi/zen-mesh-user-api.v1.yaml" target="_blank">YAML: zen-mesh-user-api.v1.yaml</a></div>
+            <div class="link-item"><a href="/openapi/zen-mesh-user-api.v1.json" target="_blank">JSON: zen-mesh-user-api.v1.json</a></div>
+        </div>
+        
+        <h2>API Coverage</h2>
+        <div class="links">
+            <ul>
+                <li><strong>Health:</strong> /health, /ready</li>
+                <li><strong>Tenant management:</strong> /tenants/{tenant_id}</li>
+                <li><strong>Plane operations:</strong> /tenants/{tenant_id}/clusters/* (legacy path; in product surfaces, called "planes")</li>
+                <li><strong>CRD management:</strong> /tenants/{tenant_id}/clusters/{cluster_id}/*/*</li>
+                <li><strong>Channel/flow management:</strong> /bridge/tenants/{tenant_id}/clusters/{cluster_id}/channels/*</li>
+                <li><strong>Webhook endpoints:</strong> /webhooks/slack, /webhooks/servicenow, /webhooks/jira, /webhooks/datadog, /webhooks/pagerduty</li>
+                <li><strong>Integrations:</strong> /integrations</li>
+            </ul>
+            <p><em>Note: This is a preview specification. All endpoints are subject to change during the v1-preview period.</em></p>
+        </div>
+        
+        <h2>Authentication</h2>
+        <div class="links">
+            <ul>
+                <li><strong>Tenant Auth:</strong> Bearer JWT token (used by UI and API clients)</li>
+                <li><strong>HMAC Auth:</strong> API key in X-KubeZen-Signature header (plane-originated writes)</li>
+                <li><strong>Bridge Auth:</strong> Bearer JWT token (bridge-only channel management)</li>
+            </ul>
+        </div>
+        
+        <h2>Live API Reference</h2>
+        <p class="subtitle">The OpenAPI specification is rendered using a pinned version of <code>@scalar/api-reference</code> (v1.62.1).</p>
+        <iframe src="https://cdn.jsdelivr.net/npm/@scalar/api-reference@1.62.1"></iframe>
+        
+        <h2>OpenAPI Specification</h2>
+        
+        <h3>YAML Spec</h3>
+        <div class="links">
+            <p>Download the raw YAML specification:</p>
+            <div class="link-item"><a href="/openapi/zen-mesh-user-api.v1.yaml" target="_blank">YAML: zen-mesh-user-api.v1.yaml</a></p>
+            <p><strong>Live URL:</strong> <a href="https://docs.zen-mesh.io/openapi/zen-mesh-user-api.v1.yaml" target="_blank">https://docs.zen-mesh.io/openapi/zen-mesh-user-api.v1.yaml</a></p>
+        </div>
+        
+        <h3>JSON Spec</h3>
+        <div class="links">
+            <p>Download the raw JSON specification:</p>
+            <div class="link-item"><a href="/openapi/zen-mesh-user-api.v1.json" target="_blank">JSON: zen-mesh-user-api.v1.json</a></p>
+            <p><strong>Live URL:</strong> <a href="https://docs.zen-mesh.io/openapi/zen-mesh-user-api.v1.json" target="_blank">https://docs.zen-mesh.io/openapi/zen-mesh-user-api.v1.json</a></p>
+        </div>
+        
+        <h3>Spec Version</h3>
+        <div class="links">
+            <ul>
+                <li>Version: v1-preview</li>
+                <li>OpenAPI: 3.0.3</li>
+                <li>Title: Zen Mesh User API</li>
+                <li>Paths: 19 endpoints</li>
+            </ul>
+        </div>
+        
+        <h2>Related Documentation</h2>
+        <div class="links">
+            <ul>
+                <li><a href="/docs/api/overview">API Overview</a> - Introduction to Zen Mesh APIs</li>
+                <li><a href="/docs/api/authentication">Authentication</a> - Authentication and authorization</li>
+                <li><a href="/docs/api/fabric-adapters">Fabric Adapters API</a> - Adapter management guide</li>
+                <li><a href="/docs/api/quickstart">API Quickstart</a> - Quick start guide</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

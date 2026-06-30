@@ -1,9 +1,12 @@
 openapi: 3.0.3
 info:
   title: Zen Mesh User API
-  description: |
-    Backend API for KubeZen platform - provides CRUD operations for CRDs (Ingester, Destination, DeliveryFlow),
+  description: 'Backend API for KubeZen platform - provides CRUD operations for CRDs
+    (Ingester, Destination, DeliveryFlow),
+
     channel/flow management, tenant management, and webhook endpoints.
+
+    '
   version: 1.0.0
   contact:
     name: KubeZen Team
@@ -11,35 +14,35 @@ info:
   license:
     name: Apache 2.0
     url: https://www.apache.org/licenses/LICENSE-2.0.html
-
 servers:
-  - url: https://api.zen-mesh.io/v1  # Production server
-    description: Production
-  - url: https://staging.api.zen-mesh.io/v1
-    description: Staging
-  - url: https://staging.api.zen-mesh.io/v1
-    description: Local development
-
+- url: https://api.zen-mesh.io/v1
+  description: Production
+- url: https://staging.api.zen-mesh.io/v1
+  description: Staging
+- url: https://staging.api.zen-mesh.io/v1
+  description: Local development
 tags:
-  - name: Health
-    description: Health and readiness checks
-  - name: Tenants
-    description: Tenant management
-  - name: Clusters
-    description: Cluster registration and management
-  - name: CRDs
-    description: CRD management (Ingester, Destination, DeliveryFlow)
-  - name: Channels
-    description: Channel and flow management (bridge-only)
-  - name: Webhooks
-    description: External service webhook endpoints
-  - name: Integrations
-    description: Integration configuration
-
+- name: Health
+  description: Health and readiness checks
+- name: Tenants
+  description: Tenant management
+- name: Planes
+  description: Cluster registration and management
+- name: CRDs
+  description: CRD management (Ingester, Destination, DeliveryFlow)
+- name: Channels
+  description: Channel and flow management (bridge-only)
+- name: Webhooks
+  description: External service webhook endpoints
+- name: Integrations
+  description: Integration configuration
+- name: Planes
+  description: Plane registration and management
 paths:
   /health:
     get:
-      tags: [Health]
+      tags:
+      - Health
       summary: Health check
       operationId: healthCheck
       responses:
@@ -52,13 +55,15 @@ paths:
                 properties:
                   status:
                     type: string
-                    enum: [ok, degraded]
+                    enum:
+                    - ok
+                    - degraded
                   version:
                     type: string
-
   /ready:
     get:
-      tags: [Health]
+      tags:
+      - Health
       summary: Readiness check
       operationId: readinessCheck
       responses:
@@ -71,20 +76,20 @@ paths:
                 properties:
                   ready:
                     type: boolean
-
   /tenants/{tenant_id}:
     get:
-      tags: [Tenants]
+      tags:
+      - Tenants
       summary: Get tenant details
       operationId: getTenant
       parameters:
-        - name: tenant_id
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: tenant_id
+        in: path
+        required: true
+        schema:
+          type: string
       security:
-        - tenantAuth: []
+      - tenantAuth: []
       responses:
         '200':
           description: Tenant details
@@ -95,20 +100,20 @@ paths:
         '404':
           description: Tenant not found
           $ref: '#/components/responses/NotFound'
-
   /tenants/{tenant_id}/clusters:
     get:
-      tags: [Clusters]
-      summary: List clusters for tenant
+      tags:
+      - Clusters
+      summary: Get tenant planes
       operationId: listClusters
       parameters:
-        - name: tenant_id
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: tenant_id
+        in: path
+        required: true
+        schema:
+          type: string
       security:
-        - tenantAuth: []
+      - tenantAuth: []
       responses:
         '200':
           description: List of clusters
@@ -122,17 +127,18 @@ paths:
                     items:
                       $ref: '#/components/schemas/Cluster'
     post:
-      tags: [Clusters]
-      summary: Register a new cluster
+      tags:
+      - Clusters
+      summary: Get tenant planes
       operationId: createCluster
       parameters:
-        - name: tenant_id
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: tenant_id
+        in: path
+        required: true
+        schema:
+          type: string
       security:
-        - tenantAuth: []
+      - tenantAuth: []
       requestBody:
         required: true
         content:
@@ -146,26 +152,28 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Cluster'
-
   /tenants/{tenant_id}/clusters/{cluster_id}:
     get:
-      tags: [Clusters]
-      summary: Get cluster details
+      tags:
+      - Clusters
+      summary: Get plane details
       operationId: getCluster
       parameters:
-        - name: tenant_id
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: cluster_id
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: tenant_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: plane_id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Legacy route parameter for the plane ID. In product surfaces,
+          clusters are called planes.
       security:
-        - tenantAuth: []
-        - hmacAuth: []
+      - tenantAuth: []
+      - hmacAuth: []
       responses:
         '200':
           description: Cluster details
@@ -175,25 +183,25 @@ paths:
                 $ref: '#/components/schemas/Cluster'
         '404':
           $ref: '#/components/responses/NotFound'
-
   /tenants/{tenant_id}/clusters/{cluster_id}/ingesters:
     get:
-      tags: [CRDs]
+      tags:
+      - CRDs
       summary: List ingesters for cluster
       operationId: listIngesters
       parameters:
-        - name: tenant_id
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: cluster_id
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: tenant_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: cluster_id
+        in: path
+        required: true
+        schema:
+          type: string
       security:
-        - tenantAuth: []
+      - tenantAuth: []
       responses:
         '200':
           description: List of ingesters
@@ -207,22 +215,23 @@ paths:
                     items:
                       $ref: '#/components/schemas/Ingester'
     post:
-      tags: [CRDs]
+      tags:
+      - CRDs
       summary: Create an ingester
       operationId: createIngester
       parameters:
-        - name: tenant_id
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: cluster_id
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: tenant_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: cluster_id
+        in: path
+        required: true
+        schema:
+          type: string
       security:
-        - tenantAuth: []
+      - tenantAuth: []
       requestBody:
         required: true
         content:
@@ -236,30 +245,30 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Ingester'
-
   /tenants/{tenant_id}/clusters/{cluster_id}/ingesters/{ingester_id}:
     get:
-      tags: [CRDs]
+      tags:
+      - CRDs
       summary: Get ingester details
       operationId: getIngester
       parameters:
-        - name: tenant_id
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: cluster_id
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: ingester_id
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: tenant_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: cluster_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: ingester_id
+        in: path
+        required: true
+        schema:
+          type: string
       security:
-        - tenantAuth: []
+      - tenantAuth: []
       responses:
         '200':
           description: Ingester details
@@ -270,27 +279,28 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
     put:
-      tags: [CRDs]
+      tags:
+      - CRDs
       summary: Update an ingester
       operationId: updateIngester
       parameters:
-        - name: tenant_id
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: cluster_id
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: ingester_id
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: tenant_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: cluster_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: ingester_id
+        in: path
+        required: true
+        schema:
+          type: string
       security:
-        - tenantAuth: []
+      - tenantAuth: []
       requestBody:
         required: true
         content:
@@ -307,51 +317,52 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
     delete:
-      tags: [CRDs]
+      tags:
+      - CRDs
       summary: Delete an ingester
       operationId: deleteIngester
       parameters:
-        - name: tenant_id
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: cluster_id
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: ingester_id
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: tenant_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: cluster_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: ingester_id
+        in: path
+        required: true
+        schema:
+          type: string
       security:
-        - tenantAuth: []
+      - tenantAuth: []
       responses:
         '204':
           description: Ingester deleted
         '404':
           $ref: '#/components/responses/NotFound'
-
   /tenants/{tenant_id}/clusters/{cluster_id}/destinations:
     get:
-      tags: [CRDs]
+      tags:
+      - CRDs
       summary: List destinations for cluster
       operationId: listDestinations
       parameters:
-        - name: tenant_id
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: cluster_id
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: tenant_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: cluster_id
+        in: path
+        required: true
+        schema:
+          type: string
       security:
-        - tenantAuth: []
+      - tenantAuth: []
       responses:
         '200':
           description: List of destinations
@@ -365,22 +376,23 @@ paths:
                     items:
                       $ref: '#/components/schemas/Destination'
     post:
-      tags: [CRDs]
+      tags:
+      - CRDs
       summary: Create a destination
       operationId: createDestination
       parameters:
-        - name: tenant_id
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: cluster_id
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: tenant_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: cluster_id
+        in: path
+        required: true
+        schema:
+          type: string
       security:
-        - tenantAuth: []
+      - tenantAuth: []
       requestBody:
         required: true
         content:
@@ -394,30 +406,30 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Destination'
-
   /tenants/{tenant_id}/clusters/{cluster_id}/destinations/{destination_id}:
     get:
-      tags: [CRDs]
+      tags:
+      - CRDs
       summary: Get destination details
       operationId: getDestination
       parameters:
-        - name: tenant_id
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: cluster_id
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: destination_id
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: tenant_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: cluster_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: destination_id
+        in: path
+        required: true
+        schema:
+          type: string
       security:
-        - tenantAuth: []
+      - tenantAuth: []
       responses:
         '200':
           description: Destination details
@@ -428,27 +440,28 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
     put:
-      tags: [CRDs]
+      tags:
+      - CRDs
       summary: Update a destination
       operationId: updateDestination
       parameters:
-        - name: tenant_id
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: cluster_id
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: destination_id
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: tenant_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: cluster_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: destination_id
+        in: path
+        required: true
+        schema:
+          type: string
       security:
-        - tenantAuth: []
+      - tenantAuth: []
       requestBody:
         required: true
         content:
@@ -465,51 +478,52 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
     delete:
-      tags: [CRDs]
+      tags:
+      - CRDs
       summary: Delete a destination
       operationId: deleteDestination
       parameters:
-        - name: tenant_id
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: cluster_id
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: destination_id
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: tenant_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: cluster_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: destination_id
+        in: path
+        required: true
+        schema:
+          type: string
       security:
-        - tenantAuth: []
+      - tenantAuth: []
       responses:
         '204':
           description: Destination deleted
         '404':
           $ref: '#/components/responses/NotFound'
-
   /tenants/{tenant_id}/clusters/{cluster_id}/delivery-flows:
     get:
-      tags: [CRDs]
+      tags:
+      - CRDs
       summary: List delivery flows for cluster
       operationId: listDeliveryFlows
       parameters:
-        - name: tenant_id
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: cluster_id
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: tenant_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: cluster_id
+        in: path
+        required: true
+        schema:
+          type: string
       security:
-        - tenantAuth: []
+      - tenantAuth: []
       responses:
         '200':
           description: List of delivery flows
@@ -523,22 +537,23 @@ paths:
                     items:
                       $ref: '#/components/schemas/DeliveryFlow'
     post:
-      tags: [CRDs]
+      tags:
+      - CRDs
       summary: Create a delivery flow
       operationId: createDeliveryFlow
       parameters:
-        - name: tenant_id
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: cluster_id
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: tenant_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: cluster_id
+        in: path
+        required: true
+        schema:
+          type: string
       security:
-        - tenantAuth: []
+      - tenantAuth: []
       requestBody:
         required: true
         content:
@@ -552,30 +567,30 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/DeliveryFlow'
-
   /tenants/{tenant_id}/clusters/{cluster_id}/delivery-flows/{flow_id}:
     get:
-      tags: [CRDs]
+      tags:
+      - CRDs
       summary: Get delivery flow details
       operationId: getDeliveryFlow
       parameters:
-        - name: tenant_id
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: cluster_id
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: flow_id
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: tenant_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: cluster_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: flow_id
+        in: path
+        required: true
+        schema:
+          type: string
       security:
-        - tenantAuth: []
+      - tenantAuth: []
       responses:
         '200':
           description: Delivery flow details
@@ -586,27 +601,28 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
     put:
-      tags: [CRDs]
+      tags:
+      - CRDs
       summary: Update a delivery flow
       operationId: updateDeliveryFlow
       parameters:
-        - name: tenant_id
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: cluster_id
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: flow_id
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: tenant_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: cluster_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: flow_id
+        in: path
+        required: true
+        schema:
+          type: string
       security:
-        - tenantAuth: []
+      - tenantAuth: []
       requestBody:
         required: true
         content:
@@ -623,52 +639,54 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
     delete:
-      tags: [CRDs]
+      tags:
+      - CRDs
       summary: Delete a delivery flow
       operationId: deleteDeliveryFlow
       parameters:
-        - name: tenant_id
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: cluster_id
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: flow_id
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: tenant_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: cluster_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: flow_id
+        in: path
+        required: true
+        schema:
+          type: string
       security:
-        - tenantAuth: []
+      - tenantAuth: []
       responses:
         '204':
           description: Delivery flow deleted
         '404':
           $ref: '#/components/responses/NotFound'
-
-  # Channel Management APIs (bridge-only)
   /bridge/tenants/{tenant_id}/clusters/{cluster_id}/channels:
     get:
-      tags: [Channels]
-      summary: List channels (bridge-only)
+      tags:
+      - Channels
+      summary: List plane channels
       operationId: listChannels
       parameters:
-        - name: tenant_id
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: cluster_id
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: tenant_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: plane_id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Legacy route parameter for the plane ID. In product surfaces,
+          clusters are called planes.
       security:
-        - bridgeAuth: []
+      - bridgeAuth: []
       responses:
         '200':
           description: List of channels
@@ -682,22 +700,25 @@ paths:
                     items:
                       $ref: '#/components/schemas/Channel'
     post:
-      tags: [Channels]
-      summary: Create a channel (bridge-only)
+      tags:
+      - Channels
+      summary: List plane channels
       operationId: createChannel
       parameters:
-        - name: tenant_id
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: cluster_id
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: tenant_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: plane_id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Legacy route parameter for the plane ID. In product surfaces,
+          clusters are called planes.
       security:
-        - bridgeAuth: []
+      - bridgeAuth: []
       requestBody:
         required: true
         content:
@@ -711,30 +732,32 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Channel'
-
   /bridge/tenants/{tenant_id}/clusters/{cluster_id}/channels/{channel_id}:
     get:
-      tags: [Channels]
-      summary: Get channel details (bridge-only)
+      tags:
+      - Channels
+      summary: Get plane channel
       operationId: getChannel
       parameters:
-        - name: tenant_id
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: cluster_id
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: channel_id
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: tenant_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: plane_id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Legacy route parameter for the plane ID. In product surfaces,
+          clusters are called planes.
+      - name: channel_id
+        in: path
+        required: true
+        schema:
+          type: string
       security:
-        - bridgeAuth: []
+      - bridgeAuth: []
       responses:
         '200':
           description: Channel details
@@ -745,41 +768,43 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
     delete:
-      tags: [Channels]
-      summary: Delete a channel (bridge-only)
+      tags:
+      - Channels
+      summary: Get plane channel
       operationId: deleteChannel
       parameters:
-        - name: tenant_id
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: cluster_id
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: channel_id
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: tenant_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: plane_id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Legacy route parameter for the plane ID. In product surfaces,
+          clusters are called planes.
+      - name: channel_id
+        in: path
+        required: true
+        schema:
+          type: string
       security:
-        - bridgeAuth: []
+      - bridgeAuth: []
       responses:
         '204':
           description: Channel deleted
         '404':
           $ref: '#/components/responses/NotFound'
-
-  # Webhook endpoints for external integrations
   /webhooks/slack:
     post:
-      tags: [Webhooks]
+      tags:
+      - Webhooks
       summary: Slack webhook endpoint
       operationId: slackWebhook
       security:
-        - hmacAuth: []
+      - hmacAuth: []
       requestBody:
         required: true
         content:
@@ -791,14 +816,14 @@ paths:
           description: Webhook processed
         '401':
           $ref: '#/components/responses/Unauthorized'
-
   /webhooks/servicenow:
     post:
-      tags: [Webhooks]
+      tags:
+      - Webhooks
       summary: ServiceNow webhook endpoint
       operationId: servicenowWebhook
       security:
-        - hmacAuth: []
+      - hmacAuth: []
       requestBody:
         required: true
         content:
@@ -810,14 +835,14 @@ paths:
           description: Webhook processed
         '401':
           $ref: '#/components/responses/Unauthorized'
-
   /webhooks/jira:
     post:
-      tags: [Webhooks]
+      tags:
+      - Webhooks
       summary: Jira webhook endpoint
       operationId: jiraWebhook
       security:
-        - hmacAuth: []
+      - hmacAuth: []
       requestBody:
         required: true
         content:
@@ -829,14 +854,14 @@ paths:
           description: Webhook processed
         '401':
           $ref: '#/components/responses/Unauthorized'
-
   /webhooks/datadog:
     post:
-      tags: [Webhooks]
+      tags:
+      - Webhooks
       summary: Datadog webhook endpoint
       operationId: datadogWebhook
       security:
-        - hmacAuth: []
+      - hmacAuth: []
       requestBody:
         required: true
         content:
@@ -848,14 +873,14 @@ paths:
           description: Webhook processed
         '401':
           $ref: '#/components/responses/Unauthorized'
-
   /webhooks/pagerduty:
     post:
-      tags: [Webhooks]
+      tags:
+      - Webhooks
       summary: PagerDuty webhook endpoint
       operationId: pagerdutyWebhook
       security:
-        - hmacAuth: []
+      - hmacAuth: []
       requestBody:
         required: true
         content:
@@ -867,14 +892,14 @@ paths:
           description: Webhook processed
         '401':
           $ref: '#/components/responses/Unauthorized'
-
   /integrations:
     get:
-      tags: [Integrations]
+      tags:
+      - Integrations
       summary: List available integrations
       operationId: listIntegrations
       security:
-        - tenantAuth: []
+      - tenantAuth: []
       responses:
         '200':
           description: List of available integrations
@@ -887,7 +912,6 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/Integration'
-
 securitySchemes:
   tenantAuth:
     type: http
@@ -904,7 +928,6 @@ securitySchemes:
     scheme: bearer
     bearerFormat: JWT
     description: Bridge-only authentication for control plane channel management
-
 components:
   schemas:
     Tenant:
@@ -920,7 +943,6 @@ components:
         updated_at:
           type: string
           format: date-time
-
     Cluster:
       type: object
       properties:
@@ -944,14 +966,19 @@ components:
           description: Kubernetes version
         status:
           type: string
-          enum: [registered, active, degraded, offline]
+          enum:
+          - registered
+          - active
+          - degraded
+          - offline
         last_seen:
           type: string
           format: date-time
           description: Last time the cluster was seen
         zen_bridge_endpoint:
           type: string
-          description: Bridge endpoint for PORTAL URL construction (deprecated, use ingress_host)
+          description: Bridge endpoint for PORTAL URL construction (deprecated, use
+            ingress_host)
           deprecated: true
         ingress_host:
           type: string
@@ -961,16 +988,22 @@ components:
           description: Static IP for dedicated plans (optional)
         certificate_mode:
           type: string
-          enum: [platform-managed, customer-managed]
+          enum:
+          - platform-managed
+          - customer-managed
           default: platform-managed
           description: Certificate management mode
         certificate_owner:
           type: string
-          enum: [zen, customer]
+          enum:
+          - zen
+          - customer
           description: Owner of the certificate (optional, for customer-managed mode)
         rotation_policy:
           type: string
-          enum: [canary, abrupt]
+          enum:
+          - canary
+          - abrupt
           description: Certificate rotation policy (optional)
         created_at:
           type: string
@@ -978,11 +1011,10 @@ components:
         updated_at:
           type: string
           format: date-time
-
     ClusterCreateRequest:
       type: object
       required:
-        - name
+      - name
       properties:
         name:
           type: string
@@ -1003,18 +1035,23 @@ components:
           description: Static IP for dedicated plans
         certificate_mode:
           type: string
-          enum: [platform-managed, customer-managed]
+          enum:
+          - platform-managed
+          - customer-managed
           default: platform-managed
           description: Certificate management mode
         certificate_owner:
           type: string
-          enum: [zen, customer]
+          enum:
+          - zen
+          - customer
           description: Owner of the certificate
         rotation_policy:
           type: string
-          enum: [canary, abrupt]
+          enum:
+          - canary
+          - abrupt
           description: Certificate rotation policy
-
     Ingester:
       type: object
       properties:
@@ -1028,7 +1065,11 @@ components:
           type: string
         type:
           type: string
-          enum: [kubernetes, prometheus, opensearch, Loki]
+          enum:
+          - kubernetes
+          - prometheus
+          - opensearch
+          - Loki
         config:
           type: object
           additionalProperties: true
@@ -1040,23 +1081,25 @@ components:
         updated_at:
           type: string
           format: date-time
-
     IngesterCreateRequest:
       type: object
       required:
-        - name
-        - type
-        - config
+      - name
+      - type
+      - config
       properties:
         name:
           type: string
         type:
           type: string
-          enum: [kubernetes, prometheus, opensearch, Loki]
+          enum:
+          - kubernetes
+          - prometheus
+          - opensearch
+          - Loki
         config:
           type: object
           additionalProperties: true
-
     IngesterUpdateRequest:
       type: object
       properties:
@@ -1065,7 +1108,6 @@ components:
         config:
           type: object
           additionalProperties: true
-
     Destination:
       type: object
       properties:
@@ -1079,7 +1121,15 @@ components:
           type: string
         type:
           type: string
-          enum: [siem, webhook, email, slack, servicenow, jira, datadog, pagerduty]
+          enum:
+          - siem
+          - webhook
+          - email
+          - slack
+          - servicenow
+          - jira
+          - datadog
+          - pagerduty
         config:
           type: object
           additionalProperties: true
@@ -1091,23 +1141,29 @@ components:
         updated_at:
           type: string
           format: date-time
-
     DestinationCreateRequest:
       type: object
       required:
-        - name
-        - type
-        - config
+      - name
+      - type
+      - config
       properties:
         name:
           type: string
         type:
           type: string
-          enum: [siem, webhook, email, slack, servicenow, jira, datadog, pagerduty]
+          enum:
+          - siem
+          - webhook
+          - email
+          - slack
+          - servicenow
+          - jira
+          - datadog
+          - pagerduty
         config:
           type: object
           additionalProperties: true
-
     DestinationUpdateRequest:
       type: object
       properties:
@@ -1116,7 +1172,6 @@ components:
         config:
           type: object
           additionalProperties: true
-
     DeliveryFlow:
       type: object
       properties:
@@ -1148,13 +1203,12 @@ components:
         updated_at:
           type: string
           format: date-time
-
     DeliveryFlowCreateRequest:
       type: object
       required:
-        - name
-        - ingester_id
-        - destination_id
+      - name
+      - ingester_id
+      - destination_id
       properties:
         name:
           type: string
@@ -1170,7 +1224,6 @@ components:
           type: array
           items:
             type: object
-
     DeliveryFlowUpdateRequest:
       type: object
       properties:
@@ -1188,7 +1241,6 @@ components:
           type: array
           items:
             type: object
-
     Channel:
       type: object
       properties:
@@ -1202,23 +1254,24 @@ components:
           type: string
         status:
           type: string
-          enum: [active, inactive, pending]
+          enum:
+          - active
+          - inactive
+          - pending
         config:
           type: object
           additionalProperties: true
-
     ChannelCreateRequest:
       type: object
       required:
-        - name
-        - config
+      - name
+      - config
       properties:
         name:
           type: string
         config:
           type: object
           additionalProperties: true
-
     Integration:
       type: object
       properties:
@@ -1228,13 +1281,17 @@ components:
           type: string
         type:
           type: string
-          enum: [slack, servicenow, jira, datadog, pagerduty]
+          enum:
+          - slack
+          - servicenow
+          - jira
+          - datadog
+          - pagerduty
         description:
           type: string
         config_schema:
           type: object
           additionalProperties: true
-
   responses:
     NotFound:
       description: Resource not found

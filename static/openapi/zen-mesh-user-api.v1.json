@@ -23,7 +23,7 @@
       "description": "Staging"
     },
     {
-      "url": "http://localhost:8080/api/v1",
+      "url": "https://staging.api.zen-mesh.io/v1",
       "description": "Local development"
     }
   ],
@@ -37,7 +37,7 @@
       "description": "Tenant management"
     },
     {
-      "name": "Clusters",
+      "name": "Planes",
       "description": "Cluster registration and management"
     },
     {
@@ -55,6 +55,10 @@
     {
       "name": "Integrations",
       "description": "Integration configuration"
+    },
+    {
+      "name": "Planes",
+      "description": "Plane registration and management"
     }
   ],
   "paths": {
@@ -162,7 +166,7 @@
         "tags": [
           "Clusters"
         ],
-        "summary": "List clusters for tenant",
+        "summary": "Get tenant planes",
         "operationId": "listClusters",
         "parameters": [
           {
@@ -204,7 +208,7 @@
         "tags": [
           "Clusters"
         ],
-        "summary": "Register a new cluster",
+        "summary": "Get tenant planes",
         "operationId": "createCluster",
         "parameters": [
           {
@@ -250,7 +254,7 @@
         "tags": [
           "Clusters"
         ],
-        "summary": "Get cluster details",
+        "summary": "Get plane details",
         "operationId": "getCluster",
         "parameters": [
           {
@@ -262,12 +266,13 @@
             }
           },
           {
-            "name": "cluster_id",
+            "name": "plane_id",
             "in": "path",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Legacy route parameter for the plane ID. In product surfaces, clusters are called planes."
           }
         ],
         "security": [
@@ -1104,7 +1109,7 @@
         "tags": [
           "Channels"
         ],
-        "summary": "List channels (bridge-only)",
+        "summary": "List plane channels",
         "operationId": "listChannels",
         "parameters": [
           {
@@ -1116,12 +1121,13 @@
             }
           },
           {
-            "name": "cluster_id",
+            "name": "plane_id",
             "in": "path",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Legacy route parameter for the plane ID. In product surfaces, clusters are called planes."
           }
         ],
         "security": [
@@ -1154,7 +1160,7 @@
         "tags": [
           "Channels"
         ],
-        "summary": "Create a channel (bridge-only)",
+        "summary": "List plane channels",
         "operationId": "createChannel",
         "parameters": [
           {
@@ -1166,12 +1172,13 @@
             }
           },
           {
-            "name": "cluster_id",
+            "name": "plane_id",
             "in": "path",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Legacy route parameter for the plane ID. In product surfaces, clusters are called planes."
           }
         ],
         "security": [
@@ -1208,7 +1215,7 @@
         "tags": [
           "Channels"
         ],
-        "summary": "Get channel details (bridge-only)",
+        "summary": "Get plane channel",
         "operationId": "getChannel",
         "parameters": [
           {
@@ -1220,12 +1227,13 @@
             }
           },
           {
-            "name": "cluster_id",
+            "name": "plane_id",
             "in": "path",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Legacy route parameter for the plane ID. In product surfaces, clusters are called planes."
           },
           {
             "name": "channel_id",
@@ -1261,7 +1269,7 @@
         "tags": [
           "Channels"
         ],
-        "summary": "Delete a channel (bridge-only)",
+        "summary": "Get plane channel",
         "operationId": "deleteChannel",
         "parameters": [
           {
@@ -1273,12 +1281,13 @@
             }
           },
           {
-            "name": "cluster_id",
+            "name": "plane_id",
             "in": "path",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Legacy route parameter for the plane ID. In product surfaces, clusters are called planes."
           },
           {
             "name": "channel_id",
