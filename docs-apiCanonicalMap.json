@@ -1,0 +1,24 @@
+,
+    "docs-apiCanonicalMap": {
+      "docs-apiCanonicalMap/openapi-reference": {
+        "route": "docs/api/openapi-reference",
+        "title": "OpenAPI Reference",
+        "priority": 50,
+        "apiSpec": "openapi/zen-mesh-user-api.v1.yaml",
+        "lastUpdated": "2026-06-30"
+      },
+      "docs-apiCanonicalMap/openapi-yaml": {
+        "route": "openapi/zen-mesh-user-api.v1.yaml",
+        "title": "Zen Mesh User API (YAML)",
+        "priority": 60,
+        "apiSpec": "openapi/zen-mesh-user-api.v1.yaml",
+        "lastUpdated": "2026-06-30"
+      },
+      "docs-apiCanonicalMap/openapi-json": {
+        "route": "openapi/zen-mesh-user-api.v1.json",
+        "title": "Zen Mesh User API (JSON)",
+        "priority": 60,
+        "apiSpec": "openapi/zen-mesh-user-api.v1.json",
+        "lastUpdated": "2026-06-30"
+      }
+  }

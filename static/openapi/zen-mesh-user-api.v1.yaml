@@ -1,0 +1,1267 @@
+openapi: 3.0.3
+info:
+  title: Zen Mesh User API
+  description: |
+    Backend API for KubeZen platform - provides CRUD operations for CRDs (Ingester, Destination, DeliveryFlow),
+    channel/flow management, tenant management, and webhook endpoints.
+  version: 1.0.0
+  contact:
+    name: KubeZen Team
+    email: api@kubezen.io
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+
+servers:
+  - url: https://api.zen-mesh.io/v1  # Production server
+    description: Production
+  - url: https://staging.api.zen-mesh.io/v1
+    description: Staging
+  - url: https://staging.api.zen-mesh.io/v1
+    description: Local development
+
+tags:
+  - name: Health
+    description: Health and readiness checks
+  - name: Tenants
+    description: Tenant management
+  - name: Clusters
+    description: Cluster registration and management
+  - name: CRDs
+    description: CRD management (Ingester, Destination, DeliveryFlow)
+  - name: Channels
+    description: Channel and flow management (bridge-only)
+  - name: Webhooks
+    description: External service webhook endpoints
+  - name: Integrations
+    description: Integration configuration
+
+paths:
+  /health:
+    get:
+      tags: [Health]
+      summary: Health check
+      operationId: healthCheck
+      responses:
+        '200':
+          description: Service is healthy
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    enum: [ok, degraded]
+                  version:
+                    type: string
+
+  /ready:
+    get:
+      tags: [Health]
+      summary: Readiness check
+      operationId: readinessCheck
+      responses:
+        '200':
+          description: Service is ready
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ready:
+                    type: boolean
+
+  /tenants/{tenant_id}:
+    get:
+      tags: [Tenants]
+      summary: Get tenant details
+      operationId: getTenant
+      parameters:
+        - name: tenant_id
+          in: path
+          required: true
+          schema:
+            type: string
+      security:
+        - tenantAuth: []
+      responses:
+        '200':
+          description: Tenant details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Tenant'
+        '404':
+          description: Tenant not found
+          $ref: '#/components/responses/NotFound'
+
+  /tenants/{tenant_id}/clusters:
+    get:
+      tags: [Clusters]
+      summary: List clusters for tenant
+      operationId: listClusters
+      parameters:
+        - name: tenant_id
+          in: path
+          required: true
+          schema:
+            type: string
+      security:
+        - tenantAuth: []
+      responses:
+        '200':
+          description: List of clusters
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  clusters:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Cluster'
+    post:
+      tags: [Clusters]
+      summary: Register a new cluster
+      operationId: createCluster
+      parameters:
+        - name: tenant_id
+          in: path
+          required: true
+          schema:
+            type: string
+      security:
+        - tenantAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ClusterCreateRequest'
+      responses:
+        '201':
+          description: Cluster registered
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Cluster'
+
+  /tenants/{tenant_id}/clusters/{cluster_id}:
+    get:
+      tags: [Clusters]
+      summary: Get cluster details
+      operationId: getCluster
+      parameters:
+        - name: tenant_id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: cluster_id
+          in: path
+          required: true
+          schema:
+            type: string
+      security:
+        - tenantAuth: []
+        - hmacAuth: []
+      responses:
+        '200':
+          description: Cluster details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Cluster'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /tenants/{tenant_id}/clusters/{cluster_id}/ingesters:
+    get:
+      tags: [CRDs]
+      summary: List ingesters for cluster
+      operationId: listIngesters
+      parameters:
+        - name: tenant_id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: cluster_id
+          in: path
+          required: true
+          schema:
+            type: string
+      security:
+        - tenantAuth: []
+      responses:
+        '200':
+          description: List of ingesters
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Ingester'
+    post:
+      tags: [CRDs]
+      summary: Create an ingester
+      operationId: createIngester
+      parameters:
+        - name: tenant_id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: cluster_id
+          in: path
+          required: true
+          schema:
+            type: string
+      security:
+        - tenantAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IngesterCreateRequest'
+      responses:
+        '201':
+          description: Ingester created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Ingester'
+
+  /tenants/{tenant_id}/clusters/{cluster_id}/ingesters/{ingester_id}:
+    get:
+      tags: [CRDs]
+      summary: Get ingester details
+      operationId: getIngester
+      parameters:
+        - name: tenant_id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: cluster_id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: ingester_id
+          in: path
+          required: true
+          schema:
+            type: string
+      security:
+        - tenantAuth: []
+      responses:
+        '200':
+          description: Ingester details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Ingester'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    put:
+      tags: [CRDs]
+      summary: Update an ingester
+      operationId: updateIngester
+      parameters:
+        - name: tenant_id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: cluster_id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: ingester_id
+          in: path
+          required: true
+          schema:
+            type: string
+      security:
+        - tenantAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IngesterUpdateRequest'
+      responses:
+        '200':
+          description: Ingester updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Ingester'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    delete:
+      tags: [CRDs]
+      summary: Delete an ingester
+      operationId: deleteIngester
+      parameters:
+        - name: tenant_id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: cluster_id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: ingester_id
+          in: path
+          required: true
+          schema:
+            type: string
+      security:
+        - tenantAuth: []
+      responses:
+        '204':
+          description: Ingester deleted
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /tenants/{tenant_id}/clusters/{cluster_id}/destinations:
+    get:
+      tags: [CRDs]
+      summary: List destinations for cluster
+      operationId: listDestinations
+      parameters:
+        - name: tenant_id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: cluster_id
+          in: path
+          required: true
+          schema:
+            type: string
+      security:
+        - tenantAuth: []
+      responses:
+        '200':
+          description: List of destinations
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Destination'
+    post:
+      tags: [CRDs]
+      summary: Create a destination
+      operationId: createDestination
+      parameters:
+        - name: tenant_id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: cluster_id
+          in: path
+          required: true
+          schema:
+            type: string
+      security:
+        - tenantAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DestinationCreateRequest'
+      responses:
+        '201':
+          description: Destination created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Destination'
+
+  /tenants/{tenant_id}/clusters/{cluster_id}/destinations/{destination_id}:
+    get:
+      tags: [CRDs]
+      summary: Get destination details
+      operationId: getDestination
+      parameters:
+        - name: tenant_id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: cluster_id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: destination_id
+          in: path
+          required: true
+          schema:
+            type: string
+      security:
+        - tenantAuth: []
+      responses:
+        '200':
+          description: Destination details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Destination'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    put:
+      tags: [CRDs]
+      summary: Update a destination
+      operationId: updateDestination
+      parameters:
+        - name: tenant_id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: cluster_id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: destination_id
+          in: path
+          required: true
+          schema:
+            type: string
+      security:
+        - tenantAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DestinationUpdateRequest'
+      responses:
+        '200':
+          description: Destination updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Destination'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    delete:
+      tags: [CRDs]
+      summary: Delete a destination
+      operationId: deleteDestination
+      parameters:
+        - name: tenant_id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: cluster_id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: destination_id
+          in: path
+          required: true
+          schema:
+            type: string
+      security:
+        - tenantAuth: []
+      responses:
+        '204':
+          description: Destination deleted
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /tenants/{tenant_id}/clusters/{cluster_id}/delivery-flows:
+    get:
+      tags: [CRDs]
+      summary: List delivery flows for cluster
+      operationId: listDeliveryFlows
+      parameters:
+        - name: tenant_id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: cluster_id
+          in: path
+          required: true
+          schema:
+            type: string
+      security:
+        - tenantAuth: []
+      responses:
+        '200':
+          description: List of delivery flows
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/DeliveryFlow'
+    post:
+      tags: [CRDs]
+      summary: Create a delivery flow
+      operationId: createDeliveryFlow
+      parameters:
+        - name: tenant_id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: cluster_id
+          in: path
+          required: true
+          schema:
+            type: string
+      security:
+        - tenantAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeliveryFlowCreateRequest'
+      responses:
+        '201':
+          description: Delivery flow created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeliveryFlow'
+
+  /tenants/{tenant_id}/clusters/{cluster_id}/delivery-flows/{flow_id}:
+    get:
+      tags: [CRDs]
+      summary: Get delivery flow details
+      operationId: getDeliveryFlow
+      parameters:
+        - name: tenant_id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: cluster_id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: flow_id
+          in: path
+          required: true
+          schema:
+            type: string
+      security:
+        - tenantAuth: []
+      responses:
+        '200':
+          description: Delivery flow details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeliveryFlow'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    put:
+      tags: [CRDs]
+      summary: Update a delivery flow
+      operationId: updateDeliveryFlow
+      parameters:
+        - name: tenant_id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: cluster_id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: flow_id
+          in: path
+          required: true
+          schema:
+            type: string
+      security:
+        - tenantAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeliveryFlowUpdateRequest'
+      responses:
+        '200':
+          description: Delivery flow updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeliveryFlow'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    delete:
+      tags: [CRDs]
+      summary: Delete a delivery flow
+      operationId: deleteDeliveryFlow
+      parameters:
+        - name: tenant_id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: cluster_id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: flow_id
+          in: path
+          required: true
+          schema:
+            type: string
+      security:
+        - tenantAuth: []
+      responses:
+        '204':
+          description: Delivery flow deleted
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  # Channel Management APIs (bridge-only)
+  /bridge/tenants/{tenant_id}/clusters/{cluster_id}/channels:
+    get:
+      tags: [Channels]
+      summary: List channels (bridge-only)
+      operationId: listChannels
+      parameters:
+        - name: tenant_id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: cluster_id
+          in: path
+          required: true
+          schema:
+            type: string
+      security:
+        - bridgeAuth: []
+      responses:
+        '200':
+          description: List of channels
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  channels:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Channel'
+    post:
+      tags: [Channels]
+      summary: Create a channel (bridge-only)
+      operationId: createChannel
+      parameters:
+        - name: tenant_id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: cluster_id
+          in: path
+          required: true
+          schema:
+            type: string
+      security:
+        - bridgeAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChannelCreateRequest'
+      responses:
+        '201':
+          description: Channel created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Channel'
+
+  /bridge/tenants/{tenant_id}/clusters/{cluster_id}/channels/{channel_id}:
+    get:
+      tags: [Channels]
+      summary: Get channel details (bridge-only)
+      operationId: getChannel
+      parameters:
+        - name: tenant_id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: cluster_id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: channel_id
+          in: path
+          required: true
+          schema:
+            type: string
+      security:
+        - bridgeAuth: []
+      responses:
+        '200':
+          description: Channel details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Channel'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    delete:
+      tags: [Channels]
+      summary: Delete a channel (bridge-only)
+      operationId: deleteChannel
+      parameters:
+        - name: tenant_id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: cluster_id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: channel_id
+          in: path
+          required: true
+          schema:
+            type: string
+      security:
+        - bridgeAuth: []
+      responses:
+        '204':
+          description: Channel deleted
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  # Webhook endpoints for external integrations
+  /webhooks/slack:
+    post:
+      tags: [Webhooks]
+      summary: Slack webhook endpoint
+      operationId: slackWebhook
+      security:
+        - hmacAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Webhook processed
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /webhooks/servicenow:
+    post:
+      tags: [Webhooks]
+      summary: ServiceNow webhook endpoint
+      operationId: servicenowWebhook
+      security:
+        - hmacAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Webhook processed
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /webhooks/jira:
+    post:
+      tags: [Webhooks]
+      summary: Jira webhook endpoint
+      operationId: jiraWebhook
+      security:
+        - hmacAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Webhook processed
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /webhooks/datadog:
+    post:
+      tags: [Webhooks]
+      summary: Datadog webhook endpoint
+      operationId: datadogWebhook
+      security:
+        - hmacAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Webhook processed
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /webhooks/pagerduty:
+    post:
+      tags: [Webhooks]
+      summary: PagerDuty webhook endpoint
+      operationId: pagerdutyWebhook
+      security:
+        - hmacAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Webhook processed
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /integrations:
+    get:
+      tags: [Integrations]
+      summary: List available integrations
+      operationId: listIntegrations
+      security:
+        - tenantAuth: []
+      responses:
+        '200':
+          description: List of available integrations
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  integrations:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Integration'
+
+securitySchemes:
+  tenantAuth:
+    type: http
+    scheme: bearer
+    bearerFormat: JWT
+    description: OIDC/Session-based tenant authentication for UI and API client calls
+  hmacAuth:
+    type: apiKey
+    in: header
+    name: X-KubeZen-Signature
+    description: HMAC-based authentication for cluster-originated writes and webhooks
+  bridgeAuth:
+    type: http
+    scheme: bearer
+    bearerFormat: JWT
+    description: Bridge-only authentication for control plane channel management
+
+components:
+  schemas:
+    Tenant:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+
+    Cluster:
+      type: object
+      properties:
+        id:
+          type: string
+        tenant_id:
+          type: string
+        name:
+          type: string
+        environment:
+          type: string
+          description: Deployment environment (production, staging, dev)
+        region:
+          type: string
+          description: Cloud region where the cluster is deployed
+        provider:
+          type: string
+          description: Cloud provider (aws, gcp, azure, on-prem)
+        version:
+          type: string
+          description: Kubernetes version
+        status:
+          type: string
+          enum: [registered, active, degraded, offline]
+        last_seen:
+          type: string
+          format: date-time
+          description: Last time the cluster was seen
+        zen_bridge_endpoint:
+          type: string
+          description: Bridge endpoint for PORTAL URL construction (deprecated, use ingress_host)
+          deprecated: true
+        ingress_host:
+          type: string
+          description: Canonical Data Plane ingress host (<provider>-<region>.ingesters[.<env>].zen-mesh.io)
+        ingress_public_ip:
+          type: string
+          description: Static IP for dedicated plans (optional)
+        certificate_mode:
+          type: string
+          enum: [platform-managed, customer-managed]
+          default: platform-managed
+          description: Certificate management mode
+        certificate_owner:
+          type: string
+          enum: [zen, customer]
+          description: Owner of the certificate (optional, for customer-managed mode)
+        rotation_policy:
+          type: string
+          enum: [canary, abrupt]
+          description: Certificate rotation policy (optional)
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+
+    ClusterCreateRequest:
+      type: object
+      required:
+        - name
+      properties:
+        name:
+          type: string
+        provider:
+          type: string
+          description: Cloud provider (aws, gcp, azure, on-prem)
+        region:
+          type: string
+          description: Cloud region
+        environment:
+          type: string
+          description: Deployment environment
+        ingress_host:
+          type: string
+          description: Canonical Data Plane ingress host for this cluster
+        ingress_public_ip:
+          type: string
+          description: Static IP for dedicated plans
+        certificate_mode:
+          type: string
+          enum: [platform-managed, customer-managed]
+          default: platform-managed
+          description: Certificate management mode
+        certificate_owner:
+          type: string
+          enum: [zen, customer]
+          description: Owner of the certificate
+        rotation_policy:
+          type: string
+          enum: [canary, abrupt]
+          description: Certificate rotation policy
+
+    Ingester:
+      type: object
+      properties:
+        id:
+          type: string
+        tenant_id:
+          type: string
+        cluster_id:
+          type: string
+        name:
+          type: string
+        type:
+          type: string
+          enum: [kubernetes, prometheus, opensearch, Loki]
+        config:
+          type: object
+          additionalProperties: true
+        rendered_yaml:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+
+    IngesterCreateRequest:
+      type: object
+      required:
+        - name
+        - type
+        - config
+      properties:
+        name:
+          type: string
+        type:
+          type: string
+          enum: [kubernetes, prometheus, opensearch, Loki]
+        config:
+          type: object
+          additionalProperties: true
+
+    IngesterUpdateRequest:
+      type: object
+      properties:
+        name:
+          type: string
+        config:
+          type: object
+          additionalProperties: true
+
+    Destination:
+      type: object
+      properties:
+        id:
+          type: string
+        tenant_id:
+          type: string
+        cluster_id:
+          type: string
+        name:
+          type: string
+        type:
+          type: string
+          enum: [siem, webhook, email, slack, servicenow, jira, datadog, pagerduty]
+        config:
+          type: object
+          additionalProperties: true
+        rendered_yaml:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+
+    DestinationCreateRequest:
+      type: object
+      required:
+        - name
+        - type
+        - config
+      properties:
+        name:
+          type: string
+        type:
+          type: string
+          enum: [siem, webhook, email, slack, servicenow, jira, datadog, pagerduty]
+        config:
+          type: object
+          additionalProperties: true
+
+    DestinationUpdateRequest:
+      type: object
+      properties:
+        name:
+          type: string
+        config:
+          type: object
+          additionalProperties: true
+
+    DeliveryFlow:
+      type: object
+      properties:
+        id:
+          type: string
+        tenant_id:
+          type: string
+        cluster_id:
+          type: string
+        name:
+          type: string
+        ingester_id:
+          type: string
+        destination_id:
+          type: string
+        filters:
+          type: array
+          items:
+            type: object
+        transformations:
+          type: array
+          items:
+            type: object
+        rendered_yaml:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+
+    DeliveryFlowCreateRequest:
+      type: object
+      required:
+        - name
+        - ingester_id
+        - destination_id
+      properties:
+        name:
+          type: string
+        ingester_id:
+          type: string
+        destination_id:
+          type: string
+        filters:
+          type: array
+          items:
+            type: object
+        transformations:
+          type: array
+          items:
+            type: object
+
+    DeliveryFlowUpdateRequest:
+      type: object
+      properties:
+        name:
+          type: string
+        ingester_id:
+          type: string
+        destination_id:
+          type: string
+        filters:
+          type: array
+          items:
+            type: object
+        transformations:
+          type: array
+          items:
+            type: object
+
+    Channel:
+      type: object
+      properties:
+        id:
+          type: string
+        tenant_id:
+          type: string
+        cluster_id:
+          type: string
+        name:
+          type: string
+        status:
+          type: string
+          enum: [active, inactive, pending]
+        config:
+          type: object
+          additionalProperties: true
+
+    ChannelCreateRequest:
+      type: object
+      required:
+        - name
+        - config
+      properties:
+        name:
+          type: string
+        config:
+          type: object
+          additionalProperties: true
+
+    Integration:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        type:
+          type: string
+          enum: [slack, servicenow, jira, datadog, pagerduty]
+        description:
+          type: string
+        config_schema:
+          type: object
+          additionalProperties: true
+
+  responses:
+    NotFound:
+      description: Resource not found
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
+    Unauthorized:
+      description: Authentication required or failed
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
+    BadRequest:
+      description: Invalid request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
+              details:
+                type: object

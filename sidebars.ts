@@ -156,6 +156,7 @@ const sidebars: SidebarsConfig = {
         'api/versioning',
         'api/rate-limits',
         'api/fabric-adapters',
+        "api/openapi-reference",
         'api/changelog',
         ...apiSidebar,
       ],

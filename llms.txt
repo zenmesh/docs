@@ -1,0 +1,13 @@
+
+---
+
+## API Documentation
+
+- [OpenAPI Reference](./api/openapi-reference) - Interactive API reference rendered from the canonical OpenAPI specification
+  - Live YAML: https://docs.zen-mesh.io/openapi/zen-mesh-user-api.v1.yaml
+  - Live JSON: https://docs.zen-mesh.io/openapi/zen-mesh-user-api.v1.json
+  - Zen Mesh User API (v1-preview, 19 endpoints)
+- [Fabric Adapters API](./api/fabric-adapters) - Adapter management guide
+- [API Overview](./api/overview) - Introduction to Zen Mesh APIs
+- [Authentication](./api/authentication) - Authentication and authorization
+
