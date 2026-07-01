@@ -175,6 +175,7 @@ const sidebars: SidebarsConfig = {
         'api/recipes/create-flow',
         'api/recipes/drafts-validate-test-publish',
         'api/recipes/errors-and-rate-limits',
+    },
       ],
     },
 
