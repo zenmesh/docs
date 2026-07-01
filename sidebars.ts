@@ -142,6 +142,13 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: 'API Reference',
       items: [
+        'api/recipes/list-planes-and-adapters',
+        'api/recipes/create-webhook-endpoint',
+        'api/recipes/create-target',
+        'api/recipes/create-flow',
+        'api/recipes/drafts-validate-test-publish',
+        'api/recipes/errors-and-rate-limits',
+
         'api/overview',
         'api/quickstart',
         'api/examples',
@@ -158,6 +165,19 @@ const sidebars: SidebarsConfig = {
         'api/fabric-adapters',
                 'api/changelog',
         ...apiSidebar,
+    {
+      type: 'category',
+      label: 'Recipes',
+      items: [
+        'api/recipes/list-planes-and-adapters',
+        'api/recipes/create-webhook-endpoint',
+        'api/recipes/create-target',
+        'api/recipes/create-flow',
+        'api/recipes/drafts-validate-test-publish',
+        'api/recipes/errors-and-rate-limits',
+      ],
+    },
+
       ],
     },
     {
