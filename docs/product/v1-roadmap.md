@@ -69,7 +69,7 @@ P0 — must be wired, surfaced, and proven before V1 launch:
 - Trusted proxy / X-Forwarded-For safety — V1 blocker
 - Tenant-scoped — V1 blocker
 - Fail-closed on invalid config — V1 blocker
-- Business+ editable unless later changed — default
+- Pro editable unless later changed — default
 
 ### Header allow/block
 - Exact/prefix matching — V1 blocker
