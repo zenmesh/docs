@@ -113,9 +113,13 @@ See [support](start-here/support).
 - [V1 live truth matrix / launch lock](launch/v1-live-truth-matrix): V1 live readiness state — public launch remains NO-GO until live gates pass
 - [CLI reference](reference/cli): Zen Mesh CLI tool documentation
 
-## Zen-GC
+## Open Source
 
-- [Overview](https://docs.zen-mesh.io/zen-gc): Apache-2.0 Kubernetes garbage collection controller — declarative TTL cleanup policies and lifecycle management
+- [OSS page](https://www.zen-mesh.io/oss): Open-source projects from the Zen Mesh team
+- [zen-gc](https://github.com/zenmesh/zen-gc) — Apache-2.0 Kubernetes garbage collection controller — declarative TTL cleanup policies and lifecycle management
+- [helm-charts](https://github.com/zenmesh/helm-charts) — Helm charts for deploying Zen Mesh components in Kubernetes
+
+Zen Mesh combines open-source components with a hosted control plane. OSS projects cover Kubernetes utilities, SDKs, and validation building blocks. Hosted Zen Mesh adds managed operations, team workflows, and commercial support.
 
 ## Legal
 
