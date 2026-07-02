@@ -16,6 +16,16 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: 'Roadmap',
+      items: [
+        'product/v1-roadmap',
+        'launch/v1-live-truth-matrix',
+        'launch/v1-live-evidence-index',
+        'launch/post-cloud-publication-plan',
+      ],
+    },
+    {
+      type: 'category',
       label: 'Getting Started',
       items: [
         'getting-started/quick-start',

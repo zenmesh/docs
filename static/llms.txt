@@ -208,6 +208,7 @@ Zen Mesh combines open-source components with a hosted control plane. OSS projec
 
 ## Optional
 
+- [V1 roadmap](https://docs.zen-mesh.io/docs/product/v1-roadmap): Launch blockers, traffic/recovery, policy controls, Labs, plan ladder, and exit criteria
 - [Terminology guide](https://docs.zen-mesh.io/docs/ai/public-terminology-taxonomy): Docs mirror of public copy policy
 - [Full AI context](https://www.zen-mesh.io/llms-full.txt): Expanded curated context (community convention)
 - [Marketing llms.txt](https://www.zen-mesh.io/llms.txt): www editorial index (JSON registries on docs host only)

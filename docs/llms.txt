@@ -111,6 +111,7 @@ See [support](start-here/support).
 - [Plans and limits](start-here/plans-and-limits): Plan comparison, quotas, and retention limits
 - [Launch status](start-here/launch-status): Feature gates and v1 readiness
 - [V1 live truth matrix / launch lock](launch/v1-live-truth-matrix): V1 live readiness state — public launch remains NO-GO until live gates pass
+- [V1 roadmap](product/v1-roadmap): Launch blockers, traffic/recovery, policy controls, Labs, plan ladder, and exit criteria
 - [CLI reference](reference/cli): Zen Mesh CLI tool documentation
 
 ## Open Source
