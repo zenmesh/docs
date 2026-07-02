@@ -41,6 +41,6 @@ No CIS Benchmark runs have been completed for Zen Mesh SaaS or data-plane cluste
 
 ## Related
 
-- [Trust Overview](./index)
+- [Trust Overview](/docs/trust/index)
 - [Compliance Coverage](./compliance-coverage)
 - [Security](/docs/security/)

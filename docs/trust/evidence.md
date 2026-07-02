@@ -20,7 +20,7 @@ This page covers how Zen Mesh generates, organizes, and retains evidence that ca
 - **Public documentation evidence** — `docs/evidence/` in the [docs repo](https://github.com/zenmesh/docs)
 - **Runtime proof ledger** — `docs/80-EVIDENCE/runtime/` in [zen-platform](https://github.com/zenmesh/zen-platform)
 - **Trust lifecycle evidence** — `docs/80-EVIDENCE/security/` in [zen-platform](https://github.com/zenmesh/zen-platform)
-- **Zen-GC / Kubernetes validation** — [Zen-GC evidence](/zen-gc/docs/evidence/README) (separate repo)
+- **Zen-GC / Kubernetes validation** — [Zen-GC overview](/zen-gc/overview) (separate repo)
 
 ## Validation Evidence
 
@@ -54,7 +54,7 @@ Evidence export to S3 or other object-store destinations is planned for Business
 
 ## Related
 
-- [Trust Overview](./index)
+- [Trust Overview](/docs/trust/index)
 - [Compliance Coverage](./compliance-coverage)
 - [Evidence Overview](/docs/evidence/overview)
 - [Non-Claims](/docs/evidence/non-claims)

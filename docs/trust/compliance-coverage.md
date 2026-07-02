@@ -79,7 +79,7 @@ This page maps where Zen Mesh can help customers produce or organize evidence fo
 
 ## Related
 
-- [Trust Overview](./index)
+- [Trust Overview](/docs/trust/index)
 - [Evidence](./evidence)
 - [Security](/docs/security/)
 - [Non-Claims](/docs/evidence/non-claims)

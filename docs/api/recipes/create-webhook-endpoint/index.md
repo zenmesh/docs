@@ -1,3 +1,7 @@
+---
+id: api-recipes-create-webhook-endpoint
+---
+
 # Create Webhook Endpoint
 
 Learn how to configure webhook endpoints for integration with external services.
@@ -94,6 +98,6 @@ These endpoints are used by Zen Mesh to send notifications to your configured in
 
 ---
 
-**Full API Reference**: [OpenAPI Specification](../../openapi-reference.html)
+**Full API Reference**: [API Overview](/docs/api/overview)
 
 **More Information**: [Authentication](../../authentication) | [Common Errors](../../errors)

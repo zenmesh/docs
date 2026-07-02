@@ -269,6 +269,6 @@ for plane in plane_list['clusters']:
 
 ---
 
-**Full API Reference**: [OpenAPI Specification](../../openapi-reference.html)
+**Full API Reference**: [API Overview](/docs/api/overview)
 
 **More Information**: [Authentication](../../authentication) | [Common Errors](../../errors)

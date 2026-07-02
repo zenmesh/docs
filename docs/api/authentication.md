@@ -184,7 +184,7 @@ Include this `request_id` when contacting support for faster resolution.
 
 ## Next Steps
 
-- [API Quickstart](/api/quickstart) - Get started with the API
-- [Authentication API Reference](/openapi-reference) - See authentication in the OpenAPI spec
-- [Common Errors](/api/errors) - Learn about common error codes
+- [API Quickstart](/docs/api/quickstart) - Get started with the API
+- [API Overview](/docs/api/overview) - See the complete API reference
+- [Common Errors](/docs/api/errors) - Learn about common error codes
 - [Support](https://dash.zen-mesh.io) - Get help from the team

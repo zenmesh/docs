@@ -342,9 +342,9 @@ Request body: {"name": "plane_dev", ...}
 
 ## Next Steps
 
-- [Authentication](/api/authentication) - Learn about API token authentication
-- [API Quickstart](/api/quickstart) - Get started with basic API calls
-- [Full API Reference](/openapi-reference) - Complete OpenAPI specification
+- [Authentication](/docs/api/authentication) - Learn about API token authentication
+- [API Quickstart](/docs/api/quickstart) - Get started with basic API calls
+- [API Overview](/docs/api/overview) - Complete API reference overview
 
 ---
 

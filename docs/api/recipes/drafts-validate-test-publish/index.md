@@ -1,3 +1,7 @@
+---
+id: api-recipes-drafts-validate-test-publish
+---
+
 # Validate, Test, and Publish a Draft
 
 Learn how to validate and test flows using the Zen Mesh UI workflow.
@@ -103,6 +107,6 @@ When you publish a flow, it becomes a new version. The previous version remains 
 
 ---
 
-**Full API Reference**: [OpenAPI Specification](../../openapi-reference.html)
+**Full API Reference**: [API Overview](/docs/api/overview)
 
 **More Information**: [Authentication](../../authentication) | [Common Errors](../../errors)

@@ -20,16 +20,16 @@ Zen Mesh exposes two API surfaces for different consumers:
 
 Use these step-by-step recipes to accomplish common tasks with the Zen Mesh API:
 
-- [List Planes and Inspect Adapters](./recipes/list-planes-and-adapters.md)
-- [Create a Webhook Endpoint](./recipes/create-webhook-endpoint.md)
-- [Create a Target](./recipes/create-target.md)
-- [Create a Flow](./recipes/create-flow.md)
-- [Validate, Test, and Publish a Draft](./recipes/drafts-validate-test-publish.md)
-- [Handle Errors and Rate Limits](./recipes/errors-and-rate-limits.md)
+- [List Planes and Inspect Adapters](./recipes/list-planes-and-adapters/)
+- [Create a Webhook Endpoint](./recipes/create-webhook-endpoint/)
+- [Create a Target](./recipes/create-target/)
+- [Create a Flow](./recipes/create-flow/)
+- [Validate, Test, and Publish a Draft](./recipes/drafts-validate-test-publish/)
+- [Handle Errors and Rate Limits](./recipes/errors-and-rate-limits/)
 
 These recipes provide complete, copy-paste-ready examples for common workflows, including curl, Python, and JavaScript samples.
 
-**Full API Reference**: [OpenAPI Specification](./openapi-reference.html)
+**Full API Reference**: [API Overview](/docs/api/overview)
 
 - [Back API Reference](./reference/kubezen-back-api) — Generated from OpenAPI spec
 - [Customer API](../reference/customer-api) — read-only operational truth API
@@ -60,8 +60,8 @@ See [API Versioning and Compatibility](./versioning.md) for the compatibility po
 
 ## Related Docs
 
-- [Authentication and API Keys](/api/authentication.md)
-- [Errors and Problem Details](/api/errors.md)
+- [Authentication and API Keys](/docs/api/authentication)
+- [Errors and Problem Details](/docs/api/errors)
 - [Fabric Adapters API](./fabric-adapters.md) - Manage adapters in your Fabric
 - [MCP Overview](../mcp/overview.md) - AI agent integration
 
@@ -93,4 +93,4 @@ The API is in active development. Endpoint availability reflects the current dep
 
 ## API Reference
 
-- [OpenAPI Reference](/openapi-reference) - Complete API specification with code examples
+- [API Overview](/docs/api/overview) - Complete API specification with code examples

@@ -223,8 +223,8 @@ This design preserves backward compatibility with existing wire protocols while 
 
 ## Next Steps
 
-- [Full API Reference](/openapi-reference) - Complete OpenAPI specification with code examples
-- [Authentication](/api/authentication) - Detailed authentication guide
+- [API Overview](/docs/api/overview) - Complete API reference with code examples
+- [Authentication](/docs/api/authentication) - Detailed authentication guide
 - [Fabric Adapters API](./fabric-adapters) - Adapter management documentation
 - [API Overview](./overview) - Introduction to Zen Mesh APIs
 
@@ -238,11 +238,11 @@ This design preserves backward compatibility with existing wire protocols while 
 
 ## See Also
 
-- [Workflow Recipes](./recipes.md) - Complete step-by-step guides for common tasks
-- [Create a Flow](./recipes/create-flow.md)
-- [Create a Target](./recipes/create-target.md)
-- [Handle Errors](./recipes/errors-and-rate-limits.md)
+- [Workflow Recipes](./recipes/list-planes-and-adapters/) - Complete step-by-step guides for common tasks
+- [Create a Flow](./recipes/create-flow/)
+- [Create a Target](./recipes/create-target/)
+- [Handle Errors](./recipes/errors-and-rate-limits/)
 
 ---
 
-**Full API Reference**: [OpenAPI Specification](./openapi-reference.html)
+**Full API Reference**: [API Overview](/docs/api/overview)

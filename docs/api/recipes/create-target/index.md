@@ -1,3 +1,7 @@
+---
+id: api-recipes-create-target
+---
+
 # Create a Target
 
 Learn how to create and configure destinations (targets) for your flows.
@@ -139,10 +143,10 @@ curl -sS   -H "Authorization: Bearer $ZEN_API_TOKEN"   "$ZEN_API_BASE/tenants/$Z
 
 - [Create a Flow]()
 - [Inspect Destinations]()
-- [Update Destination](../../openapi-reference.html) (use updateDestination endpoint)
+- [Update Destination](/docs/api/overview) (use updateDestination endpoint)
 
 ---
 
-**Full API Reference**: [OpenAPI Specification](../../openapi-reference.html)
+**Full API Reference**: [API Overview](/docs/api/overview)
 
 **More Information**: [Authentication](../../authentication) | [Common Errors](../../errors)

@@ -1,3 +1,7 @@
+---
+id: api-recipes-create-flow
+---
+
 # Create a Flow
 
 Learn how to create and configure delivery flows that connect sources to destinations.
@@ -144,10 +148,10 @@ curl -sS   -H "Authorization: Bearer $ZEN_API_TOKEN"   "$ZEN_API_BASE/tenants/$Z
 
 - *Create a Target* (see dedicated recipe)
 - [Inspect Flows]()
-- [Update Flow endpoint](../../openapi-reference.html) (use updateDeliveryFlow endpoint)
+- [Update Flow endpoint](/docs/api/overview) (use updateDeliveryFlow endpoint)
 
 ---
 
-**Full API Reference**: [OpenAPI Specification](../../openapi-reference.html)
+**Full API Reference**: [API Overview](/docs/api/overview)
 
 **More Information**: [Authentication](../../authentication) | [Common Errors](../../errors)

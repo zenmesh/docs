@@ -1,3 +1,7 @@
+---
+id: api-recipes-list-planes-and-adapters
+---
+
 # List Planes and Inspect Adapters
 
 Learn how to retrieve your planes (clusters) and inspect their adapters, ingesters, destinations, and delivery flows.
@@ -120,6 +124,6 @@ curl -sS   -H "Authorization: Bearer $ZEN_API_TOKEN"   "$ZEN_API_BASE/tenants/$Z
 
 ---
 
-**Full API Reference**: [OpenAPI Specification](../../openapi-reference.html)
+**Full API Reference**: [API Overview](/docs/api/overview)
 
 **More Information**: [Authentication](../../authentication) | [Common Errors](../../errors)
