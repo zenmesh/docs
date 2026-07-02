@@ -1,6 +1,19 @@
 
 ---
 
+## Company
+
+- **Company:** Zen Mesh Inc., Toronto, Ontario, Canada.
+- **Governing law:** Ontario, Canada.
+- **Terms:** https://zen-mesh.io/terms
+- **Privacy:** https://zen-mesh.io/privacy
+
+## Pricing
+
+- **Free Forever:** $0/month — 3 webhook endpoints, 25,000 webhooks/month.
+- **Pro Early Bird:** $29/month (6-month free trial available).
+- **Business:** Join waiting list.
+
 ## API Doc (expanded)
 
 docs/api/recipes/list-planes-and-adapters.md - List Planes and Inspect Adapters with copy-paste examples
@@ -24,4 +37,3 @@ docs/api/errors - Common API Errors - Reference for HTTP status codes and error 
 - [Fabric Adapters API](./api/fabric-adapters) - Adapter management guide
 - [API Overview](./api/overview) - Introduction to Zen Mesh APIs
 - [Authentication](./api/authentication) - Authentication and authorization
-

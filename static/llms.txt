@@ -1,8 +1,8 @@
 # Zen Mesh — Documentation Index
 
-> Zen Mesh is private-by-design, security-first webhook delivery infrastructure for private networks. Services behind NAT or firewall connect outbound-only to receive webhooks from Stripe, GitHub, Shopify, Twilio, and custom senders — no inbound ports, no VPN, no kernel modules. Free Forever. 6-month Pro trial available. Business and Enterprise plans coming soon.
+> Zen Mesh is private-by-design, security-first webhook delivery infrastructure for private networks. Services behind NAT or firewall connect outbound-only to receive webhooks from Stripe, GitHub, Shopify, Twilio, and custom senders — no inbound ports, no VPN, no kernel modules. Free Forever. Pro Early Bird with 6-month free trial available. Business: join waiting list.
 
-**Version:** 1.1.0 · **Last-Updated:** 2026-06-30T13:30:00Z · **Docs:** https://docs.zen-mesh.io · **Site:** https://www.zen-mesh.io · **Repository:** https://github.com/zenmesh/zen-platform
+**Version:** 1.1.0 · **Last-Updated:** 2026-07-02T00:00:00Z · **Docs:** https://docs.zen-mesh.io · **Site:** https://www.zen-mesh.io · **Repository:** https://github.com/zenmesh/zen-platform · **Company:** Zen Mesh Inc., Toronto, Ontario, Canada
 
 ## Canonical discovery (crawlers)
 
@@ -14,7 +14,7 @@
 
 - **Free Forever:** $0/month — 3 webhook endpoints, 25,000 webhooks/month, 256 KB max payload, 3 targets, 3 routes/flows, 7-day retention, shared receive IPs. No SLA. Best-effort/community support.
 - **Pro — Early Bird:** $29/month (6-month free trial with monthly feedback survey; reference standard $49/month). 50 endpoints, 500,000 webhooks/month, 1 MB payload, 25 targets, 50 routes, 30-day retention, S3 log export, 1 seat. No SLA or dedicated IP.
-- **Business:** Coming soon. Planned: dedicated receive IP add-on, higher limits, payload export and Object Lock, stronger liability posture.
+- **Business:** Join waiting list. Planned: dedicated receive IP add-on, higher limits, payload export and Object Lock, stronger liability posture.
 - **Enterprise:** Contact zen@zen-mesh.io for custom pricing, SLAs, dedicated infrastructure, and compliance workflows.
 
 See [plans and limits](https://docs.zen-mesh.io/docs/start-here/plans-and-limits) and [site pricing](https://www.zen-mesh.io/pricing).
@@ -38,7 +38,7 @@ Additional differentiators:
 | Documentation | Self-service | https://docs.zen-mesh.io |
 | Free tier | Community / best-effort | No SLA. Best-effort during business hours. |
 | Pro tier | Email + Slack/Discord | Best-effort. No on-call or guaranteed response time. |
-| Business | SLA-backed | Planned — coming soon. |
+| Business | SLA-backed | Join waiting list. |
 | Enterprise | Custom support and escalation | Contact zen@zen-mesh.io. |
 | Security disclosures | Email | zen@zen-mesh.io. No bug bounty or CVD program at this time. |
 
@@ -193,6 +193,14 @@ See [support](https://docs.zen-mesh.io/docs/start-here/support).
 
 - [Webhook delivery evidence (blog)](https://www.zen-mesh.io/blogs/webhook-delivery-evidence/): Editorial — proof remains in manifest/hash-chain receipts
 - [Webhooks behind firewalls (blog)](https://www.zen-mesh.io/blogs/webhooks-behind-firewalls/): Architecture narrative — not proof
+
+## Legal
+
+- **Company:** Zen Mesh Inc., Toronto, Ontario, Canada.
+- **Governing law:** Ontario, Canada.
+- **Terms:** https://zen-mesh.io/terms
+- **Privacy:** https://zen-mesh.io/privacy
+- **Contact:** zen@zen-mesh.io
 
 ## Optional
 
