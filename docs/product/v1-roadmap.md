@@ -157,8 +157,8 @@ Do not claim payload export or Object Lock live unless proven.
 
 | Feature | Free Forever | Pro Early Bird | Business | Enterprise |
 |---------|:---:|:---:|:---:|:---:|
-| Pricing | $0 | $29/mo Early Bird (ref $49) | Join waiting list | Contact us |
-| Trial | Always free | 6-month free trial | Waitlist | Custom |
+| Pricing | $0 | $29/mo Early Bird (ref $49) | Join V1.1 waitlist | Pilot program |
+| Trial | Always free | 6-month free trial | V1.1 waitlist | Pilot |
 | Public webhook endpoints | 3 on shared IPs | 50 | Included + overages | Custom |
 | Webhooks/month | 25,000 | 500,000 | Included + overages | Custom |
 | Max payload | 256 KB | 1 MB | Higher/custom | Custom |
@@ -198,24 +198,28 @@ Do not claim payload export or Object Lock live unless proven.
 
 ## 7. Public Pricing Alignment Notes
 
-The public pricing page at zen-mesh.io/pricing has been rewritten to match
-the corrected V1 plan ladder above. The feature matrix and plan cards now
-reflect the actual V1 plan definitions:
+The public pricing page at zen-mesh.io/pricing has been updated with plan
+detail pages at /pricing/free, /pricing/pro, /pricing/business, and
+/pricing/enterprise. The plan definitions reflect the V1.1-aligned ladder:
 
 - **Free Forever** — $0, real private webhook delivery, 3 endpoints on
   shared IPs, 25K webhooks/month, 3-day basic retry/DLQ, community support.
+  V1 launch plan.
 - **Pro Early Bird** — $29/mo (ref $49), 6-month free trial, 50 endpoints,
   500K webhooks/month, IP allow/block, S3 delivery logs, 7-day advanced
-  retry/DLQ, saved playground.
-- **Business** — Join waiting list. Dedicated adapters, overages, team
-  governance, header allow/block, multi-target fanout, 30+ day retention,
-  SLA options. Not generally available.
-- **Enterprise** — Contact us. Custom infrastructure, residency, support,
-  procurement.
+  retry/DLQ, saved playground. V1 launch plan.
+- **Business** — V1.1 rollout. Join V1.1 Business waitlist. Dedicated
+  adapters (not shared components), team governance, overages, header
+  allow/block, multi-target fanout, 30+ day retention, SLA options.
+  Not generally available at V1.
+- **Enterprise** — Enterprise pilot program. Dedicated data plane, custom
+  infrastructure, residency, support, procurement. Apply for pilot.
+  Not a GA self-serve plan.
 
 All features claimed as "Available" on the pricing page have implementation
 and browser/API proof. Planned and waitlist features are honestly marked.
-No fake live claims.
+No fake live claims. Comparison hub at /compare with sourced competitor
+comparison pages (Hookdeck, Svix, Hook0, ngrok, Tailscale, Webhook Relay).
 
 ---
 
