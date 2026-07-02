@@ -30,6 +30,7 @@ Welcome to the Zen Mesh technical documentation — architecture, operations, se
 | [Getting Started](getting-started/quick-start) | Install, quick start, first webhook |
 | [Guides](guides/cluster-enrollment) | Cluster enrollment, adapters, destinations, monitoring |
 | [Operations](operations/upgrades) | Upgrades, backups, troubleshooting |
+| [Trust Overview](trust/) | Trust, compliance coverage, CIS benchmark alignment, evidence overview |
 | [Evidence Overview](evidence/overview) | Index of all evidence areas — runtime, trust, compliance, Merkle, validation map |
 | [Runtime Evidence](evidence/runtime-convergence) | 10 convergence proofs — delivery, DLQ, backpressure, circuit breaker |
 | [Trust Evidence](evidence/trust-lifecycle) | 10 trust proofs — enrollment, mTLS, HMAC, ZenLock, rotation |

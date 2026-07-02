@@ -111,6 +111,16 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: 'Trust',
+      items: [
+        'trust/index',
+        'trust/compliance-coverage',
+        'trust/evidence',
+        'trust/cis-benchmark-alignment',
+      ],
+    },
+    {
+      type: 'category',
       label: 'Evidence',
       items: [
         'evidence/overview',
