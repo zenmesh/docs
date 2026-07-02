@@ -157,53 +157,65 @@ Do not claim payload export or Object Lock live unless proven.
 
 | Feature | Free Forever | Pro Early Bird | Business | Enterprise |
 |---------|:---:|:---:|:---:|:---:|
-| First success | Available | Available | Planned | Enterprise custom |
-| Basic templates | Available | Available | Planned | Enterprise custom |
-| Basic endpoints/targets/flows | Available | Available | Planned | Enterprise custom |
-| Basic Labs | V1 blocker | Planned | Planned | Enterprise custom |
-| Short retention (7d) | Available | — | — | — |
-| 30-day retention | — | Available | — | — |
-| Longer retention | — | — | Planned | Enterprise custom |
-| No advanced policy controls | Available | — | — | — |
-| Higher quotas | — | Available | Planned | Enterprise custom |
-| S3 delivery-log export | — | Available | Planned | Enterprise custom |
-| Advanced dev experience | — | Planned | Planned | Enterprise custom |
-| Saved sessions/fixtures | — | Planned | Planned | Enterprise custom |
-| Better retry/replay | — | Planned | Planned | Enterprise custom |
-| Multi-seat | — | — | Planned | Enterprise custom |
-| Object-level permissions | — | — | Planned | Enterprise custom |
-| Multi-target fanout | — | — | Planned | Enterprise custom |
-| IP/header policies | — | — | V1 blocker | Enterprise custom |
-| Header transform/rewrite | — | — | V1 blocker | Enterprise custom |
-| Advanced DLQ/replay | — | — | Planned | Enterprise custom |
-| Payload export/Object Lock | — | — | Planned | Enterprise custom |
-| Team/shared Labs | — | — | Planned | Enterprise custom |
-| Audit/evidence retention | — | — | Planned | Enterprise custom |
-| Custom retention/export | — | — | — | Enterprise custom |
-| Dedicated infra/data plane | — | — | — | Enterprise custom |
-| Custom security/procurement | — | — | — | Enterprise custom |
-| Custom support/data residency | — | — | — | Enterprise custom |
+| Pricing | $0 | $29/mo Early Bird (ref $49) | Join waiting list | Contact us |
+| Trial | Always free | 6-month free trial | Waitlist | Custom |
+| Public webhook endpoints | 3 on shared IPs | 50 | Included + overages | Custom |
+| Webhooks/month | 25,000 | 500,000 | Included + overages | Custom |
+| Max payload | 256 KB | 1 MB | Higher/custom | Custom |
+| Targets | 3 | 25 | Included + overages | Custom |
+| Flows/routes | 3 | 50 | Included + overages | Custom |
+| Templates | All public | All public | Public + private/custom | Custom |
+| Signature/HMAC validation | Where supported | Where supported | Where supported | Included/custom |
+| Delivery mode | Single target | Single target | Multi-target fanout | Custom |
+| MCP/API/CLI/UI | Included | Included | Included | Included/custom |
+| Event/log retention | 7 days | 30 days | Longer retention | Custom |
+| DLQ/recovery retention | 3 days basic | 7 days advanced | 30+ days | Custom |
+| Retry | Basic | Advanced/manual | Bulk/team/audited | Custom |
+| DLQ visibility | Basic | Advanced | Team workflows | Custom |
+| Replay | Locked/limited | Manual if available | Batch/dry-run/audited | Custom |
+| IP allow/block | No editing | Available | Advanced policy | Custom |
+| Header allow/block | No | Limited/preview | Available | Custom |
+| Header transform/rewrite | No | No | Planned / Business+ | Custom |
+| Delivery logs to S3 | No | Available | Advanced export | Custom |
+| Payload export | No | No | Planned / Business+ | Custom |
+| S3 Object Lock | No | No | Planned / Business+ | Custom |
+| Dedicated adapters | No | No | Yes | Multiple/custom |
+| Multi-seat team access | No | No | Available | Custom |
+| Object-level permissions | No | No | Available | Custom |
+| Metered overages | No | No | Available | Custom |
+| Multi-target fanout | No | No | Available | Custom |
+| Labs: Sandbox | Basic | Saved sessions | Team/shared | Custom |
+| Labs: Playground | Manual | Saved/history | Shared/team | Custom |
+| Labs: Payload Builder | Manual JSON | Provider examples | Private schemas | Custom |
+| Labs: Webhook Simulator | Limited | Higher limits | Team/audit | Custom |
+| Labs: Fixture Runner | Samples only | Saved fixtures | CI-style packs | Custom |
+| Support | Community/best-effort | Email + Slack/Discord | SLA/on-call options | Custom support |
+| Evidence/audit retention | No | No | Planned / Business+ | Custom |
+| DPA/compliance posture | No | No | DPA workflow | Custom MSA/DPA |
+| Dedicated receive IP add-on | No | No | Add-on eligible | Custom multiple |
 
 ---
 
 ## 7. Public Pricing Alignment Notes
 
-Do not update public pricing to claim these features as available until Hermes produces the accepted V1 plan-feature contract.
+The public pricing page at zen-mesh.io/pricing has been rewritten to match
+the corrected V1 plan ladder above. The feature matrix and plan cards now
+reflect the actual V1 plan definitions:
 
-**Allowed public copy:**
-- Planned
-- Business waitlist
-- Business+ planned
-- Contact us
+- **Free Forever** — $0, real private webhook delivery, 3 endpoints on
+  shared IPs, 25K webhooks/month, 3-day basic retry/DLQ, community support.
+- **Pro Early Bird** — $29/mo (ref $49), 6-month free trial, 50 endpoints,
+  500K webhooks/month, IP allow/block, S3 delivery logs, 7-day advanced
+  retry/DLQ, saved playground.
+- **Business** — Join waiting list. Dedicated adapters, overages, team
+  governance, header allow/block, multi-target fanout, 30+ day retention,
+  SLA options. Not generally available.
+- **Enterprise** — Contact us. Custom infrastructure, residency, support,
+  procurement.
 
-**Forbidden public copy:**
-- ❌ IP blocking available
-- ❌ Header transforms available
-- ❌ Payload export live
-- ❌ Object Lock live
-- ❌ DLQ/replay fully available
-
-All of the above require implementation and browser/API proof before public claim.
+All features claimed as "Available" on the pricing page have implementation
+and browser/API proof. Planned and waitlist features are honestly marked.
+No fake live claims.
 
 ---
 
