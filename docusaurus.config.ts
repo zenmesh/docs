@@ -169,7 +169,7 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'defaultSidebar',
           position: 'left',
-          label: 'zen-mesh',
+          label: 'Docs',
         },
         {
           type: 'docSidebar',
@@ -193,23 +193,18 @@ const config: Config = {
           docsPluginId: 'zen-gc',
         },
         {
+          href: 'https://zen-mesh.io/pricing',
+          label: 'Pricing',
+          position: 'right',
+        },
+        {
           href: 'pathname:///llms.txt',
           label: 'AI Context',
           position: 'right',
         },
         {
-          href: 'https://www.zen-mesh.io/evidence',
-          label: 'Evidence',
-          position: 'right',
-        },
-        {
           href: 'https://www.zen-mesh.io',
           label: 'zen-mesh.io',
-          position: 'right',
-        },
-        {
-          href: 'https://github.com/zenmesh',
-          label: 'GitHub',
           position: 'right',
         },
       ],
@@ -221,12 +216,25 @@ const config: Config = {
           title: 'Product',
           items: [
             {
-              label: 'Website',
+              label: 'Why Zen Mesh',
               href: 'https://zen-mesh.io',
             },
             {
               label: 'Pricing',
               href: 'https://zen-mesh.io/pricing',
+            },
+            {
+              label: 'Docs',
+              to: '/docs',
+            },
+          ],
+        },
+        {
+          title: 'Company',
+          items: [
+            {
+              label: 'About',
+              href: 'https://zen-mesh.io',
             },
             {
               label: 'Security',
@@ -260,7 +268,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Zen Mesh Inc.`,
+      copyright: `© ${new Date().getFullYear()} Zen Mesh Inc. Toronto, Ontario, Canada. All rights reserved.`,
     },
     prism: {
       theme: prismThemes.github,

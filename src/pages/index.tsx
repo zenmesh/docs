@@ -10,7 +10,7 @@ export default function Home() {
         <div className={styles.container}>
           <h1>Zen Mesh <span className={styles.accent}>Documentation</span></h1>
           <p className={styles.tagline}>
-            Secure webhook delivery to private networks — without opening firewalls.
+            Secure webhook delivery to private networks — without opening firewalls. Free Forever. Pro Early Bird with 6-month free trial available.
           </p>
           <div className={styles.products}>
             <Link to="/docs" className={styles.card}>
