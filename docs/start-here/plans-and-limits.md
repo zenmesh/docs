@@ -49,11 +49,11 @@ sidebar_label: Plans and Limits
 | On-call | Not included |
 | Dedicated public IP | Not included |
 
-## Business (Coming Soon)
+## Business (Join Waiting List)
 
 | Feature | Status |
-|---|---|
-| Status | Coming soon — qualitative only |
+|--------|--------|
+| Status | Join waiting list |
 | Limits | No public numeric limits |
 | Adapters | Dedicated adapters planned |
 | Isolation | Namespace, container, and network-policy isolation planned |
@@ -104,7 +104,7 @@ Customers provide their own S3 bucket and credentials/keys. Zen Mesh writes log 
 - S3 Object Lock / immutable retention workflows (planned)
 - Stronger compliance/retention workflows (planned)
 
-Business+ is coming soon. Do not assume these features are live.
+Business+ is on the waiting list. Do not assume these features are live.
 
 ### Enterprise
 

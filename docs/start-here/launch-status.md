@@ -9,7 +9,7 @@ Zen Mesh Free and Pro are available as public buyer-facing plans. This page docu
 ## Current Phase
 
 - **Free and Pro**: Public plans with best-effort support, no SLA.
-- **Business**: Coming soon — qualitative commitments only, no public numeric limits.
+- **Business**: Join waiting list — qualitative commitments only, no public numeric limits.
 - **Enterprise**: Contact us for custom requirements.
 
 ## Evidence Status
