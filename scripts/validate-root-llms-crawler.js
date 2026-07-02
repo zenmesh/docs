@@ -62,7 +62,7 @@ function main() {
   ok('llms states docs host for /ai JSON', llms.includes('docs.zen-mesh.io') && /\/ai\//.test(llms));
   ok('llms no www /ai/ JSON links', !FORBIDDEN_HOST_PATH.test(llms));
   ok('llms no forbidden IDs', !FORBIDDEN_ID.test(llms));
-  ok('llms no /commitments', !llms.includes('/commitments'));
+  ok('llms no bare /commitments', !/(?<!https:\/\/www\.zen-mesh\.io)\/commitments/.test(llms));
   ok('llms narrative not proof', /not proof/i.test(llms));
 
   for (const url of REQUIRED_LLMS_LINKS) {

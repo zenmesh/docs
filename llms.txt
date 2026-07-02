@@ -5,8 +5,8 @@
 
 - **Company:** Zen Mesh Inc., Toronto, Ontario, Canada.
 - **Governing law:** Ontario, Canada.
-- **Terms:** https://zen-mesh.io/terms
-- **Privacy:** https://zen-mesh.io/privacy
+- **Terms:** https://www.zen-mesh.io/commitments/legal/terms/
+- **Privacy:** https://www.zen-mesh.io/commitments/legal/privacy/
 
 ## Pricing
 

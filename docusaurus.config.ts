@@ -240,6 +240,14 @@ const config: Config = {
               label: 'Security',
               href: 'https://zen-mesh.io/security',
             },
+            {
+              label: 'Terms of Service',
+              href: 'https://zen-mesh.io/commitments/legal/terms/',
+            },
+            {
+              label: 'Privacy Policy',
+              href: 'https://zen-mesh.io/commitments/legal/privacy/',
+            },
           ],
         },
         {
