@@ -1,5 +1,4 @@
 import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
-import apiSidebar from './api/reference/sidebar'
 
 const sidebars: SidebarsConfig = {
   defaultSidebar: [
@@ -142,18 +141,15 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: 'API Reference',
       items: [
-        'api/recipes/list-planes-and-adapters',
-        'api/recipes/create-webhook-endpoint',
-        'api/recipes/create-target',
-        'api/recipes/create-flow',
-        'api/recipes/drafts-validate-test-publish',
-        'api/recipes/errors-and-rate-limits',
-
+        'api/recipes/list-planes-and-adapters/api-recipes-list-planes-and-adapters',
+        'api/recipes/create-webhook-endpoint/api-recipes-create-webhook-endpoint',
+        'api/recipes/create-target/api-recipes-create-target',
+        'api/recipes/create-flow/api-recipes-create-flow',
+        'api/recipes/drafts-validate-test-publish/api-recipes-drafts-validate-test-publish',
         'api/overview',
         'api/quickstart',
         'api/examples',
         'api/authentication',
-        'api/errors',
         'api/webhooks',
         'api/evidence',
         'api/logs',
@@ -163,21 +159,18 @@ const sidebars: SidebarsConfig = {
         'api/versioning',
         'api/rate-limits',
         'api/fabric-adapters',
-                'api/changelog',
-        ...apiSidebar,
+        'api/changelog',
+      ],
+    },
     {
       type: 'category',
       label: 'Recipes',
       items: [
-        'api/recipes/list-planes-and-adapters',
-        'api/recipes/create-webhook-endpoint',
-        'api/recipes/create-target',
-        'api/recipes/create-flow',
-        'api/recipes/drafts-validate-test-publish',
-        'api/recipes/errors-and-rate-limits',
-      ],
-    },
-
+        'api/recipes/list-planes-and-adapters/api-recipes-list-planes-and-adapters',
+        'api/recipes/create-webhook-endpoint/api-recipes-create-webhook-endpoint',
+        'api/recipes/create-target/api-recipes-create-target',
+        'api/recipes/create-flow/api-recipes-create-flow',
+        'api/recipes/drafts-validate-test-publish/api-recipes-drafts-validate-test-publish',
       ],
     },
     {
