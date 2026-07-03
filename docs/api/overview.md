@@ -13,7 +13,7 @@ The Zen Mesh API is one control surface for the [Zen Configuration Contract](../
 | Group | Audience | Primary base path | Status |
 |-------|----------|------------------|--------|
 | Dashboard/BFF API | App-facing | `/api/bff/v1` | INTERNAL_ONLY |
-| [Customer API](../reference/customer-api) | External programmable | `GET /v1/...` | PLANNED |
+| [Customer API](../reference/customer-api) | External programmable | `/v1/...` | PLANNED |
 | [Webhook Ingest API](./webhooks) | Sender-facing | `POST /webhooks/{provider}` | WIRED_SANDBOX |
 | [Targets API](./targets) | Customer | `/v1/tenants/{tid}/destinations` | WIRED_SANDBOX |
 | [Endpoints API](./endpoints) | Customer | `/v1/tenants/{tid}/ingesters` | WIRED_SANDBOX |
@@ -86,7 +86,8 @@ Template → Blueprint → Flow → Traffic → Evidence
 
 ## Related
 
-- [API Status Matrix](./status) — per-group maturity, audience, and implementation notes
+- [API Status Matrix](./status) — per-group maturity, audience, read/write status, and implementation notes
+- [Write Safety Model](./write-safety) — authorization, idempotency, audit, fail-closed behavior for write-capable APIs and MCP
 - [Authentication and API Keys](./authentication)
 - [Errors and Problem Details](./errors)
 - [OpenAPI Spec Index](./openapi)

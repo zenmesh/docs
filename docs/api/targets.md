@@ -55,6 +55,18 @@ Targets are delivery destinations — where validated events are sent after inge
 | created_at | datetime | Creation timestamp |
 | updated_at | datetime | Last update timestamp |
 
+## Read/write status
+
+| Operation | Read | Write | Status |
+|---|---|---|---|
+| List targets | Yes | — | WIRED_SANDBOX |
+| Create target | — | Yes | WIRED_SANDBOX |
+| Get target details | Yes | — | WIRED_SANDBOX |
+| Update target | — | Yes | WIRED_SANDBOX |
+| Delete target | — | Yes | WIRED_SANDBOX |
+
+Write operations require tenant authorization, appropriate scopes, and audit logging. See [Write Safety Model](./write-safety) for details.
+
 ## Auth
 
 Bearer JWT or API key in `Authorization` header. Tenant-scoped via path parameter.

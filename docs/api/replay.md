@@ -34,6 +34,17 @@ Replay **requires retained payload/context**. If the payload has exceeded the re
 }
 ```
 
+## Read/write status
+
+| Operation | Read | Write | Status |
+|---|---|---|---|
+| Replay single delivery | — | Yes (gated) | WIRED_SANDBOX |
+| Batch replay | — | Planned | PLANNED |
+
+Read support for replay eligibility/context is available through the [Delivery Attempts API](./delivery-attempts). Write (replay) is gated by retained payload/context availability and plan-based retention limits. Replay requires tenant authorization and audit logging.
+
+See [Write Safety Model](./write-safety) for details.
+
 ## Auth
 
 Bearer JWT or API key in `Authorization` header. Tenant-scoped via path parameter.

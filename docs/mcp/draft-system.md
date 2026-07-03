@@ -159,9 +159,9 @@ Drafts have a configurable time-to-live. Expired drafts are automatically cleane
 | Full admission webhook framework | V1.1+ |
 | Merkle chain integration for draft evidence | V1.1+ |
 
-## Relationship to Read-Only V1 Policy
+## Relationship to MCP V1 Policy
 
-The Draft System extends MCP beyond pure read-only while preserving the human-in-the-loop governance model. MCP remains read-only for production operations — drafts are proposals, not mutations. Apply is exclusively human. See the [Read-Only V1 Policy](./read-only-v1-policy) for the base read-only contract.
+The Draft System provides a controlled write path for infrastructure proposals while preserving the human-in-the-loop governance model. MCP write tools are disabled by default; the draft system adds a gated proposal path where agents can create drafts but cannot apply them. Apply is exclusively human. See the [MCP V1 Policy](./read-only-v1-policy) for tool-group gating and the write model.
 
 ## Related
 

@@ -15,16 +15,16 @@ The MCP server provides **programmatic access** to Zen Mesh data through the Mod
 
 ## Existing Tools
 
-| Tool | Description | Read-Only |
-|---|---|---|
-| `list_api_keys` | List API keys | ✅ |
-| `create_api_key` | Create API key | ❌ |
-| `revoke_api_key` | Revoke API key | ❌ |
-| `list_deliveries` | List deliveries | ✅ |
-| `get_delivery` | Get delivery details | ✅ |
-| `list_webhooks` | List webhooks | ✅ |
-| `get_webhook` | Get webhook details | ✅ |
-| `get_delivery_stats` | Get delivery statistics | ✅ |
+| Tool | Description | Read/Write | Access |
+|---|---|---|---|
+| `list_api_keys` | List API keys | Read | Default |
+| `create_api_key` | Create API key | Write | Explicit enablement required |
+| `revoke_api_key` | Revoke API key | Write | Explicit enablement required |
+| `list_deliveries` | List deliveries | Read | Default |
+| `get_delivery` | Get delivery details | Read | Default |
+| `list_webhooks` | List webhooks | Read | Default |
+| `get_webhook` | Get webhook details | Read | Default |
+| `get_delivery_stats` | Get delivery statistics | Read | Default |
 
 ## Proposed Evidence Tools
 
@@ -49,7 +49,7 @@ The MCP server provides **programmatic access** to Zen Mesh data through the Mod
 
 ## Design Principles
 
-- **Read-only for evidence tools**: Proposed tools are read-only
+- **Default-on for evidence read tools**: Evidence read tools are available on the default surface; write tools require explicit enablement
 - **Rate-limited**: 50 req/s, burst 100
 - **Database-backed**: Uses persistent storage
 - **Tenant-scoped**: API key authentication required
@@ -57,6 +57,7 @@ The MCP server provides **programmatic access** to Zen Mesh data through the Mod
 ## Non-Claims
 
 - Not production-live — disabled in sandbox
-- Evidence tools are planned — not yet implemented
-- Existing mutating tools (create/revoke API key) preserved but out of evidence scope
+- Evidence read tools are planned — not yet implemented
+- Write tools require explicit enablement and are not available on the default surface
+- Existing write tools (create/revoke API key) require explicit enablement
 - No compliance certification via MCP

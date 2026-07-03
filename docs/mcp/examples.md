@@ -96,8 +96,8 @@ Create a new webhook source for Stripe
 ```json
 {
   "error": {
-    "code": "operation_not_supported",
-    "message": "Write operations are not supported in MCP V1. Use the REST API at https://api.zen-mesh.io/v1 for configuration changes."
+    "code": "write_tool_disabled",
+    "message": "Write tool group 'zen_create_source' is not enabled. Contact your operator to enable the required tool group, or use the REST API at https://api.zen-mesh.io/v1 for configuration changes."
   }
 }
 ```

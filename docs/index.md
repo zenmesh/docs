@@ -55,7 +55,7 @@ Welcome to the Zen Mesh technical documentation — architecture, operations, se
 
 ## Also available
 
-- [Customer API](reference/customer-api) — read-only operational truth interface
+- [Customer API](reference/customer-api) — planned programmable interface for reading operational truth and managing authorized resources
 - [MCP](reference/mcp) — Model Context Protocol server for programmatic access
 
 ---

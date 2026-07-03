@@ -49,6 +49,15 @@ Clients can verify delivery integrity without trusting the platform:
 
 If the computed root matches the published root, the delivery is cryptographically confirmed.
 
+## Read/write status
+
+| Operation | Read | Write | Status |
+|---|---|---|---|
+| Read delivery evidence | Yes | — | WIRED_SANDBOX |
+| List evidence for a source | Yes | — | WIRED_SANDBOX |
+
+Evidence API is read-only for public customer use. Evidence is created by the platform runtime as part of delivery processing, not by direct customer write. Evidence verification is an offline/client-side operation.
+
 ## Pagination
 
 Evidence lists support cursor-based pagination with `limit` and `cursor` parameters.

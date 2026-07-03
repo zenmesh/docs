@@ -47,6 +47,18 @@ POST /v1/tenants/{tenant_id}/events/{event_id}/retry
 }
 ```
 
+## Read/write status
+
+| Operation | Read | Write | Status |
+|---|---|---|---|
+| Retry single delivery (via delivery ID) | — | Yes | WIRED_SANDBOX |
+| Batch retry | — | Yes | WIRED_SANDBOX |
+| Retry via event path | — | Yes | WIRED_SANDBOX |
+
+Read support for retryable attempts is available through the [Delivery Attempts API](./delivery-attempts). Write (retry) requires tenant authorization, event-level authorization, and idempotency safety.
+
+See [Write Safety Model](./write-safety) for details.
+
 ## Idempotency and safety
 
 Retry is idempotent. Calling retry on an already-retried delivery does not create duplicate deliveries. See [Idempotency](./idempotency) for details.

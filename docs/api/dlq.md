@@ -37,6 +37,17 @@ GET /v1/tenants/{tenant_id}/deliveries?status=failed
 | `GET` | `/tenants/{tid}/deliveries?status=failed` | List DLQ entries | WIRED_SANDBOX |
 | `GET` | `/tenants/{tid}/deliveries/{did}` | Get DLQ entry details | WIRED_SANDBOX |
 
+## Read/write status
+
+| Operation | Read | Write | Status |
+|---|---|---|---|
+| List DLQ entries | Yes | — | WIRED_SANDBOX |
+| Get DLQ entry details | Yes | — | WIRED_SANDBOX |
+
+DLQ is a query filter over delivery attempts, not a separate writeable store. There is no direct public DLQ write. Mutating DLQ state (retry) is handled through the [Retry API](./retry).
+
+See [Write Safety Model](./write-safety) for details.
+
 ## Retry from DLQ
 
 See [Retry API](./retry) for retrying failed deliveries from the DLQ.

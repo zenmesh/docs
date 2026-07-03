@@ -166,13 +166,14 @@ See [support](https://docs.zen-mesh.io/docs/start-here/support).
 - [API Versioning and Compatibility](https://docs.zen-mesh.io/docs/api/versioning): URL-based versioning, compatibility policy, spec maintenance
 - [API Changelog](https://docs.zen-mesh.io/docs/api/changelog): Version history and migration notes
 - [OpenAPI Spec Index](https://docs.zen-mesh.io/docs/api/openapi): Canonical spec files, coverage table, endpoint groups, validation commands
-- [Customer API](https://docs.zen-mesh.io/docs/reference/customer-api): Planned read-only programmable interface (PLANNED, not production-live)
+- [Write Safety](https://docs.zen-mesh.io/docs/api/write-safety): Authorization model, idempotency, audit, fail-closed behavior for write-capable APIs and MCP
+- [Customer API](https://docs.zen-mesh.io/docs/reference/customer-api): Planned programmable interface for reading operational truth and managing authorized resources. Not read-only globally; endpoint groups carry individual read/write status (PLANNED, not production-live)
 
 OpenAPI spec: [zen-back.v1.yaml](https://github.com/zenmesh/zen-platform-hermes/blob/main/api-specifications/zen-back.v1.yaml) (DRAFT — wired via openapi-docs plugin). Additional spec at [`/openapi/zen-mesh-user-api.v1.yaml`](https://docs.zen-mesh.io/openapi/zen-mesh-user-api.v1.yaml) (static, not plugin-rendered).
 
 ## MCP Reference
 
-- [MCP Overview](https://docs.zen-mesh.io/docs/mcp/overview): Model Context Protocol server, tool surface, non-claims
+- [MCP Overview](https://docs.zen-mesh.io/docs/mcp/overview): Model Context Protocol server, tool surface, read/write model, non-claims
 - [MCP Tools Reference](https://docs.zen-mesh.io/docs/mcp/tools): MCP tool surface — read and write tools (both V1; default-off per tool group)
 - [MCP Examples](https://docs.zen-mesh.io/docs/mcp/examples): Example prompts, read/write operations, and default-off scenarios
 - [MCP Authentication and mTLS](https://docs.zen-mesh.io/docs/mcp/authentication-and-mtls): MCP API key format, scopes, TLS requirements

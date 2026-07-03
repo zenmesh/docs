@@ -19,7 +19,7 @@ Events carry correlation IDs for traceability across ingestion, delivery, and ac
 
 ## Evidence API
 
-The MCP evidence endpoints provide read-only access to operational truth:
+The MCP evidence endpoints provide access to operational truth through read tools (default-on):
 
 | Endpoint | Description |
 |----------|-------------|

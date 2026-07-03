@@ -166,6 +166,7 @@ const sidebars: SidebarsConfig = {
       items: [
         'api/overview',
         'api/status',
+        'api/write-safety',
         {
           type: 'category',
           label: 'Runtime APIs',

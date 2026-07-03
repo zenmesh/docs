@@ -22,7 +22,7 @@ curl -H "X-MCP-API-Key: mcp_..." https://api.zen-mesh.io/v1/mcp/health
 
 ## Key Scopes
 
-MCP keys support granular scopes. The default read-only surface grants:
+MCP keys support granular scopes. The default surface grants read scopes; write scopes require explicit enablement:
 
 | Scope | Tools |
 |-------|-------|
@@ -32,9 +32,11 @@ MCP keys support granular scopes. The default read-only surface grants:
 | `mcp:read:deliveries` | `zen_get_delivery_status` |
 | `mcp:read:planes` | `zen_list_planes` |
 | `mcp:read:logs` | `zen_show_logs` |
-| `mcp:read:*` | All read-only tools |
+| `mcp:read:*` | All read tools (default-on) |
+| `mcp:write:<group>` | Write tools per group (disabled by default) |
+| `mcp:admin:keys` | Admin/key management tools (not on default surface) |
 
-Admin tools (`create_api_key`, `revoke_api_key`) require `mcp:admin:keys` scope and are not available on the default surface.
+Write tools (`create_api_key`, `revoke_api_key`, and other mutating tools) require `mcp:admin:keys` or `mcp:write:<group>` scopes respectively and are not available on the default surface.
 
 ## Transport Security
 

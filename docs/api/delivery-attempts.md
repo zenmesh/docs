@@ -54,6 +54,17 @@ An attempt is one delivery execution — Zen Mesh's attempt to deliver an event 
 | retrying | Automatic retry in progress |
 | pending | Queued for delivery |
 
+## Read/write status
+
+| Operation | Read | Write | Status |
+|---|---|---|---|
+| List delivery attempts | Yes | — | WIRED_SANDBOX |
+| Get delivery details | Yes | — | WIRED_SANDBOX |
+
+Delivery Attempts API is read-only for public customer use. Delivery attempts are created by the runtime/sandbox delivery path, not by direct customer write. Mutating delivery state (retry, replay) is handled through the [Retry API](./retry) and [Replay API](./replay).
+
+See [Write Safety Model](./write-safety) for details.
+
 ## Auth
 
 Bearer JWT or API key in `Authorization` header. Tenant-scoped via path parameter.

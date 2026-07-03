@@ -33,6 +33,20 @@ Saved payloads are used in the Labs → Payload Builder for testing and developm
 | `PUT` | `/tenants/{tid}/saved-payloads/{pid}` | Update a saved payload | WIRED_SANDBOX |
 | `DELETE` | `/tenants/{tid}/saved-payloads/{pid}` | Delete a saved payload | WIRED_SANDBOX |
 
+## Read/write status
+
+| Operation | Read | Write | Status |
+|---|---|---|---|
+| List saved payloads | Yes | — | WIRED_SANDBOX |
+| Create saved payload | — | Yes | WIRED_SANDBOX |
+| Get saved payload details | Yes | — | WIRED_SANDBOX |
+| Update saved payload | — | Yes | WIRED_SANDBOX |
+| Delete saved payload | — | Yes | WIRED_SANDBOX |
+
+Write operations require tenant authorization, redaction/security controls, and audit logging. This is not a production retained payload history — saved payloads are test/template payloads only.
+
+See [Write Safety Model](./write-safety) for details.
+
 ## Redaction
 
 Credentials and secret-like keys are redacted from saved payloads automatically.

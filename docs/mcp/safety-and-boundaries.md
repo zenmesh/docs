@@ -12,7 +12,7 @@ All MCP tool calls pass through zen-back. There is no direct database access fro
 
 - All MCP requests require a valid API key with appropriate tenant scope
 - Connections use mTLS for transport-layer security
-- API keys are scoped to read-only operations
+- API keys are scoped to specific operations; write scopes require explicit enablement
 
 See [Authentication and mTLS](./authentication-and-mtls.md) for details.
 
@@ -24,9 +24,16 @@ See [Authentication and mTLS](./authentication-and-mtls.md) for details.
 4. Response is returned to the agent
 5. Every call is logged with agent identity, tool name, parameters, and timestamp
 
-## Write Operation Denial
+## Write Operation Model
 
-Any attempt to call a write operation (event submission, configuration change) is rejected at the MCP proxy layer before reaching the database. The agent receives a clear error response explaining that write operations are not available in V1.
+Write operations are available in V1 but are **disabled by default**. An operator must explicitly enable each write tool group before it becomes available:
+
+- Write tools pass through the same validation chain as API/UI/CLI writes
+- All write operations require tenant authorization, appropriate scopes, and audit logging
+- Any attempt to call a write operation for a disabled tool group is rejected at the MCP proxy layer
+- The agent receives a clear error response explaining which tool group must be activated
+
+Write tools that are enabled follow the same contract validation, object-level permissions, and audit requirements as REST API writes. See the [Write Safety Model](../api/write-safety) for details.
 
 ## Data Isolation
 
@@ -36,7 +43,7 @@ Any attempt to call a write operation (event submission, configuration change) i
 
 ## No Autonomous Action
 
-MCP agents cannot independently submit events, modify sources, or change platform configuration. All tools are read-only. The MCP server acts as a query interface, not a control plane.
+MCP agents cannot independently commit write operations to production. Write tools are disabled by default and, when enabled, follow the same authorization, validation, and audit requirements as REST API writes. The MCP server enforces per-tool-group gating, tenant boundaries, and fail-closed validation on all write paths.
 
 ## Draft System Apply Boundary
 

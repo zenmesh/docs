@@ -1,5 +1,7 @@
 # API Quickstart
 
+> Status: WIRED_SANDBOX. This guide demonstrates read and write operations validated in sandbox/local runtime. Write examples are not production-live availability claims.
+
 This guide walks you through getting started with the Zen Mesh API. By the end, you'll be able to:
 
 * Set up environment variables

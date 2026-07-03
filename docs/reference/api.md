@@ -51,7 +51,7 @@ The Zen Mesh API provides REST, MCP, and WebSocket surfaces for the [Zen Configu
 
 ## Customer API
 
-- **[Customer API](../reference/customer-api)** — Planned read-only programmable interface for operational truth. Status: PLANNED, not production-live.
+- **[Customer API](../reference/customer-api)** — Planned programmable interface for reading operational truth and managing authorized Zen Mesh resources. Not read-only globally; endpoint groups carry individual read/write status. See [API Status Matrix](../api/status) for per-group details. Status: PLANNED.
 
 ## OpenAPI
 

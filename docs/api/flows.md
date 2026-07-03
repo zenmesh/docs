@@ -47,6 +47,18 @@ Flows are declarative delivery contracts that connect an endpoint (source receiv
 }
 ```
 
+## Read/write status
+
+| Operation | Read | Write | Status |
+|---|---|---|---|
+| List flows | Yes | — | WIRED_SANDBOX |
+| Create flow | — | Yes | WIRED_SANDBOX |
+| Get flow details | Yes | — | WIRED_SANDBOX |
+| Update flow | — | Yes | WIRED_SANDBOX |
+| Delete flow | — | Yes | WIRED_SANDBOX |
+
+Write operations require tenant authorization, appropriate scopes, and audit logging. See [Write Safety Model](./write-safety) for details.
+
 ## Auth
 
 Bearer JWT or API key in `Authorization` header. Tenant-scoped via path parameter.

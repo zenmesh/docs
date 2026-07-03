@@ -4,12 +4,12 @@ sidebar_label: MCP Overview
 
 # MCP (Model Context Protocol) Overview
 
-The Zen Mesh MCP server provides programmatic read-only access to platform data through the Model Context Protocol. It is designed for AI agents, operators, and internal tooling.
+The Zen Mesh MCP server provides programmatic access to Zen Mesh capabilities through the Model Context Protocol. It is designed for AI agents, operators, and internal tooling. MCP is not read-only as a category — read and write tools exist, with write tools disabled by default.
 
 ## Current Status
 
 - **Server**: Implemented at `src/saas/mcp/` in `zen-platform-hermes`
-- **Surface**: Read-only operational truth (13 tools)
+- **Surface**: Read tools (default-on); write tools (disabled by default, require explicit enablement)
 - **Admin tools**: API key management (2 tools, not on default surface)
 - **Authentication**: MCP API key (`mcp_` prefix)
 - **Deployment**: K8s deployment available (disabled in sandbox, P098)
@@ -17,18 +17,18 @@ The Zen Mesh MCP server provides programmatic read-only access to platform data 
 
 ## Tool Surface
 
-The MCP server exposes two tool categories:
+The MCP server exposes tools with per-tool-group access control:
 
 | Category | Count | Access |
 |----------|-------|--------|
-| Read-only operational truth | 13 | Default surface |
-| Admin/mutation | 2 | Requires explicit auth elevation |
+| Read tools (operational truth) | 13 | Default surface |
+| Write/admin tools | 2+ | Requires explicit enablement |
 
 See [MCP Tools Reference](./tools.md) for full tool descriptions and schemas.
 
 ## Draft System
 
-The [MCP Draft System](./draft-system) enables agents to propose infrastructure changes as drafts that require human review and approval before taking effect. Agents can create endpoint drafts; apply is exclusively human. This extends MCP beyond pure read-only while preserving a human-in-the-loop governance model.
+The [MCP Draft System](./draft-system) enables agents to propose infrastructure changes as drafts that require human review and approval before taking effect. Agents can create endpoint drafts; apply is exclusively human. This provides a controlled write path for infrastructure proposals while preserving a human-in-the-loop governance model.
 
 ## Use Cases
 
@@ -45,6 +45,7 @@ The [MCP Draft System](./draft-system) enables agents to propose infrastructure 
 ## Non-Claims
 
 - Not production-live — sandbox disabled per P098
-- Evidence tools are read-only — no mutating operations on default surface
+- Read tools are default-on; write tools require explicit enablement
+- Write tools are disabled by default and must be explicitly enabled per tool group
 - Merkle receipts are integrity-only — not auth, identity, encryption, or delivery guarantee
 - No compliance certification via MCP

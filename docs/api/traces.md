@@ -54,6 +54,15 @@ A trace in V1 is a **delivery trace spine** — the collection of delivery attem
 }
 ```
 
+## Read/write status
+
+| Operation | Read | Write | Status |
+|---|---|---|---|
+| Get delivery trace for an event | Yes | — | WIRED_SANDBOX |
+| Get single delivery attempt detail | Yes | — | WIRED_SANDBOX |
+
+Traces API is read-only. Traces are built from delivery attempt and evidence data, not directly created by customers.
+
 ## Auth
 
 Bearer JWT or API key in `Authorization` header. Tenant-scoped via path parameter.

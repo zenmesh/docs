@@ -31,6 +31,18 @@ Endpoints are webhook source receivers — the public-facing URLs where provider
 | `PUT` | `/tenants/{tid}/ingesters/{iid}` | Update an endpoint | WIRED_SANDBOX |
 | `DELETE` | `/tenants/{tid}/ingesters/{iid}` | Delete an endpoint | WIRED_SANDBOX |
 
+## Read/write status
+
+| Operation | Read | Write | Status |
+|---|---|---|---|
+| List endpoints | Yes | — | WIRED_SANDBOX |
+| Create endpoint | — | Yes | WIRED_SANDBOX |
+| Get endpoint details | Yes | — | WIRED_SANDBOX |
+| Update endpoint | — | Yes | WIRED_SANDBOX |
+| Delete endpoint | — | Yes | WIRED_SANDBOX |
+
+Write operations require tenant authorization, appropriate scopes, and audit logging. See [Write Safety Model](./write-safety) for details.
+
 ## Auth
 
 Bearer JWT or API key in `Authorization` header. Tenant-scoped via path parameter.
