@@ -144,7 +144,10 @@ See [support](https://docs.zen-mesh.io/docs/start-here/support).
 - [API Overview](https://docs.zen-mesh.io/docs/api/overview): Canonical API taxonomy — surface groups, maturity legend, terminology mapping, non-claims
 - [API Status Matrix](https://docs.zen-mesh.io/docs/api/status): Per-group maturity, audience, base path, auth model, OpenAPI coverage, UI mapping
 - [Authentication and API Keys](https://docs.zen-mesh.io/docs/api/authentication): OIDC, HMAC, API key, MCP auth, scope model
-- [Errors and Problem Details](https://docs.zen-mesh.io/docs/api/errors): Standard error shape, status codes, RFC 9457, retry-after
+- [Errors and Problem Details](https://docs.zen-mesh.io/docs/api/errors): RFC 9457 Problem Details format, status codes, validation, scope denial, idempotency conflict
+- [Pagination and Filtering](https://docs.zen-mesh.io/docs/api/pagination): Cursor-based and offset-based pagination, query filters, defaults, limits
+- [Idempotency](https://docs.zen-mesh.io/docs/api/idempotency): Idempotency-Key header, deduplication window, safe retry, endpoint coverage
+- [Write Safety](https://docs.zen-mesh.io/docs/api/write-safety): Authorization model, scopes, object permissions, audit, fail-closed, MCP write safety
 - [Rate Limits and Operational Limits](https://docs.zen-mesh.io/docs/api/rate-limits): Plan-based per-endpoint rate limits, payload limits, delivery config
 - [Targets API](https://docs.zen-mesh.io/docs/api/targets): Delivery destinations (WIRED_SANDBOX)
 - [Endpoints API](https://docs.zen-mesh.io/docs/api/endpoints): Webhook source receivers (WIRED_SANDBOX)

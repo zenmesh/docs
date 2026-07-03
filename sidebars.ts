@@ -210,6 +210,8 @@ const sidebars: SidebarsConfig = {
           label: 'Reference',
           items: [
             'api/errors',
+            'api/pagination',
+            'api/idempotency',
             'api/openapi',
             'api/changelog',
           ],

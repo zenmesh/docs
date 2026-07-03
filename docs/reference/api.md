@@ -11,9 +11,12 @@ The Zen Mesh API provides REST, MCP, and WebSocket surfaces for the [Zen Configu
 ## API Overview
 
 - **[API Overview](../api/overview)** — Canonical API taxonomy: surface groups, maturity legend, public-contract boundary, terminology mapping, non-claims
-- **[API Status Matrix](../api/status)** — Per-group maturity, audience, base path, auth model, OpenAPI coverage, UI mapping, and non-claims
-- **[Authentication and API Keys](../api/authentication)** — Auth models: Bearer JWT, API key, HMAC, session, MCP auth, tenant scoping, scopes
-- **[Errors and Problem Details](../api/errors)** — Standard error shape, status codes, validation errors, rate limiting, retry-after
+- **[API Status Matrix](../api/status)** — Per-group maturity, audience, base path, auth model, read/write support, OpenAPI coverage, UI mapping, and non-claims
+- **[Authentication and API Keys](../api/authentication)** — Auth models: Bearer JWT, API key, HMAC, session, MCP auth, tenant scoping, scopes, write enablement
+- **[Errors and Problem Details](../api/errors)** — RFC 9457 Problem Details format, status codes, validation, scope denial, idempotency conflict
+- **[Pagination and Filtering](../api/pagination)** — Cursor-based and offset-based pagination, query filters, defaults, limits
+- **[Idempotency](../api/idempotency)** — Idempotency-Key header, deduplication window, safe retry, endpoint coverage
+- **[Write Safety Model](../api/write-safety)** — Authorization, scopes, object permissions, idempotency, audit, fail-closed, MCP write safety
 - **[API Versioning and Compatibility](../api/versioning)** — URL-based versioning, compatibility policy, spec maintenance
 
 ## Runtime APIs
@@ -30,7 +33,7 @@ The Zen Mesh API provides REST, MCP, and WebSocket surfaces for the [Zen Configu
 - **[Evidence API](../api/evidence)** — Cryptographic delivery proofs, Merkle inclusion verification. Status: WIRED_SANDBOX
 - **[Logs API](../api/logs)** — Structured platform logs with pagination and filtering. Status: WIRED_SANDBOX
 - **[Rate Limits and Operational Limits](../api/rate-limits)** — Plan-based limits per tier. Status: PUBLIC_CONTRACT_DRAFT
-- **[Fabric Adapters API](../api/fabric-adapters)** — List, disable, enable adapters per tenant/cluster. Status: WIRED_SANDBOX
+- **[Fabric Adapters API](../api/fabric-adapters)** — List, disable, enable adapters per tenant/cluster. Status: WIRED_SANDBOX (BFF surface)
 
 ## Workflow Recipes
 
@@ -43,7 +46,7 @@ The Zen Mesh API provides REST, MCP, and WebSocket surfaces for the [Zen Configu
 
 ## MCP
 
-- **[MCP Overview](../mcp/overview)** — Model Context Protocol server, tool surface, non-claims. Status: PUBLIC_CONTRACT_DRAFT
+- **[MCP Overview](../mcp/overview)** — Model Context Protocol server, tool surface, read/write model, non-claims. Status: PUBLIC_CONTRACT_DRAFT
 - **[MCP Tools Reference](../mcp/tools)** — MCP tool surface (read/write, default-off per tool group)
 - **[MCP Authentication and mTLS](../mcp/authentication-and-mtls)** — MCP API key format, scopes, TLS requirements
 - **[MCP Safety and Boundaries](../mcp/safety-and-boundaries)** — Auth model, tool execution, gating, data isolation
@@ -51,7 +54,7 @@ The Zen Mesh API provides REST, MCP, and WebSocket surfaces for the [Zen Configu
 
 ## Customer API
 
-- **[Customer API](../reference/customer-api)** — Planned programmable interface for reading operational truth and managing authorized Zen Mesh resources. Not read-only globally; endpoint groups carry individual read/write status. See [API Status Matrix](../api/status) for per-group details. Status: PLANNED.
+- **[Customer API](../reference/customer-api)** — Planned programmable interface for reading operational truth and managing authorized Zen Mesh resources. Not read-only globally; endpoint groups carry individual read/write status. Status: PLANNED.
 
 ## OpenAPI
 
@@ -73,3 +76,4 @@ The Zen Mesh API provides REST, MCP, and WebSocket surfaces for the [Zen Configu
 - Local/sandbox proof is not production-live proof.
 - Billing live is not claimed unless explicitly marked.
 - Some endpoints are app-facing only and not a public customer contract.
+- Endpoint groups marked WIRED_SANDBOX are validated in sandbox/local runtime only.

@@ -1,355 +1,260 @@
-# Common API Errors
+---
+sidebar_label: Errors and Problem Details
+---
 
-This guide covers common HTTP status codes and error responses from the Zen Mesh API.
+# Errors and Problem Details
 
-## Error Response Format
+> Status: PUBLIC_CONTRACT_DRAFT. This page describes the planned error model. Individual endpoints may vary. It is not a production-live availability claim.
 
-All error responses follow this format:
+## Standard error format
+
+Error responses follow the [RFC 9457](https://www.rfc-editor.org/rfc/rfc9457) Problem Details format:
 
 ```json
 {
-  "error": "ErrorType",
-  "message": "Human-readable error message",
-  "request_id": "req_abc123xyz"
+  "type": "https://api.zen-mesh.io/errors/insufficient-scope",
+  "title": "Insufficient Scope",
+  "status": 403,
+  "detail": "API key does not have write:destinations scope.",
+  "instance": "req_abc123",
+  "required_scope": "write:destinations"
 }
 ```
 
-| Field | Description |
-|-------|-------------|
-| `error` | The error type (e.g., `ValidationError`, `Unauthorized`) |
-| `message` | Detailed explanation of the error |
-| `request_id` | Unique identifier for debugging and support |
+| Field | Type | Description |
+|---|---|---|
+| `type` | URI | Error type identifier |
+| `title` | string | Short, human-readable summary |
+| `status` | integer | HTTP status code |
+| `detail` | string | Human-readable explanation |
+| `instance` | string | Request ID for debugging |
+| `*` | varies | Additional fields per error type |
 
-## HTTP Status Codes
-
-### 200 OK
-
-Success. The request was successful.
+## HTTP status codes
 
 ### 400 Bad Request
 
-The request was malformed or invalid.
-
-**Example:**
+The request was malformed or contains invalid data.
 
 ```json
 {
-  "error": "ValidationError",
-  "message": "Invalid plane configuration: cpu must be a positive number",
-  "request_id": "req_abc123xyz"
+  "type": "https://api.zen-mesh.io/errors/validation-error",
+  "title": "Validation Error",
+  "status": 400,
+  "detail": "name: must not be empty",
+  "instance": "req_abc123",
+  "errors": [
+    { "field": "name", "message": "must not be empty" }
+  ]
 }
 ```
 
-**Common causes:**
-
-- Invalid JSON in request body
-- Missing required fields
-- Type mismatch (e.g., string where number expected)
-- Out of range values
-
-**How to fix:**
-
-1. Check your request body against the schema in the API reference
-2. Validate JSON syntax
-3. Ensure all required fields are present and have valid types
+**Common causes:** Missing required fields, invalid JSON, type mismatch, out-of-range values.
 
 ### 401 Unauthorized
 
-Authentication failed. The API token is missing, invalid, or expired.
-
-**Example:**
+Authentication failed — the API key is missing, invalid, or expired.
 
 ```json
 {
-  "error": "Unauthorized",
-  "message": "Invalid or expired API token",
-  "request_id": "req_xyz789"
+  "type": "https://api.zen-mesh.io/errors/unauthorized",
+  "title": "Unauthorized",
+  "status": 401,
+  "detail": "Missing or invalid API key",
+  "instance": "req_abc123"
 }
 ```
 
-**Common causes:**
+### 403 Forbidden — missing scope
 
-- `ZEN_API_TOKEN` environment variable not set
-- Token is incorrect or expired
-- Token is missing or malformed
-
-**How to fix:**
-
-1. Verify your API token in the Zen Mesh dashboard
-2. Ensure the `ZEN_API_TOKEN` environment variable is set correctly
-3. Test with `curl -sS -H "Authorization: Bearer $ZEN_API_TOKEN" $ZEN_API_BASE/health`
-
-### 403 Forbidden
-
-You don't have permission to perform this action.
-
-**Example:**
+The credential is valid but lacks the required scope.
 
 ```json
 {
-  "error": "ForbiddenError",
-  "message": "You don't have permission to delete this plane",
-  "request_id": "req_abc123xyz"
+  "type": "https://api.zen-mesh.io/errors/insufficient-scope",
+  "title": "Insufficient Scope",
+  "status": 403,
+  "detail": "API key does not have write:destinations scope.",
+  "instance": "req_abc123",
+  "required_scope": "write:destinations"
 }
 ```
 
-**Common causes:**
+### 403 Forbidden — permission denied
 
-- Token lacks required permissions
-- Trying to access a resource you don't own
-- Attempting to perform an operation not allowed for your token type
+The credential has the scope but lacks object-level permission.
 
-**How to fix:**
+```json
+{
+  "type": "https://api.zen-mesh.io/errors/permission-denied",
+  "title": "Permission Denied",
+  "status": 403,
+  "detail": "Cannot delete destination dest_abc123: insufficient permissions.",
+  "instance": "req_abc123",
+  "resource_id": "dest_abc123"
+}
+```
 
-1. Verify your token has the required permissions
-2. Check you're using the correct tenant ID
-3. Review token scopes/permissions in your dashboard
+### 403 Forbidden — write tool disabled (MCP)
+
+The MCP write tool group is not enabled.
+
+```json
+{
+  "type": "https://api.zen-mesh.io/errors/write-tool-disabled",
+  "title": "Write Tool Disabled",
+  "status": 403,
+  "detail": "Write tool group 'write:destinations' is not enabled.",
+  "instance": "req_abc123",
+  "tool_group": "write:destinations"
+}
+```
 
 ### 404 Not Found
 
-The requested resource doesn't exist.
-
-**Example:**
+The requested resource does not exist or is not visible to the tenant.
 
 ```json
 {
-  "error": "NotFoundError",
-  "message": "Plane not found: plane_dev_us_east_1",
-  "request_id": "req_abc123xyz"
+  "type": "https://api.zen-mesh.io/errors/not-found",
+  "title": "Not Found",
+  "status": 404,
+  "detail": "Destination dest_abc123 not found.",
+  "instance": "req_abc123"
 }
 ```
-
-**Common causes:**
-
-- Using an incorrect resource ID
-- Resource was deleted
-- Typo in resource ID
-
-**How to fix:**
-
-1. Verify the resource ID is correct
-2. List resources first to see valid IDs
-3. Check if the resource exists: `GET /tenants/{tenant_id}/clusters`
 
 ### 409 Conflict
 
 The request conflicts with current server state.
 
-**Example:**
-
 ```json
 {
-  "error": "ConflictError",
-  "message": "Plane already exists with this name",
-  "request_id": "req_abc123xyz"
+  "type": "https://api.zen-mesh.io/errors/conflict",
+  "title": "Conflict",
+  "status": 409,
+  "detail": "A destination with name 'stripe-prod' already exists.",
+  "instance": "req_abc123"
 }
 ```
 
-**Common causes:**
+### 409 Idempotency conflict
 
-- Creating a duplicate resource (e.g., plane with same name)
-- Attempting to update a resource that no longer exists
-- Race condition during concurrent operations
+An idempotent request conflicts with a previous request using the same key.
 
-**How to fix:**
-
-1. Check if the resource already exists
-2. Use a unique name or ID
-3. Handle conflicts gracefully in your application
+```json
+{
+  "type": "https://api.zen-mesh.io/errors/idempotency-conflict",
+  "title": "Idempotency Conflict",
+  "status": 409,
+  "detail": "Idempotency-Key 'idem_key_1' was used with a different request body.",
+  "instance": "req_abc123",
+  "idempotency_key": "idem_key_1"
+}
+```
 
 ### 422 Unprocessable Entity
 
 The request is well-formed but contains invalid semantic values.
 
-**Example:**
-
 ```json
 {
-  "error": "UnprocessableEntityError",
-  "message": "Invalid plane configuration: cpu value '0' is too small",
-  "request_id": "req_abc123xyz"
+  "type": "https://api.zen-mesh.io/errors/unprocessable-entity",
+  "title": "Unprocessable Entity",
+  "status": 422,
+  "detail": "Invalid value for status: 'unknown' is not a recognized status.",
+  "instance": "req_abc123"
 }
 ```
-
-**Common causes:**
-
-- Invalid enum values
-- Validation rule violations
-- Constraint violations
-
-**How to fix:**
-
-1. Review the API reference for valid values
-2. Check schema constraints
-3. Use validator tools to check your request
 
 ### 429 Too Many Requests
 
-You've exceeded the rate limit for this endpoint.
-
-**Example:**
+The rate limit for this endpoint has been exceeded.
 
 ```json
 {
-  "error": "RateLimitError",
-  "message": "Too many requests. Please try again in 60 seconds.",
-  "request_id": "req_abc123xyz"
+  "type": "https://api.zen-mesh.io/errors/rate-limit-exceeded",
+  "title": "Rate Limit Exceeded",
+  "status": 429,
+  "detail": "Too many requests. Please try again later.",
+  "instance": "req_abc123",
+  "retry_after_seconds": 60
 }
 ```
 
-**Common causes:**
-
-- Too many requests in a short time
-- Missing rate limit headers in your client
-
-**How to fix:**
-
-1. Implement exponential backoff
-2. Check the `Retry-After` header when present
-3. Reduce request rate
+Include the `Retry-After` header in the response when present.
 
 ### 500 Internal Server Error
 
 An unexpected error occurred on the server.
 
-**Example:**
-
 ```json
 {
-  "error": "InternalServerError",
-  "message": "An unexpected error occurred while processing your request",
-  "request_id": "req_abc123xyz"
+  "type": "https://api.zen-mesh.io/errors/internal-error",
+  "title": "Internal Server Error",
+  "status": 500,
+  "detail": "An unexpected error occurred while processing your request.",
+  "instance": "req_abc123"
 }
 ```
-
-**Common causes:**
-
-- Server-side bugs
-- Database connectivity issues
-- Temporary service degradation
-
-**How to fix:**
-
-1. Retry the request (with backoff)
-2. Check if `request_id` is present - include it when contacting support
-3. Check [status.zen-mesh.io](https://status.zen-mesh.io) for service status
-4. Contact support with the `request_id`
 
 ### 503 Service Unavailable
 
 The service is temporarily unavailable.
 
-**Example:**
-
 ```json
 {
-  "error": "ServiceUnavailableError",
-  "message": "Service is temporarily unavailable. Please try again later.",
-  "request_id": "req_abc123xyz"
+  "type": "https://api.zen-mesh.io/errors/service-unavailable",
+  "title": "Service Unavailable",
+  "status": 503,
+  "detail": "Service is temporarily unavailable. Please try again later.",
+  "instance": "req_abc123"
 }
 ```
 
-**Common causes:**
+## Request IDs
 
-- Scheduled maintenance
-- Temporary service degradation
-- Resource overload
+Every error response includes an `instance` (request ID) field. Include this when contacting support:
 
-**How to fix:**
+```
+I'm getting a 403 insufficient scope error when retrying a delivery.
 
-1. Wait and retry
-2. Check service status page
-3. Contact support for planned maintenance
+Request ID: req_abc123
+Endpoint: POST /v1/tenants/{tid}/events/{eid}/retry
+```
 
-## Handling Errors in Your Code
-
-### Python
+## Safe error handling
 
 ```python
 import requests
 
-response = requests.get(
-    "$ZEN_API_BASE/tenants/$ZEN_TENANT_ID/clusters",
-    headers={"Authorization": f"Bearer $ZEN_API_TOKEN"}
-)
-
+response = requests.get(url, headers=headers)
 if not response.ok:
     try:
-        error = response.json()
-        print(f"Error: {error.get('error')}")
-        print(f"Message: {error.get('message')}")
-        if 'request_id' in error:
-            print(f"Request ID: {error['request_id']}")
-    except:
+        problem = response.json()
+        print(f"Error [{problem.get('title')}]: {problem.get('detail')}")
+        if 'instance' in problem:
+            print(f"Request ID: {problem['instance']}")
+    except ValueError:
         print(f"HTTP {response.status_code}: {response.text}")
-    # Handle error appropriately
-else:
-    data = response.json()
-    print(data)
+    # Handle specific error types
+    if problem.get('type', '').endswith('/insufficient-scope'):
+        print(f"Required scope: {problem.get('required_scope')}")
+    raise SystemExit(1)
+
+data = response.json()
 ```
 
-### JavaScript
+## Non-claims
 
-```javascript
-const response = await fetch('$ZEN_API_BASE/tenants/$ZEN_TENANT_ID/clusters', {
-  headers: {
-    Authorization: `Bearer $ZEN_API_TOKEN`
-  }
-});
+- Error format may not be fully uniform across all endpoint groups
+- Some legacy endpoints may return a simpler error format without RFC 9457 fields
+- The error type URIs are documented intent; actual `type` values may vary
+- Rate limit thresholds vary by plan and endpoint
 
-if (!response.ok) {
-  try {
-    const error = await response.json();
-    console.error(`Error: ${error.error}`);
-    console.error(`Message: ${error.message}`);
-    if (error.request_id) {
-      console.error(`Request ID: ${error.request_id}`);
-    }
-  } catch (e) {
-    console.error(`HTTP ${response.status}: ${await response.text()}`);
-  }
-  // Handle error appropriately
-} else {
-  const data = await response.json();
-  console.log(data);
-}
-```
+## Related
 
-### curl
-
-```bash
-curl -sS   -H "Authorization: Bearer ***   "$ZEN_API_BASE/tenants/$ZEN_TENANT_ID/clusters"
-
-# Check exit code
-if [ $? -ne 0 ]; then
-  echo "Request failed with exit code $?"
-fi
-```
-
-## Request ID Usage
-
-When contacting support, always include the `request_id` from the error response. This helps support quickly identify the specific request and logs.
-
-**Example support message:**
-
-```
-I'm getting a 500 Internal Server Error when creating a plane.
-
-Request ID: req_abc123xyz
-Endpoint: POST /tenants/{tenant_id}/clusters
-Request body: {"name": "plane_dev", ...}
-```
-
-## Next Steps
-
-- [Authentication](/docs/api/authentication) - Learn about API token authentication
-- [API Quickstart](/docs/api/quickstart) - Get started with basic API calls
-- [API Overview](/docs/api/overview) - Complete API reference overview
-
----
-
-**Need Help?**
-
-- Email: support@zen-platform.com
-- GitHub Issues: https://github.com/zen-mesh/docs/issues
-- Status: https://status.zen-mesh.io
+- [Authentication](./authentication) — auth model and scopes
+- [Idempotency](./idempotency) — idempotency key specification
+- [Rate Limits](./rate-limits) — plan-based rate limits
+- [Write Safety Model](./write-safety) — authorization for write operations

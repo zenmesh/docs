@@ -4,6 +4,8 @@ sidebar_label: Fabric Adapters API
 
 # Fabric Adapters API
 
+> Status: INTERNAL_ONLY (BFF surface). This page describes the BFF API surface used by the dashboard. It is not a public customer contract. The backend API equivalents are WIRED_SANDBOX.
+
 The Fabric Adapters API provides programmatic access to manage adapters in your Zen Mesh Fabric. Adapters connect your plane's delivery targets to external services.
 
 ## Overview

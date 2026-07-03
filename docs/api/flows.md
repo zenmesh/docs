@@ -14,38 +14,26 @@ Flows are declarative delivery contracts that connect an endpoint (source receiv
 |---------------|------------------------|----------|
 | Flow | delivery-flow | `/delivery-flows` |
 
+## Audience
+
+Customer / developer managing event routing.
+
 ## Base path
 
 ```
-/api/bff/v1/tenants/{tenant_id}/clusters/{cluster_id}/delivery-flows     (dashboard/BFF — app-facing)
+/api/bff/v1/tenants/{tenant_id}/clusters/{cluster_id}/delivery-flows     (dashboard/BFF — app-facing, INTERNAL_ONLY)
 /v1/tenants/{tenant_id}/delivery-flows                                   (backend API — WIRED_SANDBOX)
 ```
 
-## Operations
+## Endpoint table
 
-| Method | Path | Description | Status |
-|--------|------|-------------|--------|
-| `GET` | `/tenants/{tid}/delivery-flows` | List flows | WIRED_SANDBOX |
-| `POST` | `/tenants/{tid}/delivery-flows` | Create a flow | WIRED_SANDBOX |
-| `GET` | `/tenants/{tid}/delivery-flows/{fid}` | Get flow details | WIRED_SANDBOX |
-| `PUT` | `/tenants/{tid}/delivery-flows/{fid}` | Update a flow | WIRED_SANDBOX |
-| `DELETE` | `/tenants/{tid}/delivery-flows/{fid}` | Delete a flow | WIRED_SANDBOX |
-
-## Request example
-
-```json
-{
-  "name": "stripe-to-app",
-  "source_id": "ing_abc123",
-  "destination_id": "dest_def456",
-  "config": {
-    "retry_policy": {
-      "max_attempts": 3,
-      "backoff_seconds": 10
-    }
-  }
-}
-```
+| Method | Path | Description | Read/Write | Status | Auth/scopes | Idempotency | OpenAPI |
+|--------|------|-------------|------------|--------|-------------|-------------|---------|
+| `GET` | `/tenants/{tid}/delivery-flows` | List flows | Read | WIRED_SANDBOX | `read:delivery-flows` | Not required | Partial (zen-back) |
+| `POST` | `/tenants/{tid}/delivery-flows` | Create a flow | Write | WIRED_SANDBOX | `write:delivery-flows` | Recommended | Partial (zen-back) |
+| `GET` | `/tenants/{tid}/delivery-flows/{fid}` | Get flow details | Read | WIRED_SANDBOX | `read:delivery-flows` | Not required | Partial (zen-back) |
+| `PUT` | `/tenants/{tid}/delivery-flows/{fid}` | Update a flow | Write | WIRED_SANDBOX | `write:delivery-flows` | Recommended | Partial (zen-back) |
+| `DELETE` | `/tenants/{tid}/delivery-flows/{fid}` | Delete a flow | Write | WIRED_SANDBOX | `write:delivery-flows` | Recommended | Partial (zen-back) |
 
 ## Read/write status
 
@@ -59,20 +47,87 @@ Flows are declarative delivery contracts that connect an endpoint (source receiv
 
 Write operations require tenant authorization, appropriate scopes, and audit logging. See [Write Safety Model](./write-safety) for details.
 
+## List example
+
+```bash
+curl -sS -H "Authorization: Bearer <api_key>" \
+  "https://api.zen-mesh.io/v1/tenants/<tenant_id>/delivery-flows"
+```
+
+## Create example
+
+```bash
+curl -X POST \
+  -H "Authorization: Bearer <api_key>" \
+  -H "Content-Type: application/json" \
+  -H "Idempotency-Key: <unique_key>" \
+  -d '{"name": "stripe-to-app", "source_id": "ing_abc123", "destination_id": "dest_abc123"}' \
+  "https://api.zen-mesh.io/v1/tenants/<tenant_id>/delivery-flows"
+```
+
+## Request fields
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| name | string | Yes | Human-readable name |
+| source_id | string | Yes | Endpoint ID (source receiver) |
+| destination_id | string | Yes | Target ID (delivery destination) |
+| config.retry_policy.max_attempts | integer | No | Maximum retry attempts (default: 3) |
+| config.retry_policy.backoff_seconds | integer | No | Initial backoff in seconds (default: 10) |
+
+## Error examples
+
+### 400 Validation error
+
+```json
+{
+  "type": "https://api.zen-mesh.io/errors/validation-error",
+  "title": "Validation Error",
+  "status": 400,
+  "detail": "source_id: endpoint not found",
+  "instance": "req_abc123"
+}
+```
+
+### 403 Insufficient scope
+
+```json
+{
+  "type": "https://api.zen-mesh.io/errors/insufficient-scope",
+  "title": "Insufficient Scope",
+  "status": 403,
+  "detail": "API key does not have write:delivery-flows scope.",
+  "required_scope": "write:delivery-flows"
+}
+```
+
+## Pagination
+
+List flows supports pagination with `limit` and `cursor` parameters. See [Pagination and Filtering](./pagination).
+
 ## Auth
 
-Bearer JWT or API key in `Authorization` header. Tenant-scoped via path parameter.
+Bearer JWT or API key in `Authorization` header. Tenant-scoped via path parameter. See [Authentication](./authentication) for scope model.
 
 ## OpenAPI coverage
 
-Partially covered in `zen-back.v1.yaml` (delivery-flows CRUD).
+Partially covered in `zen-back.v1.yaml` (delivery-flows CRUD). See [OpenAPI Spec Index](./openapi).
 
 ## UI mapping
 
 Connect → Flows, Maintain → Flows
+
+## Related
+
+- [Targets API](./targets) — delivery destinations
+- [Endpoints API](./endpoints) — source receivers
+- [Delivery Attempts API](./delivery-attempts) — execution of flow deliveries
+- [Write Safety Model](./write-safety) — authorization and safety for write operations
+- [Idempotency](./idempotency) — idempotency key specification
 
 ## Non-claims
 
 - WIRED_SANDBOX: implemented in local/sandbox runtime. Not production-live.
 - Multi-target fanout is a Business+ planned feature (V1.1).
 - GitOps for flows is not available in V1 (planned V1.1 Business+).
+- Draft vs published flow distinction is V1.1+ planned, not available in V1.

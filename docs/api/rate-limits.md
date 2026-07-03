@@ -4,6 +4,12 @@ sidebar_label: Rate Limits & Operational Limits
 
 # Rate Limits and Operational Limits
 
+> Status: PUBLIC_CONTRACT_DRAFT. This page describes the planned rate limit model. Plan-based limits are documented intent. No SLA guarantee. It is not a production-live availability claim.
+
+## Audience
+
+Customer / developer planning integration capacity.
+
 ## Plans and Quotas
 
 | Tier | Webhooks / Month | Max Payload | Max Endpoints | Max Destinations |

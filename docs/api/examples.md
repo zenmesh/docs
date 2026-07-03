@@ -4,91 +4,177 @@ sidebar_label: API Examples
 
 # API Examples
 
-Complete examples for common Zen Mesh API workflows. All examples use placeholder credentials — replace with your actual tenant API key.
+> Status: PUBLIC_CONTRACT_DRAFT. Examples use placeholder credentials. Replace with your actual tenant API key. Write examples are WIRED_SANDBOX unless otherwise noted — not production-live.
 
-## Authenticate and Fetch Sources
+Complete examples for common Zen Mesh API workflows. All examples use the runtime API surface (`/v1/`).
+
+## Setup
 
 ```bash
-export ZEN_API_KEY="zpk_example_key_replace_with_real_key"
-export ZEN_TENANT_ID="ten_example_tenant_id"
-
-# List configured webhook sources
-curl -s -H "Authorization: Bearer $ZEN_API_KEY" \
-  -H "X-Tenant-ID: $ZEN_TENANT_ID" \
-  https://api.zen-mesh.io/v1/sources
+export ZEN_API_KEY="<api_key>"
+export ZEN_TENANT_ID="<tenant_id>"
+export ZEN_API_BASE="https://api.zen-mesh.io/v1"
 ```
 
-## Check Delivery Status
+## Read operations
+
+### List targets
 
 ```bash
-# Inspect a specific delivery by ID
-curl -s -H "Authorization: Bearer $ZEN_API_KEY" \
-  -H "X-Tenant-ID: $ZEN_TENANT_ID" \
-  https://api.zen-mesh.io/v1/deliveries/dlv_abc123
+curl -sS -H "Authorization: Bearer $ZEN_API_KEY" \
+  "$ZEN_API_BASE/tenants/$ZEN_TENANT_ID/destinations"
 ```
 
 Response:
-
 ```json
 {
-  "id": "dlv_abc123",
-  "status": "delivered",
-  "source_id": "src_456",
-  "destination_id": "dest_789",
-  "attempts": 2,
-  "created_at": "2026-06-01T12:00:00Z",
-  "delivered_at": "2026-06-01T12:00:03Z"
+  "destinations": [
+    { "id": "dest_abc123", "name": "prod-app-server", "url": "https://app.example.com/webhooks", "status": "active" }
+  ]
 }
 ```
 
-## Paginate Through Deliveries
+### List delivery attempts with filtering
 
 ```bash
-curl -s -H "Authorization: Bearer $ZEN_API_KEY" \
-  -H "X-Tenant-ID: $ZEN_TENANT_ID" \
-  "https://api.zen-mesh.io/v1/deliveries?limit=10&cursor=eyJvZmZzZXQiOjB9"
+curl -sS -H "Authorization: Bearer $ZEN_API_KEY" \
+  "$ZEN_API_BASE/tenants/$ZEN_TENANT_ID/deliveries?status=failed&limit=10"
 ```
 
-The `cursor` parameter returns the next page token in the response's `next_cursor` field.
+Response:
+```json
+{
+  "deliveries": [
+    {
+      "id": "dlv_abc123",
+      "event_id": "evt_abc123",
+      "destination_id": "dest_abc123",
+      "status": "failed",
+      "response_code": 500,
+      "attempt_number": 3,
+      "attempted_at": "2026-07-03T12:00:03Z",
+      "error_message": "upstream timeout"
+    }
+  ],
+  "next_cursor": "eyJvZmZzZXQiOjEwfQ=="
+}
+```
 
-## Read an Evidence Receipt
+### Read delivery evidence
 
 ```bash
-curl -s -H "Authorization: Bearer $ZEN_API_KEY" \
-  -H "X-Tenant-ID: $ZEN_TENANT_ID" \
-  https://api.zen-mesh.io/v1/evidence/dlv_abc123 | jq .
+curl -sS -H "Authorization: Bearer $ZEN_API_KEY" \
+  "$ZEN_API_BASE/tenants/$ZEN_TENANT_ID/evidence/dlv_abc123"
 ```
 
-The evidence receipt includes a Merkle proof for evidence integrity verification:
-
+Response:
 ```json
 {
   "delivery_id": "dlv_abc123",
-  "merkle_root": "a1b2c3d4e5f6...",
-  "inclusion_proof": ["..."],
-  "timestamp": "2026-06-01T12:00:03Z"
+  "merkle_root": "a1b2c3d4e5f67890abcdef1234567890abcdef1234567890abcdef1234567890",
+  "inclusion_proof": ["x1y2z3...", "p4q5r6..."],
+  "leaf_hash": "abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890",
+  "timestamp": "2026-07-03T12:00:03Z",
+  "status": "confirmed"
 }
 ```
 
-## Query Platform Logs
+### Query platform logs
 
 ```bash
-curl -s -H "Authorization: Bearer $ZEN_API_KEY" \
-  -H "X-Tenant-ID: $ZEN_TENANT_ID" \
-  "https://api.zen-mesh.io/v1/logs?limit=20&level=error" | jq .
+curl -sS -H "Authorization: Bearer $ZEN_API_KEY" \
+  "$ZEN_API_BASE/tenants/$ZEN_TENANT_ID/logs?limit=20&level=error"
 ```
 
-## Use Idempotency Key
+## Write operations (permissioned)
+
+### Create a target (WIRED_SANDBOX)
 
 ```bash
-# Safe retry with idempotency key
-curl -s -X POST \
+curl -X POST \
   -H "Authorization: Bearer $ZEN_API_KEY" \
-  -H "X-Tenant-ID: $ZEN_TENANT_ID" \
-  -H "Idempotency-Key: idem_unique_request_1" \
   -H "Content-Type: application/json" \
-  -d '{"source_id": "src_456", "event_type": "test"}' \
-  https://api.zen-mesh.io/v1/events
+  -H "Idempotency-Key: idem_key_1" \
+  -d '{"name": "my-target", "url": "https://example.com/webhooks"}' \
+  "$ZEN_API_BASE/tenants/$ZEN_TENANT_ID/destinations"
 ```
 
-The same `Idempotency-Key` within the deduplication window returns the original response without side effects.
+Expected response:
+```json
+{
+  "id": "dest_abc123",
+  "name": "my-target",
+  "url": "https://example.com/webhooks",
+  "status": "active",
+  "created_at": "2026-07-03T12:00:00Z"
+}
+```
+
+### Retry a failed delivery (WIRED_SANDBOX)
+
+```bash
+curl -X POST \
+  -H "Authorization: Bearer $ZEN_API_KEY" \
+  -H "Idempotency-Key: idem_key_2" \
+  "$ZEN_API_BASE/tenants/$ZEN_TENANT_ID/events/evt_abc123/retry"
+```
+
+Expected response:
+```json
+{
+  "status": "queued",
+  "delivery_id": "dlv_def456",
+  "message": "Retry initiated"
+}
+```
+
+### Create a saved payload (WIRED_SANDBOX)
+
+```bash
+curl -X POST \
+  -H "Authorization: Bearer $ZEN_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"name": "test-payload", "payload": {"event_type": "test", "data": {"key": "value"}}}' \
+  "$ZEN_API_BASE/tenants/$ZEN_TENANT_ID/saved-payloads"
+```
+
+### Use idempotency key for safe retry
+
+```bash
+# First attempt
+curl -X POST \
+  -H "Authorization: Bearer $ZEN_API_KEY" \
+  -H "Content-Type: application/json" \
+  -H "Idempotency-Key: idem_unique_1" \
+  -d '{"name": "my-target", "url": "https://example.com/webhooks"}' \
+  "$ZEN_API_BASE/tenants/$ZEN_TENANT_ID/destinations"
+
+# Safe retry (same Idempotency-Key returns original response)
+curl -X POST \
+  -H "Authorization: Bearer $ZEN_API_KEY" \
+  -H "Content-Type: application/json" \
+  -H "Idempotency-Key: idem_unique_1" \
+  -d '{"name": "my-target", "url": "https://example.com/webhooks"}' \
+  "$ZEN_API_BASE/tenants/$ZEN_TENANT_ID/destinations"
+```
+
+### Paginate through results
+
+```bash
+# First page
+curl -sS -H "Authorization: Bearer $ZEN_API_KEY" \
+  "$ZEN_API_BASE/tenants/$ZEN_TENANT_ID/deliveries?limit=10"
+
+# Second page (use next_cursor from response)
+curl -sS -H "Authorization: Bearer $ZEN_API_KEY" \
+  "$ZEN_API_BASE/tenants/$ZEN_TENANT_ID/deliveries?limit=10&cursor=<next_cursor>"
+```
+
+## Related
+
+- [API Quickstart](./quickstart) — step-by-step developer journey
+- [Authentication](./authentication) — auth model and scopes
+- [Write Safety Model](./write-safety) — authorization for write operations
+- [Errors and Problem Details](./errors) — error format and handling
+- [Idempotency](./idempotency) — idempotency key specification
+- [OpenAPI Spec Index](./openapi) — spec files and validation
