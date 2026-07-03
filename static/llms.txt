@@ -206,6 +206,14 @@ Zen Mesh combines open-source components with a hosted control plane. OSS projec
 - **Privacy:** https://www.zen-mesh.io/commitments/legal/privacy/
 - **Contact:** zen@zen-mesh.io
 
+## Architecture and north star
+
+- [Zen Configuration Contract](https://docs.zen-mesh.io/docs/product/zen-configuration-contract): Declarative contract model — one contract, five surfaces (UI, CLI, API, MCP, Git), same runtime/evidence/authorization
+- [Template Registry Roadmap](https://docs.zen-mesh.io/docs/product/template-registry-roadmap): Official, Community, Organization, Personal registry tiers and staging
+- [GitOps Roadmap](https://docs.zen-mesh.io/docs/product/gitops-roadmap): Git as a ZCC control surface — V1.1 scope for Business+ Templates/Blueprints
+
+V1 does not include full GitOps, community registry, or organization registry. Those are documented as V1.1 planned capabilities.
+
 ## Optional
 
 - [V1 roadmap](https://docs.zen-mesh.io/docs/product/v1-roadmap): Launch blockers, traffic/recovery, policy controls, Labs, plan ladder, and exit criteria

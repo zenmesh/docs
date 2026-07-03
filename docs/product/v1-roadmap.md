@@ -223,7 +223,115 @@ comparison pages (Hookdeck, Svix, Hook0, ngrok, Tailscale, Webhook Relay).
 
 ---
 
-## 8. Ownership
+## 8. Zen Configuration Contract and Registry Roadmap
+
+### ZCC north star
+
+Every operation in Zen must be representable as a declarative contract. Every control surface is an alternative way to author or manage that same contract.
+
+See the [Zen Configuration Contract](./zen-configuration-contract) doc for the full model.
+
+**V1:** Core runtime surfaces (UI, CLI, API, MCP) all produce the same runtime objects. Templates and Blueprints exist. The principle is documented.
+
+**V1.1:** View YAML on key screens. Customize wizard. Pending Changes from any surface. GitOps for Templates and Blueprints.
+
+**V2:** Broader ZCC ecosystem — policies, processors, transforms, CloudEvents mappings, validation rules, target profiles as first-class ZCC artifacts.
+
+### Registry roadmap
+
+| Tier | V1 | V1.1 | V2 |
+|------|:--:|:----:|:--:|
+| Official (read-only) | Available | Available | Available |
+| Community Preview | — | Planned | Available |
+| Organization (Business+) | — | Planned | Available |
+| Personal | Available | Available | Available |
+
+**V1:**
+- Official templates, read-only
+- Template cards with "Best for" tags
+- Version badges
+- "Based on" relationship when creating Blueprint
+- View YAML on template detail where feasible
+- No public community submission
+
+**V1.1 (Business+):**
+- Community Preview section with PR submission path
+- Security Validation Lab for submissions
+- Provenance display: publisher, signed/reviewed/maturity
+- Update/diff/merge when upstream template changes
+- Organization registry for Business+ tenants
+- Pending Changes from any surface
+
+**V2:**
+- Contributor pages and profiles
+- AI-assisted template generation
+- Automated regression testing
+- Compatibility matrices
+- Broader packages (policies, processors, transforms, etc.)
+
+See the [Template Registry Roadmap](./template-registry-roadmap) for full details.
+
+### View YAML
+
+View YAML is a high-priority product principle that teaches the contract model, helps platform engineers trust the system, and makes all surfaces feel like peers.
+
+| Stage | Scope |
+|-------|-------|
+| **V1 candidate (if cheap)** | View YAML on Template detail. View YAML on Blueprint detail. View YAML on Flow detail. |
+| **V1.1** | Validate YAML. Diff YAML. Export YAML. Submit YAML through Git or Pending Change. |
+
+Read-only in V1. Editing raw YAML is V1.1+.
+
+### Customize wizard
+
+A scoped wizard that surfaces existing capabilities without overwhelming users.
+
+**V1/V1.1 minimum:**
+1. Pick a Template
+2. Name the Blueprint + choose target URL
+3. Review capabilities checklist
+4. Confirm → create Blueprint + show YAML
+
+**Capabilities checklist examples:**
+- Signature verification (pre-checked if provider supports it)
+- IP allowlist (pre-checked for known providers where supported)
+- Header validation (optional/expandable)
+- Replay protection (optional/expandable)
+- DLQ/retry defaults
+- Evidence/validation status
+
+Not an eight-step wizard. The point is capability surfacing, not flow complexity.
+
+---
+
+## 9. GitOps V1.1 Roadmap
+
+### Principle
+
+Git is not a separate runtime with different behavior. It is a file-based control surface for the Zen Configuration Contract. A Git change produces the same ZCC artifact the UI, CLI, API, and MCP would produce. Zen validates it, records evidence, and either queues a Pending Change or applies it according to policy.
+
+### V1.1 scope (Business+)
+
+| Capability | Status |
+|------------|--------|
+| Connect a Git repository branch | Planned V1.1 |
+| YAML files matching ZCC schema under `/blueprints/` validated | Planned V1.1 |
+| Security-Lab checked where applicable | Planned V1.1 |
+| Optionally auto-applied or queued as Pending Change | Planned V1.1 |
+| Human approval path by default | Planned V1.1 |
+| Same runtime, same evidence, same authorization | Design principle |
+
+### Out of scope for V1.1
+
+- Full tenant-as-Git configuration export/import
+- Git as the sole configuration source (hybrid model — surfaces coexist)
+- Git-driven policy, evidence, or Registry artifact management
+
+See the [GitOps Roadmap](./gitops-roadmap) for full details.
+
+---
+
+## 10. Ownership
 
 | Role | Scope |
 |------|-------|
@@ -234,7 +342,7 @@ comparison pages (Hookdeck, Svix, Hook0, ngrok, Tailscale, Webhook Relay).
 
 ---
 
-## 9. V1 Exit Criteria
+## 11. V1 Exit Criteria
 
 V1 cannot be marked launch-ready until:
 
