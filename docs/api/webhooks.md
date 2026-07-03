@@ -24,7 +24,7 @@ Zen Mesh retries failed deliveries with exponential backoff. Unrecoverable failu
 
 ## Idempotent Delivery
 
-Consumers should handle duplicate deliveries idempotently using the `X-Zen-Delivery-Idempotency-Key` header. See [Idempotency](https://docs.zen-mesh.io/delivery/idempotency).
+Consumers should handle duplicate deliveries idempotently using the `X-Zen-Delivery-Idempotency-Key` header. See [Idempotency](../delivery/idempotency).
 
 ## Event Types
 

@@ -264,8 +264,8 @@ for plane in plane_list['clusters']:
 ## Next Steps
 
 - [Authentication](../../authentication)
-- [Create a Flow]()
-- [List Planes]()
+- [Create a Flow](../create-flow)
+- [List Planes](../list-planes-and-adapters)
 
 ---
 

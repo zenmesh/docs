@@ -118,9 +118,9 @@ curl -sS   -H "Authorization: Bearer $ZEN_API_TOKEN"   "$ZEN_API_BASE/tenants/$Z
 
 ## Next Steps
 
-- [Create a Target]()
-- [Create a Flow]()
-- *Inspect Channel Endpoints* (this recipe) (API reference)
+- [Create a Target](../create-target)
+- [Create a Flow](../create-flow)
+- *Inspect Channel Endpoints* (this recipe) — see [API Overview](../../overview) for API reference
 
 ---
 

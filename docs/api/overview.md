@@ -4,93 +4,90 @@ sidebar_label: API Overview
 
 # API Overview
 
-The Zen Mesh REST API provides programmatic access to webhook ingestion, delivery management, security operations, and platform observability.
+The Zen Mesh API is one control surface for the [Zen Configuration Contract](../product/zen-configuration-contract). It complements the UI, CLI, MCP, and Git surfaces. The contract — not any single surface — is the source of truth.
 
-## API Surface
+> Status: PUBLIC_CONTRACT_DRAFT. This page describes the API surface groups and their current maturity. Individual endpoints may carry different statuses. See the [API Status Matrix](./status) for per-group status.
 
-Zen Mesh exposes two API surfaces for different consumers:
+## API surface groups
 
-| Surface | Base URL | Purpose | Auth |
-|---------|----------|---------|------|
-| **Back API** | `https://api.zen-mesh.io/v1` | Platform management (CRDs, tenants, clusters, destinations) | Bearer JWT, API Key, HMAC |
-| **BFF API** | Dashboard API (`/api/bff/v1`) | Dashboard aggregation (features, config, jobs, events) | Session cookie, API Key |
+| Group | Audience | Primary base path | Status |
+|-------|----------|------------------|--------|
+| Dashboard/BFF API | App-facing | `/api/bff/v1` | INTERNAL_ONLY |
+| [Customer API](../reference/customer-api) | External programmable | `GET /v1/...` | PLANNED |
+| [Webhook Ingest API](./webhooks) | Sender-facing | `POST /webhooks/{provider}` | WIRED_SANDBOX |
+| [Targets API](./targets) | Customer | `/v1/tenants/{tid}/destinations` | WIRED_SANDBOX |
+| [Endpoints API](./endpoints) | Customer | `/v1/tenants/{tid}/ingesters` | WIRED_SANDBOX |
+| [Flows API](./flows) | Customer | `/v1/tenants/{tid}/delivery-flows` | WIRED_SANDBOX |
+| [Delivery Attempts API](./delivery-attempts) | Customer | `/v1/tenants/{tid}/deliveries` | WIRED_SANDBOX |
+| [DLQ API](./dlq) | Customer | `/v1/tenants/{tid}/deliveries?status=failed` | WIRED_SANDBOX |
+| [Retry API](./retry) | Customer | `/v1/tenants/{tid}/events/{eid}/retry` | WIRED_SANDBOX |
+| [Replay API](./replay) | Customer | `/v1/tenants/{tid}/events/{eid}/replay` | WIRED_SANDBOX |
+| [Traces / Evidence Spine API](./traces) | Customer | `/v1/tenants/{tid}/deliveries` | WIRED_SANDBOX |
+| [Saved Payloads API](./saved-payloads) | Customer | `/v1/tenants/{tid}/saved-payloads` | WIRED_SANDBOX |
+| [Evidence API](./evidence) | Customer | `/v1/evidence/...` | WIRED_SANDBOX |
+| [API Keys API](./authentication) | Customer | `/v1/tenants/{tid}/api-keys` | WIRED_SANDBOX |
+| [Rate Limits API](./rate-limits) | Customer | — | PUBLIC_CONTRACT_DRAFT |
+| [MCP API](../mcp/overview) | Customer | MCP protocol | PUBLIC_CONTRACT_DRAFT |
+| Billing/Plan API | Internal | — | INTERNAL_ONLY |
+| Sandbox/Test API | Test | — | SANDBOX_ONLY |
+| Internal/Admin API | Internal | — | INTERNAL_ONLY |
 
-## API Reference
-## Workflow Recipes
+## Maturity legend
 
-Use these step-by-step recipes to accomplish common tasks with the Zen Mesh API:
+| Status | Meaning |
+|--------|---------|
+| PUBLIC_CONTRACT_STABLE | Production-ready, documented, supported |
+| PUBLIC_CONTRACT_DRAFT | Contract defined, API surface may change |
+| WIRED_SANDBOX | Implemented in local/sandbox runtime, not production-live |
+| WIRED_LOCAL | Implemented in local development only |
+| INTERNAL_ONLY | App-facing or admin dashboard, not a customer contract |
+| SANDBOX_ONLY | Test/sandbox endpoints, not for production use |
+| PLANNED | Documented intent, not implemented |
+| V1_1_PLANNED | Planned for V1.1 release |
+| NOT_CLAIMED | Explicit non-claim — not available |
 
-- [List Planes and Inspect Adapters](./recipes/list-planes-and-adapters/)
-- [Create a Webhook Endpoint](./recipes/create-webhook-endpoint/)
-- [Create a Target](./recipes/create-target/)
-- [Create a Flow](./recipes/create-flow/)
-- [Validate, Test, and Publish a Draft](./recipes/drafts-validate-test-publish/)
-- [Handle Errors and Rate Limits](./recipes/errors-and-rate-limits/)
+## Public-contract boundary
 
-These recipes provide complete, copy-paste-ready examples for common workflows, including curl, Python, and JavaScript samples.
+- Some APIs are **app-facing/internal** (Dashboard/BFF routes).
+- Some APIs are **public customer contracts** (Customer API, runtime APIs).
+- Some APIs are **sandbox-only** (test event generation, sandbox delivery).
+- Some APIs are **planned** (Customer API GA contract).
+- **No page should be interpreted as production-live** unless the status field explicitly says PUBLIC_CONTRACT_STABLE.
 
-**Full API Reference**: [API Overview](/docs/api/overview)
+## Base URLs
 
-- [Back API Reference](./reference/kubezen-back-api) — Generated from OpenAPI spec
-- [Customer API](../reference/customer-api) — read-only operational truth API
+Base URL examples in these docs use `https://api.zen-mesh.io/v1` for public contract paths. Dashboard/BFF examples use `/api/bff/v1` and are marked app-facing. Local/sandbox examples are explicitly labeled.
 
-## Core Capabilities
+## Terminology mapping
 
-- **Webhook delivery**: Ingest, validate, and deliver webhooks from Stripe, GitHub, Twilio, Shopify, and custom sources
-- **Security controls**: IP allowlisting, header validation, mTLS enrollment, cryptographic enrollment
-- **Delivery reliability**: Dead-letter queues, replays, deduplication, idempotency, filtering, fan-out
-- **Observability**: Delivery tracking, evidence proofs, Merkle integrity receipts
-- **MCP integration**: [MCP server](../mcp/overview.md) for AI agent access
+| Customer term | Internal API/model term | API path |
+|---------------|------------------------|----------|
+| Target | destination | `/destinations` |
+| Endpoint | ingester | `/ingesters` |
+| Flow | delivery-flow | `/delivery-flows` |
+| Attempt | delivery | `/deliveries` |
+| DLQ | deliveries?status=failed | `/deliveries?status=failed` |
 
-## Base URL
+**Note:** API paths use internal terms. Customer-facing documentation and UI use the customer terms. Where possible, OpenAPI field names and error messages prefer customer-facing language.
 
-```bash
-# Production
-https://api.zen-mesh.io/v1
+## Customer chain
 
-# Staging
-https://staging.api.zen-mesh.io/v1
+```
+Template → Blueprint → Flow → Traffic → Evidence
 ```
 
-## API Versioning
+## Non-claims
 
-The Back API follows URL-based versioning (`/v1`, `/v2`). Breaking changes increment the major version. Backward-compatible additions use minor version increments within the spec `info.version` field.
+- API documentation is not proof of production availability.
+- Local/sandbox proof is not production-live proof.
+- Billing live is not claimed unless explicitly marked.
+- Provider live validation remains gated until public endpoint/provider proof exists.
+- Some endpoints documented here are app-facing only and not a public customer contract.
 
-See [API Versioning and Compatibility](./versioning.md) for the compatibility policy.
+## Related
 
-## Related Docs
-
-- [Authentication and API Keys](/docs/api/authentication)
-- [Errors and Problem Details](/docs/api/errors)
-- [Fabric Adapters API](./fabric-adapters.md) - Manage adapters in your Fabric
-- [MCP Overview](../mcp/overview.md) - AI agent integration
-
-## Status and Scope
-
-This documentation covers the documented user-facing API endpoints. Not all platform endpoints are documented — some are internal, admin-only, or still evolving.
-
-**Current scope:**
-- User-facing tenant-scoped operations
-- Webhook ingestion and delivery management
-- Adapter and plane management
-- Delivery flows and destinations
-- Evidence and observability
-
-**Not covered in this section:**
-- Internal admin-only endpoints
-- Debug/diagnostic endpoints
-- BFF-only internal routes
-
-The API is in active development. Endpoint availability reflects the current deployed product.
-
-## Additional Guides
-
-- [Rate Limits and Operational Limits](./rate-limits.md)
-- [Webhook Delivery API Guide](./webhooks.md)
-- [Events and Evidence API Guide](./events.md)
-- [API Changelog](./changelog.md)
-
-
-## API Reference
-
-- [API Overview](/docs/api/overview) - Complete API specification with code examples
+- [API Status Matrix](./status) — per-group maturity, audience, and implementation notes
+- [Authentication and API Keys](./authentication)
+- [Errors and Problem Details](./errors)
+- [OpenAPI Spec Index](./openapi)
+- [Reference API Index](../reference/api)

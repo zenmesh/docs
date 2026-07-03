@@ -141,22 +141,34 @@ See [support](https://docs.zen-mesh.io/docs/start-here/support).
 
 ## API Reference
 
-- [API Overview](https://docs.zen-mesh.io/docs/api/overview): REST API surface, versioning, base URLs
+- [API Overview](https://docs.zen-mesh.io/docs/api/overview): Canonical API taxonomy — surface groups, maturity legend, terminology mapping, non-claims
+- [API Status Matrix](https://docs.zen-mesh.io/docs/api/status): Per-group maturity, audience, base path, auth model, OpenAPI coverage, UI mapping
+- [Authentication and API Keys](https://docs.zen-mesh.io/docs/api/authentication): OIDC, HMAC, API key, MCP auth, scope model
+- [Errors and Problem Details](https://docs.zen-mesh.io/docs/api/errors): Standard error shape, status codes, RFC 9457, retry-after
+- [Rate Limits and Operational Limits](https://docs.zen-mesh.io/docs/api/rate-limits): Plan-based per-endpoint rate limits, payload limits, delivery config
+- [Targets API](https://docs.zen-mesh.io/docs/api/targets): Delivery destinations (WIRED_SANDBOX)
+- [Endpoints API](https://docs.zen-mesh.io/docs/api/endpoints): Webhook source receivers (WIRED_SANDBOX)
+- [Flows API](https://docs.zen-mesh.io/docs/api/flows): Declarative delivery contracts (WIRED_SANDBOX)
+- [Delivery Attempts API](https://docs.zen-mesh.io/docs/api/delivery-attempts): One delivery execution with status values (WIRED_SANDBOX)
+- [DLQ API](https://docs.zen-mesh.io/docs/api/dlq): Failed delivery attempts via status filter (WIRED_SANDBOX)
+- [Retry API](https://docs.zen-mesh.io/docs/api/retry): Single and batch retry for failed deliveries (WIRED_SANDBOX)
+- [Replay API](https://docs.zen-mesh.io/docs/api/replay): Event replay from retained payload/context (WIRED_SANDBOX)
+- [Traces / Evidence Spine API](https://docs.zen-mesh.io/docs/api/traces): Delivery trace spine, not full distributed tracing (WIRED_SANDBOX)
+- [Saved Payloads API](https://docs.zen-mesh.io/docs/api/saved-payloads): Test/template payloads, not production retained payloads (WIRED_SANDBOX)
+- [Evidence API](https://docs.zen-mesh.io/docs/api/evidence): Cryptographic delivery proofs, Merkle inclusion verification (WIRED_SANDBOX)
+- [Logs API](https://docs.zen-mesh.io/docs/api/logs): Structured platform logs with pagination and filtering (WIRED_SANDBOX)
+- [Fabric Adapters API](https://docs.zen-mesh.io/docs/api/fabric-adapters): Manage Fabric adapters — list, disable, enable per tenant/cluster (WIRED_SANDBOX)
 - [API Quickstart](https://docs.zen-mesh.io/docs/api/quickstart): Five-step quickstart with curl examples
 - [API Examples](https://docs.zen-mesh.io/docs/api/examples): Complete API workflow examples (auth, evidence, logs, idempotency)
-- [Authentication and API Keys](https://docs.zen-mesh.io/docs/api/authentication): OIDC, HMAC, API key, MCP auth, scope model
-- [Errors and Problem Details](https://docs.zen-mesh.io/docs/api/errors): HTTP status codes, RFC 9457 format, retry-after
 - [Webhook Delivery API Guide](https://docs.zen-mesh.io/docs/api/webhooks): Webhook ingest, validation, delivery, idempotency, delivery status, DLQ
-- [Evidence API](https://docs.zen-mesh.io/docs/api/evidence): Cryptographic delivery proofs, Merkle inclusion verification
-- [Logs API](https://docs.zen-mesh.io/docs/api/logs): Structured platform logs with pagination and filtering
 - [Events and Evidence API Guide](https://docs.zen-mesh.io/docs/api/events): Event tracking, evidence endpoints, capability proofs
 - [Idempotency](https://docs.zen-mesh.io/docs/api/idempotency): Safe retry with Idempotency-Key header and dedup window
-- [Replay](https://docs.zen-mesh.io/docs/api/replay): Re-process delivered events from DLQ or history
 - [API Versioning and Compatibility](https://docs.zen-mesh.io/docs/api/versioning): URL-based versioning, compatibility policy, spec maintenance
-- [Rate Limits and Operational Limits](https://docs.zen-mesh.io/docs/api/rate-limits): Per-endpoint rate limits, payload limits, delivery config
-- [Fabric Adapters API](https://docs.zen-mesh.io/docs/api/fabric-adapters): Manage Fabric adapters — list, disable, enable adapters per tenant/cluster
 - [API Changelog](https://docs.zen-mesh.io/docs/api/changelog): Version history and migration notes
-- [OpenAPI spec (YAML)](https://github.com/zenmesh/zen-platform-hermes/blob/main/api-specifications/zen-back.v1.yaml): Canonical OpenAPI 3.0.3 specification
+- [OpenAPI Spec Index](https://docs.zen-mesh.io/docs/api/openapi): Canonical spec files, coverage table, endpoint groups, validation commands
+- [Customer API](https://docs.zen-mesh.io/docs/reference/customer-api): Planned read-only programmable interface (PLANNED, not production-live)
+
+OpenAPI spec: [zen-back.v1.yaml](https://github.com/zenmesh/zen-platform-hermes/blob/main/api-specifications/zen-back.v1.yaml) (DRAFT — wired via openapi-docs plugin). Additional spec at [`/openapi/zen-mesh-user-api.v1.yaml`](https://docs.zen-mesh.io/openapi/zen-mesh-user-api.v1.yaml) (static, not plugin-rendered).
 
 ## MCP Reference
 

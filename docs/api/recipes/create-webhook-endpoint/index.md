@@ -92,9 +92,9 @@ These endpoints are used by Zen Mesh to send notifications to your configured in
 
 ## Next Steps
 
-- [List Planes]()
-- *Create a Target* (see dedicated recipe)
-- [Create a Flow]()
+- [List Planes](../list-planes-and-adapters)
+- [Create a Target](../create-target)
+- [Create a Flow](../create-flow)
 
 ---
 

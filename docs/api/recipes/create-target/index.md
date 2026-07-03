@@ -141,9 +141,9 @@ curl -sS   -H "Authorization: Bearer $ZEN_API_TOKEN"   "$ZEN_API_BASE/tenants/$Z
 
 ## Next Steps
 
-- [Create a Flow]()
-- [Inspect Destinations]()
-- [Update Destination](/docs/api/overview) (use updateDestination endpoint)
+- [Create a Flow](../create-flow)
+- [Inspect Destinations](../../targets) (see Targets API)
+- [List Deliveries](../../delivery-attempts) (see Delivery Attempts API)
 
 ---
 

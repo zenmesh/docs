@@ -1,55 +1,54 @@
 ---
-sidebar_label: Replay
+sidebar_label: Replay API
 ---
 
-# Replay
+# Replay API
 
-The Replay API allows re-processing previously delivered events. This is useful for recovering from downstream failures, testing integration changes, or backfilling data.
+Replay recreates delivery of an event from retained payload/context. Replay differs from [Retry](./retry) — retry re-attempts delivery to the original target, while replay can deliver to the same or different target using the retained payload.
 
-## Trigger a Replay
+> Status: WIRED_SANDBOX. This page describes the current contract surface and known non-claims. It is not a production-live availability claim.
 
-```bash
-curl -X POST \
-  -H "Authorization: Bearer $ZEN_API_KEY" \
-  -H "X-Tenant-ID: $ZEN_TENANT_ID" \
-  -H "Content-Type: application/json" \
-  -d '{"source_id": "src_456", "time_range": {"since": "2026-06-01T00:00:00Z", "until": "2026-06-01T23:59:59Z"}}' \
-  https://api.zen-mesh.io/v1/replays
-```
+## Important caveat
 
-Response:
+Replay **requires retained payload/context**. If the payload has exceeded the retention window or was never retained, replay is not available.
+
+| Plan | Retention | Replay availability |
+|------|-----------|-------------------|
+| Free | 7 days | 3-day basic DLQ/replay |
+| Pro | 30 days | 7-day advanced |
+| Business | Longer | 30+ days |
+| Enterprise | Custom | Custom |
+
+## Operations
+
+| Method | Path | Description | Status |
+|--------|------|-------------|--------|
+| `POST` | `/tenants/{tid}/deliveries/{did}/replay` | Replay a single delivery | WIRED_SANDBOX |
+| `POST` | `/tenants/{tid}/replay/batch` | Batch replay | PLANNED |
+
+## Single replay request
 
 ```json
 {
-  "replay_id": "rpl_abc123",
-  "status": "queued",
-  "estimated_events": 500,
-  "created_at": "2026-06-02T00:00:00Z"
+  "delivery_id": "del_abc123"
 }
 ```
 
-## Check Replay Status
+## Auth
 
-```bash
-curl -H "Authorization: Bearer $ZEN_API_KEY" \
-  -H "X-Tenant-ID: $ZEN_TENANT_ID" \
-  https://api.zen-mesh.io/v1/replays/rpl_abc123
-```
+Bearer JWT or API key in `Authorization` header. Tenant-scoped via path parameter.
 
-## List Replays
+## OpenAPI coverage
 
-```bash
-curl -H "Authorization: Bearer $ZEN_API_KEY" \
-  -H "X-Tenant-ID: $ZEN_TENANT_ID" \
-  "https://api.zen-mesh.io/v1/replays?limit=10"
-```
+Single replay partially covered in `zen-back.v1.yaml`. Batch replay not covered.
 
-## Limitations
+## UI mapping
 
-- Replays are processed asynchronously
-- Only events within the retention window can be replayed
-- Replay is available by default for all tenant plans
+Traffic → Replay
 
-## Deduplication During Replay
+## Non-claims
 
-Events replayed to destinations use idempotency based on the original event ID. If a downstream destination already received the event, the replay delivery is idempotent — the destination sees only one copy per unique event.
+- WIRED_SANDBOX: implemented in local/sandbox runtime. Not production-live.
+- Replay is gated by retained payload/context availability.
+- Batch and dry-run replay are planned (post-V1), not available.
+- Replay respects retention and plan limits — expired payloads cannot be replayed.

@@ -101,8 +101,8 @@ When you publish a flow, it becomes a new version. The previous version remains 
 
 ## Next Steps
 
-- [Create a Flow]()
-- [Inspect Flows]()
+- [Create a Flow](../create-flow)
+- [Inspect Flows](../../delivery-attempts) (via Delivery Attempts API)
 - [Troubleshooting](../../errors)
 
 ---
