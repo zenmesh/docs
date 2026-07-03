@@ -36,9 +36,9 @@ This page is the **authoritative reference** for what Zen Mesh claims about its 
 **Agent → SaaS mTLS is REQUIRED.** All agent routes (desired-state, heartbeat, adapter sync, allowlist) run on the mTLS listener. This is enforced fail-closed in production.
 
 Source references:
-- `src/saas/back/cmd/mtls_listener.go:201-248` — agent routes on mTLS listener
-- `src/saas/back/src/main.go:3181-3190` — mTLS enforcement fail-closed
-- `src/saas/customer-api/evidence/evidence.go:127` — CAP-004 planned (workload identity model)
+- `mtls_listener.go` — agent routes registered on mTLS listener (port 9443)
+- `main.go` — mTLS enforcement initialization (fail-closed, applies to internal CP↔EP/DP routes)
+- `evidence.go` (customer-api) — CAP-004 planned (workload identity model)
 
 ## ZenLock Role: Custody, Not Rotation Engine
 

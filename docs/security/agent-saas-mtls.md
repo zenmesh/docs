@@ -1,41 +1,42 @@
 # Agent → SaaS mTLS
 
-**Status:** Required — fail-closed in production
-**Related:** [Security Capability Validation](./security-capability-validation)
+**Status:** Required — fail-closed (source-validated, not production-live attested)
+**Related:** [Security Capability Validation](./security-capability-validation), [MCP Authentication & mTLS](../mcp/authentication-and-mtls)
 
 ---
 
 ## Overview
 
-The Zen Mesh agent communicates with the SaaS backend exclusively through mTLS (Mutual TLS). This is not optional. It is not planned. It is **required** and enforced fail-closed.
+The Zen Mesh agent communicates with the SaaS backend through mTLS (Mutual TLS). This is enforced fail-closed at the middleware layer.
+
+**Caveat:** The evidence below is source-validated against the current codebase. Production-live attestation is not claimed here — refer to the [evidence index](../evidence/overview.md) for deployment-specific validation status.
 
 ## Architecture
 
-The agent uses `SAAS_SYNC_URL` which points to the mTLS service (port 9443) for ALL operations:
+The agent uses `SAAS_SYNC_URL` which points to the mTLS service (port 9443) for post-bootstrap sync operations:
 
-- **Desired-state polling** — `GET /agent/v1/clusters/{cid}/desired-state`
-- **Heartbeat** — `POST /agent/v1/heartbeat`, `POST /agent/v1/heartbeats`
-- **Adapter sync** — `POST /agent/v1/clusters/{cluster_id}/adapters/sync`
-- **Allowlist** — `GET /agent/v1/allowlist`
+| Route | Method | Auth | Scope |
+|---|---|---|---|
+| `/agent/v1/clusters/{cid}/desired-state` | GET | mTLS + HMAC | Desired-state polling |
+| `/agent/v1/heartbeat` | POST | mTLS + HMAC | Agent heartbeat |
+| `/agent/v1/heartbeats` | POST | mTLS + HMAC | Agent heartbeat |
+| `/agent/v1/clusters/{cluster_id}/adapters/sync` | POST | mTLS + HMAC | Adapter registration |
+| `/agent/v1/allowlist` | GET | mTLS + HMAC | Egress/adapter allowlist |
+| `/agent/v1/agents/bootstrap` | POST | mTLS (no HMAC) | Agent bootstrap |
+| `/agent/v1/agents/rekey` | POST | mTLS (no HMAC) | Agent rekey |
 
-All routes require both **mTLS** and **HMAC** authentication.
-
-## Source of Truth
-
-| Component | File | Key Line |
-|---|---|---|
-| mTLS listener | `src/saas/back/cmd/mtls_listener.go` | Lines 201-248: agent routes registered on mTLS listener |
-| mTLS enforcement | `src/saas/back/src/main.go` | Line 3181: "Apply mTLS enforcement to agent ingest routes (fail-closed)" |
-| mTLS identity middleware | `src/saas/back/src/middleware/mtls_identity.go` | Line 136: "RequireMTLSIdentity enforces mTLS identity for agent routes" |
-| Bootstrap SPIFFE | `src/saas/back/src/handlers/agent_bootstrap_handler.go` | Lines 334-384: SPIFFE ID verification on bootstrap |
+Bootstrap and rekey routes are on the mTLS listener without HMAC — the agent has not yet enrolled and cannot present an HMAC identity at that stage.
 
 ## Security Matrix
 
-| Property | Agent → SaaS |
-|---|---|
-| TLS | Required |
-| mTLS | Required |
-| HMAC | Required |
+| Control | Status | Scope | Evidence Reference | Public Caveat |
+|---|---|---|---|---|
+| mTLS listener | Implemented | Port 9443, internal CP↔EP/DP routes | `mtls_listener.go`: agent route registration on mTLS listener | Source-validated at commit time; no production-live attestation here |
+| mTLS identity middleware | Implemented | Agent routes (tenant/cluster identity from cert) | `mtls_identity.go`: RequireMTLSIdentity middleware | Extracts identity from client cert; fails 401 if missing |
+| mTLS enforcement (fail-closed) | Implemented | All internal CP↔EP/DP routes | `main.go`: mTLS enforcement initialization | Fatal error if mTLS enforcement cannot initialize; applies to API v1 routes |
+| HMAC middleware | Implemented | Agent routes under `/agent/v1` | HMACVerifier initialization in `main.go` | Fail-closed in production; non-nil check |
+| Bootstrap SPIFFE gate | Config-driven (optional) | Agent bootstrap handler | `agent_bootstrap_handler.go`: `BOOTSTRAP_REQUIRE_SPIFFE` | Optional; when enabled, requires valid SPIFFE ID in client cert |
+| SPIRE Workload API | Planned | Full workload identity model | CAP-004 evidence entry | Planned for post-V1 hardening; does not affect current mTLS requirement |
 
 ## CAP-004 Clarification
 
@@ -45,12 +46,14 @@ The capability evidence entry **CAP-004 "SPIFFE/SPIRE workload identity"** has s
 
 ## Enforcement
 
-- **Production:** mTLS enforcement is fail-closed. If mTLS middleware is nil, the system logs a fatal error.
-- **Bootstrap:** Agent bootstrap can require SPIFFE identity (`BOOTSTRAP_REQUIRE_SPIFFE`).
-- **HMAC:** HMAC middleware is also fail-closed (SECURITY RATCHET).
+- **Production:** mTLS enforcement is fail-closed. If mTLS middleware initialization fails, the system logs a fatal error and refuses to start.
+- **Bootstrap:** Agent bootstrap can optionally require SPIFFE identity via `BOOTSTRAP_REQUIRE_SPIFFE`.
+- **HMAC:** HMAC middleware is also fail-closed in production.
+- **Route isolation:** Agent routes are ONLY reachable via the mTLS listener (port 9443), not on the public listener.
 
 ## Non-Claims
 
 - No claim that all data-plane paths have mTLS
 - No claim that SPIRE Workload API is fully deployed
-- No production-live proof for all paths (evidence is local/mock)
+- No production-live proof for all paths (evidence is source-validated, not live-attested)
+- No claim that bootstrap SPIFFE gate is enabled in all deployments

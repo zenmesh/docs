@@ -59,10 +59,10 @@ Each credential type in Zen Mesh has its own **lifecycle owner** that performs r
 |---|---|---|
 | HMAC rotation | `src/saas/back/src/services/security_hmac_key_rotation_controller.go` | Rotation controller |
 | Key rotation store | `src/saas/back/src/security/key_rotation_store.go` | Uses ZenLockTenantSecretBackend |
-| ZenLock validation | `src/saas/back/src/security/encryption_validation.go:239` | `validateZenLockCoverage` |
-| ZenLock backend | `src/saas/back/src/security/keystore.go:79` | `NewZenLockTenantSecretBackend` |
+| ZenLock validation | `src/saas/back/src/security/encryption_validation.go` | `validateZenLockCoverage` |
+| ZenLock backend | `src/saas/back/src/security/keystore.go` | `NewZenLockTenantSecretBackend` |
 | CA signer | `src/saas/back/k8s/cert-manager-ca-issuer.yaml` | Cert-manager issuer (not ZenLock) |
-| CAP-003 | `src/saas/customer-api/evidence/evidence.go:126` | "ZenLock secret management" status=implemented |
+| CAP-003 | `src/saas/customer-api/evidence/evidence.go` | "ZenLock secret management" status=implemented |
 
 ## Non-Claims
 
