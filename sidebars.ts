@@ -32,8 +32,19 @@ const sidebars: SidebarsConfig = {
       label: 'Getting Started',
       items: [
         'getting-started/quick-start',
+        'getting-started/customer-journey',
+        'getting-started/first-15-minutes',
         'getting-started/installation',
         'getting-started/first-webhook',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Concepts',
+      items: [
+        'concepts/zen-mesh-concepts',
+        'concepts/control-surfaces',
+        'concepts/glossary',
       ],
     },
     {
@@ -66,7 +77,6 @@ const sidebars: SidebarsConfig = {
         'architecture/three-plane-model',
         'architecture/delivery-modes',
         'architecture/security-model',
-        'concepts/glossary',
       ],
     },
     {
@@ -110,6 +120,9 @@ const sidebars: SidebarsConfig = {
         'guides/shopify',
         'guides/custom-webhooks',
         'guides/monitoring',
+        'guides/traffic-lifecycle',
+        'guides/evidence-and-trust',
+        'guides/troubleshooting-first-delivery',
       ],
     },
     {
@@ -255,6 +268,8 @@ const sidebars: SidebarsConfig = {
         'reference/webhook-observability-and-evidence',
         'reference/delivery-status',
         'reference/webhook-faq',
+        'reference/ui-api-map',
+        'reference/current-status',
       ],
     },
   ],

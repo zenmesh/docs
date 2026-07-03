@@ -182,8 +182,21 @@ OpenAPI spec: [zen-back.v1.yaml](https://github.com/zenmesh/zen-platform-hermes/
 - [MCP Draft System](https://docs.zen-mesh.io/docs/mcp/draft-system): AI drafts your infrastructure — you approve it. Governance model with human-only apply
 - [MCP V1 Policy](https://docs.zen-mesh.io/docs/mcp/read-only-v1-policy): V1 scope — RO and RW tools included, default-off. Full Trust Lab and synthetic monitoring post-V1.
 
+## Concepts
+
+- [Zen Mesh Concepts](https://docs.zen-mesh.io/docs/concepts/zen-mesh-concepts): Comprehensive runtime object definitions — template, blueprint, flow, endpoint, target, attempt, DLQ, retry, replay, trace, saved/retained payload, evidence, ZCC, control surface
+- [Control Surfaces](https://docs.zen-mesh.io/docs/concepts/control-surfaces): UI, Customer API, MCP, CLI, Git surfaces — audience, maturity, read/write per surface
+
+## Guides
+
+- [Traffic Lifecycle](https://docs.zen-mesh.io/docs/guides/traffic-lifecycle): Endpoint → flow → attempt → DLQ/retry/replay → trace → evidence — failure decision table
+- [Evidence and Trust](https://docs.zen-mesh.io/docs/guides/evidence-and-trust): Evidence model, trace/evidence relationship, local vs production, non-claims
+- [Troubleshooting First Delivery](https://docs.zen-mesh.io/docs/guides/troubleshooting-first-delivery): Symptom/cause/action table for common issues — login, targets, endpoints, flows, deliveries, DLQ, retry, replay, evidence, MCP
+
 ## Reference and FAQ
 
+- [UI to API Map](https://docs.zen-mesh.io/docs/reference/ui-api-map): UI area → API page → runtime route → status mapping table
+- [Current Status Matrix](https://docs.zen-mesh.io/docs/reference/current-status): Single-source status for all capabilities — WIRED_SANDBOX, PUBLIC_CONTRACT_DRAFT, PLANNED, INTERNAL_ONLY, SANDBOX_ONLY
 - [Webhook Delivery Evidence](https://docs.zen-mesh.io/docs/reference/webhook-delivery-evidence): Delivery receipts, audit trail, Merkle integrity
 - [Delivery Status Reference](https://docs.zen-mesh.io/docs/reference/delivery-status): Webhook delivery state machine — status values, transitions, retry policy, DLQ
 - [Observability and Evidence](https://docs.zen-mesh.io/docs/reference/webhook-observability-and-evidence): Delivery tracking, audit, machine-readable manifests
@@ -191,7 +204,9 @@ OpenAPI spec: [zen-back.v1.yaml](https://github.com/zenmesh/zen-platform-hermes/
 
 ## Getting started
 
-- [Quick start](https://docs.zen-mesh.io/docs/getting-started/quick-start): Sandbox-oriented setup
+- [Quick start](https://docs.zen-mesh.io/docs/getting-started/quick-start): UI-first product journey — endpoints, targets, flows in the dashboard
+- [Customer journey](https://docs.zen-mesh.io/docs/getting-started/customer-journey): Full onboarding map — customer chain, core objects, control surfaces, 10-step path
+- [First 15 minutes](https://docs.zen-mesh.io/docs/getting-started/first-15-minutes): Structured evaluator walkthrough — log in, explore, create objects, inspect traffic
 - [Installation](https://docs.zen-mesh.io/docs/getting-started/installation): Install paths for evaluation
 - [Support](https://docs.zen-mesh.io/docs/start-here/support): Contact and support resources
 
