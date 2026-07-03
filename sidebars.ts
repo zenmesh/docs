@@ -211,7 +211,6 @@ const sidebars: SidebarsConfig = {
           items: [
             'api/errors',
             'api/pagination',
-            'api/idempotency',
             'api/openapi',
             'api/changelog',
           ],

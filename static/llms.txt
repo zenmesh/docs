@@ -165,11 +165,9 @@ See [support](https://docs.zen-mesh.io/docs/start-here/support).
 - [API Examples](https://docs.zen-mesh.io/docs/api/examples): Complete API workflow examples (auth, evidence, logs, idempotency)
 - [Webhook Delivery API Guide](https://docs.zen-mesh.io/docs/api/webhooks): Webhook ingest, validation, delivery, idempotency, delivery status, DLQ
 - [Events and Evidence API Guide](https://docs.zen-mesh.io/docs/api/events): Event tracking, evidence endpoints, capability proofs
-- [Idempotency](https://docs.zen-mesh.io/docs/api/idempotency): Safe retry with Idempotency-Key header and dedup window
 - [API Versioning and Compatibility](https://docs.zen-mesh.io/docs/api/versioning): URL-based versioning, compatibility policy, spec maintenance
 - [API Changelog](https://docs.zen-mesh.io/docs/api/changelog): Version history and migration notes
 - [OpenAPI Spec Index](https://docs.zen-mesh.io/docs/api/openapi): Canonical spec files, coverage table, endpoint groups, validation commands
-- [Write Safety](https://docs.zen-mesh.io/docs/api/write-safety): Authorization model, idempotency, audit, fail-closed behavior for write-capable APIs and MCP
 - [Customer API](https://docs.zen-mesh.io/docs/reference/customer-api): Planned programmable interface for reading operational truth and managing authorized resources. Not read-only globally; endpoint groups carry individual read/write status (PLANNED, not production-live)
 
 OpenAPI spec: [zen-back.v1.yaml](https://github.com/zenmesh/zen-platform-hermes/blob/main/api-specifications/zen-back.v1.yaml) (DRAFT — wired via openapi-docs plugin). Additional spec at [`/openapi/zen-mesh-user-api.v1.yaml`](https://docs.zen-mesh.io/openapi/zen-mesh-user-api.v1.yaml) (static, not plugin-rendered).

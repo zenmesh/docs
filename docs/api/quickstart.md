@@ -146,6 +146,7 @@ Expected response:
 curl -X POST \
   -H "Authorization: Bearer $ZEN_API_KEY" \
   -H "Content-Type: application/json" \
+  -H "Idempotency-Key: $(uuidgen)" \
   -d '{"name": "test-payload", "payload": {"event": "test", "data": {"key": "value"}}}' \
   "$ZEN_API_BASE/tenants/$ZEN_TENANT_ID/saved-payloads"
 ```
