@@ -4,60 +4,75 @@ sidebar_label: Home
 
 # Zen Mesh Documentation
 
-Welcome to the Zen Mesh technical documentation — architecture, operations, security evidence, and AI-accessible machine-readable manifests.
+> Status: PUBLIC_CONTRACT_DRAFT. Page status is noted per capability. Not a production-live claim.
 
-## Where should you start?
+Welcome to the Zen Mesh documentation. Zen Mesh delivers webhooks and events to private networks — no inbound ports, no VPN, no kernel modules.
+
+## Start Here
 
 | If you are... | Start here |
 |---|---|
-| **New engineer** evaluating Zen Mesh | [Start Here](start-here/what-is-zen-mesh) — what it is, who it's for, key concepts |
-| **Operator** deploying in Kubernetes | [Quick Start](getting-started/quick-start) — install and create your first webhook |
-| **Security / compliance reviewer** | [Trust Lifecycle Evidence](evidence/trust-lifecycle) — enrollment, mTLS, HMAC, ZenLock, rotation |
-| **Runtime / reliability reviewer** | [Runtime Convergence Evidence](evidence/runtime-convergence) — 10 convergence proofs, at-least-once, DLQ |
-| **AI agent / RAG system** scanning Zen Mesh | [AI Evidence Manifest](ai/evidence-v1-supersession#manifest) — machine-readable capability status |
-| **Compliance reviewer** mapping to frameworks | [Compliance-to-Feature Graph](ai/compliance-evidence) — NIST, SOC2, ISO, PCI-DSS, HIPAA |
-| **Anyone checking what we do NOT claim** | [Non-Claims](ai/evidence-v1-supersession#non-claims) — explicit scope boundaries |
-| **Architecture / editorial articles** | [Blog index](https://www.zen-mesh.io/blog) on www; [Three-plane model](./architecture/three-plane-model) (docs + evidence CTA) |
+| **New evaluator** | [Customer Journey](getting-started/customer-journey) — full onboarding map |
+| **First 15 minutes** | [First 15 Minutes](getting-started/first-15-minutes) — structured evaluator walkthrough |
+| **Deploying** | [Quick Start](getting-started/quick-start) — UI-first setup in the dashboard |
+| **Checking status** | [Current Status](reference/current-status) — per-capability maturity matrix |
 
-## Sections
+## Learn the Model
 
-| Section | What you'll find |
+| Topic | Page |
 |---|---|
-| [Start Here](start-here/what-is-zen-mesh) | Product overview, who should use it, current status, key concepts |
-| [Delivery](delivery/) | Webhook reliability — dead-letter queue, replay, deduplication, filtering, fan-out, idempotency |
-| [Security](security/) | Security controls — IP allowlisting, header validation, cryptographic enrollment, mTLS |
-| [Architecture](architecture/overview) | Three-plane model, delivery modes, security model, glossary |
-| [Getting Started](getting-started/quick-start) | Install, quick start, first webhook |
-| [Guides](guides/cluster-enrollment) | Cluster enrollment, adapters, destinations, monitoring |
-| [Operations](operations/upgrades) | Upgrades, backups, troubleshooting |
-| [Trust Overview](trust/) | Trust, compliance coverage, CIS benchmark alignment, evidence overview |
-| [Evidence Overview](evidence/overview) | Index of all evidence areas — runtime, trust, compliance, Merkle, validation map |
-| [Runtime Evidence](evidence/runtime-convergence) | 10 convergence proofs — delivery, DLQ, backpressure, circuit breaker |
-| [Trust Evidence](evidence/trust-lifecycle) | 10 trust proofs — enrollment, mTLS, HMAC, ZenLock, rotation |
-| [Delivery Evidence](reference/webhook-delivery-evidence) | Webhook delivery receipts, audit trail, Merkle integrity |
-| [Validation Map](evidence/validation-map) | How to validate evidence locally |
-| [Merkle Integrity](evidence/merkle-integrity) | Content-addressed evidence verification |
-| [Non-Claims](ai/evidence-v1-supersession#non-claims) | What Zen Mesh does not certify or guarantee |
-| [AI Agents](ai/overview) | AI overview, evidence schema, machine-readable manifests |
-| [Webhook FAQ](reference/webhook-faq) | Frequently asked questions about webhook delivery |
-| [Reference](reference/helm-chart) | CLI, API, Customer API, MCP, configuration, Helm chart |
+| Runtime objects | [Zen Mesh Concepts](concepts/zen-mesh-concepts) — template, blueprint, flow, endpoint, target, trace, evidence |
+| Control surfaces | [Control Surfaces](concepts/control-surfaces) — UI, Customer API, MCP, CLI, Git |
+| Traffic lifecycle | [Traffic Lifecycle](guides/traffic-lifecycle) — endpoint → flow → attempt → DLQ → retry → replay → trace → evidence |
+| Evidence and trust | [Evidence and Trust](guides/evidence-and-trust) — Merkle receipts, trace/evidence relationship, non-claims |
 
-## Machine-Readable Evidence
+## Build and Evaluate
+
+| Topic | Page |
+|---|---|
+| API deep dive | [API Overview](api/overview) — all API surface groups, maturity, public-contract boundary |
+| API status by group | [API Status Matrix](api/status) — per-group read/write maturity |
+| UI to API map | [Reference: UI/API Map](reference/ui-api-map) — UI area to API route to status |
+| Customer API | [Customer API](reference/customer-api) — programmable contract surface with endpoint-group-level read/write status |
+| MCP | [MCP Overview](mcp/overview) — AI agent and operator tool surface |
+
+## Operate and Troubleshoot
+
+| Topic | Page |
+|---|---|
+| Delivery failures | [Delivery Failures](delivery/delivery-failures) — failure classification, retry, recovery |
+| DLQ | [Dead Letter Queue](delivery/dead-letter-queue) — failed delivery preservation and recovery |
+| Retry | [Retry](delivery/replay-vs-retry) — single and batch retry |
+| Replay | [Replay](delivery/replay) — event replay from retained payload |
+| Troubleshooting | [Troubleshooting First Delivery](guides/troubleshooting-first-delivery) — symptom → cause → action |
+| Traces | [Traces / Evidence Spine API](api/traces) — delivery trace spine |
+| Payloads | Saved Payloads — test/template payloads (see [Delivery section](delivery/webhook-reliability)) |
+
+## Trust and Evidence
+
+| Topic | Page |
+|---|---|
+| Non-claims | [Non-Claims](ai/evidence-v1-supersession#non-claims) — explicit scope boundaries |
+| Current Status | [Current Status](reference/current-status) — single-source capability status matrix |
+| Evidence overview | [Evidence Overview](evidence/overview) — index of all evidence areas |
+| Compliance | [Compliance-to-Feature Graph](ai/compliance-evidence) — NIST, SOC2, ISO, PCI-DSS, HIPAA |
+
+## Machine-Readable
 
 | Resource | Location |
 |---|---|
 | Capability Manifest | [`manifest.json`](https://docs.zen-mesh.io/ai/evidence/v1/manifest.json) |
 | Compliance Map | [`compliance-map.json`](https://docs.zen-mesh.io/ai/evidence/v1/compliance-map.json) |
 | Non-Claims | [`non-claims.json`](https://docs.zen-mesh.io/ai/evidence/v1/non-claims.json) |
-| AI Context (llms.txt) | [`llms.txt`](llms.txt) |
+| AI Context | [`llms.txt`](llms.txt) |
 | Evidence index (www) | [`https://www.zen-mesh.io/evidence`](https://www.zen-mesh.io/evidence) |
 | Full Context | [`https://www.zen-mesh.io/llms-full.txt`](https://www.zen-mesh.io/llms-full.txt) |
 
-## Also available
+## Also Available
 
-- [Customer API](reference/customer-api) — planned programmable interface for reading operational truth and managing authorized resources
+- [Customer API](reference/customer-api) — programmable contract surface with endpoint-group-level read/write status
 - [MCP](reference/mcp) — Model Context Protocol server for programmatic access
 
 ---
 
-All proofs are local/mock unless stated otherwise. See [Current Status](start-here/current-status) for plan readiness.
+See [Current Status](reference/current-status) for plan readiness by capability. All proofs are local/sandbox unless stated otherwise.

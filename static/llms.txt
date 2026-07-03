@@ -2,7 +2,7 @@
 
 > Zen Mesh is private-by-design, security-first webhook delivery infrastructure for private networks. Services behind NAT or firewall connect outbound-only to receive webhooks from Stripe, GitHub, Shopify, Twilio, and custom senders — no inbound ports, no VPN, no kernel modules. Free Forever (V1). Pro Early Bird with 6-month free trial (V1). Business rollout planned for V1.1 (join waitlist). Enterprise pilot program available.
 
-**Version:** 1.1.1 · **Last-Updated:** 2026-07-02T00:00:00Z · **Docs:** https://docs.zen-mesh.io · **Site:** https://www.zen-mesh.io · **Repository:** https://github.com/zenmesh/zen-platform · **Company:** Zen Mesh Inc., Toronto, Ontario, Canada
+**Version:** 1.1.1 · **Last-Updated:** 2026-07-03T20:57:00Z · **Docs:** https://docs.zen-mesh.io · **Site:** https://www.zen-mesh.io · **Repository:** https://github.com/zenmesh/zen-platform · **Company:** Zen Mesh Inc., Toronto, Ontario, Canada
 
 ## Canonical discovery (crawlers)
 

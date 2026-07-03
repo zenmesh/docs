@@ -4,9 +4,11 @@ sidebar_label: First Webhook
 
 # Your First Webhook
 
-Walk through delivering a real webhook from Stripe (or any HTTP source) to a service running in your private Kubernetes cluster.
+> **Note:** This guide reflects the legacy Kubernetes-based workflow and uses older terminology (Destination). For the current UI-first evaluator path, see [First 15 Minutes](../getting-started/first-15-minutes) or [Quick Start](../getting-started/quick-start).
+>
+> Status: PUBLIC_CONTRACT_DRAFT. Uses legacy internal terms. See [Current Status](../reference/current-status) for capability maturity.
 
-## Target Service
+## Target Service (Kubernetes)
 
 Create a simple webhook receiver in your cluster:
 
@@ -21,65 +23,55 @@ kubectl expose deployment webhook-echo \
   --namespace zen-mesh
 ```
 
-This creates an HTTP service that returns "webhook received!" on any request.
+## Create a Target
 
-## Create a Destination in Zen Mesh
-
-1. Go to **Destinations** in the dashboard
-2. Click **Add Destination**
+1. Go to **Connect → Targets** in the dashboard
+2. Click **Create Target**
 3. Fill in:
-   - **Name**: `my-first-destination`
-   - **URL**: `http://webhook-echo:8080/webhooks`
-   - **Cluster**: Select your connected cluster
+   - **Name:** `my-first-target`
+   - **URL:** `http://webhook-echo:8080/webhooks`
+   - **Cluster:** Select your connected cluster
 4. Click **Save**
-
-Zen Mesh will give you an ingestion URL like:
-```
-https://ingest.zen-mesh.io/hooks/<hook-id>
-```
 
 ## Configure Your Webhook Source
 
-## Stripe
+### Stripe (example)
 
 1. Go to Stripe Dashboard → Developers → Webhooks
 2. Click **Add endpoint**
-3. Paste the Zen Mesh ingestion URL
+3. Paste the ingestion URL from your endpoint
 4. Select events: `payment_intent.succeeded`, `invoice.paid`
 5. Click **Create endpoint**
 
-## GitHub
+### GitHub (example)
 
 1. Go to your repository → Settings → Webhooks → Add webhook
-2. Paste the Zen Mesh ingestion URL
+2. Paste the ingestion URL from your endpoint
 3. Content type: `application/json`
 4. Select events: `push`, `pull_request`
 5. Click **Add webhook**
 
-## Generic cURL Test
+### Generic cURL Test
 
 ```bash
-curl -X POST "https://ingest.zen-mesh.io/hooks/<hook-id>" \
+curl -X POST "<your-ingestion-url>" \
   -H "Content-Type: application/json" \
   -d '{"event": "test", "data": "hello from zen-mesh"}'
 ```
 
 ## Verify Delivery
 
-1. Go to **Deliveries** in the dashboard
+1. Go to **Traffic → Deliveries** in the dashboard
 2. You should see the event with a **200** or **Delivered** status
 3. Check the pod logs:
+   ```bash
+   kubectl logs -n zen-mesh -l app=webhook-echo --tail=20
+   ```
 
-```bash
-kubectl logs -n zen-mesh -l app=webhook-echo --tail=20
-```
+## Non-Claims
 
-You should see the request logged.
-
-## Troubleshooting
-
-| Problem | Solution |
-|---------|----------|
-| Cluster shows "Not Connected" | Check agent logs: `kubectl logs -n zen-mesh -l app=zen-agent` |
-| Delivery shows "Failed" | Check destination URL is reachable from within the cluster |
-| Events not appearing | Verify the hook URL is correct and the source is sending events |
+- This guide uses example provider setup — not production-live provider validation
+- Ingestion URL shown is an example — actual URL assigned on endpoint creation
+- Kubernetes cluster must have zen-agent connected for private network delivery
+- Delivery guarantees are scenario-specific (local/sandbox), not production-level
+- See [Current Status](../reference/current-status) for capability maturity

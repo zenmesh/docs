@@ -4,14 +4,16 @@ sidebar_label: MCP (Model Context Protocol)
 
 # MCP (Model Context Protocol)
 
-The MCP server provides **programmatic access** to Zen Mesh data through the Model Context Protocol.
+> Status: PUBLIC_CONTRACT_DRAFT. MCP tools carry individual status. Not a production-live claim.
+
+The MCP server provides programmatic access to Zen Mesh capabilities through the Model Context Protocol. It is designed for AI agents, operators, and internal tooling. MCP is not read-only as a category — read and write tools exist, with write tools disabled by default.
 
 ## Current Status
 
-- **Server implemented** at `src/saas/mcp/` in zen-platform
-- **Deployment**: K8s deployment exists but disabled in sandbox (`mcp.enabled: false`)
-- **Not production-live**
-- **No evidence/proof/readiness tools yet** — existing tools cover API keys, deliveries, webhooks
+- Read tools are default-on in V1
+- Write tools are disabled by default, must be explicitly enabled per tool group
+- Server is WIRED_SANDBOX, not production-live
+- See [MCP Overview](../mcp/overview) for full documentation
 
 ## Existing Tools
 
@@ -26,38 +28,23 @@ The MCP server provides **programmatic access** to Zen Mesh data through the Mod
 | `get_webhook` | Get webhook details | Read | Default |
 | `get_delivery_stats` | Get delivery statistics | Read | Default |
 
-## Proposed Evidence Tools
-
-| Tool | Description | Status |
-|---|---|---|
-| `get_runtime_status` | Runtime convergence overview | planned |
-| `get_trust_proof` | Trust proof by ID | planned |
-| `get_compliance_mapping` | Compliance framework mappings | planned |
-| `explain_non_claims` | Non-claims by category | planned |
-| `summarize_readiness` | Readiness summary | planned |
-
-## Intended Resources
-
-| URI | Description | Status |
-|---|---|---|
-| `zen://capabilities` | All capabilities with proof status | planned |
-| `zen://runtime/proofs` | Runtime proof ledger | planned |
-| `zen://trust/proofs` | Trust proof ledger | planned |
-| `zen://compliance/map` | Compliance feature graph | planned |
-| `zen../ai/evidence-v1-supersession.md#non-claims` | Non-claims by category | planned |
-| `zen://readiness` | Readiness and blocker summary | planned |
-
 ## Design Principles
 
-- **Default-on for evidence read tools**: Evidence read tools are available on the default surface; write tools require explicit enablement
-- **Rate-limited**: 50 req/s, burst 100
-- **Database-backed**: Uses persistent storage
+- **Default-on for read tools**: Read tools are available on the default surface; write tools require explicit enablement
+- **Rate-limited**: Subject to plan-based limits
 - **Tenant-scoped**: API key authentication required
+- **Audited**: All accesses logged
 
 ## Non-Claims
 
-- Not production-live — disabled in sandbox
-- Evidence read tools are planned — not yet implemented
+- Not production-live
 - Write tools require explicit enablement and are not available on the default surface
-- Existing write tools (create/revoke API key) require explicit enablement
+- Write tools may be Business+ gated per V1 policy
 - No compliance certification via MCP
+- Evidence read tools: see [MCP Overview](../mcp/overview) for current tool availability
+
+## Related
+
+- [MCP Overview](../mcp/overview) — full documentation
+- [MCP V1 Policy](../mcp/read-only-v1-policy) — read/write model, default-off
+- [MCP Safety and Boundaries](../mcp/safety-and-boundaries) — auth, gating, isolation

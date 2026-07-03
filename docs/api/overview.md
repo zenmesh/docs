@@ -15,17 +15,17 @@ The Zen Mesh API is one control surface for the [Zen Configuration Contract](../
 | Dashboard/BFF API | App-facing | `/api/bff/v1` | INTERNAL_ONLY |
 | [Customer API](../reference/customer-api) | External programmable | `/v1/...` | PLANNED |
 | [Webhook Ingest API](./webhooks) | Sender-facing | `POST /webhooks/{provider}` | WIRED_SANDBOX |
-| [Targets API](./targets) | Customer | `/v1/tenants/{tid}/destinations` | WIRED_SANDBOX |
-| [Endpoints API](./endpoints) | Customer | `/v1/tenants/{tid}/ingesters` | WIRED_SANDBOX |
-| [Flows API](./flows) | Customer | `/v1/tenants/{tid}/delivery-flows` | WIRED_SANDBOX |
-| [Delivery Attempts API](./delivery-attempts) | Customer | `/v1/tenants/{tid}/deliveries` | WIRED_SANDBOX |
-| [DLQ API](./dlq) | Customer | `/v1/tenants/{tid}/deliveries?status=failed` | WIRED_SANDBOX |
-| [Retry API](./retry) | Customer | `/v1/tenants/{tid}/events/{eid}/retry` | WIRED_SANDBOX |
-| [Replay API](./replay) | Customer | `/v1/tenants/{tid}/events/{eid}/replay` | WIRED_SANDBOX |
-| [Traces / Evidence Spine API](./traces) | Customer | `/v1/tenants/{tid}/deliveries` | WIRED_SANDBOX |
-| [Saved Payloads API](./saved-payloads) | Customer | `/v1/tenants/{tid}/saved-payloads` | WIRED_SANDBOX |
-| [Evidence API](./evidence) | Customer | `/v1/evidence/...` | WIRED_SANDBOX |
-| [API Keys API](./authentication) | Customer | `/v1/tenants/{tid}/api-keys` | WIRED_SANDBOX |
+| [Targets API](./targets) | Customer | `/v1/targets` | WIRED_SANDBOX |
+| [Endpoints API](./endpoints) | Customer | `/v1/endpoints` | WIRED_SANDBOX |
+| [Flows API](./flows) | Customer | `/v1/flows` | WIRED_SANDBOX |
+| [Delivery Attempts API](./delivery-attempts) | Customer | `/v1/delivery-attempts` | WIRED_SANDBOX |
+| [DLQ API](./dlq) | Customer | `/v1/dlq` | WIRED_SANDBOX |
+| [Retry API](./retry) | Customer | `/v1/retry` | WIRED_SANDBOX |
+| [Replay API](./replay) | Customer | `/v1/replay` | WIRED_SANDBOX |
+| [Traces / Evidence Spine API](./traces) | Customer | `/v1/traces` | WIRED_SANDBOX |
+| [Saved Payloads API](./saved-payloads) | Customer | `/v1/saved-payloads` | WIRED_SANDBOX |
+| [Evidence API](./evidence) | Customer | `/v1/evidence` | WIRED_SANDBOX |
+| [API Keys API](./authentication) | Customer | `/v1/api-keys` | WIRED_SANDBOX |
 | [Rate Limits API](./rate-limits) | Customer | — | PUBLIC_CONTRACT_DRAFT |
 | [MCP API](../mcp/overview) | Customer | MCP protocol | PUBLIC_CONTRACT_DRAFT |
 | Billing/Plan API | Internal | — | INTERNAL_ONLY |
