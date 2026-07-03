@@ -69,7 +69,7 @@ P0 — must be wired, surfaced, and proven before V1 launch:
 - Trusted proxy / X-Forwarded-For safety — V1 blocker
 - Tenant-scoped — V1 blocker
 - Fail-closed on invalid config — V1 blocker
-- Pro editable unless later changed — default
+- Pro includes IP allow/block management; Business+ adds advanced policy controls
 
 ### Header allow/block
 - Exact/prefix matching — V1 blocker
@@ -241,7 +241,7 @@ V1 cannot be marked launch-ready until:
 - [ ] Final nav is correct and browser-proven
 - [ ] Traffic works or has honest state
 - [ ] DLQ/retry/replay are real or explicitly scoped
-- [ ] IP/header policies are implemented/surfaced or honestly marked Business+ planned
+- [ ] IP policy is implemented/surfaced for Pro; header policy and transform controls are honestly marked Business+ or planned where appropriate
 - [ ] Labs has a useful Free path
 - [ ] Plan locks are visible
 - [ ] Trust claims are clean
