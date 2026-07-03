@@ -384,28 +384,8 @@
       "permanent": true
     },
     {
-      "source": "/delivery/",
-      "destination": "/docs/delivery/",
-      "permanent": true
-    },
-    {
-      "source": "/delivery/idempotency",
-      "destination": "/docs/delivery/idempotency",
-      "permanent": true
-    },
-    {
-      "source": "/delivery/deduplication",
-      "destination": "/docs/delivery/deduplication",
-      "permanent": true
-    },
-    {
-      "source": "/delivery/delivery-failures",
-      "destination": "/docs/delivery/delivery-failures",
-      "permanent": true
-    },
-    {
-      "source": "/delivery/dead-letter-queue",
-      "destination": "/docs/delivery/dead-letter-queue",
+      "source": "/delivery/(.*)",
+      "destination": "/docs/delivery/$1",
       "permanent": true
     },
     {
@@ -459,8 +439,38 @@
       "permanent": true
     },
     {
-      "source": "/guides/cluster-enrollment",
-      "destination": "/docs/guides/cluster-enrollment",
+      "source": "/getting-started/customer-journey",
+      "destination": "/docs/getting-started/customer-journey",
+      "permanent": true
+    },
+    {
+      "source": "/getting-started/first-15-minutes",
+      "destination": "/docs/getting-started/first-15-minutes",
+      "permanent": true
+    },
+    {
+      "source": "/getting-started/first-webhook",
+      "destination": "/docs/getting-started/first-webhook",
+      "permanent": true
+    },
+    {
+      "source": "/getting-started/installation",
+      "destination": "/docs/getting-started/installation",
+      "permanent": true
+    },
+    {
+      "source": "/concepts/zen-mesh-concepts",
+      "destination": "/docs/concepts/zen-mesh-concepts",
+      "permanent": true
+    },
+    {
+      "source": "/concepts/control-surfaces",
+      "destination": "/docs/concepts/control-surfaces",
+      "permanent": true
+    },
+    {
+      "source": "/guides/(.*)",
+      "destination": "/docs/guides/$1",
       "permanent": true
     },
     {
@@ -471,6 +481,36 @@
     {
       "source": "/mcp/overview",
       "destination": "/docs/mcp/overview",
+      "permanent": true
+    },
+    {
+      "source": "/mcp/draft-system",
+      "destination": "/docs/mcp/draft-system",
+      "permanent": true
+    },
+    {
+      "source": "/mcp/tools",
+      "destination": "/docs/mcp/tools",
+      "permanent": true
+    },
+    {
+      "source": "/mcp/read-only-v1-policy",
+      "destination": "/docs/mcp/read-only-v1-policy",
+      "permanent": true
+    },
+    {
+      "source": "/mcp/authentication-and-mtls",
+      "destination": "/docs/mcp/authentication-and-mtls",
+      "permanent": true
+    },
+    {
+      "source": "/mcp/examples",
+      "destination": "/docs/mcp/examples",
+      "permanent": true
+    },
+    {
+      "source": "/mcp/safety-and-boundaries",
+      "destination": "/docs/mcp/safety-and-boundaries",
       "permanent": true
     },
     {
@@ -499,6 +539,61 @@
       "permanent": true
     },
     {
+      "source": "/reference/cli",
+      "destination": "/docs/reference/cli",
+      "permanent": true
+    },
+    {
+      "source": "/reference/api",
+      "destination": "/docs/reference/api",
+      "permanent": true
+    },
+    {
+      "source": "/reference/customer-api",
+      "destination": "/docs/reference/customer-api",
+      "permanent": true
+    },
+    {
+      "source": "/reference/mcp",
+      "destination": "/docs/reference/mcp",
+      "permanent": true
+    },
+    {
+      "source": "/reference/configuration",
+      "destination": "/docs/reference/configuration",
+      "permanent": true
+    },
+    {
+      "source": "/reference/ui-api-map",
+      "destination": "/docs/reference/ui-api-map",
+      "permanent": true
+    },
+    {
+      "source": "/reference/current-status",
+      "destination": "/docs/reference/current-status",
+      "permanent": true
+    },
+    {
+      "source": "/reference/webhook-delivery-evidence",
+      "destination": "/docs/reference/webhook-delivery-evidence",
+      "permanent": true
+    },
+    {
+      "source": "/reference/webhook-observability-and-evidence",
+      "destination": "/docs/reference/webhook-observability-and-evidence",
+      "permanent": true
+    },
+    {
+      "source": "/reference/delivery-status",
+      "destination": "/docs/reference/delivery-status",
+      "permanent": true
+    },
+    {
+      "source": "/reference/webhook-faq",
+      "destination": "/docs/reference/webhook-faq",
+      "permanent": true
+    },
+    {
       "source": "/runbooks/(.*)",
       "destination": "/docs/runbooks/$1",
       "permanent": true
@@ -514,18 +609,8 @@
       "permanent": true
     },
     {
-      "source": "/start-here/what-is-zen-mesh",
-      "destination": "/docs/start-here/what-is-zen-mesh",
-      "permanent": true
-    },
-    {
-      "source": "/start-here/current-status",
-      "destination": "/docs/start-here/current-status",
-      "permanent": true
-    },
-    {
-      "source": "/start-here/who-should-use-zen-mesh",
-      "destination": "/docs/start-here/who-should-use-zen-mesh",
+      "source": "/start-here/(.*)",
+      "destination": "/docs/start-here/$1",
       "permanent": true
     },
     {
