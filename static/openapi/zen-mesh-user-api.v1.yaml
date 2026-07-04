@@ -318,7 +318,7 @@ paths:
     get:
       tags:
       - CRDs
-      summary: List ingesters for cluster
+      summary: 'List ingesters for plane (wire name: cluster)'
       operationId: listIngesters
       parameters:
       - name: tenant_id
@@ -592,7 +592,7 @@ paths:
     get:
       tags:
       - CRDs
-      summary: List destinations for cluster
+      summary: 'List targets (wire name: destinations) for plane'
       operationId: listDestinations
       parameters:
       - name: tenant_id
@@ -644,7 +644,7 @@ paths:
     post:
       tags:
       - CRDs
-      summary: Create a destination
+      summary: 'Create a target (wire name: destination)'
       operationId: createDestination
       parameters:
       - name: tenant_id
@@ -699,7 +699,7 @@ paths:
     get:
       tags:
       - CRDs
-      summary: Get destination details
+      summary: 'Get target details (wire name: destination)'
       operationId: getDestination
       parameters:
       - name: tenant_id
@@ -753,7 +753,7 @@ paths:
     put:
       tags:
       - CRDs
-      summary: Update a destination
+      summary: 'Update a target (wire name: destination)'
       operationId: updateDestination
       parameters:
       - name: tenant_id
@@ -814,7 +814,7 @@ paths:
     delete:
       tags:
       - CRDs
-      summary: Delete a destination
+      summary: 'Delete a target (wire name: destination)'
       operationId: deleteDestination
       parameters:
       - name: tenant_id
@@ -866,7 +866,7 @@ paths:
     get:
       tags:
       - CRDs
-      summary: List delivery flows for cluster
+      summary: 'List delivery flows for plane (wire name: cluster)'
       operationId: listDeliveryFlows
       parameters:
       - name: tenant_id

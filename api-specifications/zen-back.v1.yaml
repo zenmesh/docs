@@ -98,7 +98,7 @@ paths:
   /tenants/{tenant_id}/clusters:
     get:
       tags: [Clusters]
-      summary: List clusters for tenant
+      summary: "List planes (wire name: clusters) for tenant"
       operationId: listClusters
       parameters:
         - name: tenant_id
@@ -122,7 +122,7 @@ paths:
                       $ref: '#/components/schemas/Cluster'
     post:
       tags: [Clusters]
-      summary: Register a new cluster
+      summary: "Register a new plane (wire name: cluster)"
       operationId: createCluster
       parameters:
         - name: tenant_id
@@ -149,7 +149,7 @@ paths:
   /tenants/{tenant_id}/clusters/{cluster_id}:
     get:
       tags: [Clusters]
-      summary: Get cluster details
+      summary: "Get plane details (wire name: cluster)"
       operationId: getCluster
       parameters:
         - name: tenant_id
@@ -178,7 +178,7 @@ paths:
   /tenants/{tenant_id}/clusters/{cluster_id}/ingesters:
     get:
       tags: [CRDs]
-      summary: List ingesters for cluster
+      summary: "List ingesters for plane (wire name: cluster)"
       operationId: listIngesters
       parameters:
         - name: tenant_id
@@ -336,7 +336,7 @@ paths:
   /tenants/{tenant_id}/clusters/{cluster_id}/destinations:
     get:
       tags: [CRDs]
-      summary: List destinations for cluster
+      summary: "List targets (wire name: destinations) for plane"
       operationId: listDestinations
       parameters:
         - name: tenant_id
@@ -353,7 +353,7 @@ paths:
         - tenantAuth: []
       responses:
         '200':
-          description: List of destinations
+          description: "List of targets (wire name: destinations)"
           content:
             application/json:
               schema:
@@ -365,7 +365,7 @@ paths:
                       $ref: '#/components/schemas/Destination'
     post:
       tags: [CRDs]
-      summary: Create a destination
+      summary: "Create a target (wire name: destination)"
       operationId: createDestination
       parameters:
         - name: tenant_id
@@ -388,7 +388,7 @@ paths:
               $ref: '#/components/schemas/DestinationCreateRequest'
       responses:
         '201':
-          description: Destination created
+          description: "Target created (wire name: destination)"
           content:
             application/json:
               schema:
@@ -397,7 +397,7 @@ paths:
   /tenants/{tenant_id}/clusters/{cluster_id}/destinations/{destination_id}:
     get:
       tags: [CRDs]
-      summary: Get destination details
+      summary: "Get target details (wire name: destination)"
       operationId: getDestination
       parameters:
         - name: tenant_id
@@ -419,7 +419,7 @@ paths:
         - tenantAuth: []
       responses:
         '200':
-          description: Destination details
+          description: "Target details (wire name: destination)"
           content:
             application/json:
               schema:
@@ -428,7 +428,7 @@ paths:
           $ref: '#/components/responses/NotFound'
     put:
       tags: [CRDs]
-      summary: Update a destination
+      summary: "Update a target (wire name: destination)"
       operationId: updateDestination
       parameters:
         - name: tenant_id
@@ -456,7 +456,7 @@ paths:
               $ref: '#/components/schemas/DestinationUpdateRequest'
       responses:
         '200':
-          description: Destination updated
+          description: "Target updated (wire name: destination)"
           content:
             application/json:
               schema:
@@ -465,7 +465,7 @@ paths:
           $ref: '#/components/responses/NotFound'
     delete:
       tags: [CRDs]
-      summary: Delete a destination
+      summary: "Delete a target (wire name: destination)"
       operationId: deleteDestination
       parameters:
         - name: tenant_id
@@ -487,14 +487,14 @@ paths:
         - tenantAuth: []
       responses:
         '204':
-          description: Destination deleted
+          description: "Target deleted (wire name: destination)"
         '404':
           $ref: '#/components/responses/NotFound'
 
   /tenants/{tenant_id}/clusters/{cluster_id}/delivery-flows:
     get:
       tags: [CRDs]
-      summary: List delivery flows for cluster
+      summary: "List delivery flows for plane (wire name: cluster)"
       operationId: listDeliveryFlows
       parameters:
         - name: tenant_id

@@ -5,7 +5,7 @@ description: "Health check"
 sidebar_label: "Health check"
 hide_title: true
 hide_table_of_contents: true
-api: eJyNk01v2zAMhv+KwNMGqHbaU+HTurTbghVD0Y/L0hwYmbHVyJImyc7SwP+9oJ0VSbbDfLFN8eWXHu4gYRWhmMM3QpNqWEhwngIm7eyshALqwT6tSa1BQqDonY0UodjBxWTCr5KiCtqzAgp4oNBpRUJHMUq3IEE5m8gm9kbvjVZD/PwlsmQHUdXUIH+lrScowC1fSCWQ4ANXk/SYMCZMbTzwiyloW4EEsm3DXTgusqQqYEklLHoJHYWoxzTHon585En94xyE2jfcUKodz6GioR5MNRSQj62BhEiBM0Ax30EbDA8sJR+LPEevs1eyZw3FOtMu787hNNddcGWrhp9enupjwkrbKvuPOA+j60mQIs+NU2hqF1NxObmccEn/kt+ylyipI+N8w/fULyRou3LD1HQyPLbv7ZJ+khWfUa3F1d3srzB8QLbkM7FyQfwReINp5UIjzoQPrtMlRTG9f7oW76DFwX96fx3Fh5mtKCYKUlxTTNoODvxjdEdh+8W4zUf5bFWN1pLJV8ZtRIMWK+LKpUhk0aYjE9pSbGhZO7cWZEvvtE0xe7ZwQAecZ5NsskcV1YCqxeaw8UfChlFrUPOI0etP63ZJr2Qz7aCXYLQiG+lAeuVR1SQuhsjH17vZbDIcjjMXqnyvjfntbHrz4+Hm7CKbZHVqDDCi3sXUoD2IfILp0U28k57od8q9Qc18jfl3e4Tn+8XmhWdA2LLbLTHSUzB9z+ZfLYUtFPOFhA6DxiVjMOedqglLCgPza9pyn0qR5/3o0LQ0DOdky5mo9136evMIff8G9meHzA==
+api: eJytVMFy2zYQ/RXMntoZilR8yvBUR3YaNWmbiexpp4oOK3BNIgIBFFhKVTT8986StEeWfeihvIgCd/e9fbt4J2CsE5Rr+EBouYFNBj5QRDbeLSsooRnOFw3pHWQQKQXvEiUoT3A1n8tPRUlHEyQDSlhR3BtNyiQ1ph4hA+0dk2OJxhCs0UP94luSlBMk3VCL8sbHQFCC334jzZBBiMKGzQiYGLlLZ3GJo3E1ZECua6ULLyQrqiNWVMGmz2BPMZkR5nlSPz7ZBf9RB6WnhlvixosONQ18kBsooRhbgwwSRUGAcn2CLloRjDmksigwmPw7uVlLqcmNL/Zv4BLrc/RVp4c/fXaZnxhr4+r8P9RZjaEXRcqisF6jbXzi8u387VwovZb+SaJURXuyPrQyp34jnekuGj6uZDij/kwOHV93osGTnAIlQgxhUMKWMFKEbHp572OLDCX88sfdC+TflzeLYkVJJjTbYqJKjRgKO27I8bQp6sFHdb9U6Cp1/XmptDXkWGm0NkGfQdOivqCFwXwk2T3jxi2uBlIOB5J/zj52W/qL3GxlaofcRXpB7sOv14uJ1CtstO0SU5z5aGrjkKlSh2iY0kDyQNvG+91AbhtNVdP/qNq7oeDMO3t8lZl3HL1VwaIjpRt0jqxq0WFN43R7UeXBD3QMW8Gf5FDvUO9E4pegqHc0yS8ojwnBIj/42KqZCtHvTUVJLb7c36gnG0lD/OLLTVI/LF1NIlum7jDWxGp9MJGUTKVUFSUWKY13m0zdkDV7isf31h9+zL66qZHiwfrDWTfZ48acH52NQJGrgjeOU/7VwZkfwJt8ns8nc0I9mNO0HY+93RG2Yi4tGjuu1E+7bkvfyeXGy2it0eQSnaVeB9QNqauh8vMLfTgcchw+5z7WxZSbik/Lxe1vq9vZVT7PG27tMJ/gE7fozipfGNOz6TytFdM/XASLRhxlxD9NprWerFwsXixBTk4n2e/7aPtejv/uKB6hXG8y2GM0uJXVWIuLTvdHXG5HR+lTawriiHu03XjfLnxdPOTJPX++vYO+/xdozzYw
 sidebar_class_name: "get api-method"
 info_path: docs/api/reference/kubezen-back-api
 custom_edit_url: null
@@ -18,6 +18,7 @@ import StatusCodes from "@theme/StatusCodes";
 import OperationTabs from "@theme/OperationTabs";
 import TabItem from "@theme/TabItem";
 import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
 
 <Heading
   as={"h1"}
@@ -38,22 +39,17 @@ import Heading from "@theme/Heading";
 
 Health check
 
-<ParamsDetails
-  parameters={undefined}
->
+<ParamsDetails>
   
 </ParamsDetails>
 
 <RequestSchema
   title={"Body"}
-  body={undefined}
 >
   
 </RequestSchema>
 
 <StatusCodes
-  id={undefined}
-  label={undefined}
   responses={{"200":{"description":"Service is healthy","content":{"application/json":{"schema":{"type":"object","properties":{"status":{"type":"string","enum":["ok","degraded"]},"version":{"type":"string"}}}}}}}}
 >
   

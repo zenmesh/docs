@@ -407,7 +407,7 @@
         "tags": [
           "CRDs"
         ],
-        "summary": "List ingesters for cluster",
+        "summary": "List ingesters for plane (wire name: cluster)",
         "operationId": "listIngesters",
         "parameters": [
           {
@@ -760,7 +760,7 @@
         "tags": [
           "CRDs"
         ],
-        "summary": "List destinations for cluster",
+        "summary": "List targets (wire name: destinations) for plane",
         "operationId": "listDestinations",
         "parameters": [
           {
@@ -827,7 +827,7 @@
         "tags": [
           "CRDs"
         ],
-        "summary": "Create a destination",
+        "summary": "Create a target (wire name: destination)",
         "operationId": "createDestination",
         "parameters": [
           {
@@ -898,7 +898,7 @@
         "tags": [
           "CRDs"
         ],
-        "summary": "Get destination details",
+        "summary": "Get target details (wire name: destination)",
         "operationId": "getDestination",
         "parameters": [
           {
@@ -968,7 +968,7 @@
         "tags": [
           "CRDs"
         ],
-        "summary": "Update a destination",
+        "summary": "Update a target (wire name: destination)",
         "operationId": "updateDestination",
         "parameters": [
           {
@@ -1048,7 +1048,7 @@
         "tags": [
           "CRDs"
         ],
-        "summary": "Delete a destination",
+        "summary": "Delete a target (wire name: destination)",
         "operationId": "deleteDestination",
         "parameters": [
           {
@@ -1113,7 +1113,7 @@
         "tags": [
           "CRDs"
         ],
-        "summary": "List delivery flows for cluster",
+        "summary": "List delivery flows for plane (wire name: cluster)",
         "operationId": "listDeliveryFlows",
         "parameters": [
           {
