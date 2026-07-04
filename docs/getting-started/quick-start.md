@@ -6,7 +6,7 @@ sidebar_label: Quick Start
 
 > Status: PUBLIC_CONTRACT_DRAFT. Steps reference capabilities at various statuses — see [Current Status](../reference/current-status) for per-capability maturity. Not a production-live claim.
 
-Get webhooks flowing from a source (Stripe, GitHub, Twilio, Shopify, or any HTTP client) to your target service in the dashboard.
+Get webhooks flowing from a source (Stripe, GitHub, Twilio, Shopify, or any HTTP client) to your target service in the dashboard. Provider maturity varies — Stripe cloud E2E is pending revalidation, Twilio form-urlencoded routing is partial. See [Current Status](../reference/current-status) for per-provider detail.
 
 ## Prerequisites
 
@@ -79,7 +79,7 @@ curl -X POST "https://ingest.zen-mesh.io/hooks/<your-hook-id>" \
   -d '{"event": "test", "data": "hello from zen-mesh"}'
 ```
 
-Or trigger a real event from your provider (Stripe test event, GitHub push, etc.).
+Or trigger a real event from your provider (Stripe test event, GitHub push, etc. — provider E2E status varies; see [Current Status](../reference/current-status)).
 
 ## Step 6: Verify delivery
 

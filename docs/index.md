@@ -47,7 +47,7 @@ Welcome to the Zen Mesh documentation. Zen Mesh delivers webhooks and events to 
 | Replay | [Replay](delivery/replay) — event replay from retained payload |
 | Troubleshooting | [Troubleshooting First Delivery](guides/troubleshooting-first-delivery) — symptom → cause → action |
 | Traces | [Traces / Evidence Spine API](api/traces) — delivery trace spine |
-| Payloads | Saved Payloads — test/template payloads (see [Delivery section](delivery/webhook-reliability)) |
+| Saved Payloads | Test/template payloads (see [Delivery section](delivery/webhook-reliability)) |
 
 ## Trust and Evidence
 
