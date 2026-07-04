@@ -1,7 +1,7 @@
 {
   "schema_version": "1.1.0",
   "document": "claim-maturity",
-  "last_updated": "2026-05-31",
+  "last_updated": "2026-07-04",
   "readiness_scope": "Sandbox/local validation unless an item states otherwise. Production-live cloud deployment is tracked separately.",
   "narrative_vs_proof": "Blogs and narrative-context are narrative_context only. This file states assurance level \u2014 not penetration-test results.",
   "maturity_legend": {
@@ -117,7 +117,7 @@
     },
     {
       "id": "PRIM-SPIFFE-SPIRE",
-      "topic": "SPIFFE/SPIRE workload identity (legacy index \u2014 see PRIM-SPIFFE-SPIRE-NATIVE-INTERNAL)",
+      "topic": "SPIFFE/SPIRE workload identity [SUPERSEDED \u2014 see PRIM-SPIFFE-SPIRE-NATIVE-INTERNAL]",
       "claim_maturity": "NOT_E2E_VALIDATED",
       "helps_prevent": [
         "Workload impersonation on connections where SPIFFE verification is active"
@@ -129,8 +129,8 @@
         "SVID rotation as operational proof",
         "24h survival validation"
       ],
-      "validation_level": "Zen-managed SPIFFE/SPIRE-native identity on internal paths \u2014 customers do not operate SPIRE in V1",
-      "current_limitation": "Partial path coverage \u2014 not SPIFFE on every hop; see PRIM-SPIFFE-SPIRE-NATIVE-INTERNAL",
+      "validation_level": "SUPERSEDED. SPIFFE/SPIRE is WIRED on Zen-managed internal paths (see PRIM-SPIFFE-SPIRE-NATIVE-INTERNAL). External provider ingress uses provider-specific signature verification, not SPIFFE \u2014 this is an architectural boundary, not a coverage gap.",
+      "current_limitation": "SUPERSEDED \u2014 see PRIM-SPIFFE-SPIRE-NATIVE-INTERNAL for current claim and maturity.",
       "next_validation": "Published SVID rotation drill receipt in demo scope",
       "public_evidence_ref": "https://docs.zen-mesh.io/ai/security/v1/local-trust-posture.json",
       "roadmap_ref": null,

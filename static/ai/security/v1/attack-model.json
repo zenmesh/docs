@@ -1,7 +1,7 @@
 {
   "schema_version": "1.1.0",
   "document": "attack-model",
-  "last_updated": "2026-05-30",
+  "last_updated": "2026-07-04",
   "claim_maturity_index": "https://docs.zen-mesh.io/ai/security/v1/claim-maturity.json",
   "readiness_scope": "Sandbox/local validation unless an entry cites public_evidence_ref. Production-live cloud deployment is tracked separately.",
   "narrative_vs_proof": "Blogs and narrative-context are narrative_context only \u2014 not proof.",
@@ -107,7 +107,7 @@
       "threat": "Workload impersonation",
       "affected_surface": "control_plane_enrollment",
       "claim_maturity": "NOT_E2E_VALIDATED",
-      "related_primitive_ref": "PRIM-SPIFFE-SPIRE",
+      "related_primitive_ref": "PRIM-SPIFFE-SPIRE-NATIVE-INTERNAL",
       "helps_prevent": [
         "Impersonation on SPIFFE-verified connections"
       ],

@@ -81,3 +81,41 @@
 .links a:hover {
   color: var(--ifm-color-primary);
 }
+
+.faq {
+  margin-top: 4rem;
+  text-align: left;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.faq h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.4rem;
+}
+
+.faqItem {
+  border: 1px solid var(--ifm-color-border);
+  border-radius: 6px;
+  margin-bottom: 0.75rem;
+  padding: 0.75rem 1rem;
+}
+
+.faqQuestion {
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.faqQuestion::-webkit-details-marker {
+  color: var(--ifm-color-primary);
+}
+
+.faqAnswer {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--ifm-color-secondary);
+  line-height: 1.5;
+}

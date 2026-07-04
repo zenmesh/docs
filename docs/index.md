@@ -1,5 +1,6 @@
 ---
 sidebar_label: Home
+description: Zen Mesh documentation — secure webhook delivery to private networks and Kubernetes without inbound firewall exposure. Three-plane architecture, outbound-only Edge Plane, mTLS everywhere.
 ---
 
 # Zen Mesh Documentation

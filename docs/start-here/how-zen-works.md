@@ -1,5 +1,6 @@
 ---
 sidebar_label: How Zen Works
+description: How Zen Mesh works — control surfaces (UI, CLI, API, MCP, Git), authoring chain, runtime chain, plane model, and mTLS/SPIFFE/SPIRE security baseline.
 ---
 
 # How Zen Works

@@ -3,9 +3,39 @@ import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import styles from './index.module.css';
 
+const faqItems = [
+  {
+    q: 'How does Zen Mesh deliver webhooks to private networks without opening inbound ports?',
+    a: 'Zen Mesh uses an outbound-only Edge Plane. The zen-agent in your network establishes an outbound connection to Zen Mesh, then receives delivery over that persistent tunnel. No inbound firewall rules, no VPN, no reverse proxy.',
+  },
+  {
+    q: 'What security controls protect webhook delivery?',
+    a: 'mTLS, SPIFFE/SPIRE workload identity, and HMAC payload verification on every data-plane path. External provider webhooks use provider-specific signature verification at ingress. See the security documentation for the full model.',
+  },
+  {
+    q: 'Can I use Zen Mesh with Kubernetes?',
+    a: 'Yes. Deploy the zen-agent as a Helm chart on your cluster. The Edge Plane integrates with Kubernetes and supports zen-egress for delivering to services behind NAT or firewall.',
+  },
+  {
+    q: 'Which webhook sources does Zen Mesh support?',
+    a: 'Stripe, GitHub, Twilio, Shopify, and any custom HTTP webhook source. Zen Mesh validates signatures from supported providers, and provides signature verification guidance for custom sources.',
+  },
+  {
+    q: 'Is Zen Mesh production-ready?',
+    a: 'Individual capabilities carry per-item status (WIRED, AUTOMATED_TESTED, etc.) documented in the evidence system. Review the Current Status page for per-capability maturity. Zen Mesh does not claim production-live availability as a global platform.',
+  },
+  {
+    q: 'What is the pricing model?',
+    a: 'Free Forever tier available. Pro Early Bird with 6-month free trial. See zen-mesh.io/pricing for details.',
+  },
+];
+
 export default function Home() {
   return (
-    <Layout title="Zen Mesh Docs" description="Documentation for Zen Mesh — secure webhook delivery to private networks and Kubernetes without inbound firewall exposure. Covers zen-lock secrets management, zen-agent enrollment, and Helm chart deployment.">
+    <Layout
+      title="Zen Mesh Docs"
+      description="Documentation for Zen Mesh — secure webhook delivery to private networks and Kubernetes without inbound firewall exposure. Outbound-only Edge Plane. mTLS, SPIFFE/SPIRE, HMAC on every data-plane path."
+    >
       <main className={styles.hero}>
         <div className={styles.container}>
           <h1>Zen Mesh <span className={styles.accent}>Documentation</span></h1>
@@ -40,6 +70,15 @@ export default function Home() {
             <Link href="https://github.com/zenmesh">GitHub</Link>
             <Link href="https://zenmeshinc.slack.com/">Slack</Link>
           </div>
+          <section className={styles.faq}>
+            <h2>Frequently Asked Questions</h2>
+            {faqItems.map((item, i) => (
+              <details key={i} className={styles.faqItem}>
+                <summary className={styles.faqQuestion}>{item.q}</summary>
+                <p className={styles.faqAnswer}>{item.a}</p>
+              </details>
+            ))}
+          </section>
         </div>
       </main>
     </Layout>

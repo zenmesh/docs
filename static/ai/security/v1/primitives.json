@@ -1,7 +1,7 @@
 {
   "schema_version": "1.1.0",
   "document": "security-primitives",
-  "last_updated": "2026-05-31",
+  "last_updated": "2026-07-04",
   "local_trust_posture_ref": "https://docs.zen-mesh.io/ai/security/v1/local-trust-posture.json",
   "claim_maturity_index": "https://docs.zen-mesh.io/ai/security/v1/claim-maturity.json",
   "readiness_scope": "See claim-maturity.json readiness_scope. Not production-live or customer-ready.",
@@ -61,14 +61,14 @@
     },
     {
       "id": "PRIM-SPIFFE-SPIRE",
-      "name": "SPIFFE/SPIRE workload identity (see PRIM-SPIFFE-SPIRE-NATIVE-INTERNAL)",
+      "name": "SPIFFE/SPIRE workload identity [SUPERSEDED — see PRIM-SPIFFE-SPIRE-NATIVE-INTERNAL]",
       "claim_maturity": "NOT_E2E_VALIDATED",
       "helps_prevent": ["Impersonation on SPIFFE-verified connections"],
       "helps_detect": [],
       "does_not_prevent": ["Customer-operated SPIRE in V1", "Authz decisions", "SVID rotation proof", "24h survival"],
-      "validation_level": "Zen-managed internal identity in V1 — not customer SPIRE ops",
-      "current_limitation": "Partial coverage — see native-internal primitive",
-      "next_validation": "Published rotation drill in demo scope",
+      "validation_level": "SUPERSEDED. SPIFFE/SPIRE is WIRED on Zen-managed internal paths (see PRIM-SPIFFE-SPIRE-NATIVE-INTERNAL).",
+      "current_limitation": "SUPERSEDED — see PRIM-SPIFFE-SPIRE-NATIVE-INTERNAL for current claim and maturity.",
+      "next_validation": "Kept for historical reference only.",
       "public_evidence_ref": "https://docs.zen-mesh.io/ai/security/v1/local-trust-posture.json",
       "public_safe_summary": "SPIFFE/SPIRE-native identity is Zen-managed in V1 — customers do not operate SPIRE."
     },
