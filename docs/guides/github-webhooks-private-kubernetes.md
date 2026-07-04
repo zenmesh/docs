@@ -23,7 +23,7 @@ Each delivery is tracked through the Flow → Attempt → Trace → Evidence cha
 
 1. [Choose a runtime path](../install/choose-runtime-path) — Kubernetes Edge Plane or Edge Lite
 2. Deploy the [zen-agent on your cluster](../install/kubernetes-edge-plane) via Helm
-3. [Configure a target](../guides/destinations) pointing to your internal service
+3. [Configure a target (Targets API)](../api/targets) pointing to your internal service
 4. [Create a flow](../guides/endpoints) linking GitHub events to your target
 5. [Set up the GitHub webhook](../guides/github) in your repository settings
 

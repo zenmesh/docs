@@ -32,7 +32,7 @@ This works for:
 2. Deploy your runtime:
    - [Kubernetes Edge Plane](../install/kubernetes-edge-plane) — Helm-based deployment
    - [Edge Lite](../install/edge-lite) — lightweight Docker-based deployment
-3. [Configure a target](../guides/destinations) pointing to your internal service URL
+3. [Configure a target (Targets API)](../api/targets) pointing to your internal service URL
 4. [Set up your webhook source](../guides/sources) — Stripe, GitHub, Twilio, Shopify, or custom HTTP
 
 ## Related

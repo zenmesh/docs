@@ -122,9 +122,7 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: 'Guides',
       items: [
-        'guides/cluster-enrollment',
         'guides/adapters',
-        'guides/destinations',
         'guides/endpoints',
         'guides/sources',
         'guides/stripe',
@@ -139,6 +137,8 @@ const sidebars: SidebarsConfig = {
         'guides/traffic-lifecycle',
         'guides/evidence-and-trust',
         'guides/troubleshooting-first-delivery',
+        'guides/destinations',
+        'guides/cluster-enrollment',
       ],
     },
     {

@@ -25,7 +25,7 @@ Each delivery is tracked through the Flow → Attempt → Trace → Evidence cha
 2. Deploy the runtime:
    - [Kubernetes Edge Plane](../install/kubernetes-edge-plane) — Helm-based
    - [Edge Lite](../install/edge-lite) — Docker-based
-3. [Configure a target](../guides/destinations) pointing to your internal Stripe handler
+3. [Configure a target (Targets API)](../api/targets) pointing to your internal Stripe handler
 4. [Create a flow](../guides/endpoints) linking Stripe to your target
 5. [Set up Stripe in the Stripe Dashboard](../guides/stripe) to send events to Zen Mesh
 

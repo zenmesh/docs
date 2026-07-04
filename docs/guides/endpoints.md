@@ -15,7 +15,7 @@ An endpoint (also called an ingester) is a configuration that defines how Zen Me
 
 ## Via Dashboard
 
-1. Navigate to **Sources → Add Source**
+1. Navigate to **Endpoints → Add Endpoint**
 2. Select the provider type (Stripe, GitHub, Generic HTTP, etc.)
 3. Configure the source settings:
    - **Name**: A descriptive identifier (e.g., `stripe-prod`)
@@ -73,16 +73,16 @@ curl -X DELETE https://api.zen-mesh.io/v1/tenants/{tenant}/ingesters/{id} \
   -H "Authorization: Bearer {api_key}"
 ```
 
-## Connection Between Endpoints, Destinations, and Delivery Flows
+## Connection Between Endpoints, Targets, and Delivery Flows
 
 - **Endpoint**: Where events enter Zen Mesh
-- **Delivery Flow**: Routing rules connecting endpoints to destinations
-- **Destination**: Where events are delivered (your internal service)
+- **Delivery Flow**: Routing rules connecting endpoints to targets
+- **Target**: Where events are delivered (your internal service)
 
-Events flow: Source → **Endpoint** → Delivery Flow → **Destination**
+Events flow: Source → **Endpoint** → Delivery Flow → **Target**
 
 ## Related
 
-- [Sources Overview](./sources) — supported webhook providers and sources
-- [Destinations](./destinations) — target service configuration
+- [Sources (Legacy)](./sources) — supported webhook provider reference
+- [Targets API](../api/targets) — target service configuration
 - [API Reference: Ingesters](../api/reference/kubezen-back-api)

@@ -31,7 +31,7 @@ Stripe sends events across all API resources. Common event categories include:
 
 ## 1. Create a Target
 
-Create a destination pointing to your internal service:
+Create a target pointing to your internal service:
 
 ```
 Namespace: production
@@ -39,7 +39,7 @@ Name: stripe-payment-processor
 URL: http://payment-svc:8080/webhooks/stripe
 ```
 
-See [Destinations](./destinations) for destination configuration details.
+See [Targets API](../api/targets) for target configuration details.
 
 ## 2. Configure the Delivery Flow
 
@@ -100,4 +100,4 @@ Use [JSONPath Transforms](../delivery/jsonpath-transforms) to normalize Stripe p
 - [First Webhook Tutorial](../getting-started/first-webhook) — end-to-end walkthrough
 - [JSONPath Transforms](../delivery/jsonpath-transforms) — payload normalization
 - [JSONPath Routing](../delivery/jsonpath-routing) — event filtering and routing
-- [Destinations](./destinations) — target configuration
+- [Targets API](../api/targets) — target configuration

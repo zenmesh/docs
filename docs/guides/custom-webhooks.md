@@ -11,9 +11,9 @@ Receive webhooks from any HTTP source that is not Stripe or GitHub.
 
 Zen Mesh can ingest webhooks from any HTTP client. A generic HTTP source accepts POST requests and applies configurable verification, filtering, and routing before delivery. This is suitable for custom applications, internal systems, or any webhook provider not covered by the built-in integrations.
 
-## Creating a Generic Source
+## Creating a Generic Endpoint
 
-1. In the Zen Mesh dashboard, navigate to **Sources → Add Source**
+1. In the Zen Mesh dashboard, navigate to **Endpoints → Add Endpoint**
 2. Select **Generic HTTP** as the provider type
 3. Configure:
    - **Name**: A descriptive identifier (e.g., `custom-analytics-events`)
@@ -106,7 +106,7 @@ Zen Mesh accepts `application/json` payloads. The request body is parsed as JSON
 
 ## Related
 
-- [Sources Overview](./sources) — all supported source types
+- [Sources (Legacy)](./sources) — all supported source types (reference)
 - [JSONPath Routing](../delivery/jsonpath-routing) — event filtering by content
 - [JSONPath Transforms](../delivery/jsonpath-transforms) — payload normalization
 - [IP Allowlisting](../security/ip-allowlisting) — restrict source networks

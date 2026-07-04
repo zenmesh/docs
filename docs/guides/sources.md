@@ -1,9 +1,13 @@
 ---
-sidebar_label: Sources
+sidebar_label: Sources (Legacy)
 description: Supported webhook source types — Stripe, GitHub, Twilio, Shopify, and Custom HTTP sources. Configure ingestion, verification, and event processing for each source type.
 ---
 
-# Sources
+# Sources (Legacy)
+
+> **Status:** LEGACY TERMINOLOGY — This page uses legacy terminology. The current canonical term is **Endpoint** for the webhook entry-point configuration. See [Endpoints Guide](./endpoints) for the current guide and [Zen Mesh Concepts — Endpoint](../concepts/zen-mesh-concepts#endpoint) for the definition.
+>
+> This page remains available as a reference for supported provider types. For configuration workflows, use the [Endpoints](./endpoints) guide.
 
 Zen Mesh can ingest webhook events from any HTTP source. Supported providers include pre-built integrations for Stripe, GitHub, Twilio, and Shopify, plus a custom source type for any other webhook sender.
 

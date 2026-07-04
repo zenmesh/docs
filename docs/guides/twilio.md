@@ -43,6 +43,6 @@ Signature verification is implemented and tested for Twilio when configured. Liv
 ## See Also
 
 - [Header Validation](../security/header-validation) — signature verification overview
-- [Sources](../guides/sources) — all supported source types
+- [Endpoints Guide](../guides/endpoints) — endpoint configuration overview
 - [Stripe Integration](../guides/stripe) — Stripe webhook setup
 - [GitHub Integration](../guides/github) — GitHub webhook setup

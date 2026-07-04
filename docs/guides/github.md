@@ -31,7 +31,7 @@ GitHub sends events for all repository and organization activity:
 
 ## 1. Create a Target
 
-Create a destination pointing to your internal service:
+Create a target pointing to your internal service:
 
 ```
 Name: github-ci-pipeline
@@ -104,7 +104,7 @@ Use [JSONPath Transforms](../delivery/jsonpath-transforms) to normalize GitHub p
 
 ## Related
 
-- [Sources Overview](./sources) — supported webhook providers
+- [Endpoints Guide](./endpoints) — endpoint configuration overview
 - [JSONPath Routing](../delivery/jsonpath-routing) — event filtering and routing
 - [JSONPath Transforms](../delivery/jsonpath-transforms) — payload normalization
 - [Stripe Integration](./stripe) — similar setup for payment webhooks

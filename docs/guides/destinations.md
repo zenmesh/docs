@@ -1,12 +1,18 @@
 ---
-sidebar_label: Destinations
+sidebar_label: "Targets (Legacy: Destinations)"
 ---
 
-# Destinations
+# Targets (Legacy: Destinations)
 
-A destination is a URL in your cluster where Zen Mesh delivers webhook events. Each destination is associated with a cluster and optionally an adapter.
+> **Status:** DEPRECATED TERMINOLOGY — This page uses legacy terminology. The current canonical term is **Target**. See [Zen Mesh Concepts — Target](../concepts/zen-mesh-concepts#target) for the current definition and the [Targets API](../api/targets) for programmatic configuration.
+>
+> The product model has moved from "Destination" to **Target** as the canonical term. A destination is now called a **target** in the UI, API, and documentation. The functionality described on this page is still available under the Targets surface.
 
-## Creating a Destination
+## What Is a Target?
+
+A target is a URL in your cluster where Zen Mesh delivers webhook events. Each target is associated with a cluster and optionally an adapter.
+
+## Creating a Target
 
 1. Navigate to **Destinations** in the dashboard
 2. Click **Add Target**

@@ -30,7 +30,7 @@ A reusable source configuration. Templates define how Zen Mesh receives events f
 
 **Status:** WIRED_SANDBOX
 
-**See:** [Endpoints API](../api/endpoints), [Sources guide](../guides/sources)
+**See:** [Endpoints API](../api/endpoints), [Endpoints guide](../guides/endpoints)
 
 ## Blueprint
 
