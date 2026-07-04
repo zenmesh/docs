@@ -214,6 +214,7 @@ OpenAPI spec: [zen-back.v1.yaml](https://github.com/zenmesh/zen-platform-hermes/
 
 ## Getting started
 
+- [How Zen Works](https://docs.zen-mesh.io/docs/start-here/how-zen-works): Canonical product mental model — control surfaces, authoring chain, runtime chain, plane model, security baseline
 - [Quick start](https://docs.zen-mesh.io/docs/getting-started/quick-start): UI-first product journey — endpoints, targets, flows in the dashboard
 - [Customer journey](https://docs.zen-mesh.io/docs/getting-started/customer-journey): Full onboarding map — customer chain, core objects, control surfaces, 10-step path
 - [First 15 minutes](https://docs.zen-mesh.io/docs/getting-started/first-15-minutes): Structured evaluator walkthrough — log in, explore, create objects, inspect traffic

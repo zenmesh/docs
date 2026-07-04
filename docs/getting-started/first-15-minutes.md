@@ -4,7 +4,7 @@ sidebar_label: First 15 Minutes
 
 # First 15 Minutes
 
-> Status: PUBLIC_CONTRACT_DRAFT. This guide describes the evaluator path. Steps may be gated or sandbox-only depending on environment. Not a production-live claim.
+> Status: PUBLIC_CONTRACT_DRAFT. This guide describes the evaluator path. Steps may be gated or sandbox-only depending on environment. Not a production-live claim. See [How Zen Works](../start-here/how-zen-works) for the complete mental model.
 
 ## Before You Start
 

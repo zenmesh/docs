@@ -4,6 +4,8 @@ sidebar_label: Choose a Runtime Path
 
 # Choose a Runtime Path
 
+See [How Zen Works](../start-here/how-zen-works) for the complete product mental model — the plane model, control surfaces, and delivery chain.
+
 **Status:** PUBLIC_CONTRACT_DRAFT — Paths may have different readiness levels. See each page for status.
 
 Zen Mesh offers several runtime paths depending on your use case, infrastructure, and scale requirements.

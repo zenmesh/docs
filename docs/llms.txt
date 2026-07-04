@@ -6,6 +6,7 @@
 
 ## Getting started
 
+- [How Zen Works](start-here/how-zen-works): Canonical product mental model — control surfaces, authoring chain, runtime chain, plane model, security baseline
 - [Quick start](getting-started/quick-start): Sandbox-oriented setup — create endpoints, targets, flows, send test webhooks
 - [Installation](getting-started/installation): Install paths for evaluation (Docker, Edge Lite binary, source)
 - [First webhook](getting-started/first-webhook): Step-by-step first webhook walkthrough

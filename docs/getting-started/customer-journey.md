@@ -4,7 +4,7 @@ sidebar_label: Customer Journey
 
 # Customer Journey
 
-> Status: PUBLIC_CONTRACT_DRAFT. This page maps the conceptual customer journey through Zen Mesh. Individual steps carry their own status. It is not a production-live availability claim.
+> Status: PUBLIC_CONTRACT_DRAFT. This page maps the conceptual customer journey through Zen Mesh. Individual steps carry their own status. It is not a production-live availability claim. See [How Zen Works](../start-here/how-zen-works) for the complete mental model.
 
 ## What Zen Mesh Is
 

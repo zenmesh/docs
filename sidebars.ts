@@ -7,6 +7,7 @@ const sidebars: SidebarsConfig = {
       label: 'Start Here',
       items: [
         'start-here/what-is-zen-mesh',
+        'start-here/how-zen-works',
         'start-here/who-should-use-zen-mesh',
         'start-here/current-status',
         'start-here/plans-and-limits',

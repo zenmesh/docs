@@ -90,6 +90,7 @@ Edge Lite is a **lightweight non-Kubernetes runtime path** for lower-friction de
 
 ## Related
 
+- [How Zen Works](../start-here/how-zen-works) — complete product mental model
 - [Choose a Runtime Path](../install/choose-runtime-path)
 - [Kubernetes Edge Plane](../install/kubernetes-edge-plane)
 - [Edge Lite](../install/edge-lite)

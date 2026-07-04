@@ -4,7 +4,7 @@ sidebar_label: GitOps Roadmap
 
 # GitOps Roadmap
 
-GitOps in Zen means treating Git as a control surface for the Zen Configuration Contract (ZCC). A Git change produces the same ZCC artifact the UI, CLI, API, and MCP would produce. Zen validates it, records evidence, and either queues a Pending Change or applies it according to policy.
+GitOps in Zen means treating Git as a control surface for the Zen Configuration Contract (ZCC). A Git change produces the same ZCC artifact the UI, CLI, API, and MCP would produce. Zen validates it, records evidence, and either queues a Pending Change or applies it according to policy. See [How Zen Works](../start-here/how-zen-works) for the full mental model.
 
 ## Core principle
 

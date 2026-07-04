@@ -4,6 +4,8 @@ sidebar_label: Key Concepts
 
 # Key Concepts
 
+See [How Zen Works](./how-zen-works) for the complete mental model — the control-surface model, authoring chain, runtime chain, plane model, and security baseline.
+
 ## Architecture
 
 | Concept | Description |

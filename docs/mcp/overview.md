@@ -4,7 +4,7 @@ sidebar_label: MCP Overview
 
 # MCP (Model Context Protocol) Overview
 
-The Zen Mesh MCP server provides programmatic access to Zen Mesh capabilities through the Model Context Protocol. It is designed for AI agents, operators, and internal tooling. MCP is not read-only as a category — read and write tools exist, with write tools disabled by default.
+The Zen Mesh MCP server provides programmatic access to Zen Mesh capabilities through the Model Context Protocol. It is designed for AI agents, operators, and internal tooling. MCP is not read-only as a category — read and write tools exist, with write tools disabled by default. See [How Zen Works](../start-here/how-zen-works) for the full mental model.
 
 ## Current Status
 
