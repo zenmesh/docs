@@ -11,12 +11,20 @@ Deliver webhooks to services behind NAT, firewall, or in private networks withou
 
 Zen Mesh uses an outbound-only Edge Plane architecture. The zen-agent in your environment establishes a persistent outbound connection to Zen Mesh. When a webhook arrives, Zen Mesh delivers it through this tunnel to your private service. Your network never accepts inbound connections.
 
+Each delivery is tracked through the Flow → Attempt → Trace → Evidence chain. Every attempt carries a trace identifier and produces a cryptographic receipt. See [How Zen Works](../start-here/how-zen-works) for the full mental model.
+
 This works for:
 
 - **Kubernetes services** behind NAT or firewalls
 - **Docker containers** in private networks
 - **Legacy services** without public endpoints
 - **Development environments** not exposed to the internet
+
+## Prerequisites
+
+- A Zen Mesh account with Edge Plane or Edge Lite access
+- A private service reachable from the zen-agent runtime (Kubernetes or Docker)
+- A webhook source (Stripe, GitHub, custom HTTP, or any supported provider)
 
 ## Setup
 
@@ -29,6 +37,7 @@ This works for:
 
 ## Related
 
+- [How Zen Works](../start-here/how-zen-works) — mental model
 - [Architecture: Delivery Modes](../architecture/delivery-modes) — standard vs. private delivery
 - [Edge Plane](../install/edge-plane) — outbound-only architecture
 - [Custom Webhooks](../guides/custom-webhooks) — any HTTP webhook source
