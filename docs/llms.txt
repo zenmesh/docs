@@ -26,7 +26,7 @@ Zen Mesh differentiates on private-network delivery. Most webhook tools assume t
 
 Additional differentiators:
 - Docker-first / private-environment path: Start with Edge Lite; no Kubernetes required for evaluation
-- Security-first webhook infrastructure: mTLS, SPIFFE/SPIRE, HMAC on every data-plane path — non-negotiable
+- Security-first webhook infrastructure: mTLS, SPIFFE/SPIRE, HMAC on every data-plane path — non-negotiable. Evidence: [wedge-claim-map.json](../ai/evidence/v1/wedge-claim-map.json) (per-path status), [claim-maturity.json](../ai/security/v1/claim-maturity.json) (per-control maturity), [security-capability-validation.json](../ai/security/v1/security-capability-validation.json) (validation scope). A *data-plane path* is the end-to-end delivery route from event ingestion (ingester) through flow processing to target egress (egress). It excludes control-plane paths (UI, API, MCP, CLI, Git), browser/front-end paths, docs pages, and credential-management paths. **Claim-hygiene:** Do not remove or weaken this claim unless a specific unvalidated data-plane path is identified in wedge-claim-map.json and documented with its exact blocking evidence gap.
 - Verifiable delivery evidence: Hash-chain receipts and tamper-evident delivery logs
 - Provider Template Packs: Reusable packages for Stripe, GitHub, Shopify, Twilio, and custom signed webhooks — structured defaults for endpoint setup, provider verification, event classification, and operational visibility. Optional, accelerate setup while preserving full user control.
 - Kubernetes/cloud-native path: Full helm-based deployment for production environments

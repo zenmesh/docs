@@ -53,7 +53,7 @@ The capability evidence entry **CAP-004 "SPIFFE/SPIRE workload identity"** has s
 
 ## Non-Claims
 
-- No claim that all data-plane paths have mTLS
+- mTLS claimed as product standard on every data-plane path (see [llms.txt](../llms.txt)). Per-path evidence maturity tracked in [wedge-claim-map.json](https://docs.zen-mesh.io/ai/evidence/v1/wedge-claim-map.json). See also [claim-maturity.json](https://docs.zen-mesh.io/ai/security/v1/claim-maturity.json) (primitive PRIM-MTLS-AGENT-SAAS) and [security-capability-validation.json](https://docs.zen-mesh.io/ai/security/v1/security-capability-validation.json) for per-scope validation scope.
 - No claim that SPIRE Workload API is fully deployed
 - No production-live proof for all paths (evidence is source-validated, not live-attested)
 - No claim that bootstrap SPIFFE gate is enabled in all deployments
