@@ -2,7 +2,7 @@
   "openapi": "3.0.3",
   "info": {
     "title": "Zen Mesh User API",
-    "description": "Backend API for KubeZen platform - provides CRUD operations for CRDs (Ingester, Destination, DeliveryFlow),\nchannel/flow management, tenant management, and webhook endpoints.\n",
+    "description": "Backend API for KubeZen platform - provides CRUD operations for CRDs (Ingester, Target [wire name: destination], DeliveryFlow),\nchannel/flow management, tenant management, and webhook endpoints.\n",
     "version": "1.0.0",
     "contact": {
       "name": "KubeZen Team",
@@ -38,7 +38,7 @@
     },
     {
       "name": "Planes",
-      "description": "Cluster registration and management"
+      "description": "Plane registration and management (wire name in API paths: cluster)"
     },
     {
       "name": "CRDs",

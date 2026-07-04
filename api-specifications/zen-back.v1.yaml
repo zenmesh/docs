@@ -2,7 +2,7 @@ openapi: 3.0.3
 info:
   title: KubeZen Back API
   description: |
-    Backend API for KubeZen platform - provides CRUD operations for CRDs (Ingester, Destination, DeliveryFlow),
+    Backend API for KubeZen platform - provides CRUD operations for CRDs (Ingester, Target [wire name: destination], DeliveryFlow),
     channel/flow management, tenant management, and webhook endpoints.
   version: 1.0.0
   contact:
@@ -26,9 +26,9 @@ tags:
   - name: Tenants
     description: Tenant management
   - name: Clusters
-    description: Cluster registration and management
+    description: "Plane registration and management (wire name in API paths: cluster)"
   - name: CRDs
-    description: CRD management (Ingester, Destination, DeliveryFlow)
+    description: "CRD management (Ingester, Target [wire name: destination], DeliveryFlow)"
   - name: Channels
     description: Channel and flow management (bridge-only)
   - name: Webhooks

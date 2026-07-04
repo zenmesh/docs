@@ -90,10 +90,10 @@ See [support](start-here/support).
 
 ## Guides
 
-- [Sources](guides/sources): Configure webhook sources (Stripe, GitHub, Twilio, Shopify, Custom)
 - [Endpoints](guides/endpoints): Manage webhook endpoints and webhook URLs
-- [Destinations](guides/destinations): Delivery target configuration
-- [Cluster enrollment](guides/cluster-enrollment): Edge Lite and Kubernetes enrollment setup
+- [Sources (Legacy)](guides/sources): Supported webhook provider reference (Stripe, GitHub, Twilio, Shopify, Custom)
+- [Targets (Legacy: Destinations)](guides/destinations): Target service configuration (wire name: destinations)
+- [Cluster Enrollment (Deprecated)](guides/cluster-enrollment): Deprecated — replaced by Kubernetes Edge Plane
 - [Monitoring](guides/monitoring): Delivery metrics, logging, and alerting
 
 ## Evidence and AI

@@ -129,12 +129,12 @@ See [support](https://docs.zen-mesh.io/docs/start-here/support).
 ## Guides
 
 - [Cluster Enrollment (Deprecated)](https://docs.zen-mesh.io/docs/guides/cluster-enrollment): Deprecated — replaced by Kubernetes Edge Plane enrollment. See [Kubernetes Edge Plane](https://docs.zen-mesh.io/docs/install/kubernetes-edge-plane).
-- [Endpoints](https://docs.zen-mesh.io/docs/guides/endpoints): Create and manage webhook endpoints — ingesters, destinations, delivery flows
-- [Sources](https://docs.zen-mesh.io/docs/guides/sources): Supported webhook source types — Stripe, GitHub, Twilio, Shopify, Custom
+- [Endpoints](https://docs.zen-mesh.io/docs/guides/endpoints): Create and manage webhook endpoints — ingesters, targets, delivery flows
+- [Sources (Legacy)](https://docs.zen-mesh.io/docs/guides/sources): Supported webhook provider reference — Stripe, GitHub, Twilio, Shopify, Custom
 - [Stripe Integration](https://docs.zen-mesh.io/docs/guides/stripe): Stripe webhook events, setup, signature verification, event types
 - [GitHub Integration](https://docs.zen-mesh.io/docs/guides/github): GitHub webhook events, setup, signature verification, event types
 - [Custom Webhooks](https://docs.zen-mesh.io/docs/guides/custom-webhooks): Receive webhooks from any HTTP source — verification, IP allowlisting, routing
-- [Destinations](https://docs.zen-mesh.io/docs/guides/destinations): Target service configuration for webhook delivery
+- [Targets (Legacy: Destinations)](https://docs.zen-mesh.io/docs/guides/destinations): Target service configuration for webhook delivery (wire name: destinations)
 
 ## Security
 

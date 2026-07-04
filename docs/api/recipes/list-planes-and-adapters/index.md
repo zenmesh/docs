@@ -84,7 +84,7 @@ console.log(data);
 curl -sS   -H "Authorization: Bearer $ZEN_API_TOKEN"   "$ZEN_API_BASE/tenants/$ZEN_TENANT_ID/clusters/$ZEN_PLANE_ID/ingesters"
 ```
 
-### List Destinations
+### List Targets (wire name: destinations)
 
 ```bash
 curl -sS   -H "Authorization: Bearer $ZEN_API_TOKEN"   "$ZEN_API_BASE/tenants/$ZEN_TENANT_ID/clusters/$ZEN_PLANE_ID/destinations"

@@ -4,15 +4,15 @@ id: api-recipes-create-target
 
 # Create a Target
 
-Learn how to create and configure destinations (targets) for your flows.
+Learn how to create and configure targets (wire name: destinations) for your flows.
 
 ## What This Recipe Does
 
 This recipe shows you how to:
 
-1. Create a new destination
-2. Configure destination settings
-3. Verify the destination was created
+1. Create a new target
+2. Configure target settings
+3. Verify the target was created
 
 ## Prerequisites
 
@@ -127,7 +127,7 @@ console.log(data);
 }
 ```
 
-## Verify Destination Created
+## Verify Target Created
 
 ```bash
 curl -sS   -H "Authorization: Bearer $ZEN_API_TOKEN"   "$ZEN_API_BASE/tenants/$ZEN_TENANT_ID/clusters/$ZEN_PLANE_ID/destinations"
