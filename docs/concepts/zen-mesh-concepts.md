@@ -6,6 +6,24 @@ sidebar_label: Zen Mesh Concepts
 
 > Status: PUBLIC_CONTRACT_DRAFT. Definitions below carry individual status per component. Not a production-live claim.
 
+## Planes
+
+Zen Mesh is organized into three planes plus a lightweight variant. A **Kubernetes cluster** is a deployment substrate for an edge plane, not the product root. See the full [Planes page](./planes) for details.
+
+### Control Plane
+The SaaS runtime that provides configuration surfaces (UI, API, MCP, Git). Manages edge-plane registration, endpoints, targets, flows, and evidence. Never sees event payloads.
+
+### Data Plane
+The delivery runtime that ingests events from sources and delivers them to targets. Handles retry, replay, DLQ, and evidence generation. Operates independently of the control plane.
+
+### Edge Plane
+Runs in the customer environment and connects outbound only. Requires zen-agent; optionally includes zen-ingester and zen-egress. Available as [Kubernetes Edge Plane](../install/kubernetes-edge-plane) or [Edge Lite](../install/edge-lite).
+
+### Edge Lite
+A lightweight non-Kubernetes runtime path for evaluation and low-traffic use cases. See [Edge Lite](../install/edge-lite).
+
+**See:** [Planes](./planes), [Choose a Runtime Path](../install/choose-runtime-path)
+
 ## Template
 
 A reusable source configuration. Templates define how Zen Mesh receives events from a provider (Stripe, GitHub, Twilio, Shopify) or from a custom HTTP source. Templates exist as reference starting points — you select one when creating an endpoint.

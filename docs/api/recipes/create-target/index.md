@@ -26,7 +26,7 @@ export ZEN_PLANE_ID="plane_dev_us_east_1"
 export ZEN_ADAPTER_ID="adapter_stripe_ingester"
 ```
 
-## Create a Destination
+## Create a Target
 
 ### curl
 

@@ -51,7 +51,7 @@ Enrollment bundles cannot be restored — they are single-use and time-limited. 
 
 ## Recovery Procedure
 
-1. **Provision a new cluster** following the [Cluster Enrollment](../guides/cluster-enrollment) guide
+1. **Provision a new edge plane** following the [Kubernetes Edge Plane](../install/kubernetes-edge-plane) guide
 2. **Restore Helm values** from backup to reinstall zen-agent:
    ```bash
    helm upgrade --install zen-agent zenmesh/zen-agent \

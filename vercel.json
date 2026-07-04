@@ -469,6 +469,21 @@
       "permanent": true
     },
     {
+      "source": "/concepts/planes",
+      "destination": "/docs/concepts/planes",
+      "permanent": true
+    },
+    {
+      "source": "/install/(.*)",
+      "destination": "/docs/install/$1",
+      "permanent": true
+    },
+    {
+      "source": "/guides/cluster-enrollment",
+      "destination": "/docs/install/kubernetes-edge-plane",
+      "permanent": true
+    },
+    {
       "source": "/guides/(.*)",
       "destination": "/docs/guides/$1",
       "permanent": true

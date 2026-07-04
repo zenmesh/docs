@@ -1,81 +1,35 @@
 ---
-sidebar_label: Cluster Enrollment
+sidebar_label: Cluster Enrollment (Deprecated)
 ---
 
-# Cluster Enrollment
+# Cluster Enrollment — Deprecated
 
-Cluster enrollment is the process of registering your Kubernetes cluster with the Zen Mesh control plane. Once enrolled, the agent receives configuration, connects to the data plane, and starts delivering events to your services.
+**Status:** DEPRECATED — This page has been replaced by [Kubernetes Edge Plane](../install/kubernetes-edge-plane).
 
-## How Enrollment Works
+---
 
-```mermaid
-sequenceDiagram
-    participant D as Dashboard
-    participant K as kubectl apply
-    participant A as zen-agent
-    participant CP as Control Plane
-    participant DP as Data Plane
+The product model has been updated to **plane-based terminology**. What was previously called "cluster enrollment" is now documented as registering a **Kubernetes Edge Plane**.
 
-    D->>K: 1. Generate enrollment bundle (age-encrypted)
-    K->>A: 2. Bundle applied as Secret
-    A->>CP: 3. Read bundle, prove identity
-    CP->>A: 4. Issue SPIFFE identity, config sync
-    A->>DP: 5. Connect, start receiving delivery targets
-```
+A Kubernetes cluster is a **deployment substrate** for the edge plane, not the product root. See [Planes](../concepts/planes) for the current architecture model.
 
-The enrollment bundle is single-use and time-limited (typically 30 minutes). If it expires, generate a new one from the dashboard.
+## What Changed
 
-## Enrolling a Cluster
+| Old Term | New Term |
+|---|---|
+| Cluster Enrollment | Kubernetes Edge Plane Enrollment |
+| Add Cluster | Add/Register Edge Plane |
+| Cluster status | Edge-plane status |
+| Cluster as product root | Plane as product model |
 
-## 1. Create the Cluster in the Dashboard
+## New Location
 
-Navigate to **Clusters** → **Add Cluster** → enter a name → **Create**.
+The current page is at: **[Kubernetes Edge Plane Enrollment](../install/kubernetes-edge-plane)**
 
-## 2. Generate the Install Command
+## Quick Reference
 
-Click **Get install command** on your cluster. The modal shows a single command with two steps:
+If you were looking for the enrollment procedure:
 
-1. Apply the enrollment secret (Kubernetes Secret with age-encrypted bundle)
-2. Install zen-agent via Helm
-
-Click **Copy all** to copy the entire command.
-
-## 3. Run on Your Cluster
-
-```bash
-# Paste the copied command into a terminal with kubectl access
-# The command applies the enrollment secret, then installs the agent
-```
-
-## 4. Verify
-
-- The cluster status in the dashboard changes to **Connected**
-- Agent logs show successful enrollment:
-  ```bash
-  kubectl logs -n zen-mesh -l app=zen-agent --tail=20
-  ```
-
-## Regenerating the Bundle
-
-If the enrollment bundle expires before you use it:
-
-1. Click **Regenerate** in the enrollment modal
-2. A new bundle is generated (old one is invalidated)
-3. Copy and run the new command
-
-## What Gets Deployed
-
-| Component | Namespace | Purpose |
-|-----------|-----------|---------|
-| zen-agent | zen-mesh | Enrollment, heartbeat, config sync |
-| zen-egress | zen-mesh | Event delivery to private services |
-| zen-lock | zen-mesh | Zero-knowledge secret management |
-
-## Troubleshooting
-
-| Problem | Solution |
-|---------|----------|
-| Bundle expired | Regenerate from the dashboard |
-| Agent shows "Not Connected" | Check network: agent needs outbound HTTPS to `api.zen-mesh.io` |
-| mTLS handshake failure | Check that `zen-lock` is running and certificates have been issued |
-| Enrollment rejected | Verify the bundle matches the cluster ID in the dashboard |
+1. Go to [Kubernetes Edge Plane](../install/kubernetes-edge-plane) for the current procedure
+2. See [Choose a Runtime Path](../install/choose-runtime-path) to select the right installation method
+3. See [Edge Lite](../install/edge-lite) for a non-Kubernetes alternative
+4. See [Planes](../concepts/planes) for the architecture model

@@ -9,8 +9,9 @@ sidebar_label: Key Concepts
 | Concept | Description |
 |---|---|
 | **Control Plane** | SaaS layer — manages configuration, policy, and evidence. Never in the delivery path. |
-| **Data Plane** | Edge infrastructure — ingesters, egresses, bridges that route events. |
-| **Edge Plane** | Customer-managed clusters running zen-agent and zen-egress. |
+| **Data Plane** | Delivery runtime — ingesters, egresses, bridges that route events. |
+| **Edge Plane** | Customer environment running zen-agent. Connects outbound only. Available as Kubernetes Edge Plane or Edge Lite. |
+| **Edge Lite** | Lightweight non-Kubernetes runtime path for evaluation and low-traffic use cases. |
 
 ## Delivery Paths
 

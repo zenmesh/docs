@@ -2,7 +2,7 @@
 
 > Zen Mesh is private-by-design, security-first webhook delivery infrastructure for private networks. Services behind NAT or firewall connect outbound-only to receive webhooks from Stripe, GitHub, Shopify, Twilio, and custom senders — no inbound ports, no VPN, no kernel modules. Free Forever (V1). Pro Early Bird with 6-month free trial (V1). Business rollout planned for V1.1 (join waitlist). Enterprise pilot program available.
 
-**Version:** 1.1.1 · **Last-Updated:** 2026-07-03T20:57:00Z · **Docs:** https://docs.zen-mesh.io · **Site:** https://www.zen-mesh.io · **Repository:** https://github.com/zenmesh/zen-platform · **Company:** Zen Mesh Inc., Toronto, Ontario, Canada
+**Version:** 1.1.1 · **Last-Updated:** 2026-07-03T23:00:00Z · **Docs:** https://docs.zen-mesh.io · **Site:** https://www.zen-mesh.io · **Repository:** https://github.com/zenmesh/zen-platform · **Company:** Zen Mesh Inc., Toronto, Ontario, Canada
 
 ## Canonical discovery (crawlers)
 
@@ -128,6 +128,7 @@ See [support](https://docs.zen-mesh.io/docs/start-here/support).
 
 ## Guides
 
+- [Cluster Enrollment (Deprecated)](https://docs.zen-mesh.io/docs/guides/cluster-enrollment): Deprecated — replaced by Kubernetes Edge Plane enrollment. See [Kubernetes Edge Plane](https://docs.zen-mesh.io/docs/install/kubernetes-edge-plane).
 - [Endpoints](https://docs.zen-mesh.io/docs/guides/endpoints): Create and manage webhook endpoints — ingesters, destinations, delivery flows
 - [Sources](https://docs.zen-mesh.io/docs/guides/sources): Supported webhook source types — Stripe, GitHub, Twilio, Shopify, Custom
 - [Stripe Integration](https://docs.zen-mesh.io/docs/guides/stripe): Stripe webhook events, setup, signature verification, event types
@@ -184,8 +185,17 @@ OpenAPI spec: [zen-back.v1.yaml](https://github.com/zenmesh/zen-platform-hermes/
 
 ## Concepts
 
+- [Planes](https://docs.zen-mesh.io/docs/concepts/planes): Control Plane, Data Plane, Edge Plane, and Edge Lite — the fundamental architecture model. Kubernetes cluster is a deployment substrate for Edge Plane, not the product root.
 - [Zen Mesh Concepts](https://docs.zen-mesh.io/docs/concepts/zen-mesh-concepts): Comprehensive runtime object definitions — template, blueprint, flow, endpoint, target, attempt, DLQ, retry, replay, trace, saved/retained payload, evidence, ZCC, control surface
 - [Control Surfaces](https://docs.zen-mesh.io/docs/concepts/control-surfaces): UI, Customer API, MCP, CLI, Git surfaces — audience, maturity, read/write per surface
+
+## Install and Runtime
+
+- [Choose a Runtime Path](https://docs.zen-mesh.io/docs/install/choose-runtime-path): Decision guide — Edge Lite, Kubernetes Edge Plane, Data Plane
+- [Edge Plane](https://docs.zen-mesh.io/docs/install/edge-plane): Customer-proximity runtime, outbound-only connection
+- [Kubernetes Edge Plane](https://docs.zen-mesh.io/docs/install/kubernetes-edge-plane): Edge plane on Kubernetes — enrollment, install, optional components
+- [Edge Lite](https://docs.zen-mesh.io/docs/install/edge-lite): Lightweight non-Kubernetes runtime path (design-partner evaluation)
+- [Data Plane](https://docs.zen-mesh.io/docs/install/data-plane): Delivery runtime — zen-ingester, zen-egress, zen-bridge
 
 ## Guides
 

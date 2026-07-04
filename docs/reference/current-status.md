@@ -19,7 +19,12 @@ sidebar_label: Current Status
 ## Capability Status
 
 | Capability | Status | Notes |
-|---|---|---|
+|---|---|---|---|
+| **Planes / Runtime** | | |
+| Control Plane | WIRED_SANDBOX | SaaS control surface — UI, API, MCP, Git |
+| Data Plane | WIRED_SANDBOX | zen-ingester, zen-egress, zen-bridge |
+| Edge Plane (Kubernetes) | WIRED_SANDBOX | zen-agent on Kubernetes, outbound-only |
+| Edge Lite | DESIGN_PARTNER_EVAL | Non-Kubernetes path — not production-ready |
 | **Runtime / Core** | | |
 | Endpoint ingestion | WIRED_SANDBOX | HMAC signature validation, IP allowlisting, custom header validation |
 | Flow routing | WIRED_SANDBOX | JSONPath filter, JSONPath transform |

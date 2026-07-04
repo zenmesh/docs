@@ -29,7 +29,7 @@ GitHub sends events for all repository and organization activity:
 
 ## Setting Up Delivery
 
-## 1. Create a Destination
+## 1. Create a Target
 
 Create a destination pointing to your internal service:
 

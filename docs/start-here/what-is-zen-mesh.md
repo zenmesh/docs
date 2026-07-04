@@ -25,8 +25,11 @@ Zen Mesh is a webhook delivery platform for private networks. It delivers events
 |---|---|
 | Understand the product | [Customer Journey](../getting-started/customer-journey) |
 | Walk through the first 15 minutes | [First 15 Minutes](../getting-started/first-15-minutes) |
-| Deploy and test | [Quick Start](../getting-started/quick-start) |
+| Choose a deployment path | [Choose a Runtime Path](../install/choose-runtime-path) |
+| Deploy on Kubernetes | [Kubernetes Edge Plane](../install/kubernetes-edge-plane) |
+| Try without Kubernetes | [Edge Lite](../install/edge-lite) |
 | Understand runtime objects | [Zen Mesh Concepts](../concepts/zen-mesh-concepts) |
+| Understand the plane model | [Planes](../concepts/planes) |
 | Review control surfaces | [Control Surfaces](../concepts/control-surfaces) |
 | Check capability status | [Current Status](../reference/current-status) |
 | Review security controls | [Security Controls](../security/) |

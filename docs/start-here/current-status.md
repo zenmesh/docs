@@ -12,6 +12,15 @@ Free and Pro do not include SLA or on-call support. Business and Enterprise oper
 
 Start with the [Quick Start](../getting-started/quick-start) to create your first webhook endpoint, choose a source template, configure a destination, and validate delivery.
 
+## Plane Status
+
+| Plane | Status | Notes |
+|---|---|---|
+| Control Plane | WIRED_SANDBOX | SaaS control surface — UI, API, MCP |
+| Data Plane | WIRED_SANDBOX | Delivery runtime — zen-ingester, zen-egress, zen-bridge |
+| Edge Plane (Kubernetes) | WIRED_SANDBOX | zen-agent on Kubernetes |
+| Edge Lite | DESIGN_PARTNER_EVAL | Non-Kubernetes path — not production-ready |
+
 ## Evidence Status
 
 | Domain | Proofs | Status |

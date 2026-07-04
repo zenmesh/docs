@@ -42,9 +42,21 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: 'Concepts',
       items: [
+        'concepts/planes',
         'concepts/zen-mesh-concepts',
         'concepts/control-surfaces',
         'concepts/glossary',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Install and Runtime',
+      items: [
+        'install/choose-runtime-path',
+        'install/edge-plane',
+        'install/kubernetes-edge-plane',
+        'install/edge-lite',
+        'install/data-plane',
       ],
     },
     {

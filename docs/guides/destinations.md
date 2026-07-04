@@ -9,7 +9,7 @@ A destination is a URL in your cluster where Zen Mesh delivers webhook events. E
 ## Creating a Destination
 
 1. Navigate to **Destinations** in the dashboard
-2. Click **Add Destination**
+2. Click **Add Target**
 3. Fill in:
    - **Name**: A descriptive name (e.g., `stripe-to-payment-service`)
    - **URL**: The internal URL of your service (e.g., `http://payment-svc:8080/webhooks`)
