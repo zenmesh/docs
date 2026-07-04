@@ -107,10 +107,10 @@
       "does_not_prevent": [
         "MITM on paths without mTLS",
         "Compromised enrolled clients",
-        "Data-plane paths without mTLS proof"
+        "Data-plane paths where mTLS E2E evidence is still being collected (per-path maturity tracked in wedge-claim-map.json; product standard claims mTLS on every Zen-controlled data-plane hop)"
       ],
       "validation_level": "Architecture required; manifest trust-mtls-enforcement proven_local_mock; CI mTLS gates in sandbox profile",
-      "current_limitation": "Not all routes or environments have live e2e proof; data-plane coverage incomplete",
+      "current_limitation": "Not all routes or environments have live E2E evidence; per-path maturity tracked in wedge-claim-map.json and security-capability-validation.json",
       "next_validation": "Sandbox e2e agent sync over mTLS with documented gate artifact",
       "public_evidence_ref": "https://docs.zen-mesh.io/ai/security/v1/security-capability-validation.json",
       "roadmap_ref": null

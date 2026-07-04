@@ -132,10 +132,11 @@
       "validator_refs": [
         "docs/10-ARCHITECTURE/SECURITY.md"
       ],
-      "limitation": "mTLS enforced on internal control-plane paths. Not all data-plane paths have mTLS yet.",
-      "last_updated": "2026-05-25",
+      "limitation": "mTLS enforced on internal control-plane paths for wedge operations. Zen-controlled data-plane delivery hops (ingester \u2194 flow \u2194 egress) use mTLS as product standard; per-hop E2E evidence maturity tracked in delivery claim items and claim-maturity.json.",
+      "last_updated": "2026-07-03",
       "plane_refs": [
-        "CONTROL_PLANE"
+        "CONTROL_PLANE",
+        "DATA_PLANE"
       ],
       "layer_refs": [
         "L1_BASE"

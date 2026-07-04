@@ -24,9 +24,9 @@
       "public_copy_guidance": "Agent \u2192 SaaS mTLS is Required. Do not change to Planned. CAP-004 'planned' refers to fuller workload identity model, not mTLS itself.",
       "ai_rag_summary": "Agent\u2192SaaS mTLS is REQUIRED. All agent routes (desired-state, heartbeat, adapter sync, allowlist) run on the mTLS listener (port 9443). CAP-004 'planned' refers to the fuller workload identity model, not to mTLS being optional. mTLS enforcement is fail-closed in production.",
       "non_claims": [
-        "No claim that all data-plane paths have mTLS",
+        "No production-live E2E attestation for all data-plane-path hops (evidence is source-validated, not live-attested; product standard claims mTLS on every Zen-controlled data-plane path)",
         "No claim that SPIRE Workload API is fully deployed",
-        "No production-live proof for all paths"
+        "No production-live proof for all paths (evidence is source-validated, not live-attested)"
       ],
       "docs_urls": [
         "https://docs.zen-mesh.io/security/security-capability-validation",
