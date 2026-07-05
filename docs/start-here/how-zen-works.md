@@ -27,7 +27,7 @@ Git ─┘
 | **CLI** (`hermes`) | Automation, CI/CD | WIRED_SANDBOX |
 | **API** (REST) | Programmatic access, integrations | WIRED_SANDBOX |
 | **MCP** (Model Context Protocol) | AI agents, operators | WIRED_SANDBOX |
-| **Git** (GitOps) | Infrastructure-as-code | PLANNED (V1.1) |
+| **Git** (GitOps) | Infrastructure-as-code | PLANNED |
 
 All surfaces produce and consume [Zen Configuration Contract](../product/zen-configuration-contract) (ZCC) artifacts through the same validation path, under the same authorization model. The contract — not any single surface — is the source of truth.
 

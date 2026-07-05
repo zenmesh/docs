@@ -104,7 +104,7 @@ See the [Current Status Matrix](../reference/current-status) for a complete per-
 | Customer API (all endpoints) | WIRED_SANDBOX |
 | MCP read tools | PUBLIC_CONTRACT_DRAFT |
 | MCP write tools | PUBLIC_CONTRACT_DRAFT (per-tool-group enablement) |
-| GitOps | PLANNED (V1.1) |
+| GitOps | PLANNED |
 
 ## Non-Claims
 
