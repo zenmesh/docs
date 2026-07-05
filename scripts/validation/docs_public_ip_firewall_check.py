@@ -248,6 +248,7 @@ def main() -> int:
         spec = importlib.util.spec_from_file_location("docs_public_ip_family_scan", family_path)
         family_mod = importlib.util.module_from_spec(spec)
         assert spec.loader is not None
+        sys.modules["docs_public_ip_family_scan"] = family_mod
         spec.loader.exec_module(family_mod)
 
         hits, scanned, inventory = family_mod.run_scan(live=args.live or args.postdeploy)
