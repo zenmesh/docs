@@ -4,7 +4,7 @@ sidebar_label: API Reference
 
 # API Reference
 
-The Zen Mesh API provides REST, MCP, and WebSocket surfaces for the [Zen Configuration Contract](../product/zen-configuration-contract). This page indexes all publicly documented API surfaces.
+The Zen Mesh API provides REST, MCP, and WebSocket surfaces for the [Configuration Contract](../product/zen-configuration-contract). This page indexes all publicly documented API surfaces.
 
 > Status: PUBLIC_CONTRACT_DRAFT. Individual API groups carry their own maturity status. See [API Status Matrix](../api/status) for per-group details.
 
@@ -30,7 +30,7 @@ The Zen Mesh API provides REST, MCP, and WebSocket surfaces for the [Zen Configu
 - **[Replay API](../api/replay)** — Event replay from retained payload/context. Status: WIRED_SANDBOX
 - **[Traces / Evidence Spine API](../api/traces)** — Delivery trace spine. Not full distributed tracing. Status: WIRED_SANDBOX
 - **[Saved Payloads API](../api/saved-payloads)** — Test/template payloads. Not production retained payloads. Status: WIRED_SANDBOX
-- **[Evidence API](../api/evidence)** — Cryptographic delivery proofs, Merkle inclusion verification. Status: WIRED_SANDBOX
+- **[Evidence API](../api/evidence)** — Cryptographic delivery proofs, integrity inclusion verification. Status: WIRED_SANDBOX
 - **[Logs API](../api/logs)** — Structured platform logs with pagination and filtering. Status: WIRED_SANDBOX
 - **[Rate Limits and Operational Limits](../api/rate-limits)** — Plan-based limits per tier. Status: PUBLIC_CONTRACT_DRAFT
 - **[Fabric Adapters API](../api/fabric-adapters)** — List, disable, enable adapters per tenant/cluster. Status: WIRED_SANDBOX (BFF surface)
@@ -63,7 +63,7 @@ The Zen Mesh API provides REST, MCP, and WebSocket surfaces for the [Zen Configu
 ## Delivery Reference
 
 - **[Delivery Status Reference](../reference/delivery-status)** — Webhook delivery state machine: status values, transitions, retry policy, DLQ
-- **[Webhook Delivery Evidence](../reference/webhook-delivery-evidence)** — Delivery receipts, audit trail, Merkle integrity
+- **[Webhook Delivery Evidence](../reference/webhook-delivery-evidence)** — Delivery receipts, audit trail, integrity verification
 - **[Webhook FAQ](../reference/webhook-faq)** — 12 frequently asked questions about webhook delivery
 
 ## Changelog

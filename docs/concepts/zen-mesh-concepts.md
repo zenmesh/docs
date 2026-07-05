@@ -130,22 +130,22 @@ A production event payload retained as part of delivery history. Retention is pl
 
 ## Evidence
 
-Cryptographic proof of delivery and trace integrity. Evidence includes Merkle receipts that can be independently verified. Evidence is created by the platform during delivery, not by users.
+Cryptographic proof of delivery and trace integrity. Evidence includes integrity receipts that can be independently verified. Evidence is created by the platform during delivery, not by users.
 
 **Status:** WIRED_SANDBOX
 
 **See:** [Evidence API](../api/evidence)
 
-## Zen Configuration Contract (ZCC)
+## Configuration Contract
 
-The declarative representation of every Zen Mesh operation. The ZCC is the source of truth — UI, CLI, API, MCP, and Git surfaces all produce and consume ZCC artifacts. The contract validates, audits, and enforces operations regardless of which surface initiated them.
+The declarative representation of every Zen Mesh operation. The Configuration Contract is the source of truth — UI, CLI, API, MCP, and Git surfaces all produce and consume Configuration Contract artifacts. The contract validates, audits, and enforces operations regardless of which surface initiated them.
 
 **Status:** PUBLIC_CONTRACT_DRAFT
 
-**See:** [ZCC overview](../product/zen-configuration-contract)
+**See:** [Configuration Contract overview](../product/zen-configuration-contract)
 
 ## Control Surface
 
-A path to interact with Zen Mesh. Each control surface — UI, Customer API, MCP, CLI, Git — reads and writes the same ZCC. Surfaces differ in audience, auth model, and write permissions, but they do not differ in contract validation or audit.
+A path to interact with Zen Mesh. Each control surface — UI, Customer API, MCP, CLI, Git — reads and writes the same Configuration Contract. Surfaces differ in audience, auth model, and write permissions, but they do not differ in contract validation or audit.
 
 **See:** [Control Surfaces](../concepts/control-surfaces)

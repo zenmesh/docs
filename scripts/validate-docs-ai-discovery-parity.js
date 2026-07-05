@@ -64,7 +64,7 @@ function main() {
   ok('structured lib Dataset', structuredLib.includes("'@type': 'Dataset'"));
   ok('structured lib CreativeWork', structuredLib.includes("'@type': 'CreativeWork'"));
   ok('structured lib federated runtime', structuredLib.includes('federated operational runtime'));
-  ok('structured lib hash-chain', structuredLib.toLowerCase().includes('hash-chain'));
+  ok('structured lib delivery receipts', structuredLib.toLowerCase().includes('delivery receipts'));
   ok('structured lib narrative not proof', structuredLib.includes('narrative_context'));
   ok('structured lib no internal ids', !FORBIDDEN_ID.test(structuredLib));
 
@@ -74,11 +74,14 @@ function main() {
 
   ok('llms links manifest', llms.includes('manifest.json'));
   ok('llms links www evidence', llms.includes('zen-mesh.io/evidence'));
-  ok('llms links taxonomy', llms.includes('public-terminology-taxonomy.json'));
-  ok('llms links traceability', llms.includes('public-surface-traceability.json'));
+  ok('llms links taxonomy', llms.includes('public-terminology-taxonomy'));
+  ok('llms links traceability', llms.includes('ai-discovery-registry.json'));
   ok('llms narrative not proof', llms.toLowerCase().includes('not proof') || llms.includes('narrative_context'));
   ok('llms no internal ids', !FORBIDDEN_ID.test(llms));
-  ok('llms governance public terms', llms.includes('Runtime workload identity') && llms.includes('DeliveryPolicy'));
+  ok(
+    'llms defensive scope statement',
+    llms.includes('patent-sensitive implementation details are intentionally not included'),
+  );
 
   ok('navbar AI Context', config.includes("label: 'AI Context'") || config.includes('AI Context'));
   ok(

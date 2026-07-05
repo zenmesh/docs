@@ -4,12 +4,7 @@ sidebar_label: Evidence Integrity
 
 # Evidence Integrity
 
-Zen Mesh provides tamper-evident verification capabilities for runtime and trust evidence artifacts.
-
-## What it does
-
-- Enables integrity verification of evidence chains
-- Supports independent verification of evidence artifacts
+Zen Mesh provides evidence-oriented delivery visibility, including delivery receipts, operational metadata, and validation scope where available. Detailed evidence mechanisms are documented only when approved for public release.
 
 ## What it does NOT do
 

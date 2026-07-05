@@ -66,7 +66,7 @@ See [`ai/security-posture.md`](ai/security-posture.md) and primitive IDs `PRIM-Z
 | SPIFFE / SVID (Zen-managed internal) | `WIRED` / `NOT_E2E_VALIDATED` | Customers do not operate SPIRE in V1 — rotation not production-live proof |
 | Local trust / 24h survival | `NOT_CLAIMED` | Material projection helps short gaps — **not** validated 24h survival |
 | Air-gapped adapter handoff | `WIRED` | Contract-defined — not compliance-certified air-gap program |
-| Hash-chain evidence | `AUTOMATED_TESTED` | Tamper-**detection** for evidence artifacts only |
+| Integrity evidence | `AUTOMATED_TESTED` | Tamper-**detection** for evidence artifacts only |
 | SSRF on SaaS dispatch | `BACKLOG` | Scoped SSRF controls exist (central validation lib, FLOW-03/02 dispatch hardening) — SaaS-wide dispatch not validated. See gaps. |
 | Payload / parser / header / redirect hardening | `BACKLOG` | WH-AS backlog — remain visible in gaps.json |
 | Local auth 2FA/MFA | `NOT_CLAIMED` | V1 prerequisite — blocked pending Hermes R22 runtime evidence |
@@ -74,7 +74,7 @@ See [`ai/security-posture.md`](ai/security-posture.md) and primitive IDs `PRIM-Z
 ## Narrative vs proof
 
 
-## Hash-chain / Merkle
+## Integrity Verification
 
 Integrity and tamper-evidence for **evidence bundles** only — not authentication, identity, encryption, or replay prevention.
 

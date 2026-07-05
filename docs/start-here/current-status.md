@@ -35,7 +35,7 @@ Start with the [Quick Start](../getting-started/quick-start) to create your firs
 - No PCI, HIPAA, FedRAMP, SOC 2, or ISO certification
 - No delivery guarantee beyond scenario-specific local/mock/cloud-demo proofs
 - No production-level zero-trust status
-- Merkle is evidence integrity only — see [Non-Claims](../ai/non-claims) for scope
+- Integrity verification is for evidence integrity only — see [Non-Claims](../ai/non-claims) for scope
 - Proofs are local/mock or cloud-demo unless stated; no production-live claim
 
 ## Documentation Gap Disposition

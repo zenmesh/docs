@@ -55,7 +55,7 @@ export const docsStructuredDataBlocks = [
     name: 'Zen Mesh public AI evidence manifests',
     description:
       'Capability manifest, non-claims registry, wedge claim maps, and compliance mapping for reviewers and LLMs. ' +
-      'Hash-chain receipts are integrity/tamper-evidence only — not authentication, identity, encryption, or replay prevention. ' +
+      'Delivery receipts and operational metadata describe validation scope where available. ' +
       'Blogs are narrative_context only — not manifest proof. ' +
       DEMO_NOTE,
     url: `${DOCS_ORIGIN}/docs/ai/overview`,

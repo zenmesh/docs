@@ -38,4 +38,4 @@ make trust-lifecycle-evidence-map-check
 - No production zero-trust or production mTLS/cert rotation claim.
 - No SVID/SPIFFE rotation — SPIRE not deployed.
 - No secret values printed in any artifact.
-- No Merkle auth/replay/identity/delivery claim.
+- No integrity auth/replay/identity/delivery claim.

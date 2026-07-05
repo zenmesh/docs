@@ -20,9 +20,6 @@ const sidebars: SidebarsConfig = {
       label: 'Roadmap',
       items: [
       'product/v1-roadmap',
-      'product/zen-configuration-contract',
-      'product/template-registry-roadmap',
-      'product/gitops-roadmap',
       'launch/v1-live-truth-matrix',
       'launch/v1-live-evidence-index',
       'launch/post-cloud-publication-plan',
@@ -171,7 +168,6 @@ const sidebars: SidebarsConfig = {
         'ai/capability-evidence',
         'ai/compliance-evidence',
         'evidence/validation-map',
-        'evidence/merkle-integrity',
         'evidence/completion-evidence',
         'evidence/non-claims',
         'ai/verification',
@@ -267,7 +263,6 @@ const sidebars: SidebarsConfig = {
         'mcp/examples',
         'mcp/authentication-and-mtls',
         'mcp/safety-and-boundaries',
-        'mcp/draft-system',
       ],
     },
     {

@@ -69,7 +69,7 @@ Enrollment bundles cannot be restored — they are single-use and time-limited. 
 
 - Enrollment bundles are single-use and time-limited. You must generate a new bundle.
 - Delivery event history older than the retention window is not recoverable.
-- Evidence Merkle chain is append-only and cannot be reconstructed from backup.
+- Evidence integrity chain is append-only and cannot be reconstructed from backup.
 
 ## DR Runbook
 

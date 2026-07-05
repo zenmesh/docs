@@ -41,6 +41,6 @@ Evidence tools provide structured proof that specific capabilities are implement
 - `list_runtime_proofs` — Runtime convergence proofs (PROOF-001–010)
 - `list_trust_proofs` — Trust lifecycle proofs (TRUST-001–010)
 - `list_non_claims` — See [non-claims](../ai/non-claims) for explicit non-claims documentation organized by category
-- `list_merkle_evidence_refs` — Integrity receipt metadata
+- `list_integrity_evidence_refs` — Integrity receipt metadata
 
 See [Back API Reference](./reference/kubezen-back-api) for generated endpoint documentation.

@@ -11,7 +11,7 @@ This page covers how Zen Mesh generates, organizes, and retains evidence that ca
 | Type | Description | Current Status |
 |------|-------------|----------------|
 | **Validation evidence** | Proof that Zen Mesh capabilities behave as claimed | Active — see [Evidence Overview](/docs/evidence/overview) |
-| **Runtime evidence** | Delivery receipts, Merkle-anchored proof ledger, convergence proofs | Active — see [Runtime Convergence](/docs/evidence/runtime-convergence) |
+| **Runtime evidence** | Delivery receipts, evidence ledger, convergence proofs | Active — see [Runtime Convergence](/docs/evidence/runtime-convergence) |
 | **Release readiness evidence** | Validation maps, verification suites, non-claims | Active — see [Validation Map](/docs/evidence/validation-map) |
 | **Export / retention** | Evidence export via API; S3/object-store export | Planned — Business+ feature |
 
@@ -28,7 +28,7 @@ The [Evidence Overview](/docs/evidence/overview) catalogs all validation evidenc
 
 - **Runtime convergence** — 10 proofs covering delivery, DLQ, backpressure, circuit breaker
 - **Trust lifecycle** — 10 proofs covering enrollment, mTLS, HMAC, ZenLock, rotation
-- **Completion evidence** — validated work-gate evidence and Merkle integrity
+- **Completion evidence** — validated work-gate evidence and evidence integrity
 - **Non-claims** — capabilities explicitly not claimed
 
 See the [Evidence Index](/docs/evidence/evidence-index) for a complete artifact listing.

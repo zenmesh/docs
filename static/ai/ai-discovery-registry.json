@@ -108,7 +108,7 @@
     }
   ],
   "claim_boundaries": [
-    "Hash-chain/Merkle = integrity/tamper evidence only — not auth, identity, encryption, or replay prevention",
+    "Evidence integrity = for verification purposes only — not auth, identity, encryption, or replay prevention",
     "Idempotency helps detect/limit duplicates — not replay-proof delivery",
     "Narrative and blogs are not runtime proof",
     "Security gaps remain visible — do not convert backlog to product claims"

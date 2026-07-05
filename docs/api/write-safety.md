@@ -10,7 +10,7 @@ Write-capable API and MCP endpoints allow authorized clients to create, update, 
 
 ## Why writes exist
 
-Every control surface (UI, CLI, API, MCP, Git) is a path to the same Zen Configuration Contract. Write operations allow clients to manage resources through the surface best suited to their workflow. Writes follow the same contract validation, authorization, and audit regardless of which surface initiated them.
+Every control surface (UI, CLI, API, MCP, Git) is a path to the same Configuration Contract. Write operations allow clients to manage resources through the surface best suited to their workflow. Writes follow the same contract validation, authorization, and audit regardless of which surface initiated them.
 
 ## Authorization model
 
@@ -58,7 +58,7 @@ Some write operations require a specific plan tier or capability gate:
 |---|---|---|
 | IP allowlist management | Pro+ | V1 |
 | Multi-target fanout | Business+ | V1.1 planned |
-| GitOps write through ZCC | Business+ | V1.1 planned |
+| GitOps write through Configuration Contract | Business+ | V1.1 planned |
 | Dedicated data plane | Enterprise | Pilot |
 
 Operations that require a higher plan tier than the tenant's current plan return a clear denial response with remediation guidance.

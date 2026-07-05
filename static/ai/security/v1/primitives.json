@@ -177,8 +177,8 @@
       "public_safe_summary": "RLS helps on covered tables — not enterprise isolation proof."
     },
     {
-      "id": "PRIM-HASH-CHAIN-EVIDENCE",
-      "name": "Hash-chain evidence integrity",
+      "id": "PRIM-EVIDENCE-INTEGRITY",
+      "name": "Evidence integrity",
       "claim_maturity": "AUTOMATED_TESTED",
       "helps_prevent": [],
       "helps_detect": ["Tampering of included evidence artifacts vs published integrity roots"],
@@ -187,7 +187,7 @@
       "current_limitation": "Integrity for evidence bundles only",
       "next_validation": null,
       "public_evidence_ref": "https://docs.zen-mesh.io/ai/evidence/v1/manifest.json",
-      "public_safe_summary": "Hash-chain is tamper-evidence for artifacts — not auth, identity, encryption, or replay control."
+      "public_safe_summary": "Integrity verification provides tamper-evidence for artifacts — not auth, identity, encryption, or replay control."
     },
     {
       "id": "PRIM-IDEMPOTENCY-DEDUP",

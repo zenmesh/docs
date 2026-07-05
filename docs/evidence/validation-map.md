@@ -33,7 +33,7 @@ make trust-lifecycle-evidence-map-check            # Validate evidence map
 ```bash
 make docs-evidence-alignment-check                 # Docs reference current evidence
 make docs-truth-alignment-check                    # Docs truth alignment
-make merkle-evidence-check                         # Merkle evidence integrity
+make evidence-integrity-check                      # Evidence integrity verification
 make zenlock-rbac-contract-check                   # ZenLock RBAC contract
 ```
 

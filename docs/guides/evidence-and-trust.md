@@ -8,7 +8,7 @@ sidebar_label: Evidence and Trust
 
 ## What Evidence Means in Zen Mesh
 
-Evidence is cryptographic proof that a delivery event occurred and was recorded with integrity. Zen Mesh produces evidence as part of every successful delivery attempt. Evidence includes Merkle receipts that can be independently verified — proving that a delivery happened and that the record has not been tampered with.
+Evidence is cryptographic proof that a delivery event occurred and was recorded with integrity. Zen Mesh produces evidence as part of every successful delivery attempt. Evidence includes integrity receipts that can be independently verified — proving that a delivery happened and that the record has not been tampered with.
 
 **What evidence is NOT:**
 - Not authentication or identity proof (the evidence proves delivery happened, not who sent it)
@@ -28,7 +28,7 @@ Event → Attempt → Evidence Receipt → Trace
 |---|---|---|
 | Trace | End-to-end delivery spine across all attempts | WIRED_SANDBOX |
 | Delivery Attempt | One execution to one target | WIRED_SANDBOX |
-| Evidence | Merkle receipt for a successful delivery | WIRED_SANDBOX |
+| Evidence | Integrity receipt for a successful delivery | WIRED_SANDBOX |
 
 **See:** [Traces API](../api/traces), [Evidence API](../api/evidence)
 
@@ -37,17 +37,17 @@ Event → Attempt → Evidence Receipt → Trace
 | Aspect | Local/Sandbox | Production |
 |---|---|---|
 | Proof scope | Verified in local or sandbox runtime | Not claimed — production-live proof does not exist |
-| Merkle integrity | Proven in sandbox tests | Not production-validated |
+| Evidence integrity | Proven in sandbox tests | Not production-validated |
 | Delivery guarantee | Scenario-specific, local/mock | Not production-claimed |
 | Compliance | Internal readiness mappings only | Not certified |
 
-## Merkle / Hash-Chain Integrity
+## Evidence Integrity
 
-Evidence uses Merkle inclusion receipts to provide tamper-evident delivery records. These receipts let you verify that a delivery record has not been altered since it was written.
+Evidence uses integrity receipts to provide tamper-evident delivery records. These receipts let you verify that a delivery record has not been altered since it was written.
 
-**Status:** WIRED_SANDBOX — Merkle verification is implemented in local/sandbox runtime. Not production-live proof.
+**Status:** WIRED_SANDBOX — Integrity verification is implemented in local/sandbox runtime. Not production-live proof.
 
-**See:** [Evidence API](../api/evidence) for Merkle verification steps.
+**See:** [Evidence API](../api/evidence) for integrity verification steps.
 
 ## Where to See Evidence
 
@@ -65,6 +65,6 @@ Evidence uses Merkle inclusion receipts to provide tamper-evident delivery recor
 - Billing/Stripe live is not claimed
 - Provider production validation is not claimed unless specific evidence exists
 - Replay requires retained context — not all deliveries are replayable
-- Merkle is evidence integrity only — see [Non-Claims](../ai/non-claims) for scope
+- Integrity verification is for evidence integrity only — see [Non-Claims](../ai/non-claims) for scope
 - No compliance certification is claimed
 - No delivery guarantee beyond scenario-specific local/mock/cloud-demo proofs

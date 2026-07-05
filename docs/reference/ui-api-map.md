@@ -33,4 +33,4 @@ sidebar_label: UI to API Map
 |---|---|
 | Billing | Not live — no public API contract |
 | Provider status | Provider-side — no Zen Mesh API |
-| ZCC | Contract-level — cross-surface, not runtime-API |
+| Configuration Contract | Contract-level — cross-surface, not runtime-API |

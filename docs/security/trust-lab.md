@@ -51,7 +51,7 @@ A Trust Scenario is a structured, repeatable validation:
 | Shopify validation suite | End-to-end Shopify webhook ingestion, validation, delivery |
 | Twilio validation suite | End-to-end Twilio webhook ingestion, validation, delivery |
 | Policy freshness | DeliveryPolicy and AuthProfile updates take effect within expected window |
-| Merkle verification | Delivery evidence hash-chain integrity is verifiable |
+| Integrity verification | Delivery evidence integrity chain is verifiable |
 | Tenant isolation / RLS | Cross-tenant data isolation is enforced |
 | Edge Lite reconnect | Edge Lite agent reconnects after network interruption within SLO |
 | Evidence chain validation | Full evidence chain from ingestion to delivery is intact |

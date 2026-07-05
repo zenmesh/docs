@@ -167,7 +167,7 @@
     {
       "id": "wedge-evidence-integrity",
       "category": "evidence",
-      "claim": "Zen Mesh provides machine-readable evidence of webhook delivery with Merkle integrity verification",
+      "claim": "Zen Mesh provides machine-readable evidence of webhook delivery with integrity verification",
       "status": "PROVEN",
       "proof_scope": "local_mock",
       "evidence_refs": [
@@ -177,7 +177,7 @@
       "validator_refs": [
         "scripts/validation/merkle_evidence_verify.py"
       ],
-      "limitation": "Merkle provides evidence integrity only \u2014 not delivery confirmation, ordering, or identity verification.",
+      "limitation": "Integrity verification provides evidence integrity only \u2014 not delivery confirmation, ordering, or identity verification.",
       "last_updated": "2026-05-25",
       "plane_refs": [
         "CONTROL_PLANE",

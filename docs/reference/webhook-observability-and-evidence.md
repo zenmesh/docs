@@ -1,6 +1,6 @@
 ---
 sidebar_label: Observability and Evidence
-description: Webhook observability and delivery evidence — delivery receipts, audit logs, Merkle integrity, monitoring, and machine-readable evidence manifests.
+description: Webhook observability and delivery evidence — delivery receipts, audit logs, evidence integrity, monitoring, and machine-readable evidence manifests.
 ---
 
 # Webhook Observability and Evidence
@@ -22,8 +22,8 @@ Each webhook event generates observable delivery data:
 
 Delivery evidence is protected against tampering:
 
-- **Hash-chain audit log** — each entry contains a hash of the previous entry
-- **Merkle integrity comparison** — evidence snapshots verified against content-addressed roots
+- **Audit log** — each entry contains a hash of the previous entry
+- **Integrity comparison** — evidence snapshots verified against content-addressed roots
 - **Append-only storage** — evidence records are never deleted, only superseded
 
 ## Machine-Readable Evidence

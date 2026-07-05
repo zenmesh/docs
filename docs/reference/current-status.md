@@ -39,19 +39,19 @@ sidebar_label: Current Status
 | Saved payloads | WIRED_SANDBOX | User-managed test/template payloads |
 | Retained payloads | WIRED_SANDBOX (plan-gated) | Production event payload in delivery history |
 | **Trust / Evidence** | | |
-| Merkle evidence | WIRED_SANDBOX | Merkle receipt for successful deliveries, local/sandbox |
+| Evidence integrity | WIRED_SANDBOX | Integrity receipt for successful deliveries, local/sandbox |
 | Evidence API | WIRED_SANDBOX | Scoped by delivery, source, or time window |
 | **Control Surfaces** | | |
 | Dashboard (UI) | INTERNAL_ONLY | App-facing, not public API contract |
 | Customer API | WIRED_SANDBOX | REST API, scope-gated writes |
 | MCP | PUBLIC_CONTRACT_DRAFT | Read tools default-on, write tools per-group enablement |
 | CLI | WIRED_SANDBOX | Terminal-based admin and scripting |
-| Git (ZCC) | PLANNED | V1.1, Business+ |
+| Git (Contract) | PLANNED | V1.1, Business+ |
 | **Integrations** | | |
 | Sources (Stripe, GitHub, etc.) | WIRED_SANDBOX | Source templates and blueprint generation |
 | Webhook sources | WIRED_SANDBOX | Custom HTTP source |
 | **Configuration** | | |
-| ZCC | PUBLIC_CONTRACT_DRAFT | Cross-surface contract, not runtime-live |
+| Configuration Contract | PUBLIC_CONTRACT_DRAFT | Cross-surface contract, not runtime-live |
 | Authentication | WIRED_SANDBOX | API key (Bearer), OIDC session, MCP key |
 | **Plans / Billing** | | |
 | Free Forever tier | WIRED_SANDBOX | No billing, limited quota |

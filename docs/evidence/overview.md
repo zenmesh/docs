@@ -13,7 +13,7 @@ This section maps Zen Mesh capabilities to their current evidence status. Each p
 | [Trust](/docs/trust/) | Customer compliance coverage, CIS benchmark alignment, evidence overview |
 | [Runtime Convergence](./runtime-convergence) | Delivery modes, relay, CP convergence, topology, evidence buffer — PROOF-001 through PROOF-010 |
 | [Trust Lifecycle](./trust-lifecycle) | Enrollment, mTLS, HMAC, ZenLock, rotation, revocation — TRUST-PROOF-001 through TRUST-PROOF-010 |
-| [Completion Evidence](./completion-evidence) | Validated work gate — evidence, Merkle../ai/evidence-v1-supersession.md#non-claims, proof status |
+| [Completion Evidence](./completion-evidence) | Validated work gate — evidence, integrity../ai/evidence-v1-supersession.md#non-claims, proof status |
 | [Non-Claims](../ai/evidence-v1-supersession.md#non-claims) | Capabilities explicitly not claimed |
 | [Validation Map](./validation-map) | How to validate locally — Make targets and validators |
 
@@ -52,6 +52,6 @@ Canonical demo evidence pack for buyers/investors/internal demo readiness.
 
 **Critical distinction:** Stripe FLOW-03 PASS does NOT imply generic FLOW-03 PASS. Generic FLOW-03 is sandbox PASS, not production-live. These are separate proofs with different scopes.
 
-**Non-claims:** Demo/validated proof only — not production-ready. No production-live claim. No production Stripe claim. No generic FLOW-03 full-pass claim. No exactly-once/zero-loss delivery guarantee. No compliance certification (PCI/SOC2/HIPAA/FedRAMP/ISO). No Merkle auth/replay/identity/encryption/access-control claim.
+**Non-claims:** Demo/validated proof only — not production-ready. No production-live claim. No production Stripe claim. No generic FLOW-03 full-pass claim. No exactly-once/zero-loss delivery guarantee. No compliance certification (PCI/SOC2/HIPAA/FedRAMP/ISO). No integrity auth/replay/identity/encryption/access-control claim.
 
 **Source:** `zen-platform` (github.com/zenmesh/zen-platform, commit `7c7c2f33534a`)

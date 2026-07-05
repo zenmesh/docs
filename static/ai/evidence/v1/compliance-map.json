@@ -71,15 +71,15 @@
       "framework": "NIST SP 800-53 Rev5",
       "control_id": "SI-7",
       "control_title": "Software, Firmware, and Information Integrity",
-      "technical_feature": "Merkle evidence hash chain for integrity verification",
+      "technical_feature": "Evidence integrity chain for verification",
       "security_property": "integrity",
       "relationship": "supports",
       "claim_status": "supports",
       "evidence_refs": [
         "zen-platform:docs/10-ARCHITECTURE/RUNTIME_GUARANTEES_CONTRACT.md"
       ],
-      "notes": "Supports NIST SI-7 information integrity — Merkle chain provides evidence integrity, not comprehensive SI-7 coverage.",
-      "disclaimer": "Supports NIST SI-7 information integrity — Merkle chain provides evidence integrity, not comprehensive SI-7 coverage."
+      "notes": "Supports NIST SI-7 information integrity — integrity chain provides evidence integrity, not comprehensive SI-7 coverage.",
+      "disclaimer": "Supports NIST SI-7 information integrity — integrity chain provides evidence integrity, not comprehensive SI-7 coverage."
     },
     {
       "compliance_id": "SOC2-CC6.1",
@@ -132,7 +132,7 @@
       "framework": "ISO/IEC 27001:2022",
       "control_id": "A.8.12",
       "control_title": "Information disposal",
-      "technical_feature": "Merkle-hashed evidence artifacts with ordered buffer flush",
+      "technical_feature": "Integrity-hashed evidence artifacts with ordered buffer flush",
       "security_property": "data-lifecycle",
       "relationship": "supports",
       "claim_status": "supports",

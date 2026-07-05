@@ -4,7 +4,7 @@ sidebar_label: Evidence API
 
 # Evidence API
 
-The Evidence API provides cryptographic proofs of delivery for every webhook event processed by Zen Mesh. Each delivery produces a Merkle-tree inclusion proof that can be independently verified.
+The Evidence API provides cryptographic proofs of delivery for every webhook event processed by Zen Mesh. Each delivery produces an integrity-tree inclusion proof that can be independently verified.
 
 > Status: WIRED_SANDBOX. This page describes the current contract surface and known non-claims. It is not a production-live availability claim.
 
@@ -40,7 +40,7 @@ curl -sS -H "Authorization: Bearer <api_key>" \
 ```json
 {
   "delivery_id": "dlv_abc123",
-  "merkle_root": "a1b2c3d4e5f67890abcdef1234567890abcdef1234567890abcdef1234567890",
+  "integrity_root": "a1b2c3d4e5f67890abcdef1234567890abcdef1234567890abcdef1234567890",
   "inclusion_proof": ["x1y2z3...", "p4q5r6..."],
   "leaf_hash": "abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890",
   "timestamp": "2026-07-03T12:00:03Z",
@@ -55,14 +55,14 @@ curl -sS -H "Authorization: Bearer <api_key>" \
   "https://api.zen-mesh.io/v1/tenants/<tenant_id>/sources/<source_id>/evidence?limit=10"
 ```
 
-## Verify a Merkle inclusion proof
+## Verify an inclusion proof
 
 Clients can verify delivery integrity without trusting the platform:
 
 1. Retrieve the evidence proof for the delivery
 2. Compute `SHA-256(delivery_payload + timestamp + tenant_id)`
-3. Combine with the `inclusion_proof` hashes per the Merkle tree algorithm
-4. Compare the resulting root with `merkle_root`
+3. Combine with the `inclusion_proof` hashes per the integrity tree algorithm
+4. Compare the resulting root with `integrity_root`
 
 If the computed root matches the published root, the delivery is cryptographically confirmed.
 
@@ -117,6 +117,6 @@ Trust → Evidence, Traffic → Traces
 ## Non-claims
 
 - WIRED_SANDBOX: implemented in local/sandbox runtime. Not production-live.
-- Merkle receipts are integrity-only — not auth, identity, encryption, or delivery guarantee.
+- Evidence receipts are integrity-only — not auth, identity, encryption, or delivery guarantee.
 - Evidence is created by the platform, not by direct customer write.
 - Evidence verification is an offline operation; the API does not verify on your behalf.

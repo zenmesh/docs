@@ -8,7 +8,7 @@ sidebar_label: Control Surfaces
 
 ## What Is a Control Surface?
 
-A control surface is a path to interact with Zen Mesh. Every surface reads and writes the same **Zen Configuration Contract (ZCC)** — the contract is the source of truth, not any single surface. Surfaces differ in audience, auth model, and write permissions, but they do not differ in contract validation or audit.
+A control surface is a path to interact with Zen Mesh. Every surface reads and writes the same **Configuration Contract** — the contract is the source of truth, not any single surface. Surfaces differ in audience, auth model, and write permissions, but they do not differ in contract validation or audit.
 
 Customer API and MCP are **not globally read-only**. Write status is determined at the endpoint-group or tool-group level, not globally.
 
@@ -20,7 +20,7 @@ Customer API and MCP are **not globally read-only**. Write status is determined 
 | **Customer API** | Developers, CI/CD | `/v1/...` REST | Yes | Permissioned, scoped, audited | WIRED_SANDBOX |
 | **MCP** | AI agents, operators | MCP protocol | Yes (default-on) | Disabled by default, per-tool-group enablement | PUBLIC_CONTRACT_DRAFT |
 | **CLI** | Administrators | `hermes` command | Yes | Yes | WIRED_SANDBOX |
-| **Git (ZCC)** | GitOps workflows | Git repository | Planned | Planned | PLANNED (V1.1) |
+| **Git (Contract)** | GitOps workflows | Git repository | Planned | Planned | PLANNED (V1.1) |
 | **Dashboard/BFF** | Dashboard UI only | `/api/bff/v1` | Yes | Yes (dashboard-scoped) | INTERNAL_ONLY |
 
 ## UI (Dashboard)
@@ -63,13 +63,13 @@ The command-line surface for administrators and scripting. The CLI provides dire
 - **Auth:** API key or session
 - **Status:** WIRED_SANDBOX
 
-## Git (ZCC / GitOps)
+## Git (Contract / GitOps)
 
-The declarative GitOps surface. Planned for V1.1 as a Business+ capability. Git as a ZCC control surface would allow managing Zen Mesh resources through Git repositories with pull-request-based workflows.
+The declarative GitOps surface. Planned for V1.1 as a Business+ capability. Git as a Configuration Contract control surface would allow managing Zen Mesh resources through Git repositories with pull-request-based workflows.
 
 - **Reads:** Planned
 - **Writes:** Planned (V1.1)
-- **Auth:** Git credentials + ZCC validation
+- **Auth:** Git credentials + contract validation
 - **Status:** PLANNED
 
 ## Dashboard/BFF API

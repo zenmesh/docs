@@ -18,8 +18,8 @@ How to validate Zen Mesh evidence locally and programmatically.
    - Verify `evidence_refs` point to existing zen-platform artifacts at `github.com/zenmesh/zen-platform/docs/80-EVIDENCE/`
    - Check `non_claims` for what is not claimed
 
-3. **Verify Merkle/evidence hashes** (where available)
-   - Run `make merkle-evidence-check` in zen-platform to verify Merkle tree integrity
+3. **Verify evidence signatures** (where available)
+   - Run `make evidence-integrity-check` in zen-platform to verify evidence integrity
 
 4. **Map to proof ledger**
    - Runtime: `github.com/zenmesh/zen-platform/docs/80-EVIDENCE/runtime/runtime_proof_ledger.json`
@@ -58,7 +58,7 @@ make trust-lifecycle-evidence-map-check            # Validate evidence map
 ```bash
 make docs-evidence-alignment-check                 # Docs reference current evidence
 make docs-truth-alignment-check                    # Docs truth alignment
-make merkle-evidence-check                         # Merkle evidence integrity
+make evidence-integrity-check                      # Evidence integrity
 make zenlock-rbac-contract-check                   # ZenLock RBAC contract
 ```
 

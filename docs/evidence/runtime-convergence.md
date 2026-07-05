@@ -37,4 +37,4 @@ make runtime-claims-guard-burn-down-check
 - No production readiness claimed.
 - No exactly-once, zero-loss, or general at-least-once delivery claimed.
 - No CP autonomy, relay HA, or private-edge autonomy claimed.
-- No Merkle auth/replay/identity/delivery claimed.
+- No integrity auth/replay/identity/delivery claimed.

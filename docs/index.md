@@ -26,7 +26,7 @@ Welcome to the Zen Mesh documentation. Zen Mesh delivers webhooks and events to 
 | Runtime objects | [Zen Mesh Concepts](concepts/zen-mesh-concepts) — template, blueprint, flow, endpoint, target, trace, evidence |
 | Control surfaces | [Control Surfaces](concepts/control-surfaces) — UI, Customer API, MCP, CLI, Git |
 | Traffic lifecycle | [Traffic Lifecycle](guides/traffic-lifecycle) — endpoint → flow → attempt → DLQ → retry → replay → trace → evidence |
-| Evidence and trust | [Evidence and Trust](guides/evidence-and-trust) — Merkle receipts, trace/evidence relationship, non-claims |
+| Evidence and trust | [Evidence and Trust](guides/evidence-and-trust) — Integrity receipts, trace/evidence relationship, non-claims |
 
 ## Build and Evaluate
 

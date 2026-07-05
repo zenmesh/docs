@@ -108,7 +108,7 @@ curl -sS -H "Authorization: Bearer $ZEN_API_KEY" \
   "$ZEN_API_BASE/tenants/$ZEN_TENANT_ID/evidence/<delivery_id>"
 ```
 
-See [Evidence API](./evidence) for Merkle proof verification.
+See [Evidence API](./evidence) for integrity proof verification.
 
 ## B. Write-capable path (requires permissions)
 

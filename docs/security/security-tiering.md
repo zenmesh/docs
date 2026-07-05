@@ -60,6 +60,6 @@ implementation is complete.
 | HMAC signature verification | ✓ | ✓ | ✓ | ✓ | V1 |
 | IP allowlist/block | — | ✓ | ✓ | ✓ | V1 |
 | TLS/mTLS transport | ✓ | ✓ | ✓ | ✓ | V1 |
-| Hash-chain evidence | ✓ | ✓ | ✓ | ✓ | V1 |
+| Integrity evidence | ✓ | ✓ | ✓ | ✓ | V1 |
 | Header filtering/block/transform | — | — | Planned | Planned | V1.1 |
 | Dedicated receive IP | — | — | Planned | Planned | V1.1+ |

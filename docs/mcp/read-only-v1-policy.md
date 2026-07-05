@@ -13,7 +13,7 @@ The MCP server provides both **read-only** and **read-write** tool groups for AI
 By default, the MCP server exposes read-only operational truth:
 
 - Query delivery status and history
-- Read evidence proofs and Merkle receipts
+- Read evidence proofs and integrity receipts
 - Inspect webhook source metadata
 - List configured destinations
 - Retrieve platform health information

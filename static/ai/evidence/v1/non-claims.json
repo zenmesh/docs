@@ -48,34 +48,34 @@
     "source": "Source/runtime/render/public scan - pending evidence collection"
   },
   {
-    "id": "non-claim-trust-merkle-integrity-only",
+    "id": "non-claim-trust-integrity-only",
     "category": "trust",
-    "claim": "Merkle evidence chain used for integrity verification",
-    "scope": "Not claimed. Merkle provides evidence integrity only, not an access control function.",
+    "claim": "Integrity chain used for evidence verification",
+    "scope": "Not claimed. Integrity provides evidence integrity only, not an access control function.",
     "evidence_status": "needs_revalidation",
     "source": "Source/runtime/render/public scan - pending evidence collection"
   },
   {
-    "id": "non-claim-trust-merkle-integrity-scope",
+    "id": "non-claim-trust-integrity-scope",
     "category": "trust",
-    "claim": "Merkle evidence chain used for integrity verification",
-    "scope": "Not claimed. Merkle provides evidence integrity only, not an event ordering function.",
+    "claim": "Integrity chain used for evidence verification",
+    "scope": "Not claimed. Integrity provides evidence integrity only, not an event ordering function.",
     "evidence_status": "needs_revalidation",
     "source": "Source/runtime/render/public scan - pending evidence collection"
   },
   {
-    "id": "non-claim-trust-merkle-not-workload",
+    "id": "non-claim-trust-integrity-not-workload",
     "category": "trust",
-    "claim": "Merkle evidence chain used for integrity verification",
-    "scope": "Not claimed. Merkle provides evidence integrity only, not a workload principal function.",
+    "claim": "Integrity chain used for evidence verification",
+    "scope": "Not claimed. Integrity provides evidence integrity only, not a workload principal function.",
     "evidence_status": "needs_revalidation",
     "source": "Source/runtime/render/public scan - pending evidence collection"
   },
   {
-    "id": "non-claim-trust-merkle-not-send",
+    "id": "non-claim-trust-integrity-not-send",
     "category": "trust",
-    "claim": "Merkle evidence chain used for integrity verification",
-    "scope": "Not claimed. Merkle provides evidence integrity only, not a send confirmation function.",
+    "claim": "Integrity chain used for evidence verification",
+    "scope": "Not claimed. Integrity provides evidence integrity only, not a send confirmation function.",
     "evidence_status": "needs_revalidation",
     "source": "Source/runtime/render/public scan - pending evidence collection"
   },
@@ -254,10 +254,10 @@
     "source": "Source/runtime/render/public scan - pending evidence collection"
   },
   {
-    "id": "non-claim-merkle-not-auth",
+    "id": "non-claim-integrity-not-auth",
     "category": "trust",
-    "claim": "Merkle provides authentication, identity, encryption, or replay prevention",
-    "scope": "Not claimed. Merkle provides evidence bundle inclusion/integrity comparison only.",
+    "claim": "Integrity provides authentication, identity, encryption, or replay prevention",
+    "scope": "Not claimed. Integrity provides evidence bundle inclusion/comparison only.",
     "evidence_status": "needs_revalidation",
     "source": "Source/runtime/render/public scan - pending evidence collection"
   },

@@ -5,11 +5,7 @@ sidebar_class_name: generated
 
 # MCP Tools Reference
 
-:::note
-This page is hand-curated from the Go tool definitions in `src/saas/mcp/tools/handler.go` and `src/saas/mcp/evidence/tools.go`. The long-term plan is to generate this from MCP tool schema manifests.
-:::
-
-## Default Surface (Read-Only Operational Truth)
+## Read Tools
 
 ## zen_get_health
 Get zen-back health status (calls real zen-back `/api/v1/mcp/health` endpoint).
@@ -132,28 +128,3 @@ List explici../ai/evidence-v1-supersession.md#non-claims organized by category.
 
 - **Auth**: MCP API key required
 - **Input**: None
-
-## list_merkle_evidence_refs
-List Merkle evidence reference metadata.
-
-- **Auth**: MCP API key required
-- **Input**: None
-- **Note**: Integrity receipts only. NOT authentication, identity, encryption, replay prevention, or delivery guarantee.
-
-## Draft System Tools
-
-The [Draft System](./draft-system) provides tools for agents to propose infrastructure changes. These are available when draft surface is enabled:
-
-- `zen_draft_endpoint` — Create a draft endpoint proposal (mutating but gated — does not modify production)
-- `zen_list_drafts` — List pending drafts awaiting human review
-- `zen_show_draft` — Show draft details including proposed spec
-- `zen_discard_draft` — Discard a pending draft
-
-All draft creation tools are non-mutating with respect to production — drafts are stored as proposals. Apply is exclusively human.
-
-## Admin/Mutation Tools (Not on Default Surface)
-
-These tools require explicit admin/auth surface elevation:
-
-- `create_api_key` — Create a new API key (mutating)
-- `revoke_api_key` — Revoke an API key (mutating)

@@ -18,7 +18,7 @@ This directory contains machine-readable evidence artifacts for AI-assisted anal
 - **Proof statuses**: `victory_locked`, `proven_local_mock`, `implementation_present`, `planned`, `blocked`, `not_claimed`
 - **No forbidden status words**: certified, authorized, compliant, satisfied, guaranteed
 - **No FedRAMP, HIPAA/BAA, SOC2 certified, PCI compliant claims**
-- **No Merkle auth/replay/identity/delivery claims**
+- **No integrity auth/replay/identity/delivery claims**
 - **No secrets, employee names, or internal-only paths**
 
 ## Source Evidence

@@ -16,7 +16,7 @@
     {"id": "V1SV-009", "attack": "Tenant isolation (application layer)", "status": "PROVEN", "scope": "local_sandbox_negative_tests"},
     {"id": "V1SV-010", "attack": "API-key enumeration resistance", "status": "PROVEN", "scope": "negative_tested"},
     {"id": "V1SV-011", "attack": "MCP permission boundary", "status": "PROVEN", "scope": "handler_level_negative_tests"},
-    {"id": "V1SV-012", "attack": "Hash-chain evidence integrity", "status": "PROVEN", "scope": "automated_merkle_verification"},
+    {"id": "V1SV-012", "attack": "Evidence integrity", "status": "PROVEN", "scope": "automated_verification"},
     {"id": "V1SV-013", "attack": "Outbound-only edge delivery model", "status": "PROVEN", "scope": "architectural_local_sandbox"},
     {"id": "V1SV-014", "attack": "Stripe cloud E2E proof", "status": "CLOUD_GATED", "scope": "historical_gke_proof", "note": "Historical proof exists on GKE. Current revalidation AUTHORIZATION_BLOCKED — NOT_CURRENTLY_VALIDATED"},
     {"id": "V1SV-015", "attack": "SSRF on SaaS dispatch", "status": "BACKLOG", "scope": "scoped_controls_exist", "note": "Scoped SSRF controls exist (ValidateTargetURL, SSRFDialContext, FLOW-02/03 hardening). SaaS-wide dispatch not validated."},

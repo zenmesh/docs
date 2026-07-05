@@ -24,7 +24,7 @@ All evidence is **local/demo/sandbox only**. Not customer-ready or production-li
 | Duplicate detection via idempotency keys | PROVEN | local/mock |
 | mTLS on internal paths | PROVEN | local/mock |
 | HMAC payload verification with replay protection | PROVEN | local/mock |
-| Machine-readable evidence with Merkle integrity | PROVEN | local/mock |
+| Machine-readable evidence with integrity | PROVEN | local/mock |
 | SPIFFE/SPIRE identity for workload auth | PROVEN | local/mock |
 
 ## What Is Partial / Planned
@@ -56,7 +56,7 @@ All evidence is **local/demo/sandbox only**. Not customer-ready or production-li
 - **mTLS**: Enforced on internal paths
 - **HMAC-SHA256**: Payload verification with nonce-based replay protection
 - **SPIFFE/SPIRE**: Workload identity for service auth (SVID rotation not yet automated)
-- **Machine-readable evidence**: Delivery outcomes recorded with Merkle integrity verification
+- **Machine-readable evidence**: Delivery outcomes recorded with integrity verification
 
 ## Test Methodology
 

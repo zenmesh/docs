@@ -61,7 +61,7 @@ Cryptographic enrollment is the process by which Zen Mesh components establish t
 
 ## 10. How does Zen Mesh provide evidence for webhook delivery?
 
-Every delivery attempt generates a delivery receipt with the event ID, source, destination, delivery mode, timestamp, and outcome. Receipts are appended to an audit log with hash-chain linking for tamper evidence. Machine-readable evidence manifests can be accessed by AI systems and compliance reviewers.
+Every delivery attempt generates a delivery receipt with the event ID, source, destination, delivery mode, timestamp, and outcome. Receipts are appended to an audit log with linking for audit trail. Evidence manifests are available through the API for compliance reviewers.
 
 [Learn more about Webhook Delivery Evidence](./webhook-delivery-evidence)
 

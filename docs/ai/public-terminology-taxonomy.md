@@ -18,14 +18,14 @@ Customer-facing website and docs copy must use **public capability names**, not 
 | DeliveryPolicy TLS/trust-chain controls | N086 |
 | Sandbox delivery validation (direct / egress / relay) | FLOW-01, FLOW-02, FLOW-03, FLOW123 |
 | Planes management UI (T1) | L1 /planes T1 as internal shorthand |
-| Hash-chain integrity comparison | HELPER## / H## task labels |
+| Integrity comparison | HELPER## / H## task labels |
 
 `internal_ref` fields in../ai/evidence-v1-supersession.md## non-claims../ai/evidence-v1-supersession.md## non-claims) may retain internal linkage for machines only.
 
 ## Proof boundaries
 
-- **Proof** —../ai/evidence-v1-supersession.md#manifest../ai/evidence-v1-supersession.md#manifest) and hash-chain receipts
-- **Merkle** — integrity/tamper-evidence only; not authentication, identity, encryption, or replay prevention
+- **Proof** —../ai/evidence-v1-supersession.md#manifest../ai/evidence-v1-supersession.md#manifest) and evidence receipts
+- **Evidence integrity** — integrity/tamper-evidence only; not authentication, identity, encryption, or replay prevention
 
 ## Validators
 

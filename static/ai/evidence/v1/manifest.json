@@ -65,7 +65,7 @@
         "zen-platform:docs/80-EVIDENCE/runtime/runtime_truth_read_model_minimum.json",
         "zen-platform:scripts/validate-evidence-docs.mjs"
       ],
-      "merkle_ref": "mock:runtime-proof-001-merkle-root",
+      "integrity_ref": "mock:runtime-proof-001-merkle-root",
       "non_claims": [
         "Not exactly-once delivery",
         "Not zero-loss delivery",
@@ -94,7 +94,7 @@
       "validator_refs": [
         "zen-platform:docs/80-EVIDENCE/runtime/runtime_truth_read_model_minimum.json"
       ],
-      "merkle_ref": "mock:runtime-proof-002-merkle-root",
+      "integrity_ref": "mock:runtime-proof-002-merkle-root",
       "non_claims": [
         "Not CP autonomy for all scenarios",
         "Not zero-loss",
@@ -121,7 +121,7 @@
         "zen-platform:docs/80-EVIDENCE/runtime/victory-locks/runtime_convergence_proof_003_victory_lock.json"
       ],
       "validator_refs": [],
-      "merkle_ref": "mock:runtime-proof-003-merkle-root",
+      "integrity_ref": "mock:runtime-proof-003-merkle-root",
       "non_claims": [
         "Not exactly-once",
         "Not zero-loss",
@@ -148,7 +148,7 @@
         "zen-platform:docs/80-EVIDENCE/runtime/victory-locks/runtime_convergence_proof_004_victory_lock.json"
       ],
       "validator_refs": [],
-      "merkle_ref": "mock:runtime-proof-004-merkle-root",
+      "integrity_ref": "mock:runtime-proof-004-merkle-root",
       "non_claims": [
         "Not exactly-once",
         "Not replay prevention",
@@ -175,7 +175,7 @@
         "zen-platform:docs/80-EVIDENCE/runtime/victory-locks/runtime_convergence_proof_005_victory_lock.json"
       ],
       "validator_refs": [],
-      "merkle_ref": "mock:runtime-proof-005-merkle-root",
+      "integrity_ref": "mock:runtime-proof-005-merkle-root",
       "non_claims": [
         "Not all conflicts resolvable",
         "Not zero-loss",
@@ -203,7 +203,7 @@
         "zen-platform:docs/80-EVIDENCE/runtime/victory-locks/runtime_convergence_proof_006_victory_lock.json"
       ],
       "validator_refs": [],
-      "merkle_ref": "mock:runtime-proof-006-merkle-root",
+      "integrity_ref": "mock:runtime-proof-006-merkle-root",
       "non_claims": [
         "Not all drift auto-corrected",
         "Not zero-loss",
@@ -230,7 +230,7 @@
         "zen-platform:docs/80-EVIDENCE/runtime/victory-locks/runtime_convergence_proof_007_victory_lock.json"
       ],
       "validator_refs": [],
-      "merkle_ref": "mock:runtime-proof-007-merkle-root",
+      "integrity_ref": "mock:runtime-proof-007-merkle-root",
       "non_claims": [
         "Not zero-loss for all buffer scenarios",
         "Not exactly-once",
@@ -257,7 +257,7 @@
         "zen-platform:docs/80-EVIDENCE/runtime/victory-locks/runtime_convergence_proof_008_victory_lock.json"
       ],
       "validator_refs": [],
-      "merkle_ref": "mock:runtime-proof-008-merkle-root",
+      "integrity_ref": "mock:runtime-proof-008-merkle-root",
       "non_claims": [
         "Not general relay availability",
         "Not zero-loss",
@@ -284,7 +284,7 @@
         "zen-platform:docs/80-EVIDENCE/runtime/victory-locks/runtime_convergence_proof_009_victory_lock.json"
       ],
       "validator_refs": [],
-      "merkle_ref": "mock:runtime-proof-009-merkle-root",
+      "integrity_ref": "mock:runtime-proof-009-merkle-root",
       "non_claims": [
         "Not HA guarantee",
         "Not global failover",
@@ -312,7 +312,7 @@
         "zen-platform:docs/80-EVIDENCE/runtime/victory-locks/runtime_convergence_proof_010_victory_lock.json"
       ],
       "validator_refs": [],
-      "merkle_ref": "mock:runtime-proof-010-merkle-root",
+      "integrity_ref": "mock:runtime-proof-010-merkle-root",
       "non_claims": [
         "Not private data plane general availability",
         "Not customer-owned guarantee",
@@ -342,7 +342,7 @@
         "zen-platform:docs/10-ARCHITECTURE/SECURITY.md",
         "zen-platform:docs/10-ARCHITECTURE/COMMITMENTS.md"
       ],
-      "merkle_ref": "mock:trust-proof-001-merkle-root",
+      "integrity_ref": "mock:trust-proof-001-merkle-root",
       "non_claims": [
         "Not SPIFFE everywhere",
         "Not data-plane SPIFFE identity",
@@ -370,7 +370,7 @@
       "validator_refs": [
         "zen-platform:docs/10-ARCHITECTURE/SECURITY.md"
       ],
-      "merkle_ref": "mock:trust-proof-002-merkle-root",
+      "integrity_ref": "mock:trust-proof-002-merkle-root",
       "non_claims": [
         "Not mTLS everywhere",
         "Not data-plane mTLS",
@@ -398,7 +398,7 @@
         "zen-platform:docs/10-ARCHITECTURE/SECURITY.md",
         "zen-platform:docs/10-ARCHITECTURE/COMMITMENTS.md"
       ],
-      "merkle_ref": "mock:trust-proof-003-merkle-root",
+      "integrity_ref": "mock:trust-proof-003-merkle-root",
       "non_claims": [
         "Not blanket zero-trust",
         "Not data-plane zero-trust",
@@ -415,8 +415,8 @@
     {
       "id": "trust-evidence-integrity",
       "proof_id": "TRUST-PROOF-004",
-      "name": "Evidence Integrity via Merkle Hash Chain",
-      "description": "Merkle hash chain used for evidence integrity verification. Fixture-validated (4 files PASS). Merkle is evidence integrity only \u2014 it is not an access control function, access decision rule, or send confirmation.",
+      "name": "Evidence Integrity via Integrity Chain",
+      "description": "Integrity chain used for evidence integrity verification. Fixture-validated (4 files PASS). Integrity verification is evidence integrity only \u2014 it is not an access control function, access decision rule, or send confirmation.",
       "proof_status": "proven_local_mock",
       "victory_locked": false,
       "evidence_refs": [
@@ -425,9 +425,9 @@
       "validator_refs": [
         "zen-platform:scripts/merkle_evidence_verify.py"
       ],
-      "merkle_ref": "mock:trust-proof-004-merkle-root",
+      "integrity_ref": "mock:trust-proof-004-merkle-root",
       "non_claims": [
-        "Merkle provides evidence integrity comparison only"
+        "Integrity provides evidence comparison only"
       ],
       "plane_refs": [
         "CONTROL_PLANE",
@@ -448,7 +448,7 @@
       "validator_refs": [
         "zen-platform:docs/10-ARCHITECTURE/SECURITY.md"
       ],
-      "merkle_ref": "mock:trust-proof-005-merkle-root",
+      "integrity_ref": "mock:trust-proof-005-merkle-root",
       "non_claims": [
         "Not all paths secretless",
         "Not audited for secret hygiene",
@@ -473,7 +473,7 @@
       "validator_refs": [
         "zen-platform:docs/10-ARCHITECTURE/COMMITMENTS.md"
       ],
-      "merkle_ref": "mock:trust-proof-006-merkle-root",
+      "integrity_ref": "mock:trust-proof-006-merkle-root",
       "non_claims": [
         "Not RBAC proven in failure scenarios",
         "Not ABAC implemented",
@@ -498,7 +498,7 @@
       "validator_refs": [
         "zen-platform:docs/10-ARCHITECTURE/COMMITMENTS.md"
       ],
-      "merkle_ref": "mock:trust-proof-007-merkle-root",
+      "integrity_ref": "mock:trust-proof-007-merkle-root",
       "non_claims": [
         "Not rotation implemented in runtime",
         "Not revocation proven in failure scenarios",
@@ -523,7 +523,7 @@
         "zen-platform:docs/80-EVIDENCE/runtime/evidence_buffer_flush_execution.json"
       ],
       "validator_refs": [],
-      "merkle_ref": "mock:trust-proof-008-merkle-root",
+      "integrity_ref": "mock:trust-proof-008-merkle-root",
       "non_claims": [
         "Not compliance-audited",
         "Not external auditor reviewed",
@@ -540,8 +540,8 @@
     {
       "id": "trust-tamper-evidence",
       "proof_id": "TRUST-PROOF-009",
-      "name": "Tamper Evidence via Merkle Chain",
-      "description": "Merkle hash chain provides tamper detection for evidence artifacts. Any modification changes the hash. Local mock only.",
+      "name": "Tamper Evidence via Integrity Chain",
+      "description": "Integrity chain provides tamper detection for evidence artifacts. Any modification changes the hash. Local mock only.",
       "proof_status": "proven_local_mock",
       "victory_locked": false,
       "evidence_refs": [
@@ -550,9 +550,9 @@
       "validator_refs": [
         "zen-platform:scripts/merkle_evidence_verify.py"
       ],
-      "merkle_ref": "mock:trust-proof-009-merkle-root",
+      "integrity_ref": "mock:trust-proof-009-merkle-root",
       "non_claims": [
-        "Merkle provides evidence integrity comparison only",
+        "Integrity provides evidence comparison only",
         "Not production-ready",
         "Not penetration-tested"
       ],
@@ -576,7 +576,7 @@
         "zen-platform:docs/10-ARCHITECTURE/FRONTEND_BACKEND_GAPS.md"
       ],
       "validator_refs": [],
-      "merkle_ref": "mock:trust-proof-010-merkle-root",
+      "integrity_ref": "mock:trust-proof-010-merkle-root",
       "non_claims": [
         "Not PCI-DSS attestation",
         "Not SOC2 audit attestation",
@@ -597,7 +597,7 @@
       "id": "evidence-runtime-proof-matrix",
       "proof_id": "EVIDENCE-MATRIX-007",
       "name": "Runtime Proof Matrix",
-      "description": "18-entry runtime proof matrix covering delivery, convergence, visibility, route-truth verification, failover, retry, Merkle integrity, API/MCP surfaces, conflict reconciliation, drift, CP outage, buffer flush, non-claims, and governance. Local mock / implementation only. Validated with 15-check validator.",
+      "description": "18-entry runtime proof matrix covering delivery, convergence, visibility, route-truth verification, failover, retry, evidence integrity, API/MCP surfaces, conflict reconciliation, drift, CP outage, buffer flush, non-claims, and governance. Local mock / implementation only. Validated with 15-check validator.",
       "proof_status": "implementation_present",
       "victory_locked": false,
       "evidence_refs": [
@@ -607,13 +607,13 @@
       "validator_refs": [
         "zen-platform:scripts/validation/runtime_proof_matrix_check.py"
       ],
-      "merkle_ref": "mock:evidence-runtime-proof-matrix-merkle-root",
+      "integrity_ref": "mock:evidence-runtime-proof-matrix-merkle-root",
       "non_claims": [
         "Not production-live runtime proofs",
         "Matrix is governance artifact, not runtime proof",
         "All runtime proofs are local/mock deterministic",
         "Non-claims: exactly-once, zero-loss, general at-least-once, relay HA, production zero-trust, compliance certification",
-        "Merkle provides evidence integrity comparison only"
+        "Integrity provides evidence comparison only"
       ],
       "plane_refs": [
         "CONTROL_PLANE",
@@ -629,7 +629,7 @@
       "id": "evidence-completion-gate",
       "proof_id": "EVIDENCE-COMPLETION-008",
       "name": "Completion Evidence Gate",
-      "description": "Completion evidence contract enforcing that validated non-UI work must publish evidence artifacts, Merkle leaf/root inclusion, docs discoverability, and explicit non-claims. 7 backfilled entries for tasks 002-008. 15-check validator. Merkle-indexed (7 leaves).",
+      "description": "Completion evidence contract enforcing that validated non-UI work must publish evidence artifacts, integrity leaf/root inclusion, docs discoverability, and explicit non-claims. 7 backfilled entries for tasks 002-008. 15-check validator. Integrity-indexed (7 leaves).",
       "proof_status": "implementation_present",
       "victory_locked": false,
       "evidence_refs": [
@@ -639,10 +639,10 @@
       "validator_refs": [
         "zen-platform:scripts/validation/completion_evidence_gate_check.py"
       ],
-      "merkle_ref": "mock:evidence-completion-gate-merkle-root",
+      "integrity_ref": "mock:evidence-completion-gate-merkle-root",
       "non_claims": [
         "Not production-live completion gate",
-        "Merkle provides evidence integrity comparison only",
+        "Integrity provides evidence comparison only",
         "Completion evidence is governance metadata, not runtime proof",
         "No production-live status claimed for any backfilled task"
       ],
@@ -658,10 +658,10 @@
       ]
     },
     {
-      "id": "evidence-merkle-integrity-index",
-      "proof_id": "EVIDENCE-MERKLE-INDEX-008",
-      "name": "Merkle Evidence Index (Completion-Indexed)",
-      "description": "Canonical Merkle evidence index with 5 bundles including completion evidence gate (7 leaves). All Merkle roots deterministically generated and verified. Provides integrity comparison only. See non-claims for scope.",
+      "id": "evidence-integrity-index",
+      "proof_id": "EVIDENCE-INTEGRITY-INDEX-008",
+      "name": "Integrity Evidence Index (Completion-Indexed)",
+      "description": "Canonical integrity evidence index with 5 bundles including completion evidence gate (7 leaves). All integrity roots deterministically generated and verified. Provides comparison only. See non-claims for scope.",
       "proof_status": "proven_local_mock",
       "victory_locked": false,
       "evidence_refs": [
@@ -673,9 +673,9 @@
         "zen-platform:scripts/validation/merkle_evidence_verify.py",
         "zen-platform:scripts/validation/merkle_evidence_generator.py"
       ],
-      "merkle_ref": "mock:evidence-merkle-integrity-index-merkle-root",
+      "integrity_ref": "mock:evidence-merkle-integrity-index-merkle-root",
       "non_claims": [
-        "Merkle provides evidence integrity comparison only",
+        "Integrity provides evidence comparison only",
         "Not auth, identity verification, or principal attestation",
         "Not encryption, replay prevention, or access control",
         "Not delivery guarantee or ordering guarantee"
@@ -703,7 +703,7 @@
       "validator_refs": [
         "zen-platform:scripts/validation/customer_api_mcp_truth_check.py"
       ],
-      "merkle_ref": "mock:evidence-customer-api-mcp-readonly-merkle-root",
+      "integrity_ref": "mock:evidence-customer-api-mcp-readonly-merkle-root",
       "non_claims": [
         "Not production-live MCP",
         "Default surface is read-only only",
@@ -734,14 +734,14 @@
       "validator_refs": [
         "zen-platform:scripts/validation/funding_alignment_evidence_check.py"
       ],
-      "merkle_ref": "mock:evidence-funding-alignment-readiness-merkle-root",
+      "integrity_ref": "mock:evidence-funding-alignment-readiness-merkle-root",
       "non_claims": [
         "Not SR&ED eligibility claim or approval",
         "Not IRAP eligibility claim or approval",
         "Not funding eligibility, qualification, or approval of any kind",
         "No payroll, cost, tax, or private financial data published",
         "Technical evidence mapping only for future review readiness support",
-        "Merkle provides evidence integrity comparison only"
+        "Integrity provides evidence comparison only"
       ],
       "plane_refs": [
         "CONTROL_PLANE",
@@ -783,7 +783,7 @@
       "validator_refs": [
         "scripts/validation/platform_layer_matrix_check.py"
       ],
-      "merkle_ref": "mock:platform_layer_matrix_merkle_placeholder"
+      "integrity_ref": "mock:platform_layer_matrix_merkle_placeholder"
     },
     {
       "id": "evidence-traffic-plane-delivery-attempt",
@@ -809,12 +809,12 @@
       "validator_refs": [
         "scripts/validation/traffic_plane_p0_sequence_check.py"
       ],
-      "merkle_ref": "mock:traffic_plane_delivery_attempt_merkle_placeholder"
+      "integrity_ref": "mock:traffic_plane_delivery_attempt_merkle_placeholder"
     },
     {
       "id": "evidence-deploy-artifact-contract",
       "name": "Deploy Artifact Contract",
-      "description": "Structured deploy-as-artifact contract for local-k3d/sandbox. Deploy produces Merkle-indexed artifacts with source, images, charts, cluster target, plane/layer refs, validation, freshness, rollback.",
+      "description": "Structured deploy-as-artifact contract for local-k3d/sandbox. Deploy produces integrity-indexed artifacts with source, images, charts, cluster target, plane/layer refs, validation, freshness, rollback.",
       "category": "evidence",
       "status": "contract_only",
       "plane_refs": [
@@ -829,7 +829,7 @@
         "L3_TRAFFIC"
       ],
       "evidence_source": "docs/80-EVIDENCE/deploy/deploy_artifact_contract.json",
-      "merkle_ref": "mock:evidence-deploy-artifact-contract",
+      "integrity_ref": "mock:evidence-deploy-artifact-contract",
       "validator": "scripts/validation/deploy_artifact_contract_check.py",
       "non_claims": [
         "Not production-live deploy",
@@ -856,7 +856,7 @@
         "L3_TRAFFIC"
       ],
       "evidence_source": "docs/80-EVIDENCE/deploy/deploy_artifact_contract.schema.json",
-      "merkle_ref": "mock:evidence-deploy-artifact-schema",
+      "integrity_ref": "mock:evidence-deploy-artifact-schema",
       "validator": "scripts/validation/deploy_artifact_contract_check.py",
       "non_claims": [
         "Schema definition only \u2014 no deploy execution"
@@ -865,7 +865,7 @@
     {
       "id": "evidence-deploy-artifact-validator",
       "name": "Deploy Artifact Validator",
-      "description": "Validator enforcing deploy artifact contract. Checks required fields, cluster_ref against clusters.yaml, image digest on applied/validated, Merkle on validated, plane/layer refs, forbidden claims, no secrets.",
+      "description": "Validator enforcing deploy artifact contract. Checks required fields, cluster_ref against clusters.yaml, image digest on applied/validated, integrity on validated, plane/layer refs, forbidden claims, no secrets.",
       "category": "evidence",
       "status": "implementation_present",
       "plane_refs": [
@@ -875,7 +875,7 @@
         "L1_BASE"
       ],
       "evidence_source": "scripts/validation/deploy_artifact_contract_check.py",
-      "merkle_ref": "mock:evidence-deploy-artifact-validator",
+      "integrity_ref": "mock:evidence-deploy-artifact-validator",
       "validator": "scripts/validation/deploy_artifact_contract_check.py",
       "non_claims": [
         "Validator only \u2014 does not run deploys"
@@ -935,7 +935,7 @@
       "name": "Sandbox delivery: direct public-target path",
       "status": "victory_locked",
       "evidence_scope": "proven_local_mock",
-      "merkle_ref": "docs/80-EVIDENCE/merkle/flow01_validated_merkle.json",
+      "integrity_ref": "docs/80-EVIDENCE/merkle/flow01_validated_merkle.json",
       "validate_target": "make validate-runtime-flow01",
       "non_claim": "Demo/sandbox proof only. Not production-live, sandbox/local validation only."
     },
@@ -944,7 +944,7 @@
       "name": "Sandbox delivery: egress direct mTLS path",
       "status": "victory_locked",
       "evidence_scope": "proven_local_mock",
-      "merkle_ref": "docs/80-EVIDENCE/merkle/flow02_validated_merkle.json",
+      "integrity_ref": "docs/80-EVIDENCE/merkle/flow02_validated_merkle.json",
       "validate_target": "make validate-runtime-flow02",
       "non_claim": "Demo/sandbox proof only. Not production-live, sandbox/local validation only."
     },
@@ -953,7 +953,7 @@
       "name": "Sandbox delivery: generic VM relay path",
       "status": "victory_locked",
       "evidence_scope": "proven_local_mock",
-      "merkle_ref": "docs/80-EVIDENCE/merkle/flow03_sandbox_vm_nftables_2026_05_25_manifest.json",
+      "integrity_ref": "docs/80-EVIDENCE/merkle/flow03_sandbox_vm_nftables_2026_05_25_manifest.json",
       "validate_target": "make flow03-permanence-check",
       "non_claim": "Sandbox PASS only. Not production-live, sandbox/local validation only."
     },
@@ -962,7 +962,7 @@
       "name": "Cloud demo: Stripe relay path (GKE to k3d edge)",
       "status": "victory_locked",
       "evidence_scope": "proven_cloud_demo",
-      "merkle_ref": "docs/80-EVIDENCE/merkle/stripe_flow03_e2e_gke_k3d_merkle.json",
+      "integrity_ref": "docs/80-EVIDENCE/merkle/stripe_flow03_e2e_gke_k3d_merkle.json",
       "validate_target": "make validate-flow03-stripe-gke",
       "non_claim": "Stripe Sandbox only. GKE cloud-validated but not production. Not customer-ready."
     }
@@ -983,14 +983,14 @@
     "This does NOT claim production readiness for any capability",
     "Victory-locked proofs are scenario-specific, not general guarantees",
     "All proofs are local mock harness or cloud-demo (Stripe relay-path on GKE) unless stated otherwise",
-    "Merkle evidence chain provides integrity only \u2014 it does not provide ordering guarantees, principal verification, or send confirmations",
+    "Evidence integrity chain provides integrity only \u2014 it does not provide ordering guarantees, principal verification, or send confirmations",
     "No exactly-once delivery claim is made",
     "No zero-loss delivery claim is made",
     "No FedRAMP assessment claim",
     "No HIPAA business associate agreement claim",
     "No SOC2 audit attestation or PCI attestation claim",
     "V1 evidence-first governance: canonical failure-stop on script failure",
-    "Accepted deploy/UI/completion evidence artifacts require hash-chain inclusion; integrity comparison only \u2014 not auth, identity, encryption, or replay prevention",
+    "Accepted deploy/UI/completion evidence artifacts require integrity chain inclusion; comparison only \u2014 not auth, identity, encryption, or replay prevention",
     "NOT product-pass: Planes management UI (T1); management-console boring-readiness NOT_READY on mainline",
     "Relay-path sandbox delivery proof is mandatory for demo scope; direct/egress/relay receipts per capability proof_status \u2014 not platform go-live",
     "Runtime workload identity (SVID) rotation is not proven on mainline; DeliveryPolicy TLS/trust-chain L2 controls deferred \u2014 not PASS",

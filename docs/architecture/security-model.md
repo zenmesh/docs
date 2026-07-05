@@ -70,4 +70,4 @@ Sensitive material (enrollment credentials, HMAC keys, mTLS certs) is managed by
 
 ## Audit Trail
 
-Every administrative action and delivery event is logged with tamper-detection via audit hash chains.
+Every administrative action and delivery event is logged with tamper-detection via audit integrity chains.

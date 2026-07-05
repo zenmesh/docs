@@ -42,7 +42,7 @@ All capabilities are classified with a proof status. See../ai/evidence-v1-supers
 
 ## Edge Lite
 
-| Capability | Proof ID | Status | Evidence Path | Merkle Root |
+| Capability | Proof ID | Status | Evidence Path | Integrity Root |
 |---|---|---|---|---|
 | Docker runtime wedge | H484 | PASS | `checkpoints/CHECKPOINT_H484_...` | `edge_lite_h484_merkle.json` |
 | Real enrollment/TLS wedge | H487 | PASS | `checkpoints/CHECKPOINT_H487_...` | `edge_lite_h487_merkle.json` |
@@ -62,8 +62,8 @@ All capabilities are classified with a proof status. See../ai/evidence-v1-supers
 
 ## Gateway API (Local Proof)
 
-| Capability | Proof ID | Status | Evidence Path | Merkle Root |
-|---|---|---|---|---|
+| Capability | Proof ID | Status | Evidence Path | Integrity Root |
+|---|---|---|---|---|---|
 | MetalLB Programmed=True | H481 | PASS | `checkpoints/CHECKPOINT_H481_...` | `gateway_api_h500_merkle.json` |
 | Traffic proof (5/5) | H482 | PASS | `checkpoints/CHECKPOINT_H482_...` | `gateway_api_h500_merkle.json` |
 | Local evidence closeout | H483 | PASS | `checkpoints/CHECKPOINT_H483_...` | `gateway_api_h500_merkle.json` |

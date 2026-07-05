@@ -72,7 +72,7 @@ Navigate to **Traffic → Traces** and **Traffic → Payloads**.
 
 ## 10. Inspect Evidence
 
-Navigate to **Trust → Evidence**. Evidence is cryptographic delivery proof with Merkle integrity verification.
+Navigate to **Trust → Evidence**. Evidence is cryptographic delivery proof with integrity verification.
 
 ## 11. Where API and MCP Fit
 

@@ -4,7 +4,7 @@ sidebar_label: API Overview
 
 # API Overview
 
-The Zen Mesh API is one control surface for the [Zen Configuration Contract](../product/zen-configuration-contract). It complements the UI, CLI, MCP, and Git surfaces. The contract — not any single surface — is the source of truth. See [How Zen Works](../start-here/how-zen-works) for the full mental model.
+The Zen Mesh API is one control surface for the [Configuration Contract](../product/zen-configuration-contract). It complements the UI, CLI, MCP, and Git surfaces. The contract — not any single surface — is the source of truth. See [How Zen Works](../start-here/how-zen-works) for the full mental model.
 
 > Status: PUBLIC_CONTRACT_DRAFT. This page describes the API surface groups and their current maturity. Individual endpoints may carry different statuses. See the [API Status Matrix](./status) for per-group status.
 

@@ -31,7 +31,7 @@ This page maps where Zen Mesh can help customers produce or organize evidence fo
 
 | Control / Area | Customer Objective | How Zen Mesh Helps | Evidence Source | Customer Responsibility | Zen Mesh Limitation | Coverage Level | Plan / Export Note |
 |---|---|---|---|---|---|---|---|
-| CC3.x — Communication | Evidence of delivery for customer reporting | Delivery receipts, Merkle-anchored evidence ledger | Runtime proof ledger, Merkle integrity | Retain evidence for audit period | Evidence retention is plan-dependent | Strong | Export via API; S3 export planned |
+| CC3.x — Communication | Evidence of delivery for customer reporting | Delivery receipts, evidence ledger | Runtime proof ledger, evidence integrity | Retain evidence for audit period | Evidence retention is plan-dependent | Strong | Export via API; S3 export planned |
 | CC6.1 — Access control | Logical and physical access controls | API token auth, tenant isolation, mTLS between components | `TRUST-PROOF-001`, `TRUST-PROOF-002` | Manage API tokens, review access periodically | Token lifecycle is customer-managed | Strong | |
 | CC6.x — Security monitoring | Monitor delivery security | HMAC payload signing, delivery receipts, anomaly detection | `TRUST-PROOF-003`, delivery status | Monitor delivery failures and signing mismatches | HMAC covers integrity, not delivery guarantee | Strong | |
 | CC7.x — Change management | Track configuration changes | Flow versioning, draft/publish workflow, audit trail | Flow API, event history | Review configuration changes periodically | No external approval gate | Partial | |
@@ -58,7 +58,7 @@ This page maps where Zen Mesh can help customers produce or organize evidence fo
 | PR.DS — Data security | Protect delivery payloads | TLS 1.3, mTLS, HMAC payload signing | `TRUST-PROOF-003`, `TRUST-PROOF-006` | Encrypt payloads at rest if required | Payload encryption in transit; at-rest is customer responsibility | Strong |
 | PR.IP — Information protection | Configuration change management | Flow versioning, draft/publish workflow | Flow API, event history | Implement external change approval | No external approval workflow | Partial |
 | DE.CM — Continuous monitoring | Monitor delivery health | Delivery status, circuit breaker, delivery receipts | Runtime proof ledger | Monitor alerts and delivery failures | Monitoring is delivery-scoped | Partial |
-| RS.CO — Response communication | Evidence for incident response | Delivery receipts, audit log, Merkle integrity | Delivery status API, Merkle ledger | Include Zen Mesh evidence in IR plan | Evidence is delivery-scoped; no SIEM integration | Partial |
+| RS.CO — Response communication | Evidence for incident response | Delivery receipts, audit log, evidence integrity | Delivery status API, evidence ledger | Include Zen Mesh evidence in IR plan | Evidence is delivery-scoped; no SIEM integration | Partial |
 
 ## CIS Controls
 

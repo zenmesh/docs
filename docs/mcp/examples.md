@@ -40,7 +40,7 @@ Get the evidence receipt for that delivery
 ```json
 {
   "delivery_id": "dlv_abc123",
-  "merkle_root": "a1b2c3d4e5f6...",
+  "integrity_root": "a1b2c3d4e5f6...",
   "inclusion_proof": ["..."],
   "timestamp": "2026-06-01T12:00:03Z"
 }

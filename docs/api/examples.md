@@ -71,7 +71,7 @@ Response:
 ```json
 {
   "delivery_id": "dlv_abc123",
-  "merkle_root": "a1b2c3d4e5f67890abcdef1234567890abcdef1234567890abcdef1234567890",
+  "integrity_root": "a1b2c3d4e5f67890abcdef1234567890abcdef1234567890abcdef1234567890",
   "inclusion_proof": ["x1y2z3...", "p4q5r6..."],
   "leaf_hash": "abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890",
   "timestamp": "2026-07-03T12:00:03Z",

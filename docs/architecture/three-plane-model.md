@@ -89,4 +89,4 @@ Don't just take our word for the architecture. Zen's public claims are mapped to
 - [Capability manifest](../ai/evidence-v1-supersession.md#manifest) — proof_status and evidence scope per capability
 - [Non-claims](../ai/evidence-v1-supersession.md#non-claims) — what Zen Mesh does **not** claim
 
-**Claim boundaries:** Hash-chain and Merkle receipts are **integrity / tamper evidence only** — not authentication, encryption, or replay prevention. Idempotency helps detect and limit duplicates; it is **not** replay-proof delivery.
+**Claim boundaries:** Integrity receipts are **integrity / tamper evidence only** — not authentication, encryption, or replay prevention. Idempotency helps detect and limit duplicates; it is **not** replay-proof delivery.

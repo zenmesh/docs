@@ -51,7 +51,7 @@ The system attempts to deliver the event to each target defined by the flow. Eac
 
 If the delivery attempt succeeds (HTTP 2xx response from the target):
 - The attempt is marked as `delivered`
-- Evidence is generated with Merkle integrity proof
+- Evidence is generated with integrity proof
 - The trace is updated with the successful attempt
 
 ## 5. Failure Path
@@ -105,7 +105,7 @@ Every event produces a trace — a delivery and evidence spine that follows the 
 
 ## 10. Evidence
 
-Successful delivery attempts produce cryptographic evidence with Merkle inclusion verification. Evidence provides tamper-evident delivery receipts that can be independently verified.
+Successful delivery attempts produce cryptographic evidence with integrity verification. Evidence provides tamper-evident delivery receipts that can be independently verified.
 
 **Status:** WIRED_SANDBOX
 
@@ -131,6 +131,6 @@ Successful delivery attempts produce cryptographic evidence with Merkle inclusio
 - Retry is idempotent but does not guarantee delivery success
 - Replay requires retained payload/context — not all deliveries are replayable
 - Trace is delivery/evidence spine, not full distributed tracing
-- Evidence is Merkle integrity proof, not authentication or identity proof
+- Evidence is integrity proof, not authentication or identity proof
 - Saved payloads are not production retained payload history
 - Delivery guarantees are scenario-specific (local/mock/cloud-demo), not production-level

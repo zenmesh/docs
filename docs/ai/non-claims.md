@@ -17,8 +17,8 @@ No. Delivery guarantees are scenario-specific and local/mock only.
 **Does Zen Mesh claim generic zero-trust?**
 No. Trust is scoped to specific mechanisms (enrollment, mTLS, HMAC, ZenLock). See the [zero-trust proof matrix](https://github.com/zenmesh/zen-platform/blob/main/docs/80-EVIDENCE/security/zero_trust_proof_matrix.json).
 
-**Does Merkle serve purposes beyond evidence integrity?**
-No. Merkle provides evidence integrity and state comparison only. See [Merkle integrity](../evidence/merkle-integrity).
+**Does integrity verification serve purposes beyond evidence integrity?**
+No. Integrity verification provides evidence integrity and state comparison only. See [Evidence integrity](../evidence/merkle-integrity).
 
 **Are local/mock proofs the same as production validation?**
 No. All proofs are local/mock unless stated. Production validation gates are planned.
@@ -45,7 +45,7 @@ No. All proofs are local/mock unless stated. Production validation gates are pla
 | SVID/SPIFFE rotation | Not claimed | SPIRE not deployed |
 | Emergency revocation | Not claimed | No automated playbook |
 | Trust bundle rotation | Not claimed | No implementation |
-| Merkle auth/replay/identity/delivery | Not claimed | Evidence integrity only |
+| Integrity auth/replay/identity/delivery | Not claimed | Evidence integrity only |
 
 ## Compliance
 

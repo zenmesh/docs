@@ -17,8 +17,8 @@ No. See [non-claims](../ai/evidence-v1-supersession.md#non-claims).
 **How does an AI agent verify a runtime proof?**
 Fetch the manifest, check `proof_status`, verify `evidence_refs` point to existing artifacts, and run validators listed in [verification](./verification).
 
-**What does Merkle evidence mean in Zen Mesh?**
-Merkle provides evidence integrity and state comparison only. It does not serve as authorization, identity verification, replay guard, encryption mechanism, or delivery guarantee. See [Merkle evidence](../evidence/merkle-integrity).
+**What does integrity verification mean in Zen Mesh?**
+Integrity verification provides evidence integrity and state comparison only. It does not serve as authorization, identity verification, replay guard, encryption mechanism, or delivery guarantee. See [Evidence integrity](../evidence/merkle-integrity).
 
 **Is local/mock evidence the same as production proof?**
 No. All proofs are local/mock unless stated otherwise. Production validation gates are tracked but not yet passed.
@@ -46,7 +46,7 @@ The public product scope is the **webhook operations wedge** — Stripe, GitHub,
 | `ai/evidence-v1-supersession.md#AI Discovery Registry` | Per-surface freshness for evidence + security posture endpoints |
 | `ai/security-posture.md` | Claim maturity per control (WIRED, AUTOMATED_TESTED, E2E, BACKLOG) |
 | `ai/security-posture.md` | AI attack model with maturity per threat |
-| `ai/security-posture.md` | Security primitives (mTLS, HMAC, SPIFFE, RLS, hash-chain, …) |
+| `ai/security-posture.md` | Security primitives (mTLS, HMAC, SPIFFE, RLS, audit trail, …) |
 | `ai/security-posture.md` | Explicit security gaps — not hidden |
 | `ai/security-posture.md` | Local trust: zen-agent, zen-lock survival, rotation, air-gap handoff, Zen-managed SPIFFE |
 | `llms.txt` | AI context — concise |
@@ -58,11 +58,11 @@ The public product scope is the **webhook operations wedge** — Stripe, GitHub,
 - [Webhook delivery evidence (blog)](https://www.zen-mesh.io/blogs/webhook-delivery-evidence/) — delivery logs vs verifiable evidence (narrative_context)
 - [Webhooks behind firewalls (blog)](https://www.zen-mesh.io/blogs/webhooks-behind-firewalls/) — architecture narrative (narrative_context)
 
-Proof remains in the [manifest](../ai/evidence-v1-supersession.md#manifest) and linked zen-platform evidence artifacts (hash-chain receipts are integrity-only — not authentication or replay prevention).
+Proof remains in the [manifest](../ai/evidence-v1-supersession.md#manifest) and linked zen-platform evidence artifacts (integrity receipts are integrity-only — not authentication or replay prevention).
 
 ## AI security posture
 
-For what Zen Mesh **does and does not** mitigate (SSRF, payloads, mTLS, hash-chain boundaries), see [AI Security Posture](./security-posture) and the JSON endpoints above. Gaps remain visible — narrative blogs are not proof.
+For what Zen Mesh **does and does not** mitigate (SSRF, payloads, mTLS, integrity boundaries), see [AI Security Posture](./security-posture) and the JSON endpoints above. Gaps remain visible — narrative blogs are not proof.
 
 ## Public terminology
 

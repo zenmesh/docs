@@ -4,13 +4,13 @@ sidebar_label: Customer API
 
 # Customer API
 
-The Customer API is the planned programmable interface for reading operational truth and managing authorized Zen Mesh resources. It is distinct from the [Dashboard/BFF API](../api/status) and the [MCP surface](../mcp/overview), but it follows the same contract model: UI, CLI, API, MCP, and Git are different control surfaces over the [Zen Configuration Contract](../product/zen-configuration-contract).
+The Customer API is the planned programmable interface for reading operational truth and managing authorized Zen Mesh resources. It is distinct from the [Dashboard/BFF API](../api/status) and the [MCP surface](../mcp/overview), but it follows the same contract model: UI, CLI, API, MCP, and Git are different control surfaces.
 
 > Status: PLANNED. This page describes the planned customer-facing contract. Individual endpoint groups carry their own status. It is not a production-live availability claim.
 
-## Relationship to Zen Configuration Contract
+## Control surface model
 
-Every operation in Zen must be representable as a declarative contract. The Customer API is one control surface for that contract alongside the UI, CLI, MCP, and Git surfaces. The contract — not any single surface — is the source of truth.
+Every operation in Zen follows a declarative contract model. The Customer API is one control surface alongside the UI, CLI, MCP, and Git surfaces.
 
 ## Relationship to Dashboard/BFF API
 
@@ -18,7 +18,7 @@ The Dashboard/BFF API (`/api/bff/v1`) exists today for the dashboard UI. It is a
 
 ## Relationship to MCP
 
-The [MCP surface](../mcp/overview) is a separate control surface for AI agents. It has its own auth model, tool set, and safety boundaries. MCP is not a subset of the Customer API, nor vice versa. Both produce and consume ZCC artifacts.
+The [MCP surface](../mcp/overview) is a separate control surface for AI agents. It has its own auth model, tool set, and safety boundaries. MCP is not a subset of the Customer API, nor vice versa. Both produce and consume contract artifacts.
 
 ## Read and write model
 
@@ -39,7 +39,7 @@ The Customer API is **not read-only as a product category**. Read/write status i
 | Manage saved payload templates | `GET/POST/PUT/DELETE /v1/tenants/{tid}/saved-payloads` | WIRED_SANDBOX | Bearer JWT, API key | See [Saved Payloads API](../api/saved-payloads) |
 | Manage API keys | `GET/POST/DELETE /v1/tenants/{tid}/api-keys` | WIRED_SANDBOX | Session, API key | See [Authentication](../api/authentication) |
 | MCP read tools | Various MCP tools | PUBLIC_CONTRACT_DRAFT | MCP API key, scopes | Default-on read surface |
-| MCP write tools | Various MCP tools | PUBLIC_CONTRACT_DRAFT | MCP API key, disabled by default | Requires explicit enablement |
+| MCP mutation tools | Various MCP tools | PUBLIC_CONTRACT_DRAFT | MCP API key, disabled by default | Requires explicit enablement |
 
 ### Read operations
 
@@ -96,16 +96,16 @@ Both Customer API and MCP follow the same model:
 - Write operations require explicit authorization, scopes, object-level permissions, audit, idempotency where relevant, and fail-closed validation
 - Writes never bypass the same contract validation used by UI/CLI/Git
 
-## Current V1/V1.1 boundaries
+## Current availability boundaries
 
-| Capability | V1 availability | V1.1 scope |
-|---|---|---|
-| Customer API contract definition | Documented, PLANNED | Implementation |
-| Read operational truth (programmatic) | Planned endpoints | Expanded coverage |
-| Write-capable endpoint groups | Via runtime APIs (Targets, Endpoints, Flows, Retry, Replay) | Customer API native endpoints |
-| MCP read tools | Default-on | Expanded tool set |
-| MCP write tools | Disabled by default, per-tool-group enablement | Refined permission model |
-| GitOps as ZCC surface | Not available (V1.1) | Business+ |
+| Capability | Current status |
+|---|---|
+| Customer API contract definition | Documented, PLANNED |
+| Read operational truth (programmatic) | Planned endpoints |
+| Write-capable endpoint groups | Via runtime APIs (Targets, Endpoints, Flows, Retry, Replay) |
+| MCP read tools | Default-on |
+| MCP mutation tools | Disabled by default, per-tool-group enablement |
+| GitOps configuration surface | Not currently available |
 
 ## Design principles
 

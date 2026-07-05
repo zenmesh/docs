@@ -54,7 +54,7 @@
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["id", "proof_id", "name", "description", "proof_status", "victory_locked", "evidence_refs", "validator_refs", "merkle_ref", "non_claims"],
+        "required": ["id", "proof_id", "name", "description", "proof_status", "victory_locked", "evidence_refs", "validator_refs", "integrity_ref", "non_claims"],
         "properties": {
           "id": { "type": "string" },
           "proof_id": { "type": "string" },
@@ -73,7 +73,7 @@
             "type": "array",
             "items": { "type": "string" }
           },
-          "merkle_ref": { "type": "string" },
+          "integrity_ref": { "type": "string" },
           "non_claims": {
             "type": "array",
             "items": { "type": "string" }

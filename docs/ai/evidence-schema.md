@@ -40,10 +40,10 @@ The following statuses must NOT appear in any AI evidence artifact unless legall
   "proof_status": "local_mock_proven",
   "evidence_refs": ["zen-platform:docs/80-EVIDENCE/security/hmac_trust_execution.json"],
   "validator_refs": ["make hmac-trust-execution-check"],
-  "merkle": {
+  "integrity": {
     "enabled": true,
     "purpose": "evidence_integrity",
-    "root_ref": "zen-platform Merkle validator"
+    "root_ref": "zen-platform integrity validator"
   },
   "non_claims": ["not_pci_certification", "not_production_zero_trust"]
 }

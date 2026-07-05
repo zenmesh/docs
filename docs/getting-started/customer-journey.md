@@ -10,7 +10,7 @@ sidebar_label: Customer Journey
 
 Zen Mesh is a declarative event delivery platform. Its name means **Zero-Effort Networks** — webhook and event delivery to private networks without opening firewall ports, VPNs, or kernel modules.
 
-The platform is built around a single idea: every operation should be representable as a **Zen Configuration Contract (ZCC)**. The UI, CLI, API, MCP, and Git are different control surfaces over the same contract.
+The platform is built around a single idea: every operation should be representable as a **Configuration Contract**. The UI, CLI, API, MCP, and Git are different control surfaces over the same contract.
 
 ## The Customer Chain
 
@@ -37,7 +37,7 @@ Template → Blueprint → Flow → Traffic → Evidence
 | **DLQ** | Failed delivery attempts, preserved for recovery | [DLQ API](../api/dlq) |
 | **Trace** | Delivery and evidence spine — not full distributed tracing | [Traces API](../api/traces) |
 | **Saved Payload** | Reusable test/template payload — not production retained history | [Saved Payloads API](../api/saved-payloads) |
-| **Evidence** | Merkle-integrity delivery receipts | [Evidence API](../api/evidence) |
+| **Evidence** | Evidence-integrity delivery receipts | [Evidence API](../api/evidence) |
 
 ## Control Surfaces
 
@@ -47,7 +47,7 @@ Template → Blueprint → Flow → Traffic → Evidence
 | **Customer API** | Developers, CI/CD | Yes | Permissioned, scoped | WIRED_SANDBOX |
 | **MCP** | AI agents, operators | Yes (default-on) | Disabled by default | PUBLIC_CONTRACT_DRAFT |
 | **CLI** | Administrators | Yes | Yes | WIRED_SANDBOX |
-| **Git** (ZCC) | GitOps workflows | Planned | Planned | PLANNED |
+| **Git** (Contract) | GitOps workflows | Planned | Planned | PLANNED |
 
 Customer API and MCP are not globally read-only. Write status is endpoint/tool-group level.
 
@@ -73,7 +73,7 @@ See [Control Surfaces](../concepts/control-surfaces) for details.
 - DLQ as failed delivery query (WIRED_SANDBOX)
 - Single and batch retry (WIRED_SANDBOX)
 - Delivery/evidence trace spine (WIRED_SANDBOX)
-- Evidence with Merkle inclusion verification (WIRED_SANDBOX)
+- Evidence with inclusion verification (WIRED_SANDBOX)
 - Saved payload templates (WIRED_SANDBOX)
 - Logs with pagination (WIRED_SANDBOX)
 - API key management (WIRED_SANDBOX)

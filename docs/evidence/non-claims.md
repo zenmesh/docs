@@ -24,4 +24,4 @@ The following capabilities are explicitly **not claimed** at this time. See the 
 - **SVID/SPIFFE rotation** — not claimed. SPIRE is not deployed.
 - **Emergency revocation** — not claimed. No automated revocation playbook.
 - **Trust bundle rotation** — not claimed. No implementation.
-- **Merkle authentication/replay/identity/delivery** — Merkle is used for evidence integrity only.
+- **Integrity authentication/replay/identity/delivery** — Integrity verification is used for evidence integrity only.
