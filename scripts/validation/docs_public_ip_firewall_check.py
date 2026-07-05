@@ -234,7 +234,52 @@ def main() -> int:
     parser.add_argument("--live", action="store_true")
     parser.add_argument("--baseline", action="store_true")
     parser.add_argument("--postdeploy", action="store_true")
+    parser.add_argument(
+        "--family",
+        action="store_true",
+        help="Run DOCS019 family scan (inventory v2) with hard_block vs approval_needed output",
+    )
     args = parser.parse_args()
+
+    if args.family:
+        import importlib.util
+
+        family_path = Path(__file__).with_name("docs_public_ip_family_scan.py")
+        spec = importlib.util.spec_from_file_location("docs_public_ip_family_scan", family_path)
+        family_mod = importlib.util.module_from_spec(spec)
+        assert spec.loader is not None
+        spec.loader.exec_module(family_mod)
+
+        hits, scanned, inventory = family_mod.run_scan(live=args.live or args.postdeploy)
+        family_mod.write_disclosure_map(hits)
+        family_mod.write_approval_needed(hits)
+        hard = [h for h in hits if h.hard_block or h.classification == "BLOCKED_REDACT"]
+        result = {
+            "pass": len(hard) == 0,
+            "mode": "family",
+            "inventory_version": inventory.get("schema_version"),
+            "hard_block_count": len(hard),
+            "approval_needed_count": len(
+                [h for h in hits if h.classification in ("NEEDS_LEONARDO_APPROVAL", "PRICING_BOUND_NEEDS_LEONARDO_APPROVAL")]
+            ),
+            "safe_public_count": len(
+                [h for h in hits if h.classification in ("SAFE_ABSTRACT_PUBLIC", "APPROVED_PUBLIC")]
+            ),
+            "total_hits": len(hits),
+            "hard_block": [asdict(h) for h in hard[:100]],
+            "approval_needed": [
+                asdict(h)
+                for h in hits
+                if h.classification in ("NEEDS_LEONARDO_APPROVAL", "PRICING_BOUND_NEEDS_LEONARDO_APPROVAL")
+            ][:100],
+        }
+        if args.postdeploy:
+            Path("/tmp/docsai-docs019-post-redaction-live-scan.json").write_text(json.dumps(result, indent=2) + "\n")
+            Path("/tmp/docsai-docs019-post-redaction-live-scan.md").write_text(
+                f"# DOCS019 post-redaction live scan\n\nhard_block: {len(hard)}\npass: {result['pass']}\n"
+            )
+        print(json.dumps({"pass": result["pass"], "hard_block": len(hard), "approval_needed": result["approval_needed_count"]}))
+        return 0 if result["pass"] else 1
 
     result = run_scan(live=args.live or args.postdeploy)
     if args.baseline:

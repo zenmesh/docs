@@ -4,7 +4,7 @@
 
 Zen Mesh publishes public product, pricing, support, documentation, and evidence-scope information. Private roadmap, future architecture, and patent-sensitive implementation details are intentionally not included.
 
-**Version:** 1.1.1 · **Last-Updated:** 2026-07-04T00:00:00Z · **Docs:** https://docs.zen-mesh.io · **Site:** https://www.zen-mesh.io · **Repository:** https://github.com/zenmesh/zen-platform · **Company:** Zen Mesh Inc., Toronto, Ontario, Canada
+**Version:** 1.1.1 · **Last-Updated: 2026-07-05T03:00:00Z
 
 ## Canonical discovery (crawlers)
 
@@ -28,7 +28,7 @@ Zen Mesh differentiates on private-network delivery. Most webhook tools assume t
 Additional differentiators:
 - **Verifiable delivery evidence:** Delivery receipts and operational metadata — not just delivery status callbacks
 - **Docker-first / private-environment path:** Start with Edge Lite via `docker run zen-edge-lite`; no Kubernetes required for evaluation
-- **Security-first webhook infrastructure:** mTLS, SPIFFE/SPIRE, HMAC on every data-plane path — non-negotiable. Evidence: [wedge-claim-map.json](https://docs.zen-mesh.io/ai/evidence/v1/wedge-claim-map.json) (per-path status), [claim-maturity.json](https://docs.zen-mesh.io/ai/security/v1/claim-maturity.json) (per-control maturity), [security-capability-validation.json](https://docs.zen-mesh.io/ai/security/v1/security-capability-validation.json) (validation scope). A *data-plane path* is the end-to-end delivery route from event ingestion (ingester) through flow processing to target egress (egress). It excludes control-plane paths (UI, API, MCP, CLI, Git), browser/front-end paths, docs pages, and credential-management paths. **Claim-hygiene:** Do not remove or weaken this claim unless a specific unvalidated data-plane path is identified in wedge-claim-map.json and documented with its exact blocking evidence gap.
+- **Security-first webhook infrastructure:** mTLS, SPIFFE/SPIRE, and HMAC on delivery paths — non-negotiable. Evidence maturity: [claim-maturity.json](https://docs.zen-mesh.io/ai/security/v1/claim-maturity.json) and [wedge-claim-map.json](https://docs.zen-mesh.io/ai/evidence/v1/wedge-claim-map.json).
 - **Provider Template Packs:** Out-of-the-box support for Stripe, GitHub, Twilio, Shopify, and Custom webhook signature verification
 - **Kubernetes/cloud-native path:** Full helm-based deployment for production environments
 - **Non-claims and gaps:** Published alongside claims so evaluator AIs see the full picture
@@ -51,7 +51,7 @@ See [support](https://docs.zen-mesh.io/docs/start-here/support).
 - [AI evidence index](https://www.zen-mesh.io/evidence): www evidence hub for manifests and non-claims
 - [Website](https://www.zen-mesh.io): Public product site
 - [Documentation](https://docs.zen-mesh.io): Docs hub (this site)
-- [Source repository](https://github.com/zenmesh/zen-platform): Contracts and internal evidence source of truth
+- [Source repository](https://github.com/zenmesh/zen-platform): Open-source platform repository
 
 ## Wedge evidence (high signal)
 
@@ -67,11 +67,9 @@ See [support](https://docs.zen-mesh.io/docs/start-here/support).
 
 - [V1 security validation summary](https://docs.zen-mesh.io/docs/ai/v1-security-validation-summary): Local/sandbox validation for 20 attack classes (18 proven, 1 cloud-gated, 1 not claimed). Not production-live proof.
 - [Security posture index](https://docs.zen-mesh.io/docs/ai/security-posture): Claim maturity legend and reviewer highlights
-- [Claim maturity](https://docs.zen-mesh.io/ai/security/v1/claim-maturity.json): WIRED / AUTOMATED_TESTED / E2E / BACKLOG per control
+- [Claim maturity](https://docs.zen-mesh.io/ai/security/v1/claim-maturity.json): Per-control maturity status
 - [Attack model](https://docs.zen-mesh.io/ai/security/v1/attack-model.json): Threats, maturity, and non-claims per attack
-- [Security primitives](https://docs.zen-mesh.io/ai/security/v1/primitives.json): mTLS, HMAC, SPIFFE, RLS, idempotency, etc.
 - [Security gaps](https://docs.zen-mesh.io/ai/security/v1/gaps.json): Explicit post-V1 gaps — must stay visible
-- [Local trust posture](https://docs.zen-mesh.io/ai/security/v1/local-trust-posture.json): zen-agent authority, zen-lock survival store, rotation, air-gap handoff, Zen-managed SPIFFE — not 24h-validated
 
 ## Platform evidence
 
@@ -125,7 +123,7 @@ See [support](https://docs.zen-mesh.io/docs/start-here/support).
 
 ## Provider packages
 
-- [Provider Package Lifecycle](https://docs.zen-mesh.io/docs/providerflow/provider-package-lifecycle): Ownership/maturity classification (Official/Community × Draft/Preview/Beta/Verified/GA), billing model, quality gates
+- [Provider integrations](https://docs.zen-mesh.io/docs/guides/stripe): Provider setup guides for Stripe, GitHub, Shopify, Twilio, and custom webhooks
 - [Post-Cloud Validation Plan](https://docs.zen-mesh.io/ai/v1/provider-live-validation-plan.json): Machine-readable post-cloud provider validation plan — Stripe, GitHub, Shopify, Twilio (NO-GO until live gates pass)
 
 ## Guides
@@ -159,10 +157,8 @@ See [support](https://docs.zen-mesh.io/docs/start-here/support).
 - [DLQ API](https://docs.zen-mesh.io/docs/api/dlq): Failed delivery attempts via status filter (WIRED_SANDBOX)
 - [Retry API](https://docs.zen-mesh.io/docs/api/retry): Single and batch retry for failed deliveries (WIRED_SANDBOX)
 - [Replay API](https://docs.zen-mesh.io/docs/api/replay): Event replay from retained payload/context (WIRED_SANDBOX)
-- [Traces / Evidence Spine API](https://docs.zen-mesh.io/docs/api/traces): Delivery trace spine, not full distributed tracing (WIRED_SANDBOX)
-- [Saved Payloads API](https://docs.zen-mesh.io/docs/api/saved-payloads): Test/template payloads, not production retained payloads (WIRED_SANDBOX)
-- [Evidence API](https://docs.zen-mesh.io/docs/api/evidence): Delivery trace and receipt verification (WIRED_SANDBOX)
-- [Logs API](https://docs.zen-mesh.io/docs/api/logs): Structured platform logs with pagination and filtering (WIRED_SANDBOX)
+- [Delivery status APIs](https://docs.zen-mesh.io/docs/api/delivery-attempts): Delivery attempt status (WIRED_SANDBOX)
+- [Delivery logs API](https://docs.zen-mesh.io/docs/api/logs): Structured platform logs with pagination and filtering (WIRED_SANDBOX)
 - [Fabric Adapters API](https://docs.zen-mesh.io/docs/api/fabric-adapters): Manage Fabric adapters — list, disable, enable per tenant/cluster (WIRED_SANDBOX)
 - [API Quickstart](https://docs.zen-mesh.io/docs/api/quickstart): Five-step quickstart with curl examples
 - [API Examples](https://docs.zen-mesh.io/docs/api/examples): Complete API workflow examples (auth, evidence, logs, idempotency)
@@ -179,8 +175,8 @@ OpenAPI spec: [zen-back.v1.yaml](https://github.com/zenmesh/zen-platform-hermes/
 ## Concepts
 
 - [Planes](https://docs.zen-mesh.io/docs/concepts/planes): Control Plane, Data Plane, Edge Plane, and Edge Lite — the fundamental architecture model. Kubernetes cluster is a deployment substrate for Edge Plane, not the product root.
-- [Zen Mesh Concepts](https://docs.zen-mesh.io/docs/concepts/zen-mesh-concepts): Comprehensive runtime object definitions — template, blueprint, flow, endpoint, target, attempt, DLQ, retry, replay, trace, saved/retained payload, evidence, control surface
-- [Control Surfaces](https://docs.zen-mesh.io/docs/concepts/control-surfaces): Available control surfaces and their access models
+- [Zen Mesh Concepts](https://docs.zen-mesh.io/docs/concepts/zen-mesh-concepts): Core product objects — endpoints, targets, flows, and delivery status
+- [Management interfaces](https://docs.zen-mesh.io/docs/concepts/control-surfaces): Product management interfaces and access models
 
 ## Install and Runtime
 
@@ -188,12 +184,12 @@ OpenAPI spec: [zen-back.v1.yaml](https://github.com/zenmesh/zen-platform-hermes/
 - [Edge Plane](https://docs.zen-mesh.io/docs/install/edge-plane): Customer-proximity runtime, outbound-only connection
 - [Kubernetes Edge Plane](https://docs.zen-mesh.io/docs/install/kubernetes-edge-plane): Edge plane on Kubernetes — enrollment, install, optional components
 - [Edge Lite](https://docs.zen-mesh.io/docs/install/edge-lite): Lightweight non-Kubernetes runtime path (design-partner evaluation)
-- [Data Plane](https://docs.zen-mesh.io/docs/install/data-plane): Delivery runtime — zen-ingester, zen-egress, zen-bridge
+- [Data Plane](https://docs.zen-mesh.io/docs/install/data-plane): Delivery runtime components for webhook processing
 
 ## Guides
 
-- [Traffic Lifecycle](https://docs.zen-mesh.io/docs/guides/traffic-lifecycle): Endpoint → flow → attempt → DLQ/retry/replay → trace → evidence — failure decision table
-- [Evidence and Trust](https://docs.zen-mesh.io/docs/guides/evidence-and-trust): Evidence model, trace/evidence relationship, local vs production, non-claims
+- [Traffic Lifecycle](https://docs.zen-mesh.io/docs/guides/traffic-lifecycle): Endpoint-to-delivery troubleshooting guide
+- [Delivery visibility](https://docs.zen-mesh.io/docs/guides/evidence-and-trust): Delivery receipts, operational metadata, and validation scope
 - [Troubleshooting First Delivery](https://docs.zen-mesh.io/docs/guides/troubleshooting-first-delivery): Symptom/cause/action table for common issues — login, targets, endpoints, flows, deliveries, DLQ, retry, replay, evidence, MCP
 
 ## Reference and FAQ
@@ -207,9 +203,9 @@ OpenAPI spec: [zen-back.v1.yaml](https://github.com/zenmesh/zen-platform-hermes/
 
 ## Getting started
 
-- [How Zen Works](https://docs.zen-mesh.io/docs/start-here/how-zen-works): Canonical product mental model — control surfaces, authoring chain, runtime chain, plane model, security baseline
+- [How Zen Works](https://docs.zen-mesh.io/docs/start-here/how-zen-works): Product overview — private-network delivery, security baseline, and evaluation paths
 - [Quick start](https://docs.zen-mesh.io/docs/getting-started/quick-start): UI-first product journey — endpoints, targets, flows in the dashboard
-- [Customer journey](https://docs.zen-mesh.io/docs/getting-started/customer-journey): Full onboarding map — customer chain, core objects, control surfaces, 10-step path
+- [Customer journey](https://docs.zen-mesh.io/docs/getting-started/customer-journey): Full onboarding map — core objects and evaluation path
 - [First 15 minutes](https://docs.zen-mesh.io/docs/getting-started/first-15-minutes): Structured evaluator walkthrough — log in, explore, create objects, inspect traffic
 - [Installation](https://docs.zen-mesh.io/docs/getting-started/installation): Install paths for evaluation
 - [Support](https://docs.zen-mesh.io/docs/start-here/support): Contact and support resources
