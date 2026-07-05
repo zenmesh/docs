@@ -30,9 +30,9 @@ Zen Mesh components are configured via Helm values, environment variables, and C
 
 Defines how events are routed from an ingester to a destination.
 
-## Destination
+## Destination (now Target)
 
-A delivery target (URL + cluster + adapter mapping).
+A delivery target (URL + cluster + adapter mapping). The CRD name `Destination` is a legacy wire name; the current product term is [Target](../api/targets).
 
 ## EndpointConfig
 
