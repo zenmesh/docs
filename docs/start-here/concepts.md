@@ -4,7 +4,7 @@ sidebar_label: Key Concepts
 
 # Key Concepts
 
-See [How Zen Works](./how-zen-works) for the complete mental model — the control-surface model, authoring chain, runtime chain, plane model, and security baseline.
+See [How Zen Works](./how-zen-works) for the complete mental model — the control-surface model, authoring chain, runtime chain, plane model, and security baseline. See [use cases](https://www.zen-mesh.io/use-cases) for real-world examples.
 
 ## Architecture
 

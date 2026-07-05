@@ -124,3 +124,4 @@ See the [Current Status Matrix](../reference/current-status) for a complete per-
 - [API Overview](../api/overview) — programmatic access
 - [MCP Overview](../mcp/overview) — AI agent access
 - [Plans and Limits](../start-here/plans-and-limits) — Free Forever vs Pro vs Business
+- [Use Cases](https://www.zen-mesh.io/use-cases) — explore common private webhook delivery scenarios.

@@ -17,6 +17,7 @@ Welcome to the Zen Mesh documentation. Zen Mesh delivers webhooks and events to 
 | **First 15 minutes** | [First 15 Minutes](getting-started/first-15-minutes) — structured evaluator walkthrough |
 | **Deploying** | [Quick Start](getting-started/quick-start) — UI-first setup in the dashboard |
 | **Checking status** | [Current Status](reference/current-status) — per-capability maturity matrix |
+| **Evaluating fit** | [Use Cases](https://www.zen-mesh.io/use-cases) — see if Zen Mesh fits your needs |
 
 ## Learn the Model
 

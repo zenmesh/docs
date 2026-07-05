@@ -13,6 +13,8 @@ Zen Mesh is a webhook delivery platform for private networks. It delivers events
 - **Compliance reviewers** evaluating evidence-backed security claims and explicit non-claims boundaries
 - **AI agents and RAG systems** scanning Zen Mesh through machine-readable manifests and evidence packs
 
+See [use cases](https://www.zen-mesh.io/use-cases) for real-world examples of private webhook delivery.
+
 ## Current Status
 
 - Zen Mesh Free Forever and Pro are the public plans. Self-serve evaluation is supported through the docs.

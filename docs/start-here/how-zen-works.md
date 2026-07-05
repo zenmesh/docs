@@ -105,3 +105,4 @@ External provider ingress (Stripe, GitHub, etc.) uses provider-specific signatur
 - [API Overview](../api/overview) — REST API surfaces
 - [MCP Overview](../mcp/overview) — AI agent interface
 - [GitOps Roadmap](../product/gitops-roadmap) — Git as a control surface
+- [Use Cases](https://www.zen-mesh.io/use-cases) — see real-world scenarios for private webhook delivery.

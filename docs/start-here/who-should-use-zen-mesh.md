@@ -29,3 +29,5 @@ Zen Mesh is designed for teams that need to receive webhooks and events inside p
 | **Compliance Reviewer** | Reviews compliance-to-feature mappings and non-claims boundaries |
 | **AI Agent / RAG System** | Reads machine-readable manifests, compliance maps, and evidence packs |
 | **Operator** | Monitors deliveries, manages upgrades, handles troubleshooting |
+
+See [detailed use cases and examples](https://www.zen-mesh.io/use-cases) for more on how Zen Mesh fits different engineering teams.

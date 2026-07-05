@@ -18,6 +18,8 @@ Edge Lite is a **lightweight non-Kubernetes runtime path** for the Zen Mesh edge
 - Design partners exploring the platform
 - Low-traffic or free-tier use cases
 
+See [use cases](https://www.zen-mesh.io/use-cases) for examples of when Edge Lite fits your workflow.
+
 ## What It Provides
 
 - Same enrollment bundle model as Kubernetes Edge Plane
