@@ -1,20 +1,19 @@
 ---
-sidebar_label: Merkle Evidence Integrity
+sidebar_label: Evidence Integrity
 ---
 
-# Merkle Evidence Integrity
+# Evidence Integrity
 
-Zen Mesh uses a Merkle tree to provide **evidence integrity and state comparison** for runtime and trust evidence artifacts.
+Zen Mesh provides tamper-evident verification capabilities for runtime and trust evidence artifacts.
 
 ## What it does
 
-- Produces a hash root over evidence artifacts
-- Enables tamper-evident verification of evidence chains
-- Supports independent re-computation of hashes
+- Enables integrity verification of evidence chains
+- Supports independent verification of evidence artifacts
 
 ## What it does NOT do
 
-Merkle in Zen Mesh is **not** used for:
+Evidence integrity checks are **not** used for:
 
 - ❌ Authentication — does not verify identity
 - ❌ Identity — does not issue or validate workload identities
@@ -25,14 +24,10 @@ Merkle in Zen Mesh is **not** used for:
 
 ## Verification
 
-```bash
-make merkle-evidence-check
-```
-
-This validates the Merkle tree against current evidence artifacts.
+See the evidence overview for current verification tooling.
 
 ## Source
 
-Evidence Merkle roots and leaf hashes are stored in `zen-platform/docs/80-EVIDENCE/merkle/`.
+Evidence integrity information is stored in `zen-platform/docs/80-EVIDENCE/`.
 
-All current Merkle roots use the `mock:` prefix — no production Merkle tree is deployed.
+All evidence integrity features are currently validated in local/sandbox environments.
