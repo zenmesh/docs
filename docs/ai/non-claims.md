@@ -18,7 +18,7 @@ No. Delivery guarantees are scenario-specific and local/mock only.
 No. Trust is scoped to specific mechanisms (enrollment, mTLS, HMAC, ZenLock). See the [zero-trust proof matrix](https://github.com/zenmesh/zen-platform/blob/main/docs/80-EVIDENCE/security/zero_trust_proof_matrix.json).
 
 **Does integrity verification serve purposes beyond evidence integrity?**
-No. Integrity verification provides evidence integrity and state comparison only. See [Evidence integrity](../evidence/merkle-integrity).
+No. Integrity verification provides evidence integrity and state comparison only. See [Evidence integrity](../evidence/evidence-integrity).
 
 **Are local/mock proofs the same as production validation?**
 No. All proofs are local/mock unless stated. Production validation gates are planned.

@@ -92,7 +92,8 @@
 /evidence/runtime-convergence /docs/evidence/runtime-convergence 301!
 /evidence/trust-lifecycle /docs/evidence/trust-lifecycle 301!
 /evidence/validation-map /docs/evidence/validation-map 301!
-/evidence/merkle-integrity /docs/evidence/merkle-integrity 301!
+/evidence/merkle-integrity /docs/evidence/evidence-integrity 301!
+/docs/evidence/merkle-integrity /docs/evidence/evidence-integrity 301!
 /evidence/completion-evidence /docs/evidence/completion-evidence 301!
 /evidence/non-claims /docs/evidence/non-claims 301!
 /EVIDENCE/docsai029/FINAL_REPORT /docs/EVIDENCE/docsai029/FINAL_REPORT 301!

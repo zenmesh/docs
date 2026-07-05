@@ -410,7 +410,12 @@
     },
     {
       "source": "/evidence/merkle-integrity",
-      "destination": "/docs/evidence/merkle-integrity",
+      "destination": "/docs/evidence/evidence-integrity",
+      "permanent": true
+    },
+    {
+      "source": "/docs/evidence/merkle-integrity",
+      "destination": "/docs/evidence/evidence-integrity",
       "permanent": true
     },
     {

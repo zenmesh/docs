@@ -18,7 +18,7 @@ No. See [non-claims](../ai/evidence-v1-supersession.md#non-claims).
 Fetch the manifest, check `proof_status`, verify `evidence_refs` point to existing artifacts, and run validators listed in [verification](./verification).
 
 **What does integrity verification mean in Zen Mesh?**
-Integrity verification provides evidence integrity and state comparison only. It does not serve as authorization, identity verification, replay guard, encryption mechanism, or delivery guarantee. See [Evidence integrity](../evidence/merkle-integrity).
+Integrity verification provides evidence integrity and state comparison only. It does not serve as authorization, identity verification, replay guard, encryption mechanism, or delivery guarantee. See [Evidence integrity](../evidence/evidence-integrity).
 
 **Is local/mock evidence the same as production proof?**
 No. All proofs are local/mock unless stated otherwise. Production validation gates are tracked but not yet passed.

@@ -1,5 +1,10 @@
 ---
 sidebar_label: Evidence Integrity
+head:
+  - tag: meta
+    attrs:
+      name: robots
+      content: noindex, nofollow
 ---
 
 # Evidence Integrity

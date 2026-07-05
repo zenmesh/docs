@@ -21,7 +21,7 @@ LIVE_URLS = [
     "https://www.zen-mesh.io/llms-full.txt",
     "https://www.zen-mesh.io/blogs/webhook-delivery-evidence/",
     "https://docs.zen-mesh.io/docs/reference/webhook-delivery-evidence",
-    "https://docs.zen-mesh.io/docs/evidence/merkle-integrity",
+    "https://docs.zen-mesh.io/docs/evidence/evidence-integrity",
     "https://docs.zen-mesh.io/docs/mcp/overview",
     "https://docs.zen-mesh.io/docs/mcp/tools",
     "https://docs.zen-mesh.io/docs/mcp/draft-system",
@@ -36,7 +36,7 @@ LOCAL_PATHS = [
     WWW_ROOT / "public" / "llms.txt",
     WWW_ROOT / "public" / "llms-full.txt",
     DOCS_ROOT / "docs" / "reference" / "webhook-delivery-evidence.md",
-    DOCS_ROOT / "docs" / "evidence" / "merkle-integrity.md",
+    DOCS_ROOT / "docs" / "evidence" / "evidence-integrity.md",
     DOCS_ROOT / "docs" / "mcp" / "overview.md",
     DOCS_ROOT / "docs" / "mcp" / "tools.md",
     DOCS_ROOT / "docs" / "mcp" / "draft-system.md",
@@ -170,7 +170,7 @@ def fetch(url: str) -> tuple[str, str]:
     )
     if proc.returncode != 0:
         return "", proc.stderr.strip() or f"curl exit {proc.returncode}"
-    return proc.text, ""
+    return proc.stdout, ""
 
 
 def run_scan(live: bool) -> dict:

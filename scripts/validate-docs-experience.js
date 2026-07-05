@@ -64,7 +64,7 @@ function run() {
     ['Non-Claims', ['Non-Claims', 'non-claims']],
     ['Validation Map', ['Validation Map', 'validation-map']],
     ['Start Here', ['start-here/what-is-zen-mesh']],
-    ['Merkle Integrity', ['Merkle Integrity', 'merkle-integrity']],
+    ['Evidence Integrity', ['Evidence Integrity', 'evidence-integrity']],
     ['Machine-Readable Evidence', ['manifest.json', 'compliance-map.json']],
   ];
   for (const [label, terms] of homepageChecks) {
@@ -82,7 +82,9 @@ function run() {
   if (!sidebar.includes("runtime-convergence")) errors.push('sidebars.ts: Evidence missing runtime-convergence');
   if (!sidebar.includes("trust-lifecycle")) errors.push('sidebars.ts: Evidence missing trust-lifecycle');
   if (!sidebar.includes("validation-map")) errors.push('sidebars.ts: Evidence missing validation-map');
-  if (!sidebar.includes("merkle-integrity")) errors.push('sidebars.ts: Evidence missing merkle-integrity');
+  if (!sidebar.includes("evidence-integrity") && !sidebar.includes("evidence/overview")) {
+    errors.push('sidebars.ts: Evidence missing evidence-integrity or overview');
+  }
   if (!sidebar.includes("non-claims")) errors.push('sidebars.ts: Evidence missing non-claims');
 
   // Check AI manifest endpoint
