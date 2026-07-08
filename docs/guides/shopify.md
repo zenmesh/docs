@@ -47,3 +47,4 @@ Signature verification is implemented and tested for Shopify when configured. Li
 - [Endpoints Guide](../guides/endpoints) — endpoint configuration overview
 - [Stripe Integration](../guides/stripe) — Stripe webhook setup
 - [GitHub Integration](../guides/github) — GitHub webhook setup
+- [Shopify Use Case](https://www.zen-mesh.io/use-cases/shopify-webhook-delivery) — Shopify delivery scenario on the marketing site

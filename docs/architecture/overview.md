@@ -42,3 +42,5 @@ Sensitive material (enrollment credentials, HMAC keys, mTLS certificates) is man
 - [Three-Plane Model](./three-plane-model) — Deep dive into the separation
 - [Delivery Modes](./delivery-modes) — How events reach private targets
 - [Security Model](./security-model) — mTLS, HMAC, SPIFFE, enrollment trust
+- [Use Cases](https://www.zen-mesh.io/use-cases) — explore common deployment scenarios on the marketing site
+- [How It Works](https://www.zen-mesh.io/how-it-works) — end-to-end delivery walkthrough

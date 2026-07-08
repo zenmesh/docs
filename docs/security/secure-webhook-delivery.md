@@ -54,3 +54,4 @@ All Zen Mesh components establish trusted identity through cryptographic enrollm
 - [Security Controls Overview](../security/)
 - [Webhook Access Control](./webhook-access-control)
 - [Webhook Delivery Evidence](../reference/webhook-delivery-evidence)
+- [Security Architecture](https://www.zen-mesh.io/security) — marketing site security page with control matrix and non-claims

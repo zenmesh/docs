@@ -46,3 +46,4 @@ Signature verification is implemented and tested for Twilio when configured. Liv
 - [Endpoints Guide](../guides/endpoints) — endpoint configuration overview
 - [Stripe Integration](../guides/stripe) — Stripe webhook setup
 - [GitHub Integration](../guides/github) — GitHub webhook setup
+- [Twilio Use Case](https://www.zen-mesh.io/use-cases/twilio-webhook-delivery) — Twilio delivery scenario on the marketing site

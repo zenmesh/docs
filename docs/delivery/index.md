@@ -33,3 +33,5 @@ All delivery capabilities operate within the Zen Mesh data plane. Events pass th
 - [Webhook Security Controls](../security/)
 - [Webhook Delivery Evidence](../reference/webhook-delivery-evidence)
 - [Webhook Replay and Recovery](./replay-and-recovery)
+- [Delivery Evidence Blog](https://www.zen-mesh.io/blogs/webhook-delivery-evidence/) — narrative overview of why evidence chains matter
+- [Webhooks Behind Firewalls Blog](https://www.zen-mesh.io/blogs/webhooks-behind-firewalls/) — control/data/edge separation narrative

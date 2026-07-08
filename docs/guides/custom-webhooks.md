@@ -111,3 +111,4 @@ Zen Mesh accepts `application/json` payloads. The request body is parsed as JSON
 - [JSONPath Transforms](../delivery/jsonpath-transforms) — payload normalization
 - [IP Allowlisting](../security/ip-allowlisting) — restrict source networks
 - [Header Validation](../security/header-validation) — validate incoming headers
+- [Private Network Delivery](https://www.zen-mesh.io/use-cases/webhook-delivery-to-private-networks) — private network delivery scenario on the marketing site

@@ -101,3 +101,4 @@ Use [JSONPath Transforms](../delivery/jsonpath-transforms) to normalize Stripe p
 - [JSONPath Transforms](../delivery/jsonpath-transforms) — payload normalization
 - [JSONPath Routing](../delivery/jsonpath-routing) — event filtering and routing
 - [Targets API](../api/targets) — target configuration
+- [Stripe Use Case](https://www.zen-mesh.io/use-cases/stripe-webhook-delivery) — Stripe delivery scenario on the marketing site

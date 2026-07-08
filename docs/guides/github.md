@@ -108,3 +108,4 @@ Use [JSONPath Transforms](../delivery/jsonpath-transforms) to normalize GitHub p
 - [JSONPath Routing](../delivery/jsonpath-routing) — event filtering and routing
 - [JSONPath Transforms](../delivery/jsonpath-transforms) — payload normalization
 - [Stripe Integration](./stripe) — similar setup for payment webhooks
+- [GitHub Use Case](https://www.zen-mesh.io/use-cases/github-webhook-delivery) — GitHub delivery scenario on the marketing site
