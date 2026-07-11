@@ -91,6 +91,20 @@
       "kind": "discovery",
       "last_updated": "2026-07-07T14:30:34.046Z",
       "freshness_source": "mtime"
+    },
+    {
+      "id": "provider-parity-registry",
+      "url_path": "/ai/v1/provider-parity-registry.json",
+      "kind": "provider_parity",
+      "last_updated": "2026-07-11T00:00:00.000Z",
+      "freshness_source": "content"
+    },
+    {
+      "id": "provider-live-validation-plan",
+      "url_path": "/ai/v1/provider-live-validation-plan.json",
+      "kind": "provider_validation",
+      "last_updated": "2026-06-29T00:00:00.000Z",
+      "freshness_source": "content"
     }
   ],
   "www_root_aliases": [
