@@ -199,10 +199,11 @@
       "validator_refs": [
         "docs/10-ARCHITECTURE/SECURITY.md"
       ],
-      "limitation": "SPIFFE identity scoped to internal paths. SVID rotation is not yet automated.",
+      "limitation": "SPIFFE identity scoped to Zen-managed internal paths including data-plane delivery hops. File-based X.509 SVID lifecycle is implemented (cert-manager renewal). Full SPIRE Workload API SVID rotation is post-V1.",
       "last_updated": "2026-05-25",
       "plane_refs": [
-        "CONTROL_PLANE"
+        "CONTROL_PLANE",
+        "DATA_PLANE"
       ],
       "layer_refs": [
         "L1_BASE"

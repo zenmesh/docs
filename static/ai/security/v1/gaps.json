@@ -113,7 +113,7 @@
       "attack_ref": "ATK-WORKLOAD-IMPERSONATION",
       "primitive_ref": "PRIM-SPIFFE-SPIRE-NATIVE-INTERNAL",
       "public_evidence_ref": null,
-      "public_safe_summary": "SVID rotation is not production-live proof.",
+      "public_safe_summary": "Full SPIRE Workload API SVID rotation is not production-live proof (post-V1). File-based X.509 SVID lifecycle is implemented via cert-manager.",
       "must_not_claim": ["SVID rotation proven", "workload identity production-live"]
     },
     {

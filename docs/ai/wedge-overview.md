@@ -67,4 +67,4 @@ All proofs are tested in a local mock harness with deterministic scenarios. See 
 - No real webhook event validated on a cloud deployment
 - Custom webhook signature schemes are provider-specific
 - Comprehensive delivery status dashboard is planned
-- SVID rotation is not yet automated
+- Full SPIRE Workload API SVID rotation is post-V1 (file-based X.509 SVID lifecycle is implemented via cert-manager)

@@ -83,7 +83,7 @@
     "id": "non-claim-trust-blanket-zero-trust",
     "category": "trust",
     "claim": "Blanket zero-trust across all paths and layers",
-    "scope": "Not claimed. Zero-trust-oriented controls scoped to control-plane paths only. Data-plane expansion is planned.",
+    "scope": "Not claimed. Zero-trust-oriented controls (SPIFFE identity, mTLS, HMAC, policy-based authz) are implemented on Zen-managed internal paths including control-plane and data-plane delivery hops. Coverage is partial — not every workload and not customer-managed endpoints.",
     "evidence_status": "needs_revalidation",
     "source": "Source/runtime/render/public scan - pending evidence collection"
   },
@@ -171,7 +171,7 @@
     "id": "non-claim-security-production-zero-trust",
     "category": "security",
     "claim": "Production zero-trust fully proven",
-    "scope": "Not claimed. Zero-trust-oriented controls exist on control-plane paths. Data-plane workload identity is planned, not deployed everywhere.",
+    "scope": "Not claimed. Zero-trust-oriented controls exist on Zen-managed internal paths including control-plane and data-plane delivery hops. Coverage is partial — not every workload. Full SPIRE Workload API is post-V1.",
     "evidence_status": "needs_revalidation",
     "source": "Source/runtime/render/public scan - pending evidence collection"
   },
@@ -217,8 +217,8 @@
     "id": "non-claim-runtime-svid-rotation-missing",
     "category": "v1_readiness",
     "capability_id": "runtime-workload-svid-rotation",
-    "claim": "Operational workload identity (SVID) rotation proven on mainline",
-    "scope": "Not claimed. Automated runtime SVID rotation wiring is not complete on mainline.",
+    "claim": "Full SPIRE Workload API SVID rotation proven on mainline",
+    "scope": "Not claimed. File-based X.509 SVID lifecycle is implemented (cert-manager renewal). Full automatic SPIRE Workload API SVID rotation is post-V1 (not a V1 requirement). HMAC, TLS/certificate, and JWK/JWKS rotation are all implemented.",
     "internal_ref": "ST-003",
     "evidence_status": "needs_revalidation",
     "source": "Source/runtime/render/public scan - pending evidence collection"

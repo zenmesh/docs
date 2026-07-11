@@ -31,7 +31,7 @@
     "id": "wedge-nc-spiffe-complete",
     "category": "security",
     "claim": "SPIFFE/SPIRE posture is complete and fully automated",
-    "scope": "Not claimed. SVID rotation is not yet automated. SPIFFE identity is scoped to internal paths only.",
+    "scope": "Not claimed. Full SPIRE Workload API SVID rotation is post-V1. File-based X.509 SVID lifecycle is implemented (cert-manager renewal). SPIFFE identity is scoped to Zen-managed internal paths.",
     "evidence_status": "not_claimed"
   },
   {

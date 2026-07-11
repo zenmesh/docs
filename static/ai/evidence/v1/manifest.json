@@ -331,8 +331,8 @@
     {
       "id": "trust-spiffe-identity-control-plane",
       "proof_id": "TRUST-PROOF-001",
-      "name": "SPIFFE Identity on Control-Plane",
-      "description": "SPIFFE SVID-based identity for control-plane paths. mTLS enforced where SPIFFE is deployed. Scoped to control-plane only — not applied to data-plane or every endpoint.",
+      "name": "SPIFFE/SPIRE Workload Identity",
+      "description": "SPIFFE SVID-based identity on Zen-managed internal paths including control-plane (agent ↔ SaaS) and data-plane (ingester ↔ egress) delivery hops. mTLS enforced where SPIFFE is deployed. Fail-closed where production policy requires it.",
       "proof_status": "proven_local_mock",
       "victory_locked": false,
       "evidence_refs": [
@@ -344,10 +344,11 @@
       ],
       "integrity_ref": "mock:trust-proof-001-merkle-root",
       "non_claims": [
-        "Not SPIFFE everywhere",
-        "Not data-plane SPIFFE identity",
+        "Not SPIFFE on every workload (coverage is partial — some components use file-based SVIDs or static certs)",
+        "Not customer-operated SPIRE in V1",
+        "Not full SPIRE Workload API SVID rotation (post-V1)",
         "Not multi-cluster SPIFFE federation",
-        "Not production-ready"
+        "Not production-live cloud attestation for all paths"
       ],
       "plane_refs": [
         "CONTROL_PLANE",
@@ -361,7 +362,7 @@
       "id": "trust-mtls-enforcement",
       "proof_id": "TRUST-PROOF-002",
       "name": "mTLS Enforcement",
-      "description": "Mutual TLS enforced on control-plane paths where SPIFFE identity is deployed. Local mock validation only.",
+      "description": "Mutual TLS enforced on Zen-managed internal paths including control-plane (agent ↔ SaaS, BFF ↔ backend) and data-plane (ingester ↔ egress) delivery hops. Fail-closed where production policy requires mTLS. Local mock and sandbox CI validation.",
       "proof_status": "proven_local_mock",
       "victory_locked": false,
       "evidence_refs": [
@@ -372,9 +373,9 @@
       ],
       "integrity_ref": "mock:trust-proof-002-merkle-root",
       "non_claims": [
-        "Not mTLS everywhere",
-        "Not data-plane mTLS",
-        "Not production-ready"
+        "Not mTLS on every possible path (customer-managed egress → target is configurable, not Zen-mandatory)",
+        "Not production-live cloud E2E attestation for all hops",
+        "Not zero-downtime rotation proven on every workload"
       ],
       "plane_refs": [
         "CONTROL_PLANE",
@@ -387,8 +388,8 @@
     {
       "id": "trust-zero-trust-boundaries",
       "proof_id": "TRUST-PROOF-003",
-      "name": "Zero-Trust Boundaries (Control-Plane Scoped)",
-      "description": "Zero-trust-oriented controls implemented on control-plane paths. Boundaries enforced via SPIFFE identity, mTLS, and policy-based authz. Data-plane expansion is planned.",
+      "name": "Zero-Trust Boundaries",
+      "description": "Zero-trust-oriented controls (SPIFFE identity, mTLS, HMAC, policy-based authz) implemented on Zen-managed internal paths including control-plane and data-plane delivery hops. Coverage is partial — not every workload and not customer-managed endpoints.",
       "proof_status": "proven_local_mock",
       "victory_locked": false,
       "evidence_refs": [
@@ -400,9 +401,10 @@
       ],
       "integrity_ref": "mock:trust-proof-003-merkle-root",
       "non_claims": [
-        "Not blanket zero-trust",
-        "Not data-plane zero-trust",
-        "Not production-ready"
+        "Not blanket zero-trust on every path",
+        "Not customer-operated SPIRE in V1",
+        "Not full SPIRE Workload API coverage (post-V1)",
+        "Not production-live cloud attestation for all paths"
       ],
       "plane_refs": [
         "CONTROL_PLANE",
@@ -491,8 +493,8 @@
       "id": "trust-rotation-revocation",
       "proof_id": "TRUST-PROOF-007",
       "name": "Rotation and Revocation Support",
-      "description": "Architecture supports certificate rotation and SPIFFE identity revocation. Mechanisms defined in contract; runtime execution not yet proven.",
-      "proof_status": "planned",
+      "description": "Per-type rotation is implemented: HMAC key rotation (HMACKeyRotationController, 90-day with grace), TLS/certificate renewal (cert-manager auto-renewal), JWK/JWKS rotation (kid versioning), and file-based X.509 SVID lifecycle (cert-manager renewal). Certificate expiry and revocation behavior has validation evidence. Full SPIRE Workload API SVID rotation is post-V1.",
+      "proof_status": "implementation_present",
       "victory_locked": false,
       "evidence_refs": [],
       "validator_refs": [
@@ -500,9 +502,9 @@
       ],
       "integrity_ref": "mock:trust-proof-007-merkle-root",
       "non_claims": [
-        "Not rotation implemented in runtime",
-        "Not revocation proven in failure scenarios",
-        "Not production-ready"
+        "Not full SPIRE Workload API SVID rotation (post-V1)",
+        "Not zero-downtime rotation proven on every workload in cloud production",
+        "Not ZenLock as universal rotation engine (ZenLock provides custody/distribution/audit; each lifecycle owns its rotation)"
       ],
       "plane_refs": [
         "CONTROL_PLANE",
@@ -993,7 +995,7 @@
     "Accepted deploy/UI/completion evidence artifacts require integrity chain inclusion; comparison only — not auth, identity, encryption, or replay prevention",
     "NOT product-pass: Planes management UI (T1); management-console boring-readiness NOT_READY on mainline",
     "Relay-path sandbox delivery proof is mandatory for demo scope; direct/egress/relay receipts per capability proof_status — not platform go-live",
-    "Runtime workload identity (SVID) rotation is not proven on mainline; DeliveryPolicy TLS/trust-chain L2 controls deferred — not PASS",
+    "Full SPIRE Workload API SVID rotation is post-V1 (file-based X.509 SVID lifecycle is implemented); HMAC/TLS/JWK/JWKS rotation is implemented; DeliveryPolicy TLS/trust-chain L2 controls deferred — not PASS",
     "NOT product-pass, NOT DONE: H220 pending — no canonical checkpoint or evidence pack exists; status unproven",
     "Not production-live, sandbox/local validation only, not yet production-live as platform readiness"
   ],
