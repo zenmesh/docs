@@ -1,0 +1,112 @@
+{
+  "schema_version": "1.0.0",
+  "document": "provider-parity-registry",
+  "description": "Machine-readable provider parity registry. Every V1 provider is assessed against the same capability fields. Stripe, GitHub, Shopify, and Twilio are all V1 providers. Provider behavior is template/YAML/provider-pack driven — no one-off hardcoded implementations.",
+  "last_updated": "2026-07-11",
+  "v1_providers": ["stripe", "github", "shopify", "twilio"],
+  "capability_fields": {
+    "template_pack": "Provider package exists (package.yaml + transform + events + fixtures + goldens)",
+    "signature_validation": "Provider-specific HMAC/signature verification enforced at ingestion",
+    "normalization": "Event normalization via transform package",
+    "deduplication": "Platform-level duplicate detection (idempotency-key semantics)",
+    "replay_protection": "Platform-level replay protection (idempotency window + nonce handling)",
+    "golden_payloads": "Golden output fixtures for validated event types",
+    "negative_tests": "Negative (forged/invalid signature) test cases passing",
+    "sandbox_e2e": "End-to-end sandbox validation receipt captured",
+    "restricted_live_e2e": "Restricted live (cloud) end-to-end validation receipt captured",
+    "production_live": "Production-live cloud attestation exists"
+  },
+  "maturity_legend": {
+    "DONE": "Artifact exists and is validated",
+    "PARTIAL": "Artifact exists but has known gaps",
+    "MISSING": "Artifact does not exist",
+    "PENDING": "Wired but not yet enforced or validated",
+    "CLOUD_GATED": "Blocked on cloud endpoint provisioning",
+    "NOT_CLAIMED": "Explicitly not claimed"
+  },
+  "providers": {
+    "stripe": {
+      "signature_header": "Stripe-Signature",
+      "template_pack": "DONE",
+      "signature_validation": "DONE",
+      "normalization": "DONE",
+      "deduplication": "DONE",
+      "replay_protection": "DONE",
+      "golden_payloads": "DONE",
+      "golden_count": 13,
+      "negative_tests": "PARTIAL",
+      "negative_tests_note": "Excluded from golden test suite (ST-02 blocker)",
+      "sandbox_e2e": "DONE",
+      "restricted_live_e2e": "CLOUD_GATED",
+      "production_live": "NOT_CLAIMED",
+      "maturity_label": "CONDITIONAL_PASS"
+    },
+    "github": {
+      "signature_header": "X-Hub-Signature-256",
+      "template_pack": "DONE",
+      "signature_validation": "DONE",
+      "normalization": "DONE",
+      "deduplication": "DONE",
+      "replay_protection": "DONE",
+      "golden_payloads": "PARTIAL",
+      "golden_count": 1,
+      "golden_note": "Thinnest coverage (1 fixture; expansion to 5+ pending GH-01)",
+      "negative_tests": "DONE",
+      "sandbox_e2e": "MISSING",
+      "restricted_live_e2e": "CLOUD_GATED",
+      "production_live": "NOT_CLAIMED",
+      "maturity_label": "V1_BLOCKED"
+    },
+    "shopify": {
+      "signature_header": "X-Shopify-Hmac-SHA256",
+      "template_pack": "DONE",
+      "signature_validation": "PENDING",
+      "signature_note": "HMAC enforcement PENDING in authprofile (V1_BLOCKER security)",
+      "normalization": "DONE",
+      "deduplication": "DONE",
+      "replay_protection": "DONE",
+      "golden_payloads": "DONE",
+      "golden_count": 5,
+      "negative_tests": "DONE",
+      "sandbox_e2e": "MISSING",
+      "restricted_live_e2e": "CLOUD_GATED",
+      "production_live": "NOT_CLAIMED",
+      "maturity_label": "V1_BLOCKED"
+    },
+    "twilio": {
+      "signature_header": "X-Twilio-Signature",
+      "template_pack": "DONE",
+      "signature_validation": "PENDING",
+      "signature_note": "Request signature enforcement PENDING (TW-01 V1_BLOCKER)",
+      "normalization": "DONE",
+      "deduplication": "DONE",
+      "replay_protection": "DONE",
+      "golden_payloads": "DONE",
+      "golden_count": 5,
+      "negative_tests": "DONE",
+      "sandbox_e2e": "MISSING",
+      "restricted_live_e2e": "CLOUD_GATED",
+      "production_live": "NOT_CLAIMED",
+      "maturity_label": "V1_BLOCKED"
+    }
+  },
+  "parity_rules": [
+    "No provider receives a weaker definition of 'supported'",
+    "Temporary maturity differences must be visible in this registry",
+    "Provider pages must use the same capability language as this registry",
+    "Provider behavior is template/YAML/provider-pack driven — do not imply one-off hardcoded provider implementations",
+    "Do not upgrade any provider to production_live before cloud production evidence exists",
+    "Stripe, GitHub, Shopify, and Twilio are all V1 providers with the same capability contract"
+  ],
+  "related_docs": [
+    "https://docs.zen-mesh.io/providerflow/provider-package-v1-readiness-matrix",
+    "https://docs.zen-mesh.io/providerflow/provider-package-lifecycle",
+    "https://docs.zen-mesh.io/ai/v1/provider-live-validation-plan.json"
+  ],
+  "non_claims": [
+    "No provider is production-live or cloud-validated at V1 launch",
+    "No claim of provider registry GA or public-launch-go",
+    "Free is not evaluation-only — it is a permanent plan",
+    "No claim of broader compliance certification for any provider"
+  ]
+}

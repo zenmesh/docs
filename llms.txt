@@ -11,7 +11,7 @@
 ## Pricing
 
 - **Free Forever:** $0/month — 3 webhook endpoints, 25,000 webhooks/month.
-- **Pro Early Bird:** $29/month (6-month free trial available).
+- **Pro Early Bird:** $29/month or $290/year (6-month free trial available).
 - **Business:** Join waiting list.
 
 ## API Doc (expanded)

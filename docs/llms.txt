@@ -15,7 +15,7 @@ Zen Mesh publishes public product, pricing, support, documentation, and evidence
 ## Pricing
 
 - **Free Forever:** $0/month — 3 webhook endpoints, 25,000 webhooks/month, 256 KB max payload, 3 targets, 3 routes/flows, 7-day retention, shared receive IPs. No SLA. Best-effort/community support.
-- **Pro — Early Bird:** $29/month (6-month free trial with monthly feedback survey; reference standard $49/month). 50 endpoints, 500,000 webhooks/month, 1 MB payload, 25 targets, 50 routes, 30-day retention, S3 log export, IP allow/block, 1 seat. No SLA or dedicated adapters.
+- **Pro — Early Bird:** $29/month or $290/year (6-month free trial with monthly feedback survey; reference standard $49/month). 50 endpoints, 500,000 webhooks/month, 1 MB payload, 25 targets, 50 routes, 30-day retention, S3 log export, IP allow/block, 1 seat. No SLA or dedicated adapters.
 - **Business:** Business waitlist open.
 - **Enterprise:** Enterprise pilot program. Dedicated data plane, custom infrastructure, residency, support, procurement.
 
