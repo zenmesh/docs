@@ -45,13 +45,13 @@ Canonical demo evidence pack for buyers/investors/internal demo readiness.
 
 | Flow | Mode | Status |
 |------|------|--------|
-| FLOW-01 | Mode A — Direct Public Target | VALIDATED PASS |
-| FLOW-02 | Mode B — Egress Direct | VALIDATED PASS |
-| FLOW-03 (generic VM relay) | Mode C — Egress Relay | VALIDATED PASS (sandbox) — VM/nftables end-to-end delivery confirmed (5.8s, SLO 15s); supersedes prior PARTIAL |
-| FLOW-03 (Stripe E2E GKE→k3d) | Mode C — Relay, Stripe-specific | VALIDATED PASS — Stripe Sandbox only; GKE cloud-validated |
+| Managed Public Delivery | Direct Public Target | VALIDATED PASS |
+| Private Edge Delivery (direct) | Egress Direct | VALIDATED PASS |
+| Private Edge Delivery (relay, generic) | Egress Relay | VALIDATED PASS (sandbox) — VM/nftables end-to-end delivery confirmed (5.8s, SLO 15s); supersedes prior PARTIAL |
+| Private Edge Delivery (relay, Stripe) | Relay, Stripe-specific | VALIDATED PASS — Stripe Sandbox only; GKE cloud-validated |
 
-**Critical distinction:** Stripe FLOW-03 PASS does NOT imply generic FLOW-03 PASS. Generic FLOW-03 is sandbox PASS, not production-live. These are separate proofs with different scopes.
+**Critical distinction:** Stripe Private Edge Delivery (relay) PASS does NOT imply generic Private Edge Delivery (relay) PASS. Generic relay is sandbox PASS, not production-live. These are separate proofs with different scopes.
 
-**Non-claims:** Demo/validated proof only — not production-ready. No production-live claim. No production Stripe claim. No generic FLOW-03 full-pass claim. No exactly-once/zero-loss delivery guarantee. No compliance certification (PCI/SOC2/HIPAA/FedRAMP/ISO). No integrity auth/replay/identity/encryption/access-control claim.
+**Non-claims:** Demo/validated proof only — not production-ready. No production-live claim. No production Stripe claim. No generic Private Edge Delivery full-pass claim. No exactly-once/zero-loss delivery guarantee. No compliance certification (PCI/SOC2/HIPAA/FedRAMP/ISO). No integrity auth/replay/identity/encryption/access-control claim.
 
 **Source:** `zen-platform` (github.com/zenmesh/zen-platform, commit `7c7c2f33534a`)

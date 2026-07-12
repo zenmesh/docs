@@ -31,7 +31,7 @@ Local/sandbox attack validation for the V1 runtime baseline. This document summa
 | Integrity evidence | PROVEN | Automated integrity verification |
 | Outbound-only edge delivery model | PROVEN | Architectural, validated in local/sandbox |
 | Stripe cloud E2E proof | `[CLOUD-GATED]` | Historical proof exists on GKE; current revalidation AUTHORIZATION_BLOCKED |
-| SSRF on SaaS dispatch | BACKLOG | Scoped controls exist (ValidateTargetURL, SSRFDialContext, FLOW-02/03 hardening) — SaaS-wide dispatch not validated |
+| SSRF on SaaS dispatch | BACKLOG | Scoped controls exist (ValidateTargetURL, SSRFDialContext, Private Edge Delivery hardening) — SaaS-wide dispatch not validated |
 | Redirect-chain abuse | PARTIAL | Webhook dispatch path uses NoRedirects/SafeRedirects — most other clients follow redirects by default |
 | Parser / payload bombs | NOT_CLAIMED | No global validated parser limits |
 | Rate-limit bypass | NOT_CLAIMED | Not validated across alternate surfaces |

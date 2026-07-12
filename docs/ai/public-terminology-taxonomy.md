@@ -16,7 +16,7 @@ Customer-facing website and docs copy must use **public capability names**, not 
 |---|---|
 | Runtime workload identity (SVID) rotation | ST-003 |
 | DeliveryPolicy TLS/trust-chain controls | N086 |
-| Sandbox delivery validation (direct / egress / relay) | FLOW-01, FLOW-02, FLOW-03, FLOW123 |
+| Sandbox delivery validation (direct / egress / relay) | Managed Public Delivery, Private Edge Delivery, FLOW123 |
 | Planes management UI (T1) | L1 /planes T1 as internal shorthand |
 | Integrity comparison | HELPER## / H## task labels |
 
