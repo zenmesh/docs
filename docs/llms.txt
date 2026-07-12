@@ -4,7 +4,7 @@
 
 Zen Mesh publishes public product, pricing, support, documentation, and evidence-scope information. Private roadmap, future architecture, and patent-sensitive implementation details are intentionally not included.
 
-**Version:** 1.1.1 · **Last-Updated: 2026-07-05T03:00:00Z
+**Version:** 1.2 · **Last-Updated: 2026-07-11T03:00:00Z
 
 ## Canonical discovery (crawlers)
 
@@ -45,6 +45,20 @@ Additional differentiators:
 | Security disclosures | Email | zen@zen-mesh.io. No bug bounty or CVD program at this time. |
 
 See [support](https://docs.zen-mesh.io/docs/start-here/support).
+
+## provider_packs
+
+Provider Pack lifecycle: Experimental → Beta → GA. Promotion is evidence-driven and governed, not automatic. See https://docs.zen-mesh.io/providerflow for full documentation.
+
+Experimental and Beta Provider Pack usage is metered but does not count against normal plan webhook quotas. Customers receive at least 30 days' notice before billing begins.
+
+| Maturity | Metered | Quota-counted | Chargeable |
+|----------|---------|---------------|------------|
+| Experimental | yes | no | no |
+| Beta | yes | no | no |
+| GA | yes | yes | yes |
+
+Canonical contract: https://github.com/zenmesh/zen-platform/blob/main/provider-packs/contract/provider-pack-commercial-lifecycle-contract.md
 
 ## Core
 

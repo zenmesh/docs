@@ -50,6 +50,8 @@ sidebar_label: Current Status
 | **Integrations** | | |
 | Sources (Stripe, GitHub, etc.) | WIRED_SANDBOX | Source templates and blueprint generation |
 | Webhook sources | WIRED_SANDBOX | Custom HTTP source |
+
+> Provider Packs: All four official packs (Stripe, GitHub, Shopify, Twilio) are at **Experimental** maturity per the canonical lifecycle contract. See [Provider Pack Lifecycle Contract](https://github.com/zenmesh/zen-platform/blob/main/provider-packs/contract/provider-pack-commercial-lifecycle-contract.md).
 | **Configuration** | | |
 | Configuration Contract | PUBLIC_CONTRACT_DRAFT | Cross-surface contract, not runtime-live |
 | Authentication | WIRED_SANDBOX | API key (Bearer), OIDC session, MCP key |

@@ -29,13 +29,15 @@ Zen Mesh provides Provider Template Packs for popular webhook sources. Each pack
 
 ### Maturity Levels
 
-Packs are tagged with maturity levels using the [Provider Package Lifecycle](./provider-package-lifecycle) classification:
+Packs follow the [Provider Pack Commercial Lifecycle Contract](https://github.com/zenmesh/zen-platform/blob/main/provider-packs/contract/provider-pack-commercial-lifecycle-contract.md):
 
-- **GA** — Fully validated, recommended for production use
-- **Beta** — Most quality gates passing, free grace period active
-- **Preview** — Functional with core quality gates passing, free/quota-exempt
+- **Experimental** — Newly introduced. Usage is metered but quota-exempt. No GA SLA.
+- **Beta** — Eligible after approximately 90 clean days plus evidence. Usage remains metered and quota-exempt. Customers receive at least 30 days' notice before normal billing.
+- **GA** — Normal quota and billing at explicit effective date. Applicable SLA applies.
 
-All four core provider packs (Stripe, GitHub) are at **GA** maturity. Shopify and Twilio are at **Preview** maturity with a parity path to GA.
+Promotion is evidence-driven and governed. Time alone never causes promotion.
+
+All four core provider packs (Stripe, GitHub, Shopify, Twilio) are currently at **Experimental** maturity in the canonical registry. Documentation references to "Production" or "GA" maturity reflect legacy classification and are superseded by the lifecycle contract.
 
 ## Architecture Mapping
 
@@ -89,7 +91,9 @@ Custom signed webhooks use the same security model as provider packs.
 
 ## Non-Claims
 
-- Not every provider pack is complete — roadmap packs are not current guarantees
-- Packs provide defaults, not locked-in behavior
-- All configuration remains under user control
-- Production use requires applicable plan and approved operational controls
+- No Provider Pack is production-live or GA
+- No quota enforcement is implemented in runtime
+- No governed promotion workflow is automated
+- Packs are optional accelerators — all configuration remains under user control
+- Deleting a pack does not remove underlying generic platform capabilities
+- Experimental and Beta packs have no production SLA

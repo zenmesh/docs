@@ -168,3 +168,13 @@ While packages are not public, operators have visibility through:
 - [Overview](./overview)
 - [Package Contract](./package-contract)
 - [Package Validation](./package-validation)
+
+## Provider Pack Non-Claims
+
+Per the [canonical lifecycle contract](https://github.com/zenmesh/zen-platform/blob/main/provider-packs/contract/provider-pack-commercial-lifecycle-contract.md):
+
+- No pack quota enforcement is implemented in runtime
+- No governed promotion workflow is automated
+- No runtime revocation enforcement exists
+- No customer notice automation exists
+- Experimental and Beta maturity labels are contract-level, not runtime-enforced
