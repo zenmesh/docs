@@ -4,6 +4,8 @@ sidebar_label: Current Status
 
 # Current Status
 
+> The canonical capability registry with eight-dimension maturity tracking is maintained at `zen-platform/config/canonical/capability-registry.yaml`. This page is a human-readable summary.
+
 Zen Mesh Free and Pro are the public buyer-facing plans. The docs support self-serve evaluation and private webhook delivery setup.
 
 Some production-live gates, including final cloud, billing, and operations gates, may still be tracked separately. Where a feature depends on a live gate, the docs call that out explicitly.

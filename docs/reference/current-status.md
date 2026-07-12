@@ -4,7 +4,7 @@ sidebar_label: Current Status
 
 # Current Status Matrix
 
-> Status: PUBLIC_CONTRACT_DRAFT. Capability status is documented on individual pages. This is a single-source reference. Not a production-live claim.
+> Status: DERIVED. The canonical capability registry is maintained at `zen-platform/config/canonical/capability-registry.yaml` with an eight-dimension maturity schema. This page is a human-readable summary derived from that registry. Not a production-live claim.
 
 ## Status Labels
 
