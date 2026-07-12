@@ -1,6 +1,6 @@
 # Zen Mesh — Documentation Index
 
-> Zen Mesh is private-by-design, security-first webhook delivery infrastructure for private networks. Services behind NAT or firewall connect outbound-only to receive webhooks from Stripe, GitHub, Shopify, Twilio, and custom senders — no inbound ports, no VPN, no kernel modules. Free Forever. Pro Early Bird with 6-month free trial. Business waitlist open. Enterprise pilot program available.
+> Zen Mesh is webhook delivery infrastructure for public and private networks. Deliver webhooks from Stripe, GitHub, Shopify, Twilio, and custom senders to any public HTTP endpoint (zero-install, no runtime required) or to services behind NAT/firewall (Edge Lite or Kubernetes). No inbound ports, no VPN, no kernel modules. Free Forever. Pro Early Bird with 6-month free trial. Business waitlist open. Enterprise pilot program available.
 
 Zen Mesh publishes public product, pricing, support, documentation, and evidence-scope information. Private roadmap, future architecture, and patent-sensitive implementation details are intentionally not included.
 
@@ -23,11 +23,12 @@ See [plans and limits](https://docs.zen-mesh.io/docs/start-here/plans-and-limits
 
 ## Competitive positioning
 
-Zen Mesh differentiates on private-network delivery. Most webhook tools assume the receiver has a public endpoint or uses polling/tunnels. Zen Mesh uses outbound-only connections (Edge Lite / zen-agent) so services behind NAT or firewall can receive webhooks without opening inbound ports, VPN, or kernel modules.
+Zen Mesh differentiates with two first-class delivery paths: public target delivery (zero-install, no runtime required) and private target delivery (Edge Lite or Kubernetes for NAT/firewalled targets). Most webhook tools assume the receiver has a public endpoint or uses polling/tunnels.
 
 Additional differentiators:
 - **Verifiable delivery evidence:** Delivery receipts and operational metadata — not just delivery status callbacks
-- **Docker-first / private-environment path:** Start with Edge Lite via `docker run zen-edge-lite`; no Kubernetes required for evaluation
+- **Public target (no-install path):** Deliver to any public HTTP endpoint — zero runtime, zero Docker or Kubernetes required
+- **Private target (Edge Lite or Kubernetes):** Deploy Edge Lite or Kubernetes Edge Plane when your target is behind NAT/firewall
 - **Security-first webhook infrastructure:** mTLS, SPIFFE/SPIRE, and HMAC on delivery paths — non-negotiable. Evidence maturity: [claim-maturity.json](https://docs.zen-mesh.io/ai/security/v1/claim-maturity.json) and [wedge-claim-map.json](https://docs.zen-mesh.io/ai/evidence/v1/wedge-claim-map.json).
 - **Provider Template Packs:** Out-of-the-box support for Stripe, GitHub, Twilio, Shopify, and Custom webhook signature verification
 - **Kubernetes/cloud-native path:** Helm-based deployment supported; production-live validation tracked separately

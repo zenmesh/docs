@@ -62,8 +62,8 @@ See [Delivery](../delivery/) for detailed capability pages.
 |-------|-------------|-----------------|
 | **Control Plane** | SaaS surface (UI, API, MCP). Configuration, policy, evidence scope. Never sees payloads. | Customer → CP |
 | **Data Plane** | Delivery runtime — ingesters, egresses, bridges. Processes event payloads. | Customer → DP |
-| **Edge Plane** | Customer environment. Runs zen-agent (required), optional ingester/egress. | Outbound only |
-| **Edge Lite** | Lightweight non-Kubernetes runtime. Evaluation and low-traffic use cases. | Outbound only |
+| **Edge Plane** | Customer environment. Runs zen-agent, optional ingester/egress. Required only for private target delivery. | Outbound only |
+| **Edge Lite** | Lightweight non-Kubernetes runtime. Evaluation and low-traffic use cases. Only needed when target is behind NAT/firewall. | Outbound only |
 
 See [Planes](../concepts/planes) and [Choose a Runtime Path](../install/choose-runtime-path).
 
