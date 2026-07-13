@@ -20,7 +20,7 @@ The delivery runtime that ingests events from sources and delivers them to targe
 Runs in the customer environment and connects outbound only. Requires zen-agent; optionally includes zen-ingester and zen-egress. Available as [Kubernetes Edge Plane](../install/kubernetes-edge-plane) or [Edge Lite](../install/edge-lite).
 
 ### Edge Lite
-A lightweight non-Kubernetes runtime path for evaluation and low-traffic use cases. See [Edge Lite](../install/edge-lite).
+A lightweight single-node production tier for private delivery via Docker. Suitable for DevOps, IaC, internal tooling. See [Edge Lite](../install/edge-lite).
 
 **See:** [Planes](./planes), [Choose a Runtime Path](../install/choose-runtime-path)
 

@@ -4,19 +4,21 @@ sidebar_label: Edge Lite
 
 # Edge Lite
 
-**Status:** DESIGN_PARTNER_EVAL — Design-partner evaluation only. Not production-ready. Not customer-ready.
+**Role:** Lightweight single-node production tier for private delivery (product_role), distinct from current release_status.  
+**Release Status:** Evidence-gated — public image and installer not yet published. See Current Status below.
 
 ## What Is Edge Lite
 
-Edge Lite is a **lightweight non-Kubernetes runtime path** for the Zen Mesh edge plane. It uses a Docker-based installation with the same enrollment bundle contract as the [Kubernetes Edge Plane](./kubernetes-edge-plane).
+Edge Lite is Zen Mesh's **lightweight, single-node production tier** for secure delivery to private destinations where multi-node high availability and automated failover are not required. It uses a Docker-based installation with the same enrollment bundle contract as the [Kubernetes Edge Plane](./kubernetes-edge-plane).
 
-**Do not use Edge Lite for production workloads.** Edge Lite is for evaluation, design partners, and low-traffic scenarios where full Kubernetes infrastructure is not available.
+Edge Lite is suitable for DevOps, IaC, internal tooling, and lower-volume private integrations. For Tier-1 business-critical flows requiring multi-node HA, use the [Kubernetes Edge Plane](./kubernetes-edge-plane).
 
 ## Who Is It For
 
-- Developers who want to evaluate Zen Mesh without Kubernetes
-- Design partners exploring the platform
-- Low-traffic or free-tier use cases
+- DevOps and IaC workflows needing private webhook delivery
+- Internal tooling and CI/CD notification pipelines
+- Lower-volume private integrations (GitHub, GitLab, Jira, Terraform Cloud, etc.)
+- Developers who want to evaluate before scaling to Kubernetes
 
 See [use cases](https://www.zen-mesh.io/use-cases) for examples of when Edge Lite fits your workflow.
 
@@ -27,58 +29,35 @@ See [use cases](https://www.zen-mesh.io/use-cases) for examples of when Edge Lit
 - Outbound connection to control plane
 - Basic event delivery capability (where supported)
 
-## Limitations
+## Distinction from Kubernetes Edge Plane
 
-| Area | Limitation | Status |
-|---|---|---|
-| Throughput | Lower than Kubernetes Edge Plane | Not benchmarked |
-| Availability | Single-container, no HA | Design-partner eval |
-| Provider support | Limited provider validation | Not production-live |
-| Security model | Reduced isolation vs Kubernetes | Zero-trust not complete |
-| Secrets management | zen-lock deployment dependent | Per install path |
-
-## Install (Design Partner Access)
-
-```bash
-curl -fsSL https://get.zen-mesh.io | bash
-```
-
-The script will:
-1. Create a short-lived install session
-2. Open your browser for signup/login
-3. Configure a basic edge plane
-4. Print your webhook URL and management URL
-
-## When to Use Kubernetes Edge Plane Instead
-
-Use the [Kubernetes Edge Plane](./kubernetes-edge-plane) when you need:
-- Production-grade availability and scalability
-- Full Kubernetes security model (network policies, RBAC, secrets)
-- zen-ingester or zen-egress for local event processing
-- Multi-tenant or high-throughput workloads
-
-## Relationship to the Full Edge Plane
-
-Edge Lite is a **variant** of the edge plane. It shares the same enrollment contract, trust anchors, and outbound-only connection model. The difference is the runtime substrate: Docker vs. Kubernetes.
+| Dimension | Edge Lite | Kubernetes Edge Plane |
+|-----------|-----------|----------------------|
+| Runtime | Docker single-node | Kubernetes multi-node |
+| Availability | Single-node production | Multi-node HA with failover |
+| Best for | DevOps, IaC, internal tooling | Tier-1 financial, business-critical |
+| Ingester | Not supported | Supported (optional) |
 
 ## Current Status
 
+Edge Lite's public image and installer availability are evidence-gated. The following table tracks current implementation status:
+
 | Capability | Status |
 |---|---|
-| Enrollment bundle contract | Contract-level support (runtime pending S171) |
-| Heartbeat | Pending S171 runtime implementation |
-| Delivery | Pending S172 runtime implementation |
-| Operator visibility | Fixture/demo data only |
-| Signing/provenance | Pending keyless identity |
+| Product role | Lightweight single-node production (defined) |
+| Public Docker image | Not yet published |
+| Installer | Not yet published |
+| Enrollment bundle contract | Contract-level support (runtime pending) |
+| Heartbeat | Pending runtime implementation |
+| Delivery | Pending runtime implementation |
+| Private delivery proof | Pending runtime implementation |
 
 ## Non-Claims
 
-- launch_ready = false
-- customer_ready = false
-- prod_live = false
-- free_tier_ready = false
-- zero_trust_complete = false
-- Not a replacement for Kubernetes Edge Plane for production
+- launch_ready = false (runtime not yet published)
+- customer_ready = false (runtime not yet published)
+- prod_live = false (runtime not yet published)
+- Not a replacement for Kubernetes Edge Plane for multi-node HA workflows
 
 ## Related
 

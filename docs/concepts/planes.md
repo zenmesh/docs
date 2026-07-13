@@ -15,7 +15,7 @@ The Zen Mesh architecture is organized into three planes plus Edge Lite. This is
 | **Control Plane** | SaaS (zen-back, zen-bff, zen-front-react, workers) | Configuration, UI, policy, auth, evidence | Yes | WIRED_SANDBOX |
 | **Data Plane** | Zen-operated or customer-operated runtime | Event routing, retry, backpressure, delivery processing | Yes | WIRED_SANDBOX |
 | **Edge Plane** | Customer environment (Kubernetes or other) | Outbound-only agent, optional ingester/egress, secret management | Yes | WIRED_SANDBOX |
-| **Edge Lite** | Lightweight non-Kubernetes path | Simple/free/low-traffic runtime | No (optional) | DESIGN_PARTNER_EVAL |
+| **Edge Lite** | Docker single-node (customer environment) | Lightweight single-node production for private delivery | No (optional) | EVIDENCE_GATED (runtime not yet published) |
 
 ## Control Plane
 
@@ -61,9 +61,9 @@ The edge plane can run on:
 
 ## Edge Lite
 
-Edge Lite is a **lightweight non-Kubernetes runtime path** for lower-friction deployments. See [Edge Lite](../install/edge-lite) for details.
+Edge Lite is Zen Mesh's **lightweight, single-node production tier** for private delivery via Docker. Suitable for DevOps, IaC, internal tooling, and lower-volume integrations. See [Edge Lite](../install/edge-lite) for details.
 
-**Status:** Design-partner evaluation. Not production-ready. Not customer-ready.
+**Status:** Product role is lightweight_single_node_production. Public image and installer availability are evidence-gated.
 
 ## Component Placement
 
@@ -72,7 +72,7 @@ Edge Lite is a **lightweight non-Kubernetes runtime path** for lower-friction de
 | zen-back | Required | — | — | — |
 | zen-bff | Required | — | — | — |
 | zen-front-react | Required | — | — | — |
-| zen-ingester | — | Required | Optional | Optional |
+| zen-ingester | — | Required | Optional | — |
 | zen-egress | — | Required | Optional | Optional |
 | zen-bridge | — | Required | — | — |
 | zen-agent | — | Sync only | Required | Required |
@@ -82,7 +82,7 @@ Edge Lite is a **lightweight non-Kubernetes runtime path** for lower-friction de
 
 - **Kubernetes cluster is a deployment substrate**, not the product root. The product model is plane-based.
 - **Edge Plane can be Kubernetes-based** or run via Edge Lite.
-- **Edge Lite is a lightweight alternative** where supported, not a full replacement for Kubernetes Edge Plane.
+- **Edge Lite is the lightweight single-node production tier** where supported, not a full replacement for Kubernetes Edge Plane for multi-node HA.
 - **Data Plane and Edge Plane are distinct.** zen-bridge is data-plane only.
 - **Edge Plane does not imply inbound ports.** All connections are outbound.
 - **Not all paths have mTLS** — see [Security docs](../security/agent-saas-mtls) for scope.

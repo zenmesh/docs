@@ -91,7 +91,7 @@ zen-bridge is not deployed in the edge plane — it runs in the data plane.
 
 ## Edge Lite Alternative
 
-If you don't have a Kubernetes cluster or want a lightweight evaluation path, see [Edge Lite](./edge-lite). Edge Lite is a non-Kubernetes runtime for simple or evaluation use cases. It is not a full replacement for the Kubernetes Edge Plane for production deployments.
+If you don't need multi-node HA and want a lightweight single-node production tier, see [Edge Lite](./edge-lite). Edge Lite is a Docker-based runtime for DevOps, IaC, internal tooling, and lower-volume integrations. It is not a full replacement for the Kubernetes Edge Plane for multi-node HA deployments.
 
 ## Troubleshooting
 
