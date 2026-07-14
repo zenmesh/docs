@@ -77,6 +77,8 @@ const sidebars: SidebarsConfig = {
         'delivery/replay-vs-retry',
         'delivery/event-routing',
         'delivery/webhook-reliability',
+        'delivery/delivery-guarantee-matrix',
+        'delivery/idempotency-retry-matrix',
       ],
     },
     {

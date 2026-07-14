@@ -233,7 +233,9 @@ OpenAPI spec: [zen-back.v1.yaml](https://github.com/zenmesh/zen-platform-hermes/
 
 - [Operations registry](https://docs.zen-mesh.io/ai/operations.json): 22 operations with per-surface coverage, idempotency, delivery guarantees, permissions, and non-claims
 - [Delivery guarantees](https://docs.zen-mesh.io/ai/delivery-guarantees.json): Per-path acceptance, persistence, delivery guarantee, retry owner, duplicate possibility, ordering, replay, retention
-- [Idempotency and retry matrix](https://docs.zen-mesh.io/ai/idempotency-retry.json): 16 operations with idempotency classification, key support, retry errors, implementation status
+- [Idempotency and retry matrix (machine-readable)](https://docs.zen-mesh.io/ai/idempotency-retry.json): 16 operations with idempotency classification, key support, retry errors, implementation status
+- [Delivery guarantee matrix (human-readable)](https://docs.zen-mesh.io/docs/delivery/delivery-guarantee-matrix): 10-path human-readable delivery guarantee matrix with acceptance, persistence, guarantee, retry, duplicate, ordering, replay, and retention
+- [Idempotency and retry matrix (human-readable)](https://docs.zen-mesh.io/docs/delivery/idempotency-retry-matrix): 22-operation human-readable idempotency matrix with key support, retry policy, backoff schedule, and non-claims
 - [Capability graph](https://docs.zen-mesh.io/ai/capability-graph.json): 22 nodes and 47 typed edges mapping layers, resources, surfaces, and relationships
 - [Examples registry](https://docs.zen-mesh.io/ai/examples-registry.json): 18 examples with surface, permissions, implementation status, and non-claims
 
