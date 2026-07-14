@@ -4,6 +4,7 @@
   "generated_at": "2026-07-14T12:11:00Z",
   "source_commit": "4c50d0b261e98e0e6ce4440068ed6952d237116d",
   "source_repository": "git@github.com:zenmesh/docs.git",
+  "note": "18 operations. Human-readable matrix has 22 entries because update/delete/apply/disable/enable are expanded per resource type (Endpoint, Target, Flow) for easy lookup. Machine-readable projection groups these by operation type.",
   "operations": [
     {
       "operation_id": "create-endpoint",
@@ -228,6 +229,38 @@
       "evidence_behavior": "Returns retry_receipt with delivery_id and status. Retry re-uses original delivery — does not re-ingest from source.",
       "implementation_status": "IMPLEMENTED_VERIFIED",
       "verification_status": "WIRED_SANDBOX"
+    },
+    {
+      "operation_id": "certificate-rotation",
+      "operation": "certificate rotation (TLS certificates)",
+      "idempotency": "NON_IDEMPOTENT",
+      "key_supported": false,
+      "key_scope": null,
+      "key_retention": null,
+      "repeated_request_result": "Certificate rotation uses cert-manager auto-renewal with 24h default. Manual rotation is supported but not idempotent.",
+      "concurrent_request_behavior": "Not applicable — rotation is lifecycle-owner driven",
+      "retry_owner": "system (cert-manager)",
+      "retryable_errors": "cert-manager auto-retries renewal",
+      "permanent_errors": "Not documented — certificate expiry behavior is UNRESOLVED",
+      "evidence_behavior": "Certificate bundle evidence via ZenLock audit trail",
+      "implementation_status": "MANUAL_IN_V1_1",
+      "verification_status": "REQUIRES_DOCUMENTATION"
+    },
+    {
+      "operation_id": "inconsistent-state-recovery",
+      "operation": "inconsistent-state recovery",
+      "idempotency": "NON_IDEMPOTENT",
+      "key_supported": false,
+      "key_scope": null,
+      "key_retention": null,
+      "repeated_request_result": "No automated recovery — reapply is the recommended approach. NOT_SUPPORTED in v1.1.",
+      "concurrent_request_behavior": "Not applicable — operation not available",
+      "retry_owner": "manual (operator)",
+      "retryable_errors": "N/A",
+      "permanent_errors": "N/A",
+      "evidence_behavior": "Reapply generates new evidence; divergence detection not automated",
+      "implementation_status": "MANUAL_IN_V1_1",
+      "verification_status": "NOT_SUPPORTED"
     },
     {
       "operation_id": "mcp-write",
