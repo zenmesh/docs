@@ -213,7 +213,12 @@ OpenAPI spec: [zen-back.v1.yaml](https://github.com/zenmesh/zen-platform-hermes/
 
 ## Operations
 
+- [Agent Operations Guide](https://docs.zen-mesh.io/docs/operations/agent-operations): How external AI agents safely operate Zen Mesh — safety rules, surface discovery, auth, resource lifecycle, read/write procedures, failure diagnosis, prohibited actions
 - [Backups and Disaster Recovery](https://docs.zen-mesh.io/docs/operations/backups): Backup procedures, restore, DR runbook, RPO/RTO targets
+- [Upgrades](https://docs.zen-mesh.io/docs/operations/upgrades): Helm upgrade/rollback procedures, version compatibility
+- [Troubleshooting](https://docs.zen-mesh.io/docs/operations/troubleshooting): Common operational issues
+- [Operational readiness matrix](https://docs.zen-mesh.io/ai/operations.json): Machine-readable per-operation surface coverage, idempotency, delivery guarantees
+- [Agent operability test](https://docs.zen-mesh.io/docs/operations/agent-operability-test): External agent operability test scoring 13 operational tasks
 
 ## Open Source
 

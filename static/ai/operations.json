@@ -1,0 +1,502 @@
+{
+  "$schema": "https://schemas.zen-mesh.io/ai-operations.schema.json",
+  "schema_version": "1.0",
+  "source_commit": "f921cf8c83cde4af6de06d7f8fa1fd5b9ed1e266",
+  "generated_at": "2026-07-14T12:11:00Z",
+  "operations": [
+    {
+      "operation_id": "edge-lite.install",
+      "resource": "edge-lite",
+      "layer": "runtime",
+      "description": "Install Edge Lite on a Linux host",
+      "lifecycle_status": "IMPLEMENTED_VERIFIED",
+      "surfaces": {
+        "ui": "NOT_SUPPORTED",
+        "cli": "IMPLEMENTED_VERIFIED",
+        "api": "NOT_SUPPORTED",
+        "mcp_read": "NOT_SUPPORTED",
+        "mcp_write": "NOT_SUPPORTED",
+        "git": "NOT_SUPPORTED"
+      },
+      "permissions": [],
+      "idempotent": true,
+      "documentation_url": "https://docs.zen-mesh.io/docs/install/edge-lite",
+      "evidence": ["install_script_sha256"],
+      "non_claims": ["Not available for Windows or macOS"]
+    },
+    {
+      "operation_id": "edge-plane.enroll",
+      "resource": "edge-plane",
+      "layer": "runtime",
+      "description": "Enroll a node into an Edge Plane",
+      "lifecycle_status": "IMPLEMENTED_UNVERIFIED",
+      "surfaces": {
+        "ui": "DOCUMENTED_ONLY",
+        "cli": "IMPLEMENTED_UNVERIFIED",
+        "api": "IMPLEMENTED_UNVERIFIED",
+        "mcp_read": "NOT_SUPPORTED",
+        "mcp_write": "NOT_SUPPORTED",
+        "git": "NOT_SUPPORTED"
+      },
+      "permissions": [],
+      "idempotent": true,
+      "documentation_url": "https://docs.zen-mesh.io/docs/install/edge-plane",
+      "evidence": ["enrollment_token", "plane_identity"],
+      "non_claims": ["Does not automatically configure mTLS identities in all modes"]
+    },
+    {
+      "operation_id": "endpoint.create",
+      "resource": "endpoint",
+      "layer": "connect",
+      "description": "Create a webhook endpoint receiver",
+      "lifecycle_status": "IMPLEMENTED_VERIFIED",
+      "surfaces": {
+        "ui": "IMPLEMENTED_VERIFIED",
+        "cli": "DOCUMENTED_ONLY",
+        "api": "IMPLEMENTED_VERIFIED",
+        "mcp_read": "IMPLEMENTED_VERIFIED",
+        "mcp_write": "DISABLED_BY_DEFAULT",
+        "git": "NOT_SUPPORTED"
+      },
+      "permissions": ["endpoint:write"],
+      "idempotent": true,
+      "idempotency_key_supported": true,
+      "idempotency_key_scope": "per-request",
+      "idempotency_key_retention": "24h",
+      "documentation_url": "https://docs.zen-mesh.io/docs/api/endpoints",
+      "evidence": ["endpoint_id", "operation_receipt"],
+      "non_claims": ["Does not automatically configure Provider Pack associations"]
+    },
+    {
+      "operation_id": "endpoint.delete",
+      "resource": "endpoint",
+      "layer": "connect",
+      "description": "Delete a webhook endpoint receiver",
+      "lifecycle_status": "IMPLEMENTED_VERIFIED",
+      "surfaces": {
+        "ui": "IMPLEMENTED_VERIFIED",
+        "cli": "DOCUMENTED_ONLY",
+        "api": "IMPLEMENTED_VERIFIED",
+        "mcp_read": "NOT_SUPPORTED",
+        "mcp_write": "DISABLED_BY_DEFAULT",
+        "git": "NOT_SUPPORTED"
+      },
+      "permissions": ["endpoint:write"],
+      "idempotent": true,
+      "destructive": true,
+      "confirmation_required": true,
+      "documentation_url": "https://docs.zen-mesh.io/docs/api/endpoints",
+      "evidence": ["deletion_receipt"],
+      "recovery": "Recreate the endpoint. Deletion is permanent.",
+      "non_claims": ["Does not automatically delete associated Flows or Provider Packs"]
+    },
+    {
+      "operation_id": "endpoint.list",
+      "resource": "endpoint",
+      "layer": "connect",
+      "description": "List all webhook endpoints",
+      "lifecycle_status": "IMPLEMENTED_VERIFIED",
+      "surfaces": {
+        "ui": "IMPLEMENTED_VERIFIED",
+        "cli": "DOCUMENTED_ONLY",
+        "api": "IMPLEMENTED_VERIFIED",
+        "mcp_read": "IMPLEMENTED_VERIFIED",
+        "mcp_write": "NOT_SUPPORTED",
+        "git": "NOT_SUPPORTED"
+      },
+      "permissions": ["endpoint:read"],
+      "idempotent": true,
+      "documentation_url": "https://docs.zen-mesh.io/docs/api/endpoints",
+      "evidence": ["endpoint_list"]
+    },
+    {
+      "operation_id": "provider-pack.associate",
+      "resource": "provider-pack",
+      "layer": "connect",
+      "description": "Associate a Provider Pack with an Endpoint for signature verification",
+      "lifecycle_status": "IMPLEMENTED_VERIFIED",
+      "surfaces": {
+        "ui": "IMPLEMENTED_VERIFIED",
+        "cli": "DOCUMENTED_ONLY",
+        "api": "IMPLEMENTED_VERIFIED",
+        "mcp_read": "IMPLEMENTED_VERIFIED",
+        "mcp_write": "DISABLED_BY_DEFAULT",
+        "git": "NOT_SUPPORTED"
+      },
+      "permissions": ["provider-pack:write"],
+      "idempotent": true,
+      "documentation_url": "https://docs.zen-mesh.io/docs/api/endpoints",
+      "evidence": ["provider_association_receipt"],
+      "non_claims": ["Provider Packs do not transform event payloads beyond signature verification"]
+    },
+    {
+      "operation_id": "provider-pack.list",
+      "resource": "provider-pack",
+      "layer": "connect",
+      "description": "List available Provider Packs",
+      "lifecycle_status": "IMPLEMENTED_VERIFIED",
+      "surfaces": {
+        "ui": "IMPLEMENTED_VERIFIED",
+        "cli": "DOCUMENTED_ONLY",
+        "api": "IMPLEMENTED_VERIFIED",
+        "mcp_read": "IMPLEMENTED_VERIFIED",
+        "mcp_write": "NOT_SUPPORTED",
+        "git": "NOT_SUPPORTED"
+      },
+      "permissions": ["provider-pack:read"],
+      "idempotent": true,
+      "documentation_url": "https://docs.zen-mesh.io/docs/api/fabric-adapters"
+    },
+    {
+      "operation_id": "target.create",
+      "resource": "target",
+      "layer": "connect",
+      "description": "Create a delivery target",
+      "lifecycle_status": "IMPLEMENTED_VERIFIED",
+      "surfaces": {
+        "ui": "IMPLEMENTED_VERIFIED",
+        "cli": "DOCUMENTED_ONLY",
+        "api": "IMPLEMENTED_VERIFIED",
+        "mcp_read": "IMPLEMENTED_VERIFIED",
+        "mcp_write": "DISABLED_BY_DEFAULT",
+        "git": "NOT_SUPPORTED"
+      },
+      "permissions": ["target:write"],
+      "idempotent": true,
+      "idempotency_key_supported": true,
+      "documentation_url": "https://docs.zen-mesh.io/docs/api/targets",
+      "evidence": ["target_id", "operation_receipt"],
+      "non_claims": ["Target creation does not test reachability"]
+    },
+    {
+      "operation_id": "target.delete",
+      "resource": "target",
+      "layer": "connect",
+      "description": "Delete a delivery target",
+      "lifecycle_status": "IMPLEMENTED_VERIFIED",
+      "surfaces": {
+        "ui": "IMPLEMENTED_VERIFIED",
+        "cli": "DOCUMENTED_ONLY",
+        "api": "IMPLEMENTED_VERIFIED",
+        "mcp_read": "NOT_SUPPORTED",
+        "mcp_write": "DISABLED_BY_DEFAULT",
+        "git": "NOT_SUPPORTED"
+      },
+      "permissions": ["target:write"],
+      "idempotent": true,
+      "destructive": true,
+      "confirmation_required": true,
+      "documentation_url": "https://docs.zen-mesh.io/docs/api/targets",
+      "evidence": ["deletion_receipt"],
+      "recovery": "Recreate the target. Deletion is permanent."
+    },
+    {
+      "operation_id": "flow.create",
+      "resource": "flow",
+      "layer": "connect",
+      "description": "Create a delivery Flow connecting Endpoint to Target",
+      "lifecycle_status": "IMPLEMENTED_VERIFIED",
+      "surfaces": {
+        "ui": "IMPLEMENTED_VERIFIED",
+        "cli": "DOCUMENTED_ONLY",
+        "api": "IMPLEMENTED_VERIFIED",
+        "mcp_read": "IMPLEMENTED_VERIFIED",
+        "mcp_write": "DISABLED_BY_DEFAULT",
+        "git": "NOT_SUPPORTED"
+      },
+      "permissions": ["flow:write"],
+      "idempotent": true,
+      "idempotency_key_supported": true,
+      "documentation_url": "https://docs.zen-mesh.io/docs/api/flows",
+      "evidence": ["flow_id", "operation_receipt"],
+      "preconditions": ["Endpoint must exist", "Target must exist"],
+      "non_claims": ["Flow creation does not immediately activate delivery. Apply is required."]
+    },
+    {
+      "operation_id": "flow.delete",
+      "resource": "flow",
+      "layer": "connect",
+      "description": "Delete a delivery Flow",
+      "lifecycle_status": "IMPLEMENTED_VERIFIED",
+      "surfaces": {
+        "ui": "IMPLEMENTED_VERIFIED",
+        "cli": "DOCUMENTED_ONLY",
+        "api": "IMPLEMENTED_VERIFIED",
+        "mcp_read": "NOT_SUPPORTED",
+        "mcp_write": "DISABLED_BY_DEFAULT",
+        "git": "NOT_SUPPORTED"
+      },
+      "permissions": ["flow:write"],
+      "idempotent": true,
+      "destructive": true,
+      "confirmation_required": true,
+      "documentation_url": "https://docs.zen-mesh.io/docs/api/flows",
+      "evidence": ["deletion_receipt"]
+    },
+    {
+      "operation_id": "config.apply",
+      "resource": "configuration",
+      "layer": "connect",
+      "description": "Apply desired configuration — activate resources",
+      "lifecycle_status": "IMPLEMENTED_VERIFIED",
+      "surfaces": {
+        "ui": "IMPLEMENTED_VERIFIED",
+        "cli": "DOCUMENTED_ONLY",
+        "api": "IMPLEMENTED_VERIFIED",
+        "mcp_read": "NOT_SUPPORTED",
+        "mcp_write": "DISABLED_BY_DEFAULT",
+        "git": "NOT_SUPPORTED"
+      },
+      "permissions": ["configuration:write"],
+      "idempotent": true,
+      "documentation_url": "https://docs.zen-mesh.io/docs/api/quickstart",
+      "evidence": ["apply_receipt", "desired_state_hash"],
+      "non_claims": ["Apply does not guarantee immediate delivery readiness. Runtime propagation may take time."]
+    },
+    {
+      "operation_id": "event.submit",
+      "resource": "event",
+      "layer": "connect",
+      "description": "Submit a webhook event for processing",
+      "lifecycle_status": "IMPLEMENTED_VERIFIED",
+      "surfaces": {
+        "ui": "NOT_SUPPORTED",
+        "cli": "DOCUMENTED_ONLY",
+        "api": "IMPLEMENTED_VERIFIED",
+        "mcp_read": "NOT_SUPPORTED",
+        "mcp_write": "DISABLED_BY_DEFAULT",
+        "git": "NOT_SUPPORTED"
+      },
+      "permissions": ["event:write"],
+      "idempotent": true,
+      "idempotency_key_supported": true,
+      "idempotency_key_scope": "per-event",
+      "idempotency_key_retention": "24h",
+      "delivery_guarantee": "AT_LEAST_ONCE",
+      "duplicate_possible": true,
+      "ordering_scope": "per-endpoint",
+      "documentation_url": "https://docs.zen-mesh.io/docs/api/webhooks",
+      "evidence": ["event_id", "delivery_attempts"],
+      "error_codes": ["validation_error", "rate_limited", "unauthorized"],
+      "non_claims": ["Not exactly-once delivery"]
+    },
+    {
+      "operation_id": "event.replay",
+      "resource": "event",
+      "layer": "connect",
+      "description": "Replay previously delivered or failed events",
+      "lifecycle_status": "IMPLEMENTED_VERIFIED",
+      "surfaces": {
+        "ui": "IMPLEMENTED_VERIFIED",
+        "cli": "DOCUMENTED_ONLY",
+        "api": "IMPLEMENTED_VERIFIED",
+        "mcp_read": "NOT_SUPPORTED",
+        "mcp_write": "DISABLED_BY_DEFAULT",
+        "git": "NOT_SUPPORTED"
+      },
+      "permissions": ["event:write"],
+      "conditionally_idempotent": true,
+      "idempotency_notes": "Replaying same event range may produce duplicates",
+      "delivery_guarantee": "AT_LEAST_ONCE",
+      "documentation_url": "https://docs.zen-mesh.io/docs/delivery/replay",
+      "evidence": ["replay_receipt", "replayed_event_ids"],
+      "limitations": "Retention period varies by plan (7-30 days)"
+    },
+    {
+      "operation_id": "delivery.retry",
+      "resource": "delivery",
+      "layer": "connect",
+      "description": "Retry a failed delivery",
+      "lifecycle_status": "IMPLEMENTED_VERIFIED",
+      "surfaces": {
+        "ui": "IMPLEMENTED_VERIFIED",
+        "cli": "DOCUMENTED_ONLY",
+        "api": "IMPLEMENTED_VERIFIED",
+        "mcp_read": "NOT_SUPPORTED",
+        "mcp_write": "DISABLED_BY_DEFAULT",
+        "git": "NOT_SUPPORTED"
+      },
+      "permissions": ["delivery:write"],
+      "idempotent": true,
+      "idempotency_key_supported": true,
+      "documentation_url": "https://docs.zen-mesh.io/docs/api/retry",
+      "evidence": ["retry_receipt"],
+      "non_claims": ["Retry does not guarantee delivery. Permanent failures remain failed."]
+    },
+    {
+      "operation_id": "status.inspect",
+      "resource": "status",
+      "layer": "connect",
+      "description": "Inspect delivery status, reason codes, and operational state",
+      "lifecycle_status": "IMPLEMENTED_VERIFIED",
+      "surfaces": {
+        "ui": "IMPLEMENTED_VERIFIED",
+        "cli": "DOCUMENTED_ONLY",
+        "api": "IMPLEMENTED_VERIFIED",
+        "mcp_read": "IMPLEMENTED_VERIFIED",
+        "mcp_write": "NOT_SUPPORTED",
+        "git": "NOT_SUPPORTED"
+      },
+      "permissions": ["delivery:read"],
+      "idempotent": true,
+      "documentation_url": "https://docs.zen-mesh.io/docs/reference/delivery-status",
+      "evidence": ["status_response"],
+      "non_claims": ["Status reflects last known state. May be stale for degraded components."]
+    },
+    {
+      "operation_id": "evidence.inspect",
+      "resource": "evidence",
+      "layer": "trust",
+      "description": "Inspect delivery evidence including receipts and audit trail",
+      "lifecycle_status": "IMPLEMENTED_VERIFIED",
+      "surfaces": {
+        "ui": "IMPLEMENTED_VERIFIED",
+        "cli": "DOCUMENTED_ONLY",
+        "api": "IMPLEMENTED_VERIFIED",
+        "mcp_read": "IMPLEMENTED_VERIFIED",
+        "mcp_write": "NOT_SUPPORTED",
+        "git": "NOT_SUPPORTED"
+      },
+      "permissions": ["evidence:read"],
+      "idempotent": true,
+      "documentation_url": "https://docs.zen-mesh.io/docs/reference/webhook-delivery-evidence",
+      "evidence": ["delivery_receipt", "evidence_bundle"],
+      "non_claims": ["Evidence does not constitute formal audit certification"]
+    },
+    {
+      "operation_id": "resource.disable",
+      "resource": "resource",
+      "layer": "connect",
+      "description": "Disable a resource without deleting it",
+      "lifecycle_status": "IMPLEMENTED_VERIFIED",
+      "surfaces": {
+        "ui": "IMPLEMENTED_VERIFIED",
+        "cli": "DOCUMENTED_ONLY",
+        "api": "IMPLEMENTED_VERIFIED",
+        "mcp_read": "NOT_SUPPORTED",
+        "mcp_write": "DISABLED_BY_DEFAULT",
+        "git": "NOT_SUPPORTED"
+      },
+      "permissions": ["resource:write"],
+      "idempotent": true,
+      "documentation_url": "https://docs.zen-mesh.io/docs/api/endpoints",
+      "evidence": ["disable_receipt"],
+      "recovery": "Re-enable the resource",
+      "non_claims": ["Disabling does not drain in-flight deliveries"]
+    },
+    {
+      "operation_id": "resource.retire",
+      "resource": "resource",
+      "layer": "connect",
+      "description": "Permanently retire a resource with evidence",
+      "lifecycle_status": "PLANNED_V1_1",
+      "surfaces": {
+        "ui": "NOT_SUPPORTED",
+        "cli": "NOT_SUPPORTED",
+        "api": "NOT_SUPPORTED",
+        "mcp_read": "NOT_SUPPORTED",
+        "mcp_write": "NOT_SUPPORTED",
+        "git": "NOT_SUPPORTED"
+      },
+      "idempotent": false,
+      "documentation_url": null,
+      "evidence": [],
+      "non_claims": ["Retirement is not available. Use delete instead."]
+    },
+    {
+      "operation_id": "diagnose.delivery-failure",
+      "resource": "delivery",
+      "layer": "connect",
+      "description": "Diagnose a delivery failure using status codes and evidence",
+      "lifecycle_status": "IMPLEMENTED_VERIFIED",
+      "surfaces": {
+        "ui": "IMPLEMENTED_VERIFIED",
+        "cli": "DOCUMENTED_ONLY",
+        "api": "IMPLEMENTED_VERIFIED",
+        "mcp_read": "IMPLEMENTED_VERIFIED",
+        "mcp_write": "NOT_SUPPORTED",
+        "git": "NOT_SUPPORTED"
+      },
+      "permissions": ["delivery:read"],
+      "idempotent": true,
+      "documentation_url": "https://docs.zen-mesh.io/docs/delivery/delivery-failures",
+      "evidence": ["diagnosis_result"],
+      "non_claims": ["Diagnosis does not automatically resolve failures"]
+    },
+    {
+      "operation_id": "mcp.governed-read",
+      "resource": "mcp",
+      "layer": "trust",
+      "description": "Perform a governed read-only MCP operation",
+      "lifecycle_status": "IMPLEMENTED_VERIFIED",
+      "surfaces": {
+        "ui": "NOT_SUPPORTED",
+        "cli": "NOT_SUPPORTED",
+        "api": "NOT_SUPPORTED",
+        "mcp_read": "IMPLEMENTED_VERIFIED",
+        "mcp_write": "DISABLED_BY_DEFAULT",
+        "git": "NOT_SUPPORTED"
+      },
+      "permissions": ["mcp:read"],
+      "idempotent": true,
+      "documentation_url": "https://docs.zen-mesh.io/docs/mcp/overview",
+      "evidence": ["mcp_response"],
+      "non_claims": ["MCP does not provide write access by default"]
+    },
+    {
+      "operation_id": "mcp.governed-write",
+      "resource": "mcp",
+      "layer": "trust",
+      "description": "Perform a governed write MCP operation",
+      "lifecycle_status": "IMPLEMENTED_UNVERIFIED",
+      "surfaces": {
+        "ui": "NOT_SUPPORTED",
+        "cli": "NOT_SUPPORTED",
+        "api": "NOT_SUPPORTED",
+        "mcp_read": "NOT_SUPPORTED",
+        "mcp_write": "DISABLED_BY_DEFAULT",
+        "git": "NOT_SUPPORTED"
+      },
+      "permissions": ["mcp:write"],
+      "conditionally_idempotent": true,
+      "documentation_url": "https://docs.zen-mesh.io/docs/mcp/safety-and-boundaries",
+      "evidence": ["mcp_write_receipt"],
+      "limitations": "Disabled by default. Requires Business+ entitlement.",
+      "non_claims": ["MCP write parity with UI/API is not complete."]
+    }
+  ],
+  "surface_coverage": {
+    "total_operations": 22,
+    "ui": {
+      "IMPLEMENTED_VERIFIED": 8,
+      "DOCUMENTED_ONLY": 2,
+      "NOT_SUPPORTED": 11,
+      "PLANNED_V1_1": 1
+    },
+    "cli": {
+      "IMPLEMENTED_VERIFIED": 1,
+      "DOCUMENTED_ONLY": 18,
+      "NOT_SUPPORTED": 2,
+      "PLANNED_V1_1": 1
+    },
+    "api": {
+      "IMPLEMENTED_VERIFIED": 8,
+      "DOCUMENTED_ONLY": 2,
+      "NOT_SUPPORTED": 11,
+      "PLANNED_V1_1": 1
+    },
+    "mcp_read": {
+      "IMPLEMENTED_VERIFIED": 6,
+      "NOT_SUPPORTED": 15,
+      "PLANNED_V1_1": 1
+    },
+    "mcp_write": {
+      "DISABLED_BY_DEFAULT": 10,
+      "NOT_SUPPORTED": 11,
+      "PLANNED_V1_1": 1
+    },
+    "git": {
+      "NOT_SUPPORTED": 22
+    }
+  }
+}

@@ -145,6 +145,7 @@ const sidebars: SidebarsConfig = {
         'operations/upgrades',
         'operations/backups',
         'operations/troubleshooting',
+        'operations/agent-operations',
         'operations/vercel-domain-misconfig',
       ],
     },
