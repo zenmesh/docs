@@ -2,7 +2,7 @@
   "$schema": "https://schemas.zen-mesh.io/ai-delivery-guarantees.schema.json",
   "schema_version": "1.0",
   "generated_at": "2026-07-14T12:11:00Z",
-  "source_commit": "4c50d0b261e98e0e6ce4440068ed6952d237116d",
+  "source_commit": "0ecef1240ffd6a66e6743529a84eafeaf7dff7d2",
   "source_repository": "git@github.com:zenmesh/docs.git",
   "paths": [
     {
@@ -94,7 +94,7 @@
       "ordering_scope": "none",
       "replay_support": true,
       "retention": "DLQ 7 days (configurable); attempt history 30 days",
-      "terminal_failure_behavior": "exhausted → DLQ; operator inspects, replays, archives, or discards",
+      "terminal_failure_behavior": "exhausted \u2192 DLQ; operator inspects, replays, archives, or discards",
       "evidence_generated": "delivery attempt record including HTTP status, response body, timestamp, duration, error details",
       "customer_responsibility": "Ensure target endpoint is reachable and returns correct responses",
       "limitations": "At-least-once only; duplicates possible during recovery scenarios. Delivery guarantees are scenario-specific (local/mock/cloud-demo), not production-level.",
@@ -113,10 +113,10 @@
       "ordering_scope": "none",
       "replay_support": true,
       "retention": "DLQ 7 days; attempt history 30 days",
-      "terminal_failure_behavior": "exhausted → DLQ",
+      "terminal_failure_behavior": "exhausted \u2192 DLQ",
       "evidence_generated": "delivery attempt record with outcome, timestamps, integrity proofs",
       "customer_responsibility": "Ensure private network allows outbound egress connectivity; deploy and maintain edge plane (Kubernetes or Edge Lite)",
-      "limitations": "Edge Lite runtime not yet published. Kubernetes Edge Plane at WIRED_SANDBOX. mTLS delivery supported (outbound-only). Customer-managed egress → target mTLS is configurable, not Zen-mandatory.",
+      "limitations": "Edge Lite runtime not yet published. Kubernetes Edge Plane at WIRED_SANDBOX. mTLS delivery supported (outbound-only). Customer-managed egress \u2192 target mTLS is configurable, not Zen-mandatory.",
       "verification_status": "WIRED_SANDBOX"
     },
     {
@@ -132,7 +132,7 @@
       "ordering_scope": "none",
       "replay_support": true,
       "retention": "DLQ 7 days; attempt history 30 days",
-      "terminal_failure_behavior": "exhausted → DLQ; operator replays after issue resolution",
+      "terminal_failure_behavior": "exhausted \u2192 DLQ; operator replays after issue resolution",
       "evidence_generated": "delivery receipt, delivery attempt records, evidence manifests",
       "customer_responsibility": "Deploy and maintain edge plane infrastructure; monitor edge plane health",
       "limitations": "Private-edge path convergence proven in local mock only. Not private data plane general availability; not customer-owned guarantee. Edge Plane never requires inbound ports.",
@@ -151,10 +151,10 @@
       "ordering_scope": "none",
       "replay_support": false,
       "retention": "N/A (retry re-uses original delivery)",
-      "terminal_failure_behavior": "exhausted → DLQ after 5 automatic retry attempts",
+      "terminal_failure_behavior": "exhausted \u2192 DLQ after 5 automatic retry attempts",
       "evidence_generated": "retry receipt with delivery_id, status, message",
       "customer_responsibility": "For manual retry: verify failure is resolved before retrying",
-      "limitations": "Retry re-uses original delivery — does not re-ingest from source. Retry is idempotent — calling retry on already-retried delivery does not create duplicates. Permanent failures (4xx except 429) should not be retried.",
+      "limitations": "Retry re-uses original delivery \u2014 does not re-ingest from source. Retry is idempotent \u2014 calling retry on already-retried delivery does not create duplicates. Permanent failures (4xx except 429) should not be retried.",
       "verification_status": "WIRED_SANDBOX"
     },
     {
@@ -173,7 +173,7 @@
       "terminal_failure_behavior": "replayed event follows standard delivery/retry/DLQ path",
       "evidence_generated": "replay receipt, replayed event IDs, audit reference correlating with original delivery",
       "customer_responsibility": "Verify issue is resolved before initiating replay; select appropriate event range",
-      "limitations": "Requires retained payload/context — not all deliveries replayable. Batch and dry-run replay are PLANNED_V1_1. Replay respects retention and plan limits. Replaying same event range may produce duplicates.",
+      "limitations": "Requires retained payload/context \u2014 not all deliveries replayable. Batch and dry-run replay are PLANNED_V1_1. Replay respects retention and plan limits. Replaying same event range may produce duplicates.",
       "verification_status": "WIRED_SANDBOX"
     },
     {
@@ -192,8 +192,13 @@
       "terminal_failure_behavior": "resource deleted; in-flight deliveries may be lost. No draining of in-flight deliveries on disable. Formal retirement with evidence is PLANNED_V1_1.",
       "evidence_generated": "deletion receipt with resource_id, timestamp",
       "customer_responsibility": "Ensure no critical in-flight deliveries before deleting. If retire is needed with evidence, use delete or wait for PLANNED_V1_1 retire operation.",
-      "limitations": "Disabling does not drain in-flight deliveries. Deletion is permanent — recovery requires recreating the resource. Resource retirement with evidence is not yet available (PLANNED_V1_1).",
+      "limitations": "Disabling does not drain in-flight deliveries. Deletion is permanent \u2014 recovery requires recreating the resource. Resource retirement with evidence is not yet available (PLANNED_V1_1).",
       "verification_status": "IMPLEMENTED_VERIFIED"
     }
-  ]
+  ],
+  "canonical_source_commit": "a399d87452317d91843521c9bd4a0fde61e9075e",
+  "artifact_commit": "0ecef1240ffd6a66e6743529a84eafeaf7dff7d2",
+  "generation_method": "hand-maintained JSON aligned with delivery API contract and evidence documentation",
+  "implementation_status_semantics": "IMPLEMENTED_VERIFIED: delivery path confirmed working. WIRED_SANDBOX: verified in sandbox, not production-live.",
+  "verification_status_semantics": "WIRED_SANDBOX: verified through sandbox test suite."
 }

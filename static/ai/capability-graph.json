@@ -2,96 +2,239 @@
   "$schema": "https://schemas.zen-mesh.io/ai-capability-graph.schema.json",
   "schema_version": "1.0",
   "generated_at": "2026-07-14T12:11:00Z",
-  "source_commit": "4c50d0b261e98e0e6ce4440068ed6952d237116d",
+  "source_commit": "0ecef1240ffd6a66e6743529a84eafeaf7dff7d2",
   "source_repository": "git@github.com:zenmesh/docs.git",
   "nodes": [
     {
       "id": "Fabric",
-      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/zen-mesh-concepts"
+      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/zen-mesh-concepts",
+      "node_type": "LAYER",
+      "canonical_layer": "Fabric",
+      "canonical_resource": null,
+      "implementation_status": "IMPLEMENTED_VERIFIED",
+      "verification_status": "VERIFIED",
+      "public_documentation_url": "https://docs.zen-mesh.io/docs/concepts/zen-mesh-concepts"
     },
     {
       "id": "Connect",
-      "canonical_source": "https://docs.zen-mesh.io/docs/getting-started/quick-start"
+      "canonical_source": "https://docs.zen-mesh.io/docs/getting-started/quick-start",
+      "node_type": "LAYER",
+      "canonical_layer": "Connect",
+      "canonical_resource": null,
+      "implementation_status": "IMPLEMENTED_VERIFIED",
+      "verification_status": "VERIFIED",
+      "public_documentation_url": "https://docs.zen-mesh.io/docs/getting-started/quick-start"
     },
     {
       "id": "Pipelines",
-      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/zen-mesh-concepts"
+      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/zen-mesh-concepts",
+      "node_type": "LAYER",
+      "canonical_layer": "Pipelines",
+      "canonical_resource": null,
+      "implementation_status": "IMPLEMENTED_VERIFIED",
+      "verification_status": "VERIFIED",
+      "public_documentation_url": "https://docs.zen-mesh.io/docs/concepts/zen-mesh-concepts"
     },
     {
       "id": "Runtime",
-      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/planes"
+      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/planes",
+      "node_type": "LAYER",
+      "canonical_layer": "Runtime",
+      "canonical_resource": null,
+      "implementation_status": "IMPLEMENTED_VERIFIED",
+      "verification_status": "VERIFIED",
+      "public_documentation_url": "https://docs.zen-mesh.io/docs/concepts/planes"
     },
     {
       "id": "Traffic",
-      "canonical_source": "https://docs.zen-mesh.io/docs/getting-started/quick-start"
+      "canonical_source": "https://docs.zen-mesh.io/docs/getting-started/quick-start",
+      "node_type": "LAYER",
+      "canonical_layer": "Traffic",
+      "canonical_resource": null,
+      "implementation_status": "IMPLEMENTED_VERIFIED",
+      "verification_status": "VERIFIED",
+      "public_documentation_url": "https://docs.zen-mesh.io/docs/getting-started/quick-start"
     },
     {
       "id": "Trust",
-      "canonical_source": "https://docs.zen-mesh.io/docs/getting-started/quick-start"
+      "canonical_source": "https://docs.zen-mesh.io/docs/getting-started/quick-start",
+      "node_type": "LAYER",
+      "canonical_layer": "Trust",
+      "canonical_resource": null,
+      "implementation_status": "IMPLEMENTED_VERIFIED",
+      "verification_status": "VERIFIED",
+      "public_documentation_url": "https://docs.zen-mesh.io/docs/getting-started/quick-start"
     },
     {
       "id": "Plane",
-      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/planes"
+      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/planes",
+      "node_type": "RESOURCE",
+      "canonical_layer": "Runtime",
+      "canonical_resource": "Plane",
+      "implementation_status": "IMPLEMENTED_VERIFIED",
+      "verification_status": "VERIFIED",
+      "public_documentation_url": "https://docs.zen-mesh.io/docs/concepts/planes"
     },
     {
       "id": "Edge Plane",
-      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/planes"
+      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/planes",
+      "node_type": "RESOURCE",
+      "canonical_layer": "Runtime",
+      "canonical_resource": "Plane",
+      "implementation_status": "IMPLEMENTED_UNVERIFIED",
+      "verification_status": "UNVERIFIED",
+      "public_documentation_url": "https://docs.zen-mesh.io/docs/concepts/planes"
     },
     {
       "id": "Edge Lite",
-      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/planes"
+      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/planes",
+      "node_type": "RESOURCE",
+      "canonical_layer": "Runtime",
+      "canonical_resource": "Plane",
+      "implementation_status": "IMPLEMENTED_UNVERIFIED",
+      "verification_status": "DESIGN_PARTNER_EVAL",
+      "non_claims": [
+        "Edge Lite runtime (public Docker image and installer) not yet published \u2014 DESIGN_PARTNER_EVAL"
+      ],
+      "public_documentation_url": "https://docs.zen-mesh.io/docs/concepts/planes"
     },
     {
       "id": "Endpoint",
-      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/zen-mesh-concepts"
+      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/zen-mesh-concepts",
+      "node_type": "RESOURCE",
+      "canonical_layer": "Connect",
+      "canonical_resource": "Endpoint",
+      "implementation_status": "IMPLEMENTED_VERIFIED",
+      "verification_status": "VERIFIED",
+      "public_documentation_url": "https://docs.zen-mesh.io/docs/concepts/zen-mesh-concepts"
     },
     {
       "id": "Provider Pack",
-      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/zen-mesh-concepts"
+      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/zen-mesh-concepts",
+      "node_type": "RESOURCE",
+      "canonical_layer": "Connect",
+      "canonical_resource": "Endpoint",
+      "implementation_status": "IMPLEMENTED_VERIFIED",
+      "verification_status": "VERIFIED",
+      "public_documentation_url": "https://docs.zen-mesh.io/docs/concepts/zen-mesh-concepts"
     },
     {
       "id": "Target",
-      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/zen-mesh-concepts"
+      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/zen-mesh-concepts",
+      "node_type": "RESOURCE",
+      "canonical_layer": "Connect",
+      "canonical_resource": "Target",
+      "implementation_status": "IMPLEMENTED_VERIFIED",
+      "verification_status": "VERIFIED",
+      "public_documentation_url": "https://docs.zen-mesh.io/docs/concepts/zen-mesh-concepts"
     },
     {
       "id": "Flow",
-      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/zen-mesh-concepts"
+      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/zen-mesh-concepts",
+      "node_type": "RESOURCE",
+      "canonical_layer": "Connect",
+      "canonical_resource": "Flow",
+      "implementation_status": "IMPLEMENTED_VERIFIED",
+      "verification_status": "VERIFIED",
+      "public_documentation_url": "https://docs.zen-mesh.io/docs/concepts/zen-mesh-concepts"
     },
     {
       "id": "identity",
-      "canonical_source": "https://docs.zen-mesh.io/docs/architecture/overview"
+      "canonical_source": "https://docs.zen-mesh.io/docs/architecture/overview",
+      "node_type": "CAPABILITY",
+      "canonical_layer": "Trust",
+      "canonical_resource": null,
+      "implementation_status": "IMPLEMENTED_VERIFIED",
+      "verification_status": "VERIFIED",
+      "public_documentation_url": "https://docs.zen-mesh.io/docs/architecture/overview"
     },
     {
       "id": "authorization",
-      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/control-surfaces"
+      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/control-surfaces",
+      "node_type": "CAPABILITY",
+      "canonical_layer": "Trust",
+      "canonical_resource": null,
+      "implementation_status": "IMPLEMENTED_VERIFIED",
+      "verification_status": "VERIFIED",
+      "public_documentation_url": "https://docs.zen-mesh.io/docs/concepts/control-surfaces"
     },
     {
       "id": "evidence",
-      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/zen-mesh-concepts"
+      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/zen-mesh-concepts",
+      "node_type": "CAPABILITY",
+      "canonical_layer": "Trust",
+      "canonical_resource": null,
+      "implementation_status": "IMPLEMENTED_VERIFIED",
+      "verification_status": "VERIFIED",
+      "public_documentation_url": "https://docs.zen-mesh.io/docs/concepts/zen-mesh-concepts"
     },
     {
       "id": "operation",
-      "canonical_source": "https://docs.zen-mesh.io/docs/getting-started/quick-start"
+      "canonical_source": "https://docs.zen-mesh.io/docs/getting-started/quick-start",
+      "node_type": "CAPABILITY",
+      "canonical_layer": "Traffic",
+      "canonical_resource": null,
+      "implementation_status": "IMPLEMENTED_VERIFIED",
+      "verification_status": "VERIFIED",
+      "public_documentation_url": "https://docs.zen-mesh.io/docs/getting-started/quick-start"
     },
     {
       "id": "MCP",
-      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/control-surfaces"
+      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/control-surfaces",
+      "node_type": "SURFACE",
+      "canonical_layer": null,
+      "canonical_resource": null,
+      "implementation_status": "IMPLEMENTED_VERIFIED",
+      "verification_status": "VERIFIED",
+      "non_claims": [
+        "MCP write tools are disabled by default",
+        "No AI implicit privilege"
+      ],
+      "public_documentation_url": "https://docs.zen-mesh.io/docs/concepts/control-surfaces"
     },
     {
       "id": "CLI",
-      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/control-surfaces"
+      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/control-surfaces",
+      "node_type": "SURFACE",
+      "canonical_layer": null,
+      "canonical_resource": null,
+      "implementation_status": "IMPLEMENTED_UNVERIFIED",
+      "verification_status": "UNVERIFIED",
+      "public_documentation_url": "https://docs.zen-mesh.io/docs/concepts/control-surfaces"
     },
     {
       "id": "API",
-      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/control-surfaces"
+      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/control-surfaces",
+      "node_type": "SURFACE",
+      "canonical_layer": null,
+      "canonical_resource": null,
+      "implementation_status": "IMPLEMENTED_VERIFIED",
+      "verification_status": "VERIFIED",
+      "public_documentation_url": "https://docs.zen-mesh.io/docs/concepts/control-surfaces"
     },
     {
       "id": "UI",
-      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/control-surfaces"
+      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/control-surfaces",
+      "node_type": "SURFACE",
+      "canonical_layer": null,
+      "canonical_resource": null,
+      "implementation_status": "IMPLEMENTED_VERIFIED",
+      "verification_status": "VERIFIED",
+      "public_documentation_url": "https://docs.zen-mesh.io/docs/concepts/control-surfaces"
     },
     {
       "id": "Git surface",
-      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/control-surfaces"
+      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/control-surfaces",
+      "node_type": "SURFACE",
+      "canonical_layer": null,
+      "canonical_resource": null,
+      "implementation_status": "PLANNED_V1_1",
+      "verification_status": "NOT_IMPLEMENTED",
+      "non_claims": [
+        "Git reconciliation surface does not exist today",
+        "NOT_IMPLEMENTED \u2014 architecture approval still required"
+      ],
+      "public_documentation_url": "https://docs.zen-mesh.io/docs/concepts/control-surfaces"
     }
   ],
   "edges": [
@@ -389,5 +532,23 @@
       "relationship": "SURFACE_OPERATES",
       "canonical_source": "https://docs.zen-mesh.io/docs/concepts/control-surfaces"
     }
-  ]
+  ],
+  "canonical_source_commit": "a399d87452317d91843521c9bd4a0fde61e9075e",
+  "artifact_commit": "0ecef1240ffd6a66e6743529a84eafeaf7dff7d2",
+  "generation_method": "hand-maintained JSON aligned with Zen Mesh architecture, layers, and surface documentation",
+  "canonical_layers": [
+    "Fabric",
+    "Connect",
+    "Pipelines",
+    "Runtime",
+    "Traffic",
+    "Trust"
+  ],
+  "canonical_resources": [
+    "Plane",
+    "Endpoint",
+    "Target",
+    "Flow"
+  ],
+  "node_type_semantics": "LAYER: architectural layer. RESOURCE: managed resource. SURFACE: control surface. CAPABILITY: cross-cutting capability."
 }

@@ -1,7 +1,7 @@
 {
   "$schema": "https://schemas.zen-mesh.io/ai-operations.schema.json",
   "schema_version": "1.0",
-  "source_commit": "4c50d0b261e98e0e6ce4440068ed6952d237116d",
+  "source_commit": "0ecef1240ffd6a66e6743529a84eafeaf7dff7d2",
   "source_repository": "git@github.com:zenmesh/docs.git",
   "generated_at": "2026-07-14T12:11:00Z",
   "validation_command": "python3 -c 'import json; f=open(\"static/ai/operations.json\"); d=json.load(f); ids=[o[\"operation_id\"] for o in d[\"operations\"]]; assert len(ids)==len(set(ids)), f\"Duplicate operation IDs: {[i for i in ids if ids.count(i)>1]}\"; print(f\"PASS: {len(ids)} unique operations\"); f.close()'",
@@ -23,8 +23,12 @@
       "permissions": [],
       "idempotent": true,
       "documentation_url": "https://docs.zen-mesh.io/docs/install/edge-lite",
-      "evidence": ["install_script_sha256"],
-      "non_claims": ["Not available for Windows or macOS"]
+      "evidence": [
+        "install_script_sha256"
+      ],
+      "non_claims": [
+        "Not available for Windows or macOS"
+      ]
     },
     {
       "operation_id": "edge-plane.enroll",
@@ -43,8 +47,13 @@
       "permissions": [],
       "idempotent": true,
       "documentation_url": "https://docs.zen-mesh.io/docs/install/edge-plane",
-      "evidence": ["enrollment_token", "plane_identity"],
-      "non_claims": ["Does not automatically configure mTLS identities in all modes"]
+      "evidence": [
+        "enrollment_token",
+        "plane_identity"
+      ],
+      "non_claims": [
+        "Does not automatically configure mTLS identities in all modes"
+      ]
     },
     {
       "operation_id": "endpoint.create",
@@ -60,14 +69,21 @@
         "mcp_write": "DISABLED_BY_DEFAULT",
         "git": "NOT_SUPPORTED"
       },
-      "permissions": ["endpoint:write"],
+      "permissions": [
+        "endpoint:write"
+      ],
       "idempotent": true,
       "idempotency_key_supported": true,
       "idempotency_key_scope": "per-request",
       "idempotency_key_retention": "24h",
       "documentation_url": "https://docs.zen-mesh.io/docs/api/endpoints",
-      "evidence": ["endpoint_id", "operation_receipt"],
-      "non_claims": ["Does not automatically configure Provider Pack associations"]
+      "evidence": [
+        "endpoint_id",
+        "operation_receipt"
+      ],
+      "non_claims": [
+        "Does not automatically configure Provider Pack associations"
+      ]
     },
     {
       "operation_id": "endpoint.delete",
@@ -83,14 +99,20 @@
         "mcp_write": "DISABLED_BY_DEFAULT",
         "git": "NOT_SUPPORTED"
       },
-      "permissions": ["endpoint:write"],
+      "permissions": [
+        "endpoint:write"
+      ],
       "idempotent": true,
       "destructive": true,
       "confirmation_required": true,
       "documentation_url": "https://docs.zen-mesh.io/docs/api/endpoints",
-      "evidence": ["deletion_receipt"],
+      "evidence": [
+        "deletion_receipt"
+      ],
       "recovery": "Recreate the endpoint. Deletion is permanent.",
-      "non_claims": ["Does not automatically delete associated Flows or Provider Packs"]
+      "non_claims": [
+        "Does not automatically delete associated Flows or Provider Packs"
+      ]
     },
     {
       "operation_id": "endpoint.list",
@@ -106,10 +128,14 @@
         "mcp_write": "NOT_SUPPORTED",
         "git": "NOT_SUPPORTED"
       },
-      "permissions": ["endpoint:read"],
+      "permissions": [
+        "endpoint:read"
+      ],
       "idempotent": true,
       "documentation_url": "https://docs.zen-mesh.io/docs/api/endpoints",
-      "evidence": ["endpoint_list"]
+      "evidence": [
+        "endpoint_list"
+      ]
     },
     {
       "operation_id": "provider-pack.associate",
@@ -125,11 +151,17 @@
         "mcp_write": "DISABLED_BY_DEFAULT",
         "git": "NOT_SUPPORTED"
       },
-      "permissions": ["provider-pack:write"],
+      "permissions": [
+        "provider-pack:write"
+      ],
       "idempotent": true,
       "documentation_url": "https://docs.zen-mesh.io/docs/api/endpoints",
-      "evidence": ["provider_association_receipt"],
-      "non_claims": ["Provider Packs do not transform event payloads beyond signature verification"]
+      "evidence": [
+        "provider_association_receipt"
+      ],
+      "non_claims": [
+        "Provider Packs do not transform event payloads beyond signature verification"
+      ]
     },
     {
       "operation_id": "provider-pack.list",
@@ -145,7 +177,9 @@
         "mcp_write": "NOT_SUPPORTED",
         "git": "NOT_SUPPORTED"
       },
-      "permissions": ["provider-pack:read"],
+      "permissions": [
+        "provider-pack:read"
+      ],
       "idempotent": true,
       "documentation_url": "https://docs.zen-mesh.io/docs/api/fabric-adapters"
     },
@@ -163,12 +197,19 @@
         "mcp_write": "DISABLED_BY_DEFAULT",
         "git": "NOT_SUPPORTED"
       },
-      "permissions": ["target:write"],
+      "permissions": [
+        "target:write"
+      ],
       "idempotent": true,
       "idempotency_key_supported": true,
       "documentation_url": "https://docs.zen-mesh.io/docs/api/targets",
-      "evidence": ["target_id", "operation_receipt"],
-      "non_claims": ["Target creation does not test reachability"]
+      "evidence": [
+        "target_id",
+        "operation_receipt"
+      ],
+      "non_claims": [
+        "Target creation does not test reachability"
+      ]
     },
     {
       "operation_id": "target.delete",
@@ -184,12 +225,16 @@
         "mcp_write": "DISABLED_BY_DEFAULT",
         "git": "NOT_SUPPORTED"
       },
-      "permissions": ["target:write"],
+      "permissions": [
+        "target:write"
+      ],
       "idempotent": true,
       "destructive": true,
       "confirmation_required": true,
       "documentation_url": "https://docs.zen-mesh.io/docs/api/targets",
-      "evidence": ["deletion_receipt"],
+      "evidence": [
+        "deletion_receipt"
+      ],
       "recovery": "Recreate the target. Deletion is permanent."
     },
     {
@@ -206,13 +251,23 @@
         "mcp_write": "DISABLED_BY_DEFAULT",
         "git": "NOT_SUPPORTED"
       },
-      "permissions": ["flow:write"],
+      "permissions": [
+        "flow:write"
+      ],
       "idempotent": true,
       "idempotency_key_supported": true,
       "documentation_url": "https://docs.zen-mesh.io/docs/api/flows",
-      "evidence": ["flow_id", "operation_receipt"],
-      "preconditions": ["Endpoint must exist", "Target must exist"],
-      "non_claims": ["Flow creation does not immediately activate delivery. Apply is required."]
+      "evidence": [
+        "flow_id",
+        "operation_receipt"
+      ],
+      "preconditions": [
+        "Endpoint must exist",
+        "Target must exist"
+      ],
+      "non_claims": [
+        "Flow creation does not immediately activate delivery. Apply is required."
+      ]
     },
     {
       "operation_id": "flow.delete",
@@ -228,18 +283,22 @@
         "mcp_write": "DISABLED_BY_DEFAULT",
         "git": "NOT_SUPPORTED"
       },
-      "permissions": ["flow:write"],
+      "permissions": [
+        "flow:write"
+      ],
       "idempotent": true,
       "destructive": true,
       "confirmation_required": true,
       "documentation_url": "https://docs.zen-mesh.io/docs/api/flows",
-      "evidence": ["deletion_receipt"]
+      "evidence": [
+        "deletion_receipt"
+      ]
     },
     {
       "operation_id": "config.apply",
       "resource": "configuration",
       "layer": "connect",
-      "description": "Apply desired configuration — activate resources",
+      "description": "Apply desired configuration \u2014 activate resources",
       "lifecycle_status": "IMPLEMENTED_VERIFIED",
       "surfaces": {
         "ui": "IMPLEMENTED_VERIFIED",
@@ -249,11 +308,18 @@
         "mcp_write": "DISABLED_BY_DEFAULT",
         "git": "NOT_SUPPORTED"
       },
-      "permissions": ["configuration:write"],
+      "permissions": [
+        "configuration:write"
+      ],
       "idempotent": true,
       "documentation_url": "https://docs.zen-mesh.io/docs/api/quickstart",
-      "evidence": ["apply_receipt", "desired_state_hash"],
-      "non_claims": ["Apply does not guarantee immediate delivery readiness. Runtime propagation may take time."]
+      "evidence": [
+        "apply_receipt",
+        "desired_state_hash"
+      ],
+      "non_claims": [
+        "Apply does not guarantee immediate delivery readiness. Runtime propagation may take time."
+      ]
     },
     {
       "operation_id": "event.submit",
@@ -269,7 +335,9 @@
         "mcp_write": "DISABLED_BY_DEFAULT",
         "git": "NOT_SUPPORTED"
       },
-      "permissions": ["event:write"],
+      "permissions": [
+        "event:write"
+      ],
       "idempotent": true,
       "idempotency_key_supported": true,
       "idempotency_key_scope": "per-event",
@@ -278,9 +346,18 @@
       "duplicate_possible": true,
       "ordering_scope": "per-endpoint",
       "documentation_url": "https://docs.zen-mesh.io/docs/api/webhooks",
-      "evidence": ["event_id", "delivery_attempts"],
-      "error_codes": ["validation_error", "rate_limited", "unauthorized"],
-      "non_claims": ["Not exactly-once delivery"]
+      "evidence": [
+        "event_id",
+        "delivery_attempts"
+      ],
+      "error_codes": [
+        "validation_error",
+        "rate_limited",
+        "unauthorized"
+      ],
+      "non_claims": [
+        "Not exactly-once delivery"
+      ]
     },
     {
       "operation_id": "event.replay",
@@ -296,12 +373,17 @@
         "mcp_write": "DISABLED_BY_DEFAULT",
         "git": "NOT_SUPPORTED"
       },
-      "permissions": ["event:write"],
+      "permissions": [
+        "event:write"
+      ],
       "conditionally_idempotent": true,
       "idempotency_notes": "Replaying same event range may produce duplicates",
       "delivery_guarantee": "AT_LEAST_ONCE",
       "documentation_url": "https://docs.zen-mesh.io/docs/delivery/replay",
-      "evidence": ["replay_receipt", "replayed_event_ids"],
+      "evidence": [
+        "replay_receipt",
+        "replayed_event_ids"
+      ],
       "limitations": "Retention period varies by plan (7-30 days)"
     },
     {
@@ -318,12 +400,18 @@
         "mcp_write": "DISABLED_BY_DEFAULT",
         "git": "NOT_SUPPORTED"
       },
-      "permissions": ["delivery:write"],
+      "permissions": [
+        "delivery:write"
+      ],
       "idempotent": true,
       "idempotency_key_supported": true,
       "documentation_url": "https://docs.zen-mesh.io/docs/api/retry",
-      "evidence": ["retry_receipt"],
-      "non_claims": ["Retry does not guarantee delivery. Permanent failures remain failed."]
+      "evidence": [
+        "retry_receipt"
+      ],
+      "non_claims": [
+        "Retry does not guarantee delivery. Permanent failures remain failed."
+      ]
     },
     {
       "operation_id": "status.inspect",
@@ -339,11 +427,17 @@
         "mcp_write": "NOT_SUPPORTED",
         "git": "NOT_SUPPORTED"
       },
-      "permissions": ["delivery:read"],
+      "permissions": [
+        "delivery:read"
+      ],
       "idempotent": true,
       "documentation_url": "https://docs.zen-mesh.io/docs/reference/delivery-status",
-      "evidence": ["status_response"],
-      "non_claims": ["Status reflects last known state. May be stale for degraded components."]
+      "evidence": [
+        "status_response"
+      ],
+      "non_claims": [
+        "Status reflects last known state. May be stale for degraded components."
+      ]
     },
     {
       "operation_id": "evidence.inspect",
@@ -359,11 +453,18 @@
         "mcp_write": "NOT_SUPPORTED",
         "git": "NOT_SUPPORTED"
       },
-      "permissions": ["evidence:read"],
+      "permissions": [
+        "evidence:read"
+      ],
       "idempotent": true,
       "documentation_url": "https://docs.zen-mesh.io/docs/reference/webhook-delivery-evidence",
-      "evidence": ["delivery_receipt", "evidence_bundle"],
-      "non_claims": ["Evidence does not constitute formal audit certification"]
+      "evidence": [
+        "delivery_receipt",
+        "evidence_bundle"
+      ],
+      "non_claims": [
+        "Evidence does not constitute formal audit certification"
+      ]
     },
     {
       "operation_id": "resource.disable",
@@ -379,12 +480,18 @@
         "mcp_write": "DISABLED_BY_DEFAULT",
         "git": "NOT_SUPPORTED"
       },
-      "permissions": ["resource:write"],
+      "permissions": [
+        "resource:write"
+      ],
       "idempotent": true,
       "documentation_url": "https://docs.zen-mesh.io/docs/api/endpoints",
-      "evidence": ["disable_receipt"],
+      "evidence": [
+        "disable_receipt"
+      ],
       "recovery": "Re-enable the resource",
-      "non_claims": ["Disabling does not drain in-flight deliveries"]
+      "non_claims": [
+        "Disabling does not drain in-flight deliveries"
+      ]
     },
     {
       "operation_id": "resource.retire",
@@ -403,7 +510,9 @@
       "idempotent": false,
       "documentation_url": null,
       "evidence": [],
-      "non_claims": ["Retirement is not available. Use delete instead."]
+      "non_claims": [
+        "Retirement is not available. Use delete instead."
+      ]
     },
     {
       "operation_id": "diagnose.delivery-failure",
@@ -419,11 +528,17 @@
         "mcp_write": "NOT_SUPPORTED",
         "git": "NOT_SUPPORTED"
       },
-      "permissions": ["delivery:read"],
+      "permissions": [
+        "delivery:read"
+      ],
       "idempotent": true,
       "documentation_url": "https://docs.zen-mesh.io/docs/delivery/delivery-failures",
-      "evidence": ["diagnosis_result"],
-      "non_claims": ["Diagnosis does not automatically resolve failures"]
+      "evidence": [
+        "diagnosis_result"
+      ],
+      "non_claims": [
+        "Diagnosis does not automatically resolve failures"
+      ]
     },
     {
       "operation_id": "mcp.governed-read",
@@ -439,11 +554,17 @@
         "mcp_write": "DISABLED_BY_DEFAULT",
         "git": "NOT_SUPPORTED"
       },
-      "permissions": ["mcp:read"],
+      "permissions": [
+        "mcp:read"
+      ],
       "idempotent": true,
       "documentation_url": "https://docs.zen-mesh.io/docs/mcp/overview",
-      "evidence": ["mcp_response"],
-      "non_claims": ["MCP does not provide write access by default"]
+      "evidence": [
+        "mcp_response"
+      ],
+      "non_claims": [
+        "MCP does not provide write access by default"
+      ]
     },
     {
       "operation_id": "mcp.governed-write",
@@ -459,12 +580,18 @@
         "mcp_write": "DISABLED_BY_DEFAULT",
         "git": "NOT_SUPPORTED"
       },
-      "permissions": ["mcp:write"],
+      "permissions": [
+        "mcp:write"
+      ],
       "conditionally_idempotent": true,
       "documentation_url": "https://docs.zen-mesh.io/docs/mcp/safety-and-boundaries",
-      "evidence": ["mcp_write_receipt"],
+      "evidence": [
+        "mcp_write_receipt"
+      ],
       "limitations": "Disabled by default. Requires Business+ entitlement.",
-      "non_claims": ["MCP write parity with UI/API is not complete."]
+      "non_claims": [
+        "MCP write parity with UI/API is not complete."
+      ]
     }
   ],
   "surface_coverage": {
@@ -500,5 +627,11 @@
     "git": {
       "NOT_SUPPORTED": 22
     }
-  }
+  },
+  "canonical_source_commit": "a399d87452317d91843521c9bd4a0fde61e9075e",
+  "artifact_commit": "0ecef1240ffd6a66e6743529a84eafeaf7dff7d2",
+  "generation_method": "hand-maintained JSON aligned with API contract and documentation",
+  "implementation_status_semantics": "IMPLEMENTED_VERIFIED: tested and confirmed working. IMPLEMENTED_UNVERIFIED: code exists, formal verification pending. PLANNED_V1_1: design complete, not yet implemented.",
+  "verification_status_semantics": "VERIFIED: confirmed through automated test suite. UNVERIFIED: no formal verification. WIRED_SANDBOX: verified in sandbox environment.",
+  "per_operation_source_commit_policy": "Top-level source_commit applies to all operations. Per-operation source_commit may be added when operations originate from distinct canonical sources."
 }

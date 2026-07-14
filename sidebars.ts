@@ -150,6 +150,7 @@ const sidebars: SidebarsConfig = {
         'operations/operational-faq',
         'operations/agent-operations',
         'operations/agent-operability-test',
+        'operations/git-surface-requirements',
         'operations/vercel-domain-misconfig',
       ],
     },

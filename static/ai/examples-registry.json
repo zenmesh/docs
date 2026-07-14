@@ -2,7 +2,7 @@
   "$schema": "https://schemas.zen-mesh.io/ai-examples-registry.schema.json",
   "schema_version": "1.0",
   "generated_at": "2026-07-14T12:11:00Z",
-  "source_commit": "4c50d0b261e98e0e6ce4440068ed6952d237116d",
+  "source_commit": "0ecef1240ffd6a66e6743529a84eafeaf7dff7d2",
   "source_repository": "git@github.com:zenmesh/docs.git",
   "examples": [
     {
@@ -15,7 +15,7 @@
       "required_permission": null,
       "relevant_contracts": [],
       "expected_result": "Agent binary installed, service running",
-      "evidence": "Install script SHA-256 available. Public Docker image and installer not yet published — runtime is evidence-gated.",
+      "evidence": "Install script SHA-256 available. Public Docker image and installer not yet published \u2014 runtime is evidence-gated.",
       "file_path": "docs/install/edge-lite.md",
       "public_url": "https://docs.zen-mesh.io/docs/install/edge-lite",
       "non_claims": [
@@ -33,7 +33,9 @@
       "implementation_status": "IMPLEMENTED_UNVERIFIED",
       "verification_status": "UNVERIFIED",
       "required_permission": "enrollment:execute",
-      "relevant_contracts": ["Configuration Contract"],
+      "relevant_contracts": [
+        "Configuration Contract"
+      ],
       "expected_result": "Edge plane enrolled, heartbeat established, configuration sync active",
       "evidence": "Enrollment bundle exchanged during registration. Short-lived credentials auto-rotate. Enrollment evidence not yet clearly documented in a structured verification procedure.",
       "file_path": "docs/install/edge-plane.md",
@@ -51,13 +53,15 @@
       "implementation_status": "IMPLEMENTED_VERIFIED",
       "verification_status": "VERIFIED",
       "required_permission": "write:endpoints",
-      "relevant_contracts": ["Configuration Contract"],
+      "relevant_contracts": [
+        "Configuration Contract"
+      ],
       "expected_result": "Endpoint created, ingestion URL returned",
       "evidence": "Endpoint ID returned in API response. Endpoint shows in UI dashboard. Operability test scores PASS for discovery, prerequisites, surface instructions, executable example, expected result, failure guidance, and evidence.",
       "file_path": "docs/api/examples.md",
       "public_url": "https://docs.zen-mesh.io/docs/api/examples",
       "non_claims": [
-        "Dashboard is INTERNAL_ONLY — not a public customer contract"
+        "Dashboard is INTERNAL_ONLY \u2014 not a public customer contract"
       ]
     },
     {
@@ -68,15 +72,18 @@
       "implementation_status": "IMPLEMENTED_UNVERIFIED",
       "verification_status": "UNVERIFIED",
       "required_permission": null,
-      "relevant_contracts": ["Configuration Contract"],
+      "relevant_contracts": [
+        "Configuration Contract"
+      ],
       "expected_result": "Stripe template selected, blueprint configured with signing secret, endpoint ready to receive Stripe events",
       "evidence": "Provider association in Endpoint details. Stripe cloud E2E is pending revalidation per current-status.",
       "file_path": null,
       "public_url": "https://docs.zen-mesh.io/docs/getting-started/quick-start",
       "non_claims": [
-        "Provider maturity varies — Stripe cloud E2E is pending revalidation",
+        "Provider maturity varies \u2014 Stripe cloud E2E is pending revalidation",
         "Not all templates have corresponding blueprints in all environments"
-      ]
+      ],
+      "absence_reason": "Provider Pack setup is documented inline in per-provider guides; no standalone example file exists"
     },
     {
       "example_id": "github-provider-pack",
@@ -86,7 +93,9 @@
       "implementation_status": "IMPLEMENTED_UNVERIFIED",
       "verification_status": "UNVERIFIED",
       "required_permission": null,
-      "relevant_contracts": ["Configuration Contract"],
+      "relevant_contracts": [
+        "Configuration Contract"
+      ],
       "expected_result": "GitHub template selected, webhook secret configured, endpoint ready to receive GitHub events",
       "evidence": "Provider association in Endpoint details. GitHub setup documented in per-provider guides.",
       "file_path": null,
@@ -94,7 +103,8 @@
       "non_claims": [
         "Provider maturity varies",
         "Not all templates have corresponding blueprints in all environments"
-      ]
+      ],
+      "absence_reason": "Provider Pack setup is documented inline in per-provider guides; no standalone example file exists"
     },
     {
       "example_id": "shopify-provider-pack",
@@ -104,7 +114,9 @@
       "implementation_status": "IMPLEMENTED_UNVERIFIED",
       "verification_status": "UNVERIFIED",
       "required_permission": null,
-      "relevant_contracts": ["Configuration Contract"],
+      "relevant_contracts": [
+        "Configuration Contract"
+      ],
       "expected_result": "Shopify template selected, endpoint ready to receive Shopify events",
       "evidence": "Provider association in Endpoint details. Shopify setup documented in per-provider guides.",
       "file_path": null,
@@ -112,7 +124,8 @@
       "non_claims": [
         "Provider maturity varies",
         "Not all templates have corresponding blueprints in all environments"
-      ]
+      ],
+      "absence_reason": "Provider Pack setup is documented inline in per-provider guides; no standalone example file exists"
     },
     {
       "example_id": "twilio-provider-pack",
@@ -122,15 +135,18 @@
       "implementation_status": "IMPLEMENTED_UNVERIFIED",
       "verification_status": "UNVERIFIED",
       "required_permission": null,
-      "relevant_contracts": ["Configuration Contract"],
+      "relevant_contracts": [
+        "Configuration Contract"
+      ],
       "expected_result": "Twilio template selected, endpoint ready to receive Twilio events",
       "evidence": "Provider association in Endpoint details. Twilio form-urlencoded routing is partial per current-status.",
       "file_path": null,
       "public_url": "https://docs.zen-mesh.io/docs/getting-started/quick-start",
       "non_claims": [
-        "Twilio form-urlencoded routing is partial — not all Twilio event formats are supported",
+        "Twilio form-urlencoded routing is partial \u2014 not all Twilio event formats are supported",
         "Not all templates have corresponding blueprints in all environments"
-      ]
+      ],
+      "absence_reason": "Provider Pack setup is documented inline in per-provider guides; no standalone example file exists"
     },
     {
       "example_id": "target-creation",
@@ -140,13 +156,15 @@
       "implementation_status": "IMPLEMENTED_VERIFIED",
       "verification_status": "VERIFIED",
       "required_permission": "write:destinations",
-      "relevant_contracts": ["Configuration Contract"],
+      "relevant_contracts": [
+        "Configuration Contract"
+      ],
       "expected_result": "Target created, target ID returned, status active",
       "evidence": "Target ID returned in API response. Target shows in UI dashboard. Operability test scores PASS for all criteria including evidence.",
       "file_path": "docs/api/examples.md",
       "public_url": "https://docs.zen-mesh.io/docs/api/examples",
       "non_claims": [
-        "Write examples are WIRED_SANDBOX unless otherwise noted — not production-live availability claims"
+        "Write examples are WIRED_SANDBOX unless otherwise noted \u2014 not production-live availability claims"
       ]
     },
     {
@@ -157,14 +175,17 @@
       "implementation_status": "IMPLEMENTED_VERIFIED",
       "verification_status": "VERIFIED",
       "required_permission": "write:flows",
-      "relevant_contracts": ["Configuration Contract"],
+      "relevant_contracts": [
+        "Configuration Contract"
+      ],
       "expected_result": "Flow created, flow ID returned, delivery contract active",
       "evidence": "Flow ID and status returned. Flow connects endpoint to target. Operability test scores PASS for create and apply flow.",
       "file_path": null,
       "public_url": "https://docs.zen-mesh.io/docs/getting-started/quick-start",
       "non_claims": [
-        "Write examples are WIRED_SANDBOX unless otherwise noted — not production-live availability claims"
-      ]
+        "Write examples are WIRED_SANDBOX unless otherwise noted \u2014 not production-live availability claims"
+      ],
+      "absence_reason": "Flow creation is demonstrated inline in Quickstart; no standalone example file"
     },
     {
       "example_id": "private-delivery",
@@ -174,14 +195,16 @@
       "implementation_status": "IMPLEMENTED_UNVERIFIED",
       "verification_status": "UNVERIFIED",
       "required_permission": "delivery:private:configure",
-      "relevant_contracts": ["Configuration Contract"],
+      "relevant_contracts": [
+        "Configuration Contract"
+      ],
       "expected_result": "Outbound-only private delivery configured, egress relay connection established to NAT/firewalled target",
       "evidence": "PROOF-008, PROOF-009 referenced in key concepts. Delivery mode selection available during target configuration. Relay selection gated by data-plane capability and edge enrollment readiness.",
       "file_path": "docs/architecture/delivery-modes.md",
       "public_url": "https://docs.zen-mesh.io/docs/architecture/delivery-modes",
       "non_claims": [
         "System does not silently auto-detect delivery mode in V1",
-        "Delivery guarantees are scenario-specific — no global exactly-once claim"
+        "Delivery guarantees are scenario-specific \u2014 no global exactly-once claim"
       ]
     },
     {
@@ -192,14 +215,16 @@
       "implementation_status": "IMPLEMENTED_VERIFIED",
       "verification_status": "VERIFIED",
       "required_permission": "write:destinations",
-      "relevant_contracts": ["Configuration Contract"],
+      "relevant_contracts": [
+        "Configuration Contract"
+      ],
       "expected_result": "Target created on first request; same Idempotency-Key on retry returns original response without creating duplicate",
       "evidence": "Idempotency-Key deduplication window is 24 hours. Same key returns original response. DELETE is naturally idempotent. Retry delivery is idempotent.",
       "file_path": "docs/api/idempotency.md",
       "public_url": "https://docs.zen-mesh.io/docs/api/idempotency",
       "non_claims": [
         "Idempotency is not a substitute for idempotent consumer design",
-        "Idempotency window is 24 hours from first request — key eligible for reuse after expiry"
+        "Idempotency window is 24 hours from first request \u2014 key eligible for reuse after expiry"
       ]
     },
     {
@@ -210,13 +235,15 @@
       "implementation_status": "IMPLEMENTED_VERIFIED",
       "verification_status": "VERIFIED",
       "required_permission": null,
-      "relevant_contracts": ["Configuration Contract"],
+      "relevant_contracts": [
+        "Configuration Contract"
+      ],
       "expected_result": "Delivery status, evidence receipt, webhook sources, or platform health returned to agent",
       "evidence": "MCP read tools are default-on per V1 policy. Documented examples include zen_get_delivery, zen_get_evidence, zen_list_sources, zen_get_health. Full response schemas documented in mcp/examples.md.",
       "file_path": "docs/mcp/examples.md",
       "public_url": "https://docs.zen-mesh.io/docs/mcp/examples",
       "non_claims": [
-        "MCP is not globally read-only — write tools exist but are disabled by default"
+        "MCP is not globally read-only \u2014 write tools exist but are disabled by default"
       ]
     },
     {
@@ -227,16 +254,19 @@
       "implementation_status": "PLANNED_V1_1",
       "verification_status": "NOT_APPLICABLE",
       "required_permission": "mcp:write:enabled",
-      "relevant_contracts": ["Configuration Contract"],
+      "relevant_contracts": [
+        "Configuration Contract"
+      ],
       "expected_result": "Write operation executed through MCP surface after explicit tool-group enablement by operator",
       "evidence": "MCP write tools are disabled by default and require per-tool-group enablement. PUBLIC_CONTRACT_DRAFT status. Not available in V1 without operator intervention.",
       "file_path": null,
       "public_url": "https://docs.zen-mesh.io/docs/concepts/control-surfaces",
       "non_claims": [
-        "MCP write tools are disabled by default — enable per tool group",
-        "MCP is not globally read-only — write tools exist but are disabled by default",
+        "MCP write tools are disabled by default \u2014 enable per tool group",
+        "MCP is not globally read-only \u2014 write tools exist but are disabled by default",
         "Write permissions are gated by scopes, tenant authorization, and plan gates"
-      ]
+      ],
+      "absence_reason": "Planned capability \u2014 no example file exists yet. MCP write disabled by default."
     },
     {
       "example_id": "denied-mcp-write",
@@ -246,13 +276,15 @@
       "implementation_status": "IMPLEMENTED_VERIFIED",
       "verification_status": "VERIFIED",
       "required_permission": null,
-      "relevant_contracts": ["Configuration Contract"],
+      "relevant_contracts": [
+        "Configuration Contract"
+      ],
       "expected_result": "Write attempt denied with error code write_tool_disabled, message directing user to enable tool group or use REST API",
       "evidence": "Error response documented in mcp/examples.md: code 'write_tool_disabled', message explaining write tool group not enabled, suggestion to use REST API at https://api.zen-mesh.io/v1.",
       "file_path": "docs/mcp/examples.md",
       "public_url": "https://docs.zen-mesh.io/docs/mcp/examples",
       "non_claims": [
-        "MCP write tools are disabled by default — enable per tool group",
+        "MCP write tools are disabled by default \u2014 enable per tool group",
         "Denied write is the expected behavior when tool group is not enabled, not a failure"
       ]
     },
@@ -264,15 +296,17 @@
       "implementation_status": "IMPLEMENTED_UNVERIFIED",
       "verification_status": "UNVERIFIED",
       "required_permission": null,
-      "relevant_contracts": ["Configuration Contract"],
-      "expected_result": "HTTP 429 (rate limit), 500 (internal error), or 503 (service unavailable) — retryable after backoff",
+      "relevant_contracts": [
+        "Configuration Contract"
+      ],
+      "expected_result": "HTTP 429 (rate limit), 500 (internal error), or 503 (service unavailable) \u2014 retryable after backoff",
       "evidence": "RFC 9457 Problem Details format. 429 includes Retry-After header. 500 and 503 indicate transient server state. Agent rule 8 permits retry of these statuses. Error model is PUBLIC_CONTRACT_DRAFT.",
       "file_path": "docs/api/errors.md",
       "public_url": "https://docs.zen-mesh.io/docs/api/errors",
       "non_claims": [
         "Error format may not be fully uniform across all endpoint groups",
         "Rate limit thresholds vary by plan and endpoint",
-        "Error model is PUBLIC_CONTRACT_DRAFT — not a production-live availability claim"
+        "Error model is PUBLIC_CONTRACT_DRAFT \u2014 not a production-live availability claim"
       ]
     },
     {
@@ -283,8 +317,10 @@
       "implementation_status": "IMPLEMENTED_UNVERIFIED",
       "verification_status": "UNVERIFIED",
       "required_permission": null,
-      "relevant_contracts": ["Configuration Contract"],
-      "expected_result": "HTTP 400 (validation), 401 (unauthorized), 403 (scope/permission/disabled), 404 (not found), 409 (conflict), 422 (unprocessable) — must not be retried",
+      "relevant_contracts": [
+        "Configuration Contract"
+      ],
+      "expected_result": "HTTP 400 (validation), 401 (unauthorized), 403 (scope/permission/disabled), 404 (not found), 409 (conflict), 422 (unprocessable) \u2014 must not be retried",
       "evidence": "RFC 9457 Problem Details format per error type. Agent rule 8: 'No retry of permanent failures. 4xx errors indicating bad requests, authorization denial, or not-found should not be retried.'",
       "file_path": "docs/api/errors.md",
       "public_url": "https://docs.zen-mesh.io/docs/api/errors",
@@ -309,7 +345,8 @@
       "non_claims": [
         "No scenario-specific recovery runbooks are documented",
         "General recovery guidance exists but inconsistent-state recovery is not implemented"
-      ]
+      ],
+      "absence_reason": "No documented procedure exists \u2014 NOT_SUPPORTED. Cannot reference a file that does not exist."
     },
     {
       "example_id": "safe-retirement",
@@ -320,14 +357,18 @@
       "verification_status": "NOT_APPLICABLE",
       "required_permission": null,
       "relevant_contracts": [],
-      "expected_result": "No safe retirement procedure exists — delete is the only documented option",
+      "expected_result": "No safe retirement procedure exists \u2014 delete is the only documented option",
       "evidence": "Retire Resources operability test scores FAIL on all criteria: discoverability, prerequisites, surface instructions, executable example, expected result, failure guidance, recovery guidance, evidence, and non-claims. 'Retirement with evidence is not implemented.'",
       "file_path": null,
       "public_url": null,
       "non_claims": [
         "Retirement with evidence is not implemented",
-        "Delete is the only documented option — no graceful retirement workflow"
-      ]
+        "Delete is the only documented option \u2014 no graceful retirement workflow"
+      ],
+      "absence_reason": "No documented procedure exists \u2014 NOT_SUPPORTED. Delete is the only documented option."
     }
-  ]
+  ],
+  "canonical_source_commit": "a399d87452317d91843521c9bd4a0fde61e9075e",
+  "artifact_commit": "0ecef1240ffd6a66e6743529a84eafeaf7dff7d2",
+  "generation_method": "hand-maintained JSON aligned with documentation examples, operability test, and API references"
 }
