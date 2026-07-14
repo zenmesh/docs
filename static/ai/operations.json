@@ -1,8 +1,10 @@
 {
   "$schema": "https://schemas.zen-mesh.io/ai-operations.schema.json",
   "schema_version": "1.0",
-  "source_commit": "f921cf8c83cde4af6de06d7f8fa1fd5b9ed1e266",
+  "source_commit": "4c50d0b261e98e0e6ce4440068ed6952d237116d",
+  "source_repository": "git@github.com:zenmesh/docs.git",
   "generated_at": "2026-07-14T12:11:00Z",
+  "validation_command": "python3 -c 'import json; f=open(\"static/ai/operations.json\"); d=json.load(f); ids=[o[\"operation_id\"] for o in d[\"operations\"]]; assert len(ids)==len(set(ids)), f\"Duplicate operation IDs: {[i for i in ids if ids.count(i)>1]}\"; print(f\"PASS: {len(ids)} unique operations\"); f.close()'",
   "operations": [
     {
       "operation_id": "edge-lite.install",

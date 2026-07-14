@@ -213,12 +213,29 @@ OpenAPI spec: [zen-back.v1.yaml](https://github.com/zenmesh/zen-platform-hermes/
 
 ## Operations
 
+- [Operational FAQ](https://docs.zen-mesh.io/docs/operations/operational-faq): 26 questions covering installation, enrollment, certificates, network failures, idempotency, delivery guarantees, replay, recovery, retirement, and planned capabilities — each answer labelled AVAILABLE_NOW, PLANNED_V1_1, MANUAL_IN_V1_1, or NOT_SUPPORTED
 - [Agent Operations Guide](https://docs.zen-mesh.io/docs/operations/agent-operations): How external AI agents safely operate Zen Mesh — safety rules, surface discovery, auth, resource lifecycle, read/write procedures, failure diagnosis, prohibited actions
+- [Agent operability test](https://docs.zen-mesh.io/docs/operations/agent-operability-test): External agent operability test — 13 tasks scored PASS/PARTIAL/FAIL/NOT_IMPLEMENTED
 - [Backups and Disaster Recovery](https://docs.zen-mesh.io/docs/operations/backups): Backup procedures, restore, DR runbook, RPO/RTO targets
 - [Upgrades](https://docs.zen-mesh.io/docs/operations/upgrades): Helm upgrade/rollback procedures, version compatibility
 - [Troubleshooting](https://docs.zen-mesh.io/docs/operations/troubleshooting): Common operational issues
-- [Operational readiness matrix](https://docs.zen-mesh.io/ai/operations.json): Machine-readable per-operation surface coverage, idempotency, delivery guarantees
-- [Agent operability test](https://docs.zen-mesh.io/docs/operations/agent-operability-test): External agent operability test scoring 13 operational tasks
+
+## Failure and recovery runbooks
+
+- [Edge Lite install failure](https://docs.zen-mesh.io/docs/runbooks/edge-lite-install-failure): Symptoms, corrective actions, prohibited actions for Edge Lite installation failures
+- [Edge Plane enrollment failure](https://docs.zen-mesh.io/docs/runbooks/edge-plane-enrollment-failure): Token expiry, network unreachable, identity conflict recovery
+- [Certificate renewal failure](https://docs.zen-mesh.io/docs/runbooks/certificate-renewal-failure): MANUAL_IN_V1_1 — recovery for failed credential rotation
+- [Plane readiness failure](https://docs.zen-mesh.io/docs/runbooks/plane-readiness-failure): Connectivity, identity, and component readiness diagnosis
+- [Evidence missing](https://docs.zen-mesh.io/docs/runbooks/evidence-missing): Retention, delivery, and permission checks for missing evidence
+- [Inconsistent state recovery](https://docs.zen-mesh.io/docs/runbooks/inconsistent-state-recovery): Desired vs observed state divergence — NOT_SUPPORTED in v1.1
+
+## Machine-readable AI projections
+
+- [Operations registry](https://docs.zen-mesh.io/ai/operations.json): 22 operations with per-surface coverage, idempotency, delivery guarantees, permissions, and non-claims
+- [Delivery guarantees](https://docs.zen-mesh.io/ai/delivery-guarantees.json): Per-path acceptance, persistence, delivery guarantee, retry owner, duplicate possibility, ordering, replay, retention
+- [Idempotency and retry matrix](https://docs.zen-mesh.io/ai/idempotency-retry.json): 16 operations with idempotency classification, key support, retry errors, implementation status
+- [Capability graph](https://docs.zen-mesh.io/ai/capability-graph.json): 22 nodes and 47 typed edges mapping layers, resources, surfaces, and relationships
+- [Examples registry](https://docs.zen-mesh.io/ai/examples-registry.json): 18 examples with surface, permissions, implementation status, and non-claims
 
 ## Open Source
 

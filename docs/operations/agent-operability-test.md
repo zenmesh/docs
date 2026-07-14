@@ -226,6 +226,8 @@ This test simulates an external agent with access only to public documentation. 
 | 12. Recover Safely | PARTIAL |
 | 13. Retire Resources | FAIL |
 
-**Result: PARTIAL (10/13 tasks scorable, 7 PASS, 2 PARTIAL, 2 FAIL)**
+**Result: PARTIAL (13/13 tasks scorable, 8 PASS, 3 PARTIAL, 2 FAIL)**
 
-The external agent operability test passes for basic operations (create Endpoint, Target, Flow, submit events, inspect status/evidence, diagnose failures). It fails for readiness verification and retirement. It is partial for installation and enrollment edge cases.
+The external agent operability test passes for basic operations (create Endpoint, Target, Flow, submit events, inspect status/evidence, diagnose failures). It fails for readiness verification and retirement. It is partial for installation, enrollment, and general recovery. All 13 tasks are explicitly scored. No task is omitted.
+
+This corrects the prior report which incorrectly stated PASS: 7, PARTIAL: 2, FAIL: 2 (totaling 11). The corrected count is PASS: 8, PARTIAL: 3, FAIL: 2 = 13.

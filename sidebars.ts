@@ -145,8 +145,22 @@ const sidebars: SidebarsConfig = {
         'operations/upgrades',
         'operations/backups',
         'operations/troubleshooting',
+        'operations/operational-faq',
         'operations/agent-operations',
+        'operations/agent-operability-test',
         'operations/vercel-domain-misconfig',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Runbooks',
+      items: [
+        'runbooks/edge-lite-install-failure',
+        'runbooks/edge-plane-enrollment-failure',
+        'runbooks/certificate-renewal-failure',
+        'runbooks/plane-readiness-failure',
+        'runbooks/evidence-missing',
+        'runbooks/inconsistent-state-recovery',
       ],
     },
     {
