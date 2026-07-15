@@ -4,14 +4,14 @@ sidebar_label: Edge Lite
 
 # Edge Lite
 
-**Role:** Lightweight single-node production tier for private delivery (product_role), distinct from current release_status.  
-**Release Status:** Evidence-gated — public image and installer not yet published. See Current Status below.
+**Role:** Lightweight single-node private delivery via Docker.  
+**Release Status:** Evidence-gated — public image and installer not yet published (DESIGN_PARTNER_EVAL). See Current Status below.
 
 ## What Is Edge Lite
 
-Edge Lite is Zen Mesh's **lightweight, single-node production tier** for secure delivery to private destinations where multi-node high availability and automated failover are not required. It uses a Docker-based installation with the same enrollment bundle contract as the [Kubernetes Edge Plane](./kubernetes-edge-plane).
+Edge Lite is Zen Mesh's **lightweight, single-node private delivery** tier for secure delivery to private destinations where multi-node high availability and automated failover are not required. It uses a Docker-based installation with the same enrollment bundle contract as the [Kubernetes Edge Plane](./kubernetes-edge-plane).
 
-Edge Lite is suitable for DevOps, IaC, internal tooling, and lower-volume private integrations. For Tier-1 business-critical flows requiring multi-node HA, use the [Kubernetes Edge Plane](./kubernetes-edge-plane).
+Edge Lite is suitable for evaluation, DevOps, IaC, internal tooling, and lower-volume private integrations. For Tier-1 business-critical flows requiring multi-node HA, use the [Kubernetes Edge Plane](./kubernetes-edge-plane).
 
 ## Who Is It For
 
