@@ -19,6 +19,8 @@ For current provider setup, see the integration guides:
 
 - [Stripe](../guides/stripe)
 - [GitHub](../guides/github)
+- [Shopify](../guides/shopify)
+- [Twilio](../guides/twilio)
 - [Custom webhooks](../guides/custom-webhooks)
 
 Detailed package lifecycle, maturity classification, billing mechanics, and quality-gate
