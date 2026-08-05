@@ -1,6 +1,6 @@
 ---
 title: Payload Locality Invariant | Zen Mesh Documentation
-description: Zen Mesh payload locality commitment: customer event payloads are processed inside regional Traffic Plane, never proxied by control plane.
+description: "Zen Mesh payload locality commitment: customer event payloads are processed inside regional Traffic Plane, never proxied by control plane."
 sidebar_label: Payload Locality Invariant
 ---
 
