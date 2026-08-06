@@ -1,5 +1,5 @@
 # Spectral OpenAPI linting configuration
-# Used by: docs-api-reference-guardrails CI workflow
+# Used by: .githooks/pre-commit (scripts/validation/lint-openapi.sh)
 # Scope: docs-site API specifications
 
 extends: ["spectral:oas"]

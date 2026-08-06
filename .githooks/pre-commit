@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+# pre-commit — Fast, deterministic, offline checks for the docs repo.
+# Runs before every commit. No public internet, no full build.
+set -uo pipefail
+
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+cd "$ROOT"
+
+run() { echo ""; echo ":: [pre-commit] $*"; "$@"; }
+
+FAIL=0
+
+# 1. Governance guard: no .github / GitHub Actions.
+if ! bash scripts/validation/guard-no-github-actions.sh; then FAIL=1; fi
+
+# 2. Structural checks (JSON/YAML/front matter/routes/guards/generated-consistency).
+if ! node scripts/validation/validate-structure.mjs; then FAIL=1; fi
+
+# 3. Spectral OpenAPI lint (offline, local tool).
+if ! bash scripts/validation/lint-openapi.sh; then FAIL=1; fi
+
+echo ""
+if [ "$FAIL" -ne 0 ]; then
+  echo "[pre-commit] FAIL: one or more checks failed (see above)."
+  exit 1
+fi
+echo "[pre-commit] PASS: all fast checks green."

@@ -1,0 +1,78 @@
+#!/usr/bin/env bash
+# pre-push — Complete docs validation suite (requirement A5).
+# Runs before pushing. Includes production build, generated-site link/route/
+# anchor/asset validation, sitemap/robots/llms validation, evidence JSON
+# validation, versioned manifest validation, claim/non-claim guards, and the
+# governance guard. Optionally runs the bounded live same-site validator.
+#
+# The live validator runs only when LIVE=1 (deterministic same-site only); by
+# default the offline suite runs to avoid arbitrary third-party flakiness.
+set -uo pipefail
+
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+cd "$ROOT"
+
+FAIL=0
+note() { echo ""; echo ":: [pre-push] $1"; }
+
+# 1. Governance guard.
+note "governance guard (no GitHub Actions / .github)"
+bash scripts/validation/guard-no-github-actions.sh || FAIL=1
+
+# 2. Clean, lockfile-respecting install.
+note "dependency install (lockfile-respecting npm ci)"
+if [ "${FORCE_CLEAN_INSTALL:-0}" = "1" ]; then
+  npm ci --no-audit --no-fund || FAIL=1
+else
+  npm install --no-audit --no-fund --prefer-offline || FAIL=1
+fi
+
+# 3. Production docs build (includes blocking manifest-route test + ai-evidence validator).
+note "production build: npm run build"
+if [ "${SKIP_BUILD:-0}" != "1" ]; then
+  npm run build || FAIL=1
+fi
+
+# 4. Internal link + anchor validation on generated output.
+note "internal-link + anchor validation"
+node scripts/validation/validate-internal-links.mjs || FAIL=1
+
+# 5. Route + asset validation.
+note "route + asset validation"
+node scripts/validation/validate-routes.mjs || FAIL=1
+
+# 6. Sitemap / robots / llms validation.
+note "sitemap / robots / llms validation"
+node scripts/validation/validate-sitemap-robots.mjs || FAIL=1
+
+# 7. Evidence JSON validation + versioned manifest.
+note "AI evidence validation"
+node --check scripts/validate-ai-evidence.js && node scripts/validate-ai-evidence.js || FAIL=1
+
+# 8. Claim / non-claim / docs-experience / security-posture / evidence-CTA guards.
+#    These assert on docs PROSE (forbidden terms, CTA link shapes, security-posture
+#    fields). Some currently fail at HEAD against content-frozen prose. Under the
+#    content freeze these are REPORT-ONLY, not hard gates (hardening the prose would
+#    be a content change). Published to content-freeze-proof.json.
+note "content-fidelity guards (REPORT-ONLY, content freeze)"
+for s in validate:api-guardrails validate:docs-experience validate:ai-security-posture validate:public-evidence-cta validate:ai-local-trust-posture validate:docs-ai-discovery; do
+  echo "  -> npm run $s (report-only)"
+  if npm run "$s" >/dev/null 2>&1; then
+    echo "     PASS"
+  else
+    echo "     [content-freeze] $s has content findings -> recorded to content-freeze-proof.json (not a hard gate)"
+  fi
+done
+
+# 9. Optional bounded live same-site validation (deterministic, same-site only).
+if [ "${LIVE_VALIDATE:-0}" = "1" ]; then
+  note "live same-site route validation (bounded)"
+  node scripts/validation/validate-live-routes.mjs || FAIL=1
+fi
+
+echo ""
+if [ "$FAIL" -ne 0 ]; then
+  echo "[pre-push] FAIL: one or more validation suites failed."
+  exit 1
+fi
+echo "[pre-push] PASS: complete docs validation suite green."
