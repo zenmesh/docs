@@ -64,31 +64,6 @@
       "permanent": true
     },
     {
-      "source": "/ai/discovery-crawler-smoke-v1.json",
-      "destination": "/ai/discovery-crawler-smoke-v1.json",
-      "permanent": true
-    },
-    {
-      "source": "/ai/ai-discovery-registry.json",
-      "destination": "/ai/ai-discovery-registry.json",
-      "permanent": true
-    },
-    {
-      "source": "/ai/evidence/v1/manifest.json",
-      "destination": "/ai/evidence/v1/manifest.json",
-      "permanent": true
-    },
-    {
-      "source": "/ai/evidence/v1/non-claims.json",
-      "destination": "/ai/evidence/v1/non-claims.json",
-      "permanent": true
-    },
-    {
-      "source": "/ai/evidence/v1/wedge-claim-map.json",
-      "destination": "/ai/evidence/v1/wedge-claim-map.json",
-      "permanent": true
-    },
-    {
       "source": "/api/overview",
       "destination": "/docs/api/overview",
       "permanent": true

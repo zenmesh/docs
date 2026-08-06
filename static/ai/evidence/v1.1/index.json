@@ -1,0 +1,17 @@
+{
+  "v1.1_evidence_namespace": {
+    "description": "Zen Mesh v1.1 evidence directory — supersedes v1.0 evidence corpus. All v1.0 evidence artifacts require re-validation per the supersession contract before use in v1.1 claims.",
+    "schema_version": "1.1.0",
+    "generated_at": "2026-07-24T00:00:00Z",
+    "supersession_contract": "https://docs.zen-mesh.io/ai/evidence/v1.1/supersession-map.json",
+    "manifest": "https://docs.zen-mesh.io/ai/evidence/v1.1/manifest.json",
+    "non_claims": "https://docs.zen-mesh.io/ai/evidence/v1.1/non-claims.json",
+    "files": [
+      "index.json",
+      "manifest.json",
+      "manifest.schema.json",
+      "non-claims.json",
+      "supersession-map.json"
+    ]
+  }
+}

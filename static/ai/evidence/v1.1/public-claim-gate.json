@@ -1,0 +1,53 @@
+{
+  "contract_version": "1.1.0",
+  "generated_at": "2026-08-05T18:00:00Z",
+  "purpose": "Public-claim gate for the v1.1 evidence corpus. Establishes which statements may be made publicly and which are explicitly not claimed. Supersedes the v1.0 public security claims decision (see supersession-map entry PUBLIC-SECURITY-CLAIMS-DECISION, state HISTORICAL_ONLY).",
+  "scope": "china_market_strategy",
+  "rules": [
+    {
+      "rule_id": "GATE-001",
+      "subject": "capability_status",
+      "rule": "Public pages and docs must only assert a capability status that matches the v1.1 manifest proof_status vocabulary (victory_locked, proven_sandbox, proven_staging, proven_production, implementation_present, planned, blocked, not_claimed).",
+      "violation_is_blocking": true
+    },
+    {
+      "rule_id": "GATE-002",
+      "subject": "forbidden_status",
+      "rule": "No assertion of certified, authorized, compliant, satisfied, or guaranteed status for any security, compliance, or regulatory property.",
+      "violation_is_blocking": true
+    },
+    {
+      "rule_id": "GATE-003",
+      "subject": "provider_packs",
+      "rule": "Antom/Alipay and WeChat Pay provider Packs are IN DEVELOPMENT; UnionPay is PLANNED. No generally-available or production claim for any provider Pack.",
+      "violation_is_blocking": true
+    },
+    {
+      "rule_id": "GATE-004",
+      "subject": "aws",
+      "rule": "No AWS program acceptance, provider partnership, mainland-China deployment, or provider logo claim is permitted.",
+      "violation_is_blocking": true
+    },
+    {
+      "rule_id": "GATE-005",
+      "subject": "payload_locality",
+      "rule": "Payload locality is an architectural commitment and must not be weakened with 'where possible' or 'best effort' qualifiers.",
+      "violation_is_blocking": true
+    },
+    {
+      "rule_id": "GATE-006",
+      "subject": "evidence_level",
+      "rule": "Evidence level claims must match the manifest evidence_level vocabulary (CODE_INSPECTION, UNIT_TEST, INTEGRATION_TEST, E2E_TEST, SANDBOX_CI, STAGING_VALIDATED, PRODUCTION_LIVE).",
+      "violation_is_blocking": true
+    },
+    {
+      "rule_id": "GATE-007",
+      "subject": "contact",
+      "rule": "Public contact must use the approved channel (mailto:zen@zen-mesh.io). No alternative contact surfaces.",
+      "violation_is_blocking": false
+    }
+  ],
+  "status": "active",
+  "pass": true,
+  "failures": []
+}

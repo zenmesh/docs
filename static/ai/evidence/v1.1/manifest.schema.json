@@ -1,0 +1,125 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://docs.zen-mesh.io/ai/evidence/v1.1/manifest.schema.json",
+  "title": "Zen Mesh AI Evidence Manifest Schema v1.1",
+  "description": "Schema for the Zen Mesh v1.1 AI evidence manifest — defines supersession-aware proof capabilities, evidence levels, non-regression validation targets, and public-claim gates.",
+  "type": "object",
+  "required": [
+    "@context",
+    "@type",
+    "schema_version",
+    "generated_at",
+    "product",
+    "repository",
+    "evidence_scope",
+    "proof_levels",
+    "supersession_context",
+    "capabilities",
+    "compliance_mappings",
+    "validation"
+  ],
+  "properties": {
+    "@context": {
+      "type": "object",
+      "properties": {
+        "schema": { "type": "string", "format": "uri" },
+        "xsd": { "type": "string", "format": "uri" }
+      },
+      "required": ["schema", "xsd"]
+    },
+    "@type": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "schema_version": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$" },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "product": { "type": "string" },
+    "repository": { "type": "string", "format": "uri" },
+    "evidence_scope": { "type": "string", "enum": ["local_mock_harness_only", "sandbox_ci", "staging", "production"] },
+    "proof_levels": {
+      "type": "object",
+      "patternProperties": {
+        "^[a-z_]+$": {
+          "type": "object",
+          "required": ["label", "description", "confidence", "supersession_eligible"],
+          "properties": {
+            "label": { "type": "string" },
+            "description": { "type": "string" },
+            "confidence": { "type": "string", "enum": ["none", "low", "medium", "high", "maximum"] },
+            "supersession_eligible": { "type": "boolean" }
+          }
+        }
+      }
+    },
+    "supersession_context": {
+      "type": "object",
+      "required": ["contract_version", "prior_evidence_version", "prior_manifest_url", "supersession_map_url", "non_regression_matrix_url", "public_claim_gate_url"],
+      "properties": {
+        "contract_version": { "type": "string" },
+        "prior_evidence_version": { "type": "string" },
+        "prior_manifest_url": { "type": "string", "format": "uri" },
+        "supersession_map_url": { "type": "string", "format": "uri" },
+        "non_regression_matrix_url": { "type": "string", "format": "uri" },
+        "public_claim_gate_url": { "type": "string", "format": "uri" }
+      }
+    },
+    "capabilities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "proof_id", "name", "description", "proof_status", "evidence_level", "supersession_state", "victory_locked", "evidence_refs", "validator_refs", "integrity_ref", "non_claims"],
+        "properties": {
+          "id": { "type": "string" },
+          "proof_id": { "type": "string" },
+          "name": { "type": "string" },
+          "description": { "type": "string" },
+          "proof_status": { "type": "string", "enum": ["victory_locked", "proven_sandbox", "proven_staging", "proven_production", "implementation_present", "planned", "blocked", "not_claimed"] },
+          "evidence_level": { "type": "string", "enum": ["CODE_INSPECTION", "UNIT_TEST", "INTEGRATION_TEST", "E2E_TEST", "SANDBOX_CI", "STAGING_VALIDATED", "PRODUCTION_LIVE"] },
+          "supersession_state": { "type": "string", "enum": ["REUSE_INVARIANT_ONLY", "REEXECUTE_UNCHANGED", "REEXECUTE_WITH_ADAPTER", "HISTORICAL_ONLY", "INVALIDATED"] },
+          "victory_locked": { "type": "boolean" },
+          "evidence_refs": { "type": "array", "items": { "type": "string" } },
+          "validator_refs": { "type": "array", "items": { "type": "string" } },
+          "integrity_ref": { "type": "string" },
+          "non_claims": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "compliance_mappings": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["capability_id", "evidence_level", "supersession_state"],
+          "properties": {
+            "capability_id": { "type": "string" },
+            "evidence_level": { "type": "string" },
+            "supersession_state": { "type": "string" }
+          }
+        }
+      }
+    },
+    "validation": {
+      "type": "object",
+      "properties": {
+        "last_validated": { "type": "string", "format": "date-time" },
+        "validator_script": { "type": "string" },
+        "public_claim_gate_url": { "type": "string", "format": "uri" },
+        "non_regression_matrix_url": { "type": "string", "format": "uri" },
+        "pass": { "type": "boolean" },
+        "failures": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "rule_id": { "type": "string" },
+              "capability_id": { "type": "string" },
+              "message": { "type": "string" }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,165 @@
+{
+  "contract_version": "1.1.0",
+  "generated_at": "2026-08-05T18:00:00Z",
+  "purpose": "Non-regression matrix for the v1.1 evidence corpus. Every v1.0 invariant that must survive into v1.1 is listed with its supersession disposition (see supersession-map.json for definitions) and a v1.1 revalidation target.",
+  "scope": "china_market_strategy",
+  "rows": [
+    {
+      "v1_id": "RUNTIME-CONVERGENCE-PROOF-001",
+      "state": "REEXECUTE_UNCHANGED",
+      "revalidation_target": "at_least_once_failure_injection in sandbox",
+      "carries_into_v1.1": true
+    },
+    {
+      "v1_id": "RUNTIME-CONVERGENCE-PROOF-002",
+      "state": "REEXECUTE_WITH_ADAPTER",
+      "revalidation_target": "CP outage reconciliation with v1.1 ingester",
+      "carries_into_v1.1": true
+    },
+    {
+      "v1_id": "RUNTIME-CONVERGENCE-PROOF-003",
+      "state": "REEXECUTE_UNCHANGED",
+      "revalidation_target": "retry_exhaustion_dlq in v1.1 sandbox",
+      "carries_into_v1.1": true
+    },
+    {
+      "v1_id": "RUNTIME-CONVERGENCE-PROOF-004",
+      "state": "REEXECUTE_UNCHANGED",
+      "revalidation_target": "duplicate_idempotency in v1.1 sandbox",
+      "carries_into_v1.1": true
+    },
+    {
+      "v1_id": "SSRF-GUARD-SDK",
+      "state": "REUSE_INVARIANT_ONLY",
+      "revalidation_target": "SSRF negative-control E2E in sandbox",
+      "carries_into_v1.1": true
+    },
+    {
+      "v1_id": "ZCC-SIGNING-SDK",
+      "state": "REEXECUTE_WITH_ADAPTER",
+      "revalidation_target": "signature matrix incl. Shopify/Twilio/CloudEvents",
+      "carries_into_v1.1": true
+    },
+    {
+      "v1_id": "DEDUP-ENGINE-SDK",
+      "state": "REEXECUTE_WITH_ADAPTER",
+      "revalidation_target": "dedup matrix with new backend (Valkey removed)",
+      "carries_into_v1.1": true
+    },
+    {
+      "v1_id": "ZEN-SDK-MERKLE",
+      "state": "REUSE_INVARIANT_ONLY",
+      "revalidation_target": "audit trail Merkle proof E2E in sandbox",
+      "carries_into_v1.1": true
+    },
+    {
+      "v1_id": "ZEN-SDK-NETPOLICY",
+      "state": "REUSE_INVARIANT_ONLY",
+      "revalidation_target": "per-invariant E2E: TLS, header policy, tenant isolation",
+      "carries_into_v1.1": true
+    },
+    {
+      "v1_id": "MTLS-CONFIG",
+      "state": "REEXECUTE_UNCHANGED",
+      "revalidation_target": "mTLS handshake in v1.1 sandbox",
+      "carries_into_v1.1": true
+    },
+    {
+      "v1_id": "MTLS-BOOTSTRAP",
+      "state": "REEXECUTE_UNCHANGED",
+      "revalidation_target": "mTLS bootstrap in v1.1 sandbox",
+      "carries_into_v1.1": true
+    },
+    {
+      "v1_id": "PUBLIC-SECURITY-CLAIMS-DECISION",
+      "state": "HISTORICAL_ONLY",
+      "revalidation_target": "governance migrated to v1.1 public-claim-gate.json",
+      "carries_into_v1.1": false
+    },
+    {
+      "v1_id": "ZEN-SDK-CONSTANT-TIME-COMPARE",
+      "state": "REUSE_INVARIANT_ONLY",
+      "revalidation_target": "code inspection: constant-time compare in signature handlers",
+      "carries_into_v1.1": true
+    },
+    {
+      "v1_id": "ZEN-SDK-RATE-LIMITER",
+      "state": "REEXECUTE_WITH_ADAPTER",
+      "revalidation_target": "rate limiter in multi-tenant v1.1 sandbox",
+      "carries_into_v1.1": true
+    },
+    {
+      "v1_id": "DELIVERY-GUARANTEES",
+      "state": "REEXECUTE_WITH_ADAPTER",
+      "revalidation_target": "DLQ management E2E in v1.1 sandbox",
+      "carries_into_v1.1": true
+    },
+    {
+      "v1_id": "PROVIDER-PARITY-REGISTRY",
+      "state": "REEXECUTE_WITH_ADAPTER",
+      "revalidation_target": "parity registry incl. Shopify/Twilio/CloudEvents",
+      "carries_into_v1.1": true
+    },
+    {
+      "v1_id": "SECURITY-PRIMITIVES",
+      "state": "REUSE_INVARIANT_ONLY",
+      "revalidation_target": "per-primitive E2E: credential exposure, audit logging, TLS",
+      "carries_into_v1.1": true
+    },
+    {
+      "v1_id": "SECURITY-GAPS",
+      "state": "HISTORICAL_ONLY",
+      "revalidation_target": "gap tracking migrated to NR-* rules",
+      "carries_into_v1.1": false
+    },
+    {
+      "v1_id": "NON-CLAIMS-REGISTRY",
+      "state": "REEXECUTE_WITH_ADAPTER",
+      "revalidation_target": "v1.1 non-claims review",
+      "carries_into_v1.1": true
+    },
+    {
+      "v1_id": "FLOW01-DIRECT-PUBLIC-TARGET",
+      "state": "REEXECUTE_UNCHANGED",
+      "revalidation_target": "FLOW01 E2E in v1.1 sandbox",
+      "carries_into_v1.1": true
+    },
+    {
+      "v1_id": "FLOW02-EGRESS-DIRECT",
+      "state": "REEXECUTE_UNCHANGED",
+      "revalidation_target": "FLOW02 E2E in v1.1 sandbox",
+      "carries_into_v1.1": true
+    },
+    {
+      "v1_id": "FLOW03-EGRESS-RELAY-VM",
+      "state": "REEXECUTE_UNCHANGED",
+      "revalidation_target": "FLOW03 E2E in v1.1 sandbox",
+      "carries_into_v1.1": true
+    },
+    {
+      "v1_id": "V1.1-LAUNCH-COHORT",
+      "state": "REEXECUTE_WITH_ADAPTER",
+      "revalidation_target": "Shopify/Twilio/CloudEvents signature matrices",
+      "carries_into_v1.1": true
+    },
+    {
+      "v1_id": "valkey-002",
+      "state": "INVALIDATED",
+      "revalidation_target": "removed from corpus; dedup re-proven with new backend",
+      "carries_into_v1.1": false
+    },
+    {
+      "v1_id": "SSRF-TEST-SUITE",
+      "state": "REEXECUTE_UNCHANGED",
+      "revalidation_target": "SSRF negative control suite in v1.1 sandbox",
+      "carries_into_v1.1": true
+    },
+    {
+      "v1_id": "DEDUP-TEST-SUITE",
+      "state": "REEXECUTE_WITH_ADAPTER",
+      "revalidation_target": "dedup suite with new backend",
+      "carries_into_v1.1": true
+    }
+  ],
+  "invariant_summary": "All delivery-convergence, SSRF-guard, signing, dedup, merkle, network-policy, mTLS, and flow invariants are carried into v1.1 with a revalidation target. Governance-only artifacts (PUBLIC-SECURITY-CLAIMS-DECISION, SECURITY-GAPS) and the invalidated valkey-002 record are historical only."
+}

@@ -1,0 +1,98 @@
+[
+  {
+    "id": "non-claim-runtime-exactly-once",
+    "category": "runtime",
+    "claim": "Exactly-once delivery guarantee",
+    "scope": "Not claimed in v1.1. Zen Mesh provides at-least-once with idempotency, not exactly-once.",
+    "evidence_status": "active_non_claim",
+    "source": "v1.1-non-regression-matrix NR-014"
+  },
+  {
+    "id": "non-claim-runtime-zero-loss",
+    "category": "runtime",
+    "claim": "Zero event loss under all failure conditions",
+    "scope": "Not claimed in v1.1. Delivery guarantees documented per delivery topology with explicit DLQ for non-delivery.",
+    "evidence_status": "active_non_claim",
+    "source": "v1.1-non-regression-matrix NR-003"
+  },
+  {
+    "id": "non-claim-runtime-ordering",
+    "category": "runtime",
+    "claim": "Per-source ordering or causal ordering guarantees",
+    "scope": "Not claimed in v1.1. No ordering guarantee provided.",
+    "evidence_status": "active_non_claim",
+    "source": "Spec"
+  },
+  {
+    "id": "non-claim-runtime-single-settle",
+    "category": "runtime",
+    "claim": "Single-settle delivery semantics",
+    "scope": "Explicitly excluded in v1.1. Conformance fixtures validate rejection of single-settle claims.",
+    "evidence_status": "active_non_claim",
+    "source": "v1.1-non-regression-matrix NR-026"
+  },
+  {
+    "id": "non-claim-runtime-all-paths-proven",
+    "category": "runtime",
+    "claim": "All runtime paths are proven",
+    "scope": "Not claimed in v1.1. Victory-locked proofs are scenario-specific. General at-least-once, failover autonomy, and disconnected operation remain unproven.",
+    "evidence_status": "active_non_claim",
+    "source": "v1.1-non-regression-matrix NR-003"
+  },
+  {
+    "id": "non-claim-production-live-security",
+    "category": "security",
+    "claim": "Production-live security validation (positive-path SSRF, live provider E2E)",
+    "scope": "Deferred to restricted_live evidence level per supersession contract §4.2.",
+    "evidence_status": "active_non_claim",
+    "source": "v1.1-evidence-supersession-contract"
+  },
+  {
+    "id": "non-claim-sla-latency",
+    "category": "delivery",
+    "claim": "Bounded latency SLA",
+    "scope": "Not claimed in v1.1. Latency measured and recorded per delivery topology but no formal SLA offered.",
+    "evidence_status": "active_non_claim",
+    "source": "v1.1-non-regression-matrix NR-003"
+  },
+  {
+    "id": "non-claim-nodeport-ingress",
+    "category": "delivery",
+    "claim": "NodePort or port-forward based delivery",
+    "scope": "Explicitly excluded. All delivery uses egress-to-public-target architecture. NodePort/port-forward prohibited.",
+    "evidence_status": "active_non_claim",
+    "source": "v1.1-non-regression-matrix NR-007"
+  },
+  {
+    "id": "non-claim-bff-payload-processing",
+    "category": "delivery",
+    "claim": "BFF processes payload content in delivery path",
+    "scope": "Explicitly excluded. BFF is not in payload path in any delivery topology.",
+    "evidence_status": "active_non_claim",
+    "source": "v1.1-non-regression-matrix NR-006"
+  },
+  {
+    "id": "non-claim-header-spoofing",
+    "category": "security",
+    "claim": "Header spoofing prevention for all header types",
+    "scope": "Not claimed. Specific header controls are validated; general header spoofing prevention is not claimed.",
+    "evidence_status": "active_non_claim",
+    "source": "v1.1-non-regression-matrix NR-015"
+  },
+  {
+    "id": "non-claim-provider-sla-uptime",
+    "category": "providers",
+    "claim": "Provider SLA uptime or availability guarantees",
+    "scope": "Not claimed in v1.1. Provider availability is the provider's responsibility.",
+    "evidence_status": "active_non_claim",
+    "source": "Spec"
+  },
+  {
+    "id": "non-claim-general-at-least-once-all-paths",
+    "category": "runtime",
+    "claim": "General at-least-once guarantee across all delivery paths",
+    "scope": "Not claimed. At-least-once is proven per topology path with scenario-specific evidence.",
+    "evidence_status": "active_non_claim",
+    "source": "v1.1-non-regression-matrix NR-003"
+  }
+]

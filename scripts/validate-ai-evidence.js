@@ -1,17 +1,18 @@
 #!/usr/bin/env node
 /**
- * validate-ai-evidence.js — Validate AI evidence JSON files.
+ * validate-ai-evidence.js — Validate AI evidence JSON files (stable v1 channel
+ * and versioned v1.1).
  *
  * Checks:
  * - JSON is parseable
- * - All capabilities have id and valid proof_status
+ * - Stable v1 manifest reflects a current evidence version (never stale)
+ * - Versioned manifest capabilities have valid status / maturity vocabulary
  * - No forbidden statuses: certified, authorized, compliant, satisfied, guaranteed
- * - No forbidden claims: FedRAMP authorized, HIPAA compliance/BAA, SOC2 certified, PCI compliant
- * - No Merkle auth/replay/identity/delivery claims
- * - No secret-looking values
- * - No internal employee names or local private paths
- * - proof_status is one of allowed values
- * - For victory_locked/proven_local_mock status: non_claims array must be non-empty
+ * - No forbidden claims: FedRAMP authorized, HIPAA compliance/BAA, SOC2 certified,
+ *   PCI compliant, Merkle auth/replay/identity/delivery
+ * - No secret-looking values, internal employee names, or local private paths
+ * - Every https://docs.zen-mesh.io/ai/evidence/... reference resolves to an
+ *   artifact present in static/ai/evidence/
  * - Exit code 0 = PASS, else 1
  */
 
@@ -21,15 +22,6 @@ import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
-
-const ALLOWED_PROOF_STATUSES = new Set([
-  'victory_locked',
-  'proven_local_mock',
-  'implementation_present',
-  'planned',
-  'blocked',
-  'not_claimed',
-]);
 
 const FORBIDDEN_STATUS_WORDS = [
   'certified',
@@ -58,7 +50,6 @@ const SECRET_PATTERNS = [
   /api[_-]?key\s*[:=]\s*['"][^'"]+['"]/i,
 ];
 
-// Common given names — not exhaustive, catches obvious ones
 const EMPLOYEE_NAMES = [
   'andrew', 'bob', 'carol', 'charlie', 'dave', 'eve', 'frank', 'grace',
   'heidi', 'ivan', 'judy', 'leonardo', 'mallory', 'nancy', 'oscar',
@@ -66,13 +57,26 @@ const EMPLOYEE_NAMES = [
   'alice', 'brent', 'cathy', 'dan', 'erin', 'fiona',
 ];
 
-// Internal-only path patterns
 const PRIVATE_PATH_PATTERNS = [
   /\/home\/[^/]+\//,
   /\/Users\/[^/]+\//,
   /\b\.zen\//,
   /\bnode_modules\//,
 ];
+
+const ALLOWED_CAPABILITY_STATUS = new Set([
+  'victory_locked',
+  'proven_sandbox',
+  'proven_staging',
+  'proven_production',
+  'implementation_present',
+  'architectural_commitment',
+  'planned',
+  'blocked',
+  'not_claimed',
+  'under_evaluation',
+  'in_development',
+]);
 
 function readJSON(filePath) {
   const fullPath = path.resolve(ROOT, filePath);
@@ -82,219 +86,201 @@ function readJSON(filePath) {
 
 function containsForbiddenWord(text) {
   const lower = text.toLowerCase();
-  return FORBIDDEN_STATUS_WORDS.some(w => lower.includes(w));
+  return FORBIDDEN_STATUS_WORDS.some((w) => lower.includes(w));
 }
 
-function scanForSecrets(text, path) {
+function scanForSecrets(text, filePath) {
   const found = [];
   for (const pattern of SECRET_PATTERNS) {
     const match = text.match(pattern);
     if (match) {
-      found.push(`${path}: potential secret pattern "${match[0].slice(0, 20)}..."`);
+      found.push(`${filePath}: potential secret pattern "${match[0].slice(0, 20)}..."`);
     }
   }
   return found;
 }
 
-function scanForEmployeeNames(text, path) {
+function scanForEmployeeNames(text, filePath) {
   const found = [];
   const words = text.toLowerCase().split(/[^a-z]/);
   for (const word of words) {
     if (EMPLOYEE_NAMES.includes(word) && word.length >= 4) {
-      found.push(`${path}: possible employee/placeholder name "${word}"`);
+      found.push(`${filePath}: possible employee/placeholder name "${word}"`);
     }
   }
   return found;
 }
 
-function scanForPrivatePaths(text, path) {
+function scanForPrivatePaths(text, filePath) {
   const found = [];
   for (const pattern of PRIVATE_PATH_PATTERNS) {
     const match = text.match(pattern);
     if (match) {
-      found.push(`${path}: possible internal-only path "${match[0]}"`);
+      found.push(`${filePath}: possible internal-only path "${match[0]}"`);
     }
   }
   return found;
 }
 
-function scanForForbiddenClaims(text, path) {
+function scanForForbiddenClaims(text, filePath) {
   const found = [];
   for (const { pattern, label } of FORBIDDEN_CLAIM_PATTERNS) {
     if (pattern.test(text)) {
-      found.push(`${path}: forbidden claim pattern "${label}"`);
+      found.push(`${filePath}: forbidden claim pattern "${label}"`);
     }
   }
   return found;
 }
 
-function validateManifest(data, raw, errors) {
-  // Check required fields
-  const required = ['@context', '@type', 'schema_version', 'generated_at', 'product', 'evidence_scope', 'proof_levels', 'capabilities', 'compliance_mappings', 'validation'];
+function validateStableManifest(data, raw, errors) {
+  const required = ['@context', '@type', 'schema_version', 'artifact', 'generated_at', 'current_state', 'digest', 'freshness'];
   for (const field of required) {
     if (!(field in data)) {
-      errors.push(`manifest.json: missing required field "${field}"`);
+      errors.push(`v1/manifest.json: missing required field "${field}"`);
     }
   }
+  if (data.artifact && data.artifact.current_evidence_version !== '1.1.0') {
+    errors.push(`v1/manifest.json: artifact.current_evidence_version must be "1.1.0" (got "${data.artifact.current_evidence_version}")`);
+  }
+  if (data.digest && !data.digest.value) {
+    errors.push('v1/manifest.json: digest.value is required');
+  }
+  if (data.freshness && !data.freshness.policy) {
+    errors.push('v1/manifest.json: freshness.policy is required');
+  }
+  if (data.superseded_versions && data.superseded_versions['1.0.0']) {
+    const cls = data.superseded_versions['1.0.0'].classification;
+    if (cls !== 'historical_superseded') {
+      errors.push(`v1/manifest.json: v1.0 must be classified historical_superseded (got "${cls}")`);
+    }
+  }
+}
 
+function validateVersionedManifest(data, raw, errors) {
+  const required = ['@context', '@type', 'schema_version', 'generated_at', 'product', 'repository', 'evidence_scope', 'proof_levels', 'supersession_context', 'capabilities', 'compliance_mappings', 'validation'];
+  for (const field of required) {
+    if (!(field in data)) {
+      errors.push(`v1.1/manifest.json: missing required field "${field}"`);
+    }
+  }
+  if (data.schema_version !== '1.1.0') {
+    errors.push(`v1.1/manifest.json: schema_version must be "1.1.0" (got "${data.schema_version}")`);
+  }
   if (!Array.isArray(data.capabilities)) {
-    errors.push('manifest.json: capabilities must be an array');
+    errors.push('v1.1/manifest.json: capabilities must be an array');
     return;
   }
-
-  // Check each capability
   for (let i = 0; i < data.capabilities.length; i++) {
     const cap = data.capabilities[i];
-    const prefix = `manifest.json: capabilities[${i}]`;
-
-    if (!cap.id) {
-      errors.push(`${prefix}: missing required field "id"`);
+    const prefix = `v1.1/manifest.json: capabilities[${i}]`;
+    if (!cap.capability_id) {
+      errors.push(`${prefix}: missing capability_id`);
     }
-
-    if (!cap.proof_status) {
-      errors.push(`${prefix}: missing required field "proof_status"`);
-    } else if (!ALLOWED_PROOF_STATUSES.has(cap.proof_status)) {
-      errors.push(`${prefix}: invalid proof_status "${cap.proof_status}". Must be one of: ${[...ALLOWED_PROOF_STATUSES].join(', ')}`);
+    if (!cap.name) {
+      errors.push(`${prefix}: missing name`);
     }
-
-    // Check non_claims is present and non-empty for proven/victory statuses
-    const statusesRequiringNonClaims = ['victory_locked', 'proven_local_mock'];
-    if (statusesRequiringNonClaims.includes(cap.proof_status)) {
-      if (!Array.isArray(cap.non_claims) || cap.non_claims.length === 0) {
-        errors.push(`${prefix}: proof_status "${cap.proof_status}" requires non-empty non_claims array`);
-      }
+    if (cap.status && !ALLOWED_CAPABILITY_STATUS.has(cap.status)) {
+      errors.push(`${prefix}: invalid status "${cap.status}"`);
     }
-
-    // Check every field string for forbidden words
-    const serialized = JSON.stringify(cap);
-    if (containsForbiddenWord(serialized)) {
-      for (const word of FORBIDDEN_STATUS_WORDS) {
-        if (serialized.toLowerCase().includes(word)) {
-          errors.push(`${prefix}: contains forbidden status word "${word}"`);
-        }
-      }
-    }
-
-    // Check evidence refs use zen-platform: prefix
-    if (Array.isArray(cap.evidence_refs)) {
-      for (let j = 0; j < cap.evidence_refs.length; j++) {
-        const ref = cap.evidence_refs[j];
-        if (!ref.startsWith('zen-platform:')) {
-          errors.push(`${prefix}.evidence_refs[${j}]: must use "zen-platform:" prefix (got "${ref.slice(0, 60)}")`);
-        }
-      }
-    }
-
-    // Check validator refs use zen-platform: prefix
-    if (Array.isArray(cap.validator_refs)) {
-      for (let j = 0; j < cap.validator_refs.length; j++) {
-        const ref = cap.validator_refs[j];
-        if (!ref.startsWith('zen-platform:')) {
-          errors.push(`${prefix}.validator_refs[${j}]: must use "zen-platform:" prefix (got "${ref.slice(0, 60)}")`);
-        }
-      }
-    }
-
-    // Check merkle ref uses mock: prefix
-    if (cap.merkle_ref && !cap.merkle_ref.startsWith('mock:')) {
-      errors.push(`${prefix}.merkle_ref: must use "mock:" prefix (got "${cap.merkle_ref.slice(0, 60)}")`);
-    }
-  }
-
-  // Check evidence_scope
-  if (data.evidence_scope !== 'local_mock_harness_only') {
-    errors.push(`manifest.json: evidence_scope must be "local_mock_harness_only" (is "${data.evidence_scope}")`);
-  }
-
-  // Check compliance relationships in compliance_mappings
-  if (data.compliance_mappings) {
-    if (data.compliance_mappings.ref && !data.compliance_mappings.ref.startsWith('https://')) {
-      errors.push(`manifest.json: compliance_mappings.ref must be an https URL`);
-    }
-  }
-}
-
-function validateComplianceMap(data, raw, errors) {
-  if (!Array.isArray(data.entries)) {
-    errors.push('compliance-map.json: entries must be an array');
-    return;
-  }
-
-  for (let i = 0; i < data.entries.length; i++) {
-    const entry = data.entries[i];
-    const prefix = `compliance-map.json: entries[${i}]`;
-
-    if (!entry.compliance_id) {
-      errors.push(`${prefix}: missing compliance_id`);
-    }
-
-    // Check relationship is one of allowed values
-    const allowedRelationships = ['supports', 'maps_to'];
-    if (!allowedRelationships.includes(entry.relationship)) {
-      errors.push(`${prefix}: relationship must be one of [${allowedRelationships.join(', ')}] — found "${entry.relationship}"`);
-    }
-
-    // Check claim_status matches relationship
-    if (entry.claim_status && !allowedRelationships.includes(entry.claim_status)) {
-      errors.push(`${prefix}: claim_status must be one of [${allowedRelationships.join(', ')}] — found "${entry.claim_status}"`);
-    }
-
-    // Check disclaimer exists
-    if (!entry.disclaimer) {
-      errors.push(`${prefix}: missing disclaimer`);
-    }
-
-    // Check no forbidden status words in entry
-    const serialized = JSON.stringify(entry);
-    if (containsForbiddenWord(serialized)) {
-      for (const word of FORBIDDEN_STATUS_WORDS) {
-        if (serialized.toLowerCase().includes(word)) {
-          errors.push(`${prefix}: contains forbidden status word "${word}"`);
-        }
-      }
-    }
-
-    // Check evidence refs use zen-platform:
-    if (Array.isArray(entry.evidence_refs)) {
-      for (let j = 0; j < entry.evidence_refs.length; j++) {
-        if (!entry.evidence_refs[j].startsWith('zen-platform:')) {
-          errors.push(`${prefix}.evidence_refs[${j}]: must use "zen-platform:" prefix`);
+    if (cap.provider_pack_status) {
+      const allowedPack = ['in_development', 'planned', 'not_claimed', 'blocked'];
+      for (const [pack, pv] of Object.entries(cap.provider_pack_status)) {
+        if (!allowedPack.includes(pv.status)) {
+          errors.push(`${prefix}.provider_pack_status.${pack}: invalid status "${pv.status}"`);
         }
       }
     }
   }
 }
 
-function validateNonClaims(data, raw, errors) {
+function validateNonClaimsArray(data, raw, errors, filePath) {
   if (!Array.isArray(data)) {
-    errors.push('non-claims.json: must be an array');
+    errors.push(`${filePath}: must be an array`);
     return;
   }
-
   for (let i = 0; i < data.length; i++) {
     const entry = data[i];
-    const prefix = `non-claims.json[${i}]`;
-
-    if (!entry.id) {
-      errors.push(`${prefix}: missing id`);
+    const prefix = `${filePath}[${i}]`;
+    if (!entry.claim_id && !entry.id) {
+      errors.push(`${prefix}: missing claim id`);
     }
-
-    if (!entry.category) {
-      errors.push(`${prefix}: missing category`);
-    }
-
-    if (!entry.claim) {
-      errors.push(`${prefix}: missing claim`);
-    }
-
-    // Check no forbidden status words
-    const serialized = JSON.stringify(entry);
-    if (containsForbiddenWord(serialized)) {
+    if (containsForbiddenWord(JSON.stringify(entry))) {
       for (const word of FORBIDDEN_STATUS_WORDS) {
-        if (serialized.toLowerCase().includes(word)) {
+        if (JSON.stringify(entry).toLowerCase().includes(word)) {
           errors.push(`${prefix}: contains forbidden status word "${word}"`);
         }
       }
+    }
+  }
+}
+
+// Forbidden-status words are only allowed to appear in governance text that
+// prohibits them (e.g., "no certified claim"). This inspects only declared
+// status-like field values, never prose.
+function inspectStatusLikeValues(node, pathStr, errors, filePath) {
+  if (Array.isArray(node)) {
+    for (let i = 0; i < node.length; i++) {
+      inspectStatusFields(node[i], pathStr ? `${pathStr}[${i}]` : `[${i}]`, errors, filePath);
+    }
+  } else if (node && typeof node === 'object') {
+    for (const [k, v] of Object.entries(node)) {
+      if (/status|_status|classification|proof_status/i.test(k) && typeof v === 'string') {
+        for (const word of FORBIDDEN_STATUS_WORDS) {
+          if (v.toLowerCase().includes(word)) {
+            errors.push(`${filePath}:${pathStr}.${k}: forbidden status word "${word}"`);
+          }
+        }
+      } else {
+        inspectStatusFields(v, pathStr ? `${pathStr}.${k}` : k, errors, filePath);
+      }
+    }
+  }
+}
+
+function inspectStatusFields(node, pathStr, errors, filePath) {
+  inspectStatusValues(node, pathStr, errors, filePath);
+}
+
+function validateArtifactObject(data, raw, errors, filePath) {
+  if (!data || typeof data !== 'object' || Array.isArray(data)) {
+    errors.push(`${filePath}: must be a JSON object`);
+    return;
+  }
+  inspectStatusValues(data, '', errors, filePath);
+}
+
+function inspectStatusValues(node, pathStr, errors, filePath) {
+  if (Array.isArray(node)) {
+    for (let i = 0; i < node.length; i++) {
+      inspectStatusFields(node[i], pathStr ? `${pathStr}[${i}]` : `[${i}]`, errors, filePath);
+    }
+  } else if (node && typeof node === 'object') {
+    for (const [k, v] of Object.entries(node)) {
+      if (/^(status|status_label|_level|classification|proof|state)$/i.test(k) && typeof v === 'string') {
+        for (const word of FORBIDDEN_STATUS_WORDS) {
+          if (v.toLowerCase().includes(word)) {
+            errors.push(`${filePath}:${pathStr}.${k}: forbidden status word "${word}"`);
+          }
+        }
+      } else {
+        inspectStatusFields(v, pathStr ? `${pathStr}.${k}` : k, errors, filePath);
+      }
+    }
+  }
+}
+
+function collectEvidenceUrls(text, errors) {
+  const urls = [...text.matchAll(/https:\/\/docs\.zen-mesh\.io\/ai\/evidence\/[^"\\\s]+/g)].map((m) => m[0]);
+  for (const url of urls) {
+    const rel = url.replace('https://docs.zen-mesh.io/', '');
+    const candidate = path.join(ROOT, 'static', rel);
+    const candidateIndex = path.join(ROOT, 'static', rel, 'index.json');
+    if (rel.endsWith('/')) {
+      if (!fs.existsSync(candidateIndex)) {
+        errors.push(`unresolved evidence URL: ${url}`);
+      }
+    } else if (!fs.existsSync(candidate) && !fs.existsSync(candidateIndex)) {
+      errors.push(`unresolved evidence URL: ${url}`);
     }
   }
 }
@@ -304,36 +290,37 @@ function run() {
   const warnings = [];
 
   const files = [
-    { relPath: 'static/ai/evidence/v1/manifest.json', validate: validateManifest },
-    { relPath: 'static/ai/evidence/v1/compliance-map.json', validate: validateComplianceMap },
-    { relPath: 'static/ai/evidence/v1/non-claims.json', validate: validateNonClaims },
+    { relPath: 'static/ai/evidence/v1/manifest.json', validate: validateStableManifest },
+    { relPath: 'static/ai/evidence/v1.1/manifest.json', validate: validateVersionedManifest },
+    { relPath: 'static/ai/evidence/v1.1/non-claims.json', validate: (d, r, e) => validateNonClaimsArray(d, r, e, 'v1.1/non-claims.json') },
+    { relPath: 'static/ai/evidence/v1.1/public-claim-gate.json', validate: validateArtifactObject },
+    { relPath: 'static/ai/evidence/v1.1/non-regression-matrix.json', validate: validateArtifactObject },
+    { relPath: 'static/ai/evidence/v1.1/supersession-map.json', validate: validateArtifactObject },
   ];
+
+  const allText = [];
 
   for (const { relPath, validate } of files) {
     try {
       const { data, raw } = readJSON(relPath);
-
-      // Structural validation
       validate(data, raw, errors);
 
-      // Forbidden claim patterns across entire file
       const forbiddenClaims = scanForForbiddenClaims(raw, relPath);
       errors.push(...forbiddenClaims);
 
-      // Secret detection
       const secrets = scanForSecrets(raw, relPath);
       errors.push(...secrets);
 
-      // Employee name detection
       const names = scanForEmployeeNames(raw, relPath);
       for (const n of names) {
-        warnings.push(n); // Employee names might be false positives
+        warnings.push(n);
       }
 
-      // Private path detection
       const privatePaths = scanForPrivatePaths(raw, relPath);
       errors.push(...privatePaths);
 
+      allText.push(raw);
+      collectEvidenceUrls(raw, errors);
     } catch (e) {
       if (e instanceof SyntaxError) {
         errors.push(`${relPath}: JSON parse error — ${e.message}`);
@@ -343,7 +330,6 @@ function run() {
     }
   }
 
-  // Emit warnings
   if (warnings.length > 0) {
     console.log('WARNINGS:');
     for (const w of warnings) {

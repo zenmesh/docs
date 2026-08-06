@@ -1,0 +1,198 @@
+{
+  "contract_version": "1.1.0",
+  "prior_evidence_version": "1.0.0",
+  "prior_manifest_url": "https://docs.zen-mesh.io/ai/evidence/v1/manifest.json",
+  "generated_at": "2026-07-24T00:00:00Z",
+  "immutability_policy": "All v1.0 evidence artifacts are immutable. No edits, no re-executions in place, no status updates. Supersession states describe how v1.0 evidence may be used in v1.1 context.",
+  "supersession_states": {
+    "REUSE_INVARIANT_ONLY": "The invariant/architecture is unchanged. v1.0 code may be cited but v1.1 must supply its own runtime evidence (log, trace, Merkle proof) at the v1.1 evidence level.",
+    "REEXECUTE_UNCHANGED": "The test/proof is re-executed in the v1.1 environment without source changes. New evidence artifact references the original proof_id with an updated execution hash.",
+    "REEXECUTE_WITH_ADAPTER": "The proof requires adapter code (e.g., new provider signature format, new delivery topology). Re-executed with minimal changes. Original proof_id preserved with -v1.1 suffix.",
+    "HISTORICAL_ONLY": "The evidence documented a v1.0-specific capability that does not exist in v1.1. Retained for historical reference only. Not admissible for v1.1 claims.",
+    "INVALIDATED": "The evidence artifact has been reviewed and found invalid. Must not be cited for any claim. See review_record for details."
+  },
+  "entries": [
+    {
+      "v1_id": "RUNTIME-CONVERGENCE-PROOF-001",
+      "v1_proof_status": "victory_locked",
+      "v1.1_supersession_state": "REEXECUTE_UNCHANGED",
+      "v1.1_reason": "At-least-once delivery invariant unchanged. Re-execute in sandbox with v1.1 topology.",
+      "v1.1_migration_path": "Re-run at_least_once_failure_injection test in CI sandbox; capture new execution hash and correlation ID."
+    },
+    {
+      "v1_id": "RUNTIME-CONVERGENCE-PROOF-002",
+      "v1_proof_status": "victory_locked",
+      "v1.1_supersession_state": "REEXECUTE_WITH_ADAPTER",
+      "v1.1_reason": "Control plane topology changed in v1.1 (new ingester component). Adapter test for CP outage reconciliation needed.",
+      "v1.1_migration_path": "Add v1.1 ingester to CP outage scenario; re-run and capture new evidence."
+    },
+    {
+      "v1_id": "RUNTIME-CONVERGENCE-PROOF-003",
+      "v1_proof_status": "victory_locked",
+      "v1.1_supersession_state": "REEXECUTE_UNCHANGED",
+      "v1.1_reason": "Retry exhaustion and DLQ invariant unchanged.",
+      "v1.1_migration_path": "Re-run retry_exhaustion_dlq in v1.1 sandbox; update evidence_refs."
+    },
+    {
+      "v1_id": "RUNTIME-CONVERGENCE-PROOF-004",
+      "v1_proof_status": "victory_locked",
+      "v1.1_supersession_state": "REEXECUTE_UNCHANGED",
+      "v1.1_reason": "Duplicate detection and idempotency invariant unchanged.",
+      "v1.1_migration_path": "Re-run duplicate_idempotency in v1.1 sandbox."
+    },
+    {
+      "v1_id": "SSRF-GUARD-SDK",
+      "v1_proof_status": "victory_locked",
+      "v1.1_supersession_state": "REUSE_INVARIANT_ONLY",
+      "v1.1_reason": "The SSRF guard invariant (RFC1918 denial, metadata denial) is architecture-unchanged. The code at pkg/security/ssrf.go may be cited as invariant reference, but v1.1 must capture its own proof of SSRF negative controls.",
+      "v1.1_migration_path": "No code change needed. Create v1.1 SSRF negative-control E2E test in sandbox using same invariant targets."
+    },
+    {
+      "v1_id": "ZCC-SIGNING-SDK",
+      "v1_proof_status": "victory_locked",
+      "v1.1_supersession_state": "REEXECUTE_WITH_ADAPTER",
+      "v1.1_reason": "Provider signature verification expanded to include Shopify, Twilio, CloudEvents in addition to Stripe/GitHub.",
+      "v1.1_migration_path": "Add Shopify/Twilio/CloudEvents signature matrices to existing signing test. Re-run full signing matrix."
+    },
+    {
+      "v1_id": "DEDUP-ENGINE-SDK",
+      "v1_proof_status": "victory_locked",
+      "v1.1_supersession_state": "REEXECUTE_WITH_ADAPTER",
+      "v1.1_reason": "Valkey backend removed from architecture. Dedup engine must be re-proven with new backend.",
+      "v1.1_migration_path": "Re-run dedup matrix with new backend; verify cross-replica dedup still holds."
+    },
+    {
+      "v1_id": "ZEN-SDK-MERKLE",
+      "v1_proof_status": "victory_locked",
+      "v1.1_supersession_state": "REUSE_INVARIANT_ONLY",
+      "v1.1_reason": "Merkle tree code at pkg/merkle/merkle.go is invariant. v1.1 must capture its own Merkle proof for audit trail.",
+      "v1.1_migration_path": "No code change. Create v1.1 audit trail E2E test that produces and verifies a Merkle proof."
+    },
+    {
+      "v1_id": "ZEN-SDK-NETPOLICY",
+      "v1_proof_status": "victory_locked",
+      "v1.1_supersession_state": "REUSE_INVARIANT_ONLY",
+      "v1.1_reason": "Network policy invariants (TLS, header security, tenant isolation) are architecture-unchanged. v1.1 must re-prove each.",
+      "v1.1_migration_path": "Create per-invariant E2E tests in sandbox for TLS, header policy, tenant isolation."
+    },
+    {
+      "v1_id": "MTLS-CONFIG",
+      "v1_proof_status": "victory_locked",
+      "v1.1_supersession_state": "REEXECUTE_UNCHANGED",
+      "v1.1_reason": "mTLS config is deployment-level. Re-verify in v1.1 sandbox with same config.",
+      "v1.1_migration_path": "Re-run mTLS handshake test in v1.1 sandbox."
+    },
+    {
+      "v1_id": "MTLS-BOOTSTRAP",
+      "v1_proof_status": "victory_locked",
+      "v1.1_supersession_state": "REEXECUTE_UNCHANGED",
+      "v1.1_reason": "mTLS bootstrap is deployment-level. Re-verify in v1.1 sandbox.",
+      "v1.1_migration_path": "Re-run mTLS bootstrap test in v1.1 sandbox."
+    },
+    {
+      "v1_id": "PUBLIC-SECURITY-CLAIMS-DECISION",
+      "v1_proof_status": "victory_locked",
+      "v1.1_supersession_state": "HISTORICAL_ONLY",
+      "v1.1_reason": "The v1.0 public security claims decision document is a governance artifact from the v1.0 launch. v1.1 has its own public-claim-gate.json with updated rules.",
+      "v1.1_migration_path": "No re-execution. Governance migrated to v1.1-public-claim-gate.json."
+    },
+    {
+      "v1_id": "ZEN-SDK-CONSTANT-TIME-COMPARE",
+      "v1_proof_status": "victory_locked",
+      "v1.1_supersession_state": "REUSE_INVARIANT_ONLY",
+      "v1.1_reason": "Constant-time comparison utility is invariant. Code may be cited but v1.1 must capture new evidence of its use in signature verification.",
+      "v1.1_migration_path": "No code change. Verify constant-time compare is used in each provider signature handler; capture via code inspection."
+    },
+    {
+      "v1_id": "ZEN-SDK-RATE-LIMITER",
+      "v1_proof_status": "victory_locked",
+      "v1.1_supersession_state": "REEXECUTE_WITH_ADAPTER",
+      "v1.1_reason": "Rate limiter may need adapter for v1.1 multi-tenant topology.",
+      "v1.1_migration_path": "Re-run rate limiter test in multi-tenant v1.1 sandbox."
+    },
+    {
+      "v1_id": "DELIVERY-GUARANTEES",
+      "v1_proof_status": "implementation_present",
+      "v1.1_supersession_state": "REEXECUTE_WITH_ADAPTER",
+      "v1.1_reason": "Delivery guarantees expanded to include DLQ management interface and retry matrix.",
+      "v1.1_migration_path": "Create DLQ management E2E tests in v1.1 sandbox."
+    },
+    {
+      "v1_id": "PROVIDER-PARITY-REGISTRY",
+      "v1_proof_status": "implementation_present",
+      "v1.1_supersession_state": "REEXECUTE_WITH_ADAPTER",
+      "v1.1_reason": "Provider parity registry must be expanded to include Shopify, Twilio, CloudEvents.",
+      "v1.1_migration_path": "Update parity registry with new providers. Verify base interface compliance per provider."
+    },
+    {
+      "v1_id": "SECURITY-PRIMITIVES",
+      "v1_proof_status": "implementation_present",
+      "v1.1_supersession_state": "REUSE_INVARIANT_ONLY",
+      "v1.1_reason": "Security primitives (secrets management, TLS config, audit logging) are architecture invariants. v1.1 must capture its own evidence.",
+      "v1.1_migration_path": "Create per-primitive E2E tests in sandbox for credential exposure, audit logging, TLS."
+    },
+    {
+      "v1_id": "SECURITY-GAPS",
+      "v1_proof_status": "implementation_present",
+      "v1.1_supersession_state": "HISTORICAL_ONLY",
+      "v1.1_reason": "v1.0 security gaps document is superseded by v1.1 non-regression matrix and public-claim-gate rules.",
+      "v1.1_migration_path": "No re-execution. Gap tracking migrated to non-regression matrix (NR-*) rules."
+    },
+    {
+      "v1_id": "NON-CLAIMS-REGISTRY",
+      "v1_proof_status": "not_claimed",
+      "v1.1_supersession_state": "REEXECUTE_WITH_ADAPTER",
+      "v1.1_reason": "Non-claims registry must be updated for v1.1 scope changes (new providers, new delivery topologies).",
+      "v1.1_migration_path": "Review each v1.0 non-claim against v1.1 architecture. Add v1.1-specific non-claims."
+    },
+    {
+      "v1_id": "FLOW01-DIRECT-PUBLIC-TARGET",
+      "v1_proof_status": "victory_locked",
+      "v1.1_supersession_state": "REEXECUTE_UNCHANGED",
+      "v1.1_reason": "Direct public target delivery flow invariant. Architecture unchanged.",
+      "v1.1_migration_path": "Re-run FLOW01 E2E test in v1.1 sandbox."
+    },
+    {
+      "v1_id": "FLOW02-EGRESS-DIRECT",
+      "v1_proof_status": "victory_locked",
+      "v1.1_supersession_state": "REEXECUTE_UNCHANGED",
+      "v1.1_reason": "Egress direct delivery flow invariant. Architecture unchanged.",
+      "v1.1_migration_path": "Re-run FLOW02 E2E test in v1.1 sandbox."
+    },
+    {
+      "v1_id": "FLOW03-EGRESS-RELAY-VM",
+      "v1_proof_status": "victory_locked",
+      "v1.1_supersession_state": "REEXECUTE_UNCHANGED",
+      "v1.1_reason": "Egress relay VM delivery flow invariant. Architecture unchanged.",
+      "v1.1_migration_path": "Re-run FLOW03 E2E test in v1.1 sandbox."
+    },
+    {
+      "v1_id": "V1.1-LAUNCH-COHORT",
+      "v1_proof_status": "victory_locked",
+      "v1.1_supersession_state": "REEXECUTE_WITH_ADAPTER",
+      "v1.1_reason": "Launch cohort expanded from Stripe/GitHub to include Shopify, Twilio, CloudEvents. New provider matrices needed.",
+      "v1.1_migration_path": "Create and execute Shopify, Twilio, CloudEvents signature matrices."
+    },
+    {
+      "v1_id": "valkey-002",
+      "v1_proof_status": "victory_locked",
+      "v1.1_supersession_state": "INVALIDATED",
+      "v1.1_reason": "Valkey-002 invalidated by Kore review: 122 fabricated records. Must not be cited for any claim.",
+      "v1.1_migration_path": "Removed from evidence corpus. Dedup engine re-proven with new backend."
+    },
+    {
+      "v1_id": "SSRF-TEST-SUITE",
+      "v1_proof_status": "victory_locked",
+      "v1.1_supersession_state": "REEXECUTE_UNCHANGED",
+      "v1.1_reason": "SSRF test suite invariant. Re-execute in v1.1 sandbox with same targets.",
+      "v1.1_migration_path": "Re-run SSRF negative control test suite in v1.1 sandbox."
+    },
+    {
+      "v1_id": "DEDUP-TEST-SUITE",
+      "v1_proof_status": "victory_locked",
+      "v1.1_supersession_state": "REEXECUTE_WITH_ADAPTER",
+      "v1.1_reason": "Dedup test suite needs adapter for new backend (Valkey removed).",
+      "v1.1_migration_path": "Re-run dedup test suite with new backend."
+    }
+  ]
+}
