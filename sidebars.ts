@@ -89,6 +89,8 @@ const sidebars: SidebarsConfig = {
         'architecture/three-plane-model',
         'architecture/delivery-modes',
         'architecture/security-model',
+        'china-market-architecture',
+        'payload-locality-invariant',
       ],
     },
     {
