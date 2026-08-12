@@ -48,19 +48,19 @@ List ingesters for plane (wire name: cluster)
 </Heading>
 
 <ParamsDetails
-  parameters={[{"name":"tenant_id","in":"path","required":true,"schema":{"type":"string"}},{"name":"cluster_id","in":"path","required":true,"schema":{"type":"string"}}]}
+  {...require("./list-ingesters.ParamsDetails.json")}
 >
   
 </ParamsDetails>
 
 <RequestSchema
-  title={"Body"}
+  {...require("./list-ingesters.RequestSchema.json")}
 >
   
 </RequestSchema>
 
 <StatusCodes
-  responses={{"200":{"description":"List of ingesters","content":{"application/json":{"schema":{"type":"object","properties":{"items":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string"},"tenant_id":{"type":"string"},"cluster_id":{"type":"string"},"name":{"type":"string"},"type":{"type":"string","enum":["kubernetes","prometheus","opensearch","Loki"]},"config":{"type":"object","additionalProperties":true},"rendered_yaml":{"type":"string"},"created_at":{"type":"string","format":"date-time"},"updated_at":{"type":"string","format":"date-time"}},"title":"Ingester"}}}}}}}}}
+  {...require("./list-ingesters.StatusCodes.json")}
 >
   
 </StatusCodes>

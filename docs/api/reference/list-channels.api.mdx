@@ -48,19 +48,19 @@ List channels (bridge-only)
 </Heading>
 
 <ParamsDetails
-  parameters={[{"name":"tenant_id","in":"path","required":true,"schema":{"type":"string"}},{"name":"cluster_id","in":"path","required":true,"schema":{"type":"string"}}]}
+  {...require("./list-channels.ParamsDetails.json")}
 >
   
 </ParamsDetails>
 
 <RequestSchema
-  title={"Body"}
+  {...require("./list-channels.RequestSchema.json")}
 >
   
 </RequestSchema>
 
 <StatusCodes
-  responses={{"200":{"description":"List of channels","content":{"application/json":{"schema":{"type":"object","properties":{"channels":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string"},"tenant_id":{"type":"string"},"cluster_id":{"type":"string"},"name":{"type":"string"},"status":{"type":"string","enum":["active","inactive","pending"]},"config":{"type":"object","additionalProperties":true}},"title":"Channel"}}}}}}}}}
+  {...require("./list-channels.StatusCodes.json")}
 >
   
 </StatusCodes>

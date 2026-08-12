@@ -48,20 +48,19 @@ Update an ingester
 </Heading>
 
 <ParamsDetails
-  parameters={[{"name":"tenant_id","in":"path","required":true,"schema":{"type":"string"}},{"name":"cluster_id","in":"path","required":true,"schema":{"type":"string"}},{"name":"ingester_id","in":"path","required":true,"schema":{"type":"string"}}]}
+  {...require("./update-ingester.ParamsDetails.json")}
 >
   
 </ParamsDetails>
 
 <RequestSchema
-  title={"Body"}
-  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"name":{"type":"string"},"config":{"type":"object","additionalProperties":true}},"title":"IngesterUpdateRequest"}}}}}
+  {...require("./update-ingester.RequestSchema.json")}
 >
   
 </RequestSchema>
 
 <StatusCodes
-  responses={{"200":{"description":"Ingester updated","content":{"application/json":{"schema":{"type":"object","properties":{"id":{"type":"string"},"tenant_id":{"type":"string"},"cluster_id":{"type":"string"},"name":{"type":"string"},"type":{"type":"string","enum":["kubernetes","prometheus","opensearch","Loki"]},"config":{"type":"object","additionalProperties":true},"rendered_yaml":{"type":"string"},"created_at":{"type":"string","format":"date-time"},"updated_at":{"type":"string","format":"date-time"}},"title":"Ingester"}}}},"404":{"description":"Resource not found","content":{"application/json":{"schema":{"type":"object","properties":{"error":{"type":"string"}}}}}}}}
+  {...require("./update-ingester.StatusCodes.json")}
 >
   
 </StatusCodes>

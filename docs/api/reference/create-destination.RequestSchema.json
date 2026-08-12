@@ -1,0 +1,1 @@
+{"title":"Body","body":{"required":true,"content":{"application/json":{"schema":{"type":"object","required":["name","type","config"],"properties":{"name":{"type":"string"},"type":{"type":"string","enum":["siem","webhook","email","slack","servicenow","jira","datadog","pagerduty"]},"config":{"type":"object","additionalProperties":true}},"title":"DestinationCreateRequest"}}}}}

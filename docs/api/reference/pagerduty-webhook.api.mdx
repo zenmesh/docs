@@ -52,14 +52,13 @@ PagerDuty webhook endpoint
 </ParamsDetails>
 
 <RequestSchema
-  title={"Body"}
-  body={{"required":true,"content":{"application/json":{"schema":{"type":"object"}}}}}
+  {...require("./pagerduty-webhook.RequestSchema.json")}
 >
   
 </RequestSchema>
 
 <StatusCodes
-  responses={{"200":{"description":"Webhook processed"},"401":{"description":"Authentication required or failed","content":{"application/json":{"schema":{"type":"object","properties":{"error":{"type":"string"}}}}}}}}
+  {...require("./pagerduty-webhook.StatusCodes.json")}
 >
   
 </StatusCodes>

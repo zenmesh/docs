@@ -48,19 +48,19 @@ Delete a delivery flow
 </Heading>
 
 <ParamsDetails
-  parameters={[{"name":"tenant_id","in":"path","required":true,"schema":{"type":"string"}},{"name":"cluster_id","in":"path","required":true,"schema":{"type":"string"}},{"name":"flow_id","in":"path","required":true,"schema":{"type":"string"}}]}
+  {...require("./delete-delivery-flow.ParamsDetails.json")}
 >
   
 </ParamsDetails>
 
 <RequestSchema
-  title={"Body"}
+  {...require("./delete-delivery-flow.RequestSchema.json")}
 >
   
 </RequestSchema>
 
 <StatusCodes
-  responses={{"204":{"description":"Delivery flow deleted"},"404":{"description":"Resource not found","content":{"application/json":{"schema":{"type":"object","properties":{"error":{"type":"string"}}}}}}}}
+  {...require("./delete-delivery-flow.StatusCodes.json")}
 >
   
 </StatusCodes>

@@ -44,13 +44,13 @@ Health check
 </ParamsDetails>
 
 <RequestSchema
-  title={"Body"}
+  {...require("./health-check.RequestSchema.json")}
 >
   
 </RequestSchema>
 
 <StatusCodes
-  responses={{"200":{"description":"Service is healthy","content":{"application/json":{"schema":{"type":"object","properties":{"status":{"type":"string","enum":["ok","degraded"]},"version":{"type":"string"}}}}}}}}
+  {...require("./health-check.StatusCodes.json")}
 >
   
 </StatusCodes>

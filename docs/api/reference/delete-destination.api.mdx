@@ -48,19 +48,19 @@ Delete a target (wire name: destination)
 </Heading>
 
 <ParamsDetails
-  parameters={[{"name":"tenant_id","in":"path","required":true,"schema":{"type":"string"}},{"name":"cluster_id","in":"path","required":true,"schema":{"type":"string"}},{"name":"destination_id","in":"path","required":true,"schema":{"type":"string"}}]}
+  {...require("./delete-destination.ParamsDetails.json")}
 >
   
 </ParamsDetails>
 
 <RequestSchema
-  title={"Body"}
+  {...require("./delete-destination.RequestSchema.json")}
 >
   
 </RequestSchema>
 
 <StatusCodes
-  responses={{"204":{"description":"Target deleted (wire name: destination)"},"404":{"description":"Resource not found","content":{"application/json":{"schema":{"type":"object","properties":{"error":{"type":"string"}}}}}}}}
+  {...require("./delete-destination.StatusCodes.json")}
 >
   
 </StatusCodes>

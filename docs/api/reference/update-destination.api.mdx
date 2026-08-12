@@ -48,20 +48,19 @@ Update a target (wire name: destination)
 </Heading>
 
 <ParamsDetails
-  parameters={[{"name":"tenant_id","in":"path","required":true,"schema":{"type":"string"}},{"name":"cluster_id","in":"path","required":true,"schema":{"type":"string"}},{"name":"destination_id","in":"path","required":true,"schema":{"type":"string"}}]}
+  {...require("./update-destination.ParamsDetails.json")}
 >
   
 </ParamsDetails>
 
 <RequestSchema
-  title={"Body"}
-  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"name":{"type":"string"},"config":{"type":"object","additionalProperties":true}},"title":"DestinationUpdateRequest"}}}}}
+  {...require("./update-destination.RequestSchema.json")}
 >
   
 </RequestSchema>
 
 <StatusCodes
-  responses={{"200":{"description":"Target updated (wire name: destination)","content":{"application/json":{"schema":{"type":"object","properties":{"id":{"type":"string"},"tenant_id":{"type":"string"},"cluster_id":{"type":"string"},"name":{"type":"string"},"type":{"type":"string","enum":["siem","webhook","email","slack","servicenow","jira","datadog","pagerduty"]},"config":{"type":"object","additionalProperties":true},"rendered_yaml":{"type":"string"},"created_at":{"type":"string","format":"date-time"},"updated_at":{"type":"string","format":"date-time"}},"title":"Destination"}}}},"404":{"description":"Resource not found","content":{"application/json":{"schema":{"type":"object","properties":{"error":{"type":"string"}}}}}}}}
+  {...require("./update-destination.StatusCodes.json")}
 >
   
 </StatusCodes>

@@ -43,19 +43,19 @@ const sidebar: SidebarsConfig = {
         {
           type: "doc",
           id: "api/reference/list-clusters",
-          label: "List clusters for tenant",
+          label: "List planes (wire name: clusters) for tenant",
           className: "api-method get",
         },
         {
           type: "doc",
           id: "api/reference/create-cluster",
-          label: "Register a new cluster",
+          label: "Register a new plane (wire name: cluster)",
           className: "api-method post",
         },
         {
           type: "doc",
           id: "api/reference/get-cluster",
-          label: "Get cluster details",
+          label: "Get plane details (wire name: cluster)",
           className: "api-method get",
         },
       ],
@@ -67,7 +67,7 @@ const sidebar: SidebarsConfig = {
         {
           type: "doc",
           id: "api/reference/list-ingesters",
-          label: "List ingesters for cluster",
+          label: "List ingesters for plane (wire name: cluster)",
           className: "api-method get",
         },
         {
@@ -97,37 +97,37 @@ const sidebar: SidebarsConfig = {
         {
           type: "doc",
           id: "api/reference/list-destinations",
-          label: "List destinations for cluster",
+          label: "List targets (wire name: destinations) for plane",
           className: "api-method get",
         },
         {
           type: "doc",
           id: "api/reference/create-destination",
-          label: "Create a destination",
+          label: "Create a target (wire name: destination)",
           className: "api-method post",
         },
         {
           type: "doc",
           id: "api/reference/get-destination",
-          label: "Get destination details",
+          label: "Get target details (wire name: destination)",
           className: "api-method get",
         },
         {
           type: "doc",
           id: "api/reference/update-destination",
-          label: "Update a destination",
+          label: "Update a target (wire name: destination)",
           className: "api-method put",
         },
         {
           type: "doc",
           id: "api/reference/delete-destination",
-          label: "Delete a destination",
+          label: "Delete a target (wire name: destination)",
           className: "api-method delete",
         },
         {
           type: "doc",
           id: "api/reference/list-delivery-flows",
-          label: "List delivery flows for cluster",
+          label: "List delivery flows for plane (wire name: cluster)",
           className: "api-method get",
         },
         {
@@ -158,6 +158,36 @@ const sidebar: SidebarsConfig = {
     },
     {
       type: "category",
+      label: "Channels",
+      items: [
+        {
+          type: "doc",
+          id: "api/reference/list-channels",
+          label: "List channels (bridge-only)",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/reference/create-channel",
+          label: "Create a channel (bridge-only)",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
+          id: "api/reference/get-channel",
+          label: "Get channel details (bridge-only)",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/reference/delete-channel",
+          label: "Delete a channel (bridge-only)",
+          className: "api-method delete",
+        },
+      ],
+    },
+    {
+      type: "category",
       label: "Webhooks",
       items: [
         {
@@ -168,8 +198,26 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/reference/servicenow-webhook",
+          label: "ServiceNow webhook endpoint",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
           id: "api/reference/jira-webhook",
           label: "Jira webhook endpoint",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
+          id: "api/reference/datadog-webhook",
+          label: "Datadog webhook endpoint",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
+          id: "api/reference/pagerduty-webhook",
+          label: "PagerDuty webhook endpoint",
           className: "api-method post",
         },
       ],

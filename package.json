@@ -20,6 +20,8 @@
     "validate:sitemap-robots": "node scripts/validation/validate-sitemap-robots.mjs",
     "validate:live-routes": "node scripts/validation/validate-live-routes.mjs",
     "validate:openapi-lint": "bash scripts/validation/lint-openapi.sh",
+    "generate:api-reference": "docusaurus clean-api-docs zenBackApi && docusaurus gen-api-docs zenBackApi",
+    "validate:api-reference-freshness": "node scripts/validate-api-reference-freshness.mjs",
     "guard:no-actions": "bash scripts/validation/guard-no-github-actions.sh",
     "validate:api-guardrails": "node scripts/validate-api-guardrails.mjs",
     "generate:stable-evidence-manifest": "node scripts/generate-stable-evidence-manifest.mjs",

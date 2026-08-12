@@ -1,0 +1,1 @@
+{"responses":{"200":{"description":"Service is ready","content":{"application/json":{"schema":{"type":"object","properties":{"ready":{"type":"boolean"}}}}}}}}

@@ -48,20 +48,19 @@ Create an ingester
 </Heading>
 
 <ParamsDetails
-  parameters={[{"name":"tenant_id","in":"path","required":true,"schema":{"type":"string"}},{"name":"cluster_id","in":"path","required":true,"schema":{"type":"string"}}]}
+  {...require("./create-ingester.ParamsDetails.json")}
 >
   
 </ParamsDetails>
 
 <RequestSchema
-  title={"Body"}
-  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","required":["name","type","config"],"properties":{"name":{"type":"string"},"type":{"type":"string","enum":["kubernetes","prometheus","opensearch","Loki"]},"config":{"type":"object","additionalProperties":true}},"title":"IngesterCreateRequest"}}}}}
+  {...require("./create-ingester.RequestSchema.json")}
 >
   
 </RequestSchema>
 
 <StatusCodes
-  responses={{"201":{"description":"Ingester created","content":{"application/json":{"schema":{"type":"object","properties":{"id":{"type":"string"},"tenant_id":{"type":"string"},"cluster_id":{"type":"string"},"name":{"type":"string"},"type":{"type":"string","enum":["kubernetes","prometheus","opensearch","Loki"]},"config":{"type":"object","additionalProperties":true},"rendered_yaml":{"type":"string"},"created_at":{"type":"string","format":"date-time"},"updated_at":{"type":"string","format":"date-time"}},"title":"Ingester"}}}}}}
+  {...require("./create-ingester.StatusCodes.json")}
 >
   
 </StatusCodes>

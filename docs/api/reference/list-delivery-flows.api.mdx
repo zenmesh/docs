@@ -48,19 +48,19 @@ List delivery flows for plane (wire name: cluster)
 </Heading>
 
 <ParamsDetails
-  parameters={[{"name":"tenant_id","in":"path","required":true,"schema":{"type":"string"}},{"name":"cluster_id","in":"path","required":true,"schema":{"type":"string"}}]}
+  {...require("./list-delivery-flows.ParamsDetails.json")}
 >
   
 </ParamsDetails>
 
 <RequestSchema
-  title={"Body"}
+  {...require("./list-delivery-flows.RequestSchema.json")}
 >
   
 </RequestSchema>
 
 <StatusCodes
-  responses={{"200":{"description":"List of delivery flows","content":{"application/json":{"schema":{"type":"object","properties":{"items":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string"},"tenant_id":{"type":"string"},"cluster_id":{"type":"string"},"name":{"type":"string"},"ingester_id":{"type":"string"},"destination_id":{"type":"string"},"filters":{"type":"array","items":{"type":"object"}},"transformations":{"type":"array","items":{"type":"object"}},"rendered_yaml":{"type":"string"},"created_at":{"type":"string","format":"date-time"},"updated_at":{"type":"string","format":"date-time"}},"title":"DeliveryFlow"}}}}}}}}}
+  {...require("./list-delivery-flows.StatusCodes.json")}
 >
   
 </StatusCodes>

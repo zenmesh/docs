@@ -1,0 +1,1 @@
+{"parameters":[{"name":"tenant_id","in":"path","required":true,"schema":{"type":"string"}},{"name":"cluster_id","in":"path","required":true,"schema":{"type":"string"}},{"name":"flow_id","in":"path","required":true,"schema":{"type":"string"}}]}

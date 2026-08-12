@@ -48,20 +48,19 @@ Create a channel (bridge-only)
 </Heading>
 
 <ParamsDetails
-  parameters={[{"name":"tenant_id","in":"path","required":true,"schema":{"type":"string"}},{"name":"cluster_id","in":"path","required":true,"schema":{"type":"string"}}]}
+  {...require("./create-channel.ParamsDetails.json")}
 >
   
 </ParamsDetails>
 
 <RequestSchema
-  title={"Body"}
-  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","required":["name","config"],"properties":{"name":{"type":"string"},"config":{"type":"object","additionalProperties":true}},"title":"ChannelCreateRequest"}}}}}
+  {...require("./create-channel.RequestSchema.json")}
 >
   
 </RequestSchema>
 
 <StatusCodes
-  responses={{"201":{"description":"Channel created","content":{"application/json":{"schema":{"type":"object","properties":{"id":{"type":"string"},"tenant_id":{"type":"string"},"cluster_id":{"type":"string"},"name":{"type":"string"},"status":{"type":"string","enum":["active","inactive","pending"]},"config":{"type":"object","additionalProperties":true}},"title":"Channel"}}}}}}
+  {...require("./create-channel.StatusCodes.json")}
 >
   
 </StatusCodes>

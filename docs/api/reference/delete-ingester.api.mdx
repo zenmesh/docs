@@ -48,19 +48,19 @@ Delete an ingester
 </Heading>
 
 <ParamsDetails
-  parameters={[{"name":"tenant_id","in":"path","required":true,"schema":{"type":"string"}},{"name":"cluster_id","in":"path","required":true,"schema":{"type":"string"}},{"name":"ingester_id","in":"path","required":true,"schema":{"type":"string"}}]}
+  {...require("./delete-ingester.ParamsDetails.json")}
 >
   
 </ParamsDetails>
 
 <RequestSchema
-  title={"Body"}
+  {...require("./delete-ingester.RequestSchema.json")}
 >
   
 </RequestSchema>
 
 <StatusCodes
-  responses={{"204":{"description":"Ingester deleted"},"404":{"description":"Resource not found","content":{"application/json":{"schema":{"type":"object","properties":{"error":{"type":"string"}}}}}}}}
+  {...require("./delete-ingester.StatusCodes.json")}
 >
   
 </StatusCodes>

@@ -1,0 +1,1 @@
+{"responses":{"201":{"description":"Channel created","content":{"application/json":{"schema":{"type":"object","properties":{"id":{"type":"string"},"tenant_id":{"type":"string"},"cluster_id":{"type":"string"},"name":{"type":"string"},"status":{"type":"string","enum":["active","inactive","pending"]},"config":{"type":"object","additionalProperties":true}},"title":"Channel"}}}}}}

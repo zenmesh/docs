@@ -48,19 +48,19 @@ Get delivery flow details
 </Heading>
 
 <ParamsDetails
-  parameters={[{"name":"tenant_id","in":"path","required":true,"schema":{"type":"string"}},{"name":"cluster_id","in":"path","required":true,"schema":{"type":"string"}},{"name":"flow_id","in":"path","required":true,"schema":{"type":"string"}}]}
+  {...require("./get-delivery-flow.ParamsDetails.json")}
 >
   
 </ParamsDetails>
 
 <RequestSchema
-  title={"Body"}
+  {...require("./get-delivery-flow.RequestSchema.json")}
 >
   
 </RequestSchema>
 
 <StatusCodes
-  responses={{"200":{"description":"Delivery flow details","content":{"application/json":{"schema":{"type":"object","properties":{"id":{"type":"string"},"tenant_id":{"type":"string"},"cluster_id":{"type":"string"},"name":{"type":"string"},"ingester_id":{"type":"string"},"destination_id":{"type":"string"},"filters":{"type":"array","items":{"type":"object"}},"transformations":{"type":"array","items":{"type":"object"}},"rendered_yaml":{"type":"string"},"created_at":{"type":"string","format":"date-time"},"updated_at":{"type":"string","format":"date-time"}},"title":"DeliveryFlow"}}}},"404":{"description":"Resource not found","content":{"application/json":{"schema":{"type":"object","properties":{"error":{"type":"string"}}}}}}}}
+  {...require("./get-delivery-flow.StatusCodes.json")}
 >
   
 </StatusCodes>
