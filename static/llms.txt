@@ -256,7 +256,6 @@ OpenAPI spec: [zen-back.v1.yaml](https://github.com/zenmesh/zen-platform-hermes/
 
 - [OSS page](https://www.zen-mesh.io/oss): Open-source projects from the Zen Mesh team
 - [zen-gc](https://github.com/zenmesh/zen-gc) — Apache-2.0 Kubernetes garbage collection controller — declarative TTL cleanup policies and lifecycle management
-- [helm-charts](https://github.com/zenmesh/helm-charts) — Helm charts for deploying Zen Mesh components in Kubernetes
 
 Zen Mesh combines open-source components with a hosted control plane. OSS projects cover Kubernetes utilities, SDKs, and validation building blocks. Hosted Zen Mesh adds managed operations, team workflows, and commercial support.
 
