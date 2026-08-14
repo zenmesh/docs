@@ -15,7 +15,16 @@ zen-lock ships with every Zen Mesh edge installation. Installing the `zen-agent`
 
 ## Standalone Installation
 
-zen-lock is a Zen Mesh component, not an open-source project — the current chart, images, and CLI are distributed directly by the Zen Mesh team rather than through a public chart index. For a standalone installation (zen-lock without the rest of Zen Mesh), request the distribution package via [Zen Mesh support](/docs/start-here/support).
+zen-lock is a Zen Mesh component, not an open-source project. Its Helm chart is published in Zen Mesh's public chart repository; the `zenmesh/*` container images and the `zen-lock` CLI are distributed directly by the Zen Mesh team:
+
+```bash
+helm repo add zenmesh https://zenmesh.github.io/helm-charts
+helm install zen-lock zenmesh/zen-lock \
+  --namespace zen-lock-system \
+  --create-namespace
+```
+
+If you don't already have access to the `zenmesh` image registry, request it via [Zen Mesh support](/docs/start-here/support).
 
 A standalone install deploys the same components the platform uses, in the `zen-lock-system` namespace:
 
@@ -23,8 +32,8 @@ A standalone install deploys the same components the platform uses, in the `zen-
 - The `zen-lock-webhook` Deployment and `zen-lock-mutating-webhook` MutatingWebhookConfiguration
 - The `zen-lock-controller` Deployment (leader-elected)
 
-:::warning Ignore stale public charts
-Public chart indexes carry an outdated `zen-lock` 0.0.2-alpha chart from before the `security.zen-mesh.io` API-group migration. It is incompatible with current CRDs and documentation — don't use it.
+:::warning Use the zenmesh chart versions only
+zen-lock chart versions from **before 0.0.4-alpha** (and any chart still pointing at `kubezen/*` images or the retired `security.kube-zen.io` API group) are legacy and incompatible with these docs. The public index now carries only the migrated charts.
 :::
 
 ## Prerequisites

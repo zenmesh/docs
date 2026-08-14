@@ -233,7 +233,7 @@ OpenAPI spec: [zen-back.v1.yaml](https://github.com/zenmesh/zen-platform-hermes/
 
 - [zen-lock Overview](https://docs.zen-mesh.io/zen-lock/): Kubernetes-native secret manager — age client-side encryption, ciphertext-only CRDs, GitOps-safe; bundled with Zen Mesh and usable standalone
 - [How It Works](https://docs.zen-mesh.io/zen-lock/how-it-works): Architecture, encrypt/decrypt lifecycle, webhook injection vs CSI delivery modes
-- [Installation](https://docs.zen-mesh.io/zen-lock/installation): Ships with Zen Mesh (zen-agent chart); standalone distribution via Zen Mesh; master-key bootstrap and placeholder warning
+- [Installation](https://docs.zen-mesh.io/zen-lock/installation): Ships with Zen Mesh (zen-agent chart); standalone via the public zenmesh Helm repo with team-distributed images; master-key bootstrap and placeholder warning
 - [Using Secrets](https://docs.zen-mesh.io/zen-lock/using-secrets): Encrypt, apply, mount; allowedSubjects workload authorization
 - [CSI Driver](https://docs.zen-mesh.io/zen-lock/csi-driver): Secrets Store CSI delivery with no Secret object — trusted nodes, TokenReview authorization, canary status
 - [High Availability](https://docs.zen-mesh.io/zen-lock/high-availability): No DB, no PVC — Kubernetes API key custody, multi-replica scaling, node-loss behavior
