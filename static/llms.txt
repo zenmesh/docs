@@ -229,7 +229,7 @@ OpenAPI spec: [zen-back.v1.yaml](https://github.com/zenmesh/zen-platform-hermes/
 - [Evidence missing](https://docs.zen-mesh.io/docs/runbooks/evidence-missing): Retention, delivery, and permission checks for missing evidence
 - [Inconsistent state recovery](https://docs.zen-mesh.io/docs/runbooks/inconsistent-state-recovery): Desired vs observed state divergence — NOT_SUPPORTED in v1.1
 
-## zen-lock — secret management (open source)
+## zen-lock — secret management
 
 - [zen-lock Overview](https://docs.zen-mesh.io/zen-lock/): Kubernetes-native secret manager — age client-side encryption, ciphertext-only CRDs, GitOps-safe; bundled with Zen Mesh and usable standalone
 - [How It Works](https://docs.zen-mesh.io/zen-lock/how-it-works): Architecture, encrypt/decrypt lifecycle, webhook injection vs CSI delivery modes
@@ -255,7 +255,6 @@ OpenAPI spec: [zen-back.v1.yaml](https://github.com/zenmesh/zen-platform-hermes/
 ## Open Source
 
 - [OSS page](https://www.zen-mesh.io/oss): Open-source projects from the Zen Mesh team
-- [zen-lock](https://github.com/zenmesh/zen-lock) — Apache-2.0 Kubernetes-native secret manager — age client-side encryption, GitOps-safe ciphertext CRDs, webhook and CSI delivery
 - [zen-gc](https://github.com/zenmesh/zen-gc) — Apache-2.0 Kubernetes garbage collection controller — declarative TTL cleanup policies and lifecycle management
 - [helm-charts](https://github.com/zenmesh/helm-charts) — Helm charts for deploying Zen Mesh components in Kubernetes
 

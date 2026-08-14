@@ -4,9 +4,9 @@ sidebar_label: zen-lock
 
 # zen-lock — Secrets and Credential Lifecycle
 
-zen-lock is Zen Mesh's secret management layer: a Kubernetes-native, open-source secret manager that stores sensitive material as **age-encrypted ciphertext only**. Enrollment credentials, HMAC signing keys, and mTLS certificate material are never stored in plaintext — not in etcd, not in Git, not in backups.
+zen-lock is Zen Mesh's secret management layer: a Kubernetes-native secret manager that stores sensitive material as **age-encrypted ciphertext only**. Enrollment credentials, HMAC signing keys, and mTLS certificate material are never stored in plaintext — not in etcd, not in Git, not in backups.
 
-zen-lock ships with every Zen Mesh edge installation (enabled by default in the `zen-agent` Helm chart) and is also a [standalone open-source project](https://github.com/zenmesh/zen-lock) usable in any Kubernetes cluster.
+zen-lock ships with every Zen Mesh edge installation (enabled by default in the `zen-agent` Helm chart) and can also be installed standalone in any Kubernetes cluster. Its container images are published publicly as part of the Zen solution.
 
 ## How It Fits Into Zen Mesh
 

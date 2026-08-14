@@ -10,7 +10,7 @@ sidebar_label: Overview
 
 zen-lock stores secrets as **ciphertext only**. You encrypt sensitive values on your machine with an [age](https://github.com/FiloSottile/age) public key, commit the resulting `ZenLock` custom resource to Git, and apply it to your cluster like any other manifest. The Kubernetes API server and etcd never see plaintext — decryption happens at pod startup and the plaintext is delivered straight to the workload that needs it.
 
-zen-lock is open source (Apache-2.0) and runs in two contexts:
+zen-lock is a Zen Mesh component — its container images are published publicly as part of the Zen solution — and runs in two contexts:
 
 - **Standalone**: a secret manager for any Kubernetes cluster with GitOps workflows. You install it, generate keys, and encrypt secrets with the `zen-lock` CLI.
 - **As part of Zen Mesh**: the secret layer of a Zen Mesh edge installation, where it protects enrollment credentials, HMAC keys, and mTLS material automatically. If you're a Zen Mesh customer, [enrollment handles this for you](./enrollment-and-secrets).
