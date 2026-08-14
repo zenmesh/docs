@@ -229,6 +229,19 @@ OpenAPI spec: [zen-back.v1.yaml](https://github.com/zenmesh/zen-platform-hermes/
 - [Evidence missing](https://docs.zen-mesh.io/docs/runbooks/evidence-missing): Retention, delivery, and permission checks for missing evidence
 - [Inconsistent state recovery](https://docs.zen-mesh.io/docs/runbooks/inconsistent-state-recovery): Desired vs observed state divergence — NOT_SUPPORTED in v1.1
 
+## zen-lock — secret management (open source)
+
+- [zen-lock Overview](https://docs.zen-mesh.io/zen-lock/): Kubernetes-native secret manager — age client-side encryption, ciphertext-only CRDs, GitOps-safe; bundled with Zen Mesh and usable standalone
+- [How It Works](https://docs.zen-mesh.io/zen-lock/how-it-works): Architecture, encrypt/decrypt lifecycle, webhook injection vs CSI delivery modes
+- [Installation](https://docs.zen-mesh.io/zen-lock/installation): Helm chart, CLI install, master-key bootstrap and placeholder warning
+- [Using Secrets](https://docs.zen-mesh.io/zen-lock/using-secrets): Encrypt, apply, mount; allowedSubjects workload authorization
+- [CSI Driver](https://docs.zen-mesh.io/zen-lock/csi-driver): Secrets Store CSI delivery with no Secret object — trusted nodes, TokenReview authorization, canary status
+- [High Availability](https://docs.zen-mesh.io/zen-lock/high-availability): No DB, no PVC — Kubernetes API key custody, multi-replica scaling, node-loss behavior
+- [Key Rotation](https://docs.zen-mesh.io/zen-lock/key-rotation): Zero-downtime age master-key rotation with dual-key grace window
+- [Security Properties](https://docs.zen-mesh.io/zen-lock/security-properties): Threat model — what zen-lock protects against and its explicit non-claims
+- [Operations](https://docs.zen-mesh.io/zen-lock/operations): Metrics, alerts, health endpoints, troubleshooting
+- [Enrollment and Secrets](https://docs.zen-mesh.io/zen-lock/enrollment-and-secrets): How Zen Mesh enrollment uses zen-lock for bundles, HMAC keys, and mTLS material
+
 ## Machine-readable AI projections
 
 - [Operations registry](https://docs.zen-mesh.io/ai/operations.json): 22 operations with per-surface coverage, idempotency, delivery guarantees, permissions, and non-claims
@@ -242,6 +255,7 @@ OpenAPI spec: [zen-back.v1.yaml](https://github.com/zenmesh/zen-platform-hermes/
 ## Open Source
 
 - [OSS page](https://www.zen-mesh.io/oss): Open-source projects from the Zen Mesh team
+- [zen-lock](https://github.com/zenmesh/zen-lock) — Apache-2.0 Kubernetes-native secret manager — age client-side encryption, GitOps-safe ciphertext CRDs, webhook and CSI delivery
 - [zen-gc](https://github.com/zenmesh/zen-gc) — Apache-2.0 Kubernetes garbage collection controller — declarative TTL cleanup policies and lifecycle management
 - [helm-charts](https://github.com/zenmesh/helm-charts) — Helm charts for deploying Zen Mesh components in Kubernetes
 

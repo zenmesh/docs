@@ -301,6 +301,7 @@ const sidebars: SidebarsConfig = {
         'reference/webhook-faq',
         'reference/ui-api-map',
         'reference/current-status',
+        'zen-lock',
       ],
     },
   ],

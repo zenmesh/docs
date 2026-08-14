@@ -26,7 +26,7 @@ After enrollment, the data plane continues operating even if the control plane i
 
 ## Zero-Knowledge Secrets
 
-Sensitive material (enrollment credentials, HMAC keys, mTLS certificates) is managed by [zen-lock](../zen-lock.md), a zero-knowledge secret manager. Only ciphertext is stored; decryption happens at runtime in ephemeral sidecar injection.
+Sensitive material (enrollment credentials, HMAC keys, mTLS certificates) is managed by [zen-lock](../zen-lock.md), a zero-knowledge secret manager. Only ciphertext is stored; at pod admission the zen-lock webhook decrypts it into a short-lived Secret volume mounted directly into the workload (or read-only files via the CSI driver).
 
 ## Key Components
 

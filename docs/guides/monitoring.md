@@ -29,8 +29,8 @@ Zen Mesh provides built-in Prometheus metrics and Grafana dashboards for observa
 
 | Metric | Type | Description |
 |--------|------|-------------|
-| `zen_lock_decryptions_total` | Counter | Secret decryption operations |
-| `zen_lock_decryption_duration_seconds` | Histogram | Decryption latency |
+| `zenlock_decryption_total` | Counter | Secret decryption operations |
+| `zenlock_decryption_duration_seconds` | Histogram | Decryption latency |
 
 ## Grafana Dashboards
 
