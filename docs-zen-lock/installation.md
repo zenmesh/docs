@@ -4,35 +4,34 @@ sidebar_label: Installation
 
 # Installation
 
-How to install zen-lock's controller/webhook (Helm), the CLI, and — optionally — the CSI provider.
+How zen-lock gets installed: as part of Zen Mesh (the normal path), or standalone (distributed by the Zen Mesh team).
 
-## Prerequisites
+## The Normal Path: Zen Mesh
 
-- Kubernetes **1.26+** with `kubectl` and cluster-admin access
-- An age keypair for the master key (generated during installation below)
-- For the [CSI driver](./csi-driver) only: the Secrets Store CSI driver v1.4+
+zen-lock ships with every Zen Mesh edge installation. Installing the `zen-agent` Helm chart installs zen-lock, enabled by default (`zenLock.enabled=true`) — nothing extra to do:
 
-:::note Zen Mesh installations
-If you installed Zen Mesh via the `zen-agent` Helm chart, zen-lock is already included and enabled by default (`zenLock.enabled=true`) — you do not need this page. Standalone installs below use the `zen-lock-system` namespace.
-:::
+- Follow the [Kubernetes Edge Plane installation guide](/docs/install/kubernetes-edge-plane)
+- The zen-lock components run in the `zen-mesh` namespace alongside the agent
 
-## 1. Install the Controller and Webhook
+## Standalone Installation
 
-```bash
-helm repo add zen-lock https://zenmesh.github.io/zen-lock
-helm repo update
-helm install zen-lock zen-lock/zen-lock \
-  --namespace zen-lock-system \
-  --create-namespace
-```
+zen-lock is a Zen Mesh component, not an open-source project — the current chart, images, and CLI are distributed directly by the Zen Mesh team rather than through a public chart index. For a standalone installation (zen-lock without the rest of Zen Mesh), request the distribution package via [Zen Mesh support](/docs/start-here/support).
 
-This installs:
+A standalone install deploys the same components the platform uses, in the `zen-lock-system` namespace:
 
 - The `ZenLock` CRD (`security.zen-mesh.io/v1alpha1`)
 - The `zen-lock-webhook` Deployment and `zen-lock-mutating-webhook` MutatingWebhookConfiguration
 - The `zen-lock-controller` Deployment (leader-elected)
 
-To install with raw manifests instead: `kubectl apply` the CRD base, RBAC roles, and webhook manifests from the [repository](https://github.com/zenmesh/zen-lock) (`config/crd/bases/`, `config/rbac/`, `config/webhook/`).
+:::warning Ignore stale public charts
+Public chart indexes carry an outdated `zen-lock` 0.0.2-alpha chart from before the `security.zen-mesh.io` API-group migration. It is incompatible with current CRDs and documentation — don't use it.
+:::
+
+## Prerequisites
+
+- Kubernetes **1.26+** with `kubectl` and cluster-admin access
+- An age keypair for the master key (see below)
+- For the [CSI driver](./csi-driver) only: the Secrets Store CSI driver v1.4+
 
 ## 2. Provide the Master Key
 
@@ -67,19 +66,11 @@ Keep the private key somewhere safe outside the cluster (password manager, KMS).
 
 During [key rotation](./key-rotation), a second Secret entry (`age-previous`) or the `ZEN_LOCK_PREVIOUS_KEY_FILE` holds the old identity so both keys can decrypt during the grace window.
 
-## 3. Install the CLI
+## 3. Get the CLI
 
-The CLI encrypts secrets and drives rotation from your workstation or CI:
+The `zen-lock` CLI encrypts secrets and drives rotation from your workstation or CI. It is distributed with the standalone distribution package (see [Standalone Installation](#standalone-installation) above) — linux/darwin, amd64/arm64. Zen Mesh platform customers don't need it: enrollment manages platform secrets automatically.
 
-```bash
-# Homebrew
-brew tap zenmesh/tap && brew install zen-lock
-
-# Or the install script (linux/darwin, amd64/arm64)
-curl -sSL https://raw.githubusercontent.com/zenmesh/zen-lock/main/install.sh | bash
-```
-
-Verify:
+Verify once installed:
 
 ```bash
 zen-lock version

@@ -38,7 +38,7 @@ The CSI provider exports the same metric family names, per node.
 
 ## Alerts
 
-Suggested Prometheus rules ship in [`deploy/prometheus/prometheus-rules.yaml`](https://github.com/zenmesh/zen-lock), and a Grafana dashboard in `deploy/grafana/`:
+Suggested Prometheus rules ship in `deploy/prometheus/prometheus-rules.yaml` and a Grafana dashboard in `deploy/grafana/` (both included in the distribution package):
 
 | Alert | Condition |
 |-------|-----------|

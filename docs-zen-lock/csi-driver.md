@@ -50,10 +50,11 @@ kubectl label nodes --all \
   zen-lock.security.zen-mesh.io/csi-trusted=true --overwrite
 # (in practice, label only the node pool that needs CSI delivery)
 
-# 2. Install the provider
-kubectl apply -f config/csi-provider/   # from the zen-lock repo
-# or, with Helm:
-helm install zen-lock-csi-provider zenmesh/zen-lock-csi-provider \
+# 2. Install the provider (manifests and chart are part of the distribution
+#    package — see Installation)
+kubectl apply -f config/csi-provider/
+# or, with the provided chart:
+helm install zen-lock-csi-provider zen-lock-csi-provider \
   --namespace zen-lock-system --create-namespace
 ```
 
