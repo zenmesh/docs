@@ -16,7 +16,11 @@ if ! bash scripts/validation/guard-no-github-actions.sh; then FAIL=1; fi
 # 2. Structural checks (JSON/YAML/front matter/routes/guards/generated-consistency).
 if ! node scripts/validation/validate-structure.mjs; then FAIL=1; fi
 
-# 3. Spectral OpenAPI lint (offline, local tool).
+# 3. Redirect/alias config sanity (vercel.json + public/_redirects: parse,
+#    duplicate sources, wildcard shape, no shadowing of public/static files).
+if ! node scripts/validation/validate-route-aliases.mjs --fast; then FAIL=1; fi
+
+# 4. Spectral OpenAPI lint (offline, local tool).
 if ! bash scripts/validation/lint-openapi.sh; then FAIL=1; fi
 
 echo ""

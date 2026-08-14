@@ -269,61 +269,6 @@
       "permanent": true
     },
     {
-      "source": "/api/reference/list-channels",
-      "destination": "/docs/api/reference/list-channels",
-      "permanent": true
-    },
-    {
-      "source": "/api/reference/list-clusters",
-      "destination": "/docs/api/reference/list-clusters",
-      "permanent": true
-    },
-    {
-      "source": "/api/reference/list-integrations",
-      "destination": "/docs/api/reference/list-integrations",
-      "permanent": true
-    },
-    {
-      "source": "/api/reference/update-delivery-flow",
-      "destination": "/docs/api/reference/update-delivery-flow",
-      "permanent": true
-    },
-    {
-      "source": "/api/reference/update-destination",
-      "destination": "/docs/api/reference/update-destination",
-      "permanent": true
-    },
-    {
-      "source": "/api/reference/update-ingester",
-      "destination": "/docs/api/reference/update-ingester",
-      "permanent": true
-    },
-    {
-      "source": "/api/reference/readiness-check",
-      "destination": "/docs/api/reference/readiness-check",
-      "permanent": true
-    },
-    {
-      "source": "/api/reference/servicenow-webhook",
-      "destination": "/docs/api/reference/servicenow-webhook",
-      "permanent": true
-    },
-    {
-      "source": "/api/reference/slack-webhook",
-      "destination": "/docs/api/reference/slack-webhook",
-      "permanent": true
-    },
-    {
-      "source": "/api/reference/jira-webhook",
-      "destination": "/docs/api/reference/jira-webhook",
-      "permanent": true
-    },
-    {
-      "source": "/api/reference/pagerduty-webhook",
-      "destination": "/docs/api/reference/pagerduty-webhook",
-      "permanent": true
-    },
-    {
       "source": "/architecture/overview",
       "destination": "/docs/architecture/overview",
       "permanent": true
@@ -470,7 +415,7 @@
     },
     {
       "source": "/legal/(.*)",
-      "destination": "/docs/legal/$1",
+      "destination": "/docs/ARCHIVE/placeholder/legal/$1",
       "permanent": true
     },
     {

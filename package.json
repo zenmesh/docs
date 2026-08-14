@@ -16,6 +16,7 @@
     "hooks:install": "bash scripts/install-git-hooks.sh",
     "validate:structure": "node scripts/validation/validate-structure.mjs",
     "validate:internal-links": "node scripts/validation/validate-internal-links.mjs",
+    "validate:route-aliases": "node scripts/validation/validate-route-aliases.mjs",
     "validate:routes": "node scripts/validation/validate-routes.mjs",
     "validate:sitemap-robots": "node scripts/validation/validate-sitemap-robots.mjs",
     "validate:live-routes": "node scripts/validation/validate-live-routes.mjs",
