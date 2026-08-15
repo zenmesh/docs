@@ -82,8 +82,8 @@ The `zen-lock` CLI encrypts secrets and drives rotation from your workstation or
 Verify once installed:
 
 ```bash
-zen-lock version
-# 0.1.0-beta (commit: …, built: …)
+zen-lock --version
+# zen-lock version 0.1.0-beta
 ```
 
 ## 4. Verify the Installation

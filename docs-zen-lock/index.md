@@ -53,7 +53,8 @@ Zero-knowledge applies to the `ZenLock` resource: the API server and etcd **cann
 
 ## Where to Go Next
 
-- [How It Works](./how-it-works) — architecture, encrypt/decrypt flows, delivery modes
+- [Quickstart](./quickstart) — Get running in 5 minutes
+- [How It Works](./how-it-works) — Architecture, encrypt/decrypt flows, delivery modes
 - [Installation](./installation) — Helm chart, CLI, and the master key
 - [Using Secrets](./using-secrets) — encrypt a secret, mount it in a pod, restrict access
 - [CSI Driver](./csi-driver) — file projection without a Secret object
