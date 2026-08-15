@@ -33,7 +33,7 @@ A standalone install deploys the same components the platform uses, in the `zen-
 - The `zen-lock-controller` Deployment (leader-elected)
 
 :::warning Use the zenmesh chart versions only
-zen-lock chart versions from **before 0.0.4-alpha** (and any chart still pointing at `kubezen/*` images or the retired `security.kube-zen.io` API group) are legacy and incompatible with these docs. The public index now carries only the migrated charts.
+Only zen-lock chart versions **0.1.0-beta** and above are supported by these docs.
 :::
 
 ## Prerequisites
