@@ -109,6 +109,8 @@ kubectl get zenlock test-secret
 ```bash
 helm uninstall zen-lock -n zen-lock-system
 kubectl delete crd zenlocks.security.zen-mesh.io
+kubectl delete crd zenlockcustodies.security.zen-mesh.io
+kubectl delete crd noncebuckets.security.zen-mesh.io
 kubectl delete secret zen-lock-master-key -n zen-lock-system
 ```
 
