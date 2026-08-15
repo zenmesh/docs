@@ -1,6 +1,5 @@
 ---
 sidebar_label: CLI Reference
-slug: zen-lock/cli-reference
 ---
 
 # CLI Reference
