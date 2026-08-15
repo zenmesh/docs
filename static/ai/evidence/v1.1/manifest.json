@@ -1,243 +1,261 @@
 {
-  "@context": {
-    "schema": "http://schema.org/",
-    "xsd": "http://www.w3.org/2001/XMLSchema#"
+ "@context": {
+  "schema": "http://schema.org/",
+  "xsd": "http://www.w3.org/2001/XMLSchema#"
+ },
+ "@type": [
+  "http://schema.org/DataSet",
+  "http://schema.org/SoftwareSourceCode"
+ ],
+ "schema_version": "1.1.0",
+ "generated_at": "2026-08-15T20:10:16Z",
+ "product": "Zen Mesh",
+ "repository": "https://github.com/zenmesh/zen-platform",
+ "evidence_scope": "china_market_strategy",
+ "proof_levels": {
+  "victory_locked": {
+   "label": "Victory Locked",
+   "description": "Proof has been verified, witnessed, and locked via a victory-lock artifact with commit-pinned, scenario-specific evidence.",
+   "confidence": "high",
+   "supersession_eligible": false
   },
-  "@type": [
-    "http://schema.org/DataSet",
-    "http://schema.org/SoftwareSourceCode"
-  ],
-  "schema_version": "1.1.0",
-  "generated_at": "2026-08-05T18:00:00Z",
-  "product": "Zen Mesh",
-  "repository": "https://github.com/zenmesh/zen-platform",
-  "evidence_scope": "china_market_strategy",
-  "proof_levels": {
-    "victory_locked": {
-      "label": "Victory Locked",
-      "description": "Proof has been verified, witnessed, and locked via a victory-lock artifact with commit-pinned, scenario-specific evidence.",
-      "confidence": "high",
-      "supersession_eligible": false
-    },
-    "proven_sandbox": {
-      "label": "Proven (Sandbox CI)",
-      "description": "Proof passes in CI sandbox environment with v1.1 topology. Positive-path and negative-control evidence captured.",
-      "confidence": "medium",
-      "supersession_eligible": true
-    },
-    "proven_staging": {
-      "label": "Proven (Staging)",
-      "description": "Proof validated on staging infrastructure. Multi-tenant and cross-replica evidence captured.",
-      "confidence": "medium-high",
-      "supersession_eligible": true
-    },
-    "proven_production": {
-      "label": "Proven (Production Live)",
-      "description": "Proof validated on production infrastructure with live provider targets. Restricted evidence level.",
-      "confidence": "maximum",
-      "supersession_eligible": true
-    },
-    "implementation_present": {
-      "label": "Implementation Present",
-      "description": "Code or contract implementation exists but has not been formally proven in v1.1 context.",
-      "confidence": "low",
-      "supersession_eligible": false
-    },
-    "planned": {
-      "label": "Planned",
-      "description": "Design or specification exists; implementation and proof are future work.",
-      "confidence": "none",
-      "supersession_eligible": false
-    },
-    "blocked": {
-      "label": "Blocked",
-      "description": "Proof is blocked by a known dependency or gap.",
-      "confidence": "none",
-      "supersession_eligible": false
-    },
-    "not_claimed": {
-      "label": "Not Claimed",
-      "description": "Explicitly not claimed — see non-claims for details.",
-      "confidence": "none",
-      "supersession_eligible": false
-    }
+  "proven_sandbox": {
+   "label": "Proven (Sandbox CI)",
+   "description": "Proof passes in CI sandbox environment with v1.1 topology. Positive-path and negative-control evidence captured.",
+   "confidence": "medium",
+   "supersession_eligible": true
   },
-  "supersession_context": {
-    "contract_version": "1.1.0",
-    "prior_evidence_version": "1.0.0",
-    "prior_manifest_url": "https://docs.zen-mesh.io/ai/evidence/v1/manifest.json",
-    "supersession_map_url": "https://docs.zen-mesh.io/ai/evidence/v1.1/supersession-map.json",
-    "non_regression_matrix_url": "https://docs.zen-mesh.io/ai/evidence/v1.1/non-regression-matrix.json",
-    "public_claim_gate_url": "https://docs.zen-mesh.io/ai/evidence/v1.1/public-claim-gate.json"
+  "proven_staging": {
+   "label": "Proven (Staging)",
+   "description": "Proof validated on staging infrastructure. Multi-tenant and cross-replica evidence captured.",
+   "confidence": "medium-high",
+   "supersession_eligible": true
   },
-  "capabilities": [
-    {
-      "capability_id": "china-market-strategy",
-      "name": "China Market Strategy",
-      "status": "implementation_present",
-      "description": "China market strategy with regional Traffic Plane and provider Pack templates",
-      "evidence_links": [
-        "/china-market",
-        "/docs/china-market-architecture",
-        "/docs/payload-locality-invariant"
-      ],
-      "maturity_labels": [
-        {
-          "label": "china-market-strategy",
-          "status": "active",
-          "description": "China market strategy is active with design partner recruitment in progress"
-        },
-        {
-          "label": "provider-packs",
-          "status": "in_development",
-          "description": "Provider Packs are in development for Antom/Alipay, WeChat Pay, UnionPay"
-        },
-        {
-          "label": "payload-locality",
-          "status": "architectural_commitment",
-          "description": "Payload locality is a hard architectural commitment, not an implementation detail"
-        },
-        {
-          "label": "canadian-control-plane",
-          "status": "planned",
-          "description": "Canadian control plane is planned for China market governance"
-        },
-        {
-          "label": "regional-traffic-plane",
-          "status": "planned",
-          "description": "Regional Traffic Plane is planned for payload processing"
-        },
-        {
-          "label": "hong-kong-traffic-plane",
-          "status": "under_evaluation",
-          "description": "Hong Kong Traffic Plane is under evaluation for account and ingress feasibility"
-        },
-        {
-          "label": "mainland-china-traffic-plane",
-          "status": "blocked",
-          "description": "Mainland China Traffic Plane is account feasibility review only"
-        },
-        {
-          "label": "regional-deployed-proof",
-          "status": "not_produced_live",
-          "description": "Regional deployed proof is not yet production-live"
-        }
-      ],
-      "provider_pack_status": {
-        "antom-alipay": {
-          "status": "in_development",
-          "scope": "asynchronous payment notifications, signature verification, acknowledgement, retries, duplicate handling, active inquiry/reconciliation, private or regional delivery",
-          "documentation": "https://iopenhome.alipay.com/docs/",
-          "status_label": "IN DEVELOPMENT"
-        },
-        "wechat-pay": {
-          "status": "in_development",
-          "scope": "payment-success callbacks, signature and encryption requirements, HTTPS endpoint posture, firewall/IP considerations, retries, duplicate notifications, idempotent processing",
-          "documentation": "https://pay.wechat.com/en_my/merchant.html",
-          "status_label": "IN DEVELOPMENT"
-        },
-        "unionpay": {
-          "status": "planned",
-          "scope": "backend notification URL, asynchronous transaction results, signature verification, response deadline, retry behavior, reconciliation",
-          "documentation": "https://open.unionpayintl.com/",
-          "status_label": "PLANNED"
-        }
-      },
-      "non_claims": [
-        {
-          "claim_id": "china-market-pack-not-ga",
-          "statement": "Chinese Provider Packs are not generally available yet",
-          "status": "not_claimed",
-          "evidence_link": "/china-market"
-        },
-        {
-          "claim_id": "china-market-no-aws-acceptance",
-          "statement": "Zen Mesh is not claiming AWS program acceptance",
-          "status": "not_claimed",
-          "evidence_link": "/china-market"
-        },
-        {
-          "claim_id": "china-market-no-aws-partnership",
-          "statement": "Zen Mesh is not claiming AWS partnership",
-          "status": "not_claimed",
-          "evidence_link": "/china-market"
-        },
-        {
-          "claim_id": "china-market-mainland-not-live",
-          "statement": "Mainland China hosting is not yet production-live",
-          "status": "not_claimed",
-          "evidence_link": "/docs/china-market-architecture"
-        },
-        {
-          "claim_id": "china-market-no-icp",
-          "statement": "ICP recordal is not complete unless separately proven",
-          "status": "not_claimed",
-          "evidence_link": "/docs/china-market-architecture"
-        },
-        {
-          "claim_id": "china-market-no-regulatory-claim",
-          "statement": "Chinese regulatory compliance is not claimed",
-          "status": "not_claimed",
-          "evidence_link": "/docs/china-market-architecture"
-        },
-        {
-          "claim_id": "china-market-no-production-enforcement",
-          "statement": "Payload-locality production enforcement is scoped by current evidence",
-          "status": "not_claimed",
-          "evidence_link": "/docs/payload-locality-invariant"
-        },
-        {
-          "claim_id": "china-market-no-sandbox-validation",
-          "statement": "Provider sandbox fixtures are not provider production validation",
-          "status": "not_claimed",
-          "evidence_link": "/docs/china-market-architecture"
-        },
-        {
-          "claim_id": "china-market-no-exactly-once",
-          "statement": "No guaranteed or exactly-once delivery claim",
-          "status": "not_claimed",
-          "evidence_link": "/docs/china-market-architecture"
-        }
-      ]
-    },
-    {
-      "capability_id": "payload-locality",
-      "name": "Payload Locality",
-      "status": "architectural_commitment",
-      "description": "Customer event payloads are processed inside regional Traffic Plane, never proxied by control plane",
-      "evidence_links": [
-        "/docs/payload-locality-invariant",
-        "/docs/china-market-architecture",
-        "/china-market"
-      ],
-      "maturity_labels": [
-        {
-          "label": "architectural-invariant",
-          "status": "architectural_commitment",
-          "description": "Payload locality is a hard architectural commitment, not implementation detail"
-        },
-        {
-          "label": "regional-proof",
-          "status": "not_produced_live",
-          "description": "Regional deployment proof not yet available. Roadmap under evaluation for Hong Kong and mainland options.",
-          "evidence_link": "/docs/china-market-architecture"
-        },
-        {
-          "label": "local-sandbox-proof",
-          "status": "sandbox_proven",
-          "description": "Local/sandbox proof exists for payload locality concepts, but not yet for regional deployment.",
-          "evidence_link": "/docs/payload-locality-invariant"
-        }
-      ]
-    }
-  ],
-  "compliance_mappings": {},
-  "validation": {
-    "last_validated": "2026-08-05T18:00:00Z",
-    "validator_script": "scripts/validate-claim-gate.sh",
-    "public_claim_gate_url": "https://docs.zen-mesh.io/ai/evidence/v1.1/public-claim-gate.json",
-    "non_regression_matrix_url": "https://docs.zen-mesh.io/ai/evidence/v1.1/non-regression-matrix.json",
-    "pass": true,
-    "failures": []
+  "proven_production": {
+   "label": "Proven (Production Live)",
+   "description": "Proof validated on production infrastructure with live provider targets. Restricted evidence level.",
+   "confidence": "maximum",
+   "supersession_eligible": true
+  },
+  "implementation_present": {
+   "label": "Implementation Present",
+   "description": "Code or contract implementation exists but has not been formally proven in v1.1 context.",
+   "confidence": "low",
+   "supersession_eligible": false
+  },
+  "planned": {
+   "label": "Planned",
+   "description": "Design or specification exists; implementation and proof are future work.",
+   "confidence": "none",
+   "supersession_eligible": false
+  },
+  "blocked": {
+   "label": "Blocked",
+   "description": "Proof is blocked by a known dependency or gap.",
+   "confidence": "none",
+   "supersession_eligible": false
+  },
+  "not_claimed": {
+   "label": "Not Claimed",
+   "description": "Explicitly not claimed \u2014 see non-claims for details.",
+   "confidence": "none",
+   "supersession_eligible": false
   }
+ },
+ "supersession_context": {
+  "contract_version": "1.1.0",
+  "prior_evidence_version": "1.0.0",
+  "prior_manifest_url": "https://docs.zen-mesh.io/ai/evidence/v1/manifest.json",
+  "supersession_map_url": "https://docs.zen-mesh.io/ai/evidence/v1.1/supersession-map.json",
+  "non_regression_matrix_url": "https://docs.zen-mesh.io/ai/evidence/v1.1/non-regression-matrix.json",
+  "public_claim_gate_url": "https://docs.zen-mesh.io/ai/evidence/v1.1/public-claim-gate.json"
+ },
+ "capabilities": [
+  {
+   "capability_id": "china-market-strategy",
+   "name": "China Market Strategy",
+   "status": "implementation_present",
+   "description": "China market strategy with regional Traffic Plane and provider Pack templates",
+   "evidence_links": [
+    "/china-market",
+    "/docs/china-market-architecture",
+    "/docs/payload-locality-invariant"
+   ],
+   "maturity_labels": [
+    {
+     "label": "china-market-strategy",
+     "status": "active",
+     "description": "China market strategy is active with design partner recruitment in progress"
+    },
+    {
+     "label": "provider-packs",
+     "status": "in_development",
+     "description": "Provider Packs are in development for Antom/Alipay, WeChat Pay, UnionPay"
+    },
+    {
+     "label": "payload-locality",
+     "status": "architectural_commitment",
+     "description": "Payload locality is a hard architectural commitment, not an implementation detail"
+    },
+    {
+     "label": "canadian-control-plane",
+     "status": "planned",
+     "description": "Canadian control plane is planned for China market governance"
+    },
+    {
+     "label": "regional-traffic-plane",
+     "status": "planned",
+     "description": "Regional Traffic Plane is planned for payload processing"
+    },
+    {
+     "label": "hong-kong-traffic-plane",
+     "status": "under_evaluation",
+     "description": "Hong Kong Traffic Plane is under evaluation for account and ingress feasibility"
+    },
+    {
+     "label": "mainland-china-traffic-plane",
+     "status": "blocked",
+     "description": "Mainland China Traffic Plane is account feasibility review only"
+    },
+    {
+     "label": "regional-deployed-proof",
+     "status": "not_produced_live",
+     "description": "Regional deployed proof is not yet production-live"
+    }
+   ],
+   "provider_pack_status": {
+    "antom-alipay": {
+     "status": "in_development",
+     "scope": "asynchronous payment notifications, signature verification, acknowledgement, retries, duplicate handling, active inquiry/reconciliation, private or regional delivery",
+     "documentation": "https://iopenhome.alipay.com/docs/",
+     "status_label": "IN DEVELOPMENT"
+    },
+    "wechat-pay": {
+     "status": "in_development",
+     "scope": "payment-success callbacks, signature and encryption requirements, HTTPS endpoint posture, firewall/IP considerations, retries, duplicate notifications, idempotent processing",
+     "documentation": "https://pay.wechat.com/en_my/merchant.html",
+     "status_label": "IN DEVELOPMENT"
+    },
+    "unionpay": {
+     "status": "planned",
+     "scope": "backend notification URL, asynchronous transaction results, signature verification, response deadline, retry behavior, reconciliation",
+     "documentation": "https://open.unionpayintl.com/",
+     "status_label": "PLANNED"
+    }
+   },
+   "non_claims": [
+    {
+     "claim_id": "china-market-pack-not-ga",
+     "statement": "Chinese Provider Packs are not generally available yet",
+     "status": "not_claimed",
+     "evidence_link": "/china-market"
+    },
+    {
+     "claim_id": "china-market-no-aws-acceptance",
+     "statement": "Zen Mesh is not claiming AWS program acceptance",
+     "status": "not_claimed",
+     "evidence_link": "/china-market"
+    },
+    {
+     "claim_id": "china-market-no-aws-partnership",
+     "statement": "Zen Mesh is not claiming AWS partnership",
+     "status": "not_claimed",
+     "evidence_link": "/china-market"
+    },
+    {
+     "claim_id": "china-market-mainland-not-live",
+     "statement": "Mainland China hosting is not yet production-live",
+     "status": "not_claimed",
+     "evidence_link": "/docs/china-market-architecture"
+    },
+    {
+     "claim_id": "china-market-no-icp",
+     "statement": "ICP recordal is not complete unless separately proven",
+     "status": "not_claimed",
+     "evidence_link": "/docs/china-market-architecture"
+    },
+    {
+     "claim_id": "china-market-no-regulatory-claim",
+     "statement": "Chinese regulatory compliance is not claimed",
+     "status": "not_claimed",
+     "evidence_link": "/docs/china-market-architecture"
+    },
+    {
+     "claim_id": "china-market-no-production-enforcement",
+     "statement": "Payload-locality production enforcement is scoped by current evidence",
+     "status": "not_claimed",
+     "evidence_link": "/docs/payload-locality-invariant"
+    },
+    {
+     "claim_id": "china-market-no-sandbox-validation",
+     "statement": "Provider sandbox fixtures are not provider production validation",
+     "status": "not_claimed",
+     "evidence_link": "/docs/china-market-architecture"
+    },
+    {
+     "claim_id": "china-market-no-exactly-once",
+     "statement": "No guaranteed or exactly-once delivery claim",
+     "status": "not_claimed",
+     "evidence_link": "/docs/china-market-architecture"
+    }
+   ]
+  },
+  {
+   "capability_id": "payload-locality",
+   "name": "Payload Locality",
+   "status": "architectural_commitment",
+   "description": "Customer event payloads are processed inside regional Traffic Plane, never proxied by control plane",
+   "evidence_links": [
+    "/docs/payload-locality-invariant",
+    "/docs/china-market-architecture",
+    "/china-market"
+   ],
+   "maturity_labels": [
+    {
+     "label": "architectural-invariant",
+     "status": "architectural_commitment",
+     "description": "Payload locality is a hard architectural commitment, not implementation detail"
+    },
+    {
+     "label": "regional-proof",
+     "status": "not_produced_live",
+     "description": "Regional deployment proof not yet available. Roadmap under evaluation for Hong Kong and mainland options.",
+     "evidence_link": "/docs/china-market-architecture"
+    },
+    {
+     "label": "local-sandbox-proof",
+     "status": "sandbox_proven",
+     "description": "Local/sandbox proof exists for payload locality concepts, but not yet for regional deployment.",
+     "evidence_link": "/docs/payload-locality-invariant"
+    }
+   ]
+  },
+  {
+   "capability_id": "fabric-foundation-enrollment",
+   "name": "Fabric Foundation Workload Enrollment (Mode A / Mode B)",
+   "status": "proven_sandbox",
+   "description": "Shared enrollment protocol over the fabric foundation: AGE-sealed artifacts minted through the gapi edge (/fabric/), CSR+proof-of-possession issuance through /fabric/identity, SVID validation, fabric workload mTLS, and restart-safe checkpoint recovery. Negative boundary proven (certless/rogue TLS rejection; Tier-0 Mode A prerequisite enforced fail-closed for Mode B on agent-less planes).",
+   "evidence_links": [
+    "https://github.com/zenmesh/zen-platform-v1/blob/main/docs/06-VALIDATION-AND-EVIDENCE/fabric-layer-gapi-validation-2026-08-15.md"
+   ],
+   "maturity_labels": [
+    "sandbox-proven",
+    "internal-only"
+   ],
+   "non_claims": [
+    "Not production-live",
+    "Single-node k3d; HA/CAP drills outstanding",
+    "Not customer-ready"
+   ]
+  }
+ ],
+ "compliance_mappings": {},
+ "validation": {
+  "last_validated": "2026-08-05T18:00:00Z",
+  "validator_script": "scripts/validate-claim-gate.sh",
+  "public_claim_gate_url": "https://docs.zen-mesh.io/ai/evidence/v1.1/public-claim-gate.json",
+  "non_regression_matrix_url": "https://docs.zen-mesh.io/ai/evidence/v1.1/non-regression-matrix.json",
+  "pass": true,
+  "failures": []
+ }
 }
