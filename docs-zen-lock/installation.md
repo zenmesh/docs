@@ -28,7 +28,7 @@ If you don't already have access to the `zenmesh` image registry, request it via
 
 A standalone install deploys the same components the platform uses, in the `zen-lock-system` namespace:
 
-- The `ZenLock` CRD (`security.zen-mesh.io/v1alpha1`)
+- The `ZenLock` CRD (`security.zen-mesh.io/v1beta1`)
 - The `zen-lock-webhook` Deployment and `zen-lock-mutating-webhook` MutatingWebhookConfiguration
 - The `zen-lock-controller` Deployment (leader-elected)
 
@@ -83,7 +83,7 @@ Verify once installed:
 
 ```bash
 zen-lock version
-# 0.1.0-alpha (commit: …, built: …)
+# 0.1.0-beta (commit: …, built: …)
 ```
 
 ## 4. Verify the Installation

@@ -16,7 +16,7 @@ zen-lock is a Zen Mesh component — its container images are published publicly
 - **As part of Zen Mesh**: the secret layer of a Zen Mesh edge installation, where it protects enrollment credentials, HMAC keys, and mTLS material automatically. If you're a Zen Mesh customer, [enrollment handles this for you](./enrollment-and-secrets).
 
 :::note Version status
-zen-lock is at **0.1.0-alpha**. The webhook injection path is fully supported. The [CSI driver](./csi-driver) is ready for restricted, trusted-node canary deployments but not broad node deployment yet.
+zen-lock is at **0.1.0-beta**. The webhook injection path is fully supported. The [CSI driver](./csi-driver) is ready for restricted, trusted-node canary deployments but not broad node deployment yet.
 :::
 
 ## Two Ways Secrets Reach a Pod

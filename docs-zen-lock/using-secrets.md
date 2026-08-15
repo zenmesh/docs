@@ -33,7 +33,7 @@ zen-lock encrypt \
 The output is a `ZenLock` resource — every value is base64 age ciphertext, safe to commit:
 
 ```yaml title="zenlock-db-credentials.yaml"
-apiVersion: security.zen-mesh.io/v1alpha1
+apiVersion: security.zen-mesh.io/v1beta1
 kind: ZenLock
 metadata:
   name: db-credentials
@@ -109,7 +109,7 @@ spec:
 
 Only pods running as `system:serviceaccount:default:my-app` can mount this ZenLock. Everything else — including pods with the annotation but the wrong identity — is denied at admission.
 
-ServiceAccount is the only supported subject kind in v1alpha1; User and Group subjects are planned.
+ServiceAccount is the only supported subject kind in v1beta1; User and Group subjects are planned.
 
 ## 4. Day-2 Operations
 

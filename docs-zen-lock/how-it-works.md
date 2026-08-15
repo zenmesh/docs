@@ -40,7 +40,7 @@ zen-lock encrypt \
 The input is ordinary Secret-shaped YAML with `stringData`. The output is a `ZenLock` custom resource — every value is base64-encoded age ciphertext:
 
 ```yaml
-apiVersion: security.zen-mesh.io/v1alpha1
+apiVersion: security.zen-mesh.io/v1beta1
 kind: ZenLock
 metadata:
   name: db-credentials
@@ -145,4 +145,4 @@ kubectl get secrets -n default \
   -l zen-lock.security.zen-mesh.io/zenlock-name=db-credentials
 ```
 
-The API group is `security.zen-mesh.io` (v1alpha1). Short names: `zenlock`, `zl`.
+The API group is `security.zen-mesh.io` (v1beta1). Short names: `zenlock`, `zl`.
