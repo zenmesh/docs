@@ -1,6 +1,5 @@
 ---
 sidebar_label: Quickstart
-slug: /zen-lock/quickstart
 ---
 
 # Quickstart
@@ -10,7 +9,7 @@ Get zen-lock running in 5 minutes. This guide covers the essential steps to encr
 ## Prerequisites
 
 - Kubernetes 1.26+ cluster with `kubectl` access
-- [zen-lock CLI](./cli-reference) installed locally
+- [zen-lock CLI](/zen-lock/cli-reference) installed locally
 
 ## Step 1: Install zen-lock
 
@@ -149,7 +148,7 @@ kubectl exec deploy/my-app -- cat /etc/secrets/DB_USER
 
 ## What's Next?
 
-- **[Using Secrets](./using-secrets)** — Full guide to encryption, mounting, and access control
-- **[Key Rotation](./key-rotation)** — Rotate your master key with zero downtime
-- **[Security Properties](./security-properties)** — Understand what zen-lock protects
-- **[CLI Reference](./cli-reference)** — All available commands and flags
+- **[Using Secrets](/zen-lock/using-secrets)** — Full guide to encryption, mounting, and access control
+- **[Key Rotation](/zen-lock/key-rotation)** — Rotate your master key with zero downtime
+- **[Security Properties](/zen-lock/security-properties)** — Understand what zen-lock protects
+- **[CLI Reference](/zen-lock/cli-reference)** — All available commands and flags

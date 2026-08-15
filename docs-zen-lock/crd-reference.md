@@ -1,5 +1,6 @@
 ---
 sidebar_label: CRD Reference
+slug: zen-lock/crd-reference
 ---
 
 # CRD Reference
