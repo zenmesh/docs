@@ -48,6 +48,11 @@ export default function Home() {
               <p>Webhook delivery platform. Three-plane architecture, outbound-only, mTLS everywhere.</p>
               <span className={styles.cta}>Read docs →</span>
             </Link>
+            <Link to="/docs/api" className={styles.card}>
+              <h2>📚 API Reference</h2>
+              <p>Interactive Swagger UI for the Zen Mesh Customer Control API (OAS 3.1) — try all operations live.</p>
+              <span className={styles.cta}>Open API console →</span>
+            </Link>
             <Link to="/zen-lock" className={styles.card}>
               <h2>🔐 zen-lock</h2>
               <p>Secret management built into Zen Mesh. Enrollment credentials and HMAC signing keys encrypted at rest with age. Not zero-knowledge in the cryptographic sense.</p>
