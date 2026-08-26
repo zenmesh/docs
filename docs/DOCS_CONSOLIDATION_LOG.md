@@ -217,7 +217,7 @@ The public surface update policy governs all changes to these surfaces.
 | `docs/evidence/*.md` | Evidence docs | Leave as evidence |
 | `docs/evidence/evidence-index.md` | Evidence index | ✅ Created in R14 (moved from 80-EVIDENCE/ in R15) |
 
-See the [Evidence Index](/docs/evidence/evidence-index) for detailed evidence
+See the [Evidence Index](/docs/zen-mesh/evidence/evidence-index) for detailed evidence
 classification by area and maturity.
 
 ## R15 Consolidation Groups

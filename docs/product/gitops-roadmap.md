@@ -11,4 +11,4 @@ head:
 
 GitOps information will be published when approved for public release.
 
-For current configuration surfaces, see [How Zen Works](/docs/start-here/how-zen-works).
+For current configuration surfaces, see [How Zen Works](/docs/zen-mesh/start-here/how-zen-works).

@@ -147,6 +147,6 @@ curl -sS   -H "Authorization: Bearer $ZEN_API_TOKEN"   "$ZEN_API_BASE/tenants/$Z
 
 ---
 
-**Full API Reference**: [API Overview](/docs/api/overview)
+**Full API Reference**: [API Overview](/docs/zen-mesh/api/overview)
 
 **More Information**: [Authentication](../../authentication) | [Common Errors](../../errors)

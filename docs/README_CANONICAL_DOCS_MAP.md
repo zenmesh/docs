@@ -167,7 +167,7 @@ validation sequence).
 These are historical or evidence artifacts, or archived docs. They are not
 active navigation docs and should not be treated as canonical references:
 
-- `docs/80-EVIDENCE/*` — All audit evidence (see [Evidence Index](/docs/evidence/evidence-index) for classification)
+- `docs/80-EVIDENCE/*` — All audit evidence (see [Evidence Index](/docs/zen-mesh/evidence/evidence-index) for classification)
 - `docs/evidence/public-docs-claim-audit.{json,md}` — Historical claim audit
 - `docs/ai/evidence-v1-supersession.md` — Supersession log
 - `docs/99-ARCHIVE/` — Archived docs (see `docs/99-ARCHIVE/ARCHIVE_MANIFEST` for details)

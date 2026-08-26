@@ -8,7 +8,7 @@ The Zen Mesh MCP server provides programmatic access to Zen Mesh capabilities th
 
 ## Current Status
 
-The MCP server is implemented. Authentication requires an MCP API key. See [Authentication](/docs/mcp/authentication-and-mtls) for details.
+The MCP server is implemented. Authentication requires an MCP API key. See [Authentication](/docs/zen-mesh/mcp/authentication-and-mtls) for details.
 
 ## Use Cases
 
@@ -16,4 +16,4 @@ The MCP server is implemented. Authentication requires an MCP API key. See [Auth
 - List webhooks
 - Check evidence scope
 
-For the current tool surface, see [MCP Tools Reference](/docs/mcp/tools).
+For the current tool surface, see [MCP Tools Reference](/docs/zen-mesh/mcp/tools).

@@ -107,6 +107,6 @@ When you publish a flow, it becomes a new version. The previous version remains 
 
 ---
 
-**Full API Reference**: [API Overview](/docs/api/overview)
+**Full API Reference**: [API Overview](/docs/zen-mesh/api/overview)
 
 **More Information**: [Authentication](../../authentication) | [Common Errors](../../errors)

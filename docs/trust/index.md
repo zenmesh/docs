@@ -12,8 +12,8 @@ Zen Mesh helps teams generate, organize, retain, and export operational evidence
 |------|-------------|
 | [Compliance Coverage](./compliance-coverage) | How Zen Mesh maps product evidence to common compliance frameworks |
 | [Evidence](./evidence) | Validation evidence, runtime evidence, export, and retention |
-| [Security](/docs/security/) | Security controls, mTLS, HMAC, tenant isolation, cryptographic enrollment |
-| [Support](/docs/start-here/support) | Support channels, SLAs, and response expectations |
+| [Security](/docs/zen-mesh/security/) | Security controls, mTLS, HMAC, tenant isolation, cryptographic enrollment |
+| [Support](/docs/zen-mesh/start-here/support) | Support channels, SLAs, and response expectations |
 | Data Handling | Event data, retention, and processing boundaries — documentation in development |
 | Subprocessors | Third-party services used in the platform — documentation in development |
 | Legal | Terms of service, privacy policy — documentation in development |
@@ -33,11 +33,11 @@ Zen Mesh helps teams generate, organize, retain, and export operational evidence
 ## How to Use This Section
 
 - **Security / compliance reviewers** — start with [Compliance Coverage](./compliance-coverage).
-- **Operational evidence reviewers** — start with [Evidence](./evidence) then [Security](/docs/security/).
+- **Operational evidence reviewers** — start with [Evidence](./evidence) then [Security](/docs/zen-mesh/security/).
 - **Procurement / legal reviewers** — review Evidence export and retention; Data Handling, Subprocessors, and Legal documentation are in development.
 
 ## Related
 
-- [Security Controls](/docs/security/) — detailed security capabilities
-- [Evidence Overview](/docs/evidence/overview) — full evidence index
-- [Current Status](/docs/start-here/current-status) — plan readiness and known gaps
+- [Security Controls](/docs/zen-mesh/security/) — detailed security capabilities
+- [Evidence Overview](/docs/zen-mesh/evidence/overview) — full evidence index
+- [Current Status](/docs/zen-mesh/start-here/current-status) — plan readiness and known gaps

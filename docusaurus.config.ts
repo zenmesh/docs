@@ -287,10 +287,10 @@ const config: Config = {
               label: 'AI Context (llms.txt)',
               href: 'pathname:///llms.txt',
             },
-            {
-              label: 'Evidence manifests',
-              to: '/docs/ai/overview',
-            },
+          {
+            label: 'Evidence manifests',
+            to: '/docs/zen-mesh/ai/overview',
+          },
             {
               label: 'Helm Charts',
               href: 'https://github.com/zenmesh/helm-charts',

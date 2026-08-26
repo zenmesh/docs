@@ -148,10 +148,10 @@ curl -sS   -H "Authorization: Bearer $ZEN_API_TOKEN"   "$ZEN_API_BASE/tenants/$Z
 
 - *Create a Target* (see dedicated recipe)
 - [Inspect Flows](../../traces) (via Delivery Attempts API)
-- [Update Flow endpoint](/docs/api/overview) (see API Overview for runtime API paths)
+- [Update Flow endpoint](/docs/zen-mesh/api/overview) (see API Overview for runtime API paths)
 
 ---
 
-**Full API Reference**: [API Overview](/docs/api/overview)
+**Full API Reference**: [API Overview](/docs/zen-mesh/api/overview)
 
 **More Information**: [Authentication](../../authentication) | [Common Errors](../../errors)

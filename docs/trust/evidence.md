@@ -10,9 +10,9 @@ This page covers how Zen Mesh generates, organizes, and retains evidence that ca
 
 | Type | Description | Current Status |
 |------|-------------|----------------|
-| **Validation evidence** | Proof that Zen Mesh capabilities behave as claimed | Active — see [Evidence Overview](/docs/evidence/overview) |
-| **Runtime evidence** | Delivery receipts, evidence ledger, convergence proofs | Active — see [Runtime Convergence](/docs/evidence/runtime-convergence) |
-| **Release readiness evidence** | Validation maps, verification suites, non-claims | Active — see [Validation Map](/docs/evidence/validation-map) |
+| **Validation evidence** | Proof that Zen Mesh capabilities behave as claimed | Active — see [Evidence Overview](/docs/zen-mesh/evidence/overview) |
+| **Runtime evidence** | Delivery receipts, evidence ledger, convergence proofs | Active — see [Runtime Convergence](/docs/zen-mesh/evidence/runtime-convergence) |
+| **Release readiness evidence** | Validation maps, verification suites, non-claims | Active — see [Validation Map](/docs/zen-mesh/evidence/validation-map) |
 | **Export / retention** | Evidence export via API; S3/object-store export | Planned — Business+ feature |
 
 ## Where Evidence Lives
@@ -24,14 +24,14 @@ This page covers how Zen Mesh generates, organizes, and retains evidence that ca
 
 ## Validation Evidence
 
-The [Evidence Overview](/docs/evidence/overview) catalogs all validation evidence by area:
+The [Evidence Overview](/docs/zen-mesh/evidence/overview) catalogs all validation evidence by area:
 
 - **Runtime convergence** — 10 proofs covering delivery, DLQ, backpressure, circuit breaker
 - **Trust lifecycle** — 10 proofs covering enrollment, mTLS, HMAC, ZenLock, rotation
 - **Completion evidence** — validated work-gate evidence and evidence integrity
 - **Non-claims** — capabilities explicitly not claimed
 
-See the [Evidence Index](/docs/evidence/evidence-index) for a complete artifact listing.
+See the [Evidence Index](/docs/zen-mesh/evidence/evidence-index) for a complete artifact listing.
 
 ## Evidence Export
 
@@ -54,8 +54,8 @@ Evidence export to S3 or other object-store destinations is planned for Business
 
 ## Related
 
-- [Trust Overview](/docs/trust/)
+- [Trust Overview](/docs/zen-mesh/trust/)
 - [Compliance Coverage](./compliance-coverage)
-- [Evidence Overview](/docs/evidence/overview)
-- [Non-Claims](/docs/evidence/non-claims)
-- [Validation Map](/docs/evidence/validation-map)
+- [Evidence Overview](/docs/zen-mesh/evidence/overview)
+- [Non-Claims](/docs/zen-mesh/evidence/non-claims)
+- [Validation Map](/docs/zen-mesh/evidence/validation-map)

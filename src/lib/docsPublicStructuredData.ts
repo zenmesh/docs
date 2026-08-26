@@ -1,8 +1,8 @@
 /** Docs site JSON-LD — public capability language only. */
 
-const DOCS_ORIGIN = 'https://docs.zen-mesh.io';
+const DOCS_ORIGIN = 'https://www.zen-mesh.io';
 const WWW_ORIGIN = 'https://www.zen-mesh.io';
-const EVIDENCE_V1 = `${DOCS_ORIGIN}/ai/evidence/v1`;
+const EVIDENCE_V1 = `${DOCS_ORIGIN}/docs/zen-mesh/ai/evidence/v1`;
 
 const DEMO_NOTE =
   'DEMO scope only; not production-live, not customer-ready, not demo-ready as global platform readiness.';
@@ -45,7 +45,7 @@ export const docsStructuredDataBlocks = [
       {
         '@type': 'WebPage',
         name: 'AI & Evidence overview',
-        url: `${DOCS_ORIGIN}/docs/ai/overview`,
+        url: `${DOCS_ORIGIN}/docs/zen-mesh/ai/overview`,
       },
     ],
   },
@@ -58,7 +58,7 @@ export const docsStructuredDataBlocks = [
       'Delivery receipts and operational metadata describe validation scope where available. ' +
       'Blogs are narrative_context only — not manifest proof. ' +
       DEMO_NOTE,
-    url: `${DOCS_ORIGIN}/docs/ai/overview`,
+    url: `${DOCS_ORIGIN}/docs/zen-mesh/ai/overview`,
     creator: { '@type': 'Organization', name: 'Zen Mesh', url: WWW_ORIGIN },
     isAccessibleForFree: true,
     distribution: [
@@ -98,7 +98,7 @@ export const docsStructuredDataBlocks = [
     '@context': 'https://schema.org',
     '@type': 'CreativeWork',
     name: 'AI and evidence documentation',
-    url: `${DOCS_ORIGIN}/docs/ai/overview`,
+    url: `${DOCS_ORIGIN}/docs/zen-mesh/ai/overview`,
     description:
       'How to read capability manifests, proof_status, and non-claims. Editorial blogs are not accepted_evidence.',
     about: {

@@ -269,6 +269,6 @@ for plane in plane_list['clusters']:
 
 ---
 
-**Full API Reference**: [API Overview](/docs/api/overview)
+**Full API Reference**: [API Overview](/docs/zen-mesh/api/overview)
 
 **More Information**: [Authentication](../../authentication) | [Common Errors](../../errors)

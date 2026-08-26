@@ -11,4 +11,4 @@ head:
 
 Template registry information will be published when approved for public release.
 
-For available templates and provider packages, see [Provider Package Lifecycle](/docs/providerflow/provider-package-lifecycle).
+For available templates and provider packages, see [Provider Package Lifecycle](/docs/zen-mesh/providerflow/provider-package-lifecycle).

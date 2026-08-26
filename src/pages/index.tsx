@@ -48,7 +48,7 @@ export default function Home() {
               <p>Webhook delivery platform. Three-plane architecture, outbound-only, mTLS everywhere.</p>
               <span className={styles.cta}>Read docs →</span>
             </Link>
-            <Link to="/docs/api/overview" className={styles.card}>
+            <Link to="/docs/zen-mesh/api/overview" className={styles.card}>
               <h2>📚 API Reference</h2>
               <p>Interactive Swagger UI for the Zen Mesh Customer Control API (OAS 3.1) — try all operations live.</p>
               <span className={styles.cta}>Open API console →</span>

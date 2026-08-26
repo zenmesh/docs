@@ -10,7 +10,7 @@ How zen-lock gets installed: as part of Zen Mesh (the normal path), or standalon
 
 zen-lock ships with every Zen Mesh edge installation. Installing the `zen-agent` Helm chart installs zen-lock, enabled by default (`zenLock.enabled=true`) — nothing extra to do:
 
-- Follow the [Kubernetes Edge Plane installation guide](/docs/install/kubernetes-edge-plane)
+- Follow the [Kubernetes Edge Plane installation guide](/docs/zen-mesh/install/kubernetes-edge-plane)
 - The zen-lock components run in the `zen-mesh` namespace alongside the agent
 
 ## Standalone Installation
@@ -24,7 +24,7 @@ helm install zen-lock zenmesh/zen-lock \
   --create-namespace
 ```
 
-If you don't already have access to the `zenmesh` image registry, request it via [Zen Mesh support](/docs/start-here/support).
+If you don't already have access to the `zenmesh` image registry, request it via [Zen Mesh support](/docs/zen-mesh/start-here/support).
 
 A standalone install deploys the same components the platform uses, in the `zen-lock-system` namespace:
 

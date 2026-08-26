@@ -11,4 +11,4 @@ head:
 
 Draft system information will be published when approved for public release.
 
-For current MCP capabilities, see [MCP Overview](/docs/mcp/overview).
+For current MCP capabilities, see [MCP Overview](/docs/zen-mesh/mcp/overview).
