@@ -1,6 +1,7 @@
 ---
 sidebar_label: Cryptographic Enrollment
-description: Establish trust between Zen Mesh components using HMAC-based enrollment with X.509 SVID and enrollment bundles.
+description: "Cryptographic enrollment establishes trust between Zen Mesh components using HMAC-based enrollment with X.509 SVID and age-encrypted enrollment bundles."
+title: "Cryptographic Enrollment | Zen Mesh Security"
 ---
 
 # Cryptographic Enrollment

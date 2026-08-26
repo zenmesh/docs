@@ -1,5 +1,7 @@
 ---
 sidebar_label: Three-Plane Model
+description: "Zen Mesh three-plane architecture: Control Plane (SaaS coordination), Data Plane (event routing), and Edge Plane (customer-boundary delivery). Control plane never sees payloads."
+title: "Three-Plane Architecture | Zen Mesh Docs"
 ---
 
 # Three-Plane Model
