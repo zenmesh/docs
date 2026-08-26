@@ -1,1 +1,0 @@
-{"responses":{"200":{"description":"Webhook processed"},"401":{"description":"Authentication required or failed","content":{"application/json":{"schema":{"type":"object","properties":{"error":{"type":"string"}}}}}}}}

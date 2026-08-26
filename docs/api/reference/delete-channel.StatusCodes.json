@@ -1,1 +1,0 @@
-{"responses":{"204":{"description":"Channel deleted"},"404":{"description":"Resource not found","content":{"application/json":{"schema":{"type":"object","properties":{"error":{"type":"string"}}}}}}}}
