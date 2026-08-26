@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zen Mesh API Reference</title>
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/swagger-ui-dist@5.10.5/swagger-ui.css">
+  <style>
+    html {
+      box-sizing: border-box;
+      overflow: -moz-scrollbars-vertical;
+      overflow-y: scroll;
+    }
+    *, *:before, *:after {
+      box-sizing: inherit;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      background: #1a1a1a !important;
+    }
+    .swagger-ui {
+      color: #e6e6e6 !important;
+    }
+    .swagger-ui .information-container {
+      background: #242526 !important;
+    }
+    .swagger-ui .topbar {
+      background: #242526 !important;
+      border-bottom: 1px solid #3e4042 !important;
+    }
+    .swagger-ui .info {
+      margin: 20px 0 !important;
+    }
+    .swagger-ui .info .title {
+      color: #ffffff !important;
+    }
+    .swagger-ui .info .description {
+      color: #b0b0b0 !important;
+    }
+    .swagger-ui .scheme-container {
+      background: #242526 !important;
+      padding: 10px 0 !important;
+    }
+    .swagger-ui .loading-container {
+      padding: 40px 0 60px !important;
+    }
+    .swagger-ui .btn {
+      background: #007bff !important;
+      border-color: #007bff !important;
+      color: #ffffff !important;
+    }
+    .swagger-ui .btn:hover {
+      background: #0056b3 !important;
+      border-color: #0056b3 !important;
+    }
+    .swagger-ui .opblock-tag {
+      background: #242526 !important;
+      border: 1px solid #3e4042 !important;
+      color: #ffffff !important;
+    }
+    .swagger-ui .opblock-tag:hover {
+      background: #2d2e30 !important;
+    }
+    .swagger-ui .opblock {
+      background: #2d2e30 !important;
+      border: 1px solid #3e4042 !important;
+      border-radius: 4px !important;
+      margin-bottom: 10px !important;
+    }
+    .swagger-ui .opblock .opblock-summary {
+      border-color: #3e4042 !important;
+      background: #2d2e30 !important;
+    }
+    .swagger-ui .opblock .opblock-summary:hover {
+      background: #36383a !important;
+    }
+    .swagger-ui .opblock.opblock-get {
+      border-color: #61affe !important;
+    }
+    .swagger-ui .opblock.opblock-post {
+      border-color: #49cc90 !important;
+    }
+    .swagger-ui .opblock.opblock-put {
+      border-color: #fca130 !important;
+    }
+    .swagger-ui .opblock.opblock-delete {
+      border-color: #f93e3e !important;
+    }
+    .swagger-ui .opblock.opblock-patch {
+      border-color: #50e3c2 !important;
+    }
+    .swagger-ui .opblock .opblock-section-header {
+      background: #242526 !important;
+      border-bottom: 1px solid #3e4042 !important;
+    }
+    .swagger-ui .opblock .opblock-body {
+      background: #242526 !important;
+    }
+    .swagger-ui .parameter-controls {
+      background: #2d2e30 !important;
+      border: 1px solid #3e4042 !important;
+    }
+    .swagger-ui .tab li {
+      background: #242526 !important;
+      border-color: #3e4042 !important;
+    }
+    .swagger-ui .tab li:first-of-type {
+      border-left: 1px solid #3e4042 !important;
+    }
+    .swagger-ui .tab li.active {
+      background: #2d2e30 !important;
+      border-bottom: 2px solid #007bff !important;
+    }
+    .swagger-ui textarea, .swagger-ui input[type="text"], .swagger-ui input[type="password"] {
+      background: #1a1a1a !important;
+      border: 1px solid #3e4042 !important;
+      color: #e6e6e6 !important;
+    }
+    .swagger-ui textarea:focus, .swagger-ui input[type="text"]:focus, .swagger-ui input[type="password"]:focus {
+      border-color: #007bff !important;
+      outline: none !important;
+    }
+    .swagger-ui .model {
+      background: #242526 !important;
+    }
+    .swagger-ui .model-title {
+      color: #ffffff !important;
+    }
+    .swagger-ui .prop-type {
+      color: #61affe !important;
+    }
+    .swagger-ui .response-col_status {
+      color: #ffffff !important;
+    }
+    .swagger-ui .response-col_links {
+      color: #b0b0b0 !important;
+    }
+    .swagger-ui .table-container {
+      background: #242526 !important;
+    }
+    .swagger-ui table thead tr {
+      background: #2d2e30 !important;
+      border-bottom: 1px solid #3e4042 !important;
+    }
+    .swagger-ui table thead th {
+      color: #ffffff !important;
+      border-bottom: 1px solid #3e4042 !important;
+    }
+    .swagger-ui table tbody tr {
+      border-bottom: 1px solid #3e4042 !important;
+    }
+    .swagger-ui table tbody tr:last-child {
+      border-bottom: none !important;
+    }
+    .swagger-ui table tbody td {
+      color: #b0b0b0 !important;
+      border-bottom: 1px solid #3e4042 !important;
+    }
+    .swagger-ui .execute-wrapper {
+      background: #242526 !important;
+    }
+    .swagger-ui .responses-inner h4, .swagger-ui .responses-inner h5 {
+      color: #ffffff !important;
+    }
+    .swagger-ui .response-control-media-type {
+      background: #2d2e30 !important;
+    }
+    .swagger-ui .response-control-media-type--accept-controller select {
+      background: #1a1a1a !important;
+      border-color: #3e4042 !important;
+      color: #e6e6e6 !important;
+    }
+  </style>
+</head>
+<body>
+  <div id="swagger-ui"></div>
+  <script src="https://unpkg.com/swagger-ui-dist@5.10.5/swagger-ui-bundle.js"></script>
+  <script src="https://unpkg.com/swagger-ui-dist@5.10.5/swagger-ui-standalone-preset.js"></script>
+  <script>
+    window.onload = function() {
+      const ui = SwaggerUIBundle({
+        url: '/docs/openapi/zen-mesh-user-api.v1.yaml',
+        dom_id: '#swagger-ui',
+        deepLinking: true,
+        presets: [
+          SwaggerUIBundle.presets.apis,
+          SwaggerUIStandalonePreset
+        ],
+        plugins: [
+          SwaggerUIBundle.plugins.DownloadUrl
+        ],
+        layout: "StandaloneLayout",
+        defaultModelsExpandDepth: 1,
+        defaultModelExpandDepth: 1,
+        docExpansion: 'list',
+        filter: true,
+        showRequestHeaders: true,
+        tryItOutEnabled: true,
+        persistAuthorization: true,
+        displayRequestDuration: true,
+        displayOperationId: false,
+        supportedSubmitMethods: ['get', 'post', 'put', 'delete', 'patch'],
+        validatorUrl: null,
+        syntaxHighlight: {
+          activate: true,
+          theme: 'monokai'
+        }
+      });
+      window.ui = ui;
+    };
+  </script>
+</body>
+</html>
