@@ -25,7 +25,7 @@ For a task to be marked **completed**, it must have:
 | **Evidence artifact** | Structured JSON describing what was done |
 | **Validator result** | Commands that were run and their outcomes |
 | **Integrity leaf/root** | Integrity-included in the canonical integrity evidence tree |
-| **Docs/manifest reference** | Discoverable through docs.zen-mesh.io AI evidence surfaces |
+| **Docs/manifest reference** | Discoverable through www.zen-mesh.io/docs AI evidence surfaces |
 | **Proof status** | Honest classification of the evidence level |
 | **Non-claims** | Explicit list of what is NOT claimed |
 

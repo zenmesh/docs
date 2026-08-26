@@ -4,559 +4,69 @@
   "framework": "docusaurus",
   "redirects": [
     {
-      "source": "/ai/compliance-evidence",
-      "destination": "/docs/ai/compliance-evidence",
-      "permanent": true
+      "source": "/",
+      "destination": "https://www.zen-mesh.io/docs/",
+      "statusCode": 308
     },
     {
-      "source": "/ai/overview",
-      "destination": "/docs/ai/overview",
-      "permanent": true
+      "source": "/docs",
+      "destination": "https://www.zen-mesh.io/docs/",
+      "statusCode": 308
     },
     {
-      "source": "/ai/capability-evidence",
-      "destination": "/docs/ai/capability-evidence",
-      "permanent": true
+      "source": "/docs/",
+      "destination": "https://www.zen-mesh.io/docs/",
+      "statusCode": 308
     },
     {
-      "source": "/ai/non-claims",
-      "destination": "/docs/ai/non-claims",
-      "permanent": true
+      "source": "/docs/:path*",
+      "destination": "https://www.zen-mesh.io/docs/zen-mesh/:path*",
+      "statusCode": 308
     },
     {
-      "source": "/ai/evidence-schema",
-      "destination": "/docs/ai/evidence-schema",
-      "permanent": true
+      "source": "/zen-lock",
+      "destination": "https://www.zen-mesh.io/docs/zen-lock/",
+      "statusCode": 308
     },
     {
-      "source": "/ai/evidence-v1-supersession",
-      "destination": "/docs/ai/evidence-v1-supersession",
-      "permanent": true
+      "source": "/zen-lock/",
+      "destination": "https://www.zen-mesh.io/docs/zen-lock/",
+      "statusCode": 308
     },
     {
-      "source": "/ai/verification",
-      "destination": "/docs/ai/verification",
-      "permanent": true
+      "source": "/zen-lock/:path*",
+      "destination": "https://www.zen-mesh.io/docs/zen-lock/:path*",
+      "statusCode": 308
     },
     {
-      "source": "/ai/security-posture",
-      "destination": "/docs/ai/security-posture",
-      "permanent": true
+      "source": "/helm-charts",
+      "destination": "https://www.zen-mesh.io/docs/helm-charts/",
+      "statusCode": 308
     },
     {
-      "source": "/ai/public-surface-traceability",
-      "destination": "/docs/ai/public-surface-traceability",
-      "permanent": true
+      "source": "/helm-charts/",
+      "destination": "https://www.zen-mesh.io/docs/helm-charts/",
+      "statusCode": 308
     },
     {
-      "source": "/ai/public-terminology-taxonomy",
-      "destination": "/docs/ai/public-terminology-taxonomy",
-      "permanent": true
+      "source": "/helm-charts/:path*",
+      "destination": "https://www.zen-mesh.io/docs/helm-charts/:path*",
+      "statusCode": 308
     },
     {
-      "source": "/ai/wedge-overview",
-      "destination": "/docs/ai/wedge-overview",
-      "permanent": true
+      "source": "/zen-gc",
+      "destination": "https://www.zen-mesh.io/docs/zen-gc/",
+      "statusCode": 308
     },
     {
-      "source": "/ai/edge-lite",
-      "destination": "/docs/ai/edge-lite",
-      "permanent": true
+      "source": "/zen-gc/",
+      "destination": "https://www.zen-mesh.io/docs/zen-gc/",
+      "statusCode": 308
     },
     {
-      "source": "/api/overview",
-      "destination": "/docs/api/overview",
-      "permanent": true
-    },
-    {
-      "source": "/api/authentication",
-      "destination": "/docs/api/authentication",
-      "permanent": true
-    },
-    {
-      "source": "/api/changelog",
-      "destination": "/docs/api/changelog",
-      "permanent": true
-    },
-    {
-      "source": "/api/errors",
-      "destination": "/docs/api/errors",
-      "permanent": true
-    },
-    {
-      "source": "/api/events",
-      "destination": "/docs/api/events",
-      "permanent": true
-    },
-    {
-      "source": "/api/evidence",
-      "destination": "/docs/api/evidence",
-      "permanent": true
-    },
-    {
-      "source": "/api/examples",
-      "destination": "/docs/api/examples",
-      "permanent": true
-    },
-    {
-      "source": "/api/idempotency",
-      "destination": "/docs/api/idempotency",
-      "permanent": true
-    },
-    {
-      "source": "/api/logs",
-      "destination": "/docs/api/logs",
-      "permanent": true
-    },
-    {
-      "source": "/api/quickstart",
-      "destination": "/docs/api/quickstart",
-      "permanent": true
-    },
-    {
-      "source": "/api/rate-limits",
-      "destination": "/docs/api/rate-limits",
-      "permanent": true
-    },
-    {
-      "source": "/api/replay",
-      "destination": "/docs/api/replay",
-      "permanent": true
-    },
-    {
-      "source": "/api/versioning",
-      "destination": "/docs/api/versioning",
-      "permanent": true
-    },
-    {
-      "source": "/api/webhooks",
-      "destination": "/docs/api/webhooks",
-      "permanent": true
-    },
-    {
-      "source": "/api/reference/create-channel",
-      "destination": "/docs/api/reference/create-channel",
-      "permanent": true
-    },
-    {
-      "source": "/api/reference/create-cluster",
-      "destination": "/docs/api/reference/create-cluster",
-      "permanent": true
-    },
-    {
-      "source": "/api/reference/create-delivery-flow",
-      "destination": "/docs/api/reference/create-delivery-flow",
-      "permanent": true
-    },
-    {
-      "source": "/api/reference/create-destination",
-      "destination": "/docs/api/reference/create-destination",
-      "permanent": true
-    },
-    {
-      "source": "/api/reference/create-ingester",
-      "destination": "/docs/api/reference/create-ingester",
-      "permanent": true
-    },
-    {
-      "source": "/api/reference/health-check",
-      "destination": "/docs/api/reference/health-check",
-      "permanent": true
-    },
-    {
-      "source": "/api/reference/list-channels",
-      "destination": "/docs/api/reference/list-channels",
-      "permanent": true
-    },
-    {
-      "source": "/api/reference/list-clusters",
-      "destination": "/docs/api/reference/list-clusters",
-      "permanent": true
-    },
-    {
-      "source": "/api/reference/list-delivery-flows",
-      "destination": "/docs/api/reference/list-delivery-flows",
-      "permanent": true
-    },
-    {
-      "source": "/api/reference/list-destinations",
-      "destination": "/docs/api/reference/list-destinations",
-      "permanent": true
-    },
-    {
-      "source": "/api/reference/list-ingesters",
-      "destination": "/docs/api/reference/list-ingesters",
-      "permanent": true
-    },
-    {
-      "source": "/api/reference/list-integrations",
-      "destination": "/docs/api/reference/list-integrations",
-      "permanent": true
-    },
-    {
-      "source": "/api/reference/update-delivery-flow",
-      "destination": "/docs/api/reference/update-delivery-flow",
-      "permanent": true
-    },
-    {
-      "source": "/api/reference/update-destination",
-      "destination": "/docs/api/reference/update-destination",
-      "permanent": true
-    },
-    {
-      "source": "/api/reference/update-ingester",
-      "destination": "/docs/api/reference/update-ingester",
-      "permanent": true
-    },
-    {
-      "source": "/api/reference/readiness-check",
-      "destination": "/docs/api/reference/readiness-check",
-      "permanent": true
-    },
-    {
-      "source": "/api/reference/servicenow-webhook",
-      "destination": "/docs/api/reference/servicenow-webhook",
-      "permanent": true
-    },
-    {
-      "source": "/api/reference/slack-webhook",
-      "destination": "/docs/api/reference/slack-webhook",
-      "permanent": true
-    },
-    {
-      "source": "/api/reference/jira-webhook",
-      "destination": "/docs/api/reference/jira-webhook",
-      "permanent": true
-    },
-    {
-      "source": "/api/reference/pagerduty-webhook",
-      "destination": "/docs/api/reference/pagerduty-webhook",
-      "permanent": true
-    },
-    {
-      "source": "/api/reference/datadog-webhook",
-      "destination": "/docs/api/reference/datadog-webhook",
-      "permanent": true
-    },
-    {
-      "source": "/api/reference/get-channel",
-      "destination": "/docs/api/reference/get-channel",
-      "permanent": true
-    },
-    {
-      "source": "/api/reference/get-cluster",
-      "destination": "/docs/api/reference/get-cluster",
-      "permanent": true
-    },
-    {
-      "source": "/api/reference/get-delivery-flow",
-      "destination": "/docs/api/reference/get-delivery-flow",
-      "permanent": true
-    },
-    {
-      "source": "/api/reference/get-destination",
-      "destination": "/docs/api/reference/get-destination",
-      "permanent": true
-    },
-    {
-      "source": "/api/reference/get-ingester",
-      "destination": "/docs/api/reference/get-ingester",
-      "permanent": true
-    },
-    {
-      "source": "/api/reference/get-tenant",
-      "destination": "/docs/api/reference/get-tenant",
-      "permanent": true
-    },
-    {
-      "source": "/architecture/overview",
-      "destination": "/docs/architecture/overview",
-      "permanent": true
-    },
-    {
-      "source": "/architecture/platform-layers",
-      "destination": "/docs/architecture/platform-layers",
-      "permanent": true
-    },
-    {
-      "source": "/architecture/security-model",
-      "destination": "/docs/architecture/security-model",
-      "permanent": true
-    },
-    {
-      "source": "/architecture/three-plane-model",
-      "destination": "/docs/architecture/three-plane-model",
-      "permanent": true
-    },
-    {
-      "source": "/architecture/delivery-modes",
-      "destination": "/docs/architecture/delivery-modes",
-      "permanent": true
-    },
-    {
-      "source": "/architecture/api-docs-hosting-options",
-      "destination": "/docs/architecture/api-docs-hosting-options",
-      "permanent": true
-    },
-    {
-      "source": "/concepts/glossary",
-      "destination": "/docs/concepts/glossary",
-      "permanent": true
-    },
-    {
-      "source": "/delivery/(.*)",
-      "destination": "/docs/delivery/$1",
-      "permanent": true
-    },
-    {
-      "source": "/evidence/overview",
-      "destination": "/docs/evidence/overview",
-      "permanent": true
-    },
-    {
-      "source": "/evidence/runtime-convergence",
-      "destination": "/docs/evidence/runtime-convergence",
-      "permanent": true
-    },
-    {
-      "source": "/evidence/trust-lifecycle",
-      "destination": "/docs/evidence/trust-lifecycle",
-      "permanent": true
-    },
-    {
-      "source": "/evidence/validation-map",
-      "destination": "/docs/evidence/validation-map",
-      "permanent": true
-    },
-    {
-      "source": "/evidence/merkle-integrity",
-      "destination": "/docs/evidence/evidence-integrity",
-      "permanent": true
-    },
-    {
-      "source": "/docs/evidence/merkle-integrity",
-      "destination": "/docs/evidence/evidence-integrity",
-      "permanent": true
-    },
-    {
-      "source": "/evidence/completion-evidence",
-      "destination": "/docs/evidence/completion-evidence",
-      "permanent": true
-    },
-    {
-      "source": "/evidence/non-claims",
-      "destination": "/docs/evidence/non-claims",
-      "permanent": true
-    },
-    {
-      "source": "/EVIDENCE/docsai029/FINAL_REPORT",
-      "destination": "/docs/EVIDENCE/docsai029/FINAL_REPORT",
-      "permanent": true
-    },
-    {
-      "source": "/EVIDENCE/docsai029/artifact_index",
-      "destination": "/docs/EVIDENCE/docsai029/artifact_index",
-      "permanent": true
-    },
-    {
-      "source": "/getting-started/quick-start",
-      "destination": "/docs/getting-started/quick-start",
-      "permanent": true
-    },
-    {
-      "source": "/getting-started/customer-journey",
-      "destination": "/docs/getting-started/customer-journey",
-      "permanent": true
-    },
-    {
-      "source": "/getting-started/first-15-minutes",
-      "destination": "/docs/getting-started/first-15-minutes",
-      "permanent": true
-    },
-    {
-      "source": "/getting-started/first-webhook",
-      "destination": "/docs/getting-started/first-webhook",
-      "permanent": true
-    },
-    {
-      "source": "/getting-started/installation",
-      "destination": "/docs/getting-started/installation",
-      "permanent": true
-    },
-    {
-      "source": "/concepts/zen-mesh-concepts",
-      "destination": "/docs/concepts/zen-mesh-concepts",
-      "permanent": true
-    },
-    {
-      "source": "/concepts/control-surfaces",
-      "destination": "/docs/concepts/control-surfaces",
-      "permanent": true
-    },
-    {
-      "source": "/concepts/planes",
-      "destination": "/docs/concepts/planes",
-      "permanent": true
-    },
-    {
-      "source": "/install/(.*)",
-      "destination": "/docs/install/$1",
-      "permanent": true
-    },
-    {
-      "source": "/guides/cluster-enrollment",
-      "destination": "/docs/install/kubernetes-edge-plane",
-      "permanent": true
-    },
-    {
-      "source": "/guides/(.*)",
-      "destination": "/docs/guides/$1",
-      "permanent": true
-    },
-    {
-      "source": "/legal/(.*)",
-      "destination": "/docs/ARCHIVE/placeholder/legal/$1",
-      "permanent": true
-    },
-    {
-      "source": "/mcp/overview",
-      "destination": "/docs/mcp/overview",
-      "permanent": true
-    },
-    {
-      "source": "/mcp/draft-system",
-      "destination": "/docs/mcp/draft-system",
-      "permanent": true
-    },
-    {
-      "source": "/mcp/tools",
-      "destination": "/docs/mcp/tools",
-      "permanent": true
-    },
-    {
-      "source": "/mcp/read-only-v1-policy",
-      "destination": "/docs/mcp/read-only-v1-policy",
-      "permanent": true
-    },
-    {
-      "source": "/mcp/authentication-and-mtls",
-      "destination": "/docs/mcp/authentication-and-mtls",
-      "permanent": true
-    },
-    {
-      "source": "/mcp/examples",
-      "destination": "/docs/mcp/examples",
-      "permanent": true
-    },
-    {
-      "source": "/mcp/safety-and-boundaries",
-      "destination": "/docs/mcp/safety-and-boundaries",
-      "permanent": true
-    },
-    {
-      "source": "/networking/gateway-api-migration",
-      "destination": "/docs/networking/gateway-api-migration",
-      "permanent": true
-    },
-    {
-      "source": "/operations/upgrades",
-      "destination": "/docs/operations/upgrades",
-      "permanent": true
-    },
-    {
-      "source": "/providerflow/template-packs",
-      "destination": "/docs/providerflow/template-packs",
-      "permanent": true
-    },
-    {
-      "source": "/providerflow/nonclaims",
-      "destination": "/docs/providerflow/nonclaims",
-      "permanent": true
-    },
-    {
-      "source": "/reference/helm-chart",
-      "destination": "/docs/reference/helm-chart",
-      "permanent": true
-    },
-    {
-      "source": "/reference/cli",
-      "destination": "/docs/reference/cli",
-      "permanent": true
-    },
-    {
-      "source": "/reference/api",
-      "destination": "/docs/reference/api",
-      "permanent": true
-    },
-    {
-      "source": "/reference/customer-api",
-      "destination": "/docs/reference/customer-api",
-      "permanent": true
-    },
-    {
-      "source": "/reference/mcp",
-      "destination": "/docs/reference/mcp",
-      "permanent": true
-    },
-    {
-      "source": "/reference/configuration",
-      "destination": "/docs/reference/configuration",
-      "permanent": true
-    },
-    {
-      "source": "/reference/ui-api-map",
-      "destination": "/docs/reference/ui-api-map",
-      "permanent": true
-    },
-    {
-      "source": "/reference/current-status",
-      "destination": "/docs/reference/current-status",
-      "permanent": true
-    },
-    {
-      "source": "/reference/webhook-delivery-evidence",
-      "destination": "/docs/reference/webhook-delivery-evidence",
-      "permanent": true
-    },
-    {
-      "source": "/reference/webhook-observability-and-evidence",
-      "destination": "/docs/reference/webhook-observability-and-evidence",
-      "permanent": true
-    },
-    {
-      "source": "/reference/delivery-status",
-      "destination": "/docs/reference/delivery-status",
-      "permanent": true
-    },
-    {
-      "source": "/reference/webhook-faq",
-      "destination": "/docs/reference/webhook-faq",
-      "permanent": true
-    },
-    {
-      "source": "/runbooks/(.*)",
-      "destination": "/docs/runbooks/$1",
-      "permanent": true
-    },
-    {
-      "source": "/security/tenant-isolation",
-      "destination": "/docs/security/tenant-isolation",
-      "permanent": true
-    },
-    {
-      "source": "/security/(.*)",
-      "destination": "/docs/security/$1",
-      "permanent": true
-    },
-    {
-      "source": "/start-here/(.*)",
-      "destination": "/docs/start-here/$1",
-      "permanent": true
-    },
-    {
-      "source": "/docs/operations/zen-gc",
-      "destination": "/zen-gc",
-      "permanent": true
+      "source": "/zen-gc/:path*",
+      "destination": "https://www.zen-mesh.io/docs/zen-gc/:path*",
+      "statusCode": 308
     }
   ],
   "headers": [

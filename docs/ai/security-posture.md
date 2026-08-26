@@ -32,7 +32,7 @@ Do not use “eliminates,” “replay-proof,” “SSRF-safe,” or bare “sec
 |----------|-----|
 | **AI discovery registry (freshness)** | [`../ai/evidence-v1-supersession.md### AI Discovery Registry`](../ai/evidence-v1-supersession.md### AI Discovery Registry) |
 | **V1 security validation summary (human)** | [`v1-security-validation-summary.md`](v1-security-validation-summary) — 20 attacks classified (18 proven, 1 cloud-gated, 1 not claimed) |
-| **V1 security validation summary (JSON)** | [`v1-security-validation-summary.json`](https://docs.zen-mesh.io/ai/security/v1/v1-security-validation-summary.json) — machine-readable summary |
+| **V1 security validation summary (JSON)** | [`v1-security-validation-summary.json`](https://www.zen-mesh.io/docs/ai/security/v1/v1-security-validation-summary.json) — machine-readable summary |
 | **Claim maturity (canonical)** | [`ai/security-posture.md`](ai/security-posture.md) |
 | Attack model | [`ai/security-posture.md`](ai/security-posture.md) |
 | Security primitives | [`ai/security-posture.md`](ai/security-posture.md) |

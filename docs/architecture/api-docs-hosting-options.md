@@ -13,7 +13,7 @@ suggested. This document evaluates the options.
 
 ## Current state
 
-- **Docs site:** Docusaurus 3.x on Vercel at `docs.zen-mesh.io`
+- **Docs site:** Docusaurus 3.x on Vercel at `www.zen-mesh.io/docs`
 - **API reference:** Inside Docusaurus under `/docs/api/reference/` (generated MDX pages from OpenAPI spec)
 - **OpenAPI spec:** `api-specifications/zen-back.v1.yaml`
 - **Spectral linting:** Applied to the OpenAPI spec as part of CI
@@ -57,9 +57,9 @@ Publish a separate Scalar static API reference site to GitHub Pages.
 | Aspect | Assessment |
 |--------|------------|
 | Pros | Decoupled API docs pipeline; Scalar-native rendering; independent deploy from main docs; fast CI for spec-only changes |
-| Cons | **Two docs surfaces** with different nav/search/branding; users must context-switch; GitHub Pages must be enabled for this org/repo; potential DNS split (api-docs.zen-mesh.io vs docs.zen-mesh.io/api); additional CI maintenance |
+| Cons | **Two docs surfaces** with different nav/search/branding; users must context-switch; GitHub Pages must be enabled for this org/repo; potential DNS split (api-www.zen-mesh.io/docs vs www.zen-mesh.io/docs/api); additional CI maintenance |
 | Hosting | GitHub Pages |
-| DNS | Needs subdomain or path config; `api-docs.zen-mesh.io` or `docs.zen-mesh.io/api` forwarded |
+| DNS | Needs subdomain or path config; `api-www.zen-mesh.io/docs` or `www.zen-mesh.io/docs/api` forwarded |
 | CI | Separate workflow (build + deploy to gh-pages) |
 | Security | Public by design; GitHub Pages is CDN-only, no auth |
 | Maintenance | High — two deploy pipelines, two UIs, two update cadences |
@@ -70,10 +70,10 @@ Publish a second Vercel project or route for Scalar-based API reference.
 
 | Aspect | Assessment |
 |--------|------------|
-| Pros | Same hosting provider; same CDN; could be a sub-path of docs.zen-mesh.io via Vercel rewrites |
+| Pros | Same hosting provider; same CDN; could be a sub-path of www.zen-mesh.io/docs via Vercel rewrites |
 | Cons | Multiple Vercel projects or monorepo config; second deploy surface; still separate from Docusaurus nav |
 | Hosting | Vercel (new project or route) |
-| DNS | docs.zen-mesh.io/api (rewrite) or new project domain |
+| DNS | www.zen-mesh.io/docs/api (rewrite) or new project domain |
 | CI | Additional Vercel deployment |
 | Security | Same as current |
 | Maintenance | Medium — manage additional Vercel project/route config |

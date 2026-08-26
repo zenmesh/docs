@@ -73,9 +73,9 @@ See [Planes](../concepts/planes) and [Choose a Runtime Path](../install/choose-r
 
 | Control | Where it applies | Evidence reference |
 |---------|-----------------|-------------------|
-| **mTLS** | Internal control-plane and data-plane paths | [wedge-claim-map.json](https://docs.zen-mesh.io/ai/evidence/v1/wedge-claim-map.json) |
-| **SPIFFE/SPIRE** | Workload identity on Zen-managed internal paths | [wedge-claim-map.json](https://docs.zen-mesh.io/ai/evidence/v1/wedge-claim-map.json) |
-| **HMAC** | Agent → control-plane payload verification | [claim-maturity.json](https://docs.zen-mesh.io/ai/security/v1/claim-maturity.json) |
+| **mTLS** | Internal control-plane and data-plane paths | [wedge-claim-map.json](https://www.zen-mesh.io/docs/ai/evidence/v1/wedge-claim-map.json) |
+| **SPIFFE/SPIRE** | Workload identity on Zen-managed internal paths | [wedge-claim-map.json](https://www.zen-mesh.io/docs/ai/evidence/v1/wedge-claim-map.json) |
+| **HMAC** | Agent → control-plane payload verification | [claim-maturity.json](https://www.zen-mesh.io/docs/ai/security/v1/claim-maturity.json) |
 
 External provider ingress uses provider-specific signature verification. See [Security Controls](../security/).
 

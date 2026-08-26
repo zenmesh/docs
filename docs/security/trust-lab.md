@@ -87,7 +87,7 @@ Trust Scenarios and Security Validation Suite scenarios share the same determini
 
 ## Status
 
-Trust Lab is under active development. Not all scenarios listed above are implemented. See the [capability manifest](https://docs.zen-mesh.io/ai/evidence/v1/manifest.json) for current proof_status per scenario.
+Trust Lab is under active development. Not all scenarios listed above are implemented. See the [capability manifest](https://www.zen-mesh.io/docs/ai/evidence/v1/manifest.json) for current proof_status per scenario.
 
 ## Related
 

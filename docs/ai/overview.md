@@ -37,9 +37,9 @@ The public product scope is the **webhook operations wedge** — Stripe, GitHub,
 
 | Endpoint | Description |
 |---|---|---|
-| [`manifest.json`](https://docs.zen-mesh.io/ai/evidence/v1/manifest.json) | Full platform capability manifest with proof_status |
-| [`compliance-map.json`](https://docs.zen-mesh.io/ai/evidence/v1/compliance-map.json) | Compliance framework to feature graph |
-| [`non-claims.json`](https://docs.zen-mesh.io/ai/evidence/v1/non-claims.json) | Full platform non-claims by category |
+| [`manifest.json`](https://www.zen-mesh.io/docs/ai/evidence/v1/manifest.json) | Full platform capability manifest with proof_status |
+| [`compliance-map.json`](https://www.zen-mesh.io/docs/ai/evidence/v1/compliance-map.json) | Compliance framework to feature graph |
+| [`non-claims.json`](https://www.zen-mesh.io/docs/ai/evidence/v1/non-claims.json) | Full platform non-claims by category |
 | `ai/evidence-v1-supersession.md#wedge-claim-map` | Stripe webhook wedge claim matrix |
 | `ai/evidence-v1-supersession.md#non-claims` | Wedge-scope non-claims |
 | `ai/evidence-v1-supersession.md#manifest` | Full platform manifest (supersession) |

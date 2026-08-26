@@ -25,10 +25,10 @@ This guide explains how an external AI agent should discover, inspect, and opera
 | Surface | Read | Write | Discovery Entry Point |
 |---------|------|-------|----------------------|
 | UI dashboard | Yes | Yes | https://app.zenmesh.io |
-| API | Yes | Yes | https://docs.zen-mesh.io/docs/api/overview |
-| MCP (read) | Yes | No (default) | https://docs.zen-mesh.io/docs/mcp/overview |
-| MCP (write) | Requires enablement | Requires enablement | https://docs.zen-mesh.io/docs/mcp/safety-and-boundaries |
-| CLI | Yes | Yes | https://docs.zen-mesh.io/docs/reference/cli |
+| API | Yes | Yes | https://www.zen-mesh.io/docs/docs/api/overview |
+| MCP (read) | Yes | No (default) | https://www.zen-mesh.io/docs/docs/mcp/overview |
+| MCP (write) | Requires enablement | Requires enablement | https://www.zen-mesh.io/docs/docs/mcp/safety-and-boundaries |
+| CLI | Yes | Yes | https://www.zen-mesh.io/docs/docs/reference/cli |
 | Git | No | No | Not implemented |
 
 ### Discovery Files

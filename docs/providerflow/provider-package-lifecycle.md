@@ -34,4 +34,4 @@ processes are documented only when approved for public release.
 
 ## Related
 
-- [Post-Cloud Validation Plan](https://docs.zen-mesh.io/ai/v1/provider-live-validation-plan.json)
+- [Post-Cloud Validation Plan](https://www.zen-mesh.io/docs/ai/v1/provider-live-validation-plan.json)

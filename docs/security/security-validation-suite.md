@@ -95,7 +95,7 @@ These scenarios are V1_BLOCKER until Hermes R22 proves end-to-end enrollment, ve
 
 ## Status
 
-The Security Validation Suite is under active development. Scenario coverage varies by provider. See the [capability manifest](https://docs.zen-mesh.io/ai/evidence/v1/manifest.json) for current proof_status per security control.
+The Security Validation Suite is under active development. Scenario coverage varies by provider. See the [capability manifest](https://www.zen-mesh.io/docs/ai/evidence/v1/manifest.json) for current proof_status per security control.
 
 ## Related
 

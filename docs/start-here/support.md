@@ -12,7 +12,7 @@ Get help with Zen Mesh setup, configuration, and troubleshooting.
 | Channel | Details |
 |---------|---------|
 | **Email** | [support@zen-mesh.io](mailto:support@zen-mesh.io) |
-| **Documentation** | [docs.zen-mesh.io](https://docs.zen-mesh.io) |
+| **Documentation** | [www.zen-mesh.io/docs](https://www.zen-mesh.io/docs) |
 | **Issue Tracker** | [GitHub Issues](https://github.com/zenmesh/zen-platform/issues) |
 | **Source Repository** | [github.com/zenmesh/zen-platform](https://github.com/zenmesh/zen-platform) |
 
@@ -20,7 +20,7 @@ Get help with Zen Mesh setup, configuration, and troubleshooting.
 
 Check these resources first:
 
-- **Documentation**: Browse the [docs site](https://docs.zen-mesh.io) for guides, tutorials, and reference material
+- **Documentation**: Browse the [docs site](https://www.zen-mesh.io/docs) for guides, tutorials, and reference material
 - **Troubleshooting**: Review the [Operations Guide](../operations/troubleshooting) for common issues
 - **Webhook FAQ**: See the [Webhook FAQ](../reference/webhook-faq) for frequently asked questions about webhook delivery
 

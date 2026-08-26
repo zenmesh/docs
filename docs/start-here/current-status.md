@@ -48,7 +48,7 @@ The following capabilities are not yet publicly documented. They remain gated on
 |---|---|---|
 | Event normalization | Internal contract only (no runtime implementation) | WP-011 MISSING |
 | Observability dashboards | Internal OBS evidence, no runtime customer-facing dashboards | OBS-001 PARTIAL |
-| AI capability index (public) | Index exists in private repo, not published on docs.zen-mesh.io | Infrastructure — requires docs site changes outside docs-only scope |
+| AI capability index (public) | Index exists in private repo, not published on www.zen-mesh.io/docs | Infrastructure — requires docs site changes outside docs-only scope |
 | RBAC/ABAC authorization | Active development — pending runtime proof | Active, not accepted |
 
 These items are tracked and will be documented publicly as implementations mature.
