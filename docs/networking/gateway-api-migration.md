@@ -1,14 +1,23 @@
-# Gateway API Migration Readiness
+# Gateway API Implementation Status
 
-**Status:** Planning — inventory and modeling only. No runtime migration performed.
-**Last Updated:** 2026-05-24
-**Related Evidence:** [gateway_api_migration_readiness.json](https://github.com/zenmesh/zen-platform/blob/main/docs/80-EVIDENCE/gateway-api/gateway_api_migration_readiness.json)
+**Status:** Gateway API is mandatory from day 0 for CONTROL and DATA planes, recommended/default for EDGE plane.
+
+**Last Updated:** 2026-08-26
 
 ---
 
 ## Purpose
 
-This page documents the readiness state for migrating Zen Mesh from Kubernetes Ingress (networking.k8s.io/v1) to Gateway API. It is **planning and inventory only** — no runtime traffic cutover has been performed.
+This page documents the Gateway API implementation status and requirements across Zen Mesh deployment planes.
+
+## Gateway API Policy
+
+| Plane | Gateway API Requirement | Implementation |
+|-------|------------------------|----------------|
+| **CONTROL / SAAS** | **Mandatory from day 0** | Implemented |
+| **DATA** | **Mandatory from day 0** | Implemented |
+| **EDGE** | **Recommended / default** | Implemented |
+| **EDGE COMPATIBILITY** | Kubernetes networking.k8s.io/v1 Ingress supported for some time | Legacy fallback |
 
 ## Why Gateway API
 
@@ -18,16 +27,37 @@ Gateway API provides:
 - **Protocol-native routing** — GRPCRoute, TCPRoute, TLSRoute beyond HTTP
 - **Portable cross-provider config** — less vendor lock-in than nginx-specific annotations
 
-## Current State
+## Current Implementation
 
-All Zen Mesh routing currently uses **Kubernetes Ingress** with the **nginx** ingress class.
+All Zen Mesh routing uses **Gateway API v1.0+** as the primary routing mechanism:
 
-## Hostname Ownership
+| Host | Plane | Owner | Gateway Class |
+|---|---|---|-------------|
+| internal control-plane host | Control Plane | Hermes (UI) | gateway-frontend |
+| api.zen-mesh.io | Control Plane | nanobot | gateway-api |
 
-| Host | Plane | Owner | Ingress Template |
-|---|---|---|---|
-| internal control-plane host (not publicly reachable) | Control Plane | Hermes (UI) | ingress-frontend.yaml |
-| api.zen-mesh.io | Control Plane | nanobot | ingress-api.yaml |
+| gateway-api | Control Plane | 12 control-plane API routes | active |
+| gateway-app | Data Plane | 15 data-plane API routes | active |
+| gateway-dp | Data Plane | 5 data-plane delivery routes | active |
+| gateway-platform | Data Plane | 4 foundation routes | active |
+| gateway-m2m | Data Plane | m2m communication | active |
+
+## HTTPRoute/GRPCRoute Resources
+
+All Zen Mesh HTTPRoute and GRPCRoute resources are modeled and deployed:
+
+- ✅ All HTTPRoute/GRPCRoute resources created in appropriate clusters
+- ✅ Gateway API v1.0+ CRDs installed
+- ✅ TLS configuration and certificate management
+- ✅ Role-based access control for Gateway API resources
+
+## Legacy Ingress Support
+
+For **EDGE COMPATIBILITY**, Kubernetes networking.k8s.io/v1 Ingress is supported for some time to ease migration:
+
+- Legacy Ingress resources are automatically converted to Gateway API equivalents where possible
+- Mixed deployment environments are supported during transition period
+- Full deprecation timeline and migration path is documented separately
 | ingest.zen-mesh.io | Data Plane | nanobot | ingress-webhook.yaml |
 | platform.zen-mesh.io | Control Plane | nanobot | customer-api-ingress.yaml, mcp-ingress.yaml |
 | m2m.zenmesh.io | Control Plane | nanobot | ingress-m2m.yaml |
