@@ -6,7 +6,7 @@ import styles from './index.module.css';
 const faqItems = [
   {
     q: 'How does Zen Mesh deliver webhooks to private networks without opening inbound ports?',
-    a: 'Zen Mesh uses an outbound-only Edge Plane. The zen-agent in your network establishes an outbound connection to Zen Mesh, then receives delivery over that persistent tunnel. No inbound firewall rules, no VPN, no reverse proxy.',
+    a: 'Zen Mesh uses an outbound-only Edge Plane. zen-egress in your network establishes an outbound connection to Zen Mesh data plane for delivery. zen-agent handles enrollment and configuration sync but never carries customer payloads. No inbound firewall rules, no VPN, no reverse proxy.',
   },
   {
     q: 'What security controls protect webhook delivery?',
