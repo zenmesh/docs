@@ -156,6 +156,22 @@ const config: Config = {
         title: 'Marketing site AI context',
       },
     },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'apple-touch-icon',
+        sizes: '180x180',
+        href: '/img/apple-touch-icon-180.png',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'apple-touch-icon',
+        sizes: '192x192',
+        href: '/img/apple-touch-icon-192.png',
+      },
+    },
     ...docsStructuredDataBlocks.map((block) => ({
       tagName: 'script',
       attributes: {
