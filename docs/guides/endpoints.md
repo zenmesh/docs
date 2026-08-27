@@ -85,4 +85,4 @@ Events flow: Source → **Endpoint** → Delivery Flow → **Target**
 
 - [Sources (Legacy)](./sources) — supported webhook provider reference
 - [Targets API](../api/targets) — target service configuration
-- [API Reference: Ingesters](/docs/zen-mesh/api/reference/kubezen-back-api)
+- [API Reference: Ingesters](/swagger-ui.html)

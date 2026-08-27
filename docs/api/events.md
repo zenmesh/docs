@@ -43,4 +43,4 @@ Evidence tools provide structured proof that specific capabilities are implement
 - `list_non_claims` — See [non-claims](../ai/non-claims) for explicit non-claims documentation organized by category
 - `list_integrity_evidence_refs` — Integrity receipt metadata
 
-See [Back API Reference](/docs/zen-mesh/api/reference/kubezen-back-api) for generated endpoint documentation.
+See [Back API Reference](/swagger-ui.html) for generated endpoint documentation.

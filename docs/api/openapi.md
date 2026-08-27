@@ -10,10 +10,10 @@ Zen Mesh publishes OpenAPI 3.0.3 specifications covering the public and app-faci
 
 ## Available specs
 
-| Spec | File | Lines | Coverage | Status | In Docusaurus |
-|------|------|-------|----------|--------|---------------|
-| **KubeZen Back API** | `api-specifications/zen-back.v1.yaml` | 1,265 | Backend public API (targets/endpoints/flows/deliveries) | DRAFT — wired in openapi-docs plugin | Yes |
-| **Zen Mesh User API** | `static/openapi/zen-mesh-user-api.v1.yaml` | 2,021 | Same surface with code samples (curl, Python, JS) | DRAFT — static file only, not plugin-rendered | No (static) |
+| Spec | File | Lines | Coverage | Status | Interactive UI |
+|------|------|-------|----------|--------|----------------|
+| **KubeZen Back API** | `api-specifications/zen-back.v1.yaml` | 1,265 | Backend public API (targets/endpoints/flows/deliveries) | DRAFT — wired in swagger.io UI | Yes |
+| **Zen Mesh User API** | `static/openapi/zen-mesh-user-api.v1.yaml` | 2,021 | Same surface with code samples (curl, Python, JS) | DRAFT — static file only | Yes |
 | **BFF API** | `src/saas/bff/openapi/zen-bff.v1.yaml` | — | Dashboard BFF surface | INTERNAL_ONLY — outside docs repo | No |
 
 ## Coverage table
@@ -73,11 +73,15 @@ npx oasdiff changelog api-specifications/zen-back.v1.yaml <previous-version>.yam
 ## Non-claims
 
 - OpenAPI specs are maintained alongside docs but may trail the current runtime.
-- The User API spec (`static/openapi/`) is provided as a static reference but is not rendered via the Docusaurus OpenAPI plugin.
+- The User API spec (`static/openapi/`) is provided as a static reference.
 - The BFF spec is NOT in this repository; it is internal to the dashboard app.
 - Specs are DRAFT status unless explicitly marked PUBLIC_CONTRACT_STABLE.
 - Several endpoint groups (Retry, Saved Payloads, Traces, DLQ) are not covered by any published spec.
 - Coverage varies by HTTP method even within covered groups.
+
+## Interactive API Console
+
+Try all operations live with the official [Swagger UI](/swagger-ui.html) — powered by swagger.io, not Docusaurus plugins.
 
 ## Related
 

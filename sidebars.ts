@@ -210,6 +210,11 @@ const sidebars: SidebarsConfig = {
       label: 'API Reference',
       items: [
         'api/overview',
+        {
+          type: 'link',
+          label: 'Interactive API Console',
+          href: '/swagger-ui.html',
+        },
         'api/status',
         'api/write-safety',
         {

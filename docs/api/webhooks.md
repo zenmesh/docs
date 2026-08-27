@@ -8,7 +8,7 @@ The Zen Mesh webhook delivery API receives, validates, and delivers webhook even
 
 ## Endpoints
 
-See the [Back API Reference](/docs/zen-mesh/api/reference/kubezen-back-api) for the full endpoint list and schema.
+See the [Back API Reference](/swagger-ui.html) for the full endpoint list and schema.
 
 ## Delivery Flow
 
