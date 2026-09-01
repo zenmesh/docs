@@ -5,7 +5,7 @@
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
-    "build": "docusaurus build && node scripts/build-manifest-routes-test.mjs && node scripts/validate-ai-evidence.js",
+    "build": "docusaurus build && node scripts/build-manifest-routes-test.mjs && node scripts/validate-ai-evidence.js && node scripts/post-build-copy-swagger.js",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
@@ -42,7 +42,6 @@
     "@docusaurus/theme-mermaid": "^3.10.0",
     "@mdx-js/react": "^3.0.0",
     "clsx": "^2.0.0",
-
     "prism-react-renderer": "^2.3.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
@@ -52,6 +51,7 @@
     "@docusaurus/tsconfig": "3.10.0",
     "@docusaurus/types": "3.10.0",
     "@types/react": "^19.0.0",
+    "swagger-ui-dist": "^5.20.7",
     "typescript": "~6.0.2",
     "webpack": "^5.97.0"
   },

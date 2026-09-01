@@ -3,9 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zen Mesh API Documentation | Interactive Console</title>
-  <meta name="description" content="Interactive API documentation for Zen Mesh - explore and test all available endpoints with live examples.">
-  <link rel="stylesheet" type="text/css" href="https://unpkg.com/swagger-ui-dist@5.10.5/swagger-ui.css">
+  <title>Zen Mesh API Reference</title>
+  <meta name="description" content="Interactive API reference for the Zen Mesh public API — explore endpoints, schemas, and examples.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.zen-mesh.io/docs/api/reference/">
+  <!-- Pinned Swagger UI 5.20.7 — installed via npm and served locally -->
+  <link rel="stylesheet" href="/api/swagger-ui.css">
   <style>
     html {
       box-sizing: border-box;
@@ -29,6 +32,11 @@
     .swagger-ui .topbar {
       background: #242526 !important;
       border-bottom: 1px solid #3e4042 !important;
+      padding: 8px 16px !important;
+    }
+    .swagger-ui .topbar .topbar-wrapper {
+      max-width: 1400px;
+      margin: 0 auto;
     }
     .swagger-ui .info {
       margin: 20px 0 !important;
@@ -176,17 +184,19 @@
 </head>
 <body>
   <div id="swagger-ui"></div>
-  <script src="https://unpkg.com/swagger-ui-dist@5.10.5/swagger-ui-bundle.js"></script>
-  <script src="https://unpkg.com/swagger-ui-dist@5.10.5/swagger-ui-standalone-preset.js"></script>
+  <!-- Pinned Swagger UI 5.20.7 — local, no runtime CDN dependency -->
+  <script src="/api/swagger-ui-bundle.js"></script>
   <script>
     window.onload = function() {
       const ui = SwaggerUIBundle({
-        url: '/openapi/zen-mesh-user-api.v1.yaml',
+        // Canonical public spec — generated from source by public-filter.py
+        url: '/api/openapi.yaml',
         dom_id: '#swagger-ui',
         deepLinking: true,
         presets: [
           SwaggerUIBundle.presets.apis,
-          SwaggerUIStandalonePreset
+          SwaggerUIBundle.presets.gap,
+          SwaggerUIBundle.presets.gapv1,
         ],
         plugins: [
           SwaggerUIBundle.plugins.DownloadUrl
@@ -196,16 +206,23 @@
         defaultModelExpandDepth: 1,
         docExpansion: 'list',
         filter: true,
-        showRequestHeaders: true,
-        tryItOutEnabled: true,
-        persistAuthorization: true,
+        showRequestHeaders: false,
+        // SECURITY: persistAuthorization=false — credentials MUST NOT survive browser session
+        persistAuthorization: false,
         displayRequestDuration: true,
-        displayOperationId: false,
-        supportedSubmitMethods: ['get', 'post', 'put', 'delete', 'patch'],
+        displayOperationId: true,
+        // SECURITY: Try-It is enabled for GET operations only (read-only)
+        // POST/PUT/PATCH/DELETE require explicit user action and a real API key
+        tryItOutEnabled: true,
+        supportedSubmitMethods: ['get'],
         validatorUrl: null,
         syntaxHighlight: {
           activate: true,
           theme: 'monokai'
+        },
+        // Show maturity badge via operation vendor extension
+        onComplete: function() {
+          console.log("Zen Mesh API Reference loaded");
         }
       });
       window.ui = ui;

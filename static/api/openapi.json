@@ -1,0 +1,2360 @@
+{
+  "components": {
+    "responses": {
+      "BadRequest": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "properties": {
+                "details": {
+                  "type": "object"
+                },
+                "error": {
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            }
+          }
+        },
+        "description": "Invalid request"
+      },
+      "NotFound": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "properties": {
+                "error": {
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            }
+          }
+        },
+        "description": "Resource not found"
+      },
+      "Unauthorized": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "properties": {
+                "error": {
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            }
+          }
+        },
+        "description": "Authentication required or failed"
+      }
+    },
+    "schemas": {
+      "Channel": {
+        "properties": {
+          "cluster_id": {
+            "type": "string"
+          },
+          "config": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "active",
+              "inactive",
+              "pending"
+            ],
+            "type": "string"
+          },
+          "tenant_id": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "ChannelCreateRequest": {
+        "properties": {
+          "config": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "config"
+        ],
+        "type": "object"
+      },
+      "Cluster": {
+        "properties": {
+          "certificate_mode": {
+            "default": "platform-managed",
+            "description": "Certificate management mode",
+            "enum": [
+              "platform-managed",
+              "customer-managed"
+            ],
+            "type": "string"
+          },
+          "certificate_owner": {
+            "description": "Owner of the certificate (optional, for customer-managed mode)",
+            "enum": [
+              "zen",
+              "customer"
+            ],
+            "type": "string"
+          },
+          "created_at": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "environment": {
+            "description": "Deployment environment (production, staging, dev)",
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "ingress_host": {
+            "description": "Canonical Data Plane ingress host (<provider>-<region>.ingesters[.<env>].zen-mesh.io)",
+            "type": "string"
+          },
+          "ingress_public_ip": {
+            "description": "Static IP for dedicated plans (optional)",
+            "type": "string"
+          },
+          "last_seen": {
+            "description": "Last time the cluster was seen",
+            "format": "date-time",
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "provider": {
+            "description": "Cloud provider (aws, gcp, azure, on-prem)",
+            "type": "string"
+          },
+          "region": {
+            "description": "Cloud region where the cluster is deployed",
+            "type": "string"
+          },
+          "rotation_policy": {
+            "description": "Certificate rotation policy (optional)",
+            "enum": [
+              "canary",
+              "abrupt"
+            ],
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "registered",
+              "active",
+              "degraded",
+              "offline"
+            ],
+            "type": "string"
+          },
+          "tenant_id": {
+            "type": "string"
+          },
+          "updated_at": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "version": {
+            "description": "Kubernetes version",
+            "type": "string"
+          },
+          "zen_bridge_endpoint": {
+            "deprecated": true,
+            "description": "Bridge endpoint for PORTAL URL construction (deprecated, use ingress_host)",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "ClusterCreateRequest": {
+        "properties": {
+          "certificate_mode": {
+            "default": "platform-managed",
+            "description": "Certificate management mode",
+            "enum": [
+              "platform-managed",
+              "customer-managed"
+            ],
+            "type": "string"
+          },
+          "certificate_owner": {
+            "description": "Owner of the certificate",
+            "enum": [
+              "zen",
+              "customer"
+            ],
+            "type": "string"
+          },
+          "environment": {
+            "description": "Deployment environment",
+            "type": "string"
+          },
+          "ingress_host": {
+            "description": "Canonical Data Plane ingress host for this cluster",
+            "type": "string"
+          },
+          "ingress_public_ip": {
+            "description": "Static IP for dedicated plans",
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "provider": {
+            "description": "Cloud provider (aws, gcp, azure, on-prem)",
+            "type": "string"
+          },
+          "region": {
+            "description": "Cloud region",
+            "type": "string"
+          },
+          "rotation_policy": {
+            "description": "Certificate rotation policy",
+            "enum": [
+              "canary",
+              "abrupt"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ],
+        "type": "object"
+      },
+      "DeliveryFlow": {
+        "properties": {
+          "cluster_id": {
+            "type": "string"
+          },
+          "created_at": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "destination_id": {
+            "type": "string"
+          },
+          "filters": {
+            "items": {
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "id": {
+            "type": "string"
+          },
+          "ingester_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "rendered_yaml": {
+            "type": "string"
+          },
+          "tenant_id": {
+            "type": "string"
+          },
+          "transformations": {
+            "items": {
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "updated_at": {
+            "format": "date-time",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "DeliveryFlowCreateRequest": {
+        "properties": {
+          "destination_id": {
+            "type": "string"
+          },
+          "filters": {
+            "items": {
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "ingester_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "transformations": {
+            "items": {
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "name",
+          "ingester_id",
+          "destination_id"
+        ],
+        "type": "object"
+      },
+      "DeliveryFlowUpdateRequest": {
+        "properties": {
+          "destination_id": {
+            "type": "string"
+          },
+          "filters": {
+            "items": {
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "ingester_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "transformations": {
+            "items": {
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "type": "object"
+      },
+      "Destination": {
+        "properties": {
+          "cluster_id": {
+            "type": "string"
+          },
+          "config": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "created_at": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "rendered_yaml": {
+            "type": "string"
+          },
+          "tenant_id": {
+            "type": "string"
+          },
+          "type": {
+            "enum": [
+              "siem",
+              "webhook",
+              "email",
+              "slack",
+              "servicenow",
+              "jira",
+              "datadog",
+              "pagerduty"
+            ],
+            "type": "string"
+          },
+          "updated_at": {
+            "format": "date-time",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "DestinationCreateRequest": {
+        "properties": {
+          "config": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "name": {
+            "type": "string"
+          },
+          "type": {
+            "enum": [
+              "siem",
+              "webhook",
+              "email",
+              "slack",
+              "servicenow",
+              "jira",
+              "datadog",
+              "pagerduty"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "type",
+          "config"
+        ],
+        "type": "object"
+      },
+      "DestinationUpdateRequest": {
+        "properties": {
+          "config": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "Ingester": {
+        "properties": {
+          "cluster_id": {
+            "type": "string"
+          },
+          "config": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "created_at": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "rendered_yaml": {
+            "type": "string"
+          },
+          "tenant_id": {
+            "type": "string"
+          },
+          "type": {
+            "enum": [
+              "kubernetes",
+              "prometheus",
+              "opensearch",
+              "Loki"
+            ],
+            "type": "string"
+          },
+          "updated_at": {
+            "format": "date-time",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "IngesterCreateRequest": {
+        "properties": {
+          "config": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "name": {
+            "type": "string"
+          },
+          "type": {
+            "enum": [
+              "kubernetes",
+              "prometheus",
+              "opensearch",
+              "Loki"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "type",
+          "config"
+        ],
+        "type": "object"
+      },
+      "IngesterUpdateRequest": {
+        "properties": {
+          "config": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "Integration": {
+        "properties": {
+          "config_schema": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "description": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "type": {
+            "enum": [
+              "slack",
+              "servicenow",
+              "jira",
+              "datadog",
+              "pagerduty"
+            ],
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "Tenant": {
+        "properties": {
+          "created_at": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "updated_at": {
+            "format": "date-time",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      }
+    },
+    "securitySchemes": {
+      "tenantAuth": {
+        "bearerFormat": "Bearer",
+        "description": "Tenant-scoped Bearer token.",
+        "scheme": "bearer",
+        "type": "http"
+      },
+      "zenHmacAuth": {
+        "description": "HMAC-SHA256 signature for webhook provider verification.",
+        "in": "header",
+        "name": "X-ZenMesh-Signature",
+        "type": "apiKey"
+      }
+    }
+  },
+  "info": {
+    "contact": {
+      "email": "support@zen-mesh.io",
+      "name": "Zen Mesh",
+      "url": "https://zen-mesh.io"
+    },
+    "description": "REST API for Zen Mesh — webhook delivery platform for public and private networks.",
+    "license": {
+      "name": "Apache 2.0",
+      "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "title": "Zen Mesh API",
+    "version": "1.0.0"
+  },
+  "openapi": "3.0.3",
+  "paths": {
+    "/health": {
+      "get": {
+        "operationId": "healthCheck",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "status": {
+                      "enum": [
+                        "ok",
+                        "degraded"
+                      ],
+                      "type": "string"
+                    },
+                    "version": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Service is healthy"
+          }
+        },
+        "summary": "Health check",
+        "tags": [
+          "Health"
+        ],
+        "x-codeSamples": [
+          {
+            "label": "curl",
+            "lang": "curl",
+            "source": "curl \\\n  -sS \\\n  -H \\\n  Authorization: Bearer $ZEN_API_TOKEN \\\n  -H \\\n  Content-Type: application/json \\\n  \"https://api.zen-mesh.io/v1/health\""
+          },
+          {
+            "label": "Python",
+            "lang": "Python",
+            "source": "import os\nimport requests\n\nbase_url = os.environ[\"ZEN_API_BASE\"].rstrip(\"/\")\ntoken = os.environ[\"ZEN_API_TOKEN\"]\n\nresponse = requests.get(\n    f\"https://api.zen-mesh.io/v1/health\",\n    headers={\n        \"Authorization\": f\"Bearer {token}\",\n        \"Content-Type\": \"application/json\",\n    },\n    timeout=30,\n)\nresponse.raise_for_status()\nprint(response.json())"
+          },
+          {
+            "label": "JavaScript",
+            "lang": "JavaScript",
+            "source": "const baseUrl = process.env.ZEN_API_BASE.replace(/\\/$/, \"\");\nconst token = process.env.ZEN_API_TOKEN;\n\nconst url = baseUrl + path;\nconst response = await fetch(url, {\n  method: \"GET\",\n  headers: {\n    Authorization: `Bearer ${token}`,\n    \"Content-Type\": \"application/json\",\n  },\n});\n\nif (!response.ok) {\n  throw new Error(`Request failed: ${response.status} ${await response.text()}`);\n}\n\nconsole.log(await response.json());"
+          }
+        ],
+        "x-zen-audience": "PUBLIC_CUSTOMER"
+      }
+    },
+    "/integrations": {
+      "get": {
+        "operationId": "listIntegrations",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "integrations": {
+                      "items": {
+                        "$ref": "#/components/schemas/Integration"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "List of available integrations"
+          }
+        },
+        "security": [
+          {
+            "tenantAuth": []
+          }
+        ],
+        "summary": "List available integrations",
+        "tags": [
+          "Integrations"
+        ],
+        "x-codeSamples": [
+          {
+            "label": "curl",
+            "lang": "curl",
+            "source": "curl \\\n  -sS \\\n  -H \\\n  Authorization: Bearer $ZEN_API_TOKEN \\\n  -H \\\n  Content-Type: application/json \\\n  \"https://api.zen-mesh.io/v1/integrations\""
+          },
+          {
+            "label": "Python",
+            "lang": "Python",
+            "source": "import os\nimport requests\n\nbase_url = os.environ[\"ZEN_API_BASE\"].rstrip(\"/\")\ntoken = os.environ[\"ZEN_API_TOKEN\"]\n\nresponse = requests.get(\n    f\"https://api.zen-mesh.io/v1/integrations\",\n    headers={\n        \"Authorization\": f\"Bearer {token}\",\n        \"Content-Type\": \"application/json\",\n    },\n    timeout=30,\n)\nresponse.raise_for_status()\nprint(response.json())"
+          },
+          {
+            "label": "JavaScript",
+            "lang": "JavaScript",
+            "source": "const baseUrl = process.env.ZEN_API_BASE.replace(/\\/$/, \"\");\nconst token = process.env.ZEN_API_TOKEN;\n\nconst url = baseUrl + path;\nconst response = await fetch(url, {\n  method: \"GET\",\n  headers: {\n    Authorization: `Bearer ${token}`,\n    \"Content-Type\": \"application/json\",\n  },\n});\n\nif (!response.ok) {\n  throw new Error(`Request failed: ${response.status} ${await response.text()}`);\n}\n\nconsole.log(await response.json());"
+          }
+        ],
+        "x-zen-audience": "PUBLIC_CUSTOMER"
+      }
+    },
+    "/ready": {
+      "get": {
+        "operationId": "readinessCheck",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "ready": {
+                      "type": "boolean"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Service is ready"
+          }
+        },
+        "summary": "Readiness check",
+        "tags": [
+          "Health"
+        ],
+        "x-codeSamples": [
+          {
+            "label": "curl",
+            "lang": "curl",
+            "source": "curl \\\n  -sS \\\n  -H \\\n  Authorization: Bearer $ZEN_API_TOKEN \\\n  -H \\\n  Content-Type: application/json \\\n  \"https://api.zen-mesh.io/v1/ready\""
+          },
+          {
+            "label": "Python",
+            "lang": "Python",
+            "source": "import os\nimport requests\n\nbase_url = os.environ[\"ZEN_API_BASE\"].rstrip(\"/\")\ntoken = os.environ[\"ZEN_API_TOKEN\"]\n\nresponse = requests.get(\n    f\"https://api.zen-mesh.io/v1/ready\",\n    headers={\n        \"Authorization\": f\"Bearer {token}\",\n        \"Content-Type\": \"application/json\",\n    },\n    timeout=30,\n)\nresponse.raise_for_status()\nprint(response.json())"
+          },
+          {
+            "label": "JavaScript",
+            "lang": "JavaScript",
+            "source": "const baseUrl = process.env.ZEN_API_BASE.replace(/\\/$/, \"\");\nconst token = process.env.ZEN_API_TOKEN;\n\nconst url = baseUrl + path;\nconst response = await fetch(url, {\n  method: \"GET\",\n  headers: {\n    Authorization: `Bearer ${token}`,\n    \"Content-Type\": \"application/json\",\n  },\n});\n\nif (!response.ok) {\n  throw new Error(`Request failed: ${response.status} ${await response.text()}`);\n}\n\nconsole.log(await response.json());"
+          }
+        ],
+        "x-zen-audience": "PUBLIC_CUSTOMER"
+      }
+    },
+    "/tenants/{tenant_id}": {
+      "get": {
+        "operationId": "getTenant",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "tenant_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Tenant"
+                }
+              }
+            },
+            "description": "Tenant details"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound",
+            "description": "Tenant not found"
+          }
+        },
+        "security": [
+          {
+            "tenantAuth": []
+          }
+        ],
+        "summary": "Get tenant details",
+        "tags": [
+          "Tenants"
+        ],
+        "x-codeSamples": [
+          {
+            "label": "curl",
+            "lang": "curl",
+            "source": "curl \\\n  -sS \\\n  -H \\\n  Authorization: Bearer $ZEN_API_TOKEN \\\n  -H \\\n  Content-Type: application/json \\\n  \"https://api.zen-mesh.io/v1/tenants/{tenant_id}\""
+          },
+          {
+            "label": "Python",
+            "lang": "Python",
+            "source": "import os\nimport requests\n\nbase_url = os.environ[\"ZEN_API_BASE\"].rstrip(\"/\")\ntoken = os.environ[\"ZEN_API_TOKEN\"]\n\nresponse = requests.get(\n    f\"https://api.zen-mesh.io/v1/tenants/{tenant_id}\",\n    headers={\n        \"Authorization\": f\"Bearer {token}\",\n        \"Content-Type\": \"application/json\",\n    },\n    timeout=30,\n)\nresponse.raise_for_status()\nprint(response.json())"
+          },
+          {
+            "label": "JavaScript",
+            "lang": "JavaScript",
+            "source": "const baseUrl = process.env.ZEN_API_BASE.replace(/\\/$/, \"\");\nconst token = process.env.ZEN_API_TOKEN;\n\nconst url = baseUrl + path;\nconst response = await fetch(url, {\n  method: \"GET\",\n  headers: {\n    Authorization: `Bearer ${token}`,\n    \"Content-Type\": \"application/json\",\n  },\n});\n\nif (!response.ok) {\n  throw new Error(`Request failed: ${response.status} ${await response.text()}`);\n}\n\nconsole.log(await response.json());"
+          }
+        ],
+        "x-zen-audience": "PUBLIC_CUSTOMER"
+      }
+    },
+    "/tenants/{tenant_id}/clusters": {
+      "get": {
+        "operationId": "listClusters",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "tenant_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "clusters": {
+                      "items": {
+                        "$ref": "#/components/schemas/Cluster"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "List of clusters"
+          }
+        },
+        "security": [
+          {
+            "tenantAuth": []
+          }
+        ],
+        "summary": "Get tenant planes",
+        "tags": [
+          "Clusters"
+        ],
+        "x-codeSamples": [
+          {
+            "label": "curl",
+            "lang": "curl",
+            "source": "curl \\\n  -sS \\\n  -H \\\n  Authorization: Bearer $ZEN_API_TOKEN \\\n  -H \\\n  Content-Type: application/json \\\n  \"https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters\""
+          },
+          {
+            "label": "Python",
+            "lang": "Python",
+            "source": "import os\nimport requests\n\nbase_url = os.environ[\"ZEN_API_BASE\"].rstrip(\"/\")\ntoken = os.environ[\"ZEN_API_TOKEN\"]\n\nresponse = requests.get(\n    f\"https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters\",\n    headers={\n        \"Authorization\": f\"Bearer {token}\",\n        \"Content-Type\": \"application/json\",\n    },\n    timeout=30,\n)\nresponse.raise_for_status()\nprint(response.json())"
+          },
+          {
+            "label": "JavaScript",
+            "lang": "JavaScript",
+            "source": "const baseUrl = process.env.ZEN_API_BASE.replace(/\\/$/, \"\");\nconst token = process.env.ZEN_API_TOKEN;\n\nconst url = baseUrl + path;\nconst response = await fetch(url, {\n  method: \"GET\",\n  headers: {\n    Authorization: `Bearer ${token}`,\n    \"Content-Type\": \"application/json\",\n  },\n});\n\nif (!response.ok) {\n  throw new Error(`Request failed: ${response.status} ${await response.text()}`);\n}\n\nconsole.log(await response.json());"
+          }
+        ],
+        "x-zen-audience": "PUBLIC_CUSTOMER"
+      },
+      "post": {
+        "operationId": "createCluster",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "tenant_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ClusterCreateRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cluster"
+                }
+              }
+            },
+            "description": "Cluster registered"
+          }
+        },
+        "security": [
+          {
+            "tenantAuth": []
+          }
+        ],
+        "summary": "Get tenant planes",
+        "tags": [
+          "Clusters"
+        ],
+        "x-codeSamples": [
+          {
+            "label": "curl",
+            "lang": "curl",
+            "source": "curl \\\n  -sS \\\n  -X \\\n  POST \\\n  -H \\\n  Authorization: Bearer $ZEN_API_TOKEN \\\n  -H \\\n  Content-Type: application/json \\\n  \"https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters\""
+          },
+          {
+            "label": "Python",
+            "lang": "Python",
+            "source": "import os\nimport requests\n\nbase_url = os.environ[\"ZEN_API_BASE\"].rstrip(\"/\")\ntoken = os.environ[\"ZEN_API_TOKEN\"]\n\nresponse = requests.post(\n    f\"https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters\",\n    headers={\n        \"Authorization\": f\"Bearer {token}\",\n        \"Content-Type\": \"application/json\",\n    },\n    timeout=30,\n)\nresponse.raise_for_status()\nprint(response.json())"
+          },
+          {
+            "label": "JavaScript",
+            "lang": "JavaScript",
+            "source": "const baseUrl = process.env.ZEN_API_BASE.replace(/\\/$/, \"\");\nconst token = process.env.ZEN_API_TOKEN;\n\nconst url = baseUrl + path;\nconst response = await fetch(url, {\n  method: \"POST\",\n  headers: {\n    Authorization: `Bearer ${token}`,\n    \"Content-Type\": \"application/json\",\n  },\n});\n\nif (!response.ok) {\n  throw new Error(`Request failed: ${response.status} ${await response.text()}`);\n}\n\nconsole.log(await response.json());"
+          }
+        ],
+        "x-zen-audience": "PUBLIC_CUSTOMER"
+      }
+    },
+    "/tenants/{tenant_id}/clusters/{cluster_id}": {
+      "get": {
+        "operationId": "getCluster",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "tenant_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "The cluster (plane) ID.",
+            "in": "path",
+            "name": "cluster_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cluster"
+                }
+              }
+            },
+            "description": "Cluster details"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          }
+        },
+        "security": [
+          {
+            "tenantAuth": []
+          },
+          {
+            "hmacAuth": []
+          }
+        ],
+        "summary": "Get plane details",
+        "tags": [
+          "Clusters"
+        ],
+        "x-codeSamples": [
+          {
+            "label": "curl",
+            "lang": "curl",
+            "source": "curl \\\n  -sS \\\n  -H \\\n  Authorization: Bearer $ZEN_API_TOKEN \\\n  -H \\\n  Content-Type: application/json \\\n  \"https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters/{cluster_id}\""
+          },
+          {
+            "label": "Python",
+            "lang": "Python",
+            "source": "import os\nimport requests\n\nbase_url = os.environ[\"ZEN_API_BASE\"].rstrip(\"/\")\ntoken = os.environ[\"ZEN_API_TOKEN\"]\n\nresponse = requests.get(\n    f\"https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters/{cluster_id}\",\n    headers={\n        \"Authorization\": f\"Bearer {token}\",\n        \"Content-Type\": \"application/json\",\n    },\n    timeout=30,\n)\nresponse.raise_for_status()\nprint(response.json())"
+          },
+          {
+            "label": "JavaScript",
+            "lang": "JavaScript",
+            "source": "const baseUrl = process.env.ZEN_API_BASE.replace(/\\/$/, \"\");\nconst token = process.env.ZEN_API_TOKEN;\n\nconst url = baseUrl + path;\nconst response = await fetch(url, {\n  method: \"GET\",\n  headers: {\n    Authorization: `Bearer ${token}`,\n    \"Content-Type\": \"application/json\",\n  },\n});\n\nif (!response.ok) {\n  throw new Error(`Request failed: ${response.status} ${await response.text()}`);\n}\n\nconsole.log(await response.json());"
+          }
+        ],
+        "x-zen-audience": "PUBLIC_CUSTOMER"
+      }
+    },
+    "/tenants/{tenant_id}/clusters/{cluster_id}/delivery-flows": {
+      "get": {
+        "operationId": "listDeliveryFlows",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "tenant_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "cluster_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "items": {
+                      "items": {
+                        "$ref": "#/components/schemas/DeliveryFlow"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "List of delivery flows"
+          }
+        },
+        "security": [
+          {
+            "tenantAuth": []
+          }
+        ],
+        "summary": "List delivery flows for plane (wire name: cluster)",
+        "tags": [
+          "CRDs"
+        ],
+        "x-codeSamples": [
+          {
+            "label": "curl",
+            "lang": "curl",
+            "source": "curl \\\n  -sS \\\n  -H \\\n  Authorization: Bearer $ZEN_API_TOKEN \\\n  -H \\\n  Content-Type: application/json \\\n  \"https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters/{cluster_id}/delivery-flows\""
+          },
+          {
+            "label": "Python",
+            "lang": "Python",
+            "source": "import os\nimport requests\n\nbase_url = os.environ[\"ZEN_API_BASE\"].rstrip(\"/\")\ntoken = os.environ[\"ZEN_API_TOKEN\"]\n\nresponse = requests.get(\n    f\"https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters/{cluster_id}/delivery-flows\",\n    headers={\n        \"Authorization\": f\"Bearer {token}\",\n        \"Content-Type\": \"application/json\",\n    },\n    timeout=30,\n)\nresponse.raise_for_status()\nprint(response.json())"
+          },
+          {
+            "label": "JavaScript",
+            "lang": "JavaScript",
+            "source": "const baseUrl = process.env.ZEN_API_BASE.replace(/\\/$/, \"\");\nconst token = process.env.ZEN_API_TOKEN;\n\nconst url = baseUrl + path;\nconst response = await fetch(url, {\n  method: \"GET\",\n  headers: {\n    Authorization: `Bearer ${token}`,\n    \"Content-Type\": \"application/json\",\n  },\n});\n\nif (!response.ok) {\n  throw new Error(`Request failed: ${response.status} ${await response.text()}`);\n}\n\nconsole.log(await response.json());"
+          }
+        ],
+        "x-zen-audience": "PUBLIC_CUSTOMER"
+      },
+      "post": {
+        "operationId": "createDeliveryFlow",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "tenant_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "cluster_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeliveryFlowCreateRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeliveryFlow"
+                }
+              }
+            },
+            "description": "Delivery flow created"
+          }
+        },
+        "security": [
+          {
+            "tenantAuth": []
+          }
+        ],
+        "summary": "Create a delivery flow",
+        "tags": [
+          "CRDs"
+        ],
+        "x-codeSamples": [
+          {
+            "label": "curl",
+            "lang": "curl",
+            "source": "curl \\\n  -sS \\\n  -X \\\n  POST \\\n  -H \\\n  Authorization: Bearer $ZEN_API_TOKEN \\\n  -H \\\n  Content-Type: application/json \\\n  \"https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters/{cluster_id}/delivery-flows\""
+          },
+          {
+            "label": "Python",
+            "lang": "Python",
+            "source": "import os\nimport requests\n\nbase_url = os.environ[\"ZEN_API_BASE\"].rstrip(\"/\")\ntoken = os.environ[\"ZEN_API_TOKEN\"]\n\nresponse = requests.post(\n    f\"https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters/{cluster_id}/delivery-flows\",\n    headers={\n        \"Authorization\": f\"Bearer {token}\",\n        \"Content-Type\": \"application/json\",\n    },\n    timeout=30,\n)\nresponse.raise_for_status()\nprint(response.json())"
+          },
+          {
+            "label": "JavaScript",
+            "lang": "JavaScript",
+            "source": "const baseUrl = process.env.ZEN_API_BASE.replace(/\\/$/, \"\");\nconst token = process.env.ZEN_API_TOKEN;\n\nconst url = baseUrl + path;\nconst response = await fetch(url, {\n  method: \"POST\",\n  headers: {\n    Authorization: `Bearer ${token}`,\n    \"Content-Type\": \"application/json\",\n  },\n});\n\nif (!response.ok) {\n  throw new Error(`Request failed: ${response.status} ${await response.text()}`);\n}\n\nconsole.log(await response.json());"
+          }
+        ],
+        "x-zen-audience": "PUBLIC_CUSTOMER"
+      }
+    },
+    "/tenants/{tenant_id}/clusters/{cluster_id}/delivery-flows/{flow_id}": {
+      "delete": {
+        "operationId": "deleteDeliveryFlow",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "tenant_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "cluster_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "flow_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Delivery flow deleted"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          }
+        },
+        "security": [
+          {
+            "tenantAuth": []
+          }
+        ],
+        "summary": "Delete a delivery flow",
+        "tags": [
+          "CRDs"
+        ],
+        "x-codeSamples": [
+          {
+            "label": "curl",
+            "lang": "curl",
+            "source": "curl \\\n  -sS \\\n  -X \\\n  DELETE \\\n  -H \\\n  Authorization: Bearer $ZEN_API_TOKEN \\\n  -H \\\n  Content-Type: application/json \\\n  \"https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters/{cluster_id}/delivery-flows/{flow_id}\""
+          },
+          {
+            "label": "Python",
+            "lang": "Python",
+            "source": "import os\nimport requests\n\nbase_url = os.environ[\"ZEN_API_BASE\"].rstrip(\"/\")\ntoken = os.environ[\"ZEN_API_TOKEN\"]\n\nresponse = requests.delete(\n    f\"https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters/{cluster_id}/delivery-flows/{flow_id}\",\n    headers={\n        \"Authorization\": f\"Bearer {token}\",\n        \"Content-Type\": \"application/json\",\n    },\n    timeout=30,\n)\nresponse.raise_for_status()\nprint(response.json())"
+          },
+          {
+            "label": "JavaScript",
+            "lang": "JavaScript",
+            "source": "const baseUrl = process.env.ZEN_API_BASE.replace(/\\/$/, \"\");\nconst token = process.env.ZEN_API_TOKEN;\n\nconst url = baseUrl + path;\nconst response = await fetch(url, {\n  method: \"DELETE\",\n  headers: {\n    Authorization: `Bearer ${token}`,\n    \"Content-Type\": \"application/json\",\n  },\n});\n\nif (!response.ok) {\n  throw new Error(`Request failed: ${response.status} ${await response.text()}`);\n}\n\nconsole.log(await response.json());"
+          }
+        ],
+        "x-zen-audience": "PUBLIC_CUSTOMER"
+      },
+      "get": {
+        "operationId": "getDeliveryFlow",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "tenant_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "cluster_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "flow_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeliveryFlow"
+                }
+              }
+            },
+            "description": "Delivery flow details"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          }
+        },
+        "security": [
+          {
+            "tenantAuth": []
+          }
+        ],
+        "summary": "Get delivery flow details",
+        "tags": [
+          "CRDs"
+        ],
+        "x-codeSamples": [
+          {
+            "label": "curl",
+            "lang": "curl",
+            "source": "curl \\\n  -sS \\\n  -H \\\n  Authorization: Bearer $ZEN_API_TOKEN \\\n  -H \\\n  Content-Type: application/json \\\n  \"https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters/{cluster_id}/delivery-flows/{flow_id}\""
+          },
+          {
+            "label": "Python",
+            "lang": "Python",
+            "source": "import os\nimport requests\n\nbase_url = os.environ[\"ZEN_API_BASE\"].rstrip(\"/\")\ntoken = os.environ[\"ZEN_API_TOKEN\"]\n\nresponse = requests.get(\n    f\"https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters/{cluster_id}/delivery-flows/{flow_id}\",\n    headers={\n        \"Authorization\": f\"Bearer {token}\",\n        \"Content-Type\": \"application/json\",\n    },\n    timeout=30,\n)\nresponse.raise_for_status()\nprint(response.json())"
+          },
+          {
+            "label": "JavaScript",
+            "lang": "JavaScript",
+            "source": "const baseUrl = process.env.ZEN_API_BASE.replace(/\\/$/, \"\");\nconst token = process.env.ZEN_API_TOKEN;\n\nconst url = baseUrl + path;\nconst response = await fetch(url, {\n  method: \"GET\",\n  headers: {\n    Authorization: `Bearer ${token}`,\n    \"Content-Type\": \"application/json\",\n  },\n});\n\nif (!response.ok) {\n  throw new Error(`Request failed: ${response.status} ${await response.text()}`);\n}\n\nconsole.log(await response.json());"
+          }
+        ],
+        "x-zen-audience": "PUBLIC_CUSTOMER"
+      },
+      "put": {
+        "operationId": "updateDeliveryFlow",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "tenant_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "cluster_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "flow_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeliveryFlowUpdateRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeliveryFlow"
+                }
+              }
+            },
+            "description": "Delivery flow updated"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          }
+        },
+        "security": [
+          {
+            "tenantAuth": []
+          }
+        ],
+        "summary": "Update a delivery flow",
+        "tags": [
+          "CRDs"
+        ],
+        "x-codeSamples": [
+          {
+            "label": "curl",
+            "lang": "curl",
+            "source": "curl \\\n  -sS \\\n  -X \\\n  PUT \\\n  -H \\\n  Authorization: Bearer $ZEN_API_TOKEN \\\n  -H \\\n  Content-Type: application/json \\\n  \"https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters/{cluster_id}/delivery-flows/{flow_id}\""
+          },
+          {
+            "label": "Python",
+            "lang": "Python",
+            "source": "import os\nimport requests\n\nbase_url = os.environ[\"ZEN_API_BASE\"].rstrip(\"/\")\ntoken = os.environ[\"ZEN_API_TOKEN\"]\n\nresponse = requests.put(\n    f\"https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters/{cluster_id}/delivery-flows/{flow_id}\",\n    headers={\n        \"Authorization\": f\"Bearer {token}\",\n        \"Content-Type\": \"application/json\",\n    },\n    timeout=30,\n)\nresponse.raise_for_status()\nprint(response.json())"
+          },
+          {
+            "label": "JavaScript",
+            "lang": "JavaScript",
+            "source": "const baseUrl = process.env.ZEN_API_BASE.replace(/\\/$/, \"\");\nconst token = process.env.ZEN_API_TOKEN;\n\nconst url = baseUrl + path;\nconst response = await fetch(url, {\n  method: \"PUT\",\n  headers: {\n    Authorization: `Bearer ${token}`,\n    \"Content-Type\": \"application/json\",\n  },\n});\n\nif (!response.ok) {\n  throw new Error(`Request failed: ${response.status} ${await response.text()}`);\n}\n\nconsole.log(await response.json());"
+          }
+        ],
+        "x-zen-audience": "PUBLIC_CUSTOMER"
+      }
+    },
+    "/tenants/{tenant_id}/clusters/{cluster_id}/destinations": {
+      "get": {
+        "operationId": "listDestinations",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "tenant_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "cluster_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "items": {
+                      "items": {
+                        "$ref": "#/components/schemas/Destination"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "List of destinations"
+          }
+        },
+        "security": [
+          {
+            "tenantAuth": []
+          }
+        ],
+        "summary": "List targets (wire name: destinations) for plane",
+        "tags": [
+          "CRDs"
+        ],
+        "x-codeSamples": [
+          {
+            "label": "curl",
+            "lang": "curl",
+            "source": "curl \\\n  -sS \\\n  -H \\\n  Authorization: Bearer $ZEN_API_TOKEN \\\n  -H \\\n  Content-Type: application/json \\\n  \"https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters/{cluster_id}/destinations\""
+          },
+          {
+            "label": "Python",
+            "lang": "Python",
+            "source": "import os\nimport requests\n\nbase_url = os.environ[\"ZEN_API_BASE\"].rstrip(\"/\")\ntoken = os.environ[\"ZEN_API_TOKEN\"]\n\nresponse = requests.get(\n    f\"https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters/{cluster_id}/destinations\",\n    headers={\n        \"Authorization\": f\"Bearer {token}\",\n        \"Content-Type\": \"application/json\",\n    },\n    timeout=30,\n)\nresponse.raise_for_status()\nprint(response.json())"
+          },
+          {
+            "label": "JavaScript",
+            "lang": "JavaScript",
+            "source": "const baseUrl = process.env.ZEN_API_BASE.replace(/\\/$/, \"\");\nconst token = process.env.ZEN_API_TOKEN;\n\nconst url = baseUrl + path;\nconst response = await fetch(url, {\n  method: \"GET\",\n  headers: {\n    Authorization: `Bearer ${token}`,\n    \"Content-Type\": \"application/json\",\n  },\n});\n\nif (!response.ok) {\n  throw new Error(`Request failed: ${response.status} ${await response.text()}`);\n}\n\nconsole.log(await response.json());"
+          }
+        ],
+        "x-zen-audience": "PUBLIC_CUSTOMER"
+      },
+      "post": {
+        "operationId": "createDestination",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "tenant_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "cluster_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DestinationCreateRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Destination"
+                }
+              }
+            },
+            "description": "Destination created"
+          }
+        },
+        "security": [
+          {
+            "tenantAuth": []
+          }
+        ],
+        "summary": "Create a target (wire name: destination)",
+        "tags": [
+          "CRDs"
+        ],
+        "x-codeSamples": [
+          {
+            "label": "curl",
+            "lang": "curl",
+            "source": "curl \\\n  -sS \\\n  -X \\\n  POST \\\n  -H \\\n  Authorization: Bearer $ZEN_API_TOKEN \\\n  -H \\\n  Content-Type: application/json \\\n  \"https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters/{cluster_id}/destinations\""
+          },
+          {
+            "label": "Python",
+            "lang": "Python",
+            "source": "import os\nimport requests\n\nbase_url = os.environ[\"ZEN_API_BASE\"].rstrip(\"/\")\ntoken = os.environ[\"ZEN_API_TOKEN\"]\n\nresponse = requests.post(\n    f\"https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters/{cluster_id}/destinations\",\n    headers={\n        \"Authorization\": f\"Bearer {token}\",\n        \"Content-Type\": \"application/json\",\n    },\n    timeout=30,\n)\nresponse.raise_for_status()\nprint(response.json())"
+          },
+          {
+            "label": "JavaScript",
+            "lang": "JavaScript",
+            "source": "const baseUrl = process.env.ZEN_API_BASE.replace(/\\/$/, \"\");\nconst token = process.env.ZEN_API_TOKEN;\n\nconst url = baseUrl + path;\nconst response = await fetch(url, {\n  method: \"POST\",\n  headers: {\n    Authorization: `Bearer ${token}`,\n    \"Content-Type\": \"application/json\",\n  },\n});\n\nif (!response.ok) {\n  throw new Error(`Request failed: ${response.status} ${await response.text()}`);\n}\n\nconsole.log(await response.json());"
+          }
+        ],
+        "x-zen-audience": "PUBLIC_CUSTOMER"
+      }
+    },
+    "/tenants/{tenant_id}/clusters/{cluster_id}/destinations/{destination_id}": {
+      "delete": {
+        "operationId": "deleteDestination",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "tenant_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "cluster_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "destination_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Destination deleted"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          }
+        },
+        "security": [
+          {
+            "tenantAuth": []
+          }
+        ],
+        "summary": "Delete a target (wire name: destination)",
+        "tags": [
+          "CRDs"
+        ],
+        "x-codeSamples": [
+          {
+            "label": "curl",
+            "lang": "curl",
+            "source": "curl \\\n  -sS \\\n  -X \\\n  DELETE \\\n  -H \\\n  Authorization: Bearer $ZEN_API_TOKEN \\\n  -H \\\n  Content-Type: application/json \\\n  \"https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters/{cluster_id}/destinations/{destination_id}\""
+          },
+          {
+            "label": "Python",
+            "lang": "Python",
+            "source": "import os\nimport requests\n\nbase_url = os.environ[\"ZEN_API_BASE\"].rstrip(\"/\")\ntoken = os.environ[\"ZEN_API_TOKEN\"]\n\nresponse = requests.delete(\n    f\"https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters/{cluster_id}/destinations/{destination_id}\",\n    headers={\n        \"Authorization\": f\"Bearer {token}\",\n        \"Content-Type\": \"application/json\",\n    },\n    timeout=30,\n)\nresponse.raise_for_status()\nprint(response.json())"
+          },
+          {
+            "label": "JavaScript",
+            "lang": "JavaScript",
+            "source": "const baseUrl = process.env.ZEN_API_BASE.replace(/\\/$/, \"\");\nconst token = process.env.ZEN_API_TOKEN;\n\nconst url = baseUrl + path;\nconst response = await fetch(url, {\n  method: \"DELETE\",\n  headers: {\n    Authorization: `Bearer ${token}`,\n    \"Content-Type\": \"application/json\",\n  },\n});\n\nif (!response.ok) {\n  throw new Error(`Request failed: ${response.status} ${await response.text()}`);\n}\n\nconsole.log(await response.json());"
+          }
+        ],
+        "x-zen-audience": "PUBLIC_CUSTOMER"
+      },
+      "get": {
+        "operationId": "getDestination",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "tenant_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "cluster_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "destination_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Destination"
+                }
+              }
+            },
+            "description": "Destination details"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          }
+        },
+        "security": [
+          {
+            "tenantAuth": []
+          }
+        ],
+        "summary": "Get target details (wire name: destination)",
+        "tags": [
+          "CRDs"
+        ],
+        "x-codeSamples": [
+          {
+            "label": "curl",
+            "lang": "curl",
+            "source": "curl \\\n  -sS \\\n  -H \\\n  Authorization: Bearer $ZEN_API_TOKEN \\\n  -H \\\n  Content-Type: application/json \\\n  \"https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters/{cluster_id}/destinations/{destination_id}\""
+          },
+          {
+            "label": "Python",
+            "lang": "Python",
+            "source": "import os\nimport requests\n\nbase_url = os.environ[\"ZEN_API_BASE\"].rstrip(\"/\")\ntoken = os.environ[\"ZEN_API_TOKEN\"]\n\nresponse = requests.get(\n    f\"https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters/{cluster_id}/destinations/{destination_id}\",\n    headers={\n        \"Authorization\": f\"Bearer {token}\",\n        \"Content-Type\": \"application/json\",\n    },\n    timeout=30,\n)\nresponse.raise_for_status()\nprint(response.json())"
+          },
+          {
+            "label": "JavaScript",
+            "lang": "JavaScript",
+            "source": "const baseUrl = process.env.ZEN_API_BASE.replace(/\\/$/, \"\");\nconst token = process.env.ZEN_API_TOKEN;\n\nconst url = baseUrl + path;\nconst response = await fetch(url, {\n  method: \"GET\",\n  headers: {\n    Authorization: `Bearer ${token}`,\n    \"Content-Type\": \"application/json\",\n  },\n});\n\nif (!response.ok) {\n  throw new Error(`Request failed: ${response.status} ${await response.text()}`);\n}\n\nconsole.log(await response.json());"
+          }
+        ],
+        "x-zen-audience": "PUBLIC_CUSTOMER"
+      },
+      "put": {
+        "operationId": "updateDestination",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "tenant_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "cluster_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "destination_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DestinationUpdateRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Destination"
+                }
+              }
+            },
+            "description": "Destination updated"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          }
+        },
+        "security": [
+          {
+            "tenantAuth": []
+          }
+        ],
+        "summary": "Update a target (wire name: destination)",
+        "tags": [
+          "CRDs"
+        ],
+        "x-codeSamples": [
+          {
+            "label": "curl",
+            "lang": "curl",
+            "source": "curl \\\n  -sS \\\n  -X \\\n  PUT \\\n  -H \\\n  Authorization: Bearer $ZEN_API_TOKEN \\\n  -H \\\n  Content-Type: application/json \\\n  \"https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters/{cluster_id}/destinations/{destination_id}\""
+          },
+          {
+            "label": "Python",
+            "lang": "Python",
+            "source": "import os\nimport requests\n\nbase_url = os.environ[\"ZEN_API_BASE\"].rstrip(\"/\")\ntoken = os.environ[\"ZEN_API_TOKEN\"]\n\nresponse = requests.put(\n    f\"https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters/{cluster_id}/destinations/{destination_id}\",\n    headers={\n        \"Authorization\": f\"Bearer {token}\",\n        \"Content-Type\": \"application/json\",\n    },\n    timeout=30,\n)\nresponse.raise_for_status()\nprint(response.json())"
+          },
+          {
+            "label": "JavaScript",
+            "lang": "JavaScript",
+            "source": "const baseUrl = process.env.ZEN_API_BASE.replace(/\\/$/, \"\");\nconst token = process.env.ZEN_API_TOKEN;\n\nconst url = baseUrl + path;\nconst response = await fetch(url, {\n  method: \"PUT\",\n  headers: {\n    Authorization: `Bearer ${token}`,\n    \"Content-Type\": \"application/json\",\n  },\n});\n\nif (!response.ok) {\n  throw new Error(`Request failed: ${response.status} ${await response.text()}`);\n}\n\nconsole.log(await response.json());"
+          }
+        ],
+        "x-zen-audience": "PUBLIC_CUSTOMER"
+      }
+    },
+    "/tenants/{tenant_id}/clusters/{cluster_id}/ingesters": {
+      "get": {
+        "operationId": "listIngesters",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "tenant_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "cluster_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "items": {
+                      "items": {
+                        "$ref": "#/components/schemas/Ingester"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "List of ingesters"
+          }
+        },
+        "security": [
+          {
+            "tenantAuth": []
+          }
+        ],
+        "summary": "List ingesters for plane (wire name: cluster)",
+        "tags": [
+          "CRDs"
+        ],
+        "x-codeSamples": [
+          {
+            "label": "curl",
+            "lang": "curl",
+            "source": "curl \\\n  -sS \\\n  -H \\\n  Authorization: Bearer $ZEN_API_TOKEN \\\n  -H \\\n  Content-Type: application/json \\\n  \"https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters/{cluster_id}/ingesters\""
+          },
+          {
+            "label": "Python",
+            "lang": "Python",
+            "source": "import os\nimport requests\n\nbase_url = os.environ[\"ZEN_API_BASE\"].rstrip(\"/\")\ntoken = os.environ[\"ZEN_API_TOKEN\"]\n\nresponse = requests.get(\n    f\"https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters/{cluster_id}/ingesters\",\n    headers={\n        \"Authorization\": f\"Bearer {token}\",\n        \"Content-Type\": \"application/json\",\n    },\n    timeout=30,\n)\nresponse.raise_for_status()\nprint(response.json())"
+          },
+          {
+            "label": "JavaScript",
+            "lang": "JavaScript",
+            "source": "const baseUrl = process.env.ZEN_API_BASE.replace(/\\/$/, \"\");\nconst token = process.env.ZEN_API_TOKEN;\n\nconst url = baseUrl + path;\nconst response = await fetch(url, {\n  method: \"GET\",\n  headers: {\n    Authorization: `Bearer ${token}`,\n    \"Content-Type\": \"application/json\",\n  },\n});\n\nif (!response.ok) {\n  throw new Error(`Request failed: ${response.status} ${await response.text()}`);\n}\n\nconsole.log(await response.json());"
+          }
+        ],
+        "x-zen-audience": "PUBLIC_CUSTOMER"
+      },
+      "post": {
+        "operationId": "createIngester",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "tenant_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "cluster_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IngesterCreateRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ingester"
+                }
+              }
+            },
+            "description": "Ingester created"
+          }
+        },
+        "security": [
+          {
+            "tenantAuth": []
+          }
+        ],
+        "summary": "Create an ingester",
+        "tags": [
+          "CRDs"
+        ],
+        "x-codeSamples": [
+          {
+            "label": "curl",
+            "lang": "curl",
+            "source": "curl \\\n  -sS \\\n  -X \\\n  POST \\\n  -H \\\n  Authorization: Bearer $ZEN_API_TOKEN \\\n  -H \\\n  Content-Type: application/json \\\n  \"https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters/{cluster_id}/ingesters\""
+          },
+          {
+            "label": "Python",
+            "lang": "Python",
+            "source": "import os\nimport requests\n\nbase_url = os.environ[\"ZEN_API_BASE\"].rstrip(\"/\")\ntoken = os.environ[\"ZEN_API_TOKEN\"]\n\nresponse = requests.post(\n    f\"https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters/{cluster_id}/ingesters\",\n    headers={\n        \"Authorization\": f\"Bearer {token}\",\n        \"Content-Type\": \"application/json\",\n    },\n    timeout=30,\n)\nresponse.raise_for_status()\nprint(response.json())"
+          },
+          {
+            "label": "JavaScript",
+            "lang": "JavaScript",
+            "source": "const baseUrl = process.env.ZEN_API_BASE.replace(/\\/$/, \"\");\nconst token = process.env.ZEN_API_TOKEN;\n\nconst url = baseUrl + path;\nconst response = await fetch(url, {\n  method: \"POST\",\n  headers: {\n    Authorization: `Bearer ${token}`,\n    \"Content-Type\": \"application/json\",\n  },\n});\n\nif (!response.ok) {\n  throw new Error(`Request failed: ${response.status} ${await response.text()}`);\n}\n\nconsole.log(await response.json());"
+          }
+        ],
+        "x-zen-audience": "PUBLIC_CUSTOMER"
+      }
+    },
+    "/tenants/{tenant_id}/clusters/{cluster_id}/ingesters/{ingester_id}": {
+      "delete": {
+        "operationId": "deleteIngester",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "tenant_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "cluster_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "ingester_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Ingester deleted"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          }
+        },
+        "security": [
+          {
+            "tenantAuth": []
+          }
+        ],
+        "summary": "Delete an ingester",
+        "tags": [
+          "CRDs"
+        ],
+        "x-codeSamples": [
+          {
+            "label": "curl",
+            "lang": "curl",
+            "source": "curl \\\n  -sS \\\n  -X \\\n  DELETE \\\n  -H \\\n  Authorization: Bearer $ZEN_API_TOKEN \\\n  -H \\\n  Content-Type: application/json \\\n  \"https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters/{cluster_id}/ingesters/{ingester_id}\""
+          },
+          {
+            "label": "Python",
+            "lang": "Python",
+            "source": "import os\nimport requests\n\nbase_url = os.environ[\"ZEN_API_BASE\"].rstrip(\"/\")\ntoken = os.environ[\"ZEN_API_TOKEN\"]\n\nresponse = requests.delete(\n    f\"https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters/{cluster_id}/ingesters/{ingester_id}\",\n    headers={\n        \"Authorization\": f\"Bearer {token}\",\n        \"Content-Type\": \"application/json\",\n    },\n    timeout=30,\n)\nresponse.raise_for_status()\nprint(response.json())"
+          },
+          {
+            "label": "JavaScript",
+            "lang": "JavaScript",
+            "source": "const baseUrl = process.env.ZEN_API_BASE.replace(/\\/$/, \"\");\nconst token = process.env.ZEN_API_TOKEN;\n\nconst url = baseUrl + path;\nconst response = await fetch(url, {\n  method: \"DELETE\",\n  headers: {\n    Authorization: `Bearer ${token}`,\n    \"Content-Type\": \"application/json\",\n  },\n});\n\nif (!response.ok) {\n  throw new Error(`Request failed: ${response.status} ${await response.text()}`);\n}\n\nconsole.log(await response.json());"
+          }
+        ],
+        "x-zen-audience": "PUBLIC_CUSTOMER"
+      },
+      "get": {
+        "operationId": "getIngester",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "tenant_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "cluster_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "ingester_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ingester"
+                }
+              }
+            },
+            "description": "Ingester details"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          }
+        },
+        "security": [
+          {
+            "tenantAuth": []
+          }
+        ],
+        "summary": "Get ingester details",
+        "tags": [
+          "CRDs"
+        ],
+        "x-codeSamples": [
+          {
+            "label": "curl",
+            "lang": "curl",
+            "source": "curl \\\n  -sS \\\n  -H \\\n  Authorization: Bearer $ZEN_API_TOKEN \\\n  -H \\\n  Content-Type: application/json \\\n  \"https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters/{cluster_id}/ingesters/{ingester_id}\""
+          },
+          {
+            "label": "Python",
+            "lang": "Python",
+            "source": "import os\nimport requests\n\nbase_url = os.environ[\"ZEN_API_BASE\"].rstrip(\"/\")\ntoken = os.environ[\"ZEN_API_TOKEN\"]\n\nresponse = requests.get(\n    f\"https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters/{cluster_id}/ingesters/{ingester_id}\",\n    headers={\n        \"Authorization\": f\"Bearer {token}\",\n        \"Content-Type\": \"application/json\",\n    },\n    timeout=30,\n)\nresponse.raise_for_status()\nprint(response.json())"
+          },
+          {
+            "label": "JavaScript",
+            "lang": "JavaScript",
+            "source": "const baseUrl = process.env.ZEN_API_BASE.replace(/\\/$/, \"\");\nconst token = process.env.ZEN_API_TOKEN;\n\nconst url = baseUrl + path;\nconst response = await fetch(url, {\n  method: \"GET\",\n  headers: {\n    Authorization: `Bearer ${token}`,\n    \"Content-Type\": \"application/json\",\n  },\n});\n\nif (!response.ok) {\n  throw new Error(`Request failed: ${response.status} ${await response.text()}`);\n}\n\nconsole.log(await response.json());"
+          }
+        ],
+        "x-zen-audience": "PUBLIC_CUSTOMER"
+      },
+      "put": {
+        "operationId": "updateIngester",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "tenant_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "cluster_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "ingester_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IngesterUpdateRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ingester"
+                }
+              }
+            },
+            "description": "Ingester updated"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          }
+        },
+        "security": [
+          {
+            "tenantAuth": []
+          }
+        ],
+        "summary": "Update an ingester",
+        "tags": [
+          "CRDs"
+        ],
+        "x-codeSamples": [
+          {
+            "label": "curl",
+            "lang": "curl",
+            "source": "curl \\\n  -sS \\\n  -X \\\n  PUT \\\n  -H \\\n  Authorization: Bearer $ZEN_API_TOKEN \\\n  -H \\\n  Content-Type: application/json \\\n  \"https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters/{cluster_id}/ingesters/{ingester_id}\""
+          },
+          {
+            "label": "Python",
+            "lang": "Python",
+            "source": "import os\nimport requests\n\nbase_url = os.environ[\"ZEN_API_BASE\"].rstrip(\"/\")\ntoken = os.environ[\"ZEN_API_TOKEN\"]\n\nresponse = requests.put(\n    f\"https://api.zen-mesh.io/v1/tenants/{tenant_id}/clusters/{cluster_id}/ingesters/{ingester_id}\",\n    headers={\n        \"Authorization\": f\"Bearer {token}\",\n        \"Content-Type\": \"application/json\",\n    },\n    timeout=30,\n)\nresponse.raise_for_status()\nprint(response.json())"
+          },
+          {
+            "label": "JavaScript",
+            "lang": "JavaScript",
+            "source": "const baseUrl = process.env.ZEN_API_BASE.replace(/\\/$/, \"\");\nconst token = process.env.ZEN_API_TOKEN;\n\nconst url = baseUrl + path;\nconst response = await fetch(url, {\n  method: \"PUT\",\n  headers: {\n    Authorization: `Bearer ${token}`,\n    \"Content-Type\": \"application/json\",\n  },\n});\n\nif (!response.ok) {\n  throw new Error(`Request failed: ${response.status} ${await response.text()}`);\n}\n\nconsole.log(await response.json());"
+          }
+        ],
+        "x-zen-audience": "PUBLIC_CUSTOMER"
+      }
+    },
+    "/webhooks/datadog": {
+      "post": {
+        "operationId": "datadogWebhook",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Webhook processed"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          }
+        },
+        "security": [
+          {
+            "hmacAuth": []
+          }
+        ],
+        "summary": "Datadog webhook endpoint",
+        "tags": [
+          "Webhooks"
+        ],
+        "x-codeSamples": [
+          {
+            "label": "curl",
+            "lang": "curl",
+            "source": "curl \\\n  -sS \\\n  -X \\\n  POST \\\n  -H \\\n  Authorization: Bearer $ZEN_API_TOKEN \\\n  -H \\\n  Content-Type: application/json \\\n  \"https://api.zen-mesh.io/v1/webhooks/datadog\""
+          },
+          {
+            "label": "Python",
+            "lang": "Python",
+            "source": "import os\nimport requests\n\nbase_url = os.environ[\"ZEN_API_BASE\"].rstrip(\"/\")\ntoken = os.environ[\"ZEN_API_TOKEN\"]\n\nresponse = requests.post(\n    f\"https://api.zen-mesh.io/v1/webhooks/datadog\",\n    headers={\n        \"Authorization\": f\"Bearer {token}\",\n        \"Content-Type\": \"application/json\",\n    },\n    timeout=30,\n)\nresponse.raise_for_status()\nprint(response.json())"
+          },
+          {
+            "label": "JavaScript",
+            "lang": "JavaScript",
+            "source": "const baseUrl = process.env.ZEN_API_BASE.replace(/\\/$/, \"\");\nconst token = process.env.ZEN_API_TOKEN;\n\nconst url = baseUrl + path;\nconst response = await fetch(url, {\n  method: \"POST\",\n  headers: {\n    Authorization: `Bearer ${token}`,\n    \"Content-Type\": \"application/json\",\n  },\n});\n\nif (!response.ok) {\n  throw new Error(`Request failed: ${response.status} ${await response.text()}`);\n}\n\nconsole.log(await response.json());"
+          }
+        ],
+        "x-zen-audience": "PUBLIC_CUSTOMER"
+      }
+    },
+    "/webhooks/jira": {
+      "post": {
+        "operationId": "jiraWebhook",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Webhook processed"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          }
+        },
+        "security": [
+          {
+            "hmacAuth": []
+          }
+        ],
+        "summary": "Jira webhook endpoint",
+        "tags": [
+          "Webhooks"
+        ],
+        "x-codeSamples": [
+          {
+            "label": "curl",
+            "lang": "curl",
+            "source": "curl \\\n  -sS \\\n  -X \\\n  POST \\\n  -H \\\n  Authorization: Bearer $ZEN_API_TOKEN \\\n  -H \\\n  Content-Type: application/json \\\n  \"https://api.zen-mesh.io/v1/webhooks/jira\""
+          },
+          {
+            "label": "Python",
+            "lang": "Python",
+            "source": "import os\nimport requests\n\nbase_url = os.environ[\"ZEN_API_BASE\"].rstrip(\"/\")\ntoken = os.environ[\"ZEN_API_TOKEN\"]\n\nresponse = requests.post(\n    f\"https://api.zen-mesh.io/v1/webhooks/jira\",\n    headers={\n        \"Authorization\": f\"Bearer {token}\",\n        \"Content-Type\": \"application/json\",\n    },\n    timeout=30,\n)\nresponse.raise_for_status()\nprint(response.json())"
+          },
+          {
+            "label": "JavaScript",
+            "lang": "JavaScript",
+            "source": "const baseUrl = process.env.ZEN_API_BASE.replace(/\\/$/, \"\");\nconst token = process.env.ZEN_API_TOKEN;\n\nconst url = baseUrl + path;\nconst response = await fetch(url, {\n  method: \"POST\",\n  headers: {\n    Authorization: `Bearer ${token}`,\n    \"Content-Type\": \"application/json\",\n  },\n});\n\nif (!response.ok) {\n  throw new Error(`Request failed: ${response.status} ${await response.text()}`);\n}\n\nconsole.log(await response.json());"
+          }
+        ],
+        "x-zen-audience": "PUBLIC_CUSTOMER"
+      }
+    },
+    "/webhooks/pagerduty": {
+      "post": {
+        "operationId": "pagerdutyWebhook",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Webhook processed"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          }
+        },
+        "security": [
+          {
+            "hmacAuth": []
+          }
+        ],
+        "summary": "PagerDuty webhook endpoint",
+        "tags": [
+          "Webhooks"
+        ],
+        "x-codeSamples": [
+          {
+            "label": "curl",
+            "lang": "curl",
+            "source": "curl \\\n  -sS \\\n  -X \\\n  POST \\\n  -H \\\n  Authorization: Bearer $ZEN_API_TOKEN \\\n  -H \\\n  Content-Type: application/json \\\n  \"https://api.zen-mesh.io/v1/webhooks/pagerduty\""
+          },
+          {
+            "label": "Python",
+            "lang": "Python",
+            "source": "import os\nimport requests\n\nbase_url = os.environ[\"ZEN_API_BASE\"].rstrip(\"/\")\ntoken = os.environ[\"ZEN_API_TOKEN\"]\n\nresponse = requests.post(\n    f\"https://api.zen-mesh.io/v1/webhooks/pagerduty\",\n    headers={\n        \"Authorization\": f\"Bearer {token}\",\n        \"Content-Type\": \"application/json\",\n    },\n    timeout=30,\n)\nresponse.raise_for_status()\nprint(response.json())"
+          },
+          {
+            "label": "JavaScript",
+            "lang": "JavaScript",
+            "source": "const baseUrl = process.env.ZEN_API_BASE.replace(/\\/$/, \"\");\nconst token = process.env.ZEN_API_TOKEN;\n\nconst url = baseUrl + path;\nconst response = await fetch(url, {\n  method: \"POST\",\n  headers: {\n    Authorization: `Bearer ${token}`,\n    \"Content-Type\": \"application/json\",\n  },\n});\n\nif (!response.ok) {\n  throw new Error(`Request failed: ${response.status} ${await response.text()}`);\n}\n\nconsole.log(await response.json());"
+          }
+        ],
+        "x-zen-audience": "PUBLIC_CUSTOMER"
+      }
+    },
+    "/webhooks/servicenow": {
+      "post": {
+        "operationId": "servicenowWebhook",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Webhook processed"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          }
+        },
+        "security": [
+          {
+            "hmacAuth": []
+          }
+        ],
+        "summary": "ServiceNow webhook endpoint",
+        "tags": [
+          "Webhooks"
+        ],
+        "x-codeSamples": [
+          {
+            "label": "curl",
+            "lang": "curl",
+            "source": "curl \\\n  -sS \\\n  -X \\\n  POST \\\n  -H \\\n  Authorization: Bearer $ZEN_API_TOKEN \\\n  -H \\\n  Content-Type: application/json \\\n  \"https://api.zen-mesh.io/v1/webhooks/servicenow\""
+          },
+          {
+            "label": "Python",
+            "lang": "Python",
+            "source": "import os\nimport requests\n\nbase_url = os.environ[\"ZEN_API_BASE\"].rstrip(\"/\")\ntoken = os.environ[\"ZEN_API_TOKEN\"]\n\nresponse = requests.post(\n    f\"https://api.zen-mesh.io/v1/webhooks/servicenow\",\n    headers={\n        \"Authorization\": f\"Bearer {token}\",\n        \"Content-Type\": \"application/json\",\n    },\n    timeout=30,\n)\nresponse.raise_for_status()\nprint(response.json())"
+          },
+          {
+            "label": "JavaScript",
+            "lang": "JavaScript",
+            "source": "const baseUrl = process.env.ZEN_API_BASE.replace(/\\/$/, \"\");\nconst token = process.env.ZEN_API_TOKEN;\n\nconst url = baseUrl + path;\nconst response = await fetch(url, {\n  method: \"POST\",\n  headers: {\n    Authorization: `Bearer ${token}`,\n    \"Content-Type\": \"application/json\",\n  },\n});\n\nif (!response.ok) {\n  throw new Error(`Request failed: ${response.status} ${await response.text()}`);\n}\n\nconsole.log(await response.json());"
+          }
+        ],
+        "x-zen-audience": "PUBLIC_CUSTOMER"
+      }
+    },
+    "/webhooks/slack": {
+      "post": {
+        "operationId": "slackWebhook",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Webhook processed"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          }
+        },
+        "security": [
+          {
+            "hmacAuth": []
+          }
+        ],
+        "summary": "Slack webhook endpoint",
+        "tags": [
+          "Webhooks"
+        ],
+        "x-codeSamples": [
+          {
+            "label": "curl",
+            "lang": "curl",
+            "source": "curl \\\n  -sS \\\n  -X \\\n  POST \\\n  -H \\\n  Authorization: Bearer $ZEN_API_TOKEN \\\n  -H \\\n  Content-Type: application/json \\\n  \"https://api.zen-mesh.io/v1/webhooks/slack\""
+          },
+          {
+            "label": "Python",
+            "lang": "Python",
+            "source": "import os\nimport requests\n\nbase_url = os.environ[\"ZEN_API_BASE\"].rstrip(\"/\")\ntoken = os.environ[\"ZEN_API_TOKEN\"]\n\nresponse = requests.post(\n    f\"https://api.zen-mesh.io/v1/webhooks/slack\",\n    headers={\n        \"Authorization\": f\"Bearer {token}\",\n        \"Content-Type\": \"application/json\",\n    },\n    timeout=30,\n)\nresponse.raise_for_status()\nprint(response.json())"
+          },
+          {
+            "label": "JavaScript",
+            "lang": "JavaScript",
+            "source": "const baseUrl = process.env.ZEN_API_BASE.replace(/\\/$/, \"\");\nconst token = process.env.ZEN_API_TOKEN;\n\nconst url = baseUrl + path;\nconst response = await fetch(url, {\n  method: \"POST\",\n  headers: {\n    Authorization: `Bearer ${token}`,\n    \"Content-Type\": \"application/json\",\n  },\n});\n\nif (!response.ok) {\n  throw new Error(`Request failed: ${response.status} ${await response.text()}`);\n}\n\nconsole.log(await response.json());"
+          }
+        ],
+        "x-zen-audience": "PUBLIC_CUSTOMER"
+      }
+    }
+  },
+  "servers": [
+    {
+      "description": "Production",
+      "url": "https://api.zen-mesh.io/v1"
+    },
+    {
+      "description": "Staging",
+      "url": "https://staging.api.zen-mesh.io/v1"
+    },
+    {
+      "description": "Local development",
+      "url": "https://staging.api.zen-mesh.io/v1"
+    }
+  ],
+  "tags": [
+    {
+      "description": "Health and readiness checks",
+      "name": "Health"
+    },
+    {
+      "description": "Tenant management",
+      "name": "Tenants"
+    },
+    {
+      "description": "Plane registration and management (wire name in API paths: cluster)",
+      "name": "Planes"
+    },
+    {
+      "description": "CRD management (Ingester, Target [wire name: destination], DeliveryFlow)",
+      "name": "CRDs"
+    },
+    {
+      "description": "Channel and flow management (bridge-only)",
+      "name": "Channels"
+    },
+    {
+      "description": "External service webhook endpoints",
+      "name": "Webhooks"
+    },
+    {
+      "description": "Integration configuration",
+      "name": "Integrations"
+    }
+  ]
+}

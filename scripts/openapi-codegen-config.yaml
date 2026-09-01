@@ -1,0 +1,30 @@
+# OpenAPI Generator config for Zen Mesh public API
+# Version: pinned to 7.7.0 (https://github.com/OpenAPITools/openapi-generator/releases/tag/v7.7.0)
+
+# Global settings
+additionalProperties:
+  # Client library generation
+  library: urllib3  # synchronous Python client
+  packageName: zen_mesh_api
+  projectName: zen-mesh-api
+  hideGenerationTimestamp: true
+  generateSourceCodeOnly: false
+
+  # TypeScript settings
+  npmName: "@zen-mesh/api-client"
+  npmVersion: "0.0.1"
+  typescriptVersion: "5.0"
+
+  # General
+  outputDir: ../generated
+  ignoreFile overwrite: true
+
+# Per-language settings
+Python:
+  additionalProperties:
+    library: urllib3
+
+TypeScript:
+  additionalProperties:
+    npmName: "@zen-mesh/api-client"
+    typescriptVersion: "5.0"
