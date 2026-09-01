@@ -90,6 +90,6 @@ Template → Blueprint → Flow → Traffic → Evidence
 - [Write Safety Model](./write-safety) — authorization, idempotency, audit, fail-closed behavior for write-capable APIs and MCP
 - [Authentication and API Keys](./authentication)
 - [Errors and Problem Details](./errors)
-- [Interactive API Console](/docs/swagger-ui.html) — Try all operations live with the official Swagger UI
+- [Interactive API Console](../../swagger-ui.html) — Try all operations live with the official Swagger UI
 - [OpenAPI Spec Index](./openapi)
 - [Reference API Index](../reference/api)

@@ -81,7 +81,7 @@ npx oasdiff changelog api-specifications/zen-back.v1.yaml <previous-version>.yam
 
 ## Interactive API Console
 
-Try all operations live with the official [Swagger UI](/docs/swagger-ui.html) — powered by swagger.io, not Docusaurus plugins.
+Try all operations live with the official [Swagger UI](../../swagger-ui.html) — powered by swagger.io, not Docusaurus plugins.
 
 ## Related
 
