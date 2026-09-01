@@ -79,6 +79,10 @@ Zen Mesh publishes public product, pricing, support, documentation, and evidence
 
 Blog articles are editorial narrative, not proof; claims and their scope live in the registries above.
 
+## Machine-readable operations
+
+- [Discovery crawler smoke record](https://www.zen-mesh.io/docs/ai/discovery-crawler-smoke-v1.json): apex/www/docs fetch status for validators and reviewers
+
 ## Legal
 
 - **Company:** Zen Mesh Inc., Toronto, Ontario, Canada.

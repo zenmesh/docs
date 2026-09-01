@@ -40,6 +40,20 @@ function allHtml(dir) {
 // finding, report-only), so a fresh build's differing CSS hash is not an error.
 const OPENSEARCH_REL = 'openapi-reference.html';
 
+// Docusaurus serves the build output under baseUrl ('/docs'): a page asset
+// reference /docs/X resolves to build/X. Strip the baseUrl before resolving.
+const BASE_URL = (() => {
+  const m = fs.readFileSync(path.join(ROOT, 'docusaurus.config.ts'), 'utf-8')
+    .match(/baseUrl:\s*'([^']*)'/);
+  return m ? m[1].replace(/\/+$/, '') : '';
+})();
+function stripBase(href) {
+  if (!BASE_URL) return href;
+  if (href === BASE_URL) return '/';
+  if (href.startsWith(BASE_URL + '/')) return href.slice(BASE_URL.length);
+  return href;
+}
+
 const errors = [];
 let assetsChecked = 0;
 
@@ -61,7 +75,7 @@ for (const f of allHtml(BUILD)) {
       if (path.relative(BUILD, f) === OPENSEARCH_REL && /^\/assets\/css\/styles\.[a-f0-9]+\.css$/.test(href)) {
         continue; // pinned-build-hash CSS — report-only content-freeze finding
       }
-      const rel = href.replace(/^\/+/, '');
+      const rel = stripBase(href).replace(/^\/+/, '');
       const cand = path.join(BUILD, rel);
       if (fs.existsSync(cand) && !fs.statSync(cand).isDirectory()) {
         assetsChecked++;

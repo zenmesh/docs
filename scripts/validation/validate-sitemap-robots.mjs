@@ -35,7 +35,14 @@ if (!hasFile('sitemap.xml')) {
     if (!locs.length) errors.push('sitemap.xml has zero <loc> entries');
     for (const loc of locs) {
       const u = new URL(loc);
-      const rel = u.pathname.replace(/^\/+/, '');
+      // Sitemap locs are public URLs served under baseUrl ('/docs'); the
+      // build file lives at the baseUrl-stripped path (route /docs/X -> build/X).
+      let pathname = u.pathname;
+      const BASE = '/docs';
+      if (pathname === BASE || pathname.startsWith(BASE + '/')) {
+        pathname = pathname === BASE ? '/' : pathname.slice(BASE.length);
+      }
+      const rel = pathname.replace(/^\/+/, '');
       const cand = path.join(BUILD, rel);
       const candIdx = path.join(BUILD, rel, 'index.html');
       if (!fs.existsSync(cand) && !fs.existsSync(candIdx) && !fs.existsSync(cand + '.html')) {
