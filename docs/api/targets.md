@@ -6,7 +6,7 @@ sidebar_label: Targets API
 
 Targets are delivery destinations — where validated events are sent after ingestion and processing.
 
-> Status: WIRED_SANDBOX. This page describes the current contract surface and known non-claims. It is not a production-live availability claim.
+> **For the canonical interactive contract, use [Swagger UI](./swagger/).** This page explains the concept; Swagger shows the exact method/path/parameters.
 
 ## Terminology
 

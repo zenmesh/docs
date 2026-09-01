@@ -259,6 +259,7 @@ const sidebars: SidebarsConfig = {
             'api/pagination',
             'api/openapi',
             'api/changelog',
+            'api/sdks',
           ],
         },
         {

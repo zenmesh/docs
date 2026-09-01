@@ -1,90 +1,51 @@
 ---
-sidebar_label: OpenAPI Spec Index
+sidebar_label: OpenAPI Spec
 ---
 
-# OpenAPI Spec Index
+# OpenAPI Spec
 
-Zen Mesh publishes OpenAPI 3.0.3 specifications covering the public and app-facing API surfaces.
+Zen Mesh publishes an OpenAPI 3.0.3 specification covering the **public customer-facing API surface**. It is the canonical machine-readable contract from which Swagger UI and SDKs are generated.
 
-> Status: PUBLIC_CONTRACT_DRAFT. OpenAPI specs are maintained alongside docs but may trail the current runtime. See per-spec status below.
+> **For interactive exploration, use [Swagger UI](./swagger/)** — it loads this spec in a browser-native UI.
 
-## Available specs
+## Spec Files
 
-| Spec | File | Lines | Coverage | Status | Interactive UI |
-|------|------|-------|----------|--------|----------------|
-| **KubeZen Back API** | `api-specifications/zen-back.v1.yaml` | 1,265 | Backend public API (targets/endpoints/flows/deliveries) | DRAFT — wired in swagger.io UI | Yes |
-| **Zen Mesh User API** | `static/openapi/zen-mesh-user-api.v1.yaml` | 2,021 | Same surface with code samples (curl, Python, JS) | DRAFT — static file only | Yes |
-| **BFF API** | `src/saas/bff/openapi/zen-bff.v1.yaml` | — | Dashboard BFF surface | INTERNAL_ONLY — outside docs repo | No |
+| Spec | Location | Description |
+|------|----------|-------------|
+| Public API | `/docs/api/openapi.yaml` | **Use this.** PUBLIC_CUSTOMER operations only. |
+| Full API | Internal | Includes INTERNAL_BFF operations. Not published publicly. |
 
-## Coverage table
+## Source of Truth Chain
 
-| Endpoint group | Documented page | OpenAPI (zen-back) | OpenAPI (user) | Implementation route | HTTP methods | Status |
-|----------------|----------------|-------------------|----------------|---------------------|-------------|--------|
-| Health | — | Yes | Yes | `/health`, `/ready` | GET | WIRED_SANDBOX |
-| Tenants | — | Yes | Yes | `/tenants/{tid}` | GET | WIRED_SANDBOX |
-| Clusters/Planes | — | Yes | Yes | `/tenants/{tid}/clusters` | GET, POST | WIRED_SANDBOX |
-| Targets (destinations) | [Targets API](./targets) | Yes | Yes | `/tenants/{tid}/destinations` | GET, POST, PATCH, DELETE | WIRED_SANDBOX |
-| Endpoints (ingesters) | [Endpoints API](./endpoints) | Yes | Yes | `/tenants/{tid}/ingesters` | GET, POST, PUT, DELETE | WIRED_SANDBOX |
-| Flows (delivery-flows) | [Flows API](./flows) | Yes | Yes | `/tenants/{tid}/delivery-flows` | GET, POST, PUT, DELETE | WIRED_SANDBOX |
-| Delivery Attempts | [Delivery Attempts API](./delivery-attempts) | Partial | Partial | `/tenants/{tid}/deliveries` | GET | WIRED_SANDBOX |
-| DLQ | [DLQ API](./dlq) | — | — | `/deliveries?status=failed` | GET | WIRED_SANDBOX |
-| Retry | [Retry API](./retry) | — | — | `/events/{eid}/retry`, `/retry/batch` | POST | WIRED_SANDBOX |
-| Replay | [Replay API](./replay) | Partial | Partial | `/deliveries/{did}/replay` | POST | WIRED_SANDBOX |
-| Traces | [Traces API](./traces) | — | — | `/deliveries?event_id=` | GET | WIRED_SANDBOX |
-| Saved Payloads | [Saved Payloads API](./saved-payloads) | — | — | `/saved-payloads` | GET, POST, PUT, DELETE | WIRED_SANDBOX |
-| Evidence | [Evidence API](./evidence) | Partial | Partial | `/evidence/...`, `/sources/.../evidence` | GET | WIRED_SANDBOX |
-| API Keys | [Authentication](./authentication) | Partial | Partial | `/api-keys` | GET, POST, DELETE | WIRED_SANDBOX |
-| Webhook endpoints | — | — | — | `/webhooks/{provider}` | POST | WIRED_SANDBOX |
-| Integrations | — | — | Yes | `/integrations` | GET, POST | WIRED_SANDBOX |
-| Channels (bridge) | — | Yes | Yes | `/bridge/.../channels` | GET | WIRED_SANDBOX |
-
-## Spec coverage gaps
-
-The following documented endpoints are **not covered** by any published OpenAPI spec:
-
-| Endpoint group | Missing from both specs |
-|---|---|
-| DLQ | Uses deliveries shared endpoint — no separate spec entry |
-| Retry | Not covered |
-| Traces | Shared deliveries endpoint — no separate spec entry |
-| Saved Payloads | Not covered |
-| Fabric Adapters | BFF-only (not in this repo) |
-
-## How to validate a spec
-
-```bash
-# Validate with spectral
-npx spectral lint api-specifications/zen-back.v1.yaml
-
-# Compare spec against docs routes
-curl -s https://raw.githubusercontent.com/zenmesh/zen-platform-hermes/main/api-specifications/zen-back.v1.yaml \
-  | grep -E '^\s+/' | head -40
-
-# Generate spec diff
-npx oasdiff changelog api-specifications/zen-back.v1.yaml <previous-version>.yaml
+```
+zen-mesh-api.v1.public.yaml (PUBLIC_CUSTOMER filter)
+  ├── Swagger UI  → /docs/zen-mesh/api/swagger/
+  ├── OpenAPI YAML  → /docs/api/openapi.yaml
+  ├── OpenAPI JSON  → /docs/api/openapi.json
+  ├── Python SDK  → generated/python/
+  └── TypeScript SDK  → generated/typescript/
 ```
 
-## How to compare spec with route inventory
+## Audience Classification
 
-1. Fetch the current spec: `curl https://raw.githubusercontent.com/zenmesh/zen-platform-hermes/main/api-specifications/zen-back.v1.yaml`
-2. Compare against documented routes in [API Overview](./overview#api-surface-groups) or the [API Reference](../reference/api).
-3. Generate diff using `oasdiff` or similar tool.
+Every operation in the public spec is tagged `x-zen-audience: PUBLIC_CUSTOMER`.
 
-## Non-claims
+Operations tagged `INTERNAL_*` are excluded from the public spec and are not available via Swagger.
 
-- OpenAPI specs are maintained alongside docs but may trail the current runtime.
-- The User API spec (`static/openapi/`) is provided as a static reference.
-- The BFF spec is NOT in this repository; it is internal to the dashboard app.
-- Specs are DRAFT status unless explicitly marked PUBLIC_CONTRACT_STABLE.
-- Several endpoint groups (Retry, Saved Payloads, Traces, DLQ) are not covered by any published spec.
-- Coverage varies by HTTP method even within covered groups.
+See [SDKs](./sdks) for generated client libraries derived from this spec.
 
-## Interactive API Console
+## Validation
 
-Try all operations live with the official [Swagger UI](/docs/swagger-ui.html) — powered by swagger.io, not Docusaurus plugins.
+```bash
+# Validate spec
+npx spectral lint /docs/api/openapi.yaml
 
-## Related
+# Check operation coverage
+grep "x-zen-audience" /docs/api/openapi.yaml | sort | uniq -c
+```
 
-- [API Overview](./overview) — surface group taxonomy
-- [API Status Matrix](./status) — per-group maturity and coverage
-- [API Quickstart](./quickstart) — developer journey with examples
+## Non-Claims
+
+- The public spec reflects the PUBLIC_CUSTOMER surface only.
+- Internal operations (INTERNAL_BFF, INTERNAL_COMPONENT, INTERNAL_OPERATOR) are excluded.
+- Spec status is `WIRED_SANDBOX` — not production-live.
