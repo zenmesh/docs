@@ -25,7 +25,7 @@ description: Interactive Swagger UI reference for the Zen Mesh public API.
 </div>
 
 <iframe
-  src="../../swagger-ui.html"
+  src="/docs/swagger-ui.html"
   style={{width: '100%', height: '900px', border: '1px solid #3e4042', borderRadius: '4px'}}
   title="Zen Mesh API Reference"
   loading="lazy"
