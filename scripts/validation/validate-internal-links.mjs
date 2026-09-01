@@ -60,12 +60,25 @@ function collectIds() {
   return map;
 }
 
+// Docusaurus serves the build output under baseUrl ('/docs'): the SITE route
+// /docs/X maps to build/X. Absolute hrefs therefore must have the baseUrl
+// prefix stripped before resolving against build/.
+const BASE_URL = (() => {
+  const m = fs.readFileSync(path.join(ROOT, 'docusaurus.config.ts'), 'utf-8')
+    .match(/baseUrl:\s*'([^']*)'/);
+  return m ? m[1].replace(/\/+$/, '') : '';
+})();
+
 function resolve(baseRoute, href) {
   if (/^(https?:)?\/\//.test(href) || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('data:')) return null;
   const [pathPart, frag] = href.split('#');
   const clean = (p) => (p.replace(/\/+$/, '') || '/');
   if (href.startsWith('/')) {
-    return { route: clean(pathPart), frag: frag || null };
+    let route = clean(pathPart);
+    if (BASE_URL && (route === BASE_URL || route.startsWith(BASE_URL + '/'))) {
+      route = route === BASE_URL ? '/' : route.slice(BASE_URL.length);
+    }
+    return { route, frag: frag || null };
   }
   const dir = baseRoute === '/' ? '' : baseRoute;
   const joined = path.posix.normalize(`${dir}/${pathPart}`).replace(/\/+$/, '');
