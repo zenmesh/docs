@@ -67,6 +67,71 @@
       "source": "/zen-gc/:path*",
       "destination": "https://www.zen-mesh.io/docs/zen-gc/:path*",
       "statusCode": 308
+    },
+    {
+      "source": "/docs/helm-charts",
+      "destination": "https://www.zen-mesh.io/docs/helm-charts/",
+      "statusCode": 308
+    },
+    {
+      "source": "/docs/helm-charts/:path*",
+      "destination": "https://www.zen-mesh.io/docs/helm-charts/:path*",
+      "statusCode": 308
+    },
+    {
+      "source": "/docs/zen-lock",
+      "destination": "https://www.zen-mesh.io/docs/zen-lock/",
+      "statusCode": 308
+    },
+    {
+      "source": "/docs/zen-lock/:path*",
+      "destination": "https://www.zen-mesh.io/docs/zen-lock/:path*",
+      "statusCode": 308
+    },
+    {
+      "source": "/docs/zen-gc",
+      "destination": "https://www.zen-mesh.io/docs/zen-gc/",
+      "statusCode": 308
+    },
+    {
+      "source": "/docs/zen-gc/:path*",
+      "destination": "https://www.zen-mesh.io/docs/zen-gc/:path*",
+      "statusCode": 308
+    },
+    {
+      "source": "/docs/ai",
+      "destination": "https://www.zen-mesh.io/docs/ai/",
+      "statusCode": 308
+    },
+    {
+      "source": "/docs/ai/:path*",
+      "destination": "https://www.zen-mesh.io/docs/ai/:path*",
+      "statusCode": 308
+    },
+    {
+      "source": "/docs/openapi",
+      "destination": "https://www.zen-mesh.io/docs/openapi/",
+      "statusCode": 308
+    },
+    {
+      "source": "/docs/openapi/:path*",
+      "destination": "https://www.zen-mesh.io/docs/openapi/:path*",
+      "statusCode": 308
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "https://www.zen-mesh.io/sitemap.xml",
+      "statusCode": 308
+    },
+    {
+      "source": "/sitemap-index.xml",
+      "destination": "https://www.zen-mesh.io/sitemap.xml",
+      "statusCode": 308
+    },
+    {
+      "source": "/sitemap-0.xml",
+      "destination": "https://www.zen-mesh.io/sitemap.xml",
+      "statusCode": 308
     }
   ],
   "headers": [

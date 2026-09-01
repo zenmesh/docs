@@ -5,6 +5,7 @@ Allow: /ai/
 Allow: /ai/evidence/
 Allow: /docs/ai/
 
-Sitemap: https://docs.zen-mesh.io/sitemap.xml
+Sitemap: https://www.zen-mesh.io/sitemap.xml
 
-# AI-readable: /llms.txt (docs), manifests under /ai/evidence/v1/, www parity at https://www.zen-mesh.io/llms.txt
+# Legacy compatibility surface: all documentation redirects to https://www.zen-mesh.io/docs
+# AI-readable: https://www.zen-mesh.io/llms.txt (canonical), manifests under /docs/ai/evidence/v1/

@@ -10,16 +10,16 @@ See the [Runtime Convergence Evidence Pack v1](https://github.com/zenmesh/zen-pl
 
 | Proof | Scenario | Path Mode | Status |
 |-------|----------|-----------|--------|
-| PROOF-001 | Retry-to-success | direct | victory-locked, local/mock |
-| PROOF-002 | CP outage/reconnect | cp_convergence | victory-locked, local/mock |
-| PROOF-003 | DLQ exhaustion | direct | victory-locked, local/mock |
-| PROOF-004 | Duplicate/idempotency | direct | victory-locked, local/mock |
-| PROOF-005 | Reconnect conflict resolution | cp_convergence | victory-locked, local/mock |
-| PROOF-006 | Topology drift | topology | victory-locked, local/mock |
-| PROOF-007 | Evidence buffer flush | evidence_buffer | victory-locked, local/mock |
-| PROOF-008 | Relay path convergence | relay | victory-locked, local/mock |
-| PROOF-009 | Failover recovery | relay | victory-locked, local/mock |
-| PROOF-010 | Private-edge path convergence | private_edge | victory-locked, local/mock |
+| PROOF-001 | Retry-to-success | direct | validation-locked, local/mock evidence |
+| PROOF-002 | CP outage/reconnect | cp_convergence | validation-locked, local/mock evidence |
+| PROOF-003 | DLQ exhaustion | direct | validation-locked, local/mock evidence |
+| PROOF-004 | Duplicate/idempotency | direct | validation-locked, local/mock evidence |
+| PROOF-005 | Reconnect conflict resolution | cp_convergence | validation-locked, local/mock evidence |
+| PROOF-006 | Topology drift | topology | validation-locked, local/mock evidence |
+| PROOF-007 | Evidence buffer flush | evidence_buffer | validation-locked, local/mock evidence |
+| PROOF-008 | Relay path convergence | relay | validation-locked, local/mock evidence |
+| PROOF-009 | Failover recovery | relay | validation-locked, local/mock evidence |
+| PROOF-010 | Private-edge path convergence | private_edge | validation-locked, local/mock evidence |
 
 ## Verification
 

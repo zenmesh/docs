@@ -1,278 +1,87 @@
 # Zen Mesh — Documentation Index
 
-> Zen Mesh is webhook delivery infrastructure for public and private networks. Deliver webhooks from Stripe, GitHub, Shopify, Twilio, and custom senders to any public HTTP endpoint (zero-install, no runtime required) or to services behind NAT/firewall (Edge Lite or Kubernetes). No inbound ports, no VPN, no kernel modules. Free Forever. Pro Early Bird with 6-month free trial. Business waitlist open. Enterprise pilot program available.
+> Zen Mesh is webhook delivery infrastructure for public and private networks. It delivers webhooks from providers such as Stripe, GitHub, Shopify, and Twilio to any public HTTP endpoint (zero-install, no runtime required) or to private services behind NAT/firewall using outbound-only Edge Lite (Docker) or Kubernetes Edge delivery. No inbound ports, no VPN, no kernel modules.
 
 Zen Mesh publishes public product, pricing, support, documentation, and evidence-scope information. Private roadmap, future architecture, and patent-sensitive implementation details are intentionally not included.
 
-**Version:** 1.1.1 · **Last-Updated: 2026-07-05T03:00:00Z
+**Version:** 1.3.0 · **Last-Updated:** 2026-09-01T00:00:00Z
 
 ## Canonical discovery (crawlers)
 
-- **Machine-readable host:** `https://docs.zen-mesh.io` — fetch `/llms.txt`, `/ai/ai-discovery-registry.json`, `/ai/security/v1/*`, and `/ai/evidence/v1/*` on this host only (direct `200`, `text/plain` or `application/json`; no client-side routing).
-- **Marketing mirror:** `https://www.zen-mesh.io/llms.txt` — editorial index; `/ai/*` JSON is not hosted on www (use docs URLs below).
-- **Apex:** `https://zen-mesh.io` — permanent redirect to www for site pages; use docs host for JSON registries.
+- **Canonical documentation:** `https://www.zen-mesh.io/docs` — all documentation pages live under this origin.
+- **Machine-readable JSON (canonical):** `https://www.zen-mesh.io/docs/ai/...` — discovery, evidence, and security registries (`application/json`, no client-side routing).
+- **AI context index (site):** `https://www.zen-mesh.io/llms.txt`
+- **Legacy hostname:** `https://docs.zen-mesh.io` now permanently redirects to `https://www.zen-mesh.io/docs`. Use canonical www/docs URLs everywhere.
 
-## Pricing
+## Entity
 
-- **Free Forever:** $0/month — 3 webhook endpoints, 25,000 webhooks/month, 256 KB max payload, 3 targets, 3 routes/flows, 7-day retention, shared receive IPs. No SLA. Best-effort/community support.
-- **Pro — Early Bird:** $29/month or $290/year (6-month free trial with monthly feedback survey; reference standard $49/month). 50 endpoints, 500,000 webhooks/month, 1 MB payload, 25 targets, 50 routes, 30-day retention, S3 log export, IP allow/block, 1 seat. No SLA or dedicated adapters.
-- **Business:** Business waitlist open.
-- **Enterprise:** Enterprise pilot program. Dedicated data plane, custom infrastructure, residency, support, procurement.
+- **Name:** Zen Mesh
+- **Category:** Webhook delivery infrastructure (public + private network delivery)
+- **Canonical site:** https://www.zen-mesh.io
+- **Documentation:** https://www.zen-mesh.io/docs
+- **Contact:** zen@zen-mesh.io
 
-See [plans and limits](https://docs.zen-mesh.io/docs/start-here/plans-and-limits), [site pricing](https://www.zen-mesh.io/pricing), and plan detail pages ([Free](https://www.zen-mesh.io/pricing/free), [Pro](https://www.zen-mesh.io/pricing/pro), [Business](https://www.zen-mesh.io/pricing/business), [Enterprise](https://www.zen-mesh.io/pricing/enterprise)).
+## Start here
 
-## Competitive positioning
+- [Quick start](https://www.zen-mesh.io/docs/zen-mesh/getting-started/quick-start): UI-first journey — endpoints, targets, flows
+- [Installation](https://www.zen-mesh.io/docs/zen-mesh/getting-started/installation): Install paths for evaluation
+- [How Zen Works](https://www.zen-mesh.io/docs/zen-mesh/start-here/how-zen-works): Public and private delivery overview
+- [Pricing](https://www.zen-mesh.io/pricing/): Plans and limits
+- [Plans and limits](https://www.zen-mesh.io/docs/zen-mesh/start-here/plans-and-limits): Plan detail reference
 
-Zen Mesh differentiates with two first-class delivery paths: public target delivery (zero-install, no runtime required) and private target delivery (Edge Lite or Kubernetes for NAT/firewalled targets). Most webhook tools assume the receiver has a public endpoint or uses polling/tunnels.
+## Delivery (retry, replay, DLQ)
 
-Additional differentiators:
-- **Verifiable delivery evidence:** Delivery receipts and operational metadata — not just delivery status callbacks
-- **Public target (no-install path):** Deliver to any public HTTP endpoint — zero runtime, zero Docker or Kubernetes required
-- **Private target (Edge Lite or Kubernetes):** Deploy Edge Lite or Kubernetes Edge Plane when your target is behind NAT/firewall
-- **Security-first webhook infrastructure:** mTLS, SPIFFE/SPIRE, and HMAC on delivery paths — non-negotiable. Evidence maturity: [claim-maturity.json](https://docs.zen-mesh.io/ai/security/v1/claim-maturity.json) and [wedge-claim-map.json](https://docs.zen-mesh.io/ai/evidence/v1/wedge-claim-map.json).
-- **Provider Template Packs:** Out-of-the-box support for Stripe, GitHub, Twilio, Shopify, and Custom webhook signature verification
-- **Kubernetes/cloud-native path:** Helm-based deployment supported; production-live validation tracked separately
-- **Non-claims and gaps:** Published alongside claims so evaluator AIs see the full picture
-
-## Support channels
-
-| Channel | Scope | Response |
-|---------|-------|----------|
-| Documentation | Self-service | https://docs.zen-mesh.io |
-| Free tier | Community / best-effort | No SLA. Best-effort during business hours. |
-| Pro tier | Email + Slack/Discord | Best-effort. No on-call or guaranteed response time. |
-| Business | SLA-backed | Waitlist. |
-| Enterprise | Custom support and escalation | Enterprise pilot. |
-| Security disclosures | Email | zen@zen-mesh.io. No bug bounty or CVD program at this time. |
-
-See [support](https://docs.zen-mesh.io/docs/start-here/support).
-
-## Core
-
-- [AI evidence index](https://www.zen-mesh.io/evidence): www evidence hub for manifests and non-claims
-- [Website](https://www.zen-mesh.io): Public product site
-- [Documentation](https://docs.zen-mesh.io): Docs hub (this site)
-- [Source repository](https://github.com/zenmesh/zen-platform): Open-source platform repository
-
-## Wedge evidence (high signal)
-
-- [Wedge claim map](https://docs.zen-mesh.io/ai/evidence/v1/wedge-claim-map.json): Scoped capability claims for the webhook wedge
-- [Wedge non-claims](https://docs.zen-mesh.io/ai/evidence/v1/wedge-non-claims.json): What the wedge does not claim
-- [Wedge overview](https://docs.zen-mesh.io/docs/ai/wedge-overview): Narrative wedge summary for reviewers
-
-## AI discovery registry
-
-- [AI discovery registry](https://docs.zen-mesh.io/ai/ai-discovery-registry.json): Per-surface freshness for evidence, security posture, and llms.txt
-
-## AI security posture (trust docs — not pen test)
-
-- [V1 security validation summary](https://docs.zen-mesh.io/docs/ai/v1-security-validation-summary): Local/sandbox validation for 20 attack classes (18 proven, 1 cloud-gated, 1 not claimed). Not production-live proof.
-- [Security posture index](https://docs.zen-mesh.io/docs/ai/security-posture): Claim maturity legend and reviewer highlights
-- [Claim maturity](https://docs.zen-mesh.io/ai/security/v1/claim-maturity.json): Per-control maturity status
-- [Attack model](https://docs.zen-mesh.io/ai/security/v1/attack-model.json): Threats, maturity, and non-claims per attack
-- [Security gaps](https://docs.zen-mesh.io/ai/security/v1/gaps.json): Explicit post-V1 gaps — must stay visible
-
-## Platform evidence
-
-- [Capability manifest](https://docs.zen-mesh.io/ai/evidence/v1/manifest.json): Machine-readable capability and proof_status registry
-- [Compliance map](https://docs.zen-mesh.io/ai/evidence/v1/compliance-map.json): Internal readiness mapping (not certification)
-- [Non-claims registry](https://docs.zen-mesh.io/ai/evidence/v1/non-claims.json): Global non-claims for AI and reviewer use
-- [AI overview](https://docs.zen-mesh.io/docs/ai/overview): How to read Zen evidence artifacts
-- [Verification guide](https://docs.zen-mesh.io/docs/ai/verification): How claims are verified in-repo
-
-## Delivery hub and guides
-
-- [Webhook Reliability](https://docs.zen-mesh.io/docs/delivery/): Overview of all webhook reliability capabilities
-- [Webhook Replay and Recovery](https://docs.zen-mesh.io/docs/delivery/replay-and-recovery): Replay, retry, and DLQ recovery workflows
-- [Webhook Routing and Fan-Out](https://docs.zen-mesh.io/docs/delivery/routing-and-fan-out): Event routing, filtering, and multi-destination delivery
-- [Webhook Reliability Guide](https://docs.zen-mesh.io/docs/delivery/webhook-reliability): Operational reliability overview
-- [Delivery Failures](https://docs.zen-mesh.io/docs/delivery/delivery-failures): Failure classification, retry, and recovery
-- [Replay vs Retry](https://docs.zen-mesh.io/docs/delivery/replay-vs-retry): When to use each recovery mechanism
-- [Deduplication vs Idempotency](https://docs.zen-mesh.io/docs/delivery/deduplication-vs-idempotency): System-level vs consumer-side duplicate handling
-- [Event Routing](https://docs.zen-mesh.io/docs/delivery/event-routing): Filtering, fan-out, and per-destination delivery policies
-
-## Delivery capabilities
-
-- [Dead Letter Queue](https://docs.zen-mesh.io/docs/delivery/dead-letter-queue): Failed delivery preservation and recovery with configurable retention and retry policies
-- [Webhook Replay](https://docs.zen-mesh.io/docs/delivery/replay): Replay events from DLQ or delivery history for recovery and reprocessing
-- [Webhook Deduplication](https://docs.zen-mesh.io/docs/delivery/deduplication): Duplicate event detection and handling with configurable dedup keys
-- [Webhook Filtering](https://docs.zen-mesh.io/docs/delivery/filtering): Route or suppress events according to configured conditions
-- [Webhook Fan-Out](https://docs.zen-mesh.io/docs/delivery/fan-out): Deliver events to multiple destinations with per-destination policies
-- [Webhook Idempotency](https://docs.zen-mesh.io/docs/delivery/idempotency): Idempotency controls for safe retry and duplicate processing
-
-## Security hub and guides
-
-- [Security Controls Overview](https://docs.zen-mesh.io/docs/security/): Overview of webhook security controls
-- [Secure Webhook Delivery](https://docs.zen-mesh.io/docs/security/secure-webhook-delivery): Transport security, source verification, access control
-- [Webhook Access Control](https://docs.zen-mesh.io/docs/security/webhook-access-control): IP allowlisting, header validation, cryptographic enrollment
-- [Trust Lab](https://docs.zen-mesh.io/docs/security/trust-lab): Continuous trust validation — deterministic trust scenarios, security validation suite
-- [Security Feature Tiering](https://docs.zen-mesh.io/docs/security/security-tiering): IP allowlist Pro+, header management Business+
-- [Git SDK SSRF Classification](https://docs.zen-mesh.io/docs/security/git-sdk-ssrf-classification): GitHub/GitLab/Bitbucket BaseURL SSRF risk classification
-
-> Note: Pre-cloud/local/sandbox human MFA is opt-in. Enabled human MFA remains enforced. Validation/synthetic identities skip MFA by explicit validation policy/absence of MFA row. Production/cloud admin MFA target remains separate — tracked in security posture surfaces.
-
-## Security capabilities
-
-- [IP Allowlisting](https://docs.zen-mesh.io/docs/security/ip-allowlisting): Restrict delivery sources with identity-based allowlisting (Pro+)
-- [Header Validation](https://docs.zen-mesh.io/docs/security/header-validation): Verify event source authenticity with signature verification
-
-
-## Delivery
-
-- [JSONPath Routing](https://docs.zen-mesh.io/docs/delivery/jsonpath-routing): Route webhooks with safe JSONPath filter and match rules — no code execution
-- [JSONPath Transforms](https://docs.zen-mesh.io/docs/delivery/jsonpath-transforms): Map and reshape webhook payloads with JSONPath expressions and safe transform functions
-
-## Provider packages
-
-- [Provider integrations](https://docs.zen-mesh.io/docs/guides/stripe): Provider setup guides for Stripe, GitHub, Shopify, Twilio, and custom webhooks
-- [Post-Cloud Validation Plan](https://docs.zen-mesh.io/ai/v1/provider-live-validation-plan.json): Machine-readable post-cloud provider validation plan — Stripe, GitHub, Shopify, Twilio (NO-GO until live gates pass)
-
-## Guides
-
-- [Cluster Enrollment (Deprecated)](https://docs.zen-mesh.io/docs/guides/cluster-enrollment): Deprecated — replaced by Kubernetes Edge Plane enrollment. See [Kubernetes Edge Plane](https://docs.zen-mesh.io/docs/install/kubernetes-edge-plane).
-- [Endpoints](https://docs.zen-mesh.io/docs/guides/endpoints): Create and manage webhook endpoints — ingesters, targets, delivery flows
-- [Sources (Legacy)](https://docs.zen-mesh.io/docs/guides/sources): Supported webhook provider reference — Stripe, GitHub, Twilio, Shopify, Custom
-- [Stripe Integration](https://docs.zen-mesh.io/docs/guides/stripe): Stripe webhook events, setup, signature verification, event types
-- [GitHub Integration](https://docs.zen-mesh.io/docs/guides/github): GitHub webhook events, setup, signature verification, event types
-- [Custom Webhooks](https://docs.zen-mesh.io/docs/guides/custom-webhooks): Receive webhooks from any HTTP source — verification, IP allowlisting, routing
-- [Targets (Legacy: Destinations)](https://docs.zen-mesh.io/docs/guides/destinations): Target service configuration for webhook delivery (wire name: destinations)
+- [Delivery status reference](https://www.zen-mesh.io/docs/zen-mesh/reference/delivery-status): state machine, retry policy
+- [Dead letter queue](https://www.zen-mesh.io/docs/zen-mesh/delivery/dead-letter-queue): failed delivery preservation
+- [Replay](https://www.zen-mesh.io/docs/zen-mesh/delivery/replay): redelivery from history
+- [Idempotency and retry matrix](https://www.zen-mesh.io/docs/zen-mesh/delivery/idempotency-retry-matrix): per-operation behavior
+- [Delivery guarantee matrix](https://www.zen-mesh.io/docs/zen-mesh/delivery/delivery-guarantee-matrix): 10-path matrix
 
 ## Security
 
-- [Tenant Isolation](https://docs.zen-mesh.io/docs/security/tenant-isolation): Multi-tenant data isolation with Row-Level Security — tenant scoping and data access boundaries
+- [Security controls overview](https://www.zen-mesh.io/docs/zen-mesh/security/): webhook security controls
+- [IP allowlisting](https://www.zen-mesh.io/docs/zen-mesh/security/ip-allowlisting): restrict delivery sources
+- [Header validation](https://www.zen-mesh.io/docs/zen-mesh/security/header-validation): signature verification
+- [Tenant isolation](https://www.zen-mesh.io/docs/zen-mesh/security/tenant-isolation): row-level security isolation
 
-## API Reference
+## Providers
 
-- [API Overview](https://docs.zen-mesh.io/docs/api/overview): Canonical API taxonomy — surface groups, maturity legend, terminology mapping, non-claims
-- [API Status Matrix](https://docs.zen-mesh.io/docs/api/status): Per-group maturity, audience, base path, auth model, OpenAPI coverage, UI mapping
-- [Authentication and API Keys](https://docs.zen-mesh.io/docs/api/authentication): OIDC, HMAC, API key, MCP auth, scope model
-- [Errors and Problem Details](https://docs.zen-mesh.io/docs/api/errors): RFC 9457 Problem Details format, status codes, validation, scope denial, idempotency conflict
-- [Pagination and Filtering](https://docs.zen-mesh.io/docs/api/pagination): Cursor-based and offset-based pagination, query filters, defaults, limits
-- [Idempotency](https://docs.zen-mesh.io/docs/api/idempotency): Idempotency-Key header, deduplication window, safe retry, endpoint coverage
-- [Write Safety](https://docs.zen-mesh.io/docs/api/write-safety): Authorization model, scopes, object permissions, audit, fail-closed, Write safety for MCP
-- [Rate Limits and Operational Limits](https://docs.zen-mesh.io/docs/api/rate-limits): Plan-based per-endpoint rate limits, payload limits, delivery config
-- [Targets API](https://docs.zen-mesh.io/docs/api/targets): Delivery destinations (WIRED_SANDBOX)
-- [Endpoints API](https://docs.zen-mesh.io/docs/api/endpoints): Webhook source receivers (WIRED_SANDBOX)
-- [Flows API](https://docs.zen-mesh.io/docs/api/flows): Declarative delivery contracts (WIRED_SANDBOX)
-- [Delivery Attempts API](https://docs.zen-mesh.io/docs/api/delivery-attempts): One delivery execution with status values (WIRED_SANDBOX)
-- [DLQ API](https://docs.zen-mesh.io/docs/api/dlq): Failed delivery attempts via status filter (WIRED_SANDBOX)
-- [Retry API](https://docs.zen-mesh.io/docs/api/retry): Single and batch retry for failed deliveries (WIRED_SANDBOX)
-- [Replay API](https://docs.zen-mesh.io/docs/api/replay): Event replay from retained payload/context (WIRED_SANDBOX)
-- [Delivery status APIs](https://docs.zen-mesh.io/docs/api/delivery-attempts): Delivery attempt status (WIRED_SANDBOX)
-- [Delivery logs API](https://docs.zen-mesh.io/docs/api/logs): Structured platform logs with pagination and filtering (WIRED_SANDBOX)
-- [Fabric Adapters API](https://docs.zen-mesh.io/docs/api/fabric-adapters): Manage Fabric adapters — list, disable, enable per tenant/cluster (WIRED_SANDBOX)
-- [API Quickstart](https://docs.zen-mesh.io/docs/api/quickstart): Five-step quickstart with curl examples
-- [API Examples](https://docs.zen-mesh.io/docs/api/examples): Complete API workflow examples (auth, evidence, logs, idempotency)
-- [Webhook Delivery API Guide](https://docs.zen-mesh.io/docs/api/webhooks): Webhook ingest, validation, delivery, idempotency, delivery status, DLQ
-- [Events and Evidence API Guide](https://docs.zen-mesh.io/docs/api/events): Event tracking, evidence endpoints, capability proofs
-- [API Versioning and Compatibility](https://docs.zen-mesh.io/docs/api/versioning): URL-based versioning, compatibility policy, spec maintenance
-- [API Changelog](https://docs.zen-mesh.io/docs/api/changelog): Version history and migration notes
-- [OpenAPI Spec Index](https://docs.zen-mesh.io/docs/api/openapi): Canonical spec files, coverage table, endpoint groups, validation commands
-- [Customer API](https://docs.zen-mesh.io/docs/reference/customer-api): Planned programmable interface for reading operational truth and managing authorized resources. Not read-only globally; endpoint groups carry individual read/write status (PLANNED, not production-live)
+- [Stripe](https://www.zen-mesh.io/docs/zen-mesh/guides/stripe) · [GitHub](https://www.zen-mesh.io/docs/zen-mesh/guides/github) · [Shopify](https://www.zen-mesh.io/docs/zen-mesh/guides/shopify) · [Twilio](https://www.zen-mesh.io/docs/zen-mesh/guides/twilio) · [Custom webhooks](https://www.zen-mesh.io/docs/zen-mesh/guides/custom-webhooks)
 
-OpenAPI spec: [zen-back.v1.yaml](https://github.com/zenmesh/zen-platform-hermes/blob/main/api-specifications/zen-back.v1.yaml) (DRAFT — wired via openapi-docs plugin). Additional spec at [`/openapi/zen-mesh-user-api.v1.yaml`](https://docs.zen-mesh.io/openapi/zen-mesh-user-api.v1.yaml) (static, not plugin-rendered).
+## API reference
 
-
-## Concepts
-
-- [Planes](https://docs.zen-mesh.io/docs/concepts/planes): Control Plane, Data Plane, Edge Plane, and Edge Lite — the fundamental architecture model. Kubernetes cluster is a deployment substrate for Edge Plane, not the product root.
-- [Zen Mesh Concepts](https://docs.zen-mesh.io/docs/concepts/zen-mesh-concepts): Core product objects — endpoints, targets, flows, and delivery status
-- [Management interfaces](https://docs.zen-mesh.io/docs/concepts/control-surfaces): Product management interfaces and access models
-
-## Install and Runtime
-
-- [Choose a Runtime Path](https://docs.zen-mesh.io/docs/install/choose-runtime-path): Decision guide — Edge Lite, Kubernetes Edge Plane, Data Plane
-- [Edge Plane](https://docs.zen-mesh.io/docs/install/edge-plane): Customer-proximity runtime, outbound-only connection
-- [Kubernetes Edge Plane](https://docs.zen-mesh.io/docs/install/kubernetes-edge-plane): Edge plane on Kubernetes — enrollment, install, optional components
-- [Edge Lite](https://docs.zen-mesh.io/docs/install/edge-lite): Lightweight non-Kubernetes runtime path (design-partner evaluation)
-- [Data Plane](https://docs.zen-mesh.io/docs/install/data-plane): Delivery runtime components for webhook processing
-
-## Guides
-
-- [Traffic Lifecycle](https://docs.zen-mesh.io/docs/guides/traffic-lifecycle): Endpoint-to-delivery troubleshooting guide
-- [Delivery visibility](https://docs.zen-mesh.io/docs/guides/evidence-and-trust): Delivery receipts, operational metadata, and validation scope
-- [Troubleshooting First Delivery](https://docs.zen-mesh.io/docs/guides/troubleshooting-first-delivery): Symptom/cause/action table for common issues — login, targets, endpoints, flows, deliveries, DLQ, retry, replay, evidence, MCP
-
-## Reference and FAQ
-
-- [UI to API Map](https://docs.zen-mesh.io/docs/reference/ui-api-map): UI area → API page → runtime route → status mapping table
-- [Current Status Matrix](https://docs.zen-mesh.io/docs/reference/current-status): Single-source status for all capabilities — WIRED_SANDBOX, PUBLIC_CONTRACT_DRAFT, PLANNED, INTERNAL_ONLY, SANDBOX_ONLY
-- [Webhook Delivery Evidence](https://docs.zen-mesh.io/docs/reference/webhook-delivery-evidence): Delivery receipts and audit trail for webhook events
-- [Delivery Status Reference](https://docs.zen-mesh.io/docs/reference/delivery-status): Webhook delivery state machine — status values, transitions, retry policy, DLQ
-- [Observability and Evidence](https://docs.zen-mesh.io/docs/reference/webhook-observability-and-evidence): Delivery tracking and audit
-- [Webhook FAQ](https://docs.zen-mesh.io/docs/reference/webhook-faq): 12 frequently asked questions about webhook delivery
-
-## Getting started
-
-- [How Zen Works](https://docs.zen-mesh.io/docs/start-here/how-zen-works): Product overview — public and private-network delivery, security baseline, and evaluation paths
-- [Quick start](https://docs.zen-mesh.io/docs/getting-started/quick-start): UI-first product journey — endpoints, targets, flows in the dashboard
-- [Customer journey](https://docs.zen-mesh.io/docs/getting-started/customer-journey): Full onboarding map — core objects and evaluation path
-- [First 15 minutes](https://docs.zen-mesh.io/docs/getting-started/first-15-minutes): Structured evaluator walkthrough — log in, explore, create objects, inspect traffic
-- [Installation](https://docs.zen-mesh.io/docs/getting-started/installation): Install paths for evaluation
-- [Support](https://docs.zen-mesh.io/docs/start-here/support): Contact and support resources
+- [API overview](https://www.zen-mesh.io/docs/zen-mesh/api/overview): surface groups and maturity
+- [Authentication](https://www.zen-mesh.io/docs/zen-mesh/api/authentication): tokens and auth models
+- [Quickstart](https://www.zen-mesh.io/docs/zen-mesh/api/quickstart): curl, Python, JavaScript examples
+- [OpenAPI reference](https://www.zen-mesh.io/docs/openapi-reference): interactive API reference
 
 ## Operations
 
-- [Operational FAQ](https://docs.zen-mesh.io/docs/operations/operational-faq): 26 questions covering installation, enrollment, certificates, network failures, idempotency, delivery guarantees, replay, recovery, retirement, and planned capabilities — each answer labelled AVAILABLE_NOW, PLANNED_V1_1, MANUAL_IN_V1_1, or NOT_SUPPORTED
-- [Agent Operations Guide](https://docs.zen-mesh.io/docs/operations/agent-operations): How external AI agents safely operate Zen Mesh — safety rules, surface discovery, auth, resource lifecycle, read/write procedures, failure diagnosis, prohibited actions
-- [Agent operability test](https://docs.zen-mesh.io/docs/operations/agent-operability-test): External agent operability test — 13 tasks scored PASS/PARTIAL/FAIL/NOT_IMPLEMENTED
-- [Backups and Disaster Recovery](https://docs.zen-mesh.io/docs/operations/backups): Backup procedures, restore, DR runbook, RPO/RTO targets
-- [Upgrades](https://docs.zen-mesh.io/docs/operations/upgrades): Helm upgrade/rollback procedures, version compatibility
-- [Troubleshooting](https://docs.zen-mesh.io/docs/operations/troubleshooting): Common operational issues
+- [Operational FAQ](https://www.zen-mesh.io/docs/zen-mesh/operations/operational-faq)
+- [Upgrades](https://www.zen-mesh.io/docs/zen-mesh/operations/upgrades)
+- [Backups and disaster recovery](https://www.zen-mesh.io/docs/zen-mesh/operations/backups)
+- [Troubleshooting](https://www.zen-mesh.io/docs/zen-mesh/operations/troubleshooting)
 
-## Failure and recovery runbooks
+## zen-lock — Kubernetes secret management
 
-- [Edge Lite install failure](https://docs.zen-mesh.io/docs/runbooks/edge-lite-install-failure): Symptoms, corrective actions, prohibited actions for Edge Lite installation failures
-- [Edge Plane enrollment failure](https://docs.zen-mesh.io/docs/runbooks/edge-plane-enrollment-failure): Token expiry, network unreachable, identity conflict recovery
-- [Certificate renewal failure](https://docs.zen-mesh.io/docs/runbooks/certificate-renewal-failure): MANUAL_IN_V1_1 — recovery for failed credential rotation
-- [Plane readiness failure](https://docs.zen-mesh.io/docs/runbooks/plane-readiness-failure): Connectivity, identity, and component readiness diagnosis
-- [Evidence missing](https://docs.zen-mesh.io/docs/runbooks/evidence-missing): Retention, delivery, and permission checks for missing evidence
-- [Inconsistent state recovery](https://docs.zen-mesh.io/docs/runbooks/inconsistent-state-recovery): Desired vs observed state divergence — NOT_SUPPORTED in v1.1
+- [zen-lock overview](https://www.zen-mesh.io/docs/zen-lock/): age client-side encryption, GitOps-safe
+- [Installation](https://www.zen-mesh.io/docs/zen-lock/installation) · [Security properties](https://www.zen-mesh.io/docs/zen-lock/security-properties) · [Key rotation](https://www.zen-mesh.io/docs/zen-lock/key-rotation)
 
-## zen-lock — secret management
+## Evidence and maturity
 
-- [zen-lock Overview](https://docs.zen-mesh.io/zen-lock/): Kubernetes-native secret manager — age client-side encryption, ciphertext-only CRDs, GitOps-safe; bundled with Zen Mesh and usable standalone
-- [How It Works](https://docs.zen-mesh.io/zen-lock/how-it-works): Architecture, encrypt/decrypt lifecycle, webhook injection vs CSI delivery modes
-- [Installation](https://docs.zen-mesh.io/zen-lock/installation): Ships with Zen Mesh (zen-agent chart); standalone via the public zenmesh Helm repo with team-distributed images; master-key bootstrap and placeholder warning
-- [Using Secrets](https://docs.zen-mesh.io/zen-lock/using-secrets): Encrypt, apply, mount; allowedSubjects workload authorization
-- [CSI Driver](https://docs.zen-mesh.io/zen-lock/csi-driver): Secrets Store CSI delivery with no Secret object — trusted nodes, TokenReview authorization, canary status
-- [High Availability](https://docs.zen-mesh.io/zen-lock/high-availability): No DB, no PVC — Kubernetes API key custody, multi-replica scaling, node-loss behavior
-- [Key Rotation](https://docs.zen-mesh.io/zen-lock/key-rotation): Zero-downtime age master-key rotation with dual-key grace window
-- [Security Properties](https://docs.zen-mesh.io/zen-lock/security-properties): Threat model — what zen-lock protects against and its explicit non-claims
-- [Operations](https://docs.zen-mesh.io/zen-lock/operations): Metrics, alerts, health endpoints, troubleshooting
-- [Enrollment and Secrets](https://docs.zen-mesh.io/zen-lock/enrollment-and-secrets): How Zen Mesh enrollment uses zen-lock for bundles, HMAC keys, and mTLS material
+- [Non-claims registry](https://www.zen-mesh.io/docs/ai/evidence/v1/non-claims.json): exactly what Zen Mesh does not claim
+- [Capability manifest](https://www.zen-mesh.io/docs/ai/evidence/v1/manifest.json): machine-readable capability registry
+- [Claim maturity](https://www.zen-mesh.io/docs/ai/security/v1/claim-maturity.json): per-control maturity status
+- [Security primitives](https://www.zen-mesh.io/docs/ai/security/v1/primitives.json): security primitive registry
+- [Security gaps](https://www.zen-mesh.io/docs/ai/security/v1/gaps.json): explicit post-V1 gaps
+- [AI discovery registry](https://www.zen-mesh.io/docs/ai/ai-discovery-registry.json): per-surface freshness
+- Verification guide: https://www.zen-mesh.io/docs/zen-mesh/ai/verification
 
-## Machine-readable AI projections
-
-- [Operations registry](https://docs.zen-mesh.io/ai/operations.json): 22 operations with per-surface coverage, idempotency, delivery guarantees, permissions, and non-claims
-- [Delivery guarantees](https://docs.zen-mesh.io/ai/delivery-guarantees.json): Per-path acceptance, persistence, delivery guarantee, retry owner, duplicate possibility, ordering, replay, retention
-- [Idempotency and retry matrix (machine-readable)](https://docs.zen-mesh.io/ai/idempotency-retry.json): 16 operations with idempotency classification, key support, retry errors, implementation status
-- [Delivery guarantee matrix (human-readable)](https://docs.zen-mesh.io/docs/delivery/delivery-guarantee-matrix): 10-path human-readable delivery guarantee matrix with acceptance, persistence, guarantee, retry, duplicate, ordering, replay, and retention
-- [Idempotency and retry matrix (human-readable)](https://docs.zen-mesh.io/docs/delivery/idempotency-retry-matrix): 22-operation human-readable idempotency matrix with key support, retry policy, backoff schedule, and non-claims
-- [Capability graph](https://docs.zen-mesh.io/ai/capability-graph.json): 22 nodes and 47 typed edges mapping layers, resources, surfaces, and relationships
-- [Examples registry](https://docs.zen-mesh.io/ai/examples-registry.json): 18 examples with surface, permissions, implementation status, and non-claims
-
-## Open Source
-
-- [OSS page](https://www.zen-mesh.io/oss): Open-source projects from the Zen Mesh team
-- [zen-gc](https://github.com/zenmesh/zen-gc) — Apache-2.0 Kubernetes garbage collection controller — declarative TTL cleanup policies and lifecycle management
-
-Zen Mesh combines open-source components with a hosted control plane. OSS projects cover Kubernetes utilities, SDKs, and validation building blocks. Hosted Zen Mesh adds managed operations, team workflows, and commercial support.
-
-## Narrative context (not proof)
-
-- [Webhooks behind firewalls (blog)](https://www.zen-mesh.io/blogs/webhooks-behind-firewalls/): Architecture narrative — not proof
+Blog articles are editorial narrative, not proof; claims and their scope live in the registries above.
 
 ## Legal
 
 - **Company:** Zen Mesh Inc., Toronto, Ontario, Canada.
-- **Governing law:** Ontario, Canada.
 - **Terms:** https://www.zen-mesh.io/commitments/legal/terms/
 - **Privacy:** https://www.zen-mesh.io/commitments/legal/privacy/
-- **Contact:** zen@zen-mesh.io
-
-## Optional
-
-- [Terminology guide](https://docs.zen-mesh.io/docs/ai/public-terminology-taxonomy): Docs mirror of public copy policy
-- [Full AI context](https://www.zen-mesh.io/llms-full.txt): Expanded curated context (community convention)
-- [Discovery crawler smoke record](https://docs.zen-mesh.io/ai/discovery-crawler-smoke-v1.json): Apex/www/docs fetch status for validators and reviewers
+- **Support policy:** https://www.zen-mesh.io/commitments/legal/support/

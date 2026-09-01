@@ -83,7 +83,7 @@
     "id": "non-claim-trust-blanket-zero-trust",
     "category": "trust",
     "claim": "Blanket zero-trust across all paths and layers",
-    "scope": "Not claimed. Zero-trust-oriented controls (SPIFFE identity, mTLS, HMAC, policy-based authz) are implemented on Zen-managed internal paths including control-plane and data-plane delivery hops. Coverage is partial — not every workload and not customer-managed endpoints.",
+    "scope": "Not claimed. Zero-trust-oriented controls (SPIFFE identity, mTLS, HMAC, policy-based authz) are implemented on Zen-managed internal paths including control-plane and data-plane delivery hops. Coverage is partial \u2014 not every workload and not customer-managed endpoints.",
     "evidence_status": "needs_revalidation",
     "source": "Source/runtime/render/public scan - pending evidence collection"
   },
@@ -91,7 +91,7 @@
     "id": "non-claim-trust-spiffe-everywhere",
     "category": "trust",
     "claim": "SPIFFE identity on all workloads and data-plane paths",
-    "scope": "EVIDENCED for control-plane workloads and data-plane components (ingester, egress) using SPIRE SVID-backed mTLS. Full SPIRE Agent Workload API and SVID rotation (ST-003) are deferred to post-V1 (marked \"Future\" in H216, H261 contracts). Some components use file-based SVIDs or static certs as fallback. Workload identity root is SPIFFE, but coverage is partial.",
+    "scope": "EVIDENCED for control-plane workloads and data-plane components (ingester, egress) using SPIRE SVID-backed mTLS. Full SPIRE Agent Workload API and SVID rotation are deferred to post-V1 (marked \"Future\" in , contracts). Some components use file-based SVIDs or static certs as fallback. Workload identity root is SPIFFE, but coverage is partial.",
     "evidence_status": "evidence_incomplete",
     "source": "zen-platform source code (helm values, templates, src/shared/authz), manifests, public surface traceability"
   },
@@ -171,7 +171,7 @@
     "id": "non-claim-security-production-zero-trust",
     "category": "security",
     "claim": "Production zero-trust fully proven",
-    "scope": "Not claimed. Zero-trust-oriented controls exist on Zen-managed internal paths including control-plane and data-plane delivery hops. Coverage is partial — not every workload. Full SPIRE Workload API is post-V1.",
+    "scope": "Not claimed. Zero-trust-oriented controls exist on Zen-managed internal paths including control-plane and data-plane delivery hops. Coverage is partial \u2014 not every workload. Full SPIRE Workload API is post-V1.",
     "evidence_status": "needs_revalidation",
     "source": "Source/runtime/render/public scan - pending evidence collection"
   },
@@ -219,7 +219,7 @@
     "capability_id": "runtime-workload-svid-rotation",
     "claim": "Full SPIRE Workload API SVID rotation proven on mainline",
     "scope": "Not claimed. File-based X.509 SVID lifecycle is implemented (cert-manager renewal). Full automatic SPIRE Workload API SVID rotation is post-V1 (not a V1 requirement). HMAC, TLS/certificate, and JWK/JWKS rotation are all implemented.",
-    "internal_ref": "ST-003",
+    "internal_ref": "",
     "evidence_status": "needs_revalidation",
     "source": "Source/runtime/render/public scan - pending evidence collection"
   },
@@ -229,7 +229,7 @@
     "capability_id": "deliverypolicy-tls-trust-chain",
     "claim": "DeliveryPolicy TLS/trust-chain controls PASS",
     "scope": "Not claimed. Policy-driven delivery TLS/trust-chain controls at L2 are deferred; trust-chain root cause open.",
-    "internal_ref": "N086",
+    "internal_ref": "",
     "evidence_status": "needs_revalidation",
     "source": "Source/runtime/render/public scan - pending evidence collection"
   },

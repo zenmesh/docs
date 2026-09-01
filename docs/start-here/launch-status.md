@@ -14,7 +14,7 @@ Zen Mesh Free and Pro are available as public buyer-facing plans. This page docu
 
 ## Evidence Status
 
-- Runtime convergence: 10/10 proofs, victory-locked (local/mock or cloud-demo)
+- Runtime convergence: 10/10 proofs, validation-locked (local/mock or cloud-demo)
 - Trust lifecycle: 10/10 proofs with execution artifacts (local/mock)
 - Claims guard: 0 critical overclaims
 - Compliance mappings: support mappings only — no certifications

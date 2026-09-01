@@ -10,16 +10,16 @@ All capabilities are classified with a proof status. See../ai/evidence-v1-supers
 
 | Capability | Proof ID | Status | Evidence Path |
 |---|---|---|---|
-| Retry-to-success | PROOF-001 | victory-locked, local/mock | `runtime_convergence_evidence_pack_v1.json` |
-| CP outage/reconnect | PROOF-002 | victory-locked, local/mock | `runtime/control_plane_outage_reconciliation_execution.json` |
-| DLQ exhaustion | PROOF-003 | victory-locked, local/mock | `runtime/retry_exhaustion_dlq_execution.json` |
-| Duplicate/idempotency | PROOF-004 | victory-locked, local/mock | `runtime/duplicate_idempotency_execution.json` |
-| Reconnect conflict | PROOF-005 | victory-locked, local/mock | `runtime/reconnect_conflict_reconciliation_execution.json` |
-| Topology drift | PROOF-006 | victory-locked, local/mock | `runtime/topology_drift_convergence_execution.json` |
-| Evidence buffer flush | PROOF-007 | victory-locked, local/mock | `runtime/evidence_buffer_flush_execution.json` |
-| Relay path convergence | PROOF-008 | victory-locked, local/mock | `runtime/relay_path_convergence_execution.json` |
-| Failover recovery | PROOF-009 | victory-locked, local/mock | `runtime/relay_failover_recovery_execution.json` |
-| Private-edge path | PROOF-010 | victory-locked, local/mock | `runtime/private_edge_path_convergence_execution.json` |
+| Retry-to-success | PROOF-001 | validation-locked, local/mock evidence | `runtime_convergence_evidence_pack_v1.json` |
+| CP outage/reconnect | PROOF-002 | validation-locked, local/mock evidence | `runtime/control_plane_outage_reconciliation_execution.json` |
+| DLQ exhaustion | PROOF-003 | validation-locked, local/mock evidence | `runtime/retry_exhaustion_dlq_execution.json` |
+| Duplicate/idempotency | PROOF-004 | validation-locked, local/mock evidence | `runtime/duplicate_idempotency_execution.json` |
+| Reconnect conflict | PROOF-005 | validation-locked, local/mock evidence | `runtime/reconnect_conflict_reconciliation_execution.json` |
+| Topology drift | PROOF-006 | validation-locked, local/mock evidence | `runtime/topology_drift_convergence_execution.json` |
+| Evidence buffer flush | PROOF-007 | validation-locked, local/mock evidence | `runtime/evidence_buffer_flush_execution.json` |
+| Relay path convergence | PROOF-008 | validation-locked, local/mock evidence | `runtime/relay_path_convergence_execution.json` |
+| Failover recovery | PROOF-009 | validation-locked, local/mock evidence | `runtime/relay_failover_recovery_execution.json` |
+| Private-edge path | PROOF-010 | validation-locked, local/mock evidence | `runtime/private_edge_path_convergence_execution.json` |
 
 **Verification:** `make runtime-proof-replay-verify` / `make runtime-convergence-state-machine-check`
 
