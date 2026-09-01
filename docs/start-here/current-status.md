@@ -27,7 +27,7 @@ Start with the [Quick Start](../getting-started/quick-start) to create your firs
 
 | Domain | Proofs | Status |
 |---|---|---|
-| Runtime convergence | 10/10 | Victory-locked, local/mock or cloud-demo |
+| Runtime convergence | 10/10 | Validation-locked, local/mock or cloud-demo |
 | Trust lifecycle | 10/10 | Execution artifacts, local/mock |
 | Claims guard | 0 critical | Burned down from 16 |
 | Compliance mappings | 5 frameworks | Support mappings only |
