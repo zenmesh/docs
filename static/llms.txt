@@ -8,10 +8,10 @@ Zen Mesh publishes public product, pricing, support, documentation, and evidence
 
 ## Canonical discovery (crawlers)
 
-- **Canonical documentation:** `https://www.zen-mesh.io/docs` — all documentation pages live under this origin.
-- **Machine-readable JSON (canonical):** `https://www.zen-mesh.io/docs/ai/...` — discovery, evidence, and security registries (`application/json`, no client-side routing).
+- **Canonical documentation:** `https://www.zen-mesh.io/docs/` — all documentation pages live under this origin.
+- **Machine-readable JSON (canonical):** served under the `/docs/ai/` path prefix — discovery, evidence, and security registries (`application/json`, no client-side routing); start at [AI overview](https://www.zen-mesh.io/docs/zen-mesh/ai/overview).
 - **AI context index (site):** `https://www.zen-mesh.io/llms.txt`
-- **Legacy hostname:** `https://docs.zen-mesh.io` now permanently redirects to `https://www.zen-mesh.io/docs`. Use canonical www/docs URLs everywhere.
+- **Legacy hostname:** `https://docs.zen-mesh.io` now permanently redirects to `https://www.zen-mesh.io/docs/`. Use canonical www/docs URLs everywhere.
 
 ## Entity
 
@@ -53,7 +53,7 @@ Zen Mesh publishes public product, pricing, support, documentation, and evidence
 - [API overview](https://www.zen-mesh.io/docs/zen-mesh/api/overview): surface groups and maturity
 - [Authentication](https://www.zen-mesh.io/docs/zen-mesh/api/authentication): tokens and auth models
 - [Quickstart](https://www.zen-mesh.io/docs/zen-mesh/api/quickstart): curl, Python, JavaScript examples
-- [OpenAPI reference](https://www.zen-mesh.io/docs/openapi-reference): interactive API reference
+- [OpenAPI reference](https://www.zen-mesh.io/docs/openapi-reference.html): interactive API reference
 
 ## Operations
 
