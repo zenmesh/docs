@@ -6,7 +6,7 @@ sidebar_label: Targets API
 
 Targets are delivery destinations — where validated events are sent after ingestion and processing.
 
-> **For the canonical interactive contract, use [Swagger UI](./swagger/).** This page explains the concept; Swagger shows the exact method/path/parameters.
+> **For the canonical interactive contract, use the [API Reference](./swagger/).** This page explains the concept; the reference shows the exact method/path/parameters.
 
 ## Terminology
 

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zen Mesh API Reference</title>
+  <meta name="description" content="Interactive API reference for the Zen Mesh public API — explore endpoints, schemas, and examples.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.zen-mesh.io/docs/zen-mesh/api/swagger/">
+  <style>
+    html {
+      box-sizing: border-box;
+    }
+    *, *:before, *:after {
+      box-sizing: inherit;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Zen Mesh brand dark theme for Redoc */
+    #redoc-container {
+      background: #0f1117;
+    }
+  </style>
+</head>
+<body>
+  <div id="redoc-container"></div>
+  <!-- Redoc CE 5.x — served locally, no CDN dependency -->
+  <script src="/docs/api/redoc.standalone.js">/* @preserve */</script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      Redoc.init(
+        '/docs/api/openapi.yaml',
+        {
+          darkMode: true,
+          nativeDarkMode: true,
+          theme: {
+            colors: {
+              primary: {
+                main: '#0ea5e9',
+              },
+              text: {
+                primary: '#e2e8f0',
+                secondary: '#94a3b8',
+              },
+              border: {
+                dark: '#1e293b',
+                light: '#334155',
+              },
+              background: {
+                primary: '#0f1117',
+                secondary: '#1e293b',
+                hover: '#1a2332',
+              }
+            },
+            sidebar: {
+              backgroundColor: '#0f1117',
+              textColor: '#e2e8f0',
+              activeTextColor: '#0ea5e9',
+              borderColor: '#1e293b',
+            },
+            typography: {
+              fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+              fontSize: '14px',
+              lineHeight: '1.5',
+              code: {
+                fontFamily: '"JetBrains Mono", "Fira Code", Consolas, monospace',
+                fontSize: '13px',
+                backgroundColor: '#1e293b',
+                color: '#e2e8f0',
+              }
+            },
+            schema: {
+              backgroundColor: '#1e293b',
+              borderColor: '#334155',
+              nestingBackgroundColor: '#162032',
+              arrow: {
+                color: '#0ea5e9',
+              }
+            }
+          },
+          options: {
+            scrollToAnchorOnLoad: true,
+            showConsole: false,
+            showWarnings: false,
+            hideHostname: false,
+            expandDefaultSchemaVariables: false,
+            expandSingleSchemaField: false,
+            jsonSampleExpandLevel: 3,
+            hideLoading: false,
+            nativeScrollbars: false,
+            suppressWarnings: false,
+            sortPropsAlphabetically: false,
+            sortEndpointsAlphabetically: true,
+            requiredPropsFirst: true,
+            noAutoAuth: false,
+            pathInMiddlePanel: false,
+            hideFab: true,
+            hideSingleRequestSampleTab: false,
+            onlyRequiredInSamples: true,
+            showSecurityDefinitions: true,
+            topNavName: 'Zen Mesh API Reference',
+          },
+          redocVersion: '5.x'
+        },
+        document.getElementById('redoc-container')
+      );
+    });
+  </script>
+</body>
+</html>

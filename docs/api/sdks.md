@@ -82,7 +82,7 @@ zen-mesh-api.v1.public.yaml (PUBLIC_CUSTOMER filter)
         └── TypeScript SDK  → generated/typescript/
 ```
 
-The same spec that drives [Swagger UI](./swagger/) drives the SDKs. Any change to the public OpenAPI spec is reflected in both.
+The same spec that drives the [API Reference](./swagger/) drives the SDKs. Any change to the public OpenAPI spec is reflected in both.
 
 ## Not Published Yet
 

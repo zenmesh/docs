@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Post-build step: copy Swagger UI assets and OpenAPI specs into the
+ * Post-build step: copy Swagger UI assets, Redoc bundle, and OpenAPI specs into the
  * Docusaurus build output so they are served at the correct URLs.
  *
  * Docusaurus build output is in build/
@@ -36,7 +36,25 @@ for (const file of SWAGGER_FILES) {
   }
 }
 
-// ── 2. Copy public OpenAPI YAML + JSON ────────────────────────────────────────
+// ── 2. Copy Redoc standalone bundle ───────────────────────────────────────────
+const REDOC_FILES = [
+  'api/redoc.html',
+  'api/redoc.standalone.js',
+];
+
+for (const file of REDOC_FILES) {
+  const src = join(STATIC_DIR, file);
+  const dest = join(BUILD_DIR, file);
+  if (existsSync(src)) {
+    mkdirSync(join(dest, '..'), { recursive: true });
+    cpSync(src, dest);
+    console.log(`Copied: ${file}`);
+  } else {
+    console.warn(`WARNING: redoc asset not found: ${src}`);
+  }
+}
+
+// ── 3. Copy public OpenAPI YAML + JSON ────────────────────────────────────────
 const OPENAPI_FILES = ['api/openapi.yaml', 'api/openapi.json'];
 for (const file of OPENAPI_FILES) {
   const src = join(STATIC_DIR, file);
@@ -50,4 +68,4 @@ for (const file of OPENAPI_FILES) {
   }
 }
 
-console.log('✅ Swagger UI + OpenAPI post-build copy complete');
+console.log('✅ Swagger UI + Redoc + OpenAPI post-build copy complete');

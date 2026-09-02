@@ -1,13 +1,13 @@
 ---
-sidebar_label: Interactive API Reference
+sidebar_label: API Reference
 title: Zen Mesh API Reference
-description: Interactive Swagger UI reference for the Zen Mesh public API.
+description: Interactive API reference for the Zen Mesh public API.
 ---
 
 # Zen Mesh API Reference
 
 <span style={{fontSize: '0.9em', color: '#888'}}>
-  Powered by <a href="https://swagger.io/tools/swagger-ui/">Swagger UI</a> 5.20.7 — served locally, no external CDN.
+  Powered by <a href="https://redocly.com/redoc">Redoc</a> · OpenAPI 3.0.3 · served locally, no external CDN.
   &nbsp;|&nbsp;
   <a href="/docs/api/openapi.yaml">OpenAPI YAML</a>
   &nbsp;|&nbsp;
@@ -18,14 +18,14 @@ description: Interactive Swagger UI reference for the Zen Mesh public API.
 
 **Maturity:** All operations are `WIRED_SANDBOX` — not yet production-live.
 <br/>
-**Auth:** Bearer token (`Authorization: Bearer &lt;token&gt;`) or HMAC (`X-ZenMesh-Signature`).
+**Auth:** Bearer token (`Authorization: Bearer <token>`) or HMAC (`X-ZenMesh-Signature`).
 <br/>
-**Try-It:** Enabled for GET operations only. write operations require your own API key.
+**Try-It:** Enabled for GET operations only. Write operations require your own API key.
 
 </div>
 
 <iframe
-  src="/docs/swagger-ui.html"
+  src="/docs/api/redoc.html"
   style={{width: '100%', height: '900px', border: '1px solid #3e4042', borderRadius: '4px'}}
   title="Zen Mesh API Reference"
   loading="lazy"

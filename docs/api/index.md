@@ -8,9 +8,9 @@ The Zen Mesh REST API provides programmatic access to webhook delivery for publi
 
 ## Interactive Reference
 
-**The canonical interactive API reference is [Swagger UI](./swagger/).** Powered by OpenAPI 3.0.3, served locally — no external CDN dependencies.
+**The canonical interactive API reference is [API Reference](./swagger/)** — powered by [Redoc](https://redocly.com/redoc), served locally. OpenAPI 3.0.3.
 
-<a class="button button--lg button--primary" href="./swagger/">Open Swagger UI →</a>
+<a class="button button--lg button--primary" href="./swagger/">Open API Reference →</a>
 
 ---
 
@@ -18,7 +18,8 @@ The Zen Mesh REST API provides programmatic access to webhook delivery for publi
 
 | Resource | Description |
 |----------|-------------|
-| [Interactive Reference](./swagger/) | Swagger UI — explore all operations, schemas, and examples |
+| [API Reference](./swagger/) | Redoc — explore all operations, schemas, and examples |
+| [Raw Swagger UI](/docs/swagger-ui.html) | Standalone Swagger UI — developer/debug view |
 | [OpenAPI YAML](/docs/api/openapi.yaml) | Machine-readable contract (YAML) |
 | [OpenAPI JSON](/docs/api/openapi.json) | Machine-readable contract (JSON) |
 | [Python SDK](./sdks#python-sdk) | Generated from the same spec |
