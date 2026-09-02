@@ -65,10 +65,10 @@
  "supersession_context": {
   "contract_version": "1.1.0",
   "prior_evidence_version": "1.0.0",
-  "prior_manifest_url": "https://docs.zen-mesh.io/ai/evidence/v1/manifest.json",
-  "supersession_map_url": "https://docs.zen-mesh.io/ai/evidence/v1.1/supersession-map.json",
-  "non_regression_matrix_url": "https://docs.zen-mesh.io/ai/evidence/v1.1/non-regression-matrix.json",
-  "public_claim_gate_url": "https://docs.zen-mesh.io/ai/evidence/v1.1/public-claim-gate.json"
+  "prior_manifest_url": "https://www.zen-mesh.io/docs/ai/evidence/v1/manifest.json",
+  "supersession_map_url": "https://www.zen-mesh.io/docs/ai/evidence/v1.1/supersession-map.json",
+  "non_regression_matrix_url": "https://www.zen-mesh.io/docs/ai/evidence/v1.1/non-regression-matrix.json",
+  "public_claim_gate_url": "https://www.zen-mesh.io/docs/ai/evidence/v1.1/public-claim-gate.json"
  },
  "capabilities": [
   {
@@ -253,8 +253,8 @@
  "validation": {
   "last_validated": "2026-08-05T18:00:00Z",
   "validator_script": "scripts/validate-claim-gate.sh",
-  "public_claim_gate_url": "https://docs.zen-mesh.io/ai/evidence/v1.1/public-claim-gate.json",
-  "non_regression_matrix_url": "https://docs.zen-mesh.io/ai/evidence/v1.1/non-regression-matrix.json",
+  "public_claim_gate_url": "https://www.zen-mesh.io/docs/ai/evidence/v1.1/public-claim-gate.json",
+  "non_regression_matrix_url": "https://www.zen-mesh.io/docs/ai/evidence/v1.1/non-regression-matrix.json",
   "pass": true,
   "failures": []
  }

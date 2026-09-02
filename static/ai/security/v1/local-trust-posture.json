@@ -33,10 +33,10 @@
     "PRIM-LOCAL-MATERIAL-EXPIRY-FAIL-CLOSED"
   ],
   "public_evidence_refs": [
-    "https://docs.zen-mesh.io/ai/security/v1/claim-maturity.json",
-    "https://docs.zen-mesh.io/ai/security/v1/credential-lifecycle-ownership.json",
-    "https://docs.zen-mesh.io/ai/security/v1/security-capability-validation.json",
-    "https://docs.zen-mesh.io/ai/evidence/v1/manifest.json"
+    "https://www.zen-mesh.io/docs/ai/security/v1/claim-maturity.json",
+    "https://www.zen-mesh.io/docs/ai/security/v1/credential-lifecycle-ownership.json",
+    "https://www.zen-mesh.io/docs/ai/security/v1/security-capability-validation.json",
+    "https://www.zen-mesh.io/docs/ai/evidence/v1/manifest.json"
   ],
   "related_capability_ids": [
     "trust-spiffe-identity-control-plane",

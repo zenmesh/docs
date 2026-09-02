@@ -99,9 +99,9 @@
     "Stripe, GitHub, Shopify, and Twilio are all V1 providers with the same capability contract"
   ],
   "related_docs": [
-    "https://docs.zen-mesh.io/providerflow/provider-package-v1-readiness-matrix",
-    "https://docs.zen-mesh.io/providerflow/provider-package-lifecycle",
-    "https://docs.zen-mesh.io/ai/v1/provider-live-validation-plan.json"
+    "https://www.zen-mesh.io/docs/providerflow/provider-package-v1-readiness-matrix",
+    "https://www.zen-mesh.io/docs/providerflow/provider-package-lifecycle",
+    "https://www.zen-mesh.io/docs/ai/v1/provider-live-validation-plan.json"
   ],
   "non_claims": [
     "No provider is production-live or cloud-validated at V1 launch",

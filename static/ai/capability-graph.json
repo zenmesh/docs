@@ -7,87 +7,87 @@
   "nodes": [
     {
       "id": "Fabric",
-      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/zen-mesh-concepts",
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/concepts/zen-mesh-concepts",
       "node_type": "LAYER",
       "canonical_layer": "Fabric",
       "canonical_resource": null,
       "implementation_status": "IMPLEMENTED_VERIFIED",
       "verification_status": "VERIFIED",
-      "public_documentation_url": "https://docs.zen-mesh.io/docs/concepts/zen-mesh-concepts"
+      "public_documentation_url": "https://www.zen-mesh.io/docs/docs/concepts/zen-mesh-concepts"
     },
     {
       "id": "Connect",
-      "canonical_source": "https://docs.zen-mesh.io/docs/getting-started/quick-start",
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/getting-started/quick-start",
       "node_type": "LAYER",
       "canonical_layer": "Connect",
       "canonical_resource": null,
       "implementation_status": "IMPLEMENTED_VERIFIED",
       "verification_status": "VERIFIED",
-      "public_documentation_url": "https://docs.zen-mesh.io/docs/getting-started/quick-start"
+      "public_documentation_url": "https://www.zen-mesh.io/docs/docs/getting-started/quick-start"
     },
     {
       "id": "Pipelines",
-      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/zen-mesh-concepts",
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/concepts/zen-mesh-concepts",
       "node_type": "LAYER",
       "canonical_layer": "Pipelines",
       "canonical_resource": null,
       "implementation_status": "IMPLEMENTED_VERIFIED",
       "verification_status": "VERIFIED",
-      "public_documentation_url": "https://docs.zen-mesh.io/docs/concepts/zen-mesh-concepts"
+      "public_documentation_url": "https://www.zen-mesh.io/docs/docs/concepts/zen-mesh-concepts"
     },
     {
       "id": "Runtime",
-      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/planes",
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/concepts/planes",
       "node_type": "LAYER",
       "canonical_layer": "Runtime",
       "canonical_resource": null,
       "implementation_status": "IMPLEMENTED_VERIFIED",
       "verification_status": "VERIFIED",
-      "public_documentation_url": "https://docs.zen-mesh.io/docs/concepts/planes"
+      "public_documentation_url": "https://www.zen-mesh.io/docs/docs/concepts/planes"
     },
     {
       "id": "Traffic",
-      "canonical_source": "https://docs.zen-mesh.io/docs/getting-started/quick-start",
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/getting-started/quick-start",
       "node_type": "LAYER",
       "canonical_layer": "Traffic",
       "canonical_resource": null,
       "implementation_status": "IMPLEMENTED_VERIFIED",
       "verification_status": "VERIFIED",
-      "public_documentation_url": "https://docs.zen-mesh.io/docs/getting-started/quick-start"
+      "public_documentation_url": "https://www.zen-mesh.io/docs/docs/getting-started/quick-start"
     },
     {
       "id": "Trust",
-      "canonical_source": "https://docs.zen-mesh.io/docs/getting-started/quick-start",
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/getting-started/quick-start",
       "node_type": "LAYER",
       "canonical_layer": "Trust",
       "canonical_resource": null,
       "implementation_status": "IMPLEMENTED_VERIFIED",
       "verification_status": "VERIFIED",
-      "public_documentation_url": "https://docs.zen-mesh.io/docs/getting-started/quick-start"
+      "public_documentation_url": "https://www.zen-mesh.io/docs/docs/getting-started/quick-start"
     },
     {
       "id": "Plane",
-      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/planes",
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/concepts/planes",
       "node_type": "RESOURCE",
       "canonical_layer": "Runtime",
       "canonical_resource": "Plane",
       "implementation_status": "IMPLEMENTED_VERIFIED",
       "verification_status": "VERIFIED",
-      "public_documentation_url": "https://docs.zen-mesh.io/docs/concepts/planes"
+      "public_documentation_url": "https://www.zen-mesh.io/docs/docs/concepts/planes"
     },
     {
       "id": "Edge Plane",
-      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/planes",
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/concepts/planes",
       "node_type": "RESOURCE",
       "canonical_layer": "Runtime",
       "canonical_resource": "Plane",
       "implementation_status": "IMPLEMENTED_UNVERIFIED",
       "verification_status": "UNVERIFIED",
-      "public_documentation_url": "https://docs.zen-mesh.io/docs/concepts/planes"
+      "public_documentation_url": "https://www.zen-mesh.io/docs/docs/concepts/planes"
     },
     {
       "id": "Edge Lite",
-      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/planes",
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/concepts/planes",
       "node_type": "RESOURCE",
       "canonical_layer": "Runtime",
       "canonical_resource": "Plane",
@@ -96,91 +96,91 @@
       "non_claims": [
         "Edge Lite runtime (public Docker image and installer) not yet published \u2014 DESIGN_PARTNER_EVAL"
       ],
-      "public_documentation_url": "https://docs.zen-mesh.io/docs/concepts/planes"
+      "public_documentation_url": "https://www.zen-mesh.io/docs/docs/concepts/planes"
     },
     {
       "id": "Endpoint",
-      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/zen-mesh-concepts",
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/concepts/zen-mesh-concepts",
       "node_type": "RESOURCE",
       "canonical_layer": "Connect",
       "canonical_resource": "Endpoint",
       "implementation_status": "IMPLEMENTED_VERIFIED",
       "verification_status": "VERIFIED",
-      "public_documentation_url": "https://docs.zen-mesh.io/docs/concepts/zen-mesh-concepts"
+      "public_documentation_url": "https://www.zen-mesh.io/docs/docs/concepts/zen-mesh-concepts"
     },
     {
       "id": "Provider Pack",
-      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/zen-mesh-concepts",
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/concepts/zen-mesh-concepts",
       "node_type": "RESOURCE",
       "canonical_layer": "Connect",
       "canonical_resource": "Endpoint",
       "implementation_status": "IMPLEMENTED_VERIFIED",
       "verification_status": "VERIFIED",
-      "public_documentation_url": "https://docs.zen-mesh.io/docs/concepts/zen-mesh-concepts"
+      "public_documentation_url": "https://www.zen-mesh.io/docs/docs/concepts/zen-mesh-concepts"
     },
     {
       "id": "Target",
-      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/zen-mesh-concepts",
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/concepts/zen-mesh-concepts",
       "node_type": "RESOURCE",
       "canonical_layer": "Connect",
       "canonical_resource": "Target",
       "implementation_status": "IMPLEMENTED_VERIFIED",
       "verification_status": "VERIFIED",
-      "public_documentation_url": "https://docs.zen-mesh.io/docs/concepts/zen-mesh-concepts"
+      "public_documentation_url": "https://www.zen-mesh.io/docs/docs/concepts/zen-mesh-concepts"
     },
     {
       "id": "Flow",
-      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/zen-mesh-concepts",
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/concepts/zen-mesh-concepts",
       "node_type": "RESOURCE",
       "canonical_layer": "Connect",
       "canonical_resource": "Flow",
       "implementation_status": "IMPLEMENTED_VERIFIED",
       "verification_status": "VERIFIED",
-      "public_documentation_url": "https://docs.zen-mesh.io/docs/concepts/zen-mesh-concepts"
+      "public_documentation_url": "https://www.zen-mesh.io/docs/docs/concepts/zen-mesh-concepts"
     },
     {
       "id": "identity",
-      "canonical_source": "https://docs.zen-mesh.io/docs/architecture/overview",
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/architecture/overview",
       "node_type": "CAPABILITY",
       "canonical_layer": "Trust",
       "canonical_resource": null,
       "implementation_status": "IMPLEMENTED_VERIFIED",
       "verification_status": "VERIFIED",
-      "public_documentation_url": "https://docs.zen-mesh.io/docs/architecture/overview"
+      "public_documentation_url": "https://www.zen-mesh.io/docs/docs/architecture/overview"
     },
     {
       "id": "authorization",
-      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/control-surfaces",
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/concepts/control-surfaces",
       "node_type": "CAPABILITY",
       "canonical_layer": "Trust",
       "canonical_resource": null,
       "implementation_status": "IMPLEMENTED_VERIFIED",
       "verification_status": "VERIFIED",
-      "public_documentation_url": "https://docs.zen-mesh.io/docs/concepts/control-surfaces"
+      "public_documentation_url": "https://www.zen-mesh.io/docs/docs/concepts/control-surfaces"
     },
     {
       "id": "evidence",
-      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/zen-mesh-concepts",
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/concepts/zen-mesh-concepts",
       "node_type": "CAPABILITY",
       "canonical_layer": "Trust",
       "canonical_resource": null,
       "implementation_status": "IMPLEMENTED_VERIFIED",
       "verification_status": "VERIFIED",
-      "public_documentation_url": "https://docs.zen-mesh.io/docs/concepts/zen-mesh-concepts"
+      "public_documentation_url": "https://www.zen-mesh.io/docs/docs/concepts/zen-mesh-concepts"
     },
     {
       "id": "operation",
-      "canonical_source": "https://docs.zen-mesh.io/docs/getting-started/quick-start",
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/getting-started/quick-start",
       "node_type": "CAPABILITY",
       "canonical_layer": "Traffic",
       "canonical_resource": null,
       "implementation_status": "IMPLEMENTED_VERIFIED",
       "verification_status": "VERIFIED",
-      "public_documentation_url": "https://docs.zen-mesh.io/docs/getting-started/quick-start"
+      "public_documentation_url": "https://www.zen-mesh.io/docs/docs/getting-started/quick-start"
     },
     {
       "id": "MCP",
-      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/control-surfaces",
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/concepts/control-surfaces",
       "node_type": "SURFACE",
       "canonical_layer": null,
       "canonical_resource": null,
@@ -190,41 +190,41 @@
         "MCP write tools are disabled by default",
         "No AI implicit privilege"
       ],
-      "public_documentation_url": "https://docs.zen-mesh.io/docs/concepts/control-surfaces"
+      "public_documentation_url": "https://www.zen-mesh.io/docs/docs/concepts/control-surfaces"
     },
     {
       "id": "CLI",
-      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/control-surfaces",
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/concepts/control-surfaces",
       "node_type": "SURFACE",
       "canonical_layer": null,
       "canonical_resource": null,
       "implementation_status": "IMPLEMENTED_UNVERIFIED",
       "verification_status": "UNVERIFIED",
-      "public_documentation_url": "https://docs.zen-mesh.io/docs/concepts/control-surfaces"
+      "public_documentation_url": "https://www.zen-mesh.io/docs/docs/concepts/control-surfaces"
     },
     {
       "id": "API",
-      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/control-surfaces",
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/concepts/control-surfaces",
       "node_type": "SURFACE",
       "canonical_layer": null,
       "canonical_resource": null,
       "implementation_status": "IMPLEMENTED_VERIFIED",
       "verification_status": "VERIFIED",
-      "public_documentation_url": "https://docs.zen-mesh.io/docs/concepts/control-surfaces"
+      "public_documentation_url": "https://www.zen-mesh.io/docs/docs/concepts/control-surfaces"
     },
     {
       "id": "UI",
-      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/control-surfaces",
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/concepts/control-surfaces",
       "node_type": "SURFACE",
       "canonical_layer": null,
       "canonical_resource": null,
       "implementation_status": "IMPLEMENTED_VERIFIED",
       "verification_status": "VERIFIED",
-      "public_documentation_url": "https://docs.zen-mesh.io/docs/concepts/control-surfaces"
+      "public_documentation_url": "https://www.zen-mesh.io/docs/docs/concepts/control-surfaces"
     },
     {
       "id": "Git surface",
-      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/control-surfaces",
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/concepts/control-surfaces",
       "node_type": "SURFACE",
       "canonical_layer": null,
       "canonical_resource": null,
@@ -234,7 +234,7 @@
         "Git reconciliation surface does not exist today",
         "NOT_IMPLEMENTED \u2014 architecture approval still required"
       ],
-      "public_documentation_url": "https://docs.zen-mesh.io/docs/concepts/control-surfaces"
+      "public_documentation_url": "https://www.zen-mesh.io/docs/docs/concepts/control-surfaces"
     }
   ],
   "edges": [
@@ -242,295 +242,295 @@
       "source": "Fabric",
       "target": "Connect",
       "relationship": "LAYER_OWNS_RESOURCE",
-      "canonical_source": "https://docs.zen-mesh.io/docs/getting-started/quick-start"
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/getting-started/quick-start"
     },
     {
       "source": "Fabric",
       "target": "Pipelines",
       "relationship": "LAYER_OWNS_RESOURCE",
-      "canonical_source": "https://docs.zen-mesh.io/docs/getting-started/quick-start"
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/getting-started/quick-start"
     },
     {
       "source": "Fabric",
       "target": "Runtime",
       "relationship": "LAYER_OWNS_RESOURCE",
-      "canonical_source": "https://docs.zen-mesh.io/docs/getting-started/quick-start"
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/getting-started/quick-start"
     },
     {
       "source": "Fabric",
       "target": "Traffic",
       "relationship": "LAYER_OWNS_RESOURCE",
-      "canonical_source": "https://docs.zen-mesh.io/docs/getting-started/quick-start"
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/getting-started/quick-start"
     },
     {
       "source": "Fabric",
       "target": "Trust",
       "relationship": "LAYER_OWNS_RESOURCE",
-      "canonical_source": "https://docs.zen-mesh.io/docs/getting-started/quick-start"
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/getting-started/quick-start"
     },
     {
       "source": "Connect",
       "target": "Endpoint",
       "relationship": "LAYER_OWNS_RESOURCE",
-      "canonical_source": "https://docs.zen-mesh.io/docs/getting-started/quick-start"
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/getting-started/quick-start"
     },
     {
       "source": "Connect",
       "target": "Provider Pack",
       "relationship": "LAYER_OWNS_RESOURCE",
-      "canonical_source": "https://docs.zen-mesh.io/docs/getting-started/quick-start"
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/getting-started/quick-start"
     },
     {
       "source": "Connect",
       "target": "Target",
       "relationship": "LAYER_OWNS_RESOURCE",
-      "canonical_source": "https://docs.zen-mesh.io/docs/getting-started/quick-start"
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/getting-started/quick-start"
     },
     {
       "source": "Connect",
       "target": "Flow",
       "relationship": "LAYER_OWNS_RESOURCE",
-      "canonical_source": "https://docs.zen-mesh.io/docs/getting-started/quick-start"
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/getting-started/quick-start"
     },
     {
       "source": "Pipelines",
       "target": "Flow",
       "relationship": "LAYER_OWNS_RESOURCE",
-      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/zen-mesh-concepts"
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/concepts/zen-mesh-concepts"
     },
     {
       "source": "Runtime",
       "target": "Plane",
       "relationship": "LAYER_OWNS_RESOURCE",
-      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/planes"
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/concepts/planes"
     },
     {
       "source": "Runtime",
       "target": "Edge Plane",
       "relationship": "LAYER_OWNS_RESOURCE",
-      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/planes"
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/concepts/planes"
     },
     {
       "source": "Runtime",
       "target": "Edge Lite",
       "relationship": "LAYER_OWNS_RESOURCE",
-      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/planes"
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/concepts/planes"
     },
     {
       "source": "Traffic",
       "target": "operation",
       "relationship": "LAYER_OWNS_RESOURCE",
-      "canonical_source": "https://docs.zen-mesh.io/docs/getting-started/quick-start"
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/getting-started/quick-start"
     },
     {
       "source": "Trust",
       "target": "evidence",
       "relationship": "LAYER_OWNS_RESOURCE",
-      "canonical_source": "https://docs.zen-mesh.io/docs/getting-started/quick-start"
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/getting-started/quick-start"
     },
     {
       "source": "Trust",
       "target": "authorization",
       "relationship": "LAYER_OWNS_RESOURCE",
-      "canonical_source": "https://docs.zen-mesh.io/docs/getting-started/quick-start"
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/getting-started/quick-start"
     },
     {
       "source": "Trust",
       "target": "identity",
       "relationship": "LAYER_OWNS_RESOURCE",
-      "canonical_source": "https://docs.zen-mesh.io/docs/architecture/overview"
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/architecture/overview"
     },
     {
       "source": "Endpoint",
       "target": "Plane",
       "relationship": "RESOURCE_EXECUTES_ON",
-      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/zen-mesh-concepts"
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/concepts/zen-mesh-concepts"
     },
     {
       "source": "Endpoint",
       "target": "Provider Pack",
       "relationship": "RESOURCE_REFERENCES",
-      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/zen-mesh-concepts"
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/concepts/zen-mesh-concepts"
     },
     {
       "source": "Flow",
       "target": "Endpoint",
       "relationship": "RESOURCE_DEPENDS_ON",
-      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/zen-mesh-concepts"
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/concepts/zen-mesh-concepts"
     },
     {
       "source": "Flow",
       "target": "Target",
       "relationship": "RESOURCE_DEPENDS_ON",
-      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/zen-mesh-concepts"
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/concepts/zen-mesh-concepts"
     },
     {
       "source": "Flow",
       "target": "Plane",
       "relationship": "RESOURCE_REFERENCES",
-      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/zen-mesh-concepts"
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/concepts/zen-mesh-concepts"
     },
     {
       "source": "Flow",
       "target": "evidence",
       "relationship": "RESOURCE_PRODUCES",
-      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/zen-mesh-concepts"
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/concepts/zen-mesh-concepts"
     },
     {
       "source": "Target",
       "target": "Plane",
       "relationship": "RESOURCE_EXECUTES_ON",
-      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/zen-mesh-concepts"
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/concepts/zen-mesh-concepts"
     },
     {
       "source": "Provider Pack",
       "target": "Endpoint",
       "relationship": "CAPABILITY_REQUIRES",
-      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/zen-mesh-concepts"
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/concepts/zen-mesh-concepts"
     },
     {
       "source": "operation",
       "target": "Plane",
       "relationship": "RESOURCE_EXECUTES_ON",
-      "canonical_source": "https://docs.zen-mesh.io/docs/architecture/three-plane-model"
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/architecture/three-plane-model"
     },
     {
       "source": "operation",
       "target": "evidence",
       "relationship": "RESOURCE_PRODUCES",
-      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/zen-mesh-concepts"
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/concepts/zen-mesh-concepts"
     },
     {
       "source": "evidence",
       "target": "operation",
       "relationship": "EVIDENCE_PROVES",
-      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/zen-mesh-concepts"
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/concepts/zen-mesh-concepts"
     },
     {
       "source": "authorization",
       "target": "operation",
       "relationship": "CONTRACT_GOVERNS",
-      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/control-surfaces"
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/concepts/control-surfaces"
     },
     {
       "source": "identity",
       "target": "authorization",
       "relationship": "CONTRACT_GOVERNS",
-      "canonical_source": "https://docs.zen-mesh.io/docs/architecture/overview"
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/architecture/overview"
     },
     {
       "source": "API",
       "target": "Endpoint",
       "relationship": "SURFACE_OPERATES",
-      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/control-surfaces"
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/concepts/control-surfaces"
     },
     {
       "source": "API",
       "target": "Target",
       "relationship": "SURFACE_OPERATES",
-      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/control-surfaces"
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/concepts/control-surfaces"
     },
     {
       "source": "API",
       "target": "Flow",
       "relationship": "SURFACE_OPERATES",
-      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/control-surfaces"
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/concepts/control-surfaces"
     },
     {
       "source": "API",
       "target": "operation",
       "relationship": "SURFACE_OPERATES",
-      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/control-surfaces"
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/concepts/control-surfaces"
     },
     {
       "source": "MCP",
       "target": "Endpoint",
       "relationship": "SURFACE_OPERATES",
-      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/control-surfaces"
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/concepts/control-surfaces"
     },
     {
       "source": "MCP",
       "target": "Target",
       "relationship": "SURFACE_OPERATES",
-      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/control-surfaces"
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/concepts/control-surfaces"
     },
     {
       "source": "MCP",
       "target": "Flow",
       "relationship": "SURFACE_OPERATES",
-      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/control-surfaces"
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/concepts/control-surfaces"
     },
     {
       "source": "MCP",
       "target": "operation",
       "relationship": "SURFACE_OPERATES",
-      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/control-surfaces"
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/concepts/control-surfaces"
     },
     {
       "source": "CLI",
       "target": "Endpoint",
       "relationship": "SURFACE_OPERATES",
-      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/control-surfaces"
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/concepts/control-surfaces"
     },
     {
       "source": "CLI",
       "target": "Target",
       "relationship": "SURFACE_OPERATES",
-      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/control-surfaces"
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/concepts/control-surfaces"
     },
     {
       "source": "CLI",
       "target": "Flow",
       "relationship": "SURFACE_OPERATES",
-      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/control-surfaces"
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/concepts/control-surfaces"
     },
     {
       "source": "CLI",
       "target": "operation",
       "relationship": "SURFACE_OPERATES",
-      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/control-surfaces"
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/concepts/control-surfaces"
     },
     {
       "source": "UI",
       "target": "Endpoint",
       "relationship": "SURFACE_OPERATES",
-      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/control-surfaces"
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/concepts/control-surfaces"
     },
     {
       "source": "UI",
       "target": "Target",
       "relationship": "SURFACE_OPERATES",
-      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/control-surfaces"
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/concepts/control-surfaces"
     },
     {
       "source": "UI",
       "target": "Flow",
       "relationship": "SURFACE_OPERATES",
-      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/control-surfaces"
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/concepts/control-surfaces"
     },
     {
       "source": "UI",
       "target": "operation",
       "relationship": "SURFACE_OPERATES",
-      "canonical_source": "https://docs.zen-mesh.io/docs/getting-started/quick-start"
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/getting-started/quick-start"
     },
     {
       "source": "Git surface",
       "target": "Endpoint",
       "relationship": "SURFACE_OPERATES",
-      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/control-surfaces"
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/concepts/control-surfaces"
     },
     {
       "source": "Git surface",
       "target": "Target",
       "relationship": "SURFACE_OPERATES",
-      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/control-surfaces"
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/concepts/control-surfaces"
     },
     {
       "source": "Git surface",
       "target": "Flow",
       "relationship": "SURFACE_OPERATES",
-      "canonical_source": "https://docs.zen-mesh.io/docs/concepts/control-surfaces"
+      "canonical_source": "https://www.zen-mesh.io/docs/docs/concepts/control-surfaces"
     }
   ],
   "canonical_source_commit": "a399d87452317d91843521c9bd4a0fde61e9075e",

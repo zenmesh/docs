@@ -31,7 +31,7 @@ docs/api/errors - Common API Errors - Reference for HTTP status codes and error 
 
 
 - [OpenAPI Reference](./api/openapi-reference) - Interactive API reference rendered from the canonical OpenAPI specification
-  - Live YAML: https://docs.zen-mesh.io/openapi/zen-mesh-user-api.v1.yaml
+  - Live YAML: https://www.zen-mesh.io/docs/api/openapi.yaml
   - Live JSON: https://docs.zen-mesh.io/openapi/zen-mesh-user-api.v1.json
   - Zen Mesh User API (v1-preview, 19 endpoints)
 - [Fabric Adapters API](./api/fabric-adapters) - Adapter management guide

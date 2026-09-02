@@ -11,22 +11,22 @@
     "kind": "stable_evidence_manifest",
     "note": "Stable evidence manifest channel. Reflects the current state of evidence and classifies prior versions as historical/superseded.",
     "current_evidence_version": "1.1.0",
-    "current_manifest_url": "https://docs.zen-mesh.io/ai/evidence/v1.1/manifest.json"
+    "current_manifest_url": "https://www.zen-mesh.io/docs/ai/evidence/v1.1/manifest.json"
   },
   "generated_at": "2026-08-05T18:00:00Z",
   "evidence_scope": "china_market_strategy",
   "current_state": {
     "evidence_version": "1.1.0",
-    "current_manifest_url": "https://docs.zen-mesh.io/ai/evidence/v1.1/manifest.json",
-    "supersession_map_url": "https://docs.zen-mesh.io/ai/evidence/v1.1/supersession-map.json",
-    "non_regression_matrix_url": "https://docs.zen-mesh.io/ai/evidence/v1.1/non-regression-matrix.json",
-    "public_claim_gate_url": "https://docs.zen-mesh.io/ai/evidence/v1.1/public-claim-gate.json"
+    "current_manifest_url": "https://www.zen-mesh.io/docs/ai/evidence/v1.1/manifest.json",
+    "supersession_map_url": "https://www.zen-mesh.io/docs/ai/evidence/v1.1/supersession-map.json",
+    "non_regression_matrix_url": "https://www.zen-mesh.io/docs/ai/evidence/v1.1/non-regression-matrix.json",
+    "public_claim_gate_url": "https://www.zen-mesh.io/docs/ai/evidence/v1.1/public-claim-gate.json"
   },
   "superseded_versions": {
     "1.0.0": {
       "classification": "historical_superseded",
       "note": "Prior evidence revision (scope local_mock_harness_plus_gke_cloud_demo). Retained for reference; not current truth.",
-      "manifest_url": "https://docs.zen-mesh.io/ai/evidence/v1/manifest.json"
+      "manifest_url": "https://www.zen-mesh.io/docs/ai/evidence/v1/manifest.json"
     }
   },
   "digest": {
@@ -62,6 +62,6 @@
   ],
   "non_claims": {
     "note": "Authoritative non-claims live in the versioned manifest and v1.1/non-claims.json.",
-    "non_claims_url": "https://docs.zen-mesh.io/ai/evidence/v1.1/non-claims.json"
+    "non_claims_url": "https://www.zen-mesh.io/docs/ai/evidence/v1.1/non-claims.json"
   }
 }

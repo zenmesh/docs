@@ -17,7 +17,7 @@
       "expected_result": "Agent binary installed, service running",
       "evidence": "Install script SHA-256 available. Public Docker image and installer not yet published \u2014 runtime is evidence-gated.",
       "file_path": "docs/install/edge-lite.md",
-      "public_url": "https://docs.zen-mesh.io/docs/install/edge-lite",
+      "public_url": "https://www.zen-mesh.io/docs/docs/install/edge-lite",
       "non_claims": [
         "launch_ready = false (runtime not yet published)",
         "customer_ready = false (runtime not yet published)",
@@ -39,7 +39,7 @@
       "expected_result": "Edge plane enrolled, heartbeat established, configuration sync active",
       "evidence": "Enrollment bundle exchanged during registration. Short-lived credentials auto-rotate. Enrollment evidence not yet clearly documented in a structured verification procedure.",
       "file_path": "docs/install/edge-plane.md",
-      "public_url": "https://docs.zen-mesh.io/docs/install/edge-plane",
+      "public_url": "https://www.zen-mesh.io/docs/docs/install/edge-plane",
       "non_claims": [
         "No claim that edge plane implies inbound ports",
         "No claim that all deployments need zen-ingester or zen-egress"
@@ -59,7 +59,7 @@
       "expected_result": "Endpoint created, ingestion URL returned",
       "evidence": "Endpoint ID returned in API response. Endpoint shows in UI dashboard. Operability test scores PASS for discovery, prerequisites, surface instructions, executable example, expected result, failure guidance, and evidence.",
       "file_path": "docs/api/examples.md",
-      "public_url": "https://docs.zen-mesh.io/docs/api/examples",
+      "public_url": "https://www.zen-mesh.io/docs/docs/api/examples",
       "non_claims": [
         "Dashboard is INTERNAL_ONLY \u2014 not a public customer contract"
       ]
@@ -78,7 +78,7 @@
       "expected_result": "Stripe template selected, blueprint configured with signing secret, endpoint ready to receive Stripe events",
       "evidence": "Provider association in Endpoint details. Stripe cloud E2E is pending revalidation per current-status.",
       "file_path": null,
-      "public_url": "https://docs.zen-mesh.io/docs/getting-started/quick-start",
+      "public_url": "https://www.zen-mesh.io/docs/docs/getting-started/quick-start",
       "non_claims": [
         "Provider maturity varies \u2014 Stripe cloud E2E is pending revalidation",
         "Not all templates have corresponding blueprints in all environments"
@@ -99,7 +99,7 @@
       "expected_result": "GitHub template selected, webhook secret configured, endpoint ready to receive GitHub events",
       "evidence": "Provider association in Endpoint details. GitHub setup documented in per-provider guides.",
       "file_path": null,
-      "public_url": "https://docs.zen-mesh.io/docs/getting-started/quick-start",
+      "public_url": "https://www.zen-mesh.io/docs/docs/getting-started/quick-start",
       "non_claims": [
         "Provider maturity varies",
         "Not all templates have corresponding blueprints in all environments"
@@ -120,7 +120,7 @@
       "expected_result": "Shopify template selected, endpoint ready to receive Shopify events",
       "evidence": "Provider association in Endpoint details. Shopify setup documented in per-provider guides.",
       "file_path": null,
-      "public_url": "https://docs.zen-mesh.io/docs/getting-started/quick-start",
+      "public_url": "https://www.zen-mesh.io/docs/docs/getting-started/quick-start",
       "non_claims": [
         "Provider maturity varies",
         "Not all templates have corresponding blueprints in all environments"
@@ -141,7 +141,7 @@
       "expected_result": "Twilio template selected, endpoint ready to receive Twilio events",
       "evidence": "Provider association in Endpoint details. Twilio form-urlencoded routing is partial per current-status.",
       "file_path": null,
-      "public_url": "https://docs.zen-mesh.io/docs/getting-started/quick-start",
+      "public_url": "https://www.zen-mesh.io/docs/docs/getting-started/quick-start",
       "non_claims": [
         "Twilio form-urlencoded routing is partial \u2014 not all Twilio event formats are supported",
         "Not all templates have corresponding blueprints in all environments"
@@ -162,7 +162,7 @@
       "expected_result": "Target created, target ID returned, status active",
       "evidence": "Target ID returned in API response. Target shows in UI dashboard. Operability test scores PASS for all criteria including evidence.",
       "file_path": "docs/api/examples.md",
-      "public_url": "https://docs.zen-mesh.io/docs/api/examples",
+      "public_url": "https://www.zen-mesh.io/docs/docs/api/examples",
       "non_claims": [
         "Write examples are WIRED_SANDBOX unless otherwise noted \u2014 not production-live availability claims"
       ]
@@ -181,7 +181,7 @@
       "expected_result": "Flow created, flow ID returned, delivery contract active",
       "evidence": "Flow ID and status returned. Flow connects endpoint to target. Operability test scores PASS for create and apply flow.",
       "file_path": null,
-      "public_url": "https://docs.zen-mesh.io/docs/getting-started/quick-start",
+      "public_url": "https://www.zen-mesh.io/docs/docs/getting-started/quick-start",
       "non_claims": [
         "Write examples are WIRED_SANDBOX unless otherwise noted \u2014 not production-live availability claims"
       ],
@@ -201,7 +201,7 @@
       "expected_result": "Outbound-only private delivery configured, egress relay connection established to NAT/firewalled target",
       "evidence": "PROOF-008, PROOF-009 referenced in key concepts. Delivery mode selection available during target configuration. Relay selection gated by data-plane capability and edge enrollment readiness.",
       "file_path": "docs/architecture/delivery-modes.md",
-      "public_url": "https://docs.zen-mesh.io/docs/architecture/delivery-modes",
+      "public_url": "https://www.zen-mesh.io/docs/docs/architecture/delivery-modes",
       "non_claims": [
         "System does not silently auto-detect delivery mode in V1",
         "Delivery guarantees are scenario-specific \u2014 no global exactly-once claim"
@@ -221,7 +221,7 @@
       "expected_result": "Target created on first request; same Idempotency-Key on retry returns original response without creating duplicate",
       "evidence": "Idempotency-Key deduplication window is 24 hours. Same key returns original response. DELETE is naturally idempotent. Retry delivery is idempotent.",
       "file_path": "docs/api/idempotency.md",
-      "public_url": "https://docs.zen-mesh.io/docs/api/idempotency",
+      "public_url": "https://www.zen-mesh.io/docs/docs/api/idempotency",
       "non_claims": [
         "Idempotency is not a substitute for idempotent consumer design",
         "Idempotency window is 24 hours from first request \u2014 key eligible for reuse after expiry"
@@ -241,7 +241,7 @@
       "expected_result": "Delivery status, evidence receipt, webhook sources, or platform health returned to agent",
       "evidence": "MCP read tools are default-on per V1 policy. Documented examples include zen_get_delivery, zen_get_evidence, zen_list_sources, zen_get_health. Full response schemas documented in mcp/examples.md.",
       "file_path": "docs/mcp/examples.md",
-      "public_url": "https://docs.zen-mesh.io/docs/mcp/examples",
+      "public_url": "https://www.zen-mesh.io/docs/docs/mcp/examples",
       "non_claims": [
         "MCP is not globally read-only \u2014 write tools exist but are disabled by default"
       ]
@@ -260,7 +260,7 @@
       "expected_result": "Write operation executed through MCP surface after explicit tool-group enablement by operator",
       "evidence": "MCP write tools are disabled by default and require per-tool-group enablement. PUBLIC_CONTRACT_DRAFT status. Not available in V1 without operator intervention.",
       "file_path": null,
-      "public_url": "https://docs.zen-mesh.io/docs/concepts/control-surfaces",
+      "public_url": "https://www.zen-mesh.io/docs/docs/concepts/control-surfaces",
       "non_claims": [
         "MCP write tools are disabled by default \u2014 enable per tool group",
         "MCP is not globally read-only \u2014 write tools exist but are disabled by default",
@@ -282,7 +282,7 @@
       "expected_result": "Write attempt denied with error code write_tool_disabled, message directing user to enable tool group or use REST API",
       "evidence": "Error response documented in mcp/examples.md: code 'write_tool_disabled', message explaining write tool group not enabled, suggestion to use REST API at https://api.zen-mesh.io/v1.",
       "file_path": "docs/mcp/examples.md",
-      "public_url": "https://docs.zen-mesh.io/docs/mcp/examples",
+      "public_url": "https://www.zen-mesh.io/docs/docs/mcp/examples",
       "non_claims": [
         "MCP write tools are disabled by default \u2014 enable per tool group",
         "Denied write is the expected behavior when tool group is not enabled, not a failure"
@@ -302,7 +302,7 @@
       "expected_result": "HTTP 429 (rate limit), 500 (internal error), or 503 (service unavailable) \u2014 retryable after backoff",
       "evidence": "RFC 9457 Problem Details format. 429 includes Retry-After header. 500 and 503 indicate transient server state. Agent rule 8 permits retry of these statuses. Error model is PUBLIC_CONTRACT_DRAFT.",
       "file_path": "docs/api/errors.md",
-      "public_url": "https://docs.zen-mesh.io/docs/api/errors",
+      "public_url": "https://www.zen-mesh.io/docs/docs/api/errors",
       "non_claims": [
         "Error format may not be fully uniform across all endpoint groups",
         "Rate limit thresholds vary by plan and endpoint",
@@ -323,7 +323,7 @@
       "expected_result": "HTTP 400 (validation), 401 (unauthorized), 403 (scope/permission/disabled), 404 (not found), 409 (conflict), 422 (unprocessable) \u2014 must not be retried",
       "evidence": "RFC 9457 Problem Details format per error type. Agent rule 8: 'No retry of permanent failures. 4xx errors indicating bad requests, authorization denial, or not-found should not be retried.'",
       "file_path": "docs/api/errors.md",
-      "public_url": "https://docs.zen-mesh.io/docs/api/errors",
+      "public_url": "https://www.zen-mesh.io/docs/docs/api/errors",
       "non_claims": [
         "Error format may not be fully uniform across all endpoint groups",
         "Some legacy endpoints may return a simpler error format without RFC 9457 fields"

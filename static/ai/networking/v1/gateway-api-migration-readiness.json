@@ -70,7 +70,7 @@
     "No app UI freshness claim"
   ],
   "docs_urls": [
-    "https://docs.zen-mesh.io/networking/gateway-api-migration"
+    "https://www.zen-mesh.io/docs/networking/gateway-api-migration"
   ],
   "controller_selection": {
     "status": "recommended_not_installed",

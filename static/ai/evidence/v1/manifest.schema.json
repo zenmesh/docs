@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://docs.zen-mesh.io/ai/evidence/v1/manifest.schema.json",
+  "$id": "https://www.zen-mesh.io/docs/ai/evidence/v1/manifest.schema.json",
   "title": "Zen Mesh AI Evidence Manifest Schema",
   "description": "Schema for the Zen Mesh AI evidence manifest — defines proof capabilities, statuses, compliance mappings, and validation targets for AI-assisted analysis.",
   "type": "object",

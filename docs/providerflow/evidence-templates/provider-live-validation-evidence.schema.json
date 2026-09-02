@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://docs.zen-mesh.io/providerflow/evidence-templates/provider-live-validation-evidence.schema.json",
+  "$id": "https://www.zen-mesh.io/docs/providerflow/evidence-templates/provider-live-validation-evidence.schema.json",
   "title": "Provider Live Validation Evidence",
   "description": "Schema for post-cloud provider live validation evidence artifacts",
   "type": "object",

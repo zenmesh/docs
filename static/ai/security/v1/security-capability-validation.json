@@ -29,9 +29,9 @@
         "No production-live proof for all paths (evidence is source-validated, not live-attested)"
       ],
       "docs_urls": [
-        "https://docs.zen-mesh.io/security/security-capability-validation",
-        "https://docs.zen-mesh.io/security/agent-saas-mtls",
-        "https://docs.zen-mesh.io/security/zenlock-credential-lifecycle"
+        "https://www.zen-mesh.io/docs/security/security-capability-validation",
+        "https://www.zen-mesh.io/docs/security/agent-saas-mtls",
+        "https://www.zen-mesh.io/docs/security/zenlock-credential-lifecycle"
       ]
     },
     {
@@ -57,9 +57,9 @@
         "No claim HMAC prevents all replay (nonce-based dedup is separate)"
       ],
       "docs_urls": [
-        "https://docs.zen-mesh.io/security/security-capability-validation",
-        "https://docs.zen-mesh.io/security/agent-saas-mtls",
-        "https://docs.zen-mesh.io/security/zenlock-credential-lifecycle"
+        "https://www.zen-mesh.io/docs/security/security-capability-validation",
+        "https://www.zen-mesh.io/docs/security/agent-saas-mtls",
+        "https://www.zen-mesh.io/docs/security/zenlock-credential-lifecycle"
       ]
     },
     {
@@ -88,9 +88,9 @@
         "No claim all workloads have SPIFFE identity today"
       ],
       "docs_urls": [
-        "https://docs.zen-mesh.io/security/security-capability-validation",
-        "https://docs.zen-mesh.io/security/agent-saas-mtls",
-        "https://docs.zen-mesh.io/security/zenlock-credential-lifecycle"
+        "https://www.zen-mesh.io/docs/security/security-capability-validation",
+        "https://www.zen-mesh.io/docs/security/agent-saas-mtls",
+        "https://www.zen-mesh.io/docs/security/zenlock-credential-lifecycle"
       ]
     },
     {
@@ -118,9 +118,9 @@
         "No claim all workloads have comprehensive SPIFFE identity"
       ],
       "docs_urls": [
-        "https://docs.zen-mesh.io/security/security-capability-validation",
-        "https://docs.zen-mesh.io/security/agent-saas-mtls",
-        "https://docs.zen-mesh.io/security/zenlock-credential-lifecycle"
+        "https://www.zen-mesh.io/docs/security/security-capability-validation",
+        "https://www.zen-mesh.io/docs/security/agent-saas-mtls",
+        "https://www.zen-mesh.io/docs/security/zenlock-credential-lifecycle"
       ]
     },
     {
@@ -146,9 +146,9 @@
         "No claim ZenLock performs HMAC rotation"
       ],
       "docs_urls": [
-        "https://docs.zen-mesh.io/security/security-capability-validation",
-        "https://docs.zen-mesh.io/security/agent-saas-mtls",
-        "https://docs.zen-mesh.io/security/zenlock-credential-lifecycle"
+        "https://www.zen-mesh.io/docs/security/security-capability-validation",
+        "https://www.zen-mesh.io/docs/security/agent-saas-mtls",
+        "https://www.zen-mesh.io/docs/security/zenlock-credential-lifecycle"
       ]
     },
     {
@@ -175,9 +175,9 @@
         "No claim zero-downtime cert rotation for all paths"
       ],
       "docs_urls": [
-        "https://docs.zen-mesh.io/security/security-capability-validation",
-        "https://docs.zen-mesh.io/security/agent-saas-mtls",
-        "https://docs.zen-mesh.io/security/zenlock-credential-lifecycle"
+        "https://www.zen-mesh.io/docs/security/security-capability-validation",
+        "https://www.zen-mesh.io/docs/security/agent-saas-mtls",
+        "https://www.zen-mesh.io/docs/security/zenlock-credential-lifecycle"
       ]
     },
     {
@@ -203,9 +203,9 @@
         "No claim zero-downtime JWK rotation"
       ],
       "docs_urls": [
-        "https://docs.zen-mesh.io/security/security-capability-validation",
-        "https://docs.zen-mesh.io/security/agent-saas-mtls",
-        "https://docs.zen-mesh.io/security/zenlock-credential-lifecycle"
+        "https://www.zen-mesh.io/docs/security/security-capability-validation",
+        "https://www.zen-mesh.io/docs/security/agent-saas-mtls",
+        "https://www.zen-mesh.io/docs/security/zenlock-credential-lifecycle"
       ]
     },
     {
@@ -234,9 +234,9 @@
         "No claim SVID rotation is automatic everywhere"
       ],
       "docs_urls": [
-        "https://docs.zen-mesh.io/security/security-capability-validation",
-        "https://docs.zen-mesh.io/security/agent-saas-mtls",
-        "https://docs.zen-mesh.io/security/zenlock-credential-lifecycle"
+        "https://www.zen-mesh.io/docs/security/security-capability-validation",
+        "https://www.zen-mesh.io/docs/security/agent-saas-mtls",
+        "https://www.zen-mesh.io/docs/security/zenlock-credential-lifecycle"
       ]
     },
     {
@@ -265,9 +265,9 @@
         "No claim ZenLock is a universal secret manager for third-party tools"
       ],
       "docs_urls": [
-        "https://docs.zen-mesh.io/security/security-capability-validation",
-        "https://docs.zen-mesh.io/security/agent-saas-mtls",
-        "https://docs.zen-mesh.io/security/zenlock-credential-lifecycle"
+        "https://www.zen-mesh.io/docs/security/security-capability-validation",
+        "https://www.zen-mesh.io/docs/security/agent-saas-mtls",
+        "https://www.zen-mesh.io/docs/security/zenlock-credential-lifecycle"
       ]
     },
     {
@@ -292,9 +292,9 @@
         "ZenLock does not perform canary deployment or automatic rollback"
       ],
       "docs_urls": [
-        "https://docs.zen-mesh.io/security/security-capability-validation",
-        "https://docs.zen-mesh.io/security/agent-saas-mtls",
-        "https://docs.zen-mesh.io/security/zenlock-credential-lifecycle"
+        "https://www.zen-mesh.io/docs/security/security-capability-validation",
+        "https://www.zen-mesh.io/docs/security/agent-saas-mtls",
+        "https://www.zen-mesh.io/docs/security/zenlock-credential-lifecycle"
       ]
     }
   ],

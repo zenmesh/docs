@@ -3,7 +3,7 @@
   "document": "ai-discovery-registry",
   "generated_by": "scripts/generate-ai-discovery-registry.js",
   "registry_updated_at": "2026-07-07T14:30:34.046Z",
-  "site_origin": "https://docs.zen-mesh.io",
+  "site_origin": "https://www.zen-mesh.io/docs",
   "readiness_scope": "Per-surface last_updated reflects file content dates and mtimes. Capability manifest generated_at may be older than security posture surfaces.",
   "capabilities_manifest_generated_at": "2026-06-23T23:30:00Z",
   "security_posture_bundle_last_updated": "2026-07-05T02:00:24.424Z",
@@ -110,13 +110,13 @@
   "www_root_aliases": [
     {
       "alias_path": "/manifest.json",
-      "canonical_url": "https://docs.zen-mesh.io/ai/evidence/v1/manifest.json",
+      "canonical_url": "https://www.zen-mesh.io/docs/ai/evidence/v1/manifest.json",
       "delivery": "static_pointer_json_200",
       "host": "https://www.zen-mesh.io"
     },
     {
       "alias_path": "/non-claims.json",
-      "canonical_url": "https://docs.zen-mesh.io/ai/evidence/v1/non-claims.json",
+      "canonical_url": "https://www.zen-mesh.io/docs/ai/evidence/v1/non-claims.json",
       "delivery": "static_pointer_json_200",
       "host": "https://www.zen-mesh.io"
     }

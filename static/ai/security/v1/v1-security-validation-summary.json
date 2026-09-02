@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "document": "v1-security-validation-summary",
   "last_updated": "2026-06-29",
-  "human_page": "https://docs.zen-mesh.io/docs/ai/v1-security-validation-summary",
+  "human_page": "https://www.zen-mesh.io/docs/docs/ai/v1-security-validation-summary",
   "readiness_scope": "Local/sandbox validation unless marked CLOUD-GATED or NOT_CLAIMED. Not production-live proof. Not compliance certification. Not external penetration test.",
   "attack_classes": [
     {"id": "V1SV-001", "attack": "Stripe provider signature verification", "status": "PROVEN", "scope": "local_mock_wedge_path"},

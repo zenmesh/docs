@@ -22,7 +22,7 @@
       },
       "permissions": [],
       "idempotent": true,
-      "documentation_url": "https://docs.zen-mesh.io/docs/install/edge-lite",
+      "documentation_url": "https://www.zen-mesh.io/docs/docs/install/edge-lite",
       "evidence": [
         "install_script_sha256"
       ],
@@ -46,7 +46,7 @@
       },
       "permissions": [],
       "idempotent": true,
-      "documentation_url": "https://docs.zen-mesh.io/docs/install/edge-plane",
+      "documentation_url": "https://www.zen-mesh.io/docs/docs/install/edge-plane",
       "evidence": [
         "enrollment_token",
         "plane_identity"
@@ -76,7 +76,7 @@
       "idempotency_key_supported": true,
       "idempotency_key_scope": "per-request",
       "idempotency_key_retention": "24h",
-      "documentation_url": "https://docs.zen-mesh.io/docs/api/endpoints",
+      "documentation_url": "https://www.zen-mesh.io/docs/docs/api/endpoints",
       "evidence": [
         "endpoint_id",
         "operation_receipt"
@@ -105,7 +105,7 @@
       "idempotent": true,
       "destructive": true,
       "confirmation_required": true,
-      "documentation_url": "https://docs.zen-mesh.io/docs/api/endpoints",
+      "documentation_url": "https://www.zen-mesh.io/docs/docs/api/endpoints",
       "evidence": [
         "deletion_receipt"
       ],
@@ -132,7 +132,7 @@
         "endpoint:read"
       ],
       "idempotent": true,
-      "documentation_url": "https://docs.zen-mesh.io/docs/api/endpoints",
+      "documentation_url": "https://www.zen-mesh.io/docs/docs/api/endpoints",
       "evidence": [
         "endpoint_list"
       ]
@@ -155,7 +155,7 @@
         "provider-pack:write"
       ],
       "idempotent": true,
-      "documentation_url": "https://docs.zen-mesh.io/docs/api/endpoints",
+      "documentation_url": "https://www.zen-mesh.io/docs/docs/api/endpoints",
       "evidence": [
         "provider_association_receipt"
       ],
@@ -181,7 +181,7 @@
         "provider-pack:read"
       ],
       "idempotent": true,
-      "documentation_url": "https://docs.zen-mesh.io/docs/api/fabric-adapters"
+      "documentation_url": "https://www.zen-mesh.io/docs/docs/api/fabric-adapters"
     },
     {
       "operation_id": "target.create",
@@ -202,7 +202,7 @@
       ],
       "idempotent": true,
       "idempotency_key_supported": true,
-      "documentation_url": "https://docs.zen-mesh.io/docs/api/targets",
+      "documentation_url": "https://www.zen-mesh.io/docs/docs/api/targets",
       "evidence": [
         "target_id",
         "operation_receipt"
@@ -231,7 +231,7 @@
       "idempotent": true,
       "destructive": true,
       "confirmation_required": true,
-      "documentation_url": "https://docs.zen-mesh.io/docs/api/targets",
+      "documentation_url": "https://www.zen-mesh.io/docs/docs/api/targets",
       "evidence": [
         "deletion_receipt"
       ],
@@ -256,7 +256,7 @@
       ],
       "idempotent": true,
       "idempotency_key_supported": true,
-      "documentation_url": "https://docs.zen-mesh.io/docs/api/flows",
+      "documentation_url": "https://www.zen-mesh.io/docs/docs/api/flows",
       "evidence": [
         "flow_id",
         "operation_receipt"
@@ -289,7 +289,7 @@
       "idempotent": true,
       "destructive": true,
       "confirmation_required": true,
-      "documentation_url": "https://docs.zen-mesh.io/docs/api/flows",
+      "documentation_url": "https://www.zen-mesh.io/docs/docs/api/flows",
       "evidence": [
         "deletion_receipt"
       ]
@@ -312,7 +312,7 @@
         "configuration:write"
       ],
       "idempotent": true,
-      "documentation_url": "https://docs.zen-mesh.io/docs/api/quickstart",
+      "documentation_url": "https://www.zen-mesh.io/docs/docs/api/quickstart",
       "evidence": [
         "apply_receipt",
         "desired_state_hash"
@@ -345,7 +345,7 @@
       "delivery_guarantee": "AT_LEAST_ONCE",
       "duplicate_possible": true,
       "ordering_scope": "per-endpoint",
-      "documentation_url": "https://docs.zen-mesh.io/docs/api/webhooks",
+      "documentation_url": "https://www.zen-mesh.io/docs/docs/api/webhooks",
       "evidence": [
         "event_id",
         "delivery_attempts"
@@ -379,7 +379,7 @@
       "conditionally_idempotent": true,
       "idempotency_notes": "Replaying same event range may produce duplicates",
       "delivery_guarantee": "AT_LEAST_ONCE",
-      "documentation_url": "https://docs.zen-mesh.io/docs/delivery/replay",
+      "documentation_url": "https://www.zen-mesh.io/docs/docs/delivery/replay",
       "evidence": [
         "replay_receipt",
         "replayed_event_ids"
@@ -405,7 +405,7 @@
       ],
       "idempotent": true,
       "idempotency_key_supported": true,
-      "documentation_url": "https://docs.zen-mesh.io/docs/api/retry",
+      "documentation_url": "https://www.zen-mesh.io/docs/docs/api/retry",
       "evidence": [
         "retry_receipt"
       ],
@@ -431,7 +431,7 @@
         "delivery:read"
       ],
       "idempotent": true,
-      "documentation_url": "https://docs.zen-mesh.io/docs/reference/delivery-status",
+      "documentation_url": "https://www.zen-mesh.io/docs/docs/reference/delivery-status",
       "evidence": [
         "status_response"
       ],
@@ -457,7 +457,7 @@
         "evidence:read"
       ],
       "idempotent": true,
-      "documentation_url": "https://docs.zen-mesh.io/docs/reference/webhook-delivery-evidence",
+      "documentation_url": "https://www.zen-mesh.io/docs/docs/reference/webhook-delivery-evidence",
       "evidence": [
         "delivery_receipt",
         "evidence_bundle"
@@ -484,7 +484,7 @@
         "resource:write"
       ],
       "idempotent": true,
-      "documentation_url": "https://docs.zen-mesh.io/docs/api/endpoints",
+      "documentation_url": "https://www.zen-mesh.io/docs/docs/api/endpoints",
       "evidence": [
         "disable_receipt"
       ],
@@ -532,7 +532,7 @@
         "delivery:read"
       ],
       "idempotent": true,
-      "documentation_url": "https://docs.zen-mesh.io/docs/delivery/delivery-failures",
+      "documentation_url": "https://www.zen-mesh.io/docs/docs/delivery/delivery-failures",
       "evidence": [
         "diagnosis_result"
       ],
@@ -558,7 +558,7 @@
         "mcp:read"
       ],
       "idempotent": true,
-      "documentation_url": "https://docs.zen-mesh.io/docs/mcp/overview",
+      "documentation_url": "https://www.zen-mesh.io/docs/docs/mcp/overview",
       "evidence": [
         "mcp_response"
       ],
@@ -584,7 +584,7 @@
         "mcp:write"
       ],
       "conditionally_idempotent": true,
-      "documentation_url": "https://docs.zen-mesh.io/docs/mcp/safety-and-boundaries",
+      "documentation_url": "https://www.zen-mesh.io/docs/docs/mcp/safety-and-boundaries",
       "evidence": [
         "mcp_write_receipt"
       ],

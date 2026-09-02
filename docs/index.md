@@ -63,9 +63,9 @@ Welcome to the Zen Mesh documentation. Zen Mesh delivers webhooks and events to 
 
 | Resource | Location |
 |---|---|
-| Capability Manifest | [`manifest.json`](https://docs.zen-mesh.io/ai/evidence/v1/manifest.json) |
-| Compliance Map | [`compliance-map.json`](https://docs.zen-mesh.io/ai/evidence/v1/compliance-map.json) |
-| Non-Claims | [`non-claims.json`](https://docs.zen-mesh.io/ai/evidence/v1/non-claims.json) |
+| Capability Manifest | [`manifest.json`](https://www.zen-mesh.io/docs/ai/evidence/v1/manifest.json) |
+| Compliance Map | [`compliance-map.json`](https://www.zen-mesh.io/docs/ai/evidence/v1/compliance-map.json) |
+| Non-Claims | [`non-claims.json`](https://www.zen-mesh.io/docs/ai/evidence/v1/non-claims.json) |
 | AI Context | [`llms.txt`](llms.txt) |
 | Evidence index (www) | [`https://www.zen-mesh.io/evidence`](https://www.zen-mesh.io/evidence) |
 | Full Context | [`https://www.zen-mesh.io/llms-full.txt`](https://www.zen-mesh.io/llms-full.txt) |

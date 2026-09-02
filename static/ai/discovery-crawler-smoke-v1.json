@@ -3,121 +3,121 @@
   "document": "discovery-crawler-smoke",
   "task_ref": "HELPER054",
   "checked_at": "2026-05-31T22:43:17.577Z",
-  "canonical_origin": "https://docs.zen-mesh.io",
+  "canonical_origin": "https://www.zen-mesh.io/docs",
   "probe_method": "curl -sSIL (no JS); records first/final status, content-type, redirect chain",
   "hosts": {
     "docs.zen-mesh.io": {
       "notes": "Canonical host for machine-readable /ai/* JSON and llms.txt.",
       "endpoints": {
         "/manifest.json": {
-          "url": "https://docs.zen-mesh.io/manifest.json",
+          "url": "https://www.zen-mesh.io/docs/manifest.json",
           "first_status": 404,
           "final_status": 404,
           "content_type": "text/html; charset=utf-8",
           "redirect_count": 0,
           "location": null,
-          "url_effective": "https://docs.zen-mesh.io/manifest.json",
+          "url_effective": "https://www.zen-mesh.io/docs/manifest.json",
           "body_starts_with_html": false
         },
         "/non-claims.json": {
-          "url": "https://docs.zen-mesh.io/non-claims.json",
+          "url": "https://www.zen-mesh.io/docs/non-claims.json",
           "first_status": 404,
           "final_status": 404,
           "content_type": "text/html; charset=utf-8",
           "redirect_count": 0,
           "location": null,
-          "url_effective": "https://docs.zen-mesh.io/non-claims.json",
+          "url_effective": "https://www.zen-mesh.io/docs/non-claims.json",
           "body_starts_with_html": false
         },
         "/llms.txt": {
-          "url": "https://docs.zen-mesh.io/llms.txt",
+          "url": "https://www.zen-mesh.io/docs/llms.txt",
           "first_status": 200,
           "final_status": 200,
           "content_type": "text/plain; charset=utf-8",
           "redirect_count": 0,
           "location": null,
-          "url_effective": "https://docs.zen-mesh.io/llms.txt",
+          "url_effective": "https://www.zen-mesh.io/docs/llms.txt",
           "body_starts_with_html": false,
           "body_sample": "# Zen Mesh — Webhook Operations > Zen Mesh helps teams recei…"
         },
         "/llms-full.txt": {
-          "url": "https://docs.zen-mesh.io/llms-full.txt",
+          "url": "https://www.zen-mesh.io/docs/llms-full.txt",
           "first_status": 404,
           "final_status": 404,
           "content_type": "text/html; charset=utf-8",
           "redirect_count": 0,
           "location": null,
-          "url_effective": "https://docs.zen-mesh.io/llms-full.txt",
+          "url_effective": "https://www.zen-mesh.io/docs/llms-full.txt",
           "body_starts_with_html": false
         },
         "/ai/ai-discovery-registry.json": {
-          "url": "https://docs.zen-mesh.io/ai/ai-discovery-registry.json",
+          "url": "https://www.zen-mesh.io/docs/ai/ai-discovery-registry.json",
           "first_status": 200,
           "final_status": 200,
           "content_type": "application/json; charset=utf-8",
           "redirect_count": 0,
           "location": null,
-          "url_effective": "https://docs.zen-mesh.io/ai/ai-discovery-registry.json",
+          "url_effective": "https://www.zen-mesh.io/docs/ai/ai-discovery-registry.json",
           "body_starts_with_html": false
         },
         "/ai/security/v1/claim-maturity.json": {
-          "url": "https://docs.zen-mesh.io/ai/security/v1/claim-maturity.json",
+          "url": "https://www.zen-mesh.io/docs/ai/security/v1/claim-maturity.json",
           "first_status": 200,
           "final_status": 200,
           "content_type": "application/json; charset=utf-8",
           "redirect_count": 0,
           "location": null,
-          "url_effective": "https://docs.zen-mesh.io/ai/security/v1/claim-maturity.json",
+          "url_effective": "https://www.zen-mesh.io/docs/ai/security/v1/claim-maturity.json",
           "body_starts_with_html": false
         },
         "/ai/security/v1/primitives.json": {
-          "url": "https://docs.zen-mesh.io/ai/security/v1/primitives.json",
+          "url": "https://www.zen-mesh.io/docs/ai/security/v1/primitives.json",
           "first_status": 200,
           "final_status": 200,
           "content_type": "application/json; charset=utf-8",
           "redirect_count": 0,
           "location": null,
-          "url_effective": "https://docs.zen-mesh.io/ai/security/v1/primitives.json",
+          "url_effective": "https://www.zen-mesh.io/docs/ai/security/v1/primitives.json",
           "body_starts_with_html": false
         },
         "/ai/security/v1/gaps.json": {
-          "url": "https://docs.zen-mesh.io/ai/security/v1/gaps.json",
+          "url": "https://www.zen-mesh.io/docs/ai/security/v1/gaps.json",
           "first_status": 200,
           "final_status": 200,
           "content_type": "application/json; charset=utf-8",
           "redirect_count": 0,
           "location": null,
-          "url_effective": "https://docs.zen-mesh.io/ai/security/v1/gaps.json",
+          "url_effective": "https://www.zen-mesh.io/docs/ai/security/v1/gaps.json",
           "body_starts_with_html": false
         },
         "/ai/security/v1/local-trust-posture.json": {
-          "url": "https://docs.zen-mesh.io/ai/security/v1/local-trust-posture.json",
+          "url": "https://www.zen-mesh.io/docs/ai/security/v1/local-trust-posture.json",
           "first_status": 200,
           "final_status": 200,
           "content_type": "application/json; charset=utf-8",
           "redirect_count": 0,
           "location": null,
-          "url_effective": "https://docs.zen-mesh.io/ai/security/v1/local-trust-posture.json",
+          "url_effective": "https://www.zen-mesh.io/docs/ai/security/v1/local-trust-posture.json",
           "body_starts_with_html": false
         },
         "/ai/evidence/v1/non-claims.json": {
-          "url": "https://docs.zen-mesh.io/ai/evidence/v1/non-claims.json",
+          "url": "https://www.zen-mesh.io/docs/ai/evidence/v1/non-claims.json",
           "first_status": 200,
           "final_status": 200,
           "content_type": "application/json; charset=utf-8",
           "redirect_count": 0,
           "location": null,
-          "url_effective": "https://docs.zen-mesh.io/ai/evidence/v1/non-claims.json",
+          "url_effective": "https://www.zen-mesh.io/docs/ai/evidence/v1/non-claims.json",
           "body_starts_with_html": false
         },
         "/ai/evidence/v1/manifest.json": {
-          "url": "https://docs.zen-mesh.io/ai/evidence/v1/manifest.json",
+          "url": "https://www.zen-mesh.io/docs/ai/evidence/v1/manifest.json",
           "first_status": 200,
           "final_status": 200,
           "content_type": "application/json; charset=utf-8",
           "redirect_count": 0,
           "location": null,
-          "url_effective": "https://docs.zen-mesh.io/ai/evidence/v1/manifest.json",
+          "url_effective": "https://www.zen-mesh.io/docs/ai/evidence/v1/manifest.json",
           "body_starts_with_html": false
         }
       }
@@ -173,8 +173,8 @@
           "final_status": 200,
           "content_type": "application/json; charset=utf-8",
           "redirect_count": 1,
-          "location": "https://docs.zen-mesh.io/ai/ai-discovery-registry.json",
-          "url_effective": "https://docs.zen-mesh.io/ai/ai-discovery-registry.json",
+          "location": "https://www.zen-mesh.io/docs/ai/ai-discovery-registry.json",
+          "url_effective": "https://www.zen-mesh.io/docs/ai/ai-discovery-registry.json",
           "body_starts_with_html": false
         },
         "/ai/security/v1/claim-maturity.json": {
@@ -183,8 +183,8 @@
           "final_status": 200,
           "content_type": "application/json; charset=utf-8",
           "redirect_count": 1,
-          "location": "https://docs.zen-mesh.io/ai/security/v1/claim-maturity.json",
-          "url_effective": "https://docs.zen-mesh.io/ai/security/v1/claim-maturity.json",
+          "location": "https://www.zen-mesh.io/docs/ai/security/v1/claim-maturity.json",
+          "url_effective": "https://www.zen-mesh.io/docs/ai/security/v1/claim-maturity.json",
           "body_starts_with_html": false
         },
         "/ai/security/v1/primitives.json": {
@@ -193,8 +193,8 @@
           "final_status": 200,
           "content_type": "application/json; charset=utf-8",
           "redirect_count": 1,
-          "location": "https://docs.zen-mesh.io/ai/security/v1/primitives.json",
-          "url_effective": "https://docs.zen-mesh.io/ai/security/v1/primitives.json",
+          "location": "https://www.zen-mesh.io/docs/ai/security/v1/primitives.json",
+          "url_effective": "https://www.zen-mesh.io/docs/ai/security/v1/primitives.json",
           "body_starts_with_html": false
         },
         "/ai/security/v1/gaps.json": {
@@ -203,8 +203,8 @@
           "final_status": 200,
           "content_type": "application/json; charset=utf-8",
           "redirect_count": 1,
-          "location": "https://docs.zen-mesh.io/ai/security/v1/gaps.json",
-          "url_effective": "https://docs.zen-mesh.io/ai/security/v1/gaps.json",
+          "location": "https://www.zen-mesh.io/docs/ai/security/v1/gaps.json",
+          "url_effective": "https://www.zen-mesh.io/docs/ai/security/v1/gaps.json",
           "body_starts_with_html": false
         },
         "/ai/security/v1/local-trust-posture.json": {
@@ -213,8 +213,8 @@
           "final_status": 200,
           "content_type": "application/json; charset=utf-8",
           "redirect_count": 1,
-          "location": "https://docs.zen-mesh.io/ai/security/v1/local-trust-posture.json",
-          "url_effective": "https://docs.zen-mesh.io/ai/security/v1/local-trust-posture.json",
+          "location": "https://www.zen-mesh.io/docs/ai/security/v1/local-trust-posture.json",
+          "url_effective": "https://www.zen-mesh.io/docs/ai/security/v1/local-trust-posture.json",
           "body_starts_with_html": false
         },
         "/ai/evidence/v1/non-claims.json": {
@@ -223,8 +223,8 @@
           "final_status": 200,
           "content_type": "application/json; charset=utf-8",
           "redirect_count": 1,
-          "location": "https://docs.zen-mesh.io/ai/evidence/v1/non-claims.json",
-          "url_effective": "https://docs.zen-mesh.io/ai/evidence/v1/non-claims.json",
+          "location": "https://www.zen-mesh.io/docs/ai/evidence/v1/non-claims.json",
+          "url_effective": "https://www.zen-mesh.io/docs/ai/evidence/v1/non-claims.json",
           "body_starts_with_html": false
         },
         "/ai/evidence/v1/manifest.json": {
@@ -233,8 +233,8 @@
           "final_status": 200,
           "content_type": "application/json; charset=utf-8",
           "redirect_count": 1,
-          "location": "https://docs.zen-mesh.io/ai/evidence/v1/manifest.json",
-          "url_effective": "https://docs.zen-mesh.io/ai/evidence/v1/manifest.json",
+          "location": "https://www.zen-mesh.io/docs/ai/evidence/v1/manifest.json",
+          "url_effective": "https://www.zen-mesh.io/docs/ai/evidence/v1/manifest.json",
           "body_starts_with_html": false
         }
       }
@@ -291,7 +291,7 @@
           "content_type": "application/json; charset=utf-8",
           "redirect_count": 2,
           "location": "https://www.zen-mesh.io/ai/ai-discovery-registry.json",
-          "url_effective": "https://docs.zen-mesh.io/ai/ai-discovery-registry.json",
+          "url_effective": "https://www.zen-mesh.io/docs/ai/ai-discovery-registry.json",
           "body_starts_with_html": false
         },
         "/ai/security/v1/claim-maturity.json": {
@@ -301,7 +301,7 @@
           "content_type": "application/json; charset=utf-8",
           "redirect_count": 2,
           "location": "https://www.zen-mesh.io/ai/security/v1/claim-maturity.json",
-          "url_effective": "https://docs.zen-mesh.io/ai/security/v1/claim-maturity.json",
+          "url_effective": "https://www.zen-mesh.io/docs/ai/security/v1/claim-maturity.json",
           "body_starts_with_html": false
         },
         "/ai/security/v1/primitives.json": {
@@ -311,7 +311,7 @@
           "content_type": "application/json; charset=utf-8",
           "redirect_count": 2,
           "location": "https://www.zen-mesh.io/ai/security/v1/primitives.json",
-          "url_effective": "https://docs.zen-mesh.io/ai/security/v1/primitives.json",
+          "url_effective": "https://www.zen-mesh.io/docs/ai/security/v1/primitives.json",
           "body_starts_with_html": false
         },
         "/ai/security/v1/gaps.json": {
@@ -321,7 +321,7 @@
           "content_type": "application/json; charset=utf-8",
           "redirect_count": 2,
           "location": "https://www.zen-mesh.io/ai/security/v1/gaps.json",
-          "url_effective": "https://docs.zen-mesh.io/ai/security/v1/gaps.json",
+          "url_effective": "https://www.zen-mesh.io/docs/ai/security/v1/gaps.json",
           "body_starts_with_html": false
         },
         "/ai/security/v1/local-trust-posture.json": {
@@ -331,7 +331,7 @@
           "content_type": "application/json; charset=utf-8",
           "redirect_count": 2,
           "location": "https://www.zen-mesh.io/ai/security/v1/local-trust-posture.json",
-          "url_effective": "https://docs.zen-mesh.io/ai/security/v1/local-trust-posture.json",
+          "url_effective": "https://www.zen-mesh.io/docs/ai/security/v1/local-trust-posture.json",
           "body_starts_with_html": false
         },
         "/ai/evidence/v1/non-claims.json": {
@@ -341,7 +341,7 @@
           "content_type": "application/json; charset=utf-8",
           "redirect_count": 2,
           "location": "https://www.zen-mesh.io/ai/evidence/v1/non-claims.json",
-          "url_effective": "https://docs.zen-mesh.io/ai/evidence/v1/non-claims.json",
+          "url_effective": "https://www.zen-mesh.io/docs/ai/evidence/v1/non-claims.json",
           "body_starts_with_html": false
         },
         "/ai/evidence/v1/manifest.json": {
@@ -351,7 +351,7 @@
           "content_type": "application/json; charset=utf-8",
           "redirect_count": 2,
           "location": "https://www.zen-mesh.io/ai/evidence/v1/manifest.json",
-          "url_effective": "https://docs.zen-mesh.io/ai/evidence/v1/manifest.json",
+          "url_effective": "https://www.zen-mesh.io/docs/ai/evidence/v1/manifest.json",
           "body_starts_with_html": false
         }
       }

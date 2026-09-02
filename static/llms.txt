@@ -11,7 +11,7 @@ Zen Mesh publishes public product, pricing, support, documentation, and evidence
 - **Canonical documentation:** `https://www.zen-mesh.io/docs/` — all documentation pages live under this origin.
 - **Machine-readable JSON (canonical):** served under the `/docs/ai/` path prefix — discovery, evidence, and security registries (`application/json`, no client-side routing); start at [AI overview](https://www.zen-mesh.io/docs/zen-mesh/ai/overview).
 - **AI context index (site):** `https://www.zen-mesh.io/llms.txt`
-- **Legacy hostname:** `https://docs.zen-mesh.io` now permanently redirects to `https://www.zen-mesh.io/docs/`. Use canonical www/docs URLs everywhere.
+- **Legacy hostname:** `https://www.zen-mesh.io/docs` now permanently redirects to `https://www.zen-mesh.io/docs/`. Use canonical www/docs URLs everywhere.
 
 ## Entity
 

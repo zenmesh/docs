@@ -2,7 +2,7 @@
   "schema_version": "1.1.0",
   "document": "attack-model",
   "last_updated": "2026-07-04",
-  "claim_maturity_index": "https://docs.zen-mesh.io/ai/security/v1/claim-maturity.json",
+  "claim_maturity_index": "https://www.zen-mesh.io/docs/ai/security/v1/claim-maturity.json",
   "readiness_scope": "Sandbox/local validation unless an entry cites public_evidence_ref. Production-live cloud deployment is tracked separately.",
   "narrative_vs_proof": "Blogs and narrative-context are narrative_context only \u2014 not proof.",
   "threat_model_split": {
@@ -57,7 +57,7 @@
       ],
       "validation_level": "Documented split in this attack-model file",
       "current_limitation": "Deeper architecture cross-links still maturing",
-      "public_evidence_ref": "https://docs.zen-mesh.io/ai/security/v1/attack-model.json",
+      "public_evidence_ref": "https://www.zen-mesh.io/docs/ai/security/v1/attack-model.json",
       "roadmap_ref": "WH-AS-002",
       "public_safe_summary": "Edge delivery and SaaS dispatch use different threat models."
     },
@@ -77,7 +77,7 @@
       ],
       "validation_level": "Mock-validated mTLS on documented agent routes",
       "current_limitation": "Not e2e-validated on every path",
-      "public_evidence_ref": "https://docs.zen-mesh.io/ai/security/v1/security-capability-validation.json",
+      "public_evidence_ref": "https://www.zen-mesh.io/docs/ai/security/v1/security-capability-validation.json",
       "roadmap_ref": null,
       "public_safe_summary": "mTLS is wired and mock-tested on agent routes \u2014 not production-live everywhere."
     },
@@ -98,7 +98,7 @@
       ],
       "validation_level": "Wedge Stripe path PROVEN local_mock; HMAC on agent routes",
       "current_limitation": "Per-source and environment dependent",
-      "public_evidence_ref": "https://docs.zen-mesh.io/ai/evidence/v1/wedge-claim-map.json",
+      "public_evidence_ref": "https://www.zen-mesh.io/docs/ai/evidence/v1/wedge-claim-map.json",
       "roadmap_ref": null,
       "public_safe_summary": "Signatures are tested on configured wedge paths \u2014 not all sources or production-live."
     },
@@ -118,7 +118,7 @@
       ],
       "validation_level": "SPIFFE wired where deployed",
       "current_limitation": "Partial SPIFFE coverage",
-      "public_evidence_ref": "https://docs.zen-mesh.io/ai/security/v1/security-capability-validation.json",
+      "public_evidence_ref": "https://www.zen-mesh.io/docs/ai/security/v1/security-capability-validation.json",
       "roadmap_ref": null,
       "public_safe_summary": "SPIFFE used where implemented \u2014 not everywhere or rotation-proven."
     },
@@ -138,7 +138,7 @@
       ],
       "validation_level": "RLS in schema \u2014 no public fuzz e2e",
       "current_limitation": "Not isolation certification",
-      "public_evidence_ref": "https://docs.zen-mesh.io/ai/evidence/v1/manifest.json",
+      "public_evidence_ref": "https://www.zen-mesh.io/docs/ai/evidence/v1/manifest.json",
       "roadmap_ref": null,
       "public_safe_summary": "RLS is defense-in-depth \u2014 not enterprise isolation proof."
     },
@@ -159,7 +159,7 @@
       ],
       "validation_level": "Manifest victory_locked duplicate-idempotency scenario",
       "current_limitation": "At-least-once with dedup \u2014 not replay prevention",
-      "public_evidence_ref": "https://docs.zen-mesh.io/ai/evidence/v1/manifest.json",
+      "public_evidence_ref": "https://www.zen-mesh.io/docs/ai/evidence/v1/manifest.json",
       "roadmap_ref": null,
       "public_safe_summary": "Idempotency helps detect/limit duplicates in tested scenarios \u2014 not replay-proof."
     },

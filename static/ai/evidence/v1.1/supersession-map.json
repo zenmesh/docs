@@ -1,7 +1,7 @@
 {
   "contract_version": "1.1.0",
   "prior_evidence_version": "1.0.0",
-  "prior_manifest_url": "https://docs.zen-mesh.io/ai/evidence/v1/manifest.json",
+  "prior_manifest_url": "https://www.zen-mesh.io/docs/ai/evidence/v1/manifest.json",
   "generated_at": "2026-07-24T00:00:00Z",
   "immutability_policy": "All v1.0 evidence artifacts are immutable. No edits, no re-executions in place, no status updates. Supersession states describe how v1.0 evidence may be used in v1.1 context.",
   "supersession_states": {
