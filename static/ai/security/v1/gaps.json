@@ -8,13 +8,13 @@
   "entries": [
     {
       "id": "GAP-SSRF-SAAS-DISPATCH",
-      "gap": "No proven SSRF protection for SaaS-origin dispatch (scoped controls exist on FLOW-02/03)",
+      "gap": "No proven SSRF protection for SaaS-origin dispatch (scoped controls exist on egress and proxy delivery paths)",
       "claim_maturity": "BACKLOG",
       "roadmap_ref": "WH-AS-001",
       "attack_ref": "ATK-SSRF-SAAS-DISPATCH",
       "primitive_ref": "PRIM-SSRF-SAAS-DISPATCH",
       "public_evidence_ref": null,
-      "public_safe_summary": "Scoped SSRF controls exist for FLOW-02/03 paths (central ValidateTargetURL library, SSRFDialContext, redirect restrictions). SaaS-wide control-plane dispatch and provider dispatchers are not yet validated — full SSRF hardening is backlog.",
+      "public_safe_summary": "Scoped SSRF controls exist for egress and proxy delivery paths (central ValidateTargetURL library, SSRFDialContext, redirect restrictions). SaaS-wide control-plane dispatch and provider dispatchers are not yet validated — full SSRF hardening is backlog.",
       "must_not_claim": ["SSRF-safe", "blocks SSRF", "prevents SSRF", "eliminates SSRF", "SSRF fully protected"]
     },
     {

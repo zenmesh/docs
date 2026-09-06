@@ -430,8 +430,8 @@
         "Redirect-chain bypass",
         "SaaS-wide SSRF coverage"
       ],
-      "validation_level": "Scoped SSRF controls exist: central ValidateTargetURL + SSRFDialContext library tested (409-line negative suite), FLOW-03 proxy-mode ServiceRef path validated in local/mock, FLOW-02 egress target validation, BFF internal client hardened. SaaS-wide API dispatch and provider dispatchers not yet validated.",
-      "current_limitation": "Scoped SSRF controls exist on FLOW-02/03 and BFF paths. SaaS-wide control-plane dispatch, provider dispatchers (Splunk/Grafana/PagerDuty/Teams/Git), and shared client libraries not yet validated. Do not describe dispatch as fully SSRF-protected.",
+      "validation_level": "Scoped SSRF controls exist: central ValidateTargetURL + SSRFDialContext library tested (409-line negative suite), proxy-mode ServiceRef delivery path validated in local/mock, egress-target delivery validation, BFF internal client hardened. SaaS-wide API dispatch and provider dispatchers not yet validated.",
+      "current_limitation": "Scoped SSRF controls exist on egress and proxy delivery paths and BFF paths. SaaS-wide control-plane dispatch, provider dispatchers (Splunk/Grafana/PagerDuty/Teams/Git), and shared client libraries not yet validated. Do not describe dispatch as fully SSRF-protected.",
       "next_validation": "Negative SSRF test suite + public gate receipt",
       "public_evidence_ref": null,
       "roadmap_ref": "WH-AS-001"

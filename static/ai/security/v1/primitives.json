@@ -5,46 +5,70 @@
   "local_trust_posture_ref": "https://www.zen-mesh.io/docs/ai/security/v1/local-trust-posture.json",
   "claim_maturity_index": "https://www.zen-mesh.io/docs/ai/security/v1/claim-maturity.json",
   "readiness_scope": "See claim-maturity.json readiness_scope. Not production-live or customer-ready.",
-  "maturity_legend": ["WIRED", "AUTOMATED_TESTED", "E2E_VALIDATED", "NOT_E2E_VALIDATED", "BACKLOG", "NOT_CLAIMED"],
+  "maturity_legend": [
+    "WIRED",
+    "AUTOMATED_TESTED",
+    "E2E_VALIDATED",
+    "NOT_E2E_VALIDATED",
+    "BACKLOG",
+    "NOT_CLAIMED"
+  ],
   "entries": [
     {
       "id": "PRIM-MTLS-AGENT-SAAS",
       "name": "Agent to SaaS mutual TLS",
       "claim_maturity": "NOT_E2E_VALIDATED",
-      "helps_prevent": ["Passive eavesdropping on enforced mTLS segments"],
+      "helps_prevent": [
+        "Passive eavesdropping on enforced mTLS segments"
+      ],
       "helps_detect": [],
-      "does_not_prevent": ["MITM where TLS absent", "Compromised clients", "Data-plane paths where mTLS E2E evidence is still being collected"],
+      "does_not_prevent": [
+        "MITM where TLS absent",
+        "Compromised clients",
+        "Data-plane paths where mTLS E2E evidence is still being collected"
+      ],
       "validation_level": "Required in architecture; local-mock manifest proof; sandbox CI gates",
       "current_limitation": "Not e2e-validated on every route or environment; product standard claims mTLS on every Zen-controlled data-plane hop",
       "next_validation": "Sandbox e2e agent sync with gate artifact",
       "public_evidence_ref": "https://www.zen-mesh.io/docs/ai/security/v1/security-capability-validation.json",
-      "public_safe_summary": "mTLS is wired and mock-validated on Zen-managed internal paths including data-plane delivery — not production-live everywhere."
+      "public_safe_summary": "mTLS is wired and mock-validated on Zen-managed internal paths including data-plane delivery \u2014 not production-live everywhere."
     },
     {
       "id": "PRIM-HMAC-AGENT-SAAS",
       "name": "Agent to SaaS HMAC",
       "claim_maturity": "AUTOMATED_TESTED",
-      "helps_prevent": ["Unsigned agent calls on HMAC-enforced routes"],
+      "helps_prevent": [
+        "Unsigned agent calls on HMAC-enforced routes"
+      ],
       "helps_detect": [],
-      "does_not_prevent": ["Replay outside dedup", "Stolen keys", "Exactly-once delivery"],
+      "does_not_prevent": [
+        "Replay outside dedup",
+        "Stolen keys",
+        "Exactly-once delivery"
+      ],
       "validation_level": "Middleware wired; automated crypto unit tests",
       "current_limitation": "Agent-route scope only",
       "next_validation": "Sandbox e2e with key rotation",
       "public_evidence_ref": "https://www.zen-mesh.io/docs/ai/security/v1/security-capability-validation.json",
-      "public_safe_summary": "HMAC verifies agent context where enforced — not replay-proof delivery."
+      "public_safe_summary": "HMAC verifies agent context where enforced \u2014 not replay-proof delivery."
     },
     {
       "id": "PRIM-PROVIDER-SIGNATURE",
       "name": "Provider webhook signatures",
       "claim_maturity": "AUTOMATED_TESTED",
-      "helps_prevent": ["Forged Stripe-class payloads on configured wedge paths in mock scope"],
+      "helps_prevent": [
+        "Forged Stripe-class payloads on configured wedge paths in mock scope"
+      ],
       "helps_detect": [],
-      "does_not_prevent": ["Unconfigured providers", "Production-live attestation for all sources"],
+      "does_not_prevent": [
+        "Unconfigured providers",
+        "Production-live attestation for all sources"
+      ],
       "validation_level": "Wedge claim map PROVEN local_mock for Stripe signature path",
       "current_limitation": "Mock/sandbox scope per wedge limitations",
       "next_validation": "Public sandbox e2e with negative signature case",
       "public_evidence_ref": "https://www.zen-mesh.io/docs/ai/evidence/v1/wedge-claim-map.json",
-      "public_safe_summary": "Provider signatures are evidenced for configured wedge sources — not all adapters."
+      "public_safe_summary": "Provider signatures are evidenced for configured wedge sources \u2014 not all adapters."
     },
     {
       "id": "PRIM-CONSTANT-TIME-SIG-COMPARE",
@@ -52,64 +76,93 @@
       "claim_maturity": "WIRED",
       "helps_prevent": [],
       "helps_detect": [],
-      "does_not_prevent": ["Timing leaks on unreviewed paths"],
+      "does_not_prevent": [
+        "Timing leaks on unreviewed paths"
+      ],
       "validation_level": "Unit tests on shared compare helpers; not mapped to every ingress",
-      "current_limitation": "Design intent — not global certification",
+      "current_limitation": "Design intent \u2014 not global certification",
       "next_validation": "Per-adapter security regression checklist",
       "public_evidence_ref": null,
-      "public_safe_summary": "Constant-time compare is wired where used — not claimed on every path."
+      "public_safe_summary": "Constant-time compare is wired where used \u2014 not claimed on every path."
     },
     {
       "id": "PRIM-SPIFFE-SPIRE",
-      "name": "SPIFFE/SPIRE workload identity [SUPERSEDED — see PRIM-SPIFFE-SPIRE-NATIVE-INTERNAL]",
+      "name": "SPIFFE/SPIRE workload identity [SUPERSEDED \u2014 see PRIM-SPIFFE-SPIRE-NATIVE-INTERNAL]",
       "claim_maturity": "NOT_E2E_VALIDATED",
-      "helps_prevent": ["Impersonation on SPIFFE-verified connections"],
+      "helps_prevent": [
+        "Impersonation on SPIFFE-verified connections"
+      ],
       "helps_detect": [],
-      "does_not_prevent": ["Customer-operated SPIRE in V1", "Authz decisions", "SVID rotation proof", "24h survival"],
+      "does_not_prevent": [
+        "Customer-operated SPIRE in V1",
+        "Authz decisions",
+        "SVID rotation proof",
+        "24h survival"
+      ],
       "validation_level": "SUPERSEDED. SPIFFE/SPIRE is WIRED on Zen-managed internal paths (see PRIM-SPIFFE-SPIRE-NATIVE-INTERNAL).",
-      "current_limitation": "SUPERSEDED — see PRIM-SPIFFE-SPIRE-NATIVE-INTERNAL for current claim and maturity.",
+      "current_limitation": "SUPERSEDED \u2014 see PRIM-SPIFFE-SPIRE-NATIVE-INTERNAL for current claim and maturity.",
       "next_validation": "Kept for historical reference only.",
       "public_evidence_ref": "https://www.zen-mesh.io/docs/ai/security/v1/local-trust-posture.json",
-      "public_safe_summary": "SPIFFE/SPIRE-native identity is Zen-managed in V1 — customers do not operate SPIRE."
+      "public_safe_summary": "SPIFFE/SPIRE-native identity is Zen-managed in V1 \u2014 customers do not operate SPIRE."
     },
     {
       "id": "PRIM-ZEN-LOCAL-TRUST-AUTHORITY",
       "name": "zen-agent local trust authority facade",
       "claim_maturity": "WIRED",
       "helps_prevent": [],
-      "helps_detect": ["Enrollment and flow sync issues via agent health"],
-      "does_not_prevent": ["Compromised cluster admin", "24h validated SaaS independence", "Customer SPIRE ops"],
+      "helps_detect": [
+        "Enrollment and flow sync issues via agent health"
+      ],
+      "does_not_prevent": [
+        "Compromised cluster admin",
+        "24h validated SaaS independence",
+        "Customer SPIRE ops"
+      ],
       "validation_level": "Contract-defined local supervisor for trust material projection",
-      "current_limitation": "Architecture WIRED — not 24h-validated",
+      "current_limitation": "Architecture WIRED \u2014 not 24h-validated",
       "next_validation": "Outage simulation with public-safe receipt",
       "public_evidence_ref": "https://www.zen-mesh.io/docs/ai/security/v1/local-trust-posture.json",
-      "public_safe_summary": "zen-agent is the visible customer-plane local authority — not proof of multi-day survival."
+      "public_safe_summary": "zen-agent is the visible customer-plane local authority \u2014 not proof of multi-day survival."
     },
     {
       "id": "PRIM-ZEN-LOCK-SURVIVAL-STORE",
       "name": "ZenLock survival store for encrypted local material",
       "claim_maturity": "WIRED",
-      "helps_prevent": ["Plaintext-at-rest on configured zen-lock survival paths"],
+      "helps_prevent": [
+        "Plaintext-at-rest on configured zen-lock survival paths"
+      ],
       "helps_detect": [],
-      "does_not_prevent": ["Memory exposure", "All secrets", "24h survival", "ZenLock rotates all credentials"],
+      "does_not_prevent": [
+        "Memory exposure",
+        "All secrets",
+        "24h survival",
+        "ZenLock rotates all credentials"
+      ],
       "validation_level": "zen-lock encrypts and projects local survival material",
-      "current_limitation": "Custody scope — not universal coverage",
+      "current_limitation": "Custody scope \u2014 not universal coverage",
       "next_validation": "Redacted rotation drill publication",
       "public_evidence_ref": "https://www.zen-mesh.io/docs/ai/security/v1/credential-lifecycle-ownership.json",
-      "public_safe_summary": "zen-lock holds encrypted local survival material — rotation owned by per-type lifecycles."
+      "public_safe_summary": "zen-lock holds encrypted local survival material \u2014 rotation owned by per-type lifecycles."
     },
     {
       "id": "PRIM-KEY-MATERIAL-ROTATION",
       "name": "Key and certificate material rotation",
       "claim_maturity": "WIRED",
-      "helps_prevent": ["Some expiry outages via cert-manager and HMAC controllers"],
-      "helps_detect": ["Rotation failures where metrics exist"],
-      "does_not_prevent": ["Zero-downtime everywhere", "24h survival without refresh"],
-      "validation_level": "Per-type rotation owners — see credential-lifecycle-ownership",
+      "helps_prevent": [
+        "Some expiry outages via cert-manager and HMAC controllers"
+      ],
+      "helps_detect": [
+        "Rotation failures where metrics exist"
+      ],
+      "does_not_prevent": [
+        "Zero-downtime everywhere",
+        "24h survival without refresh"
+      ],
+      "validation_level": "Per-type rotation owners \u2014 see credential-lifecycle-ownership",
       "current_limitation": "Not one universal rotation engine",
       "next_validation": "Sandbox rotation gate with manifest link",
       "public_evidence_ref": "https://www.zen-mesh.io/docs/ai/security/v1/credential-lifecycle-ownership.json",
-      "public_safe_summary": "Rotation reduces expiry risk — not validated 24h survival or compliance certification."
+      "public_safe_summary": "Rotation reduces expiry risk \u2014 not validated 24h survival or compliance certification."
     },
     {
       "id": "PRIM-AIR-GAPPED-ADAPTER-HANDOFF",
@@ -117,133 +170,190 @@
       "claim_maturity": "WIRED",
       "helps_prevent": [],
       "helps_detect": [],
-      "does_not_prevent": ["SaaS on every bootstrap", "Air-gap compliance certification"],
+      "does_not_prevent": [
+        "SaaS on every bootstrap",
+        "Air-gap compliance certification"
+      ],
       "validation_level": "Contract-defined offline bundle import",
-      "current_limitation": "Operator-mediated — not customer SPIRE UI",
+      "current_limitation": "Operator-mediated \u2014 not customer SPIRE UI",
       "next_validation": "Verifier tooling with public capability ref only",
       "public_evidence_ref": "https://www.zen-mesh.io/docs/ai/security/v1/local-trust-posture.json",
-      "public_safe_summary": "Offline handoff path exists in architecture — not validated production air-gap program."
+      "public_safe_summary": "Offline handoff path exists in architecture \u2014 not validated production air-gap program."
     },
     {
       "id": "PRIM-SPIFFE-SPIRE-NATIVE-INTERNAL",
       "name": "Zen-managed SPIFFE/SPIRE-native internal identity",
       "claim_maturity": "WIRED",
-      "helps_prevent": ["Impersonation on SPIFFE-verified mTLS hops"],
+      "helps_prevent": [
+        "Impersonation on SPIFFE-verified mTLS hops"
+      ],
       "helps_detect": [],
-      "does_not_prevent": ["Customer SPIRE in V1", "SPIRE everywhere", "Customer-exposed SPIRE admin", "SVID rotation proof"],
-      "validation_level": "Internal Zen-managed — customers do not operate SPIRE in V1",
+      "does_not_prevent": [
+        "Customer SPIRE in V1",
+        "SPIRE everywhere",
+        "Customer-exposed SPIRE admin",
+        "SVID rotation proof"
+      ],
+      "validation_level": "Internal Zen-managed \u2014 customers do not operate SPIRE in V1",
       "current_limitation": "Public customer SPIRE controls are NOT_CLAIMED for V1",
       "next_validation": "Demo rotation receipt without customer SPIRE wording",
       "public_evidence_ref": "https://www.zen-mesh.io/docs/ai/security/v1/security-capability-validation.json",
-      "public_safe_summary": "SPIFFE/SPIRE-native identity is internal and Zen-managed — not customer-operated in V1."
+      "public_safe_summary": "SPIFFE/SPIRE-native identity is internal and Zen-managed \u2014 not customer-operated in V1."
     },
     {
       "id": "PRIM-LOCAL-MATERIAL-EXPIRY-FAIL-CLOSED",
       "name": "Local material expiry fail-closed",
       "claim_maturity": "WIRED",
-      "helps_prevent": ["Silent use of expired material on enforced paths"],
-      "helps_detect": ["Rejections when certs/keys expired"],
-      "does_not_prevent": ["Unenforced paths", "Stolen valid material", "24h survival"],
-      "validation_level": "Fail-closed on enforced paths — per-environment proof incomplete",
+      "helps_prevent": [
+        "Silent use of expired material on enforced paths"
+      ],
+      "helps_detect": [
+        "Rejections when certs/keys expired"
+      ],
+      "does_not_prevent": [
+        "Unenforced paths",
+        "Stolen valid material",
+        "24h survival"
+      ],
+      "validation_level": "Fail-closed on enforced paths \u2014 per-environment proof incomplete",
       "current_limitation": "Not e2e-validated on every path",
       "next_validation": "Published negative expiry test",
       "public_evidence_ref": "https://www.zen-mesh.io/docs/ai/security/v1/local-trust-posture.json",
-      "public_safe_summary": "Expired local material fails closed where enforced — not optional downgrade."
+      "public_safe_summary": "Expired local material fails closed where enforced \u2014 not optional downgrade."
     },
     {
       "id": "PRIM-ZENLOCK-SECRETS",
       "name": "ZenLock secret custody",
       "claim_maturity": "WIRED",
-      "helps_prevent": ["Plaintext-at-rest on configured ZenLock paths"],
+      "helps_prevent": [
+        "Plaintext-at-rest on configured ZenLock paths"
+      ],
       "helps_detect": [],
-      "does_not_prevent": ["Memory exposure", "Universal secret coverage"],
+      "does_not_prevent": [
+        "Memory exposure",
+        "Universal secret coverage"
+      ],
       "validation_level": "Documented custody model",
       "current_limitation": "Scope-limited enrollment/signing flows",
       "next_validation": "Rotation drill without leaking material in public artifacts",
       "public_evidence_ref": "https://www.zen-mesh.io/docs/ai/security/v1/credential-lifecycle-ownership.json",
-      "public_safe_summary": "ZenLock encrypts configured secrets at rest — not all secrets or zero-knowledge."
+      "public_safe_summary": "ZenLock encrypts configured secrets at rest \u2014 not all secrets or zero-knowledge."
     },
     {
       "id": "PRIM-RLS-TENANT",
       "name": "PostgreSQL row-level security",
       "claim_maturity": "WIRED",
-      "helps_prevent": ["Some cross-tenant SQL on RLS tables"],
+      "helps_prevent": [
+        "Some cross-tenant SQL on RLS tables"
+      ],
       "helps_detect": [],
-      "does_not_prevent": ["App-layer bugs", "Cache/log leakage", "Isolation certification"],
+      "does_not_prevent": [
+        "App-layer bugs",
+        "Cache/log leakage",
+        "Isolation certification"
+      ],
       "validation_level": "Schema RLS policies; no public fuzz e2e",
       "current_limitation": "Defense-in-depth only",
       "next_validation": "Automated cross-tenant negative tests",
       "public_evidence_ref": "https://www.zen-mesh.io/docs/ai/evidence/v1/manifest.json",
-      "public_safe_summary": "RLS helps on covered tables — not enterprise isolation proof."
+      "public_safe_summary": "RLS helps on covered tables \u2014 not enterprise isolation proof."
     },
     {
       "id": "PRIM-EVIDENCE-INTEGRITY",
       "name": "Evidence integrity",
       "claim_maturity": "AUTOMATED_TESTED",
       "helps_prevent": [],
-      "helps_detect": ["Tampering of included evidence artifacts vs published integrity roots"],
-      "does_not_prevent": ["Authentication", "Identity", "Encryption", "Replay prevention", "Delivery guarantees"],
+      "helps_detect": [
+        "Tampering of included evidence artifacts vs published integrity roots"
+      ],
+      "does_not_prevent": [
+        "Authentication",
+        "Identity",
+        "Encryption",
+        "Replay prevention",
+        "Delivery guarantees"
+      ],
       "validation_level": "Automated integrity gates on evidence packs",
       "current_limitation": "Integrity for evidence bundles only",
       "next_validation": null,
       "public_evidence_ref": "https://www.zen-mesh.io/docs/ai/evidence/v1/manifest.json",
-      "public_safe_summary": "Integrity verification provides tamper-evidence for artifacts — not auth, identity, encryption, or replay control."
+      "public_safe_summary": "Integrity verification provides tamper-evidence for artifacts \u2014 not auth, identity, encryption, or replay control."
     },
     {
       "id": "PRIM-IDEMPOTENCY-DEDUP",
       "name": "Idempotency and duplicate detection",
       "claim_maturity": "AUTOMATED_TESTED",
       "helps_prevent": [],
-      "helps_detect": ["Duplicate delivery within idempotency window in mock scenarios"],
-      "does_not_prevent": ["Exactly-once", "Replay outside window", "Replay-proof platform"],
+      "helps_detect": [
+        "Duplicate delivery within idempotency window in mock scenarios"
+      ],
+      "does_not_prevent": [
+        "Exactly-once",
+        "Replay outside window",
+        "Replay-proof platform"
+      ],
       "validation_level": "Manifest victory_locked duplicate-idempotency; mock execution category",
-      "current_limitation": "At-least-once with dedup — not replay prevention",
+      "current_limitation": "At-least-once with dedup \u2014 not replay prevention",
       "next_validation": "Sandbox e2e duplicate-event receipt",
       "public_evidence_ref": "https://www.zen-mesh.io/docs/ai/evidence/v1/manifest.json",
-      "public_safe_summary": "Idempotency reduces duplicate processing in tested scenarios — not replay-proof."
+      "public_safe_summary": "Idempotency reduces duplicate processing in tested scenarios \u2014 not replay-proof."
     },
     {
       "id": "PRIM-OUTBOUND-ONLY-EDGE",
       "name": "Outbound-only edge connectivity",
       "claim_maturity": "WIRED",
-      "helps_prevent": ["Inbound listener requirement for wedge private-network pattern"],
+      "helps_prevent": [
+        "Inbound listener requirement for wedge private-network pattern"
+      ],
       "helps_detect": [],
-      "does_not_prevent": ["Wrong-target egress", "SaaS SSRF", "Compromised edge"],
+      "does_not_prevent": [
+        "Wrong-target egress",
+        "SaaS SSRF",
+        "Compromised edge"
+      ],
       "validation_level": "Architecture structural property",
-      "current_limitation": "Topology benefit — not universal guarantee",
+      "current_limitation": "Topology benefit \u2014 not universal guarantee",
       "next_validation": null,
       "public_evidence_ref": null,
-      "public_safe_summary": "Outbound-only edge is a structural wedge property — not full delivery security."
+      "public_safe_summary": "Outbound-only edge is a structural wedge property \u2014 not full delivery security."
     },
     {
       "id": "PRIM-CANARY-CERT-ROTATION",
       "name": "Canary TLS certificate rotation",
       "claim_maturity": "NOT_E2E_VALIDATED",
-      "helps_prevent": ["Some big-bang cert cutovers on canary-enabled workloads"],
+      "helps_prevent": [
+        "Some big-bang cert cutovers on canary-enabled workloads"
+      ],
       "helps_detect": [],
-      "does_not_prevent": ["Failed rotation on all workloads"],
+      "does_not_prevent": [
+        "Failed rotation on all workloads"
+      ],
       "validation_level": "cert-manager renewal; partial canary evidence",
       "current_limitation": "Not all workloads covered",
       "next_validation": "E2e canary gate for egress parity",
       "public_evidence_ref": "https://www.zen-mesh.io/docs/ai/security/v1/security-capability-validation.json",
-      "public_safe_summary": "Canary rotation is partial by workload — not production-live everywhere."
+      "public_safe_summary": "Canary rotation is partial by workload \u2014 not production-live everywhere."
     },
     {
       "id": "PRIM-SSRF-SAAS-DISPATCH",
       "name": "SSRF controls for SaaS dispatch",
       "claim_maturity": "BACKLOG",
-      "helps_prevent": [
-        "Scoped SSRF on FLOW-03 proxy-mode ServiceRef path (local/mock validated)",
-        "Scoped SSRF on FLOW-02 egress target validation"
-      ],
       "helps_detect": [],
-      "does_not_prevent": ["SaaS-wide SSRF", "Provider dispatcher SSRF", "Redirect bypass on unvalidated paths"],
-      "validation_level": "Central ValidateTargetURL + SSRFDialContext library tested (409-line negative suite). FLOW-03 proxy path validated local/mock. SaaS-wide dispatch not validated.",
-      "current_limitation": "Scoped SSRF controls exist on FLOW-02/03 paths — SaaS-wide dispatch SSRF is not validated",
+      "does_not_prevent": [
+        "SaaS-wide SSRF",
+        "Provider dispatcher SSRF",
+        "Redirect bypass on unvalidated paths"
+      ],
+      "validation_level": "Central ValidateTargetURL + SSRFDialContext library tested (409-line negative suite). proxy-mode ServiceRef delivery path validated local/mock. SaaS-wide dispatch not validated.",
+      "current_limitation": "Scoped SSRF controls exist on egress and proxy delivery paths \u2014 SaaS-wide dispatch SSRF is not validated",
       "next_validation": "WH-AS-001 negative SSRF suite + public gate receipt",
       "public_evidence_ref": null,
       "roadmap_ref": "WH-AS-001",
-      "public_safe_summary": "Scoped SSRF controls exist for FLOW-02/03 dispatch paths. SaaS-wide SSRF hardening is backlog — do not use SSRF-safe wording."
+      "public_safe_summary": "Scoped SSRF controls exist for egress and proxy dispatch paths. SaaS-wide SSRF hardening is backlog \u2014 do not use SSRF-safe wording.",
+      "helps_prevent_when_closed": [
+        "Scoped SSRF on proxy-mode ServiceRef delivery path (local/mock validated)",
+        "Scoped SSRF on egress-target delivery validation"
+      ]
     },
     {
       "id": "PRIM-PAYLOAD-POINTER",
@@ -251,7 +361,9 @@
       "claim_maturity": "BACKLOG",
       "helps_prevent": [],
       "helps_detect": [],
-      "does_not_prevent": ["Large-body DoS"],
+      "does_not_prevent": [
+        "Large-body DoS"
+      ],
       "validation_level": "Not implemented",
       "current_limitation": "Ad hoc inline limits only",
       "next_validation": "Signed object-reference contract",

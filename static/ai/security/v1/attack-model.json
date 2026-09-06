@@ -24,11 +24,6 @@
       "affected_surface": "saas_origin_dispatch",
       "claim_maturity": "BACKLOG",
       "related_primitive_ref": "PRIM-SSRF-SAAS-DISPATCH",
-      "helps_prevent": [
-        "Scoped SSRF on FLOW-03 proxy-mode ServiceRef path (local/mock validated)",
-        "Scoped SSRF on FLOW-02 egress target validation path",
-        "Redirect-chain restrictions on webhook dispatch path"
-      ],
       "helps_detect": [],
       "does_not_prevent": [
         "SSRF to internal networks",
@@ -36,11 +31,16 @@
         "SaaS-wide control-plane dispatch SSRF",
         "Provider dispatcher SSRF (Splunk/Grafana/PagerDuty/Teams/Git)"
       ],
-      "validation_level": "Central SSRF validation library (ValidateTargetURL + SSRFDialContext) tested with 409-line negative suite. FLOW-03 proxy-mode ServiceRef path validated local/mock (H569/H574). BFF internal client hardened. SaaS-wide API dispatch and most shared client libraries not yet validated.",
-      "current_limitation": "Scoped SSRF controls exist on FLOW-02/03 dispatch paths. SaaS-wide (control-plane dispatch, provider dispatchers) is not yet validated.",
+      "validation_level": "Central SSRF validation library (ValidateTargetURL + SSRFDialContext) tested with 409-line negative suite. proxy-mode ServiceRef delivery path validated local/mock. BFF internal client hardened. SaaS-wide API dispatch and most shared client libraries not yet validated.",
+      "current_limitation": "Scoped SSRF controls exist on egress and proxy dispatch paths. SaaS-wide (control-plane dispatch, provider dispatchers) is not yet validated.",
       "public_evidence_ref": null,
       "roadmap_ref": "WH-AS-001",
-      "public_safe_summary": "Scoped SSRF controls exist for FLOW-02/03 dispatch paths. SaaS-wide dispatch SSRF is backlog \u2014 do not use SSRF-safe wording."
+      "public_safe_summary": "Scoped SSRF controls exist for egress and proxy dispatch paths. SaaS-wide dispatch SSRF is backlog \u2014 do not use SSRF-safe wording.",
+      "helps_prevent_when_closed": [
+        "Scoped SSRF on proxy-mode ServiceRef delivery path (local/mock validated)",
+        "Scoped SSRF on egress-target delivery validation path",
+        "Redirect-chain restrictions on webhook dispatch path"
+      ]
     },
     {
       "id": "ATK-EDGE-THREAT-MODEL-CONFUSION",
