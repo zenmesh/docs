@@ -23,6 +23,27 @@ if ! node scripts/validation/validate-route-aliases.mjs --fast; then FAIL=1; fi
 # 4. Spectral OpenAPI lint (offline, local tool).
 if ! bash scripts/validation/lint-openapi.sh; then FAIL=1; fi
 
+# 4b. Archive-before-prune authorization (EVIDENCE-V11-002): deleting an
+# archive-governed path (see zen-archive archive-governed-paths.json)
+# requires a prune receipt whose archive commit is reachable from
+# zen-archive origin/main. Ungoverned deletions are unaffected. If the
+# guard is unavailable (foreign clone without the sibling archive repo),
+# the check is skipped with a warning — the coordinated workspace enforces.
+STAGED_DELETIONS="$(git diff --cached --name-only --diff-filter=D 2>/dev/null || true)"
+if [ -n "$STAGED_DELETIONS" ]; then
+  PRUNE_GUARD="$ROOT/../zen-archive/scripts/prune_guard.py"
+  if [ -f "$PRUNE_GUARD" ]; then
+    echo ""
+    echo ":: [pre-commit] archive prune-gate (archive-governed deletions)"
+    # shellcheck disable=SC2086
+    if ! python3 "$PRUNE_GUARD" check-prune --source-repo "$ROOT" --paths $STAGED_DELETIONS --no-fetch; then
+      FAIL=1
+    fi
+  else
+    echo "[pre-commit] WARN: prune guard not found at $PRUNE_GUARD — governed-deletion authorization skipped"
+  fi
+fi
+
 echo ""
 if [ "$FAIL" -ne 0 ]; then
   echo "[pre-commit] FAIL: one or more checks failed (see above)."
