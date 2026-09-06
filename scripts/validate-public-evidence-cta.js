@@ -78,9 +78,14 @@ function extractMarkdownLinks(section) {
   let m;
   while ((m = re.exec(section)) !== null) {
     let href = m[1].trim();
-    if (href.startsWith('http')) continue;
     if (href.includes('#')) href = href.split('#')[0];
-    // Normalize doc-relative hrefs (../x, ./x, x) to site-absolute paths.
+    // Normalize canonical full URLs and doc-relative hrefs to site-absolute
+    // paths so both link styles satisfy the discovery contract.
+    if (href.startsWith('https://www.zen-mesh.io/docs/')) {
+      href = href.replace('https://www.zen-mesh.io/docs', '');
+    } else if (href.startsWith('http')) {
+      continue;
+    }
     href = '/' + href.replace(/^(\.\.\/)+/, '').replace(/^\.\//, '').replace(/^\//, '');
     links.push(href);
   }
