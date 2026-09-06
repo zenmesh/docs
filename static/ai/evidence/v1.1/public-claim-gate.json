@@ -1,13 +1,13 @@
 {
   "contract_version": "1.1.0",
-  "generated_at": "2026-08-05T18:00:00Z",
-  "purpose": "Public-claim gate for the v1.1 evidence corpus. Establishes which statements may be made publicly and which are explicitly not claimed. Supersedes the v1.0 public security claims decision (see supersession-map entry PUBLIC-SECURITY-CLAIMS-DECISION, state HISTORICAL_ONLY).",
-  "scope": "china_market_strategy",
+  "generated_at": "2026-09-06T05:38:27Z",
+  "purpose": "Public-claim gate for the v1.1 evidence corpus. Establishes which statements may be made publicly and which are explicitly not claimed. Supersedes the v1.0 public security claims decision (see supersession-map entry PUBLIC-SECURITY-CLAIMS-DECISION, state HISTORICAL_ONLY). The gate governs the global V1.1 baseline (scope sandbox_ci, incl. the L1/L2/Traffic frozen-green baselines); China-market evidence remains in scope as a subordinate capability.",
+  "scope": "sandbox_ci",
   "rules": [
     {
       "rule_id": "GATE-001",
       "subject": "capability_status",
-      "rule": "Public pages and docs must only assert a capability status that matches the v1.1 manifest proof_status vocabulary (victory_locked, proven_sandbox, proven_staging, proven_production, implementation_present, planned, blocked, not_claimed).",
+      "rule": "Public pages and docs must only assert a capability status that matches the v1.1 manifest proof_status vocabulary (victory_locked, proven_sandbox, proven_staging, proven_production, implementation_present, architectural_commitment, planned, blocked, not_claimed).",
       "violation_is_blocking": true
     },
     {
@@ -45,6 +45,24 @@
       "subject": "contact",
       "rule": "Public contact must use the approved channel (mailto:zen@zen-mesh.io). No alternative contact surfaces.",
       "violation_is_blocking": false
+    },
+    {
+      "rule_id": "GATE-008",
+      "subject": "traffic_frozen_claims",
+      "rule": "Traffic frozen-baseline claims must stay bounded to the declared frozen pre-cloud candidate and its counted qualification scope. Durable acceptance must not be translated into exactly-once, guaranteed delivery, global loss-free, or production-proven durability claims. HA false-acceptance refusal must not be generalized beyond the tested topology. Counted qualification may state only exact declared scenario counts proven by source artifacts.",
+      "violation_is_blocking": true
+    },
+    {
+      "rule_id": "GATE-009",
+      "subject": "frozen_vs_current",
+      "rule": "Evidence that participates in a frozen layer must not inherit FROZEN status. Only victory_locked entries with a canonical freeze artifact are immutable; sandbox-proven entries are verified-current and expected to evolve. Absence of evidence is UNKNOWN, NOT_PROVEN, or NOT_CLAIMED — never implicitly satisfied.",
+      "violation_is_blocking": true
+    },
+    {
+      "rule_id": "GATE-010",
+      "subject": "superseded_evidence",
+      "rule": "No public surface may present a SUPERSEDED, HISTORICAL_ONLY, or INVALIDATED artifact as current authority. Current authority is defined by the v1.1 manifest and supersession-map current_baseline only.",
+      "violation_is_blocking": true
     }
   ],
   "status": "active",

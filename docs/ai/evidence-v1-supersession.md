@@ -2,15 +2,18 @@
 
 ## Manifest
 
-**NOTE:** This document supersedes the legacy `/ai/evidence/v1/*.json` evidence files.
+**NOTE:** This document narrates the superseded **v1.0-era** evidence artifacts. Two exceptions remain canonical machine endpoints and are NOT superseded by this page:
 
-### Evidence Files Superseded
+- `/ai/evidence/v1/manifest.json` — the **stable evidence manifest channel**: a generated projection that always reflects current v1.1 truth (freshness is mechanically enforced by `scripts/validate-ai-evidence.js`).
+- `/ai/evidence/v1/non-claims.json` — the **stable non-claims channel**, likewise kept current.
+
+The remaining v1.0 files below are superseded historical artifacts: they are retained as historical truth, are not current authority for any claim, and current authority lives in the v1.1 namespace (`/ai/evidence/v1.1/`, starting at `manifest.json`).
+
+### Evidence Files Superseded (historical)
 
 - `/ai/evidence/v1/manifest.schema.json` → See [Manifest Schema](#manifest-schema)
 - `/ai/evidence/v1/compliance-map.schema.json` → See [Compliance Map Schema](#compliance-map)
-- `/ai/evidence/v1/manifest.json` → See [Manifest](#manifest)
 - `/ai/evidence/v1/compliance-map.json` → See [Compliance Map](#compliance-map)
-- `/ai/evidence/v1/non-claims.json` → See [Non-Claims](#non-claims)
 - `/ai/evidence/v1/wedge-claim-map.json` → See [Wedge Claim Map](#wedge-claim-map)
 - `/ai/evidence/v1/wedge-non-claims.json` → See [Wedge Non-Claims](#wedge-non-claims)
 

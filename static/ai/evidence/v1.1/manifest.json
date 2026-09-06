@@ -8,20 +8,21 @@
   "http://schema.org/SoftwareSourceCode"
  ],
  "schema_version": "1.1.0",
- "generated_at": "2026-08-15T20:10:16Z",
+ "generated_at": "2026-09-06T05:38:27Z",
  "product": "Zen Mesh",
- "repository": "https://github.com/zenmesh/zen-platform",
- "evidence_scope": "china_market_strategy",
+ "repository": "https://github.com/zenmesh/zen-platform-v1",
+ "evidence_scope": "sandbox_ci",
+ "scope_note": "Global V1.1 evidence baseline: frozen-green qualifications executed in sandbox/k3d qualification topologies. China-market evidence is retained as a subordinate capability below and does not define this baseline. See supersession-map.json entry V1.1-EVIDENCE-MANIFEST-CHINA-SCOPE for the demotion record.",
  "proof_levels": {
   "victory_locked": {
    "label": "Victory Locked",
-   "description": "Proof has been verified, witnessed, and locked via a victory-lock artifact with commit-pinned, scenario-specific evidence.",
+   "description": "Proof has been verified, witnessed, and locked via a freeze artifact with commit-pinned, scenario-specific evidence and counted repeated runs.",
    "confidence": "high",
    "supersession_eligible": false
   },
   "proven_sandbox": {
    "label": "Proven (Sandbox CI)",
-   "description": "Proof passes in CI sandbox environment with v1.1 topology. Positive-path and negative-control evidence captured.",
+   "description": "Proof passes in CI sandbox environment with v1.1 topology. Positive-path and negative-control evidence captured. Verified current, but expected to evolve — frozen status is NOT inherited.",
    "confidence": "medium",
    "supersession_eligible": true
   },
@@ -72,57 +73,102 @@
  },
  "capabilities": [
   {
-   "capability_id": "china-market-strategy",
+   "id": "l1-foundation-freeze",
+   "proof_id": "L1_FROZEN_GREEN",
+   "name": "L1 Foundation Freeze",
+   "description": "The L1 foundation substrate is frozen green: single-physical-CRDB logical database isolation topology (zen_identity, zen_fabric, zen_platform authorities; zen_trust defined but not composed), external 443-only network contract with port-forward/nodePort/hostPort/TLS-bypass forbidden, mode A and mode B enrollment with restart-safe mTLS, HA failover, negative matrix, network policy, external-443 proof, cleanup, and verdict-integrity negative controls. Three repeated qualification runs, all pass, zero manual interventions (recorded 2026-08-31). Upper layers consume L1 as a dependable frozen contract under the monotonic layer rule.",
+   "proof_status": "victory_locked",
+   "evidence_level": "SANDBOX_CI",
+   "supersession_state": "CURRENT",
+   "victory_locked": true,
+   "evidence_refs": [
+    "zen-platform-v1 docs/02-ARCHITECTURE/l1-qualification-record-v1.json (canonical freeze record)",
+    "qualification lane HELPER-L1-VERDICT-NEGATIVE-AND-FREEZE-010T",
+    "3 repeated qualification runs, all PASS, durations under 20 minutes"
+   ],
+   "validator_refs": [
+    "zen-platform-v1 scripts/qualification/test_verdict_integrity.py (phase-exception, raised-exception, and cleanup-failure negative controls)"
+   ],
+   "integrity_ref": "architecture contract digest sha256:1ceb5a0344827ca290b039646df1c71c3a47367f1d14a2d4764d1d2aca970d0a (LOGICAL_DATABASE_ISOLATION_FREEZE, recorded at freeze)",
+   "non_claims": [
+    "Not production-live",
+    "Not restricted-live or cloud-proven",
+    "Single-physical-CRDB qualification topology; not a multi-cluster production durability claim",
+    "The L1 freeze does not claim L2, L3, or Traffic upper-layer behavior"
+   ]
+  },
+  {
+   "id": "l2-connect-freeze",
+   "proof_id": "L2_CONNECT_FROZEN_GREEN",
+   "name": "L2 Connect Freeze",
+   "description": "The bounded Connect/L2 contract is frozen green: mode A and mode B continuity, HA failover with declared lease-derived bounds (lease 15s, renew deadline 10s, retry period 2s; rollout and observation bounds 300s) with split-brain not observed and re-enrollment or PVC deletion never used, restart matrix with disable/no-resurrection, the 24-block connect vertical, projection SQL evidence, CLI parity over canonical Control-family SPIFFE with no TLS bypass, network policy matrix, image digest law, control capability verification with tamper/wrong-key/stale-generation/digest-without-signature denial negatives, and placement bootstrap security (RLS tenant isolation, active-only bootstrap read, tenantless write denied, inactive allocation bootstrap denied). Four counted runs (baseline + repeat 1-3) across 51 gates, zero non-pass gates, zero manual interventions (recorded 2026-09-06).",
+   "proof_status": "victory_locked",
+   "evidence_level": "SANDBOX_CI",
+   "supersession_state": "CURRENT",
+   "victory_locked": true,
+   "evidence_refs": [
+    "zen-platform-v1 deploy/L2_CONNECT_FROZEN_GREEN.json (canonical freeze artifact)",
+    "zen-mgmt releases/l2-connect-frozen-green.yaml (release binding of the freeze artifact)",
+    "4 counted runs: baseline + repeat 1-3, decision PASS, same candidate, zero manual interventions"
+   ],
+   "validator_refs": [
+    "zen-platform-v1 qualification gate summary (51 gates incl. mode_a, mode_b_pre_negative, mode_b_continuity, ha_failover, ha_fencing, restart_matrix, connect_vertical_24_blocks, projection_sql_evidence, cli_parity, netpol_matrix, image_digest_law, disable_no_resurrection)"
+   ],
+   "integrity_ref": "freeze artifact digest sha256:7e9e7d9df8894fb1f2ef395f3e3975c1f886c7b151d04126444c9030659ad607 (zen-mgmt release binding)",
+   "non_claims": [
+    "Does NOT claim MCP, ZCC, Compiler/IR, Trust, Traffic, dual-Traffic-SVID runtime, Pipelines, UI, or production completeness (explicit freeze scope)",
+    "Not production-live",
+    "Not restricted-live or cloud-proven",
+    "HA bounds are declared lease-derived bounds in the qualified topology, not arbitrary-topology guarantees"
+   ]
+  },
+  {
+   "id": "traffic-v11-engine-freeze",
+   "proof_id": "TRAFFIC_V11_ENGINE_FROZEN_GREEN",
+   "name": "Traffic V1.1 Engine Freeze",
+   "description": "The declared frozen pre-cloud Traffic V1.1 engine candidate (artifact id traffic-99951a0d): successful ingress acknowledgement is emitted only after the declared durable acceptance boundary, with enumerated crash-window negative tests (crash before persist, crash after persist before enqueue, crash during dispatch, crash after target before commit, restart recovery); the HA contract prefers retryable refusal (503 with Retry-After) over false acceptance when required replay/durability authority is unavailable, and accepted loss is forbidden in counted qualification; cross-replica replay uses replicated nonce authority for correctness with gateway affinity as optimization only. Counted qualification: BASELINE + REPEAT 1-3 from main, all four runs all-green across the 8 declared scenarios (flow01_basic, two_tenant_isolation, reliability, outage_lkg, graceful_shutdown, flow01_ha, ssrf, acceptance_durability), failure matrix 24/24, manual_interventions = 0 (frozen 2026-09-06). Duplicate receipts remain possible under the declared duplicate-semantics bound.",
+   "proof_status": "victory_locked",
+   "evidence_level": "SANDBOX_CI",
+   "supersession_state": "CURRENT",
+   "victory_locked": true,
+   "evidence_refs": [
+    "zen-platform-v1 traffic-qual/results/final-report.json (compiled counted report with candidate-mismatch exclusion audit)",
+    "zen-platform-v1 traffic-qual/results/main-baseline/verdict.json (8/8 scenarios, all_pass, manual_interventions 0)",
+    "zen-platform-v1 freeze commit TRAFFIC_V11_ENGINE_FROZEN_GREEN on main"
+   ],
+   "validator_refs": [
+    "zen-platform-v1 traffic-qual/report_compile.py (stale-status and candidate-mismatch audit)",
+    "zen-platform-v1 traffic-qual/failure_matrix_compile.py (24/24 failure matrix)"
+   ],
+   "integrity_ref": "freeze record: zen-platform-v1 main commit titled TRAFFIC_V11_ENGINE_FROZEN_GREEN; candidate artifact id traffic-99951a0d",
+   "non_claims": [
+    "Production deployment is NOT proven",
+    "Exactly-once delivery semantics are NOT claimed",
+    "Global loss-free delivery is NOT claimed",
+    "Arbitrary topology equivalence is NOT claimed; bounds are the declared qualified topology",
+    "Customer-facing DLQ API authorization is NOT claimed (no such public surface exists)",
+    "Restricted-live or cloud proof is NOT claimed",
+    "Duplicate receipts are possible under declared failure windows (bounded duplicate semantics, not exactly-once)"
+   ]
+  },
+  {
+   "id": "china-market-strategy",
+   "proof_id": "CHINA-MARKET-STRATEGY",
    "name": "China Market Strategy",
-   "status": "implementation_present",
-   "description": "China market strategy with regional Traffic Plane and provider Pack templates",
-   "evidence_links": [
+   "description": "China market strategy documentation and provider Pack planning: regional Traffic Plane architecture, the payload-locality architectural commitment, and provider Pack templates (Antom/Alipay and WeChat Pay in development; UnionPay planned). Regional deployed proof is not produced. This capability is documentation/design-stage evidence and is subordinate to the global V1.1 baseline; it does not define the baseline scope.",
+   "proof_status": "implementation_present",
+   "evidence_level": "CODE_INSPECTION",
+   "supersession_state": "CURRENT",
+   "victory_locked": false,
+   "evidence_refs": [
     "/china-market",
     "/docs/china-market-architecture",
     "/docs/payload-locality-invariant"
    ],
-   "maturity_labels": [
-    {
-     "label": "china-market-strategy",
-     "status": "active",
-     "description": "China market strategy is active with design partner recruitment in progress"
-    },
-    {
-     "label": "provider-packs",
-     "status": "in_development",
-     "description": "Provider Packs are in development for Antom/Alipay, WeChat Pay, UnionPay"
-    },
-    {
-     "label": "payload-locality",
-     "status": "architectural_commitment",
-     "description": "Payload locality is a hard architectural commitment, not an implementation detail"
-    },
-    {
-     "label": "canadian-control-plane",
-     "status": "planned",
-     "description": "Canadian control plane is planned for China market governance"
-    },
-    {
-     "label": "regional-traffic-plane",
-     "status": "planned",
-     "description": "Regional Traffic Plane is planned for payload processing"
-    },
-    {
-     "label": "hong-kong-traffic-plane",
-     "status": "under_evaluation",
-     "description": "Hong Kong Traffic Plane is under evaluation for account and ingress feasibility"
-    },
-    {
-     "label": "mainland-china-traffic-plane",
-     "status": "blocked",
-     "description": "Mainland China Traffic Plane is account feasibility review only"
-    },
-    {
-     "label": "regional-deployed-proof",
-     "status": "not_produced_live",
-     "description": "Regional deployed proof is not yet production-live"
-    }
+   "validator_refs": [
+    "scripts/validate-ai-evidence.js"
    ],
+   "integrity_ref": "docs://ai/evidence/v1.1/supersession-map.json (V1.1-EVIDENCE-MANIFEST-CHINA-SCOPE demotion record)",
    "provider_pack_status": {
     "antom-alipay": {
      "status": "in_development",
@@ -144,104 +190,55 @@
     }
    },
    "non_claims": [
-    {
-     "claim_id": "china-market-pack-not-ga",
-     "statement": "Chinese Provider Packs are not generally available yet",
-     "status": "not_claimed",
-     "evidence_link": "/china-market"
-    },
-    {
-     "claim_id": "china-market-no-aws-acceptance",
-     "statement": "Zen Mesh is not claiming AWS program acceptance",
-     "status": "not_claimed",
-     "evidence_link": "/china-market"
-    },
-    {
-     "claim_id": "china-market-no-aws-partnership",
-     "statement": "Zen Mesh is not claiming AWS partnership",
-     "status": "not_claimed",
-     "evidence_link": "/china-market"
-    },
-    {
-     "claim_id": "china-market-mainland-not-live",
-     "statement": "Mainland China hosting is not yet production-live",
-     "status": "not_claimed",
-     "evidence_link": "/docs/china-market-architecture"
-    },
-    {
-     "claim_id": "china-market-no-icp",
-     "statement": "ICP recordal is not complete unless separately proven",
-     "status": "not_claimed",
-     "evidence_link": "/docs/china-market-architecture"
-    },
-    {
-     "claim_id": "china-market-no-regulatory-claim",
-     "statement": "Chinese regulatory compliance is not claimed",
-     "status": "not_claimed",
-     "evidence_link": "/docs/china-market-architecture"
-    },
-    {
-     "claim_id": "china-market-no-production-enforcement",
-     "statement": "Payload-locality production enforcement is scoped by current evidence",
-     "status": "not_claimed",
-     "evidence_link": "/docs/payload-locality-invariant"
-    },
-    {
-     "claim_id": "china-market-no-sandbox-validation",
-     "statement": "Provider sandbox fixtures are not provider production validation",
-     "status": "not_claimed",
-     "evidence_link": "/docs/china-market-architecture"
-    },
-    {
-     "claim_id": "china-market-no-exactly-once",
-     "statement": "No guaranteed or exactly-once delivery claim",
-     "status": "not_claimed",
-     "evidence_link": "/docs/china-market-architecture"
-    }
+    "Chinese Provider Packs are not generally available yet",
+    "Zen Mesh is not claiming AWS program acceptance",
+    "Zen Mesh is not claiming AWS partnership",
+    "Mainland China hosting is not yet production-live",
+    "ICP recordal is not complete unless separately proven",
+    "Chinese regulatory compliance is not claimed",
+    "Payload-locality production enforcement is scoped by current evidence",
+    "Provider sandbox fixtures are not provider production validation",
+    "No guaranteed or exactly-once delivery claim"
    ]
   },
   {
-   "capability_id": "payload-locality",
+   "id": "payload-locality",
+   "proof_id": "PAYLOAD-LOCALITY-INVARIANT",
    "name": "Payload Locality",
-   "status": "architectural_commitment",
-   "description": "Customer event payloads are processed inside regional Traffic Plane, never proxied by control plane",
-   "evidence_links": [
+   "description": "Customer event payloads are processed inside the regional Traffic Plane and are never proxied by the control plane. This is a hard architectural commitment, not a best-effort property and not weakened with qualifiers. Local/sandbox proof exists for the locality concepts; regional deployed proof is not produced.",
+   "proof_status": "architectural_commitment",
+   "evidence_level": "CODE_INSPECTION",
+   "supersession_state": "CURRENT",
+   "victory_locked": false,
+   "evidence_refs": [
     "/docs/payload-locality-invariant",
-    "/docs/china-market-architecture",
-    "/china-market"
+    "/docs/china-market-architecture"
    ],
-   "maturity_labels": [
-    {
-     "label": "architectural-invariant",
-     "status": "architectural_commitment",
-     "description": "Payload locality is a hard architectural commitment, not implementation detail"
-    },
-    {
-     "label": "regional-proof",
-     "status": "not_produced_live",
-     "description": "Regional deployment proof not yet available. Roadmap under evaluation for Hong Kong and mainland options.",
-     "evidence_link": "/docs/china-market-architecture"
-    },
-    {
-     "label": "local-sandbox-proof",
-     "status": "sandbox_proven",
-     "description": "Local/sandbox proof exists for payload locality concepts, but not yet for regional deployment.",
-     "evidence_link": "/docs/payload-locality-invariant"
-    }
+   "validator_refs": [
+    "scripts/validate-ai-evidence.js"
+   ],
+   "integrity_ref": "docs://ai/evidence/v1.1/manifest.json (this manifest)",
+   "non_claims": [
+    "Regional deployed proof is not produced",
+    "Not a production-live locality enforcement claim"
    ]
   },
   {
-   "capability_id": "fabric-foundation-enrollment",
+   "id": "fabric-foundation-enrollment",
+   "proof_id": "FABRIC-LAYER-GAPI-VALIDATION-2026-08-15",
    "name": "Fabric Foundation Workload Enrollment (Mode A / Mode B)",
-   "status": "proven_sandbox",
-   "description": "Shared enrollment protocol over the fabric foundation: AGE-sealed artifacts minted through the gapi edge (/fabric/), CSR+proof-of-possession issuance through /fabric/identity, SVID validation, fabric workload mTLS, and restart-safe checkpoint recovery. Negative boundary proven (certless/rogue TLS rejection; Tier-0 Mode A prerequisite enforced fail-closed for Mode B on agent-less planes).",
-   "evidence_links": [
+   "description": "Shared enrollment protocol over the fabric foundation: AGE-sealed artifacts minted through the gapi edge (/fabric/), CSR plus proof-of-possession issuance through /fabric/identity, SVID validation, fabric workload mTLS, and restart-safe checkpoint recovery. Negative boundary proven (certless/rogue TLS rejection; Tier-0 Mode A prerequisite enforced fail-closed for Mode B on agent-less planes). Verified current in sandbox; expected to evolve and does not inherit frozen status from the L1 freeze.",
+   "proof_status": "proven_sandbox",
+   "evidence_level": "SANDBOX_CI",
+   "supersession_state": "CURRENT",
+   "victory_locked": false,
+   "evidence_refs": [
     "https://github.com/zenmesh/zen-platform-v1/blob/main/docs/06-VALIDATION-AND-EVIDENCE/fabric-layer-gapi-validation-2026-08-15.md"
    ],
-   "maturity_labels": [
-    "sandbox-proven",
-    "internal-only"
+   "validator_refs": [
+    "scripts/validate-ai-evidence.js"
    ],
+   "integrity_ref": "docs://ai/evidence/v1.1/manifest.json (this manifest)",
    "non_claims": [
     "Not production-live",
     "Single-node k3d; HA/CAP drills outstanding",
@@ -251,8 +248,8 @@
  ],
  "compliance_mappings": {},
  "validation": {
-  "last_validated": "2026-08-05T18:00:00Z",
-  "validator_script": "scripts/validate-claim-gate.sh",
+  "last_validated": "2026-09-06T05:38:27Z",
+  "validator_script": "scripts/validate-ai-evidence.js",
   "public_claim_gate_url": "https://www.zen-mesh.io/docs/ai/evidence/v1.1/public-claim-gate.json",
   "non_regression_matrix_url": "https://www.zen-mesh.io/docs/ai/evidence/v1.1/non-regression-matrix.json",
   "pass": true,

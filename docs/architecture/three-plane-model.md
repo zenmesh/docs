@@ -84,11 +84,14 @@ This is fundamentally different from platforms where the SaaS service is the del
 Don't just take our word for the architecture. Zen's public claims are mapped to machine-readable discovery, security posture, evidence, and non-claim surfaces. **Narrative docs are not proof** — use the links below to verify scope, maturity, and explicit non-claims.
 
 - [llms.txt](../llms.txt) — discovery index for agents and reviewers
+- [Stable evidence manifest](../ai/evidence/v1/manifest.json) — canonical stable channel; always reflects current v1.1 truth
+- [Stable non-claims](../ai/evidence/v1/non-claims.json) — canonical stable non-claims channel
+- [Current v1.1 evidence manifest](../ai/evidence/v1.1/manifest.json) — frozen-green baselines (L1 Foundation, L2 Connect, Traffic engine) with proof_status and non-claims per capability
 - [AI discovery registry](../ai/evidence-v1-supersession.md#ai-discovery-registry) — per-surface freshness (security vs capability inventory)
 - [Claim maturity](ai/security-posture.md) — what is wired, tested, backlog, or not claimed
 - [Security primitives](ai/security-posture.md) — primitive-level posture and boundaries
 - [Security gaps](ai/security-posture.md) — visible backlog; gaps are not hidden as product claims
-- [Capability manifest](../ai/evidence-v1-supersession.md#manifest) — proof_status and evidence scope per capability
+- [Capability supersession](../ai/evidence-v1-supersession.md#manifest) — proof_status and evidence scope per capability; superseded evidence stays historical
 - [Non-claims](../ai/evidence-v1-supersession.md#non-claims) — what Zen Mesh does **not** claim
 
 **Claim boundaries:** Integrity receipts are **integrity / tamper evidence only** — not authentication, encryption, or replay prevention. Idempotency helps detect and limit duplicates; it is **not** replay-proof delivery.

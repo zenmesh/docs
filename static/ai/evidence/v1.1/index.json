@@ -1,8 +1,11 @@
 {
   "v1.1_evidence_namespace": {
-    "description": "Zen Mesh v1.1 evidence directory — supersedes v1.0 evidence corpus. All v1.0 evidence artifacts require re-validation per the supersession contract before use in v1.1 claims.",
+    "description": "Zen Mesh v1.1 evidence directory — the canonical current evidence namespace. The global baseline scope is sandbox_ci and carries the frozen-green baselines (L1 Foundation, L2 Connect, Traffic V1.1 engine) plus verified-current and subordinate capabilities. All v1.0 evidence artifacts require re-validation per the supersession contract before use in v1.1 claims; superseded evidence must never be treated as current authority.",
     "schema_version": "1.1.0",
-    "generated_at": "2026-07-24T00:00:00Z",
+    "generated_at": "2026-09-06T05:38:27Z",
+    "evidence_scope": "sandbox_ci",
+    "current_manifest": "https://www.zen-mesh.io/docs/ai/evidence/v1.1/manifest.json",
+    "stable_channel": "https://www.zen-mesh.io/docs/ai/evidence/v1/manifest.json",
     "supersession_contract": "https://www.zen-mesh.io/docs/ai/evidence/v1.1/supersession-map.json",
     "manifest": "https://www.zen-mesh.io/docs/ai/evidence/v1.1/manifest.json",
     "non_claims": "https://www.zen-mesh.io/docs/ai/evidence/v1.1/non-claims.json",
@@ -11,6 +14,8 @@
       "manifest.json",
       "manifest.schema.json",
       "non-claims.json",
+      "non-regression-matrix.json",
+      "public-claim-gate.json",
       "supersession-map.json"
     ]
   }

@@ -94,5 +94,77 @@
     "scope": "Not claimed. At-least-once is proven per topology path with scenario-specific evidence.",
     "evidence_status": "active_non_claim",
     "source": "v1.1-non-regression-matrix NR-003"
+  },
+  {
+    "id": "non-claim-production-deployment",
+    "category": "operations",
+    "claim": "Production deployment or broad customer operation",
+    "scope": "Not claimed in v1.1. No production deployment proof exists; frozen-green baselines are sandbox qualification evidence only.",
+    "evidence_status": "active_non_claim",
+    "source": "EVIDENCE-V11-001 baseline refresh; L1/L2/Traffic freeze scope records"
+  },
+  {
+    "id": "non-claim-restricted-live-cloud",
+    "category": "operations",
+    "claim": "Restricted-live or cloud-proven operation (including same-RC restricted-live)",
+    "scope": "Not claimed in v1.1. Restricted-live/cloud qualification is future work; absent evidence means UNKNOWN or NOT_PROVEN, never inferred PASS.",
+    "evidence_status": "active_non_claim",
+    "source": "EVIDENCE-V11-001 baseline refresh"
+  },
+  {
+    "id": "non-claim-compliance-certification",
+    "category": "compliance",
+    "claim": "Any compliance, certification, or attestation status (FedRAMP, SOC 2, PCI, HIPAA, ISO, ICP)",
+    "scope": "Not claimed. Zen Mesh makes no compliance or certification claim of any kind; such status would require explicit separate evidence.",
+    "evidence_status": "active_non_claim",
+    "source": "v1.1 public-claim-gate GATE-002/GATE-004"
+  },
+  {
+    "id": "non-claim-full-sovereign-proof",
+    "category": "sovereignty",
+    "claim": "Complete sovereign-operation evidence (full DR, destructive recovery, offline signed verification completion)",
+    "scope": "Not claimed in v1.1. Sovereignty evidence is claim-by-claim; unproven claims remain explicitly NOT_PROVEN (see zen-mgmt sovereignty evidence bundle).",
+    "evidence_status": "active_non_claim",
+    "source": "EVIDENCE-V11-001 baseline refresh; zen-mgmt generated SOVEREIGNTY_EVIDENCE"
+  },
+  {
+    "id": "non-claim-provider-parity-complete",
+    "category": "providers",
+    "claim": "Complete provider parity",
+    "scope": "Not claimed in v1.1. Provider status is enumerated per provider (e.g., Twilio downstream form-urlencoded routing is PARTIAL); unlisted providers are not claimed.",
+    "evidence_status": "active_non_claim",
+    "source": "EVIDENCE-V11-001 baseline refresh; provider registry evidence"
+  },
+  {
+    "id": "non-claim-mcp-permissions-complete",
+    "category": "connect",
+    "claim": "Final MCP RO/RW convergence and object-level MCP permission completion",
+    "scope": "Not claimed in v1.1. MCP surface is implementation-present; final permission convergence remains open work.",
+    "evidence_status": "active_non_claim",
+    "source": "EVIDENCE-V11-001 baseline refresh"
+  },
+  {
+    "id": "non-claim-pipelines-v1",
+    "category": "pipelines",
+    "claim": "Full Pipelines V1",
+    "scope": "Not claimed in v1.1. Pipelines/Compiler-IR verticals are implementation-present lanes, not frozen or fully proven.",
+    "evidence_status": "active_non_claim",
+    "source": "EVIDENCE-V11-001 baseline refresh"
+  },
+  {
+    "id": "non-claim-customer-dlq-api",
+    "category": "runtime",
+    "claim": "Customer-facing DLQ API authorization",
+    "scope": "Not claimed. No public customer-facing DLQ API surface exists; durable-DLQ terminal-state semantics are internal qualification evidence only.",
+    "evidence_status": "active_non_claim",
+    "source": "TRAFFIC_V11_ENGINE_FROZEN_GREEN scope record"
+  },
+  {
+    "id": "non-claim-traffic-topology-equivalence",
+    "category": "runtime",
+    "claim": "Arbitrary topology equivalence for Traffic HA/durability results",
+    "scope": "Not claimed. Traffic frozen-baseline results are bounded to the declared qualified topology; other topologies are not claimed equivalent.",
+    "evidence_status": "active_non_claim",
+    "source": "TRAFFIC_V11_ENGINE_FROZEN_GREEN scope record"
   }
 ]

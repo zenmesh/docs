@@ -2,16 +2,56 @@
   "contract_version": "1.1.0",
   "prior_evidence_version": "1.0.0",
   "prior_manifest_url": "https://www.zen-mesh.io/docs/ai/evidence/v1/manifest.json",
-  "generated_at": "2026-07-24T00:00:00Z",
-  "immutability_policy": "All v1.0 evidence artifacts are immutable. No edits, no re-executions in place, no status updates. Supersession states describe how v1.0 evidence may be used in v1.1 context.",
+  "generated_at": "2026-09-06T05:38:27Z",
+  "immutability_policy": "All v1.0 evidence artifacts are immutable. No edits, no re-executions in place, no status updates. Supersession states describe how v1.0 evidence may be used in v1.1 context. Historical supersession records are preserved as historical truth: a SUPERSEDED or HISTORICAL_ONLY artifact must never be presented as current authority by any current evidence index.",
   "supersession_states": {
+    "CURRENT": "The evidence is native current v1.1 evidence, produced from live canonical qualification/freeze artifacts. Not inherited from v1.0 and not eligible for silent supersession.",
     "REUSE_INVARIANT_ONLY": "The invariant/architecture is unchanged. v1.0 code may be cited but v1.1 must supply its own runtime evidence (log, trace, Merkle proof) at the v1.1 evidence level.",
     "REEXECUTE_UNCHANGED": "The test/proof is re-executed in the v1.1 environment without source changes. New evidence artifact references the original proof_id with an updated execution hash.",
     "REEXECUTE_WITH_ADAPTER": "The proof requires adapter code (e.g., new provider signature format, new delivery topology). Re-executed with minimal changes. Original proof_id preserved with -v1.1 suffix.",
     "HISTORICAL_ONLY": "The evidence documented a v1.0-specific capability that does not exist in v1.1. Retained for historical reference only. Not admissible for v1.1 claims.",
     "INVALIDATED": "The evidence artifact has been reviewed and found invalid. Must not be cited for any claim. See review_record for details."
   },
+  "current_baseline": {
+    "note": "Current v1.1 frozen-green baselines. These are the only current authority for their scopes. Older artifacts remain historical truth under their recorded states; they must not be promoted to current authority.",
+    "generated_at": "2026-09-06T05:38:27Z",
+    "baselines": [
+      {
+        "evidence_id": "L1_FROZEN_GREEN",
+        "layer": "L1 Foundation",
+        "manifest_capability_id": "l1-foundation-freeze",
+        "canonical_artifact": "zen-platform-v1 docs/02-ARCHITECTURE/l1-qualification-record-v1.json",
+        "recorded": "2026-08-31",
+        "counted_runs": 3
+      },
+      {
+        "evidence_id": "L2_CONNECT_FROZEN_GREEN",
+        "layer": "L2 Connect",
+        "manifest_capability_id": "l2-connect-freeze",
+        "canonical_artifact": "zen-platform-v1 deploy/L2_CONNECT_FROZEN_GREEN.json",
+        "recorded": "2026-09-06T00:30:00Z",
+        "counted_runs": 4
+      },
+      {
+        "evidence_id": "TRAFFIC_V11_ENGINE_FROZEN_GREEN",
+        "layer": "Traffic V1.1 engine",
+        "manifest_capability_id": "traffic-v11-engine-freeze",
+        "canonical_artifact": "zen-platform-v1 traffic-qual/results/final-report.json + freeze commit TRAFFIC_V11_ENGINE_FROZEN_GREEN",
+        "recorded": "2026-09-06T00:43:53-04:00",
+        "counted_runs": 4
+      }
+    ]
+  },
   "entries": [
+    {
+      "v1_id": "V1.1-EVIDENCE-MANIFEST-CHINA-SCOPE",
+      "v1_proof_status": "implementation_present",
+      "v1.1_supersession_state": "HISTORICAL_ONLY",
+      "v1.1_reason": "The prior v1.1 manifest carried evidence_scope=china_market_strategy as the effective global baseline scope. That scoping was stale: it predated the L1/L2/Traffic frozen-green baselines. The global current baseline scope is sandbox_ci; China-market evidence is retained as a subordinate capability (china-market-strategy) with its own bounded statuses and non-claims. This entry preserves the historical fact that the china-scoped manifest was correct at its checkpoint; it must not be restored as the global scope.",
+      "superseded_by": "v1.1 manifest evidence_scope=sandbox_ci (generated_at 2026-09-06T05:38:27Z)",
+      "historical_truth": "preserved",
+      "current_authority": false
+    },
     {
       "v1_id": "RUNTIME-CONVERGENCE-PROOF-001",
       "v1_proof_status": "victory_locked",
@@ -94,7 +134,8 @@
       "v1_proof_status": "victory_locked",
       "v1.1_supersession_state": "HISTORICAL_ONLY",
       "v1.1_reason": "The v1.0 public security claims decision document is a governance artifact from the v1.0 launch. v1.1 has its own public-claim-gate.json with updated rules.",
-      "v1.1_migration_path": "No re-execution. Governance migrated to v1.1-public-claim-gate.json."
+      "v1.1_migration_path": "No re-execution. Governance migrated to v1.1-public-claim-gate.json.",
+      "current_authority": false
     },
     {
       "v1_id": "ZEN-SDK-CONSTANT-TIME-COMPARE",
@@ -136,7 +177,8 @@
       "v1_proof_status": "implementation_present",
       "v1.1_supersession_state": "HISTORICAL_ONLY",
       "v1.1_reason": "v1.0 security gaps document is superseded by v1.1 non-regression matrix and public-claim-gate rules.",
-      "v1.1_migration_path": "No re-execution. Gap tracking migrated to non-regression matrix (NR-*) rules."
+      "v1.1_migration_path": "No re-execution. Gap tracking migrated to non-regression matrix (NR-*) rules.",
+      "current_authority": false
     },
     {
       "v1_id": "NON-CLAIMS-REGISTRY",
@@ -178,7 +220,8 @@
       "v1_proof_status": "victory_locked",
       "v1.1_supersession_state": "INVALIDATED",
       "v1.1_reason": "Valkey-002 invalidated by Kore review: 122 fabricated records. Must not be cited for any claim.",
-      "v1.1_migration_path": "Removed from evidence corpus. Dedup engine re-proven with new backend."
+      "v1.1_migration_path": "Removed from evidence corpus. Dedup engine re-proven with new backend.",
+      "current_authority": false
     },
     {
       "v1_id": "SSRF-TEST-SUITE",

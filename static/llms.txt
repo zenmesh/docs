@@ -74,7 +74,11 @@ Zen Mesh publishes public product, pricing, support, documentation, and evidence
 - [Claim maturity](https://www.zen-mesh.io/docs/ai/security/v1/claim-maturity.json): per-control maturity status
 - [Security primitives](https://www.zen-mesh.io/docs/ai/security/v1/primitives.json): security primitive registry
 - [Security gaps](https://www.zen-mesh.io/docs/ai/security/v1/gaps.json): explicit post-V1 gaps
+- [Attack model](https://www.zen-mesh.io/docs/ai/security/v1/attack-model.json): threat and abuse model registry
+- [Local trust posture](https://www.zen-mesh.io/docs/ai/security/v1/local-trust-posture.json): local-trust security posture registry
 - [AI discovery registry](https://www.zen-mesh.io/docs/ai/ai-discovery-registry.json): per-surface freshness
+- [Public terminology taxonomy](https://www.zen-mesh.io/ai/public-terminology-taxonomy.json): canonical public term definitions
+- [Public evidence page](https://www.zen-mesh.io/evidence): human-readable evidence discovery
 - Verification guide: https://www.zen-mesh.io/docs/zen-mesh/ai/verification
 
 Blog articles are editorial narrative, not proof; claims and their scope live in the registries above.

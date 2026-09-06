@@ -54,6 +54,7 @@ The public product scope is the **webhook operations wedge** — Stripe, GitHub,
 
 ## Narrative context (not proof)
 
+- [narrative-context.json](https://www.zen-mesh.io/ai/narrative-context.json) — machine-readable narrative context registry (website-hosted; narrative is not proof)
 
 - [Webhook delivery evidence (blog)](https://www.zen-mesh.io/blogs/webhook-delivery-evidence/) — delivery logs vs verifiable evidence (narrative_context)
 - [Webhooks behind firewalls (blog)](https://www.zen-mesh.io/blogs/webhooks-behind-firewalls/) — architecture narrative (narrative_context)

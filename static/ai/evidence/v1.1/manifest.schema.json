@@ -46,7 +46,7 @@
           "properties": {
             "label": { "type": "string" },
             "description": { "type": "string" },
-            "confidence": { "type": "string", "enum": ["none", "low", "medium", "high", "maximum"] },
+            "confidence": { "type": "string", "enum": ["none", "low", "medium", "medium-high", "high", "maximum"] },
             "supersession_eligible": { "type": "boolean" }
           }
         }
@@ -74,14 +74,27 @@
           "proof_id": { "type": "string" },
           "name": { "type": "string" },
           "description": { "type": "string" },
-          "proof_status": { "type": "string", "enum": ["victory_locked", "proven_sandbox", "proven_staging", "proven_production", "implementation_present", "planned", "blocked", "not_claimed"] },
+          "proof_status": { "type": "string", "enum": ["victory_locked", "proven_sandbox", "proven_staging", "proven_production", "implementation_present", "architectural_commitment", "planned", "blocked", "not_claimed"] },
           "evidence_level": { "type": "string", "enum": ["CODE_INSPECTION", "UNIT_TEST", "INTEGRATION_TEST", "E2E_TEST", "SANDBOX_CI", "STAGING_VALIDATED", "PRODUCTION_LIVE"] },
-          "supersession_state": { "type": "string", "enum": ["REUSE_INVARIANT_ONLY", "REEXECUTE_UNCHANGED", "REEXECUTE_WITH_ADAPTER", "HISTORICAL_ONLY", "INVALIDATED"] },
-          "victory_locked": { "type": "boolean" },
-          "evidence_refs": { "type": "array", "items": { "type": "string" } },
-          "validator_refs": { "type": "array", "items": { "type": "string" } },
-          "integrity_ref": { "type": "string" },
-          "non_claims": { "type": "array", "items": { "type": "string" } }
+        "supersession_state": { "type": "string", "enum": ["CURRENT", "REUSE_INVARIANT_ONLY", "REEXECUTE_UNCHANGED", "REEXECUTE_WITH_ADAPTER", "HISTORICAL_ONLY", "INVALIDATED"] },
+        "victory_locked": { "type": "boolean" },
+        "evidence_refs": { "type": "array", "items": { "type": "string" } },
+        "validator_refs": { "type": "array", "items": { "type": "string" } },
+        "integrity_ref": { "type": "string" },
+        "provider_pack_status": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "required": ["status"],
+            "properties": {
+              "status": { "type": "string", "enum": ["in_development", "planned", "not_claimed", "blocked"] },
+              "scope": { "type": "string" },
+              "documentation": { "type": "string", "format": "uri" },
+              "status_label": { "type": "string" }
+            }
+          }
+        },
+        "non_claims": { "type": "array", "items": { "type": "string" } }
         }
       }
     },

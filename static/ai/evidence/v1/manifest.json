@@ -13,8 +13,8 @@
     "current_evidence_version": "1.1.0",
     "current_manifest_url": "https://www.zen-mesh.io/docs/ai/evidence/v1.1/manifest.json"
   },
-  "generated_at": "2026-08-05T18:00:00Z",
-  "evidence_scope": "china_market_strategy",
+  "generated_at": "2026-09-06T05:38:27Z",
+  "evidence_scope": "sandbox_ci",
   "current_state": {
     "evidence_version": "1.1.0",
     "current_manifest_url": "https://www.zen-mesh.io/docs/ai/evidence/v1.1/manifest.json",
@@ -32,13 +32,43 @@
   "digest": {
     "algorithm": "sha256",
     "reference": "current_version_manifest",
-    "value": "24945d5071905976e2c6b9ba1b5612c67bed50556acefb01928b4a2d38d4abc3"
+    "value": "0eba6a4a58ffa101bb477c1dfdba142ae885757ca1995335bac11798e3f276e2"
   },
   "freshness": {
-    "policy": "Regenerate whenever the current v1.1 evidence manifest advances. This artifact must not outlive its digest reference.",
-    "as_of_generated_at": "2026-08-05T18:00:00Z"
+    "policy": "Regenerate whenever the current v1.1 evidence manifest advances. This artifact must not outlive its digest reference. scripts/validate-ai-evidence.js fails when this file diverges from the generator output for the current v1.1 manifest.",
+    "as_of_generated_at": "2026-09-06T05:38:27Z"
   },
   "capabilities": [
+    {
+      "capability_id": "l1-foundation-freeze",
+      "name": "L1 Foundation Freeze",
+      "status": "victory_locked",
+      "evidence_links": [
+        "zen-platform-v1 docs/02-ARCHITECTURE/l1-qualification-record-v1.json (canonical freeze record)",
+        "qualification lane HELPER-L1-VERDICT-NEGATIVE-AND-FREEZE-010T",
+        "3 repeated qualification runs, all PASS, durations under 20 minutes"
+      ]
+    },
+    {
+      "capability_id": "l2-connect-freeze",
+      "name": "L2 Connect Freeze",
+      "status": "victory_locked",
+      "evidence_links": [
+        "zen-platform-v1 deploy/L2_CONNECT_FROZEN_GREEN.json (canonical freeze artifact)",
+        "zen-mgmt releases/l2-connect-frozen-green.yaml (release binding of the freeze artifact)",
+        "4 counted runs: baseline + repeat 1-3, decision PASS, same candidate, zero manual interventions"
+      ]
+    },
+    {
+      "capability_id": "traffic-v11-engine-freeze",
+      "name": "Traffic V1.1 Engine Freeze",
+      "status": "victory_locked",
+      "evidence_links": [
+        "zen-platform-v1 traffic-qual/results/final-report.json (compiled counted report with candidate-mismatch exclusion audit)",
+        "zen-platform-v1 traffic-qual/results/main-baseline/verdict.json (8/8 scenarios, all_pass, manual_interventions 0)",
+        "zen-platform-v1 freeze commit TRAFFIC_V11_ENGINE_FROZEN_GREEN on main"
+      ]
+    },
     {
       "capability_id": "china-market-strategy",
       "name": "China Market Strategy",
@@ -55,13 +85,32 @@
       "status": "architectural_commitment",
       "evidence_links": [
         "/docs/payload-locality-invariant",
-        "/docs/china-market-architecture",
-        "/china-market"
+        "/docs/china-market-architecture"
+      ]
+    },
+    {
+      "capability_id": "fabric-foundation-enrollment",
+      "name": "Fabric Foundation Workload Enrollment (Mode A / Mode B)",
+      "status": "proven_sandbox",
+      "evidence_links": [
+        "https://github.com/zenmesh/zen-platform-v1/blob/main/docs/06-VALIDATION-AND-EVIDENCE/fabric-layer-gapi-validation-2026-08-15.md"
       ]
     }
   ],
   "non_claims": {
     "note": "Authoritative non-claims live in the versioned manifest and v1.1/non-claims.json.",
     "non_claims_url": "https://www.zen-mesh.io/docs/ai/evidence/v1.1/non-claims.json"
+  },
+  "ai_discovery": {
+    "registry_ref": "https://www.zen-mesh.io/docs/ai/ai-discovery-registry.json",
+    "registry_updated_at": "2026-09-06T05:55:44.503Z",
+    "capabilities_manifest_generated_at": "2026-09-06T05:38:27Z",
+    "security_posture_surfaces": [
+      "/ai/security/v1/claim-maturity.json",
+      "/ai/security/v1/attack-model.json",
+      "/ai/security/v1/primitives.json",
+      "/ai/security/v1/gaps.json"
+    ],
+    "freshness_note": "Use ai-discovery-registry.json per-surface last_updated for security posture; manifest.generated_at is capability inventory sync time."
   }
 }

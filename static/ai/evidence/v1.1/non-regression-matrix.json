@@ -1,8 +1,50 @@
 {
   "contract_version": "1.1.0",
-  "generated_at": "2026-08-05T18:00:00Z",
-  "purpose": "Non-regression matrix for the v1.1 evidence corpus. Every v1.0 invariant that must survive into v1.1 is listed with its supersession disposition (see supersession-map.json for definitions) and a v1.1 revalidation target.",
-  "scope": "china_market_strategy",
+  "generated_at": "2026-09-06T05:38:27Z",
+  "purpose": "Non-regression matrix for the v1.1 evidence corpus. Every v1.0 invariant that must survive into v1.1 is listed with its supersession disposition (see supersession-map.json for definitions) and a v1.1 revalidation target. Rows are historical truth: revalidation targets satisfied by a current frozen baseline are recorded in baseline_satisfaction, never by rewriting a row.",
+  "scope": "sandbox_ci",
+  "baseline_satisfaction": {
+    "note": "Current v1.1 frozen-green baselines that satisfy listed revalidation targets. Satisfaction is recorded here; rows above are never edited to reflect it.",
+    "recorded_at": "2026-09-06T05:38:27Z",
+    "satisfied": [
+      {
+        "v1_id": "FLOW01-DIRECT-PUBLIC-TARGET",
+        "satisfied_by": "TRAFFIC_V11_ENGINE_FROZEN_GREEN",
+        "v1.1_artifact": "zen-platform-v1 traffic-qual/results/main-baseline (flow01_basic, flow01_ha scenarios)",
+        "note": "FLOW01 direct public target delivery exercised in the counted Traffic qualification quad; bounded to the declared qualified topology."
+      },
+      {
+        "v1_id": "RUNTIME-CONVERGENCE-PROOF-001",
+        "satisfied_by": "TRAFFIC_V11_ENGINE_FROZEN_GREEN",
+        "v1.1_artifact": "zen-platform-v1 traffic-qual/results/main-baseline (reliability, outage_lkg, acceptance_durability scenarios)",
+        "note": "At-least-once with durable acceptance under injected failure windows; exactly-once remains a non-claim."
+      },
+      {
+        "v1_id": "RUNTIME-CONVERGENCE-PROOF-003",
+        "satisfied_by": "TRAFFIC_V11_ENGINE_FROZEN_GREEN",
+        "v1.1_artifact": "zen-platform-v1 traffic-qual/results/main-baseline (reliability scenario, failure matrix 24/24)",
+        "note": "Retry exhaustion and durable-DLQ terminal-state semantics exercised per contract; no customer-facing DLQ API is claimed."
+      },
+      {
+        "v1_id": "RUNTIME-CONVERGENCE-PROOF-004",
+        "satisfied_by": "TRAFFIC_V11_ENGINE_FROZEN_GREEN",
+        "v1.1_artifact": "zen-platform-v1 traffic-qual qualification duplicate-semantics bound (bounded duplicate receipts, 2 copies -> up to 4 receipts bound)",
+        "note": "Duplicate detection and idempotency bounded-duplicate semantics; exactly-once remains a non-claim."
+      },
+      {
+        "v1_id": "SSRF-TEST-SUITE",
+        "satisfied_by": "TRAFFIC_V11_ENGINE_FROZEN_GREEN",
+        "v1.1_artifact": "zen-platform-v1 traffic-qual/results/main-baseline (ssrf scenario)",
+        "note": "SSRF negative-control scenario in the counted Traffic qualification quad."
+      },
+      {
+        "v1_id": "RUNTIME-CONVERGENCE-PROOF-002",
+        "partially_satisfied_by": "TRAFFIC_V11_ENGINE_FROZEN_GREEN",
+        "v1.1_artifact": "zen-platform-v1 traffic-qual/results/main-baseline (outage_lkg scenario)",
+        "note": "Control-plane outage reconciliation exercised for the Traffic lane; the v1.0 CP-outage scenario semantics remain scoped to the qualified topology."
+      }
+    ]
+  },
   "rows": [
     {
       "v1_id": "RUNTIME-CONVERGENCE-PROOF-001",

@@ -2,24 +2,24 @@
   "schema_version": "1.0.0",
   "document": "ai-discovery-registry",
   "generated_by": "scripts/generate-ai-discovery-registry.js",
-  "registry_updated_at": "2026-07-07T14:30:34.046Z",
+  "registry_updated_at": "2026-09-06T05:55:44.503Z",
   "site_origin": "https://www.zen-mesh.io/docs",
   "readiness_scope": "Per-surface last_updated reflects file content dates and mtimes. Capability manifest generated_at may be older than security posture surfaces.",
-  "capabilities_manifest_generated_at": "2026-06-23T23:30:00Z",
-  "security_posture_bundle_last_updated": "2026-07-05T02:00:24.424Z",
+  "capabilities_manifest_generated_at": "2026-09-06T05:38:27Z",
+  "security_posture_bundle_last_updated": "2026-09-02T18:30:07.295Z",
   "surfaces": [
     {
       "id": "evidence-manifest",
       "url_path": "/ai/evidence/v1/manifest.json",
       "kind": "capabilities",
-      "last_updated": "2026-07-05T02:00:28.888Z",
+      "last_updated": "2026-09-06T05:45:40.528Z",
       "freshness_source": "mtime"
     },
     {
       "id": "evidence-non-claims",
       "url_path": "/ai/evidence/v1/non-claims.json",
       "kind": "non_claims",
-      "last_updated": "2026-07-05T02:00:39.502Z",
+      "last_updated": "2026-09-01T15:02:07.642Z",
       "freshness_source": "mtime"
     },
     {
@@ -33,78 +33,64 @@
       "id": "evidence-wedge-claim-map",
       "url_path": "/ai/evidence/v1/wedge-claim-map.json",
       "kind": "wedge",
-      "last_updated": "2026-07-05T01:59:02.023Z",
+      "last_updated": "2026-07-11T16:29:51.795Z",
       "freshness_source": "mtime"
     },
     {
       "id": "security-claim-maturity",
       "url_path": "/ai/security/v1/claim-maturity.json",
       "kind": "security_posture",
-      "last_updated": "2026-07-05T02:00:24.424Z",
+      "last_updated": "2026-09-02T18:30:07.294Z",
       "freshness_source": "mtime"
     },
     {
       "id": "security-attack-model",
       "url_path": "/ai/security/v1/attack-model.json",
       "kind": "security_posture",
-      "last_updated": "2026-07-04T23:59:59.000Z",
-      "freshness_source": "content"
+      "last_updated": "2026-09-02T18:30:07.294Z",
+      "freshness_source": "mtime"
     },
     {
       "id": "security-primitives",
       "url_path": "/ai/security/v1/primitives.json",
       "kind": "security_posture",
-      "last_updated": "2026-07-05T02:00:23.798Z",
+      "last_updated": "2026-09-02T18:30:07.294Z",
       "freshness_source": "mtime"
     },
     {
       "id": "security-gaps",
       "url_path": "/ai/security/v1/gaps.json",
       "kind": "security_posture",
-      "last_updated": "2026-07-04T23:59:59.000Z",
-      "freshness_source": "content"
+      "last_updated": "2026-09-02T18:30:07.295Z",
+      "freshness_source": "mtime"
     },
     {
       "id": "security-local-trust-posture",
       "url_path": "/ai/security/v1/local-trust-posture.json",
       "kind": "security_posture",
-      "last_updated": "2026-05-31T23:59:59.000Z",
-      "freshness_source": "content"
+      "last_updated": "2026-09-02T18:30:07.293Z",
+      "freshness_source": "mtime"
     },
     {
       "id": "security-capability-validation",
       "url_path": "/ai/security/v1/security-capability-validation.json",
       "kind": "security_reference",
-      "last_updated": "2026-07-04T00:24:03.614Z",
+      "last_updated": "2026-09-02T18:30:07.295Z",
       "freshness_source": "mtime"
     },
     {
       "id": "security-credential-lifecycle",
       "url_path": "/ai/security/v1/credential-lifecycle-ownership.json",
       "kind": "security_reference",
-      "last_updated": "2026-05-24T23:40:09.983Z",
+      "last_updated": "2026-09-02T18:30:07.295Z",
       "freshness_source": "mtime"
     },
     {
       "id": "llms-txt",
       "url_path": "/llms.txt",
       "kind": "discovery",
-      "last_updated": "2026-07-07T14:30:34.046Z",
+      "last_updated": "2026-09-06T05:55:44.503Z",
       "freshness_source": "mtime"
-    },
-    {
-      "id": "provider-parity-registry",
-      "url_path": "/ai/v1/provider-parity-registry.json",
-      "kind": "provider_parity",
-      "last_updated": "2026-07-11T00:00:00.000Z",
-      "freshness_source": "content"
-    },
-    {
-      "id": "provider-live-validation-plan",
-      "url_path": "/ai/v1/provider-live-validation-plan.json",
-      "kind": "provider_validation",
-      "last_updated": "2026-06-29T00:00:00.000Z",
-      "freshness_source": "content"
     }
   ],
   "www_root_aliases": [
