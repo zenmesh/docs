@@ -14,7 +14,7 @@ AVAILABLE_NOW — The enrollment bundle is single-use and time-limited (typicall
 
 ## 3. How are permanent credentials issued?
 
-AVAILABLE_NOW — After the enrollment request is validated, the control plane issues an enrollment bundle containing cryptographic credentials (X.509 SVID). The component uses these credentials for all subsequent mTLS and HMAC-verified communications with the control plane and data plane.
+AVAILABLE_NOW — After the enrollment request is validated, the control plane issues an enrollment bundle containing cryptographic credentials (X.509 SVID). The component uses these credentials for mTLS and HMAC verification of subsequent communications with the control plane and data plane.
 
 ## 4. How are certificates renewed?
 

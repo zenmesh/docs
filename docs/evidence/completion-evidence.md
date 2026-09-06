@@ -14,7 +14,7 @@ Every accepted task produces artifacts — code, tests, documentation. Without a
 - unverifiable after the fact,
 - invisible to future reviewers, investors, or funding/tax-credit readiness support processes.
 
-The completion evidence gate ensures every validated non-UI task creates a **machine-readable record** that can be independently verified.
+The completion evidence gate records a **machine-readable record** for each validated non-UI task; each record can be independently verified.
 
 ## Required Elements
 

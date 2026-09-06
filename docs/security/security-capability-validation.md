@@ -18,9 +18,9 @@ This page is the **authoritative reference** for what Zen Mesh claims about its 
 | Agent → SaaS HMAC | **Required** | SaaS/back HMAC middleware (fail-closed) |
 | SPIFFE/SPIRE | **Used where implemented** | cert-manager + workload attestation |
 | Agent Workload Identity (Full Model) | **Planned** (hardening path) | Future: SPIRE Workload API |
-| HMAC Key Rotation | **Implemented** | HMACKeyRotationController |
-| TLS/Cert Rotation | **Implemented** | cert-manager auto-renewal |
-| JWK Rotation | **Implemented** | JWT/JWKS lifecycle |
+| HMAC Key Rotation | **Implemented** — local/mock proven | HMACKeyRotationController |
+| TLS/Cert Rotation | **Implemented** — local/mock proven | cert-manager auto-renewal |
+| JWK Rotation | **Implemented** — local/mock proven | JWT/JWKS lifecycle |
 | SVID Lifecycle | **Implemented** (file-based) | cert-manager + workload |
 | ZenLock | **Implemented** | Custody, distribution, audit support |
 

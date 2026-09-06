@@ -4,7 +4,7 @@ sidebar_label: Evidence API
 
 # Evidence API
 
-The Evidence API provides cryptographic proofs of delivery for every webhook event processed by Zen Mesh. Each delivery produces an integrity-tree inclusion proof that can be independently verified.
+The Evidence API provides cryptographic proofs of delivery for webhook events processed through the evidence pipeline (current scope: WIRED_SANDBOX). Each recorded delivery produces an integrity-tree inclusion proof that can be independently verified.
 
 > Status: WIRED_SANDBOX. This page describes the current contract surface and known non-claims. It is not a production-live availability claim.
 

@@ -8,7 +8,7 @@ sidebar_label: Evidence and Trust
 
 ## What Evidence Means in Zen Mesh
 
-Evidence is cryptographic proof that a delivery event occurred and was recorded with integrity. Zen Mesh produces evidence as part of every successful delivery attempt. Evidence includes integrity receipts that can be independently verified — proving that a delivery happened and that the record has not been tampered with.
+Evidence is cryptographic proof that a delivery event occurred and was recorded with integrity. Zen Mesh records delivery evidence for successful deliveries processed through the evidence pipeline (current scope: WIRED_SANDBOX). Evidence includes integrity receipts that can be independently verified — proving that a recorded delivery happened and that the record has not been tampered with.
 
 **What evidence is NOT:**
 - Not authentication or identity proof (the evidence proves delivery happened, not who sent it)

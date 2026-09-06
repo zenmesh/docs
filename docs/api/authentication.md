@@ -73,7 +73,7 @@ API keys are generated from the Zen Mesh dashboard under Settings → API Keys.
 |---|---|
 | Prefix | `zpk_` |
 | Scope | Bound to tenant at creation |
-| Rotation | Supported via dashboard |
+| Rotation | Supported via dashboard — classified WIRED_SANDBOX, not a production claim |
 | Status | WIRED_SANDBOX |
 
 ### Environment variables
