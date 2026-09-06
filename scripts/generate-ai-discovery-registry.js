@@ -152,7 +152,9 @@ function main() {
   const maxMs = Math.max(...surfaces.map((s) => Date.parse(s.last_updated)));
   const registryUpdatedAt = new Date(maxMs).toISOString();
 
-  const manifestPath = path.join(ROOT, 'static/ai/evidence/v1/manifest.json');
+  // Read-only: the v1.1 manifest is the capability inventory authority; this
+  // generator no longer writes the stable manifest (single-writer law).
+  const manifestPath = path.join(ROOT, 'static/ai/evidence/v1.1/manifest.json');
   const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf-8'));
 
   const registry = {
@@ -160,7 +162,7 @@ function main() {
     document: 'ai-discovery-registry',
     generated_by: 'scripts/generate-ai-discovery-registry.js',
     registry_updated_at: registryUpdatedAt,
-    site_origin: 'https://docs.zen-mesh.io',
+    site_origin: 'https://www.zen-mesh.io/docs',
     readiness_scope:
       'Per-surface last_updated reflects file content dates and mtimes. Capability manifest generated_at may be older than security posture surfaces.',
     capabilities_manifest_generated_at: manifest.generated_at,
@@ -175,13 +177,13 @@ function main() {
     www_root_aliases: [
       {
         alias_path: '/manifest.json',
-        canonical_url: 'https://docs.zen-mesh.io/ai/evidence/v1/manifest.json',
+        canonical_url: 'https://www.zen-mesh.io/docs/ai/evidence/v1/manifest.json',
         delivery: 'static_pointer_json_200',
         host: 'https://www.zen-mesh.io',
       },
       {
         alias_path: '/non-claims.json',
-        canonical_url: 'https://docs.zen-mesh.io/ai/evidence/v1/non-claims.json',
+        canonical_url: 'https://www.zen-mesh.io/docs/ai/evidence/v1/non-claims.json',
         delivery: 'static_pointer_json_200',
         host: 'https://www.zen-mesh.io',
       },
@@ -197,25 +199,11 @@ function main() {
   const registryOut = path.join(ROOT, 'static/ai/ai-discovery-registry.json');
   fs.writeFileSync(registryOut, `${JSON.stringify(registry, null, 2)}\n`);
 
-  manifest.ai_discovery = {
-    registry_ref: 'https://docs.zen-mesh.io/ai/ai-discovery-registry.json',
-    registry_updated_at: registryUpdatedAt,
-    capabilities_manifest_generated_at: manifest.generated_at,
-    security_posture_surfaces: [
-      '/ai/security/v1/claim-maturity.json',
-      '/ai/security/v1/attack-model.json',
-      '/ai/security/v1/primitives.json',
-      '/ai/security/v1/gaps.json',
-    ],
-    freshness_note:
-      'Use ai-discovery-registry.json per-surface last_updated for security posture; manifest.generated_at is capability inventory sync time.',
-  };
-
-  fs.writeFileSync(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`);
-
   console.log(`Wrote ${path.relative(ROOT, registryOut)}`);
   console.log(`registry_updated_at=${registryUpdatedAt}`);
-  console.log(`Updated manifest ai_discovery (capabilities generated_at unchanged: ${manifest.generated_at})`);
+  console.log(
+    'ai_discovery is embedded into the stable manifest by scripts/generate-stable-evidence-manifest.mjs (single writer).'
+  );
 }
 
 main();

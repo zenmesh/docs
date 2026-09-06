@@ -81,7 +81,10 @@ function main() {
   for (const a of aliases) {
     ok(
       `alias ${a.alias_path} points to docs`,
-      typeof a.canonical_url === 'string' && a.canonical_url.startsWith('https://docs.zen-mesh.io/ai/'),
+      typeof a.canonical_url === 'string' &&
+        // Current canonical docs origin. docs.zen-mesh.io is legacy
+        // redirect-only and must not be recorded as the canonical target.
+        a.canonical_url.startsWith('https://www.zen-mesh.io/docs/ai/'),
     );
   }
 

@@ -1,6 +1,14 @@
 #!/usr/bin/env node
 /**
  * HELPER053: Public architecture/article evidence CTA guard.
+ *
+ * The required link set IS the canonical public discovery contract for
+ * evidence CTAs: the stable evidence channel (v1 manifest + non-claims —
+ * mechanically kept fresh against v1.1 truth by validate-ai-evidence.js),
+ * the current versioned v1.1 manifest, the llms discovery index, and the
+ * canonical narrative pages (evidence supersession, security posture).
+ * Duplicating that contract as another phrase list would drift; change the
+ * contract here and in the docs, nowhere else.
  */
 import fs from 'fs';
 import path from 'path';
@@ -13,22 +21,20 @@ const EVIDENCE_CTA_ARTICLES = ['docs/architecture/three-plane-model.md'];
 
 const REQUIRED_CTA_PATHS = [
   '/llms.txt',
-  '/ai/ai-discovery-registry.json',
-  '/ai/security/v1/claim-maturity.json',
-  '/ai/security/v1/primitives.json',
-  '/ai/security/v1/gaps.json',
   '/ai/evidence/v1/manifest.json',
   '/ai/evidence/v1/non-claims.json',
+  '/ai/evidence/v1.1/manifest.json',
+  '/ai/evidence-v1-supersession.md',
+  '/ai/security-posture.md',
 ];
 
-const PATH_TO_STATIC = {
+const PATH_TO_TARGET = {
   '/llms.txt': 'static/llms.txt',
-  '/ai/ai-discovery-registry.json': 'static/ai/ai-discovery-registry.json',
-  '/ai/security/v1/claim-maturity.json': 'static/ai/security/v1/claim-maturity.json',
-  '/ai/security/v1/primitives.json': 'static/ai/security/v1/primitives.json',
-  '/ai/security/v1/gaps.json': 'static/ai/security/v1/gaps.json',
   '/ai/evidence/v1/manifest.json': 'static/ai/evidence/v1/manifest.json',
   '/ai/evidence/v1/non-claims.json': 'static/ai/evidence/v1/non-claims.json',
+  '/ai/evidence/v1.1/manifest.json': 'static/ai/evidence/v1.1/manifest.json',
+  '/ai/evidence-v1-supersession.md': 'docs/ai/evidence-v1-supersession.md',
+  '/ai/security-posture.md': 'docs/ai/security-posture.md',
 };
 
 const FORBIDDEN_ID =
@@ -74,6 +80,8 @@ function extractMarkdownLinks(section) {
     let href = m[1].trim();
     if (href.startsWith('http')) continue;
     if (href.includes('#')) href = href.split('#')[0];
+    // Normalize doc-relative hrefs (../x, ./x, x) to site-absolute paths.
+    href = '/' + href.replace(/^(\.\.\/)+/, '').replace(/^\.\//, '').replace(/^\//, '');
     links.push(href);
   }
   return links;
@@ -111,10 +119,10 @@ function main() {
         console.log(`  FAIL: ${rel} external link in Evidence CTA — ${href}`);
         continue;
       }
-      const staticRel = PATH_TO_STATIC[href];
-      ok(`${rel} CTA link allowed: ${href}`, Boolean(staticRel), href);
-      if (staticRel) {
-        ok(`${rel} CTA target on disk: ${href}`, fs.existsSync(path.join(ROOT, staticRel)));
+      const target = PATH_TO_TARGET[href];
+      ok(`${rel} CTA link allowed: ${href}`, Boolean(target), href);
+      if (target) {
+        ok(`${rel} CTA target on disk: ${href}`, fs.existsSync(path.join(ROOT, target)));
       }
     }
 

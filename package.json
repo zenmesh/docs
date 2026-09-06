@@ -5,7 +5,7 @@
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
-    "build": "docusaurus build && node scripts/build-manifest-routes-test.mjs && node scripts/validate-ai-evidence.js && node scripts/post-build-copy-swagger.js",
+    "build": "docusaurus build && node scripts/validate-evidence-docs.mjs && node scripts/validate-evidence-docs.mjs --self-test && node scripts/validate-ai-evidence.js --self-test && node scripts/build-manifest-routes-test.mjs && node scripts/validate-ai-evidence.js && node scripts/post-build-copy-swagger.js",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
@@ -32,7 +32,10 @@
     "validate:ai-discovery-registry": "node scripts/validate-ai-discovery-registry-freshness.js",
     "validate:public-evidence-cta": "node scripts/validate-public-evidence-cta.js",
     "record:discovery-crawler-smoke": "node scripts/record-discovery-crawler-smoke.js",
-    "validate:root-llms-crawler": "node scripts/validate-root-llms-crawler.js"
+    "validate:root-llms-crawler": "node scripts/validate-root-llms-crawler.js",
+    "validate:evidence-docs": "node scripts/validate-evidence-docs.mjs",
+    "validate:evidence-docs-selftest": "node scripts/validate-evidence-docs.mjs --self-test",
+    "validate:ai-evidence-selftest": "node scripts/validate-ai-evidence.js --self-test"
   },
   "dependencies": {
     "@docusaurus/core": "3.10.0",
