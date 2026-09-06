@@ -222,6 +222,28 @@ function frozenBoundaryErrors(v11Data) {
       errors.push(`${prefix}: victory_locked evidence requires explicit non_claims boundaries`);
       continue;
     }
+    // Durable-provenance law (EVIDENCE-V11-002): the strongest frozen state
+    // requires a release binding that records EVERY source revision DURABLE
+    // (origin/main reachability). Historical frozen SHAs do not need to
+    // equal current HEAD. A binding with any LOCAL_ONLY/UNKNOWN revision
+    // must never be published as victory_locked (fail closed).
+    const binding = cap.release_binding;
+    if (!binding || typeof binding !== 'object') {
+      errors.push(`${prefix}: FROZEN_REFERENCES_NO_BINDING — victory_locked evidence requires a release binding recording durable provenance`);
+    } else {
+      if (binding.publish_as_frozen !== true) {
+        errors.push(`${prefix}: FROZEN_REFERENCES_UNPUBLISHED_BINDING — binding ${binding.id} has publish_as_frozen != true`);
+      }
+      const revs = Array.isArray(binding.source_revisions) ? binding.source_revisions : [];
+      if (revs.length === 0) {
+        errors.push(`${prefix}: FROZEN_REFERENCES_UNKNOWN_SHA — binding ${binding.id} records no source revisions`);
+      }
+      for (const rev of revs) {
+        if (rev.status === 'LOCAL_ONLY' || rev.status === 'UNKNOWN') {
+          errors.push(`${prefix}: FROZEN_REFERENCES_${rev.status}_SHA ${rev.repo} — binding ${binding.id} must not be published as frozen`);
+        }
+      }
+    }
     if (cap.id === 'traffic-v11-engine-freeze') {
       const required = [
         'Exactly-once delivery semantics are NOT claimed',
@@ -233,6 +255,35 @@ function frozenBoundaryErrors(v11Data) {
         if (!cap.non_claims.some((n) => n.includes(needle))) {
           errors.push(`${prefix}: Traffic frozen evidence missing required non-claim "${needle}"`);
         }
+      }
+    }
+  }
+  return errors;
+}
+
+// Baseline publication mapping (EVIDENCE-V11-002 §8): the set of baselines
+// published as frozen must map 1:1 to victory_locked manifest capabilities.
+function baselinePublicationErrors(v11Data, mapData) {
+  const errors = [];
+  const caps = Array.isArray(v11Data?.capabilities) ? v11Data.capabilities : [];
+  const victoryIds = new Set(caps.filter((c) => c.proof_status === 'victory_locked').map((c) => c.id));
+  const baselines = (mapData?.current_baseline?.baselines || []).filter((b) => b.publish_as_frozen === true);
+  for (const b of baselines) {
+    if (!b.manifest_capability_id || !victoryIds.has(b.manifest_capability_id)) {
+      errors.push(`v1.1/supersession-map.json: EXTRA_FROZEN_BASELINE_WITHOUT_VICTORY_CAP — ${b.evidence_id} publishes frozen but manifest capability is not victory_locked`);
+    }
+  }
+  const published = new Set(baselines.map((b) => b.manifest_capability_id));
+  for (const id of victoryIds) {
+    if (!published.has(id)) {
+      errors.push(`v1.1/supersession-map.json: MISSING_FROZEN_BASELINE_FOR_PUBLIC_CAP — victory_locked capability ${id} has no publish_as_frozen baseline`);
+    }
+  }
+  for (const b of mapData?.current_baseline?.baselines || []) {
+    if (b.publish_as_frozen === false) {
+      const cap = caps.find((c) => c.id === b.manifest_capability_id);
+      if (cap && cap.proof_status === 'victory_locked') {
+        errors.push(`v1.1/supersession-map.json: FROZEN_BADGE_FOR_INCOMPLETE_PROVENANCE — ${b.evidence_id} provenance ${b.provenance_status} but capability ${cap.id} is victory_locked`);
       }
     }
   }
@@ -528,6 +579,8 @@ function run() {
     const { data } = readJSON('static/ai/evidence/v1.1/manifest.json');
     validateAgainstSchema(data, errors, 'v1.1/manifest.json');
     errors.push(...frozenBoundaryErrors(data));
+    const { data: mapData } = readJSON('static/ai/evidence/v1.1/supersession-map.json');
+    errors.push(...baselinePublicationErrors(data, mapData));
   } catch {
     // read failure already reported above
   }
@@ -722,6 +775,41 @@ function selfTest() {
     } catch (e) {
       expectPass('16 supersession map current_baseline covers all frozen capabilities', [`read error: ${e.message}`]);
     }
+  }
+
+  // Provenance fixtures (EVIDENCE-V11-002).
+  {
+    const mutated = JSON.parse(JSON.stringify(v11));
+    const cap = mutated.capabilities.find((c) => c.id === 'l1-foundation-freeze');
+    cap.release_binding.source_revisions[0].status = 'LOCAL_ONLY';
+    const errs = frozenBoundaryErrors(mutated);
+    expectFail('P1 FROZEN_REFERENCES_LOCAL_ONLY_SHA', errs, 'LOCAL_ONLY');
+    const mut2 = JSON.parse(JSON.stringify(v11));
+    mut2.capabilities.find((c) => c.id === 'l1-foundation-freeze').release_binding.source_revisions[0].status = 'UNKNOWN';
+    expectFail('P2 FROZEN_REFERENCES_UNKNOWN_SHA', frozenBoundaryErrors(mut2), 'UNKNOWN');
+    const mut3 = JSON.parse(JSON.stringify(v11));
+    mut3.capabilities.find((c) => c.id === 'l1-foundation-freeze').release_binding = undefined;
+    expectFail('P3 FROZEN_REFERENCES_NO_BINDING', frozenBoundaryErrors(mut3), 'FROZEN_REFERENCES_NO_BINDING');
+    // Durable historical candidate (sha != current HEAD is allowed) passes:
+    const liveErrs = frozenBoundaryErrors(v11);
+    expectPass('P4 FROZEN_REFERENCES_DURABLE_ORIGIN_MAIN_SHA (historical != HEAD allowed)', liveErrs);
+    // Baseline publication mapping negatives.
+    const mapOk = JSON.parse(JSON.stringify(readJSON('static/ai/evidence/v1.1/supersession-map.json').data));
+    const mutMap = JSON.parse(JSON.stringify(mapOk));
+    mutMap.current_baseline.baselines.push({
+      evidence_id: 'BOGUS_FROZEN', manifest_capability_id: 'china-market-strategy',
+      publish_as_frozen: true, provenance_status: 'DURABLE',
+    });
+    expectFail('P5 EXTRA_FROZEN_BASELINE_WITHOUT_VICTORY_CAP', baselinePublicationErrors(v11, mutMap), 'EXTRA_FROZEN_BASELINE');
+    const mutMap2 = JSON.parse(JSON.stringify(mapOk));
+    mutMap2.current_baseline.baselines.find((b) => b.evidence_id === 'TRAFFIC_V11_ENGINE_FROZEN_GREEN').publish_as_frozen = false;
+    expectFail('P6 MISSING_FROZEN_BASELINE_FOR_PUBLIC_CAP', baselinePublicationErrors(v11, mutMap2), 'MISSING_FROZEN_BASELINE');
+    const mutL2Victory = JSON.parse(JSON.stringify(v11));
+    const l2 = mutL2Victory.capabilities.find((c) => c.id === 'l2-connect-freeze');
+    l2.proof_status = 'victory_locked';
+    l2.victory_locked = true;
+    expectFail('P7 FROZEN_BADGE_FOR_INCOMPLETE_PROVENANCE', baselinePublicationErrors(mutL2Victory, mapOk), 'FROZEN_BADGE_FOR_INCOMPLETE_PROVENANCE');
+    expectPass('P8 baseline publication maps 1:1 to victory_locked capabilities', baselinePublicationErrors(v11, mapOk));
   }
 
   console.log(

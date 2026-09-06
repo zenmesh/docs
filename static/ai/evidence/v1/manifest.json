@@ -32,7 +32,7 @@
   "digest": {
     "algorithm": "sha256",
     "reference": "current_version_manifest",
-    "value": "0eba6a4a58ffa101bb477c1dfdba142ae885757ca1995335bac11798e3f276e2"
+    "value": "4601bfd6b7adc29bc5f1fcf940811afefd4b7ba3359f83f39a8d1492185ba606"
   },
   "freshness": {
     "policy": "Regenerate whenever the current v1.1 evidence manifest advances. This artifact must not outlive its digest reference. scripts/validate-ai-evidence.js fails when this file diverges from the generator output for the current v1.1 manifest.",
@@ -52,7 +52,7 @@
     {
       "capability_id": "l2-connect-freeze",
       "name": "L2 Connect Freeze",
-      "status": "victory_locked",
+      "status": "proven_sandbox",
       "evidence_links": [
         "zen-platform-v1 deploy/L2_CONNECT_FROZEN_GREEN.json (canonical freeze artifact)",
         "zen-mgmt releases/l2-connect-frozen-green.yaml (release binding of the freeze artifact)",
@@ -94,6 +94,16 @@
       "status": "proven_sandbox",
       "evidence_links": [
         "https://github.com/zenmesh/zen-platform-v1/blob/main/docs/06-VALIDATION-AND-EVIDENCE/fabric-layer-gapi-validation-2026-08-15.md"
+      ]
+    },
+    {
+      "capability_id": "connect-canonical-command-convergence",
+      "name": "Canonical Connect Command/Query Convergence (REST / CLI / MCP)",
+      "status": "implementation_present",
+      "evidence_links": [
+        "zen-control main (control(022): canonical zen CLI + landed MCP surface + offline evidence verification reachable)",
+        "zen-control cmd/zen, cmd/zen-control-mcp, internal/mcpserver, internal/cliapp",
+        "zen-mgmt registries/capabilities/connect.yaml (canonical surface registry, 022 factual sync)"
       ]
     }
   ],

@@ -22,7 +22,9 @@
         "manifest_capability_id": "l1-foundation-freeze",
         "canonical_artifact": "zen-platform-v1 docs/02-ARCHITECTURE/l1-qualification-record-v1.json",
         "recorded": "2026-08-31",
-        "counted_runs": 3
+        "counted_runs": 3,
+        "publish_as_frozen": true,
+        "provenance_status": "DURABLE"
       },
       {
         "evidence_id": "L2_CONNECT_FROZEN_GREEN",
@@ -30,7 +32,10 @@
         "manifest_capability_id": "l2-connect-freeze",
         "canonical_artifact": "zen-platform-v1 deploy/L2_CONNECT_FROZEN_GREEN.json",
         "recorded": "2026-09-06T00:30:00Z",
-        "counted_runs": 4
+        "counted_runs": 4,
+        "publish_as_frozen": false,
+        "provenance_status": "INCOMPLETE",
+        "provenance_note": "zen-fabric 154e1577 and zen-sdk 4c0ebfcea are LOCAL_ONLY (no approved remote holds them). Public frozen publication withheld per durable-provenance law; qualification remains historical truth. Component owners must push/reconcile; then re-verify via zen-mgmt scripts/verify_release_provenance.py."
       },
       {
         "evidence_id": "TRAFFIC_V11_ENGINE_FROZEN_GREEN",
@@ -38,9 +43,12 @@
         "manifest_capability_id": "traffic-v11-engine-freeze",
         "canonical_artifact": "zen-platform-v1 traffic-qual/results/final-report.json + freeze commit TRAFFIC_V11_ENGINE_FROZEN_GREEN",
         "recorded": "2026-09-06T00:43:53-04:00",
-        "counted_runs": 4
+        "counted_runs": 4,
+        "publish_as_frozen": true,
+        "provenance_status": "DURABLE"
       }
-    ]
+    ],
+    "published_frozen_note": "Only publish_as_frozen=true baselines may render as frozen/victory-locked on public surfaces. Count and mapping are mechanically enforced (docs validator + website projection guard)."
   },
   "entries": [
     {

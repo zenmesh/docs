@@ -22,7 +22,7 @@
   },
   "proven_sandbox": {
    "label": "Proven (Sandbox CI)",
-   "description": "Proof passes in CI sandbox environment with v1.1 topology. Positive-path and negative-control evidence captured. Verified current, but expected to evolve — frozen status is NOT inherited.",
+   "description": "Proof passes in CI sandbox environment with v1.1 topology. Positive-path and negative-control evidence captured. Verified current, but expected to evolve \u2014 frozen status is NOT inherited.",
    "confidence": "medium",
    "supersession_eligible": true
   },
@@ -95,17 +95,50 @@
     "Not restricted-live or cloud-proven",
     "Single-physical-CRDB qualification topology; not a multi-cluster production durability claim",
     "The L1 freeze does not claim L2, L3, or Traffic upper-layer behavior"
-   ]
+   ],
+   "release_binding": {
+    "id": "l1-foundation-frozen-green",
+    "repo": "zen-mgmt",
+    "releases_path": "releases/l1-foundation-frozen-green.yaml",
+    "publish_as_frozen": true,
+    "provenance_status": "DURABLE",
+    "source_revisions": [
+     {
+      "repo": "zen-platform-v1",
+      "status": "DURABLE"
+     },
+     {
+      "repo": "zen-sdk",
+      "status": "DURABLE"
+     },
+     {
+      "repo": "zen-fabric",
+      "status": "DURABLE"
+     },
+     {
+      "repo": "zen-identity",
+      "status": "DURABLE"
+     },
+     {
+      "repo": "zen-control",
+      "status": "DURABLE"
+     },
+     {
+      "repo": "zen-lock",
+      "status": "DURABLE"
+     }
+    ]
+   }
   },
   {
    "id": "l2-connect-freeze",
    "proof_id": "L2_CONNECT_FROZEN_GREEN",
    "name": "L2 Connect Freeze",
-   "description": "The bounded Connect/L2 contract is frozen green: mode A and mode B continuity, HA failover with declared lease-derived bounds (lease 15s, renew deadline 10s, retry period 2s; rollout and observation bounds 300s) with split-brain not observed and re-enrollment or PVC deletion never used, restart matrix with disable/no-resurrection, the 24-block connect vertical, projection SQL evidence, CLI parity over canonical Control-family SPIFFE with no TLS bypass, network policy matrix, image digest law, control capability verification with tamper/wrong-key/stale-generation/digest-without-signature denial negatives, and placement bootstrap security (RLS tenant isolation, active-only bootstrap read, tenantless write denied, inactive allocation bootstrap denied). Four counted runs (baseline + repeat 1-3) across 51 gates, zero non-pass gates, zero manual interventions (recorded 2026-09-06).",
-   "proof_status": "victory_locked",
+   "description": "The bounded Connect/L2 contract is frozen green: mode A and mode B continuity, HA failover with declared lease-derived bounds (lease 15s, renew deadline 10s, retry period 2s; rollout and observation bounds 300s) with split-brain not observed and re-enrollment or PVC deletion never used, restart matrix with disable/no-resurrection, the 24-block connect vertical, projection SQL evidence, CLI parity over canonical Control-family SPIFFE with no TLS bypass, network policy matrix, image digest law, control capability verification with tamper/wrong-key/stale-generation/digest-without-signature denial negatives, and placement bootstrap security (RLS tenant isolation, active-only bootstrap read, tenantless write denied, inactive allocation bootstrap denied). Four counted runs (baseline + repeat 1-3) across 51 gates, zero non-pass gates, zero manual interventions (recorded 2026-09-06). Qualification result L2_CONNECT_FROZEN_GREEN is preserved as immutable historical truth; publication at the strongest frozen state is withheld (fail closed) because two qualified source revisions are not durably recoverable from origin/main. When the component owners push/reconcile those revisions and provenance is re-verified, this capability returns to victory_locked.",
+   "proof_status": "proven_sandbox",
    "evidence_level": "SANDBOX_CI",
    "supersession_state": "CURRENT",
-   "victory_locked": true,
+   "victory_locked": false,
    "evidence_refs": [
     "zen-platform-v1 deploy/L2_CONNECT_FROZEN_GREEN.json (canonical freeze artifact)",
     "zen-mgmt releases/l2-connect-frozen-green.yaml (release binding of the freeze artifact)",
@@ -119,8 +152,43 @@
     "Does NOT claim MCP, ZCC, Compiler/IR, Trust, Traffic, dual-Traffic-SVID runtime, Pipelines, UI, or production completeness (explicit freeze scope)",
     "Not production-live",
     "Not restricted-live or cloud-proven",
-    "HA bounds are declared lease-derived bounds in the qualified topology, not arbitrary-topology guarantees"
-   ]
+    "HA bounds are declared lease-derived bounds in the qualified topology, not arbitrary-topology guarantees",
+    "Durable source provenance is INCOMPLETE (zen-fabric 154e1577, zen-sdk 4c0ebfcea not reachable from any approved remote); frozen publication is withheld \u2014 historical candidate SHAs differing from current HEAD is normal and is not by itself the defect",
+    "Not an arbitrary-topology or production claim by virtue of the recorded qualification"
+   ],
+   "release_binding": {
+    "id": "l2-connect-frozen-green",
+    "repo": "zen-mgmt",
+    "releases_path": "releases/l2-connect-frozen-green.yaml",
+    "publish_as_frozen": false,
+    "provenance_status": "INCOMPLETE",
+    "source_revisions": [
+     {
+      "repo": "zen-platform-v1",
+      "status": "DURABLE"
+     },
+     {
+      "repo": "zen-sdk",
+      "status": "LOCAL_ONLY"
+     },
+     {
+      "repo": "zen-control",
+      "status": "DURABLE"
+     },
+     {
+      "repo": "zen-fabric",
+      "status": "LOCAL_ONLY"
+     },
+     {
+      "repo": "zen-identity",
+      "status": "DURABLE"
+     },
+     {
+      "repo": "zen-lock",
+      "status": "DURABLE"
+     }
+    ]
+   }
   },
   {
    "id": "traffic-v11-engine-freeze",
@@ -149,7 +217,20 @@
     "Customer-facing DLQ API authorization is NOT claimed (no such public surface exists)",
     "Restricted-live or cloud proof is NOT claimed",
     "Duplicate receipts are possible under declared failure windows (bounded duplicate semantics, not exactly-once)"
-   ]
+   ],
+   "release_binding": {
+    "id": "traffic-v11-engine-frozen-green",
+    "repo": "zen-mgmt",
+    "releases_path": "releases/traffic-v11-engine-frozen-green.yaml",
+    "publish_as_frozen": true,
+    "provenance_status": "DURABLE",
+    "source_revisions": [
+     {
+      "repo": "zen-platform-v1",
+      "status": "DURABLE"
+     }
+    ]
+   }
   },
   {
    "id": "china-market-strategy",
@@ -243,6 +324,30 @@
     "Not production-live",
     "Single-node k3d; HA/CAP drills outstanding",
     "Not customer-ready"
+   ]
+  },
+  {
+   "id": "connect-canonical-command-convergence",
+   "proof_id": "CONTROL-022-CANONICAL-COMMAND-CONVERGENCE",
+   "name": "Canonical Connect Command/Query Convergence (REST / CLI / MCP)",
+   "description": "Canonical command layer landed on zen-control main: REST, the canonical `zen connect <kind> <verb>` CLI over the shared transport, the canonical MCP thin adapter (default deny, closed input schemas, server-derived tenant, every tool delegating 1:1 to the canonical Command/Query path), and the offline public evidence verifier reachable via `zen connect evidence verify`. Verified current at implementation level; the dedicated 023 qualification lane has not produced counted live-path evidence yet.",
+   "proof_status": "implementation_present",
+   "evidence_level": "CODE_INSPECTION",
+   "supersession_state": "CURRENT",
+   "victory_locked": false,
+   "evidence_refs": [
+    "zen-control main (control(022): canonical zen CLI + landed MCP surface + offline evidence verification reachable)",
+    "zen-control cmd/zen, cmd/zen-control-mcp, internal/mcpserver, internal/cliapp",
+    "zen-mgmt registries/capabilities/connect.yaml (canonical surface registry, 022 factual sync)"
+   ],
+   "validator_refs": [
+    "zen-control internal/mcpserver dependency guards; cmd/zen + cmd/zenctl thin-adapter guards"
+   ],
+   "integrity_ref": "zen-control main commit control(022)",
+   "non_claims": [
+    "Live CLI/MCP 443 qualification is NOT claimed (023 evidence does not exist yet)",
+    "Arbitrary object-level MCP authorization is NOT claimed from kind/verb capability grammar alone",
+    "Not frozen and not victory-locked"
    ]
   }
  ],
